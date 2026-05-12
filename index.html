@@ -2,268 +2,197 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>SchoolFools Premium</title>
+  <title>Die Nacht vor dem Test</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: Georgia, "Times New Roman", serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #3a2a1a;
-    padding: 40px 20px;
-    background:
-      linear-gradient(115deg, rgba(255,255,255,0.35) 0 8%, transparent 8% 16%, rgba(255,255,255,0.22) 16% 23%, transparent 23% 100%),
-      radial-gradient(circle at 50% 20%, #fff8df 0%, #dbeaf0 18%, #9db7c8 48%, #d3c0a6 100%);
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* Linke und rechte Renaissance-Säulen */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 18%;
-    background:
-      repeating-linear-gradient(
-        90deg,
-        #33404c 0px,
-        #33404c 28px,
-        #6f8391 28px,
-        #6f8391 56px
-      );
-    opacity: 0.55;
-    z-index: 0;
-  }
-
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 18%;
-    background:
-      repeating-linear-gradient(
-        90deg,
-        #6f8391 0px,
-        #6f8391 28px,
-        #33404c 28px,
-        #33404c 56px
-      );
-    opacity: 0.55;
-    z-index: 0;
-  }
-
-  .container {
-    width: 100%;
-    max-width: 650px;
-    position: relative;
-    z-index: 1;
-    background: rgba(244, 232, 213, 0.94);
-    border: 4px solid #8b6b42;
-    border-radius: 8px;
-    padding: 42px;
-    box-shadow:
-      0 35px 90px rgba(45, 32, 18, 0.45),
-      inset 0 0 0 3px rgba(255,255,255,0.45);
-  }
-
-  /* Deckenmuster oben wie im Bild */
-  .container::before {
-    content: "";
-    position: absolute;
-    top: -90px;
-    left: -70px;
-    right: -70px;
-    height: 70px;
-    background:
-      linear-gradient(45deg, #8b2f27 25%, transparent 25%) 0 0 / 28px 28px,
-      linear-gradient(-45deg, #8b2f27 25%, transparent 25%) 0 0 / 28px 28px,
-      #d8c3a3;
-    border: 3px solid #7a5a35;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  }
-
-  .badge {
-    display: inline-block;
-    background: #7b5630;
-    color: #fff3df;
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 14px;
-    margin-bottom: 20px;
-    border: 1px solid #4d341c;
-  }
-
-  h1 {
-    margin: 0 0 14px;
-    font-size: 48px;
-    color: #3b2412;
-    letter-spacing: 0.5px;
-  }
-
-  h2 {
-    font-size: 30px;
-    color: #4b2f17;
-    margin-top: 28px;
-  }
-
-  p {
-    color: #5d4631;
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  input {
-    width: 100%;
-    padding: 16px;
-    margin: 10px 0;
-    border-radius: 4px;
-    border: 2px solid #9a7a55;
-    background: #fff8ea;
-    color: #2d1d11;
-    font-size: 17px;
-    font-family: Georgia, "Times New Roman", serif;
-  }
-
-  input:focus {
-    outline: none;
-    border-color: #5d3d20;
-    box-shadow: 0 0 0 4px rgba(139, 107, 66, 0.22);
-  }
-
-  button,
-  a.button {
-    width: 100%;
-    margin-top: 12px;
-    border: 2px solid #4b2f17;
-    border-radius: 4px;
-    padding: 16px 18px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    font-family: Georgia, "Times New Roman", serif;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    background: linear-gradient(#a77a43, #6e4824);
-    color: #fff7e8;
-    box-shadow: 0 6px 0 #3d2714;
-  }
-
-  button:hover,
-  a.button:hover {
-    background: linear-gradient(#b98a50, #7a512a);
-    transform: translateY(-1px);
-  }
-
-  button:active,
-  a.button:active {
-    transform: translateY(4px);
-    box-shadow: 0 2px 0 #3d2714;
-  }
-
-  .secondary {
-    background: #ead9bd;
-    color: #3b2412;
-  }
-
-  .secondary:hover {
-    background: #f3e5cb;
-  }
-
-  .danger {
-    background: linear-gradient(#9d5143, #6e2f27);
-    color: #fff7e8;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .price-box {
-    margin-top: 22px;
-    background: #fff1d5;
-    border: 3px double #8b6b42;
-    padding: 22px;
-    border-radius: 4px;
-  }
-
-  .price {
-    font-size: 44px;
-    color: #4b2f17;
-    font-weight: bold;
-  }
-
-  .twint-box {
-    margin-top: 18px;
-    padding: 22px;
-    background: #f6e7cc;
-    border: 3px double #8b6b42;
-    border-radius: 4px;
-  }
-
-  .qr {
-    width: 260px;
-    max-width: 100%;
-    margin-top: 14px;
-    border-radius: 6px;
-    background: white;
-    padding: 10px;
-    border: 2px solid #7b5630;
-  }
-
-  .status {
-    margin-top: 18px;
-    padding: 14px;
-    background: #fff8ea;
-    border: 2px solid #9a7a55;
-    color: #3b2412;
-    white-space: pre-line;
-    font-size: 16px;
-  }
-
-  .small {
-    font-size: 14px;
-  }
-
-  @media (max-width: 800px) {
-    body::before,
-    body::after {
-      display: none;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    .container::before {
-      display: none;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+
+      /* NUR DER HINTERGRUND IST GEÄNDERT */
+      background: url("hintergrund.png") center center / cover no-repeat fixed;
+      position: relative;
+    }
+
+    /* dunkle Schicht, damit man Text gut lesen kann */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 12, 20, 0.45);
+      z-index: 0;
     }
 
     .container {
-      padding: 28px 22px;
+      width: 100%;
+      max-width: 560px;
+      background: rgba(17, 24, 39, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      padding: 34px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(4px);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.18);
+      color: #c7d2fe;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 38px;
+      margin: 0 0 12px;
+      font-size: 40px;
+      line-height: 1.1;
     }
-  }
-</style>
+
+    h2 {
+      margin-top: 26px;
+    }
+
+    p {
+      color: #d1d5db;
+      line-height: 1.6;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      margin: 9px 0;
+      border-radius: 12px;
+      border: 1px solid #374151;
+      background: rgba(2, 6, 23, 0.92);
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+    }
+
+    button, a.button {
+      width: 100%;
+      margin-top: 12px;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #6366f1;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    button:hover, a.button:hover {
+      background: #4f46e5;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #374151;
+    }
+
+    .secondary:hover {
+      background: #1f2937;
+    }
+
+    .danger {
+      background: #dc2626;
+    }
+
+    .danger:hover {
+      background: #b91c1c;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .price-box {
+      margin-top: 22px;
+      background: rgba(2, 6, 23, 0.88);
+      border: 1px solid #374151;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .price {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .twint-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid #374151;
+    }
+
+    .qr {
+      width: 260px;
+      max-width: 100%;
+      margin-top: 14px;
+      border-radius: 14px;
+      background: white;
+      padding: 10px;
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 12px;
+      background: rgba(2, 6, 23, 0.88);
+      border: 1px solid #374151;
+      border-radius: 12px;
+      color: #cbd5e1;
+      white-space: pre-line;
+      font-size: 14px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 20px;
+      }
+
+      .container {
+        padding: 26px 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <main class="container">
-    <span class="badge">SchoolFools Premium</span>
+    <span class="badge">Premium Zugang</span>
 
-    <h1>Premium Zugang</h1>
+    <h1>Die Nacht vor dem Test</h1>
 
     <p>
       Erstelle ein Konto, bezahle CHF 17.– per TWINT und erhalte danach Zugriff auf den Premium-Bereich.
@@ -309,8 +238,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
 
   <script>
-  
-const firebaseConfig = {
+    const firebaseConfig = {
   apiKey: "AIzaSyAPynV_IaVbvl6PAcg8MJB_MLvLvoIUW8E",
   authDomain: "schoolfools.firebaseapp.com",
   projectId: "schoolfools",
