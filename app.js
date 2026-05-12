@@ -1,5 +1,7 @@
-alert("app.js funktioniert");
+alert("app.js wurde geladen");
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -23,7 +25,6 @@ const passwordInput = document.getElementById("password");
 
 const registerBtn = document.getElementById("register-btn");
 const loginBtn = document.getElementById("login-btn");
-const payBtn = document.getElementById("pay-btn");
 const logoutBtn = document.getElementById("logout-btn");
 
 function showStatus(message) {
@@ -54,24 +55,28 @@ function getEmailAndPassword() {
 registerBtn.addEventListener("click", async () => {
   try {
     clearStatus();
+
     const { email, password } = getEmailAndPassword();
 
     await createUserWithEmailAndPassword(auth, email, password);
-    showStatus("Konto wurde erstellt. Du bist jetzt eingeloggt.");
+
+    showStatus("Konto wurde erfolgreich erstellt.");
   } catch (error) {
-    showStatus("Fehler bei der Registrierung:\n" + error.message);
+    showStatus("Fehler beim Konto erstellen:\n" + error.message);
   }
 });
 
 loginBtn.addEventListener("click", async () => {
   try {
     clearStatus();
+
     const { email, password } = getEmailAndPassword();
 
     await signInWithEmailAndPassword(auth, email, password);
+
     showStatus("Du bist eingeloggt.");
   } catch (error) {
-    showStatus("Fehler beim Login:\n" + error.message);
+    showStatus("Fehler beim Einloggen:\n" + error.message);
   }
 });
 
@@ -81,39 +86,6 @@ logoutBtn.addEventListener("click", async () => {
     showStatus("Du wurdest ausgeloggt.");
   } catch (error) {
     showStatus("Fehler beim Ausloggen:\n" + error.message);
-  }
-});
-
-payBtn.addEventListener("click", async () => {
-  try {
-    clearStatus();
-
-    const user = auth.currentUser;
-
-    if (!user) {
-      throw new Error("Du musst zuerst eingeloggt sein.");
-    }
-
-    showStatus("Zahlungsseite wird vorbereitet...");
-
-    const token = await user.getIdToken();
-
-    const response = await fetch("/.netlify/functions/create-checkout-session", {
-      method: "POST",
-      headers: {
-        "Authorization": "Bearer " + token
-      }
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      throw new Error(data.error || "Checkout konnte nicht erstellt werden.");
-    }
-
-    window.location.href = data.url;
-  } catch (error) {
-    showStatus("Fehler beim Starten der Zahlung:\n" + error.message);
   }
 });
 
