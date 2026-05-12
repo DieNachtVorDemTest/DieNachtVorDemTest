@@ -2,23 +2,10 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Premium Zugang</title>
+  <title>SchoolFools Premium</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --card-light: #1f2937;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --primary: #6366f1;
-      --primary-dark: #4f46e5;
-      --success: #16a34a;
-      --danger: #dc2626;
-      --border: #374151;
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -27,19 +14,19 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: radial-gradient(circle at top, #1e293b, #020617);
-      color: var(--text);
+      color: #f9fafb;
       min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       padding: 30px;
     }
 
     .container {
       width: 100%;
-      max-width: 520px;
+      max-width: 560px;
       background: rgba(17, 24, 39, 0.96);
-      border: 1px solid var(--border);
+      border: 1px solid #374151;
       border-radius: 22px;
       padding: 34px;
       box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
@@ -60,24 +47,13 @@
       font-size: 34px;
     }
 
+    h2 {
+      margin-top: 26px;
+    }
+
     p {
-      color: var(--muted);
+      color: #9ca3af;
       line-height: 1.6;
-    }
-
-    .price {
-      margin: 24px 0;
-      padding: 20px;
-      background: var(--card-light);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-    }
-
-    .price strong {
-      display: block;
-      font-size: 36px;
-      color: white;
-      margin-bottom: 6px;
     }
 
     input {
@@ -85,7 +61,7 @@
       padding: 14px 15px;
       margin: 9px 0;
       border-radius: 12px;
-      border: 1px solid var(--border);
+      border: 1px solid #374151;
       background: #020617;
       color: white;
       font-size: 16px;
@@ -93,10 +69,10 @@
     }
 
     input:focus {
-      border-color: var(--primary);
+      border-color: #6366f1;
     }
 
-    button, .link-button {
+    button, a.button {
       width: 100%;
       margin-top: 12px;
       border: none;
@@ -105,37 +81,28 @@
       font-size: 16px;
       font-weight: bold;
       cursor: pointer;
-      background: var(--primary);
+      background: #6366f1;
       color: white;
       text-decoration: none;
       display: inline-block;
       text-align: center;
     }
 
-    button:hover, .link-button:hover {
-      background: var(--primary-dark);
+    button:hover, a.button:hover {
+      background: #4f46e5;
     }
 
     .secondary {
       background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
+      border: 1px solid #374151;
     }
 
     .secondary:hover {
-      background: var(--card-light);
-    }
-
-    .success {
-      background: var(--success);
-    }
-
-    .success:hover {
-      background: #15803d;
+      background: #1f2937;
     }
 
     .danger {
-      background: var(--danger);
+      background: #dc2626;
     }
 
     .danger:hover {
@@ -146,70 +113,107 @@
       display: none;
     }
 
-    .status {
-      margin-top: 16px;
-      padding: 12px;
-      border-radius: 12px;
+    .price-box {
+      margin-top: 22px;
       background: #020617;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 14px;
+      border: 1px solid #374151;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .price {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .twint-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #0f172a;
+      border: 1px solid #374151;
+    }
+
+    .qr {
+      width: 260px;
+      max-width: 100%;
+      margin-top: 14px;
+      border-radius: 14px;
+      background: white;
+      padding: 10px;
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 12px;
+      background: #020617;
+      border: 1px solid #374151;
+      border-radius: 12px;
+      color: #cbd5e1;
       white-space: pre-line;
+      font-size: 14px;
     }
 
     .small {
       font-size: 13px;
-      color: var(--muted);
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 24px 0;
     }
   </style>
 </head>
 
 <body>
   <main class="container">
-    <span class="badge">Premium Zugang</span>
+    <span class="badge">SchoolFools Premium</span>
 
-    <h1>Premium freischalten</h1>
+    <h1>Premium Zugang</h1>
     <p>
-      Erstelle ein Konto, bezahle einmalig CHF 17.– und erhalte danach Zugriff auf den geschützten Premium-Bereich.
+      Erstelle ein Konto, bezahle CHF 17.– per TWINT und erhalte danach Zugriff auf den Premium-Bereich.
     </p>
 
     <section id="auth-section">
       <h2>Login / Registrierung</h2>
 
       <input id="email" type="email" placeholder="E-Mail">
-      <input id="password" type="password" placeholder="Passwort">
+      <input id="password" type="password" placeholder="Passwort, mindestens 6 Zeichen">
 
       <button id="register-btn">Konto erstellen</button>
       <button id="login-btn" class="secondary">Einloggen</button>
-
-      <p class="small">
-        Dein Konto ist wichtig, damit der Premium-Zugang auch nach dem Schliessen der Website erhalten bleibt.
-      </p>
     </section>
 
     <section id="user-section" class="hidden">
       <h2>Dein Konto</h2>
       <p id="user-email"></p>
 
-      <div class="price">
-        <strong>CHF 17.–</strong>
-        <span>Einmalige Zahlung für Premium-Zugang</span>
+      <div class="price-box">
+        <div class="price">CHF 17.–</div>
+        <p>Einmalige Zahlung für Premium-Zugang.</p>
       </div>
 
-      <button id="pay-btn" class="success">Jetzt Premium kaufen</button>
-      <a href="premium.html" class="link-button secondary">Zum Premium-Bereich</a>
+      <div class="twint-box">
+        <h2>TWINT-Zahlung</h2>
+        <p>Scanne den QR-Code und bezahle CHF 17.–.</p>
+
+        <!-- Falls du noch keinen QR-Code hast, kannst du diese Zeile löschen -->
+        <img class="qr" src="twint-qr.png" alt="TWINT QR Code">
+
+        <p class="small">
+          Nach der Zahlung wirst du manuell freigeschaltet.
+        </p>
+      </div>
+
+      <a class="button" href="premium.html">Zum Premium-Bereich</a>
       <button id="logout-btn" class="danger">Ausloggen</button>
     </section>
 
     <div id="status" class="status hidden"></div>
   </main>
 
-  <script type="module" src="app.js"></script>
+  <!-- TEST: Wenn diese Meldung kommt, lädt index.html grundsätzlich JavaScript -->
+  <script>
+    console.log("index.html wurde geladen");
+  </script>
+
+  <!-- WICHTIG: Diese Zeile lädt deine app.js Datei -->
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
