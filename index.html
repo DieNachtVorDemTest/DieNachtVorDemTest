@@ -1,17 +1,329 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>TEST</title>
+  <title>SchoolFools Premium</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      color: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 560px;
+      background: rgba(17, 24, 39, 0.96);
+      border: 1px solid #374151;
+      border-radius: 22px;
+      padding: 34px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.18);
+      color: #c7d2fe;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 34px;
+    }
+
+    h2 {
+      margin-top: 26px;
+    }
+
+    p {
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      margin: 9px 0;
+      border-radius: 12px;
+      border: 1px solid #374151;
+      background: #020617;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #6366f1;
+    }
+
+    button, a.button {
+      width: 100%;
+      margin-top: 12px;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #6366f1;
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    button:hover, a.button:hover {
+      background: #4f46e5;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #374151;
+    }
+
+    .secondary:hover {
+      background: #1f2937;
+    }
+
+    .danger {
+      background: #dc2626;
+    }
+
+    .danger:hover {
+      background: #b91c1c;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .price-box {
+      margin-top: 22px;
+      background: #020617;
+      border: 1px solid #374151;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .price {
+      font-size: 36px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .twint-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 16px;
+      background: #0f172a;
+      border: 1px solid #374151;
+    }
+
+    .qr {
+      width: 260px;
+      max-width: 100%;
+      margin-top: 14px;
+      border-radius: 14px;
+      background: white;
+      padding: 10px;
+    }
+
+    .status {
+      margin-top: 18px;
+      padding: 12px;
+      background: #020617;
+      border: 1px solid #374151;
+      border-radius: 12px;
+      color: #cbd5e1;
+      white-space: pre-line;
+      font-size: 14px;
+    }
+
+    .small {
+      font-size: 13px;
+    }
+  </style>
 </head>
-<body style="background:red; color:white; font-family:Arial; text-align:center; padding:80px;">
 
-  <h1>TESTSEITE 12345</h1>
-  <p>Wenn du das siehst, lädt GitHub die richtige index.html.</p>
+<body>
+  <main class="container">
+    <span class="badge">SchoolFools Premium</span>
 
-  <button onclick="document.body.style.background='green'">
-    Hintergrund grün machen
-  </button>
+    <h1>Premium Zugang</h1>
 
+    <p>
+      Erstelle ein Konto, bezahle CHF 17.– per TWINT und erhalte danach Zugriff auf den Premium-Bereich.
+    </p>
+
+    <section id="auth-section">
+      <h2>Login / Registrierung</h2>
+
+      <input id="email" type="email" placeholder="E-Mail">
+      <input id="password" type="password" placeholder="Passwort, mindestens 6 Zeichen">
+
+      <button id="register-btn">Konto erstellen</button>
+      <button id="login-btn" class="secondary">Einloggen</button>
+    </section>
+
+    <section id="user-section" class="hidden">
+      <h2>Dein Konto</h2>
+
+      <p id="user-email"></p>
+
+      <div class="price-box">
+        <div class="price">CHF 17.–</div>
+        <p>Einmalige Zahlung für Premium-Zugang.</p>
+      </div>
+
+      <div class="twint-box">
+        <h2>TWINT-Zahlung</h2>
+
+        <p>Scanne den QR-Code und bezahle CHF 17.–.</p>
+
+        <img class="qr" src="twint-qr.png" alt="TWINT QR Code">
+
+        <p class="small">
+          Nach der Zahlung wirst du manuell freigeschaltet.
+        </p>
+      </div>
+
+      <a class="button" href="premium.html">Zum Premium-Bereich</a>
+
+      <button id="logout-btn" class="danger">Ausloggen</button>
+    </section>
+
+    <div id="status" class="status hidden"></div>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+    import { firebaseConfig } from "./firebase-config.js";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const authSection = document.getElementById("auth-section");
+    const userSection = document.getElementById("user-section");
+    const userEmail = document.getElementById("user-email");
+    const statusBox = document.getElementById("status");
+
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    const registerBtn = document.getElementById("register-btn");
+    const loginBtn = document.getElementById("login-btn");
+    const logoutBtn = document.getElementById("logout-btn");
+
+    function showStatus(message) {
+      statusBox.classList.remove("hidden");
+      statusBox.textContent = message;
+    }
+
+    function clearStatus() {
+      statusBox.classList.add("hidden");
+      statusBox.textContent = "";
+    }
+
+    function getEmailAndPassword() {
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!email) {
+        throw new Error("Bitte gib eine E-Mail-Adresse ein.");
+      }
+
+      if (!emailPattern.test(email)) {
+        throw new Error("Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@example.com.");
+      }
+
+      if (!password) {
+        throw new Error("Bitte gib ein Passwort ein.");
+      }
+
+      if (password.length < 6) {
+        throw new Error("Das Passwort muss mindestens 6 Zeichen lang sein.");
+      }
+
+      return { email, password };
+    }
+
+    registerBtn.addEventListener("click", async () => {
+      try {
+        clearStatus();
+
+        const { email, password } = getEmailAndPassword();
+
+        await createUserWithEmailAndPassword(auth, email, password);
+
+        showStatus("Konto wurde erfolgreich erstellt.");
+      } catch (error) {
+        showStatus("Fehler beim Konto erstellen:\n" + error.message);
+      }
+    });
+
+    loginBtn.addEventListener("click", async () => {
+      try {
+        clearStatus();
+
+        const { email, password } = getEmailAndPassword();
+
+        await signInWithEmailAndPassword(auth, email, password);
+
+        showStatus("Du bist eingeloggt.");
+      } catch (error) {
+        showStatus("Fehler beim Einloggen:\n" + error.message);
+      }
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        showStatus("Du wurdest ausgeloggt.");
+      } catch (error) {
+        showStatus("Fehler beim Ausloggen:\n" + error.message);
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      clearStatus();
+
+      if (user) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = "Eingeloggt als: " + user.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+      }
+    });
+  </script>
 </body>
 </html>
