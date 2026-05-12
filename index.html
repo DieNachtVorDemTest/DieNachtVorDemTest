@@ -68,10 +68,6 @@
       outline: none;
     }
 
-    input:focus {
-      border-color: #6366f1;
-    }
-
     button, a.button {
       width: 100%;
       margin-top: 12px;
@@ -97,16 +93,8 @@
       border: 1px solid #374151;
     }
 
-    .secondary:hover {
-      background: #1f2937;
-    }
-
     .danger {
       background: #dc2626;
-    }
-
-    .danger:hover {
-      background: #b91c1c;
     }
 
     .hidden {
@@ -154,10 +142,6 @@
       white-space: pre-line;
       font-size: 14px;
     }
-
-    .small {
-      font-size: 13px;
-    }
   </style>
 </head>
 
@@ -193,39 +177,48 @@
 
       <div class="twint-box">
         <h2>TWINT-Zahlung</h2>
-
         <p>Scanne den QR-Code und bezahle CHF 17.–.</p>
 
         <img class="qr" src="twint-qr.png" alt="TWINT QR Code">
 
-        <p class="small">
-          Nach der Zahlung wirst du manuell freigeschaltet.
-        </p>
+        <p>Nach der Zahlung wirst du manuell freigeschaltet.</p>
       </div>
 
       <a class="button" href="premium.html">Zum Premium-Bereich</a>
-
       <button id="logout-btn" class="danger">Ausloggen</button>
     </section>
 
     <div id="status" class="status hidden"></div>
   </main>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  <!-- Firebase normale Browser-Version, ohne type="module" -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
 
-    import {
-      getAuth,
-      createUserWithEmailAndPassword,
-      signInWithEmailAndPassword,
-      signOut,
-      onAuthStateChanged
-    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+  <script>
+    alert("JavaScript läuft");
 
-    import { firebaseConfig } from "./firebase-config.js";
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAPynV_IaVbvl6PAcg8MJB_MLvLvoIUW8E",
+  authDomain: "schoolfools.firebaseapp.com",
+  projectId: "schoolfools",
+  storageBucket: "schoolfools.firebasestorage.app",
+  messagingSenderId: "338912295447",
+  appId: "1:338912295447:web:b8f965686dc4119d777a52"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+    firebase.initializeApp(firebaseConfig);
+
+    const auth = firebase.auth();
 
     const authSection = document.getElementById("auth-section");
     const userSection = document.getElementById("user-section");
@@ -274,13 +267,13 @@
       return { email, password };
     }
 
-    registerBtn.addEventListener("click", async () => {
+    registerBtn.addEventListener("click", async function () {
       try {
         clearStatus();
 
         const { email, password } = getEmailAndPassword();
 
-        await createUserWithEmailAndPassword(auth, email, password);
+        await auth.createUserWithEmailAndPassword(email, password);
 
         showStatus("Konto wurde erfolgreich erstellt.");
       } catch (error) {
@@ -288,13 +281,13 @@
       }
     });
 
-    loginBtn.addEventListener("click", async () => {
+    loginBtn.addEventListener("click", async function () {
       try {
         clearStatus();
 
         const { email, password } = getEmailAndPassword();
 
-        await signInWithEmailAndPassword(auth, email, password);
+        await auth.signInWithEmailAndPassword(email, password);
 
         showStatus("Du bist eingeloggt.");
       } catch (error) {
@@ -302,16 +295,16 @@
       }
     });
 
-    logoutBtn.addEventListener("click", async () => {
+    logoutBtn.addEventListener("click", async function () {
       try {
-        await signOut(auth);
+        await auth.signOut();
         showStatus("Du wurdest ausgeloggt.");
       } catch (error) {
         showStatus("Fehler beim Ausloggen:\n" + error.message);
       }
     });
 
-    onAuthStateChanged(auth, (user) => {
+    auth.onAuthStateChanged(function (user) {
       clearStatus();
 
       if (user) {
