@@ -166,6 +166,7 @@
     <span class="badge">SchoolFools Premium</span>
 
     <h1>Premium Zugang</h1>
+
     <p>
       Erstelle ein Konto, bezahle CHF 17.– per TWINT und erhalte danach Zugriff auf den Premium-Bereich.
     </p>
@@ -182,6 +183,7 @@
 
     <section id="user-section" class="hidden">
       <h2>Dein Konto</h2>
+
       <p id="user-email"></p>
 
       <div class="price-box">
@@ -191,9 +193,9 @@
 
       <div class="twint-box">
         <h2>TWINT-Zahlung</h2>
+
         <p>Scanne den QR-Code und bezahle CHF 17.–.</p>
 
-        <!-- Falls du noch keinen QR-Code hast, kannst du diese Zeile löschen -->
         <img class="qr" src="twint-qr.png" alt="TWINT QR Code">
 
         <p class="small">
@@ -202,18 +204,128 @@
       </div>
 
       <a class="button" href="premium.html">Zum Premium-Bereich</a>
+
       <button id="logout-btn" class="danger">Ausloggen</button>
     </section>
 
     <div id="status" class="status hidden"></div>
   </main>
 
-  <!-- TEST: Wenn diese Meldung kommt, lädt index.html grundsätzlich JavaScript -->
-  <script>
-    console.log("index.html wurde geladen");
-  </script>
+  <script type="module">
+    alert("JavaScript in index.html läuft");
 
-  <!-- WICHTIG: Diese Zeile lädt deine app.js Datei -->
-  <script type="module" src="./app.js"></script>
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+    import { firebaseConfig } from "./firebase-config.js";
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const authSection = document.getElementById("auth-section");
+    const userSection = document.getElementById("user-section");
+    const userEmail = document.getElementById("user-email");
+    const statusBox = document.getElementById("status");
+
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    const registerBtn = document.getElementById("register-btn");
+    const loginBtn = document.getElementById("login-btn");
+    const logoutBtn = document.getElementById("logout-btn");
+
+    function showStatus(message) {
+      statusBox.classList.remove("hidden");
+      statusBox.textContent = message;
+    }
+
+    function clearStatus() {
+      statusBox.classList.add("hidden");
+      statusBox.textContent = "";
+    }
+
+    function getEmailAndPassword() {
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!email) {
+        throw new Error("Bitte gib eine E-Mail-Adresse ein.");
+      }
+
+      if (!emailPattern.test(email)) {
+        throw new Error("Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@example.com.");
+      }
+
+      if (!password) {
+        throw new Error("Bitte gib ein Passwort ein.");
+      }
+
+      if (password.length < 6) {
+        throw new Error("Das Passwort muss mindestens 6 Zeichen lang sein.");
+      }
+
+      return { email, password };
+    }
+
+    registerBtn.addEventListener("click", async () => {
+      try {
+        clearStatus();
+
+        const { email, password } = getEmailAndPassword();
+
+        await createUserWithEmailAndPassword(auth, email, password);
+
+        showStatus("Konto wurde erfolgreich erstellt.");
+      } catch (error) {
+        showStatus("Fehler beim Konto erstellen:\n" + error.message);
+      }
+    });
+
+    loginBtn.addEventListener("click", async () => {
+      try {
+        clearStatus();
+
+        const { email, password } = getEmailAndPassword();
+
+        await signInWithEmailAndPassword(auth, email, password);
+
+        showStatus("Du bist eingeloggt.");
+      } catch (error) {
+        showStatus("Fehler beim Einloggen:\n" + error.message);
+      }
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        showStatus("Du wurdest ausgeloggt.");
+      } catch (error) {
+        showStatus("Fehler beim Ausloggen:\n" + error.message);
+      }
+    });
+
+    onAuthStateChanged(auth, (user) => {
+      clearStatus();
+
+      if (user) {
+        authSection.classList.add("hidden");
+        userSection.classList.remove("hidden");
+        userEmail.textContent = "Eingeloggt als: " + user.email;
+      } else {
+        authSection.classList.remove("hidden");
+        userSection.classList.add("hidden");
+        userEmail.textContent = "";
+      }
+    });
+  </script>
 </body>
 </html>
