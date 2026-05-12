@@ -1,48 +1,17 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Test Website</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 80px;
-    }
-
-    button {
-      padding: 20px 30px;
-      font-size: 24px;
-      border-radius: 12px;
-      border: none;
-      background: #6366f1;
-      color: white;
-      cursor: pointer;
-    }
-
-    #text {
-      margin-top: 30px;
-      font-size: 24px;
-      color: #22c55e;
-    }
-  </style>
+  <title>TEST</title>
 </head>
+<body style="background:red; color:white; font-family:Arial; text-align:center; padding:80px;">
 
-<body>
-  <h1>JavaScript Test</h1>
+  <h1>TESTSEITE 12345</h1>
+  <p>Wenn du das siehst, lädt GitHub die richtige index.html.</p>
 
-  <button onclick="testButton()">Klick mich</button>
+  <button onclick="document.body.style.background='green'">
+    Hintergrund grün machen
+  </button>
 
-  <p id="text"></p>
-
-  <script>
-    alert("index.html JavaScript funktioniert");
-
-    function testButton() {
-      document.getElementById("text").innerText = "Der Button funktioniert!";
-    }
-  </script>
 </body>
 </html>
