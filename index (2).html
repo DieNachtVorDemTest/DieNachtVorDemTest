@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Premium Zugang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --card-light: #1f2937;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --border: #374151;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 520px;
+      background: rgba(17, 24, 39, 0.96);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.18);
+      color: #c7d2fe;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 34px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .price {
+      margin: 24px 0;
+      padding: 20px;
+      background: var(--card-light);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .price strong {
+      display: block;
+      font-size: 36px;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      margin: 9px 0;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: var(--primary);
+    }
+
+    button, .link-button {
+      width: 100%;
+      margin-top: 12px;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    button:hover, .link-button:hover {
+      background: var(--primary-dark);
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .secondary:hover {
+      background: var(--card-light);
+    }
+
+    .success {
+      background: var(--success);
+    }
+
+    .success:hover {
+      background: #15803d;
+    }
+
+    .danger {
+      background: var(--danger);
+    }
+
+    .danger:hover {
+      background: #b91c1c;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #020617;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+      white-space: pre-line;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <span class="badge">Premium Zugang</span>
+
+    <h1>Premium freischalten</h1>
+    <p>
+      Erstelle ein Konto, bezahle einmalig CHF 17.– und erhalte danach Zugriff auf den geschützten Premium-Bereich.
+    </p>
+
+    <section id="auth-section">
+      <h2>Login / Registrierung</h2>
+
+      <input id="email" type="email" placeholder="E-Mail">
+      <input id="password" type="password" placeholder="Passwort">
+
+      <button id="register-btn">Konto erstellen</button>
+      <button id="login-btn" class="secondary">Einloggen</button>
+
+      <p class="small">
+        Dein Konto ist wichtig, damit der Premium-Zugang auch nach dem Schliessen der Website erhalten bleibt.
+      </p>
+    </section>
+
+    <section id="user-section" class="hidden">
+      <h2>Dein Konto</h2>
+      <p id="user-email"></p>
+
+      <div class="price">
+        <strong>CHF 17.–</strong>
+        <span>Einmalige Zahlung für Premium-Zugang</span>
+      </div>
+
+      <button id="pay-btn" class="success">Jetzt Premium kaufen</button>
+      <a href="premium.html" class="link-button secondary">Zum Premium-Bereich</a>
+      <button id="logout-btn" class="danger">Ausloggen</button>
+    </section>
+
+    <div id="status" class="status hidden"></div>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
