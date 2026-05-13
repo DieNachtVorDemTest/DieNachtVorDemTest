@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Premium Bereich - Die Nacht vor dem Test</title>
+  <title>Premium Bereich - Lernhilfe Gymnasium</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -343,7 +343,7 @@
       <div>
         <span class="badge">Premium Bereich</span>
         <h1>Lernhilfe Gymnasium</h1>
-          <p class="small">Die Nacht vor dem Test</p>
+        <p class="small">Die Nacht vor dem Test</p>
         <p id="user-info">Zugriff wird geprüft...</p>
       </div>
 
@@ -372,7 +372,7 @@
         <div id="gym-grid" class="gym-grid"></div>
       </div>
 
-      <div id="material-view" class="material-view hidden" data-watermark="">
+      <div id="material-view" class="material-view hidden" data-watermark="Lernhilfe Gymnasium">
         <div class="material-header">
           <button class="secondary" onclick="backToGym()">Zurück zu GYM1–GYM4</button>
           <h2 id="material-title">Material</h2>
@@ -420,21 +420,28 @@
     const materialTitle = document.getElementById("material-title");
     const materialContent = document.getElementById("material-content");
 
-    let currentSubject = "";
-    let currentUserEmail = "";
+    const loadedSubjectScripts = {};
 
     const subjects = [
-      "Mathematik",
-      "Anwendung der Mathematik",
-      "Physik",
-      "Informatik",
-      "Deutsch",
-      "Französisch",
-      "Englisch",
-      "Geografie",
-      "Biologie",
-      "Chemie"
+      { name: "Mathematik", key: "mathematik" },
+      { name: "Anwendung der Mathematik", key: "anwendung-mathematik" },
+      { name: "Physik", key: "physik" },
+      { name: "Informatik", key: "informatik" },
+      { name: "Deutsch", key: "deutsch" },
+      { name: "Französisch", key: "franzoesisch" },
+      { name: "Englisch", key: "englisch" },
+      { name: "Geografie", key: "geografie" },
+      { name: "Biologie", key: "biologie" },
+      { name: "Chemie", key: "chemie" }
     ];
+
+    const availableContent = {
+      "mathematik-gym1": {
+        file: "subjects/mathematik-gym1.js",
+        renderFunction: "render_mathematik_gym1",
+        description: "Themen: Trigonometrie, quadratische Funktionen"
+      }
+    };
 
     function setStatus(message) {
       statusBox.textContent = message;
@@ -446,49 +453,29 @@
       premiumContent.classList.add("hidden");
     }
 
-    function showPremium(email) {
-      currentUserEmail = email;
-      userInfo.textContent = "Eingeloggt als: " + email;
+    function showPremium() {
+      userInfo.textContent = "Eingeloggt";
       lockedBox.classList.add("hidden");
       premiumContent.classList.remove("hidden");
-      document.getElementById("material-view").setAttribute("data-watermark", email + " · Die Nacht vor dem Test");
+      materialView.setAttribute("data-watermark", "Lernhilfe Gymnasium");
       renderSubjects();
     }
 
-    function openFolder(subject) {
-  currentSubject = subject;
-  selectedSubjectTitle.textContent = subject;
+    function renderSubjects() {
+      subjectsGrid.innerHTML = "";
+      subjectsGrid.classList.remove("hidden");
+      folderView.classList.add("hidden");
+      materialView.classList.add("hidden");
 
-  subjectsGrid.classList.add("hidden");
-  folderView.classList.remove("hidden");
-  materialView.classList.add("hidden");
-
-  gymGrid.innerHTML = "";
-
-  ["GYM1", "GYM2", "GYM3", "GYM4"].forEach(function(level) {
-    const card = document.createElement("div");
-    card.className = "gym-card";
-    card.onclick = function() {
-      openMaterial(subject, level);
-    };
-
-    let availableText = "Noch keine Inhalte hinzugefügt";
-
-    if (subject === "Mathematik" && level === "GYM1") {
-      availableText = "Themen: Trigonometrie, quadratische Funktionen";
-    }
-
-    card.innerHTML = `
-      <h3>${level}</h3>
-      <p>${availableText}</p>
-    `;
-
-    gymGrid.appendChild(card);
-  });
-}
+      subjects.forEach(function(subject) {
+        const card = document.createElement("div");
+        card.className = "subject-card";
+        card.onclick = function() {
+          openFolder(subject);
+        };
 
         card.innerHTML = `
-          <h3>${subject}</h3>
+          <h3>${subject.name}</h3>
           <p>Öffnen und nach GYM1–GYM4 sortieren</p>
         `;
 
@@ -497,29 +484,28 @@
     }
 
     function openFolder(subject) {
-      currentSubject = subject;
-      selectedSubjectTitle.textContent = subject;
+      selectedSubjectTitle.textContent = subject.name;
+
       subjectsGrid.classList.add("hidden");
       folderView.classList.remove("hidden");
       materialView.classList.add("hidden");
 
       gymGrid.innerHTML = "";
 
-      ["GYM1", "GYM2", "GYM3", "GYM4"].forEach(function(level) {
+      ["gym1", "gym2", "gym3", "gym4"].forEach(function(levelKey) {
+        const displayLevel = levelKey.toUpperCase();
+        const contentKey = subject.key + "-" + levelKey;
+        const contentInfo = availableContent[contentKey];
+
         const card = document.createElement("div");
         card.className = "gym-card";
         card.onclick = function() {
-          openMaterial(subject, level);
+          openMaterial(subject, levelKey);
         };
 
-        const availableText =
-          subject === "Mathematik" && level === "GYM1"
-            ? "Eigenes Übungsset: Trigonometrie, Dreiecke, Vermessung, Raumgeometrie"
-            : "Noch keine Inhalte hinzugefügt";
-
         card.innerHTML = `
-          <h3>${level}</h3>
-          <p>${availableText}</p>
+          <h3>${displayLevel}</h3>
+          <p>${contentInfo ? contentInfo.description : "Noch keine Inhalte hinzugefügt"}</p>
         `;
 
         gymGrid.appendChild(card);
@@ -537,418 +523,87 @@
       folderView.classList.remove("hidden");
     }
 
-    function openMaterial(subject, level) {
-      function renderMatheGym1Topics() {
-  materialTitle.textContent = "Mathematik · GYM1 · Themengebiete";
+    function setMaterialTitle(title) {
+      materialTitle.textContent = title;
+    }
 
-  materialContent.innerHTML = 
-    <div class="notice">
-      Alle Inhalte sind eigenständig erstellte Übungsaufgaben. Sie sind keine Originalprüfungen,
-      keine Scans und kein offizielles Schulmaterial.
-    </div>
+    function setMaterialContent(html) {
+      materialContent.innerHTML = html;
+    }
 
-    <div class="subjects-grid">
-      <div class="subject-card" onclick="renderTrigonometrieGym1()">
-        <h3>Trigonometrie am allgemeinen Dreieck</h3>
-        <p>Sinussatz, Kosinussatz, Höhenmessungen und Vermessungsaufgaben.</p>
-      </div>
+    function openMaterial(subject, levelKey) {
+      const displayLevel = levelKey.toUpperCase();
+      const contentKey = subject.key + "-" + levelKey;
+      const contentInfo = availableContent[contentKey];
 
-      <div class="subject-card" onclick="renderQuadratischeFunktionenGym1()">
-        <h3>Quadratische Funktionen und Gleichungen</h3>
-        <p>Parabeln, Scheitelpunkt, Nullstellen, Gleichungen und Anwendungsaufgaben.</p>
-      </div>
-    </div>
-  ;
-}
+      folderView.classList.add("hidden");
+      materialView.classList.remove("hidden");
+      materialView.scrollTop = 0;
 
-function backToTopics() {
-  renderMatheGym1Topics();
-}
-  folderView.classList.add("hidden");
-  materialView.classList.remove("hidden");
-  materialView.scrollTop = 0;
-
-  materialTitle.textContent = subject + " · " + level;
-
-  if (subject === "Mathematik" && level === "GYM1") {
-    renderMatheGym1Topics();
-  } else {
-    materialContent.innerHTML = `
-      <div class="exercise-card">
-        <h3>Noch keine Inhalte</h3>
-        <p>Für ${subject} · ${level} wurden noch keine Materialien hinzugefügt.</p>
-      </div>
-    `;
-  }
-}
-    function renderQuadratischeFunktionenGym1() {
-  materialTitle.textContent = "Mathematik · GYM1 · Quadratische Funktionen und Gleichungen";
-
-  materialContent.innerHTML = 
-    <button class="secondary" onclick="backToTopics()">Zurück zu den Themengebieten</button>
-
-    <div class="notice">
-      Dieses Übungsset wurde eigenständig erstellt. Es übernimmt keine Originalaufgaben, keine Originaldiagramme,
-      keine Zahlenwerte und keine Formulierungen aus einer Schulprüfung. Es trainiert nur dasselbe Stoffgebiet.
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 1 · Parabel verschieben und spiegeln</h3>
-      <p>
-        Gegeben ist die Normalparabel y = x².
-      </p>
-      <ol type="a">
-        <li>Verschiebe die Parabel 4 Einheiten nach links und 3 Einheiten nach oben. Gib die Funktionsgleichung an.</li>
-        <li>Spiegle diese neue Parabel an der x-Achse. Gib die neue Funktionsgleichung an.</li>
-        <li>Bestimme den Scheitelpunkt der gespiegelten Parabel.</li>
-        <li>Entscheide, ob die Parabel nach oben oder nach unten geöffnet ist.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 2 · Scheitelpunktform verstehen</h3>
-      <p>
-        Eine quadratische Funktion ist gegeben durch:
-      </p>
-      <div class="formula">f(x) = 2(x - 3)² - 5</div>
-      <ol type="a">
-        <li>Bestimme den Scheitelpunkt.</li>
-        <li>Bestimme die Symmetrieachse.</li>
-        <li>Berechne f(0).</li>
-        <li>Untersuche, ob die Funktion Nullstellen besitzt.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 3 · Von der Scheitelpunktform zur allgemeinen Form</h3>
-      <p>
-        Forme die Funktion in die allgemeine Form ax² + bx + c um:
-      </p>
-      <div class="formula">g(x) = -1.5(x + 2)² + 6</div>
-      <ol type="a">
-        <li>Multipliziere die Klammer aus.</li>
-        <li>Gib a, b und c an.</li>
-        <li>Bestimme den y-Achsenabschnitt.</li>
-        <li>Beschreibe die Lage des Scheitelpunkts.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 4 · Gerade und Parabel schneiden sich</h3>
-      <p>
-        Gegeben sind die Parabel und die Gerade:
-      </p>
-      <div class="formula">p(x) = x² - 4x + 1</div>
-      <div class="formula">h(x) = 2x - 7</div>
-      <ol type="a">
-        <li>Stelle eine Gleichung auf, mit der man die Schnittpunkte berechnet.</li>
-        <li>Berechne die x-Koordinaten der Schnittpunkte.</li>
-        <li>Berechne die zugehörigen y-Koordinaten.</li>
-        <li>Gib die Schnittpunkte als Koordinatenpaare an.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 5 · Quadratische Gleichungen lösen</h3>
-      <p>
-        Löse die folgenden Gleichungen mit einem geeigneten Verfahren.
-      </p>
-      <ol type="a">
-        <li>x² - 9x + 20 = 0</li>
-        <li>3x² = 27</li>
-        <li>2x² + 5x - 3 = 0</li>
-        <li>(x - 4)(x + 1) = 12</li>
-        <li>x² + 6x + 9 = 0</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 6 · Wahr oder falsch?</h3>
-      <p>
-        Entscheide, ob die Aussagen wahr oder falsch sind. Begründe kurz.
-      </p>
-      <ol type="a">
-        <li>Jede quadratische Funktion hat genau zwei Nullstellen.</li>
-        <li>Eine Parabel mit negativem Streckfaktor ist nach unten geöffnet.</li>
-        <li>Die Symmetrieachse einer Parabel verläuft immer durch den Scheitelpunkt.</li>
-        <li>Wenn eine quadratische Gleichung genau eine Lösung hat, berührt der Graph die x-Achse.</li>
-        <li>Jede Parabel ist symmetrisch zur y-Achse.</li>
-        <li>Eine Funktion in der Form f(x) = a(x - s)² + t hat den Scheitelpunkt S(s | t).</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 7 · Parameteraufgabe</h3>
-      <p>
-        Gegeben ist die Gleichung:
-      </p>
-      <div class="formula">x² - 2kx + 16 = 0</div>
-      <ol type="a">
-        <li>Für welche Werte von k hat die Gleichung genau eine Lösung?</li>
-        <li>Für welche Werte von k hat die Gleichung zwei verschiedene Lösungen?</li>
-        <li>Für welche Werte von k hat die Gleichung keine reelle Lösung?</li>
-      </ol>
-      <div class="formula">
-        Tipp: Verwende die Diskriminante.
-      </div>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 8 · Flugbahn eines Balls</h3>
-      <p>
-        Die Höhe eines Balls wird näherungsweise beschrieben durch:
-      </p>
-      <div class="formula">f(x) = -0.03x² + 1.2x + 1.5</div>
-      <p>
-        Dabei ist x die horizontale Entfernung in Metern und f(x) die Höhe in Metern.
-      </p>
-      <ol type="a">
-        <li>Aus welcher Höhe wird der Ball geworfen?</li>
-        <li>Nach welcher horizontalen Entfernung erreicht der Ball seine maximale Höhe?</li>
-        <li>Wie hoch ist der Ball maximal?</li>
-        <li>Bei welcher Entfernung trifft der Ball ungefähr wieder auf den Boden?</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 9 · Parabel aus Eigenschaften bestimmen</h3>
-      <p>
-        Eine Parabel hat den Scheitelpunkt S(2 | -3) und geht durch den Punkt P(4 | 5).
-      </p>
-      <ol type="a">
-        <li>Setze die Scheitelpunktform f(x) = a(x - s)² + t an.</li>
-        <li>Bestimme den Streckfaktor a.</li>
-        <li>Gib die Funktionsgleichung an.</li>
-        <li>Berechne die Nullstellen der Funktion.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 10 · Zuordnung von Graphen und Gleichungen</h3>
-      <p>
-        Ordne jeder Beschreibung eine passende Gleichung zu.
-      </p>
-
-      <p><strong>Beschreibungen:</strong></p>
-      <ol type="A">
-        <li>Parabel nach oben geöffnet, Scheitelpunkt bei S(0 | -4).</li>
-        <li>Parabel nach unten geöffnet, Scheitelpunkt bei S(3 | 2).</li>
-        <li>Parabel nach oben geöffnet, berührt die x-Achse bei x = -2.</li>
-        <li>Parabel nach unten geöffnet, y-Achsenabschnitt 5.</li>
-      </ol>
-
-      <p><strong>Gleichungen:</strong></p>
-      <ol type="1">
-        <li>f(x) = (x + 2)²</li>
-        <li>g(x) = x² - 4</li>
-        <li>h(x) = -(x - 3)² + 2</li>
-        <li>k(x) = -x² + 5</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 11 · Fehler finden</h3>
-      <p>
-        Ein Schüler löst die Gleichung x² - 6x + 5 = 0 und schreibt:
-      </p>
-      <div class="formula">
-        x² - 6x + 5 = 0<br>
-        x² - 6x = -5<br>
-        x(x - 6) = -5<br>
-        also x = -5 oder x - 6 = -5
-      </div>
-      <ol type="a">
-        <li>Erkläre, warum dieser Lösungsweg falsch ist.</li>
-        <li>Löse die Gleichung korrekt.</li>
-        <li>Nenne eine Methode, mit der man den Fehler vermeiden kann.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <h3>Aufgabe 12 · Modellieren mit einer Parabel</h3>
-      <p>
-        Ein Torbogen wird durch eine Parabel beschrieben. Der höchste Punkt liegt bei S(0 | 4).
-        Am Boden ist der Bogen 6 m breit.
-      </p>
-      <ol type="a">
-        <li>Welche Nullstellen hat die Parabel?</li>
-        <li>Bestimme eine passende Funktionsgleichung in Scheitelpunktform.</li>
-        <li>Berechne die Höhe des Bogens 1 m neben der Mitte.</li>
-      </ol>
-    </div>
-  ;
-}
-
-    function renderMatheGym1() {
-      materialContent.innerHTML = `
-        <div class="notice">
-          Dieses Übungsset ist eigenständig erstellt. Es übernimmt keine Originalaufgaben, keine Originaldiagramme,
-          keine Reihenfolge und keine Formulierungen aus einer Schulprüfung. Es trainiert nur dasselbe Stoffgebiet.
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 1 · Winkel aus Sinus und Kosinus</h3>
-          <p>Bestimme alle Winkel zwischen 0° und 180°. Runde auf eine Dezimalstelle.</p>
-          <ol type="a">
-            <li>sin(α) = 0.64</li>
-            <li>sin(β) = 0.91</li>
-            <li>cos(γ) = -0.38</li>
-            <li>cos(δ) = 0.27</li>
-          </ol>
-          <div class="formula">Tipp: Achte darauf, in welchem Quadranten der Winkel liegt.</div>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 2 · Sinussatz im allgemeinen Dreieck</h3>
-          <p>
-            In einem Dreieck gilt die Standardbezeichnung:
-            Seite a liegt gegenüber von α, b gegenüber von β und c gegenüber von γ.
-          </p>
-          <ol type="a">
-            <li>Gegeben: a = 9.5, b = 12.8, β = 61°. Berechne α.</li>
-            <li>Gegeben: a = 16.2, b = 10.4, β = 28°. Berechne α. Prüfe, ob mehrere Lösungen möglich sind.</li>
-            <li>Gegeben: α = 47°, β = 73°, a = 11.6. Berechne γ, b und c.</li>
-          </ol>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 3 · Der mehrdeutige Fall beim Sinussatz</h3>
-          <p>
-            Bei den folgenden Dreiecken können null, eine oder zwei Lösungen entstehen.
-            Entscheide jeweils, wie viele Dreiecke möglich sind, und berechne die fehlenden Winkel.
-          </p>
-          <ol type="a">
-            <li>a = 7.2, b = 13.0, α = 31°</li>
-            <li>a = 15.5, b = 9.8, α = 102°</li>
-            <li>a = 8.6, b = 10.1, α = 54°</li>
-          </ol>
-          <div class="formula">Tipp: Vergleiche zuerst die mögliche Höhe h = b · sin(α).</div>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 4 · Kosinussatz: Drei Seiten gegeben</h3>
-          <p>Berechne die Innenwinkel des Dreiecks.</p>
-          <ol type="a">
-            <li>a = 6.4, b = 8.7, c = 10.2</li>
-            <li>a = 12.0, b = 12.0, c = 7.5</li>
-            <li>a = 5.8, b = 9.1, c = 11.3</li>
-          </ol>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 5 · Höhe eines Leuchtturms</h3>
-          <p>
-            Zwei Beobachtungspunkte P und Q liegen auf einer geraden Strandlinie.
-            Q liegt näher beim Leuchtturm als P. Die Distanz zwischen P und Q beträgt 720 m.
-            Von P aus beträgt der Höhenwinkel zur Spitze 11.8°, von Q aus 18.9°.
-          </p>
-          <p>Berechne die Höhe des Leuchtturms über der Strandlinie.</p>
-          <div class="formula">
-            Tipp: Setze x als horizontale Distanz von Q zum Leuchtturm und stelle zwei Tangensgleichungen auf.
+      if (!contentInfo) {
+        materialTitle.textContent = subject.name + " · " + displayLevel;
+        materialContent.innerHTML = `
+          <div class="exercise-card">
+            <h3>Noch keine Inhalte</h3>
+            <p>Für ${subject.name} · ${displayLevel} wurden noch keine Materialien hinzugefügt.</p>
           </div>
-        </div>
+        `;
+        return;
+      }
 
+      materialTitle.textContent = subject.name + " · " + displayLevel;
+      materialContent.innerHTML = `
         <div class="exercise-card">
-          <h3>Aufgabe 6 · Drohne über einem Sportplatz</h3>
-          <p>
-            Eine Drohne schwebt senkrecht über einem Punkt D auf dem Boden.
-            Zwei Schüler stehen an den Punkten A und B. Die Distanz AB beträgt 150 m.
-            Von A aus sieht man die Drohne unter einem Höhenwinkel von 38°,
-            von B aus unter einem Höhenwinkel von 52°.
-            Die Punkte A, B und D liegen auf einer Geraden, wobei D zwischen A und B liegt.
-          </p>
-          <ol type="a">
-            <li>Berechne die Höhe der Drohne.</li>
-            <li>Berechne die Entfernung von A zu D und von B zu D.</li>
-          </ol>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 7 · Dreieck in einem Raumkörper</h3>
-          <p>
-            Ein rechteckiger Raum ist 10 m lang, 6 m breit und 3 m hoch.
-            Es werden drei Punkte betrachtet:
-          </p>
-          <ul>
-            <li>A: untere vordere linke Ecke</li>
-            <li>B: untere hintere rechte Ecke</li>
-            <li>C: obere vordere rechte Ecke</li>
-          </ul>
-          <ol type="a">
-            <li>Berechne die drei Seitenlängen des Dreiecks ABC.</li>
-            <li>Berechne alle Innenwinkel des Dreiecks ABC.</li>
-          </ol>
-          <div class="formula">Tipp: Verwende zuerst Pythagoras im Raum und danach den Kosinussatz.</div>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 8 · Vermessung eines Geländepunkts</h3>
-          <p>
-            Eine Grundlinie AB ist 1.4 km lang. Von A und B aus wird ein Punkt C angepeilt.
-            Es gelten:
-          </p>
-          <ul>
-            <li>∠CAB = 62.5°</li>
-            <li>∠CBA = 71.3°</li>
-          </ul>
-          <ol type="a">
-            <li>Berechne ∠ACB.</li>
-            <li>Berechne die Distanzen AC und BC.</li>
-          </ol>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 9 · Zwei Zielpunkte im Gelände</h3>
-          <p>
-            Auf einer geraden Messlinie liegen die Punkte A und B mit AB = 2.1 km.
-            Von beiden Punkten aus werden zwei Zielpunkte C und D gemessen.
-          </p>
-          <ul>
-            <li>∠CAB = 49.8°, ∠CBA = 80.6°</li>
-            <li>∠DAB = 117.4°, ∠DBA = 34.2°</li>
-          </ul>
-          <ol type="a">
-            <li>Berechne die Distanzen von A und B zu C.</li>
-            <li>Berechne die Distanzen von A und B zu D.</li>
-            <li>Beschreibe, wie man die Distanz CD bestimmen könnte.</li>
-          </ol>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 10 · Gemischte Abschlussaufgabe</h3>
-          <p>
-            Ein Dreieck besitzt die Seiten a = 13.4 und c = 17.2.
-            Der eingeschlossene Winkel β beträgt 58°.
-          </p>
-          <ol type="a">
-            <li>Berechne die Seite b.</li>
-            <li>Berechne die Winkel α und γ.</li>
-            <li>Kontrolliere, ob die Winkelsumme 180° ergibt.</li>
-          </ol>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 11 · Theoriefrage</h3>
-          <p>
-            Erkläre in eigenen Worten den Unterschied zwischen Sinussatz und Kosinussatz.
-            Gehe besonders darauf ein, wann man welchen Satz typischerweise verwendet.
-          </p>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 12 · Fehleranalyse</h3>
-          <p>
-            Ein Schüler berechnet bei einem Dreieck mit sin(α) = 0.76 nur α = 49.5°.
-            Er vergisst eine zweite mögliche Lösung.
-          </p>
-          <ol type="a">
-            <li>Welche zweite Lösung fehlt?</li>
-            <li>Warum ist diese zweite Lösung im Bereich 0° bis 180° ebenfalls möglich?</li>
-            <li>Wann wäre eine solche zweite Lösung in einem konkreten Dreieck trotzdem nicht erlaubt?</li>
-          </ol>
+          <h3>Inhalt wird geladen...</h3>
+          <p>Bitte kurz warten.</p>
         </div>
       `;
+
+      loadSubjectScript(contentInfo.file, contentInfo.renderFunction);
     }
+
+    function loadSubjectScript(file, renderFunctionName) {
+      if (loadedSubjectScripts[file]) {
+        runRenderFunction(renderFunctionName);
+        return;
+      }
+
+      const script = document.createElement("script");
+      script.src = file;
+      script.onload = function() {
+        loadedSubjectScripts[file] = true;
+        runRenderFunction(renderFunctionName);
+      };
+
+      script.onerror = function() {
+        materialContent.innerHTML = `
+          <div class="exercise-card">
+            <h3>Datei konnte nicht geladen werden</h3>
+            <p>Die Datei <strong>${file}</strong> wurde nicht gefunden oder enthält einen Fehler.</p>
+          </div>
+        `;
+      };
+
+      document.body.appendChild(script);
+    }
+
+    function runRenderFunction(renderFunctionName) {
+      if (typeof window[renderFunctionName] === "function") {
+        window[renderFunctionName]();
+      } else {
+        materialContent.innerHTML = `
+          <div class="exercise-card">
+            <h3>Render-Funktion fehlt</h3>
+            <p>Die Funktion <strong>${renderFunctionName}</strong> wurde nicht gefunden.</p>
+          </div>
+        `;
+      }
+    }
+
+    window.closeFolder = closeFolder;
+    window.backToGym = backToGym;
+    window.setMaterialTitle = setMaterialTitle;
+    window.setMaterialContent = setMaterialContent;
 
     document.addEventListener("contextmenu", function(event) {
       event.preventDefault();
@@ -989,7 +644,7 @@ function backToTopics() {
         const userData = userDoc.data();
 
         if (userData.premium === true) {
-          showPremium(user.email);
+          showPremium();
           setStatus("Zugriff erlaubt.");
         } else {
           showLocked("Du hast noch keinen Premium-Zugang.");
