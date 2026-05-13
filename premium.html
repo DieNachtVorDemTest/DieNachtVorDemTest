@@ -570,6 +570,7 @@
 
       const script = document.createElement("script");
       script.src = file;
+
       script.onload = function() {
         loadedSubjectScripts[file] = true;
         runRenderFunction(renderFunctionName);
