@@ -588,7 +588,7 @@
       }
 
       const script = document.createElement("script");
-      script.src = file;
+      script.src = file + "?v=" + Date.now();
 
       script.onload = function() {
         loadedSubjectScripts[file] = true;
