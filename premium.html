@@ -227,7 +227,7 @@
       background: rgba(2, 6, 23, 0.88);
       border: 1px solid rgba(148, 163, 184, 0.28);
       border-radius: 18px;
-      padding: 24px;
+      padding: 0;
       max-height: 78vh;
       overflow-y: auto;
       scroll-behavior: smooth;
@@ -235,14 +235,14 @@
     }
 
     .material-view::before {
-      content: attr(data-watermark);
+      content: "Lernhilfe Gymnasium";
       position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) rotate(-24deg);
       font-size: 42px;
       font-weight: bold;
-      color: rgba(255, 255, 255, 0.045);
+      color: rgba(255, 255, 255, 0.055);
       pointer-events: none;
       z-index: 0;
       white-space: nowrap;
@@ -250,22 +250,16 @@
 
     .material-header {
       position: sticky;
-      top: -24px;
-      z-index: 50;
-      background: #020617;
+      top: 0;
+      z-index: 5;
+      background: rgba(2, 6, 23, 0.98);
       border-bottom: 1px solid #374151;
-      margin: -24px -24px 24px -24px;
-      padding: 24px;
-      border-radius: 18px 18px 0 0;
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
+      padding: 18px 24px;
+      margin-bottom: 18px;
     }
 
-    .material-header h2 {
-      margin-top: 18px;
-      margin-bottom: 10px;
-    }
-
-    #material-content {
+    .material-body {
+      padding: 0 24px 24px;
       position: relative;
       z-index: 1;
     }
@@ -284,10 +278,6 @@
     .exercise-card h3 {
       margin-top: 0;
       font-size: 24px;
-    }
-
-    .exercise-card strong {
-      color: #ffffff;
     }
 
     .exercise-card ol,
@@ -323,57 +313,47 @@
       color: #9ca3af;
     }
 
-    .exercise-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 10px;
-    }
-
-    .exercise-top h3 {
-      margin: 0;
-      flex: 1;
-    }
-
     .info-btn {
       width: 34px;
       height: 34px;
-      min-width: 34px;
       border-radius: 999px;
-      border: 1px solid rgba(129, 140, 248, 0.6);
-      background: rgba(99, 102, 241, 0.18);
-      color: #e0e7ff;
+      padding: 0;
+      margin-left: 10px;
+      background: #334155;
+      color: white;
       font-weight: bold;
-      font-size: 18px;
-      cursor: pointer;
-      padding: 0;
-      margin: 0;
-      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .info-btn:hover {
-      background: rgba(99, 102, 241, 0.35);
-    }
-
-    .info-box {
-      margin: 14px 0 18px;
-      padding: 14px 16px;
-      border-radius: 14px;
+    .hint-box {
+      display: none;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 12px;
       background: rgba(14, 165, 233, 0.12);
-      border: 1px solid rgba(125, 211, 252, 0.35);
+      border: 1px solid rgba(56, 189, 248, 0.35);
       color: #bae6fd;
-      line-height: 1.65;
-      font-size: 14px;
+      line-height: 1.6;
     }
 
-    .info-box strong {
-      color: #ffffff;
+    .solution-box {
+      display: none;
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      color: #bbf7d0;
+      line-height: 1.6;
     }
 
-    .info-box ul {
-      margin: 8px 0 0 18px;
-      padding: 0;
+    .button-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
     }
 
     @media print {
@@ -422,24 +402,22 @@
     </section>
 
     <section id="premium-content" class="hidden">
-      <div id="subjects-area">
-        <p>
-          Wähle ein Fach aus. Danach findest du die Inhalte geordnet nach GYM1, GYM2, GYM3 und GYM4.
-        </p>
+      <p>
+        Wähle ein Fach aus. Danach findest du die Inhalte geordnet nach GYM1, GYM2, GYM3 und GYM4.
+      </p>
 
-        <div id="subjects-grid" class="subjects-grid"></div>
-      </div>
+      <div id="subjects-grid" class="subjects-grid"></div>
 
       <div id="folder-view" class="folder-view hidden">
         <div class="folder-header">
           <h2 id="selected-subject-title">Fach</h2>
-          <button class="secondary" onclick="backToSubjects()">Zurück zu allen Fächern</button>
+          <button class="secondary" onclick="closeFolder()">Zurück zu allen Fächern</button>
         </div>
 
         <div id="gym-grid" class="gym-grid"></div>
       </div>
 
-      <div id="material-view" class="material-view hidden" data-watermark="Lernhilfe Gymnasium">
+      <div id="material-view" class="material-view hidden">
         <div class="material-header">
           <button class="secondary" onclick="backToGym()">Zurück zu GYM1–GYM4</button>
           <h2 id="material-title">Material</h2>
@@ -448,7 +426,9 @@
           </p>
         </div>
 
-        <div id="material-content"></div>
+        <div class="material-body">
+          <div id="material-content"></div>
+        </div>
       </div>
     </section>
 
@@ -479,65 +459,24 @@
     const premiumContent = document.getElementById("premium-content");
     const statusBox = document.getElementById("status");
     const logoutBtn = document.getElementById("logout-btn");
-
-    const subjectsArea = document.getElementById("subjects-area");
     const subjectsGrid = document.getElementById("subjects-grid");
     const folderView = document.getElementById("folder-view");
     const gymGrid = document.getElementById("gym-grid");
     const selectedSubjectTitle = document.getElementById("selected-subject-title");
-
     const materialView = document.getElementById("material-view");
     const materialTitle = document.getElementById("material-title");
     const materialContent = document.getElementById("material-content");
 
-    const loadedSubjectScripts = {};
+    let currentSubject = "";
 
     const subjects = [
-      { name: "Mathematik", key: "mathematik" },
-      { name: "Anwendung der Mathematik", key: "anwendung-mathematik" },
-      { name: "Physik", key: "physik" },
-      { name: "Deutsch", key: "deutsch" },
-      { name: "Französisch", key: "franzoesisch" },
-      { name: "Englisch", key: "englisch" }
+      "Mathematik",
+      "Anwendung der Mathematik",
+      "Physik",
+      "Deutsch",
+      "Französisch",
+      "Englisch"
     ];
-
-    const availableContent = {
-  "mathematik-gym1": {
-    file: "subjects/mathematik-gym1.js",
-    renderFunction: "render_mathematik_gym1",
-    description: "Themen: Trigonometrie, quadratische Funktionen"
-  },
-
-  "mathematik-gym2": {
-    file: "subjects/mathematik-gym2.js",
-    renderFunction: "render_mathematik_gym2",
-    description: "Themen: Logarithmen, Exponentialfunktionen, Änderungsraten, Ableitung, Symmetrie"
-  },
-
-  "deutsch-gym1": {
-    file: "subjects/deutsch-gym1.js",
-    renderFunction: "render_deutsch_gym1",
-    description: "Themen: Wortarten, Pronomen, Textsorten, Syntax, Satzglieder, Nebensätze"
-  },
-
-  "deutsch-gym4": {
-    file: "subjects/deutsch-gym4.js",
-    renderFunction: "render_deutsch_gym4",
-    description: "Themen: Literaturepochen, Realismus, Romantik, Klassik, Moderne"
-  },
-
-  "franzoesisch-gym1": {
-    file: "subjects/franzoesisch-gym1.js",
-    renderFunction: "render_franzoesisch_gym1",
-    description: "Themen: modes, questions, pronoms, impératif, participe présent, gérondif, passif, subjonctif"
-  },
-
-  "englisch-gym1": {
-    file: "subjects/englisch-gym1.js",
-    renderFunction: "render_englisch_gym1",
-    description: "Themen: Vocabulary, word families, present perfect, comparatives"
-  }
-};
 
     function setStatus(message) {
       statusBox.textContent = message;
@@ -549,19 +488,15 @@
       premiumContent.classList.add("hidden");
     }
 
-    function showPremium() {
+    function showPremium(email) {
       userInfo.textContent = "Eingeloggt";
       lockedBox.classList.add("hidden");
       premiumContent.classList.remove("hidden");
-      materialView.setAttribute("data-watermark", "Lernhilfe Gymnasium");
       renderSubjects();
     }
 
     function renderSubjects() {
       subjectsGrid.innerHTML = "";
-      subjectsArea.classList.remove("hidden");
-      folderView.classList.add("hidden");
-      materialView.classList.add("hidden");
 
       subjects.forEach(function(subject) {
         const card = document.createElement("div");
@@ -570,148 +505,271 @@
           openFolder(subject);
         };
 
-        card.innerHTML = `
-          <h3>${subject.name}</h3>
-          <p>Öffnen und nach GYM1–GYM4 sortieren</p>
-        `;
+        card.innerHTML =
+          "<h3>" + subject + "</h3>" +
+          "<p>Öffnen und nach GYM1–GYM4 sortieren</p>";
 
         subjectsGrid.appendChild(card);
       });
     }
 
     function openFolder(subject) {
-      selectedSubjectTitle.textContent = subject.name;
+      currentSubject = subject;
+      selectedSubjectTitle.textContent = subject;
 
-      subjectsArea.classList.add("hidden");
+      subjectsGrid.classList.add("hidden");
       folderView.classList.remove("hidden");
       materialView.classList.add("hidden");
 
       gymGrid.innerHTML = "";
 
-      ["gym1", "gym2", "gym3", "gym4"].forEach(function(levelKey) {
-        const displayLevel = levelKey.toUpperCase();
-        const contentKey = subject.key + "-" + levelKey;
-        const contentInfo = availableContent[contentKey];
-
+      ["GYM1", "GYM2", "GYM3", "GYM4"].forEach(function(level) {
         const card = document.createElement("div");
         card.className = "gym-card";
         card.onclick = function() {
-          openMaterial(subject, levelKey);
+          openMaterial(subject, level);
         };
 
-        card.innerHTML = `
-          <h3>${displayLevel}</h3>
-          <p>${contentInfo ? contentInfo.description : "Noch keine Inhalte hinzugefügt"}</p>
-        `;
+        let availableText = "Noch keine Inhalte hinzugefügt";
+
+        if (subject === "Mathematik" && level === "GYM3") {
+          availableText = "Differentialrechnung, Kurvendiskussion, Exponentialfunktionen, Folgen";
+        }
+
+        card.innerHTML =
+          "<h3>" + level + "</h3>" +
+          "<p>" + availableText + "</p>";
 
         gymGrid.appendChild(card);
       });
     }
 
-    function backToSubjects() {
-      subjectsArea.classList.remove("hidden");
+    function closeFolder() {
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
+      subjectsGrid.classList.remove("hidden");
     }
 
     function backToGym() {
-      subjectsArea.classList.add("hidden");
       materialView.classList.add("hidden");
       folderView.classList.remove("hidden");
     }
 
-    function setMaterialTitle(title) {
-      materialTitle.textContent = title;
-    }
-
-    function setMaterialContent(html) {
-      materialContent.innerHTML = html;
-    }
-
-    function toggleInfo(id) {
-      const box = document.getElementById(id);
-      if (!box) return;
-      box.classList.toggle("hidden");
-    }
-
-    function openMaterial(subject, levelKey) {
-      const displayLevel = levelKey.toUpperCase();
-      const contentKey = subject.key + "-" + levelKey;
-      const contentInfo = availableContent[contentKey];
-
-      subjectsArea.classList.add("hidden");
+    function openMaterial(subject, level) {
       folderView.classList.add("hidden");
       materialView.classList.remove("hidden");
       materialView.scrollTop = 0;
 
-      if (!contentInfo) {
-        materialTitle.textContent = subject.name + " · " + displayLevel;
-        materialContent.innerHTML = `
-          <div class="exercise-card">
-            <h3>Noch keine Inhalte</h3>
-            <p>Für ${subject.name} · ${displayLevel} wurden noch keine Materialien hinzugefügt.</p>
-          </div>
-        `;
-        return;
-      }
-
-      materialTitle.textContent = subject.name + " · " + displayLevel;
-      materialContent.innerHTML = `
-        <div class="exercise-card">
-          <h3>Inhalt wird geladen...</h3>
-          <p>Bitte kurz warten.</p>
-        </div>
-      `;
-
-      loadSubjectScript(contentInfo.file, contentInfo.renderFunction);
-    }
-
-    function loadSubjectScript(file, renderFunctionName) {
-      const cacheSafeFile = file + "?v=" + Date.now();
-
-      if (loadedSubjectScripts[file]) {
-        runRenderFunction(renderFunctionName);
-        return;
-      }
-
-      const script = document.createElement("script");
-      script.src = cacheSafeFile;
-
-      script.onload = function() {
-        loadedSubjectScripts[file] = true;
-        runRenderFunction(renderFunctionName);
-      };
-
-      script.onerror = function() {
-        materialContent.innerHTML = `
-          <div class="exercise-card">
-            <h3>Datei konnte nicht geladen werden</h3>
-            <p>Die Datei <strong>${file}</strong> wurde nicht gefunden oder enthält einen Fehler.</p>
-          </div>
-        `;
-      };
-
-      document.body.appendChild(script);
-    }
-
-    function runRenderFunction(renderFunctionName) {
-      if (typeof window[renderFunctionName] === "function") {
-        window[renderFunctionName]();
+      if (subject === "Mathematik" && level === "GYM3") {
+        renderMatheGym3Topics();
       } else {
-        materialContent.innerHTML = `
-          <div class="exercise-card">
-            <h3>Render-Funktion fehlt</h3>
-            <p>Die Funktion <strong>${renderFunctionName}</strong> wurde nicht gefunden.</p>
-          </div>
-        `;
+        materialTitle.textContent = subject + " · " + level;
+        materialContent.innerHTML =
+          '<div class="exercise-card">' +
+          '<h3>Noch keine Inhalte</h3>' +
+          '<p>Für ' + subject + ' · ' + level + ' wurden noch keine Materialien hinzugefügt.</p>' +
+          '</div>';
       }
     }
 
-    window.backToSubjects = backToSubjects;
-    window.backToGym = backToGym;
-    window.setMaterialTitle = setMaterialTitle;
-    window.setMaterialContent = setMaterialContent;
-    window.toggleInfo = toggleInfo;
+    function renderMatheGym3Topics() {
+      materialTitle.textContent = "Mathematik · GYM3 · Themengebiete";
+
+      materialContent.innerHTML =
+        '<div class="notice">' +
+        'Alle Inhalte sind eigenständig erstellte Übungsaufgaben. Sie sind keine Originalprüfungen, keine Scans und kein offizielles Schulmaterial.' +
+        '</div>' +
+
+        '<div class="subjects-grid">' +
+          '<div class="subject-card" onclick="renderDifferentialrechnungGym3()">' +
+            '<h3>Differentialrechnung & Zahlenfolgen</h3>' +
+            '<p>Ableitungen, Tangenten, Kurvendiskussion, Exponentialfunktionen, Grenzwerte und Folgen.</p>' +
+          '</div>' +
+        '</div>';
+    }
+
+    function backToTopics() {
+      renderMatheGym3Topics();
+    }
+
+    function toggleBox(id) {
+      const box = document.getElementById(id);
+      if (!box) return;
+
+      if (box.style.display === "block") {
+        box.style.display = "none";
+      } else {
+        box.style.display = "block";
+      }
+    }
+
+    function renderDifferentialrechnungGym3() {
+      materialTitle.textContent = "Mathematik · GYM3 · Differentialrechnung & Zahlenfolgen";
+
+      materialContent.innerHTML =
+        '<button class="secondary" onclick="backToTopics()">Zurück zu den Themengebieten</button>' +
+
+        '<div class="notice">' +
+        'Dieses Übungsset ist vollständig neu formuliert und verwendet eigene Zahlenwerte, eigene Situationen und eigene Aufgabenstellungen. Es trainiert nur dieselben mathematischen Kompetenzen.' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 1 · Ableitungsregeln <button class="info-btn" onclick="toggleBox(\'h1\')">i</button></h3>' +
+          '<p>Berechnen Sie die Ableitungen der folgenden Funktionen.</p>' +
+          '<ol type="a">' +
+            '<li>f(x) = cos²(x)</li>' +
+            '<li>f(x) = x³ · e<sup>-2x</sup></li>' +
+            '<li>f(x) = 1 / x²</li>' +
+            '<li>f(x) = 1 / √x</li>' +
+          '</ol>' +
+          '<div id="h1" class="hint-box">Abstrakte Anleitung: Schreibe Potenzen zuerst als x-Potenzen. Bei Produkten brauchst du die Produktregel. Bei verketteten Funktionen brauchst du die Kettenregel.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s1\')">Lösung anzeigen</button></div>' +
+          '<div id="s1" class="solution-box">' +
+            'a) f′(x) = -2cos(x)sin(x)<br>' +
+            'b) f′(x) = 3x²e<sup>-2x</sup> - 2x³e<sup>-2x</sup> = e<sup>-2x</sup>(3x² - 2x³)<br>' +
+            'c) f′(x) = -2x<sup>-3</sup> = -2/x³<br>' +
+            'd) f′(x) = -1/(2x√x)' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 2 · Ableitung von Exponentialfunktionen <button class="info-btn" onclick="toggleBox(\'h2\')">i</button></h3>' +
+          '<p>Zeigen Sie mithilfe der Identität a<sup>x</sup> = e<sup>ln(a)·x</sup>, dass für a &gt; 0 gilt:</p>' +
+          '<div class="formula">f(x) = a<sup>x</sup>  ⇒  f′(x) = ln(a) · a<sup>x</sup></div>' +
+          '<div id="h2" class="hint-box">Abstrakte Anleitung: Ersetze a<sup>x</sup> durch eine e-Funktion. Danach leitest du mit der Kettenregel ab.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s2\')">Lösung anzeigen</button></div>' +
+          '<div id="s2" class="solution-box">' +
+            'a<sup>x</sup> = e<sup>ln(a)x</sup>. Ableiten ergibt: f′(x) = e<sup>ln(a)x</sup> · ln(a). Da e<sup>ln(a)x</sup> = a<sup>x</sup>, gilt f′(x) = ln(a)a<sup>x</sup>.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 3 · Vereinfachung vor dem Ableiten <button class="info-btn" onclick="toggleBox(\'h3\')">i</button></h3>' +
+          '<p>Gegeben ist die Funktion:</p>' +
+          '<div class="formula">f(x) = sin²(x) + cos²(x)</div>' +
+          '<ol type="a">' +
+            '<li>Berechnen Sie f′(x).</li>' +
+            '<li>Interpretieren Sie das Ergebnis.</li>' +
+          '</ol>' +
+          '<div id="h3" class="hint-box">Abstrakte Anleitung: Erkenne zuerst eine trigonometrische Identität. Danach ist die Ableitung sehr einfach.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s3\')">Lösung anzeigen</button></div>' +
+          '<div id="s3" class="solution-box">' +
+            'Da sin²(x) + cos²(x) = 1 gilt, ist f(x) = 1. Also f′(x) = 0. Interpretation: Die Funktion ist konstant.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 4 · Taylorpolynom <button class="info-btn" onclick="toggleBox(\'h4\')">i</button></h3>' +
+          '<p>Gegeben ist die Funktion:</p>' +
+          '<div class="formula">f(x) = ln(1 + x)</div>' +
+          '<p>Bestimmen Sie die ersten vier nichtverschwindenden Terme des Taylorpolynoms um a = 0.</p>' +
+          '<div id="h4" class="hint-box">Abstrakte Anleitung: Berechne f(0), f′(0), f″(0), f‴(0). Setze danach in die Taylorformel ein.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s4\')">Lösung anzeigen</button></div>' +
+          '<div id="s4" class="solution-box">' +
+            'Bekannt ist: ln(1+x) = x - x²/2 + x³/3 - x⁴/4 + ... Die ersten vier nichtverschwindenden Terme sind also x - x²/2 + x³/3 - x⁴/4.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 5 · Kurvendiskussion und Tangente <button class="info-btn" onclick="toggleBox(\'h5\')">i</button></h3>' +
+          '<p>Gegeben ist die Funktion:</p>' +
+          '<div class="formula">f(x) = x³ - 3x² - 4x + 12</div>' +
+          '<ol type="a">' +
+            '<li>Bestimmen Sie die Nullstellen.</li>' +
+            '<li>Bestimmen Sie die Extremstellen.</li>' +
+            '<li>Bestimmen Sie die Wendestelle.</li>' +
+            '<li>Bestimmen Sie die Tangente im Punkt x = 1.</li>' +
+            '<li>Berechnen Sie den Schnittpunkt dieser Tangente mit der x-Achse.</li>' +
+          '</ol>' +
+          '<div id="h5" class="hint-box">Abstrakte Anleitung: Für Nullstellen setzt du f(x)=0. Für Extremstellen löst du f′(x)=0. Für Wendestellen löst du f″(x)=0. Die Tangente hat die Form y = m(x-x0)+f(x0).</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s5\')">Lösung anzeigen</button></div>' +
+          '<div id="s5" class="solution-box">' +
+            'f(x)=x³-3x²-4x+12 = (x-2)(x-3)(x+2). Nullstellen: x=-2, 2, 3.<br>' +
+            'f′(x)=3x²-6x-4. Extremstellen: x = 1 ± √21/3.<br>' +
+            'f″(x)=6x-6. Wendestelle: x=1.<br>' +
+            'f(1)=6 und f′(1)=-7. Tangente: y = -7(x-1)+6 = -7x+13.<br>' +
+            'x-Achsen-Schnittpunkt: 0=-7x+13 ⇒ x=13/7.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 6 · Funktion mit Parameter <button class="info-btn" onclick="toggleBox(\'h6\')">i</button></h3>' +
+          '<p>Für k &gt; 0 sei:</p>' +
+          '<div class="formula">f<sub>k</sub>(x) = 4 · (x/k)² · e<sup>-x/k</sup>, &nbsp; x ≥ 0</div>' +
+          '<ol type="a">' +
+            '<li>Untersuchen Sie für k = 3 die Lage des Maximums.</li>' +
+            '<li>Bestimmen Sie allgemein die x-Koordinate des Maximums in Abhängigkeit von k.</li>' +
+            '<li>Für welchen Wert von k liegt das Maximum bei x = 10?</li>' +
+          '</ol>' +
+          '<div id="h6" class="hint-box">Abstrakte Anleitung: Leite die Funktion ab. Faktorisiere möglichst viel. Die kritischen Stellen findest du über f′(x)=0.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s6\')">Lösung anzeigen</button></div>' +
+          '<div id="s6" class="solution-box">' +
+            'Mit u = x/k gilt f = 4u²e<sup>-u</sup>. Ableitung nach u: 4e<sup>-u</sup>(2u-u²). Kritisch: u=0 oder u=2. Das Maximum liegt bei u=2, also x=2k.<br>' +
+            'a) Für k=3: x=6.<br>' +
+            'b) Allgemein: x=2k.<br>' +
+            'c) 2k=10 ⇒ k=5.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 7 · Aussage über Ableitungen prüfen <button class="info-btn" onclick="toggleBox(\'h7\')">i</button></h3>' +
+          '<p>Beurteilen Sie die folgende Aussage:</p>' +
+          '<div class="formula">Wenn f′(x) drei verschiedene Nullstellen besitzt, dann hat f(x) mindestens ein lokales Maximum und ein lokales Minimum.</div>' +
+          '<p>Stimmt diese Aussage immer? Begründen Sie.</p>' +
+          '<div id="h7" class="hint-box">Abstrakte Anleitung: Nullstellen der Ableitung sind nur Kandidaten für Extremstellen. Entscheidend ist, ob f′ dort das Vorzeichen wechselt.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s7\')">Lösung anzeigen</button></div>' +
+          '<div id="s7" class="solution-box">' +
+            'Die Aussage stimmt nicht zwingend. Eine Nullstelle von f′ kann auch eine stationäre Wendestelle sein. Erst wenn f′ an einer Stelle das Vorzeichen wechselt, entsteht ein lokales Extremum.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 8 · Grenzwert einer Folge <button class="info-btn" onclick="toggleBox(\'h8\')">i</button></h3>' +
+          '<p>Bestimmen Sie den Grenzwert der Folge:</p>' +
+          '<div class="formula">a<sub>n</sub> = (5n² - 3n + 8) / (2n² + 7)</div>' +
+          '<ol type="a">' +
+            '<li>Berechnen Sie den Grenzwert g.</li>' +
+            '<li>Für ε = 0.000001: Wie gross muss n mindestens sein, damit |a<sub>n</sub> - g| &lt; ε gilt?</li>' +
+          '</ol>' +
+          '<div id="h8" class="hint-box">Abstrakte Anleitung: Bei rationalen Folgen mit gleichen höchsten Potenzen ist der Grenzwert der Quotient der Leitkoeffizienten. Für ε formst du die Ungleichung nach n um.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s8\')">Lösung anzeigen</button></div>' +
+          '<div id="s8" class="solution-box">' +
+            'Grenzwert: g = 5/2.<br>' +
+            'Für die genaue ε-Abschätzung berechnet man |a_n - 5/2| und löst die Ungleichung. In einem Test reicht oft der korrekte Ansatz mit anschliessender Abschätzung.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 9 · Rekursive und explizite Folge <button class="info-btn" onclick="toggleBox(\'h9\')">i</button></h3>' +
+          '<p>Gegeben ist die rekursive Folge:</p>' +
+          '<div class="formula">a<sub>1</sub> = 7, &nbsp;&nbsp; a<sub>n+1</sub> = a<sub>n</sub> + 4</div>' +
+          '<ol type="a">' +
+            '<li>Bestimmen Sie die explizite Darstellung.</li>' +
+            '<li>Berechnen Sie a<sub>5</sub>.</li>' +
+          '</ol>' +
+          '<div id="h9" class="hint-box">Abstrakte Anleitung: Prüfe, ob die Folge arithmetisch oder geometrisch ist. Bei konstanter Differenz verwendest du a_n = a_1 + (n-1)d.</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s9\')">Lösung anzeigen</button></div>' +
+          '<div id="s9" class="solution-box">' +
+            'Die Differenz ist d=4. Daher: a_n = 7 + (n-1)·4 = 4n + 3. Also a_5 = 4·5 + 3 = 23.' +
+          '</div>' +
+        '</div>' +
+
+        '<div class="exercise-card">' +
+          '<h3>Aufgabe 10 · Geometrische Folge <button class="info-btn" onclick="toggleBox(\'h10\')">i</button></h3>' +
+          '<p>Gegeben ist:</p>' +
+          '<div class="formula">b<sub>1</sub> = 3, &nbsp;&nbsp; b<sub>n+1</sub> = 2b<sub>n</sub></div>' +
+          '<ol type="a">' +
+            '<li>Bestimmen Sie die explizite Darstellung.</li>' +
+            '<li>Berechnen Sie b<sub>6</sub>.</li>' +
+            '<li>Beschreiben Sie das Wachstum in Worten.</li>' +
+          '</ol>' +
+          '<div id="h10" class="hint-box">Abstrakte Anleitung: Bei einer konstanten Multiplikation handelt es sich um eine geometrische Folge. Die Form ist b_n = b_1 · q^(n-1).</div>' +
+          '<div class="button-row"><button class="secondary" onclick="toggleBox(\'s10\')">Lösung anzeigen</button></div>' +
+          '<div id="s10" class="solution-box">' +
+            'q=2. Also b_n = 3 · 2<sup>n-1</sup>. b_6 = 3 · 2⁵ = 96. Die Folge verdoppelt sich bei jedem Schritt.' +
+          '</div>' +
+        '</div>';
+    }
 
     document.addEventListener("contextmenu", function(event) {
       event.preventDefault();
@@ -752,7 +810,7 @@
         const userData = userDoc.data();
 
         if (userData.premium === true) {
-          showPremium();
+          showPremium(user.email);
           setStatus("Zugriff erlaubt.");
         } else {
           showLocked("Du hast noch keinen Premium-Zugang.");
