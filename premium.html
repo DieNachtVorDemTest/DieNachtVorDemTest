@@ -358,7 +358,7 @@
 
     <section id="premium-content" class="hidden">
       <p>
-        Wähle ein Fach aus. Danach findest du die Inhalte geordnet nach GYM1, GYM2, GYM3 und GYM4.
+        Wähle ein Fach aus. Die Fächer bleiben sichtbar, damit du schneller wechseln kannst.
       </p>
 
       <div id="subjects-grid" class="subjects-grid"></div>
@@ -366,7 +366,7 @@
       <div id="folder-view" class="folder-view hidden">
         <div class="folder-header">
           <h2 id="selected-subject-title">Fach</h2>
-          <button class="secondary" onclick="closeFolder()">Zurück zu allen Fächern</button>
+          <button class="secondary" onclick="closeFolder()">GYM-Auswahl schliessen</button>
         </div>
 
         <div id="gym-grid" class="gym-grid"></div>
@@ -464,8 +464,6 @@
     function renderSubjects() {
       subjectsGrid.innerHTML = "";
       subjectsGrid.classList.remove("hidden");
-      folderView.classList.add("hidden");
-      materialView.classList.add("hidden");
 
       subjects.forEach(function(subject) {
         const card = document.createElement("div");
@@ -486,7 +484,6 @@
     function openFolder(subject) {
       selectedSubjectTitle.textContent = subject.name;
 
-      subjectsGrid.classList.add("hidden");
       folderView.classList.remove("hidden");
       materialView.classList.add("hidden");
 
@@ -515,7 +512,6 @@
     function closeFolder() {
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
-      subjectsGrid.classList.remove("hidden");
     }
 
     function backToGym() {
@@ -536,7 +532,7 @@
       const contentKey = subject.key + "-" + levelKey;
       const contentInfo = availableContent[contentKey];
 
-      folderView.classList.add("hidden");
+      folderView.classList.remove("hidden");
       materialView.classList.remove("hidden");
       materialView.scrollTop = 0;
 
