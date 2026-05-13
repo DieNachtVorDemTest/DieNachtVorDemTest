@@ -5,7 +5,7 @@ function render_mathematik_gym1() {
 function renderMathematikGym1Topics() {
   window.setMaterialTitle("Mathematik · GYM1 · Themengebiete");
 
-  window.setMaterialContent(
+  window.setMaterialContent(`
     <div class="notice">
       Alle Inhalte sind eigenständig erstellte Übungsaufgaben. Sie sind keine Originalprüfungen,
       keine Scans und kein offizielles Schulmaterial.
@@ -22,7 +22,7 @@ function renderMathematikGym1Topics() {
         <p>Parabeln, Scheitelpunkt, Nullstellen, Gleichungen und Anwendungsaufgaben.</p>
       </div>
     </div>
-  );
+  `);
 }
 
 function backToMatheGym1Topics() {
@@ -32,7 +32,7 @@ function backToMatheGym1Topics() {
 function renderTrigonometrieGym1() {
   window.setMaterialTitle("Mathematik · GYM1 · Trigonometrie am allgemeinen Dreieck");
 
-  window.setMaterialContent(
+  window.setMaterialContent(`
     <button class="secondary" onclick="backToMatheGym1Topics()">Zurück zu den Themengebieten</button>
 
     <div class="notice">
@@ -107,13 +107,13 @@ function renderTrigonometrieGym1() {
         <li>Berechne die Entfernung von A zu D und von B zu D.</li>
       </ol>
     </div>
-  );
+  `);
 }
 
 function renderQuadratischeFunktionenGym1() {
   window.setMaterialTitle("Mathematik · GYM1 · Quadratische Funktionen und Gleichungen");
 
-  window.setMaterialContent(
+  window.setMaterialContent(`
     <button class="secondary" onclick="backToMatheGym1Topics()">Zurück zu den Themengebieten</button>
 
     <div class="notice">
@@ -239,7 +239,7 @@ function renderQuadratischeFunktionenGym1() {
         <li>Berechne die Höhe des Bogens 1 m neben der Mitte.</li>
       </ol>
     </div>
-  );
+  `);
 }
 
 window.render_mathematik_gym1 = render_mathematik_gym1;
