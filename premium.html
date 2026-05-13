@@ -357,16 +357,18 @@
     </section>
 
     <section id="premium-content" class="hidden">
-      <p>
-        Wähle ein Fach aus. Die Fächer bleiben sichtbar, damit du schneller wechseln kannst.
-      </p>
+      <div id="subjects-area">
+        <p>
+          Wähle ein Fach aus. Danach findest du die Inhalte geordnet nach GYM1, GYM2, GYM3 und GYM4.
+        </p>
 
-      <div id="subjects-grid" class="subjects-grid"></div>
+        <div id="subjects-grid" class="subjects-grid"></div>
+      </div>
 
       <div id="folder-view" class="folder-view hidden">
         <div class="folder-header">
           <h2 id="selected-subject-title">Fach</h2>
-          <button class="secondary" onclick="closeFolder()">GYM-Auswahl schliessen</button>
+          <button class="secondary" onclick="backToSubjects()">Zurück zu allen Fächern</button>
         </div>
 
         <div id="gym-grid" class="gym-grid"></div>
@@ -412,15 +414,20 @@
     const premiumContent = document.getElementById("premium-content");
     const statusBox = document.getElementById("status");
     const logoutBtn = document.getElementById("logout-btn");
+
+    const subjectsArea = document.getElementById("subjects-area");
     const subjectsGrid = document.getElementById("subjects-grid");
     const folderView = document.getElementById("folder-view");
     const gymGrid = document.getElementById("gym-grid");
     const selectedSubjectTitle = document.getElementById("selected-subject-title");
+
     const materialView = document.getElementById("material-view");
     const materialTitle = document.getElementById("material-title");
     const materialContent = document.getElementById("material-content");
 
     const loadedSubjectScripts = {};
+
+    let currentSubject = null;
 
     const subjects = [
       { name: "Mathematik", key: "mathematik" },
@@ -463,7 +470,9 @@
 
     function renderSubjects() {
       subjectsGrid.innerHTML = "";
-      subjectsGrid.classList.remove("hidden");
+      subjectsArea.classList.remove("hidden");
+      folderView.classList.add("hidden");
+      materialView.classList.add("hidden");
 
       subjects.forEach(function(subject) {
         const card = document.createElement("div");
@@ -482,8 +491,10 @@
     }
 
     function openFolder(subject) {
+      currentSubject = subject;
       selectedSubjectTitle.textContent = subject.name;
 
+      subjectsArea.classList.add("hidden");
       folderView.classList.remove("hidden");
       materialView.classList.add("hidden");
 
@@ -509,12 +520,14 @@
       });
     }
 
-    function closeFolder() {
+    function backToSubjects() {
+      subjectsArea.classList.remove("hidden");
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
     }
 
     function backToGym() {
+      subjectsArea.classList.add("hidden");
       materialView.classList.add("hidden");
       folderView.classList.remove("hidden");
     }
@@ -532,7 +545,8 @@
       const contentKey = subject.key + "-" + levelKey;
       const contentInfo = availableContent[contentKey];
 
-      folderView.classList.remove("hidden");
+      subjectsArea.classList.add("hidden");
+      folderView.classList.add("hidden");
       materialView.classList.remove("hidden");
       materialView.scrollTop = 0;
 
@@ -597,7 +611,7 @@
       }
     }
 
-    window.closeFolder = closeFolder;
+    window.backToSubjects = backToSubjects;
     window.backToGym = backToGym;
     window.setMaterialTitle = setMaterialTitle;
     window.setMaterialContent = setMaterialContent;
