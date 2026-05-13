@@ -376,7 +376,7 @@
           <button class="secondary" onclick="backToGym()">Zurück zu GYM1–GYM4</button>
           <h2 id="material-title">Material</h2>
           <p class="small">
-            Eigenes Übungsmaterial, inspiriert vom Stoffgebiet. Keine Originalprüfung und kein offizielles Schulmaterial.
+            Eigenes Übungsmaterial. Keine Originalprüfung, kein Scan und kein offizielles Schulmaterial.
           </p>
         </div>
 
@@ -494,7 +494,7 @@
 
         const availableText =
           subject === "Mathematik" && level === "GYM1"
-            ? "Trigonometrie am allgemeinen Dreieck verfügbar"
+            ? "Eigenes Übungsset: Trigonometrie, Dreiecke, Vermessung, Raumgeometrie"
             : "Noch keine Inhalte hinzugefügt";
 
         card.innerHTML = `
@@ -539,123 +539,170 @@
     function renderMatheGym1() {
       materialContent.innerHTML = `
         <div class="notice">
-          Dieses Übungsset wurde eigenständig erstellt. Es ist keine Originalprüfung, kein Scan und kein offizielles Schulmaterial.
-          Die Aufgaben trainieren den Stoffbereich Trigonometrie, Dreiecke, Höhenmessung, Raumgeometrie und Vermessung.
+          Dieses Übungsset ist eigenständig erstellt. Es übernimmt keine Originalaufgaben, keine Originaldiagramme,
+          keine Reihenfolge und keine Formulierungen aus einer Schulprüfung. Es trainiert nur dasselbe Stoffgebiet.
         </div>
 
         <div class="exercise-card">
-          <h3>Aufgabe 1 · Sinuswerte im Intervall</h3>
-          <p>
-            Bestimme alle Winkel α zwischen 0° und 180°, für welche gilt:
-          </p>
-          <div class="formula">sin(α) = 0.68</div>
-          <p>
-            Gib alle möglichen Lösungen auf eine Dezimalstelle gerundet an.
-          </p>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 2 · Fehlende Grössen im allgemeinen Dreieck</h3>
-          <p>
-            In einem Dreieck gelten die Standardbezeichnungen:
-            Die Seite a liegt gegenüber von α, b gegenüber von β und c gegenüber von γ.
-            Berechne die gesuchten Grössen. Falls mehrere Lösungen möglich sind, gib alle Lösungen an.
-          </p>
-
+          <h3>Aufgabe 1 · Winkel aus Sinus und Kosinus</h3>
+          <p>Bestimme alle Winkel zwischen 0° und 180°. Runde auf eine Dezimalstelle.</p>
           <ol type="a">
-            <li>
-              Gegeben sind <strong>a = 8</strong>, <strong>b = 14</strong> und <strong>β = 70°</strong>.
-              Berechne α.
-            </li>
-            <li>
-              Gegeben sind <strong>a = 13</strong>, <strong>b = 9</strong> und <strong>β = 34°</strong>.
-              Berechne α.
-            </li>
-            <li>
-              Gegeben sind <strong>a = 10</strong>, <strong>β = 98°</strong> und <strong>γ = 41°</strong>.
-              Berechne b, c und α.
-            </li>
-            <li>
-              Gegeben sind <strong>a = 7</strong>, <strong>b = 11</strong> und <strong>c = 13</strong>.
-              Berechne α und β.
-            </li>
+            <li>sin(α) = 0.64</li>
+            <li>sin(β) = 0.91</li>
+            <li>cos(γ) = -0.38</li>
+            <li>cos(δ) = 0.27</li>
+          </ol>
+          <div class="formula">Tipp: Achte darauf, in welchem Quadranten der Winkel liegt.</div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 2 · Sinussatz im allgemeinen Dreieck</h3>
+          <p>
+            In einem Dreieck gilt die Standardbezeichnung:
+            Seite a liegt gegenüber von α, b gegenüber von β und c gegenüber von γ.
+          </p>
+          <ol type="a">
+            <li>Gegeben: a = 9.5, b = 12.8, β = 61°. Berechne α.</li>
+            <li>Gegeben: a = 16.2, b = 10.4, β = 28°. Berechne α. Prüfe, ob mehrere Lösungen möglich sind.</li>
+            <li>Gegeben: α = 47°, β = 73°, a = 11.6. Berechne γ, b und c.</li>
           </ol>
         </div>
 
         <div class="exercise-card">
-          <h3>Aufgabe 3 · Höhe eines Aussichtsturms</h3>
+          <h3>Aufgabe 3 · Der mehrdeutige Fall beim Sinussatz</h3>
           <p>
-            Zwei Messpunkte A und B liegen auf derselben horizontalen Geraden. Der Punkt B liegt näher beim Turm.
-            Die Entfernung zwischen A und B beträgt <strong>950 m</strong>.
-            Von A aus misst man zur Turmspitze den Höhenwinkel <strong>α = 13.6°</strong>,
-            von B aus den Höhenwinkel <strong>β = 21.9°</strong>.
+            Bei den folgenden Dreiecken können null, eine oder zwei Lösungen entstehen.
+            Entscheide jeweils, wie viele Dreiecke möglich sind, und berechne die fehlenden Winkel.
           </p>
-
-          <p>
-            Bestimme die Höhe des Turms über der Horizontalen durch A und B.
-          </p>
-
-          <div class="formula">
-            Tipp: Stelle zwei Tangens-Gleichungen auf und eliminiere die horizontale Entfernung zum Turm.
-          </div>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 4 · Dreieck in einem Quader</h3>
-          <p>
-            Ein Quader hat die Länge <strong>9</strong>, die Breite <strong>4</strong> und die Höhe <strong>5</strong>.
-            Es wird ein Dreieck aus drei Eckpunkten des Quaders betrachtet:
-          </p>
-
-          <ul>
-            <li>Punkt A liegt oben links vorne.</li>
-            <li>Punkt B liegt unten rechts vorne.</li>
-            <li>Punkt C liegt oben rechts hinten.</li>
-          </ul>
-
-          <p>
-            Berechne die drei Seitenlängen des Dreiecks ABC und anschliessend die Innenwinkel.
-          </p>
-
-          <div class="formula">
-            Tipp: Verwende zuerst Pythagoras in passenden Rechtecken und danach den Kosinussatz.
-          </div>
-        </div>
-
-        <div class="exercise-card">
-          <h3>Aufgabe 5 · Triangulation in einer Ebene</h3>
-          <p>
-            Eine Grundlinie AB ist <strong>1850 m</strong> lang. Von den Punkten A und B aus werden zwei Zielpunkte C und D angepeilt.
-            Alle Punkte liegen vereinfacht auf gleicher Höhe.
-          </p>
-
-          <p>Die Messungen lauten:</p>
-
-          <ul>
-            <li>∠CAB = 74.2°</li>
-            <li>∠CBA = 53.6°</li>
-            <li>∠DAB = 38.4°</li>
-            <li>∠DBA = 88.7°</li>
-          </ul>
-
           <ol type="a">
+            <li>a = 7.2, b = 13.0, α = 31°</li>
+            <li>a = 15.5, b = 9.8, α = 102°</li>
+            <li>a = 8.6, b = 10.1, α = 54°</li>
+          </ol>
+          <div class="formula">Tipp: Vergleiche zuerst die mögliche Höhe h = b · sin(α).</div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 4 · Kosinussatz: Drei Seiten gegeben</h3>
+          <p>Berechne die Innenwinkel des Dreiecks.</p>
+          <ol type="a">
+            <li>a = 6.4, b = 8.7, c = 10.2</li>
+            <li>a = 12.0, b = 12.0, c = 7.5</li>
+            <li>a = 5.8, b = 9.1, c = 11.3</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 5 · Höhe eines Leuchtturms</h3>
+          <p>
+            Zwei Beobachtungspunkte P und Q liegen auf einer geraden Strandlinie.
+            Q liegt näher beim Leuchtturm als P. Die Distanz zwischen P und Q beträgt 720 m.
+            Von P aus beträgt der Höhenwinkel zur Spitze 11.8°, von Q aus 18.9°.
+          </p>
+          <p>Berechne die Höhe des Leuchtturms über der Strandlinie.</p>
+          <div class="formula">
+            Tipp: Setze x als horizontale Distanz von Q zum Leuchtturm und stelle zwei Tangensgleichungen auf.
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 6 · Drohne über einem Sportplatz</h3>
+          <p>
+            Eine Drohne schwebt senkrecht über einem Punkt D auf dem Boden.
+            Zwei Schüler stehen an den Punkten A und B. Die Distanz AB beträgt 150 m.
+            Von A aus sieht man die Drohne unter einem Höhenwinkel von 38°,
+            von B aus unter einem Höhenwinkel von 52°.
+            Die Punkte A, B und D liegen auf einer Geraden, wobei D zwischen A und B liegt.
+          </p>
+          <ol type="a">
+            <li>Berechne die Höhe der Drohne.</li>
+            <li>Berechne die Entfernung von A zu D und von B zu D.</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 7 · Dreieck in einem Raumkörper</h3>
+          <p>
+            Ein rechteckiger Raum ist 10 m lang, 6 m breit und 3 m hoch.
+            Es werden drei Punkte betrachtet:
+          </p>
+          <ul>
+            <li>A: untere vordere linke Ecke</li>
+            <li>B: untere hintere rechte Ecke</li>
+            <li>C: obere vordere rechte Ecke</li>
+          </ul>
+          <ol type="a">
+            <li>Berechne die drei Seitenlängen des Dreiecks ABC.</li>
+            <li>Berechne alle Innenwinkel des Dreiecks ABC.</li>
+          </ol>
+          <div class="formula">Tipp: Verwende zuerst Pythagoras im Raum und danach den Kosinussatz.</div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 8 · Vermessung eines Geländepunkts</h3>
+          <p>
+            Eine Grundlinie AB ist 1.4 km lang. Von A und B aus wird ein Punkt C angepeilt.
+            Es gelten:
+          </p>
+          <ul>
+            <li>∠CAB = 62.5°</li>
+            <li>∠CBA = 71.3°</li>
+          </ul>
+          <ol type="a">
+            <li>Berechne ∠ACB.</li>
             <li>Berechne die Distanzen AC und BC.</li>
-            <li>Berechne die Distanzen AD und BD.</li>
-            <li>Bestimme anschliessend die Entfernung zwischen C und D.</li>
           </ol>
-
-          <div class="formula">
-            Tipp: Löse zuerst die Dreiecke ABC und ABD mit dem Sinussatz.
-            Danach kannst du CD mit dem Kosinussatz berechnen.
-          </div>
         </div>
 
         <div class="exercise-card">
-          <h3>Zusatzaufgabe · Reflexion</h3>
+          <h3>Aufgabe 9 · Zwei Zielpunkte im Gelände</h3>
           <p>
-            Erkläre kurz, wann im allgemeinen Dreieck zwei Lösungen möglich sind.
-            Verwende dafür die Begriffe Sinussatz, Gegenwinkel und stumpfer Winkel.
+            Auf einer geraden Messlinie liegen die Punkte A und B mit AB = 2.1 km.
+            Von beiden Punkten aus werden zwei Zielpunkte C und D gemessen.
           </p>
+          <ul>
+            <li>∠CAB = 49.8°, ∠CBA = 80.6°</li>
+            <li>∠DAB = 117.4°, ∠DBA = 34.2°</li>
+          </ul>
+          <ol type="a">
+            <li>Berechne die Distanzen von A und B zu C.</li>
+            <li>Berechne die Distanzen von A und B zu D.</li>
+            <li>Beschreibe, wie man die Distanz CD bestimmen könnte.</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 10 · Gemischte Abschlussaufgabe</h3>
+          <p>
+            Ein Dreieck besitzt die Seiten a = 13.4 und c = 17.2.
+            Der eingeschlossene Winkel β beträgt 58°.
+          </p>
+          <ol type="a">
+            <li>Berechne die Seite b.</li>
+            <li>Berechne die Winkel α und γ.</li>
+            <li>Kontrolliere, ob die Winkelsumme 180° ergibt.</li>
+          </ol>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 11 · Theoriefrage</h3>
+          <p>
+            Erkläre in eigenen Worten den Unterschied zwischen Sinussatz und Kosinussatz.
+            Gehe besonders darauf ein, wann man welchen Satz typischerweise verwendet.
+          </p>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 12 · Fehleranalyse</h3>
+          <p>
+            Ein Schüler berechnet bei einem Dreieck mit sin(α) = 0.76 nur α = 49.5°.
+            Er vergisst eine zweite mögliche Lösung.
+          </p>
+          <ol type="a">
+            <li>Welche zweite Lösung fehlt?</li>
+            <li>Warum ist diese zweite Lösung im Bereich 0° bis 180° ebenfalls möglich?</li>
+            <li>Wann wäre eine solche zweite Lösung in einem konkreten Dreieck trotzdem nicht erlaubt?</li>
+          </ol>
         </div>
       `;
     }
