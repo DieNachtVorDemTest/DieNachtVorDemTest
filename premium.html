@@ -24,15 +24,15 @@
       content: "";
       position: fixed;
       inset: 0;
-      background: rgba(7, 12, 20, 0.52);
+      background: rgba(7, 12, 20, 0.55);
       z-index: 0;
     }
 
     .container {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      background: rgba(17, 24, 39, 0.90);
+      background: rgba(17, 24, 39, 0.91);
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 22px;
       padding: 34px;
@@ -40,6 +40,7 @@
       position: relative;
       z-index: 1;
       backdrop-filter: blur(4px);
+      overflow: hidden;
     }
 
     .badge {
@@ -74,11 +75,6 @@
       align-items: center;
       margin-bottom: 24px;
       flex-wrap: wrap;
-    }
-
-    .user-info {
-      color: #cbd5e1;
-      font-size: 14px;
     }
 
     button, a.button {
@@ -205,6 +201,14 @@
       border-radius: 16px;
       padding: 20px;
       min-height: 120px;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+
+    .gym-card:hover {
+      background: rgba(30, 41, 59, 0.94);
+      border-color: #818cf8;
+      transform: translateY(-2px);
     }
 
     .gym-card h3 {
@@ -218,12 +222,99 @@
       color: #9ca3af;
     }
 
-    .material-list {
-      margin-top: 14px;
-      padding-left: 18px;
+    .material-view {
+      margin-top: 28px;
+      background: rgba(2, 6, 23, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 18px;
+      padding: 24px;
+      max-height: 78vh;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      position: relative;
+    }
+
+    .material-view::before {
+      content: attr(data-watermark);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-24deg);
+      font-size: 42px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.055);
+      pointer-events: none;
+      z-index: 0;
+      white-space: nowrap;
+    }
+
+    .material-header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(2, 6, 23, 0.96);
+      border-bottom: 1px solid #374151;
+      padding-bottom: 16px;
+      margin-bottom: 18px;
+    }
+
+    .exercise-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(148, 163, 184, 0.30);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.25);
+    }
+
+    .exercise-card h3 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    .exercise-card strong {
+      color: #ffffff;
+    }
+
+    .exercise-card ol,
+    .exercise-card ul {
       color: #d1d5db;
+      line-height: 1.75;
+    }
+
+    .formula {
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 14px 0;
+      color: #e0e7ff;
+      font-family: "Courier New", monospace;
+      overflow-x: auto;
+    }
+
+    .notice {
+      background: rgba(234, 179, 8, 0.12);
+      border: 1px solid rgba(234, 179, 8, 0.35);
+      color: #fde68a;
+      padding: 14px;
+      border-radius: 12px;
+      margin: 18px 0;
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.6;
+    }
+
+    .small {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    @media print {
+      body {
+        display: none;
+      }
     }
 
     @media (max-width: 700px) {
@@ -237,6 +328,10 @@
 
       h1 {
         font-size: 32px;
+      }
+
+      .material-view::before {
+        font-size: 24px;
       }
     }
   </style>
@@ -273,39 +368,19 @@
           <button class="secondary" onclick="closeFolder()">Zurück zu allen Fächern</button>
         </div>
 
-        <div class="gym-grid">
-          <div class="gym-card">
-            <h3>GYM1</h3>
-            <p>Materialien für das erste Gymnasiumsjahr.</p>
-            <ul class="material-list">
-              <li>Noch keine Dateien hinzugefügt</li>
-            </ul>
-          </div>
+        <div id="gym-grid" class="gym-grid"></div>
+      </div>
 
-          <div class="gym-card">
-            <h3>GYM2</h3>
-            <p>Materialien für das zweite Gymnasiumsjahr.</p>
-            <ul class="material-list">
-              <li>Noch keine Dateien hinzugefügt</li>
-            </ul>
-          </div>
-
-          <div class="gym-card">
-            <h3>GYM3</h3>
-            <p>Materialien für das dritte Gymnasiumsjahr.</p>
-            <ul class="material-list">
-              <li>Noch keine Dateien hinzugefügt</li>
-            </ul>
-          </div>
-
-          <div class="gym-card">
-            <h3>GYM4</h3>
-            <p>Materialien für das vierte Gymnasiumsjahr.</p>
-            <ul class="material-list">
-              <li>Noch keine Dateien hinzugefügt</li>
-            </ul>
-          </div>
+      <div id="material-view" class="material-view hidden" data-watermark="">
+        <div class="material-header">
+          <button class="secondary" onclick="backToGym()">Zurück zu GYM1–GYM4</button>
+          <h2 id="material-title">Material</h2>
+          <p class="small">
+            Eigenes Übungsmaterial, inspiriert vom Stoffgebiet. Keine Originalprüfung und kein offizielles Schulmaterial.
+          </p>
         </div>
+
+        <div id="material-content"></div>
       </div>
     </section>
 
@@ -338,7 +413,14 @@
     const logoutBtn = document.getElementById("logout-btn");
     const subjectsGrid = document.getElementById("subjects-grid");
     const folderView = document.getElementById("folder-view");
+    const gymGrid = document.getElementById("gym-grid");
     const selectedSubjectTitle = document.getElementById("selected-subject-title");
+    const materialView = document.getElementById("material-view");
+    const materialTitle = document.getElementById("material-title");
+    const materialContent = document.getElementById("material-content");
+
+    let currentSubject = "";
+    let currentUserEmail = "";
 
     const subjects = [
       "Mathematik",
@@ -364,14 +446,19 @@
     }
 
     function showPremium(email) {
+      currentUserEmail = email;
       userInfo.textContent = "Eingeloggt als: " + email;
       lockedBox.classList.add("hidden");
       premiumContent.classList.remove("hidden");
+      document.getElementById("material-view").setAttribute("data-watermark", email + " · Die Nacht vor dem Test");
       renderSubjects();
     }
 
     function renderSubjects() {
       subjectsGrid.innerHTML = "";
+      subjectsGrid.classList.remove("hidden");
+      folderView.classList.add("hidden");
+      materialView.classList.add("hidden");
 
       subjects.forEach(function(subject) {
         const card = document.createElement("div");
@@ -390,15 +477,197 @@
     }
 
     function openFolder(subject) {
+      currentSubject = subject;
       selectedSubjectTitle.textContent = subject;
-      folderView.classList.remove("hidden");
       subjectsGrid.classList.add("hidden");
+      folderView.classList.remove("hidden");
+      materialView.classList.add("hidden");
+
+      gymGrid.innerHTML = "";
+
+      ["GYM1", "GYM2", "GYM3", "GYM4"].forEach(function(level) {
+        const card = document.createElement("div");
+        card.className = "gym-card";
+        card.onclick = function() {
+          openMaterial(subject, level);
+        };
+
+        const availableText =
+          subject === "Mathematik" && level === "GYM1"
+            ? "Trigonometrie am allgemeinen Dreieck verfügbar"
+            : "Noch keine Inhalte hinzugefügt";
+
+        card.innerHTML = `
+          <h3>${level}</h3>
+          <p>${availableText}</p>
+        `;
+
+        gymGrid.appendChild(card);
+      });
     }
 
     function closeFolder() {
       folderView.classList.add("hidden");
+      materialView.classList.add("hidden");
       subjectsGrid.classList.remove("hidden");
     }
+
+    function backToGym() {
+      materialView.classList.add("hidden");
+      folderView.classList.remove("hidden");
+    }
+
+    function openMaterial(subject, level) {
+      folderView.classList.add("hidden");
+      materialView.classList.remove("hidden");
+      materialView.scrollTop = 0;
+
+      materialTitle.textContent = subject + " · " + level;
+
+      if (subject === "Mathematik" && level === "GYM1") {
+        renderMatheGym1();
+      } else {
+        materialContent.innerHTML = `
+          <div class="exercise-card">
+            <h3>Noch keine Inhalte</h3>
+            <p>Für ${subject} · ${level} wurden noch keine Materialien hinzugefügt.</p>
+          </div>
+        `;
+      }
+    }
+
+    function renderMatheGym1() {
+      materialContent.innerHTML = `
+        <div class="notice">
+          Dieses Übungsset wurde eigenständig erstellt. Es ist keine Originalprüfung, kein Scan und kein offizielles Schulmaterial.
+          Die Aufgaben trainieren den Stoffbereich Trigonometrie, Dreiecke, Höhenmessung, Raumgeometrie und Vermessung.
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 1 · Sinuswerte im Intervall</h3>
+          <p>
+            Bestimme alle Winkel α zwischen 0° und 180°, für welche gilt:
+          </p>
+          <div class="formula">sin(α) = 0.68</div>
+          <p>
+            Gib alle möglichen Lösungen auf eine Dezimalstelle gerundet an.
+          </p>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 2 · Fehlende Grössen im allgemeinen Dreieck</h3>
+          <p>
+            In einem Dreieck gelten die Standardbezeichnungen:
+            Die Seite a liegt gegenüber von α, b gegenüber von β und c gegenüber von γ.
+            Berechne die gesuchten Grössen. Falls mehrere Lösungen möglich sind, gib alle Lösungen an.
+          </p>
+
+          <ol type="a">
+            <li>
+              Gegeben sind <strong>a = 8</strong>, <strong>b = 14</strong> und <strong>β = 70°</strong>.
+              Berechne α.
+            </li>
+            <li>
+              Gegeben sind <strong>a = 13</strong>, <strong>b = 9</strong> und <strong>β = 34°</strong>.
+              Berechne α.
+            </li>
+            <li>
+              Gegeben sind <strong>a = 10</strong>, <strong>β = 98°</strong> und <strong>γ = 41°</strong>.
+              Berechne b, c und α.
+            </li>
+            <li>
+              Gegeben sind <strong>a = 7</strong>, <strong>b = 11</strong> und <strong>c = 13</strong>.
+              Berechne α und β.
+            </li>
+          </ol>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 3 · Höhe eines Aussichtsturms</h3>
+          <p>
+            Zwei Messpunkte A und B liegen auf derselben horizontalen Geraden. Der Punkt B liegt näher beim Turm.
+            Die Entfernung zwischen A und B beträgt <strong>950 m</strong>.
+            Von A aus misst man zur Turmspitze den Höhenwinkel <strong>α = 13.6°</strong>,
+            von B aus den Höhenwinkel <strong>β = 21.9°</strong>.
+          </p>
+
+          <p>
+            Bestimme die Höhe des Turms über der Horizontalen durch A und B.
+          </p>
+
+          <div class="formula">
+            Tipp: Stelle zwei Tangens-Gleichungen auf und eliminiere die horizontale Entfernung zum Turm.
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 4 · Dreieck in einem Quader</h3>
+          <p>
+            Ein Quader hat die Länge <strong>9</strong>, die Breite <strong>4</strong> und die Höhe <strong>5</strong>.
+            Es wird ein Dreieck aus drei Eckpunkten des Quaders betrachtet:
+          </p>
+
+          <ul>
+            <li>Punkt A liegt oben links vorne.</li>
+            <li>Punkt B liegt unten rechts vorne.</li>
+            <li>Punkt C liegt oben rechts hinten.</li>
+          </ul>
+
+          <p>
+            Berechne die drei Seitenlängen des Dreiecks ABC und anschliessend die Innenwinkel.
+          </p>
+
+          <div class="formula">
+            Tipp: Verwende zuerst Pythagoras in passenden Rechtecken und danach den Kosinussatz.
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Aufgabe 5 · Triangulation in einer Ebene</h3>
+          <p>
+            Eine Grundlinie AB ist <strong>1850 m</strong> lang. Von den Punkten A und B aus werden zwei Zielpunkte C und D angepeilt.
+            Alle Punkte liegen vereinfacht auf gleicher Höhe.
+          </p>
+
+          <p>Die Messungen lauten:</p>
+
+          <ul>
+            <li>∠CAB = 74.2°</li>
+            <li>∠CBA = 53.6°</li>
+            <li>∠DAB = 38.4°</li>
+            <li>∠DBA = 88.7°</li>
+          </ul>
+
+          <ol type="a">
+            <li>Berechne die Distanzen AC und BC.</li>
+            <li>Berechne die Distanzen AD und BD.</li>
+            <li>Bestimme anschliessend die Entfernung zwischen C und D.</li>
+          </ol>
+
+          <div class="formula">
+            Tipp: Löse zuerst die Dreiecke ABC und ABD mit dem Sinussatz.
+            Danach kannst du CD mit dem Kosinussatz berechnen.
+          </div>
+        </div>
+
+        <div class="exercise-card">
+          <h3>Zusatzaufgabe · Reflexion</h3>
+          <p>
+            Erkläre kurz, wann im allgemeinen Dreieck zwei Lösungen möglich sind.
+            Verwende dafür die Begriffe Sinussatz, Gegenwinkel und stumpfer Winkel.
+          </p>
+        </div>
+      `;
+    }
+
+    document.addEventListener("contextmenu", function(event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener("copy", function(event) {
+      event.preventDefault();
+      alert("Kopieren ist im Premium-Bereich deaktiviert.");
+    });
 
     logoutBtn.addEventListener("click", async function () {
       try {
