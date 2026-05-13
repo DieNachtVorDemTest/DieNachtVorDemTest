@@ -323,6 +323,59 @@
       color: #9ca3af;
     }
 
+    .exercise-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .exercise-top h3 {
+      margin: 0;
+      flex: 1;
+    }
+
+    .info-btn {
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      background: rgba(99, 102, 241, 0.18);
+      color: #e0e7ff;
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .info-btn:hover {
+      background: rgba(99, 102, 241, 0.35);
+    }
+
+    .info-box {
+      margin: 14px 0 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      color: #bae6fd;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+
+    .info-box strong {
+      color: #ffffff;
+    }
+
+    .info-box ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+
     @media print {
       body {
         display: none;
@@ -449,7 +502,8 @@
       { name: "Englisch", key: "englisch" },
       { name: "Geografie", key: "geografie" },
       { name: "Biologie", key: "biologie" },
-      { name: "Chemie", key: "chemie" }
+      { name: "Chemie", key: "chemie" },
+      { name: "Geschichte", key: "geschichte" }
     ];
 
     const availableContent = {
@@ -457,6 +511,26 @@
         file: "subjects/mathematik-gym1.js",
         renderFunction: "render_mathematik_gym1",
         description: "Themen: Trigonometrie, quadratische Funktionen"
+      },
+      "geografie-gym1": {
+        file: "subjects/geografie-gym1.js",
+        renderFunction: "render_geografie_gym1",
+        description: "Themen: Atmosphäre, Klima, Wind, Luftfeuchtigkeit, Wolken"
+      },
+      "franzoesisch-gym1": {
+        file: "subjects/franzoesisch-gym1.js",
+        renderFunction: "render_franzoesisch_gym1",
+        description: "Themen: Wortschatz, Relativpronomen, Zeiten der Vergangenheit"
+      },
+      "chemie-gym1": {
+        file: "subjects/chemie-gym1.js",
+        renderFunction: "render_chemie_gym1",
+        description: "Themen: Atombau, Coulomb-Kraft, Elektronenhülle, Radioaktivität"
+      },
+      "geschichte-gym1": {
+        file: "subjects/geschichte-gym1.js",
+        renderFunction: "render_geschichte_gym1",
+        description: "Themen: Römische Republik, Ständekämpfe, Expansion, Limes"
       }
     };
 
@@ -549,6 +623,12 @@
       materialContent.innerHTML = html;
     }
 
+    function toggleInfo(id) {
+      const box = document.getElementById(id);
+      if (!box) return;
+      box.classList.toggle("hidden");
+    }
+
     function openMaterial(subject, levelKey) {
       const displayLevel = levelKey.toUpperCase();
       const contentKey = subject.key + "-" + levelKey;
@@ -582,13 +662,15 @@
     }
 
     function loadSubjectScript(file, renderFunctionName) {
+      const cacheSafeFile = file + "?v=" + Date.now();
+
       if (loadedSubjectScripts[file]) {
         runRenderFunction(renderFunctionName);
         return;
       }
 
       const script = document.createElement("script");
-      script.src = file + "?v=" + Date.now();
+      script.src = cacheSafeFile;
 
       script.onload = function() {
         loadedSubjectScripts[file] = true;
@@ -624,6 +706,7 @@
     window.backToGym = backToGym;
     window.setMaterialTitle = setMaterialTitle;
     window.setMaterialContent = setMaterialContent;
+    window.toggleInfo = toggleInfo;
 
     document.addEventListener("contextmenu", function(event) {
       event.preventDefault();
