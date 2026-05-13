@@ -1,255 +1,221 @@
-function matheGym2InfoButton(id) {
-  return `<button class="info-btn" onclick="toggleInfo('${id}')" title="Anleitung anzeigen">i</button>`;
+window.contentRenderers = window.contentRenderers || {};
+
+window.contentRenderers["Mathematik-GYM2"] = function(materialTitle, materialContent) {
+  materialTitle.textContent = "Mathematik · GYM2 · Themengebiete";
+
+  materialContent.innerHTML = `
+    <div class="notice">
+      Alle Inhalte sind eigenständig erstellte Übungsaufgaben. Sie sind keine Originalprüfungen,
+      keine Scans und kein offizielles Schulmaterial.
+    </div>
+
+    <div class="subjects-grid">
+      <div class="subject-card" onclick="renderMatheGym2Logarithmen()">
+        <h3>Exponentialfunktionen und Logarithmen</h3>
+        <p>Logarithmengesetze, Wachstum, Zerfall, Verdoppelungszeit.</p>
+      </div>
+
+      <div class="subject-card" onclick="renderMatheGym2Aenderungsraten()">
+        <h3>Änderungsraten und Ableitungsbegriff</h3>
+        <p>Steigungen, Ableitungsskizzen, Tangenten und erste Ableitungsregeln.</p>
+      </div>
+    </div>
+  `;
+};
+
+function backToMatheGym2Topics() {
+  window.contentRenderers["Mathematik-GYM2"](
+    document.getElementById("material-title"),
+    document.getElementById("material-content")
+  );
 }
 
-function matheGym2InfoBox(id, html) {
-  return `
-    <div id="${id}" class="info-box hidden">
-      <strong>Abstrakte Anleitung:</strong>
-      ${html}
+function renderMatheGym2Logarithmen() {
+  const materialTitle = document.getElementById("material-title");
+  const materialContent = document.getElementById("material-content");
+
+  materialTitle.textContent = "Mathematik · GYM2 · Exponentialfunktionen und Logarithmen";
+
+  materialContent.innerHTML = `
+    <button class="secondary" onclick="backToMatheGym2Topics()">Zurück zu den Themengebieten</button>
+
+    <div class="notice">
+      Eigenes Übungsset zu Logarithmen und Exponentialfunktionen.
+    </div>
+
+    <div class="exercise-card">
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 1 · Logarithmengesetze prüfen</h3>
+      <p>Entscheide, ob die Aussagen richtig oder falsch sind. Begründe kurz.</p>
+      <ol type="a">
+        <li>log₂(8 · 4) = log₂(8) + log₂(4)</li>
+        <li>log₅(25 + 125) = log₅(25) + log₅(125)</li>
+        <li>10<sup>log₁₀(37)</sup> = 37</li>
+        <li>log₃(3⁷) = 7</li>
+        <li>log₄(16²) = 4</li>
+      </ol>
+      <div class="hint">
+        Anleitung: Produkte werden beim Logarithmus zu Summen. Summen im Argument darf man aber nicht auseinanderziehen.
+      </div>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        a) richtig<br>
+        b) falsch<br>
+        c) richtig<br>
+        d) richtig<br>
+        e) richtig, denn 16² = 256 = 4⁴
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 2 · Radioaktiver Zerfall</h3>
+      <p>
+        Eine Substanz hat eine Halbwertszeit von 12 Jahren. Nach 6 Jahren sind noch 18 mg vorhanden.
+      </p>
+      <ol type="a">
+        <li>Stelle eine Zerfallsfunktion f(t) auf.</li>
+        <li>Wie viel war am Anfang vorhanden?</li>
+        <li>Nach wie vielen Jahren sind nur noch 5 mg vorhanden?</li>
+      </ol>
+      <div class="hint">
+        Anleitung: Bei Halbwertszeit verwendet man f(t) = A · (1/2)<sup>t/T</sup>. Setze den bekannten Punkt ein, um A zu bestimmen.
+      </div>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        f(t) = A · (1/2)<sup>t/12</sup><br>
+        18 = A · (1/2)<sup>6/12</sup> = A / √2<br>
+        A ≈ 25.46 mg<br>
+        5 = 25.46 · (1/2)<sup>t/12</sup> → t ≈ 28.2 Jahre
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 3 · Verdoppelungszeit</h3>
+      <p>
+        Ein Guthaben wächst jährlich um 2.4 %. Nach wie vielen Jahren hat es sich verdoppelt?
+      </p>
+      <div class="hint">
+        Anleitung: Setze 2 = 1.024<sup>t</sup> und löse mit dem Logarithmus nach t auf.
+      </div>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        2 = 1.024<sup>t</sup><br>
+        t = log(2) / log(1.024) ≈ 29.23 Jahre
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 4 · Graphen von Logarithmusfunktionen</h3>
+      <p>Ordne den Beschreibungen passende Funktionen zu.</p>
+      <ol type="A">
+        <li>Wächst langsam und geht durch (1 | 0), Basis grösser als 1.</li>
+        <li>Fällt und geht durch (1 | 0), Basis zwischen 0 und 1.</li>
+        <li>Wächst stärker als log₁₀(x).</li>
+      </ol>
+      <p>Funktionen:</p>
+      <ol>
+        <li>f(x) = log₂(x)</li>
+        <li>g(x) = log₁₀(x)</li>
+        <li>h(x) = log₀.₅(x)</li>
+      </ol>
+      <div class="hint">
+        Anleitung: Logarithmen mit Basis grösser als 1 wachsen. Mit Basis zwischen 0 und 1 fallen sie.
+      </div>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        A → g(x) = log₁₀(x)<br>
+        B → h(x) = log₀.₅(x)<br>
+        C → f(x) = log₂(x)
+      </div>
+    </div>
+
+    <div class="exercise-card">
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 5 · Exponentielles Wachstum aus zwei Punkten</h3>
+      <p>
+        Eine Funktion hat die Form f(x) = A · bˣ. Sie geht durch P(2 | 9) und Q(5 | 72).
+      </p>
+      <ol type="a">
+        <li>Bestimme b.</li>
+        <li>Bestimme A.</li>
+        <li>Gib die Funktionsgleichung an.</li>
+      </ol>
+      <div class="hint">
+        Anleitung: Teile die beiden Gleichungen. Dadurch fällt A weg. Danach kannst du b bestimmen.
+      </div>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        9 = A · b², 72 = A · b⁵<br>
+        72/9 = b³ → 8 = b³ → b = 2<br>
+        9 = A · 4 → A = 2.25<br>
+        f(x) = 2.25 · 2ˣ
+      </div>
     </div>
   `;
 }
 
-function render_mathematik_gym2() {
-  window.setMaterialTitle("Mathematik · GYM2 · Exponentialfunktionen und Logarithmen");
+function renderMatheGym2Aenderungsraten() {
+  const materialTitle = document.getElementById("material-title");
+  const materialContent = document.getElementById("material-content");
 
-  window.setMaterialContent(`
+  materialTitle.textContent = "Mathematik · GYM2 · Änderungsraten";
+
+  materialContent.innerHTML = `
+    <button class="secondary" onclick="backToMatheGym2Topics()">Zurück zu den Themengebieten</button>
+
     <div class="notice">
-      Eigenes Übungsmaterial. Keine Originalprüfung, kein Scan und kein offizielles Schulmaterial.
-      Die Aufgaben trainieren Exponentialfunktionen, Logarithmen, Halbwertszeit, Verzinsung und exponentielle Modelle.
+      Eigenes Übungsset zum Ableitungsbegriff und Änderungsraten.
     </div>
 
     <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 1 · Logarithmengesetze prüfen</h3>
-        ${matheGym2InfoButton("mg2-info-1")}
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 1 · Ableitung aus Graph verstehen</h3>
+      <p>
+        Eine Funktion steigt auf dem Intervall [0,2], fällt auf [2,5] und steigt danach wieder.
+        Skizziere grob den Graphen der Ableitungsfunktion f'(x).
+      </p>
+      <div class="hint">
+        Anleitung: Wo f steigt, ist f' positiv. Wo f fällt, ist f' negativ. Bei lokalen Hoch- oder Tiefpunkten von f ist f' = 0.
       </div>
-      ${matheGym2InfoBox("mg2-info-1", `
-        <ul>
-          <li>Verwende die Definition: log_a(b) = x bedeutet a^x = b.</li>
-          <li>Produktregel: log_a(xy) = log_a(x) + log_a(y).</li>
-          <li>Potenzregel: log_a(x^r) = r · log_a(x).</li>
-          <li>Quotientenregel: log_a(x/y) = log_a(x) - log_a(y).</li>
-          <li>Achte auf Definitionsbedingungen: Basis positiv und ungleich 1, Argument positiv.</li>
-        </ul>
-      `)}
-      <p>Entscheide, ob die Aussagen wahr oder falsch sind. Begründe kurz.</p>
-      <ol type="a">
-        <li>log₂(8) = 3</li>
-        <li>log₃(9 · 27) = log₃(9) + log₃(27)</li>
-        <li>log₅(25) · log₅(5) = log₅(125)</li>
-        <li>log₄(1) = 0</li>
-        <li>logₐ(a⁵) = 5 für a &gt; 0 und a ≠ 1</li>
-        <li>log₂(16 + 16) = log₂(16) + log₂(16)</li>
-      </ol>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        f'(x) ist positiv auf [0,2], ungefähr 0 bei x = 2, negativ auf [2,5], ungefähr 0 bei x = 5 und danach wieder positiv.
+      </div>
     </div>
 
     <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 2 · Exponentialgleichungen lösen</h3>
-        ${matheGym2InfoButton("mg2-info-2")}
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 2 · Potenzregel begründen</h3>
+      <p>Zeige mit dem Differentialquotienten, dass für f(x) = x² gilt: f'(x) = 2x.</p>
+      <div class="hint">
+        Anleitung: Starte mit lim h→0 [f(x+h)-f(x)]/h. Setze f(x)=x² ein und vereinfache.
       </div>
-      ${matheGym2InfoBox("mg2-info-2", `
-        <ul>
-          <li>Wenn beide Seiten als Potenz derselben Basis geschrieben werden können, vergleiche die Exponenten.</li>
-          <li>Wenn das nicht geht, logarithmiere beide Seiten.</li>
-          <li>Bei Gleichungen der Form a · b^x = c zuerst durch a teilen.</li>
-          <li>Danach mit log oder ln nach x auflösen.</li>
-        </ul>
-      `)}
-      <p>Löse die Gleichungen nach x. Runde, falls nötig, auf zwei Nachkommastellen.</p>
-      <ol type="a">
-        <li>2ˣ = 64</li>
-        <li>3 · 1.4ˣ = 18</li>
-        <li>0.75ˣ = 0.2</li>
-        <li>5 · 2ˣ⁺¹ = 80</li>
-        <li>12 · 0.9ˣ = 4</li>
-      </ol>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        f'(x)=lim h→0 [(x+h)²-x²]/h<br>
+        =lim h→0 [x²+2xh+h²-x²]/h<br>
+        =lim h→0 [2xh+h²]/h<br>
+        =lim h→0 (2x+h)=2x
+      </div>
     </div>
 
     <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 3 · Halbwertszeit</h3>
-        ${matheGym2InfoButton("mg2-info-3")}
+      <button class="info-btn" onclick="toggleHint(this)">i</button>
+      <h3>Aufgabe 3 · Tangente</h3>
+      <p>Gegeben ist f(x)=x²-4x+1. Bestimme die Tangente im Punkt mit x=3.</p>
+      <div class="hint">
+        Anleitung: Berechne zuerst f(3). Dann berechne f'(x). Die Tangentensteigung ist f'(3). Danach verwende y = m(x - x₀) + y₀.
       </div>
-      ${matheGym2InfoBox("mg2-info-3", `
-        <ul>
-          <li>Bei Halbwertszeit halbiert sich die Menge in gleichen Zeitabständen.</li>
-          <li>Modell: f(t) = A₀ · (1/2)^(t/T), wobei T die Halbwertszeit ist.</li>
-          <li>Wenn ein Zeitpunkt gegeben ist, setze ihn in die Funktion ein.</li>
-          <li>Für Prozentanteile kannst du mit f(t)/A₀ arbeiten.</li>
-        </ul>
-      `)}
-      <p>Eine Substanz hat eine Halbwertszeit von 12 Jahren. Zu Beginn sind 80 mg vorhanden.</p>
-      <ol type="a">
-        <li>Stelle eine Funktion f(t) auf, welche die Menge nach t Jahren beschreibt.</li>
-        <li>Wie viel ist nach 18 Jahren noch vorhanden?</li>
-        <li>Nach wie vielen Jahren sind nur noch 10 mg vorhanden?</li>
-        <li>Nach wie vielen Jahren sind noch 30% der Anfangsmenge vorhanden?</li>
-      </ol>
+      <button class="solution-btn" onclick="toggleSolution(this)">Lösung anzeigen</button>
+      <div class="solution">
+        f(3)=9-12+1=-2<br>
+        f'(x)=2x-4<br>
+        f'(3)=2<br>
+        Tangente: y = 2(x-3)-2 = 2x-8
+      </div>
     </div>
-
-    <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 4 · Verzinsung</h3>
-        ${matheGym2InfoButton("mg2-info-4")}
-      </div>
-      ${matheGym2InfoBox("mg2-info-4", `
-        <ul>
-          <li>Bei jährlichem Zinseszins gilt K(t) = K₀ · (1 + p)^t.</li>
-          <li>p muss als Dezimalzahl eingesetzt werden, also 3% = 0.03.</li>
-          <li>Für Verdopplung setzt man K(t) = 2K₀.</li>
-          <li>Dann kürzt sich K₀ weg und man löst mit Logarithmen.</li>
-        </ul>
-      `)}
-      <p>Ein Kapital von CHF 2500 wird mit jährlichem Zinseszins angelegt.</p>
-      <ol type="a">
-        <li>Wie gross ist das Kapital nach 8 Jahren bei 2.5% Jahreszins?</li>
-        <li>Nach wie vielen Jahren hat sich das Kapital bei 2.5% Jahreszins verdoppelt?</li>
-        <li>Welcher Jahreszins wäre nötig, damit sich das Kapital in 20 Jahren verdoppelt?</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 5 · Logarithmusfunktionen zuordnen</h3>
-        ${matheGym2InfoButton("mg2-info-5")}
-      </div>
-      ${matheGym2InfoBox("mg2-info-5", `
-        <ul>
-          <li>Logarithmusfunktionen haben bei x = 0 eine senkrechte Asymptote.</li>
-          <li>Alle log_a(x) gehen durch den Punkt (1|0).</li>
-          <li>Für a &gt; 1 ist der Graph steigend.</li>
-          <li>Für 0 &lt; a &lt; 1 ist der Graph fallend.</li>
-          <li>Je grösser die Basis bei a &gt; 1, desto flacher wächst der Graph.</li>
-        </ul>
-      `)}
-      <p>Beschreibe ohne Zeichnung, wie die folgenden Graphen verlaufen. Entscheide jeweils: steigend oder fallend, Definitionsbereich, Nullstelle.</p>
-      <ol type="a">
-        <li>f(x) = log₂(x)</li>
-        <li>g(x) = log₀.₅(x)</li>
-        <li>h(x) = log₁₀(x)</li>
-        <li>k(x) = log₃(x) + 2</li>
-        <li>m(x) = log₂(x - 1)</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 6 · Exponentielles Wachstum bestimmen</h3>
-        ${matheGym2InfoButton("mg2-info-6")}
-      </div>
-      ${matheGym2InfoBox("mg2-info-6", `
-        <ul>
-          <li>Eine Exponentialfunktion hat die Form f(x) = c · a^x.</li>
-          <li>Wenn zwei Punkte gegeben sind, setze beide Punkte ein.</li>
-          <li>Dividiere die Gleichungen, damit c verschwindet.</li>
-          <li>Bestimme zuerst a und danach c.</li>
-          <li>Die Verdopplungszeit erhält man mit a^T = 2.</li>
-        </ul>
-      `)}
-      <p>Eine exponentielle Funktion f(x) = c · aˣ geht durch die Punkte A(2 | 9) und B(6 | 45).</p>
-      <ol type="a">
-        <li>Bestimme a.</li>
-        <li>Bestimme c.</li>
-        <li>Gib die Funktionsgleichung an.</li>
-        <li>Berechne die Verdopplungszeit.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 7 · Werte aus einer Tabelle modellieren</h3>
-        ${matheGym2InfoButton("mg2-info-7")}
-      </div>
-      ${matheGym2InfoBox("mg2-info-7", `
-        <ul>
-          <li>Prüfe zuerst, ob die Werte eher linear oder exponentiell abnehmen.</li>
-          <li>Bei exponentiellem Verlauf sind die Quotienten ähnlicher als die Differenzen.</li>
-          <li>Wähle zwei Punkte und bestimme daraus eine Funktion.</li>
-          <li>Interpretiere das Resultat immer im Sachzusammenhang.</li>
-        </ul>
-      `)}
-      <p>Die Helligkeit einer Lampe nimmt mit der Entfernung ab. Es werden folgende Werte gemessen:</p>
-      <div class="formula">
-        Entfernung in m: 1 | 2 | 4 | 8<br>
-        Helligkeit: 120 | 60 | 30 | 15
-      </div>
-      <ol type="a">
-        <li>Begründe, warum ein exponentielles Modell passen könnte.</li>
-        <li>Stelle eine passende Funktion auf.</li>
-        <li>Berechne die Helligkeit bei 6 m.</li>
-        <li>Bei welcher Entfernung beträgt die Helligkeit ungefähr 10?</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 8 · Grosse Zahlen und Zweierpotenzen</h3>
-        ${matheGym2InfoButton("mg2-info-8")}
-      </div>
-      ${matheGym2InfoBox("mg2-info-8", `
-        <ul>
-          <li>Ein System mit n Bits kann 2ⁿ verschiedene Zustände darstellen.</li>
-          <li>Wenn bei 0 begonnen wird, ist die grösste Zahl 2ⁿ - 1.</li>
-          <li>Für die Anzahl Dezimalstellen verwendest du log₁₀(N).</li>
-          <li>Die Stellenzahl ist floor(log₁₀(N)) + 1.</li>
-        </ul>
-      `)}
-      <p>Ein digitales System arbeitet mit 128 Bits.</p>
-      <ol type="a">
-        <li>Wie viele verschiedene Zustände kann es darstellen?</li>
-        <li>Was ist die grösste natürliche Zahl, wenn bei 0 begonnen wird?</li>
-        <li>Wie viele Dezimalstellen hat diese grösste Zahl ungefähr?</li>
-        <li>Erkläre, warum Logarithmen bei solchen Fragen nützlich sind.</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 9 · Logarithmusgleichung</h3>
-        ${matheGym2InfoButton("mg2-info-9")}
-      </div>
-      ${matheGym2InfoBox("mg2-info-9", `
-        <ul>
-          <li>Bringe zuerst alle Logarithmen auf eine Seite.</li>
-          <li>Nutze Logarithmengesetze, um Terme zusammenzufassen.</li>
-          <li>Wandle danach in eine Exponentialgleichung um.</li>
-          <li>Prüfe am Ende die Definitionsbedingungen.</li>
-        </ul>
-      `)}
-      <p>Löse die Gleichungen und prüfe die Lösungen.</p>
-      <ol type="a">
-        <li>log₂(x) = 5</li>
-        <li>log₃(x - 1) = 2</li>
-        <li>log₅(x) + log₅(2) = 3</li>
-        <li>log₂(x + 3) - log₂(x) = 2</li>
-      </ol>
-    </div>
-
-    <div class="exercise-card">
-      <div class="exercise-top">
-        <h3>Aufgabe 10 · Gemischte Abschlussaufgabe</h3>
-        ${matheGym2InfoButton("mg2-info-10")}
-      </div>
-      ${matheGym2InfoBox("mg2-info-10", `
-        <ul>
-          <li>Erkenne zuerst den Aufgabentyp: Wachstum, Zerfall, Zins oder Logarithmus.</li>
-          <li>Schreibe die passende Grundformel auf.</li>
-          <li>Setze die gegebenen Werte sorgfältig ein.</li>
-          <li>Löse erst am Schluss mit Logarithmen nach der gesuchten Variable auf.</li>
-        </ul>
-      `)}
-      <p>Eine Bakterienkultur wächst exponentiell. Zu Beginn sind 4000 Bakterien vorhanden. Nach 6 Stunden sind es 11200.</p>
-      <ol type="a">
-        <li>Bestimme eine Funktion N(t) = N₀ · aᵗ.</li>
-        <li>Wie viele Bakterien sind nach 10 Stunden vorhanden?</li>
-        <li>Nach wie vielen Stunden sind 50000 Bakterien vorhanden?</li>
-        <li>Bestimme die Verdopplungszeit.</li>
-      </ol>
-    </div>
-  `);
+  `;
 }
-
-window.render_mathematik_gym2 = render_mathematik_gym2;
