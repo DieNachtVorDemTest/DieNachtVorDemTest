@@ -1243,6 +1243,290 @@ const AM_THEMEN = [
       "Kannst du aus einfachen Bildbedingungen eine Transformation aufstellen?"
     ]
   }
+  {
+    id: "vollstaendige-induktion",
+    nummer: "5",
+    titel: "Vollständige Induktion",
+    kurzbeschreibung:
+      "Beweise für Aussagen über natürliche Zahlen mit Induktionsanfang, Induktionsannahme und Induktionsschritt.",
+    lernziele: [
+      "Du verstehst, wofür man vollständige Induktion verwendet.",
+      "Du kannst den Induktionsanfang korrekt durchführen.",
+      "Du kannst die Induktionsannahme sauber formulieren.",
+      "Du kannst den Induktionsschritt von n auf n + 1 durchführen.",
+      "Du kannst Summenformeln mit vollständiger Induktion beweisen.",
+      "Du kannst Teilbarkeitsaussagen mit vollständiger Induktion beweisen.",
+      "Du erkennst typische Fehler bei Induktionsbeweisen.",
+      "Du kannst einen Induktionsbeweis klar und vollständig aufschreiben."
+    ],
+    theorie: [
+      {
+        titel: "Was ist vollständige Induktion?",
+        text:
+          "Die vollständige Induktion ist eine Beweismethode für Aussagen, die für natürliche Zahlen gelten sollen. Man zeigt zuerst, dass die Aussage am Anfang stimmt. Danach zeigt man: Wenn sie für eine Zahl n stimmt, dann stimmt sie auch für die nächste Zahl n + 1."
+      },
+      {
+        titel: "Die Grundidee",
+        text:
+          "Man kann sich vollständige Induktion wie eine Reihe von Dominosteinen vorstellen. Der erste Stein muss fallen. Danach muss jeder Stein den nächsten umstossen. Dann fallen alle Steine."
+      },
+      {
+        titel: "Induktionsanfang",
+        text:
+          "Beim Induktionsanfang prüft man die Aussage für den ersten erlaubten Wert, meistens n = 1 oder n = 0. Dieser Schritt ist notwendig, weil die ganze Beweiskette irgendwo starten muss."
+      },
+      {
+        titel: "Induktionsannahme",
+        text:
+          "Bei der Induktionsannahme nimmt man an, dass die Aussage für ein beliebiges, aber festes n gilt. Diese Annahme darf man im Induktionsschritt verwenden."
+      },
+      {
+        titel: "Induktionsschritt",
+        text:
+          "Im Induktionsschritt zeigt man, dass aus der Gültigkeit für n die Gültigkeit für n + 1 folgt. Man beweist also nicht direkt alles neu, sondern benutzt die Aussage für n als Werkzeug."
+      },
+      {
+        titel: "Typische Struktur",
+        text:
+          "Ein vollständiger Induktionsbeweis besteht aus drei Teilen: Induktionsanfang, Induktionsannahme und Induktionsschritt. Am Ende schreibt man einen kurzen Schlusssatz."
+      },
+      {
+        titel: "Wann braucht man Induktion?",
+        text:
+          "Induktion braucht man oft bei Summenformeln, Produktformeln, Teilbarkeitsaussagen, Ungleichungen und Aussagen über Folgen."
+      },
+      {
+        titel: "Warum ist der Schritt n zu n + 1 wichtig?",
+        text:
+          "Der Schritt n zu n + 1 zeigt, dass die Aussage automatisch weiterwandert. Wenn sie einmal stimmt, dann stimmt sie auch für die nächste Zahl, dann wieder für die nächste und so weiter."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Standardbeweis mit vollständiger Induktion",
+        schritte: [
+          "1. Schreibe klar auf, welche Aussage A(n) bewiesen werden soll.",
+          "2. Bestimme den Startwert, meistens n = 1 oder n = 0.",
+          "3. Führe den Induktionsanfang durch.",
+          "4. Formuliere die Induktionsannahme: Angenommen, A(n) gilt für ein beliebiges n.",
+          "5. Formuliere das Induktionsziel: Zu zeigen ist A(n + 1).",
+          "6. Starte mit der linken Seite oder der zu beweisenden Aussage für n + 1.",
+          "7. Verwende an der passenden Stelle die Induktionsannahme.",
+          "8. Forme so um, dass die gewünschte Aussage für n + 1 entsteht.",
+          "9. Schreibe einen Schlusssatz."
+        ]
+      },
+      {
+        titel: "Methode: Summenformel beweisen",
+        schritte: [
+          "1. Prüfe die Formel für den ersten Wert.",
+          "2. Nimm an, dass die Summenformel bis n gilt.",
+          "3. Schreibe die Summe bis n + 1 als Summe bis n plus den neuen letzten Summanden.",
+          "4. Ersetze die Summe bis n durch die Induktionsannahme.",
+          "5. Fasse algebraisch zusammen.",
+          "6. Zeige, dass genau die Formel mit n + 1 entsteht."
+        ]
+      },
+      {
+        titel: "Methode: Teilbarkeit beweisen",
+        schritte: [
+          "1. Prüfe die Teilbarkeit beim Startwert.",
+          "2. Nimm an, dass der Ausdruck für n durch eine bestimmte Zahl teilbar ist.",
+          "3. Betrachte den Ausdruck für n + 1.",
+          "4. Forme ihn so um, dass der Ausdruck aus der Induktionsannahme vorkommt.",
+          "5. Zeige, dass der übrige Teil ebenfalls durch die Zahl teilbar ist.",
+          "6. Schliesse daraus, dass die Aussage auch für n + 1 gilt."
+        ]
+      },
+      {
+        titel: "Methode: Induktionsannahme richtig verwenden",
+        schritte: [
+          "1. Markiere zuerst genau, was du annehmen darfst.",
+          "2. Suche im Ausdruck für n + 1 einen Teil, der wie die Aussage für n aussieht.",
+          "3. Ersetze nur diesen Teil durch die Induktionsannahme.",
+          "4. Verwende die Annahme nicht für n + 1, denn genau das musst du erst beweisen.",
+          "5. Kontrolliere am Schluss, ob wirklich die Zielaussage für n + 1 erreicht wurde."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Vollständige Induktion beweist Aussagen über natürliche Zahlen.",
+      "Der Induktionsanfang startet die Beweiskette.",
+      "Die Induktionsannahme gilt nur für n, nicht automatisch für n + 1.",
+      "Im Induktionsschritt zeigt man: Wenn A(n) gilt, dann gilt A(n + 1).",
+      "Bei Summen ist die Summe bis n + 1 gleich Summe bis n plus neuer letzter Summand.",
+      "Bei Teilbarkeit muss man den Ausdruck so umformen, dass die Induktionsannahme sichtbar wird.",
+      "Ohne Induktionsanfang ist der Beweis unvollständig.",
+      "Ohne Induktionsschritt ist nur ein einzelner Fall geprüft."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man vergisst den Induktionsanfang.",
+        korrektur:
+          "Der Induktionsanfang ist nötig, damit die Kette überhaupt startet. Ohne Startwert ist der Beweis nicht vollständig."
+      },
+      {
+        fehler: "Man beweist nur ein paar Beispiele und denkt, das reicht.",
+        korrektur:
+          "Beispiele zeigen nur einzelne Fälle. Ein Induktionsbeweis zeigt alle natürlichen Zahlen ab dem Startwert."
+      },
+      {
+        fehler: "Man verwendet die Aussage für n + 1 schon in der Annahme.",
+        korrektur:
+          "In der Induktionsannahme darf nur angenommen werden, dass die Aussage für n gilt. Die Aussage für n + 1 ist genau das Ziel."
+      },
+      {
+        fehler: "Man formuliert nicht klar, was bewiesen werden soll.",
+        korrektur:
+          "Am Anfang sollte die Aussage A(n) klar definiert werden. Sonst wird der Induktionsschritt unübersichtlich."
+      },
+      {
+        fehler: "Man ersetzt im Induktionsschritt einen falschen Teil durch die Induktionsannahme.",
+        korrektur:
+          "Die Induktionsannahme darf nur auf exakt den Ausdruck angewendet werden, der zur Aussage für n gehört."
+      },
+      {
+        fehler: "Man schreibt keinen Schlusssatz.",
+        korrektur:
+          "Am Schluss sollte stehen, dass die Aussage wegen Induktionsanfang und Induktionsschritt für alle natürlichen Zahlen ab dem Startwert gilt."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Summenformel",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Beweise mit vollständiger Induktion: 1 + 2 + 3 + ... + n = n(n + 1)/2 für alle n ≥ 1.",
+        loesung: [
+          "Induktionsanfang: Für n = 1 gilt links 1 und rechts 1 · 2 / 2 = 1. Die Aussage stimmt.",
+          "Induktionsannahme: Angenommen, 1 + 2 + ... + n = n(n + 1)/2 gilt für ein beliebiges n.",
+          "Induktionsziel: Zu zeigen ist 1 + 2 + ... + n + (n + 1) = (n + 1)(n + 2)/2.",
+          "Beginne mit der linken Seite: 1 + 2 + ... + n + (n + 1).",
+          "Verwende die Induktionsannahme: Das ist n(n + 1)/2 + (n + 1).",
+          "Faktorisieren: n(n + 1)/2 + 2(n + 1)/2 = (n + 1)(n + 2)/2.",
+          "Das ist genau die Formel für n + 1.",
+          "Also gilt die Aussage für alle n ≥ 1."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Quadratsummen-ähnliche Struktur",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Beweise mit vollständiger Induktion: 1 + 3 + 5 + ... + (2n - 1) = n² für alle n ≥ 1.",
+        loesung: [
+          "Induktionsanfang: Für n = 1 gilt links 1 und rechts 1² = 1. Die Aussage stimmt.",
+          "Induktionsannahme: Angenommen, 1 + 3 + ... + (2n - 1) = n².",
+          "Induktionsziel: Zu zeigen ist 1 + 3 + ... + (2n - 1) + (2(n + 1) - 1) = (n + 1)².",
+          "Der neue letzte Summand ist 2(n + 1) - 1 = 2n + 1.",
+          "Beginne mit links: 1 + 3 + ... + (2n - 1) + (2n + 1).",
+          "Verwende die Induktionsannahme: n² + 2n + 1.",
+          "Das ist (n + 1)².",
+          "Damit ist die Aussage bewiesen."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Potenzformel",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Beweise mit vollständiger Induktion: 2 + 4 + 8 + ... + 2ⁿ = 2ⁿ⁺¹ - 2 für alle n ≥ 1.",
+        loesung: [
+          "Induktionsanfang: Für n = 1 gilt links 2 und rechts 2² - 2 = 4 - 2 = 2.",
+          "Induktionsannahme: Angenommen, 2 + 4 + ... + 2ⁿ = 2ⁿ⁺¹ - 2.",
+          "Induktionsziel: Zu zeigen ist 2 + 4 + ... + 2ⁿ + 2ⁿ⁺¹ = 2ⁿ⁺² - 2.",
+          "Beginne mit links: 2 + 4 + ... + 2ⁿ + 2ⁿ⁺¹.",
+          "Verwende die Induktionsannahme: 2ⁿ⁺¹ - 2 + 2ⁿ⁺¹.",
+          "Fasse zusammen: 2 · 2ⁿ⁺¹ - 2.",
+          "Das ist 2ⁿ⁺² - 2.",
+          "Damit ist die Aussage bewiesen."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Teilbarkeit",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Beweise mit vollständiger Induktion: 3ⁿ - 1 ist für alle n ≥ 1 durch 2 teilbar.",
+        loesung: [
+          "Induktionsanfang: Für n = 1 gilt 3¹ - 1 = 2. Das ist durch 2 teilbar.",
+          "Induktionsannahme: Angenommen, 3ⁿ - 1 ist durch 2 teilbar.",
+          "Induktionsziel: Zu zeigen ist, dass 3ⁿ⁺¹ - 1 durch 2 teilbar ist.",
+          "Forme um: 3ⁿ⁺¹ - 1 = 3 · 3ⁿ - 1.",
+          "Schreibe 3 · 3ⁿ - 1 = 3(3ⁿ - 1) + 2.",
+          "Nach Induktionsannahme ist 3ⁿ - 1 durch 2 teilbar.",
+          "Also ist auch 3(3ⁿ - 1) durch 2 teilbar.",
+          "Der Restterm 2 ist ebenfalls durch 2 teilbar.",
+          "Damit ist 3ⁿ⁺¹ - 1 durch 2 teilbar."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Induktionsanfang erkennen",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Welche Rolle spielt der Induktionsanfang in einem Induktionsbeweis?",
+        loesung: [
+          "Der Induktionsanfang zeigt, dass die Aussage beim ersten erlaubten Wert stimmt.",
+          "Er startet die Beweiskette.",
+          "Ohne Induktionsanfang hätte man nur gezeigt, dass aus einer wahren Aussage die nächste folgt.",
+          "Aber man hätte nicht gezeigt, dass die erste Aussage überhaupt wahr ist."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Fehler finden",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Ein Schüler schreibt: Angenommen, die Formel gilt für n + 1. Dann gilt sie auch für n + 1. Erkläre den Fehler.",
+        loesung: [
+          "Der Fehler liegt in der Induktionsannahme.",
+          "Man darf nicht annehmen, dass die Aussage schon für n + 1 gilt.",
+          "Genau das soll im Induktionsschritt erst bewiesen werden.",
+          "Richtig wäre: Man nimmt an, dass die Aussage für n gilt.",
+          "Dann zeigt man daraus, dass sie für n + 1 gilt."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist vollständige Induktion?",
+        antwort:
+          "Vollständige Induktion ist eine Beweismethode für Aussagen über natürliche Zahlen. Man zeigt zuerst einen Startfall und danach, dass aus der Aussage für n die Aussage für n + 1 folgt."
+      },
+      {
+        frage: "Aus welchen drei Teilen besteht ein Induktionsbeweis?",
+        antwort:
+          "Ein Induktionsbeweis besteht aus Induktionsanfang, Induktionsannahme und Induktionsschritt."
+      },
+      {
+        frage: "Was macht man im Induktionsanfang?",
+        antwort:
+          "Man überprüft die Aussage für den ersten erlaubten Wert, zum Beispiel n = 1 oder n = 0."
+      },
+      {
+        frage: "Was ist die Induktionsannahme?",
+        antwort:
+          "Man nimmt an, dass die Aussage für ein beliebiges, aber festes n gilt. Diese Annahme darf man im Induktionsschritt verwenden."
+      },
+      {
+        frage: "Was zeigt der Induktionsschritt?",
+        antwort:
+          "Der Induktionsschritt zeigt, dass aus der Gültigkeit der Aussage für n die Gültigkeit für n + 1 folgt."
+      },
+      {
+        frage: "Warum reicht es nicht, nur n = 1, n = 2 und n = 3 zu prüfen?",
+        antwort:
+          "Weil Beispiele nur einzelne Fälle zeigen. Die vollständige Induktion beweist die Aussage für unendlich viele natürliche Zahlen."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du die Aussage A(n) klar formulieren?",
+      "Weisst du, bei welchem n der Induktionsanfang starten muss?",
+      "Kannst du den Induktionsanfang sauber ausrechnen?",
+      "Kannst du die Induktionsannahme korrekt formulieren?",
+      "Kannst du das Induktionsziel für n + 1 hinschreiben?",
+      "Kannst du bei Summen den neuen letzten Summanden ergänzen?",
+      "Kannst du die Induktionsannahme an der richtigen Stelle verwenden?",
+      "Kannst du am Schluss einen vollständigen Schlusssatz schreiben?"
+    ]
+  }
+
 ];
 
 
