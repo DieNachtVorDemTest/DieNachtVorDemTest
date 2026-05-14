@@ -1901,7 +1901,780 @@ const AM_THEMEN = [
       "Bestimmst du am Schluss den Konvergenzbereich?"
     ]
   }
-
+  {
+    id: "differenzialgleichungen",
+    nummer: "7",
+    titel: "Differenzialgleichungen",
+    kurzbeschreibung:
+      "Differenzialgleichungen erkennen, Typen unterscheiden und mit passenden Standardmethoden lösen.",
+    lernziele: [
+      "Du verstehst, was eine Differenzialgleichung ist.",
+      "Du kannst zwischen gewöhnlichen Gleichungen und Differenzialgleichungen unterscheiden.",
+      "Du erkennst separierbare Differenzialgleichungen erster Ordnung.",
+      "Du kannst separierbare Differenzialgleichungen lösen.",
+      "Du erkennst lineare Differenzialgleichungen erster Ordnung.",
+      "Du kannst eine lineare inhomogene Differenzialgleichung erster Ordnung mit Variation der Konstanten lösen.",
+      "Du erkennst lineare homogene Differenzialgleichungen zweiter Ordnung mit konstanten Koeffizienten.",
+      "Du kannst das charakteristische Polynom aufstellen.",
+      "Du kannst reale und komplexe Lösungen des charakteristischen Polynoms interpretieren.",
+      "Du kannst Anfangsbedingungen verwenden, um Konstanten zu bestimmen."
+    ],
+    theorie: [
+      {
+        titel: "Was ist eine Differenzialgleichung?",
+        text:
+          "Eine Differenzialgleichung ist eine Gleichung, in der eine unbekannte Funktion und eine oder mehrere ihrer Ableitungen vorkommen. Gesucht ist also nicht nur eine Zahl, sondern eine ganze Funktion."
+      },
+      {
+        titel: "Ordnung einer Differenzialgleichung",
+        text:
+          "Die Ordnung einer Differenzialgleichung wird durch die höchste vorkommende Ableitung bestimmt. Wenn nur y' vorkommt, ist es eine Differenzialgleichung erster Ordnung. Wenn y'' vorkommt, ist es eine Differenzialgleichung zweiter Ordnung."
+      },
+      {
+        titel: "Separierbare Differenzialgleichung",
+        text:
+          "Eine Differenzialgleichung ist separierbar, wenn man alle Terme mit y auf eine Seite und alle Terme mit x auf die andere Seite bringen kann. Danach integriert man beide Seiten."
+      },
+      {
+        titel: "Lineare Differenzialgleichung erster Ordnung",
+        text:
+          "Eine lineare Differenzialgleichung erster Ordnung hat typischerweise die Form y' + p(x)y = q(x). Wenn q(x) nicht 0 ist, nennt man sie inhomogen."
+      },
+      {
+        titel: "Homogene zugehörige Gleichung",
+        text:
+          "Zur inhomogenen Gleichung y' + p(x)y = q(x) betrachtet man zuerst die homogene Gleichung y' + p(x)y = 0. Diese löst man zuerst."
+      },
+      {
+        titel: "Variation der Konstanten",
+        text:
+          "Bei der Variation der Konstanten ersetzt man die Konstante der homogenen Lösung durch eine unbekannte Funktion. Diese Funktion wird dann so bestimmt, dass die inhomogene Gleichung erfüllt ist."
+      },
+      {
+        titel: "Lineare DGL zweiter Ordnung",
+        text:
+          "Eine lineare homogene Differenzialgleichung zweiter Ordnung mit konstanten Koeffizienten hat typischerweise die Form ay'' + by' + cy = 0."
+      },
+      {
+        titel: "Charakteristisches Polynom",
+        text:
+          "Bei linearen homogenen Differenzialgleichungen zweiter Ordnung mit konstanten Koeffizienten setzt man y = e^(λx) an. Daraus entsteht ein quadratisches Polynom in λ, das charakteristische Polynom."
+      },
+      {
+        titel: "Reelle Nullstellen",
+        text:
+          "Hat das charakteristische Polynom zwei verschiedene reelle Nullstellen λ₁ und λ₂, dann besteht die Lösung aus einer Kombination von e^(λ₁x) und e^(λ₂x)."
+      },
+      {
+        titel: "Komplexe Nullstellen",
+        text:
+          "Hat das charakteristische Polynom komplexe Nullstellen μ ± βi, dann entsteht eine Schwingungsform mit e^(μx), cos(βx) und sin(βx)."
+      },
+      {
+        titel: "Anfangsbedingungen",
+        text:
+          "Anfangsbedingungen geben konkrete Werte der Lösung oder ihrer Ableitung an. Mit ihnen bestimmt man die freien Konstanten in der allgemeinen Lösung."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: DGL-Typ erkennen",
+        schritte: [
+          "1. Schaue zuerst, welche Ableitungen vorkommen.",
+          "2. Wenn nur y' vorkommt, ist es eine DGL erster Ordnung.",
+          "3. Wenn y'' vorkommt, ist es eine DGL zweiter Ordnung.",
+          "4. Prüfe bei erster Ordnung, ob man x- und y-Terme trennen kann.",
+          "5. Wenn ja, ist die DGL separierbar.",
+          "6. Wenn sie die Form y' + p(x)y = q(x) hat, ist sie linear erster Ordnung.",
+          "7. Wenn sie die Form ay'' + by' + cy = 0 hat, ist sie linear homogen zweiter Ordnung mit konstanten Koeffizienten."
+        ]
+      },
+      {
+        titel: "Methode: Separierbare DGL lösen",
+        schritte: [
+          "1. Schreibe y' als dy/dx.",
+          "2. Bringe alle Terme mit y auf eine Seite.",
+          "3. Bringe alle Terme mit x auf die andere Seite.",
+          "4. Integriere beide Seiten.",
+          "5. Fasse die Integrationskonstante zusammen.",
+          "6. Löse wenn möglich nach y auf.",
+          "7. Verwende Anfangsbedingungen, falls sie gegeben sind."
+        ]
+      },
+      {
+        titel: "Methode: Lineare DGL erster Ordnung lösen",
+        schritte: [
+          "1. Bringe die Gleichung in die Form y' + p(x)y = q(x).",
+          "2. Löse zuerst die homogene Gleichung y' + p(x)y = 0.",
+          "3. Erhalte eine Lösung mit einer Konstanten C.",
+          "4. Ersetze C durch eine Funktion C(x).",
+          "5. Setze diesen Ansatz in die inhomogene Gleichung ein.",
+          "6. Bestimme C'(x).",
+          "7. Integriere C'(x), um C(x) zu erhalten.",
+          "8. Setze C(x) in den Ansatz ein.",
+          "9. Verwende Anfangsbedingungen, falls vorhanden."
+        ]
+      },
+      {
+        titel: "Methode: Lineare homogene DGL zweiter Ordnung lösen",
+        schritte: [
+          "1. Bringe die Gleichung in die Form ay'' + by' + cy = 0.",
+          "2. Stelle das charakteristische Polynom aλ² + bλ + c = 0 auf.",
+          "3. Löse die quadratische Gleichung.",
+          "4. Unterscheide zwischen zwei reellen Nullstellen, einer doppelten Nullstelle und komplexen Nullstellen.",
+          "5. Schreibe die allgemeine Lösung passend zum Fall auf.",
+          "6. Verwende Anfangsbedingungen, um die Konstanten zu bestimmen."
+        ]
+      },
+      {
+        titel: "Methode: Komplexe Nullstellen interpretieren",
+        schritte: [
+          "1. Schreibe die Nullstellen als λ = μ ± βi.",
+          "2. Der Realteil μ steht im Exponentialfaktor e^(μx).",
+          "3. Der Imaginärteil β steht in cos(βx) und sin(βx).",
+          "4. Die Lösung hat die Form e^(μx)(A cos(βx) + B sin(βx)).",
+          "5. Wenn μ negativ ist, wird die Schwingung gedämpft.",
+          "6. Wenn μ positiv ist, wächst die Schwingung an.",
+          "7. Wenn μ = 0 ist, bleibt die Amplitude konstant."
+        ]
+      },
+      {
+        titel: "Methode: Anfangsbedingungen verwenden",
+        schritte: [
+          "1. Bestimme zuerst die allgemeine Lösung.",
+          "2. Setze den gegebenen x- oder t-Wert in die Lösung ein.",
+          "3. Nutze die Bedingung für y, um eine Gleichung für die Konstanten zu erhalten.",
+          "4. Falls auch y' gegeben ist, leite die allgemeine Lösung ab.",
+          "5. Setze auch diese Bedingung ein.",
+          "6. Löse das entstehende Gleichungssystem.",
+          "7. Setze die Konstanten in die allgemeine Lösung ein."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Bei einer Differenzialgleichung ist eine Funktion gesucht, nicht nur eine Zahl.",
+      "Die höchste Ableitung bestimmt die Ordnung.",
+      "Separierbar bedeutet: y-Terme auf eine Seite, x-Terme auf die andere Seite.",
+      "Eine lineare DGL erster Ordnung erkennt man oft an y' + p(x)y = q(x).",
+      "Bei Variation der Konstanten wird aus C eine Funktion C(x).",
+      "Bei linearen homogenen DGL zweiter Ordnung mit konstanten Koeffizienten braucht man das charakteristische Polynom.",
+      "Reelle λ-Werte führen zu Exponentialfunktionen.",
+      "Komplexe λ-Werte führen zu Schwingungen mit Sinus und Kosinus.",
+      "Anfangsbedingungen bestimmen die freien Konstanten."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man erkennt den DGL-Typ nicht und verwendet sofort irgendeine Methode.",
+        korrektur:
+          "Zuerst immer den Typ bestimmen: separierbar, linear erster Ordnung oder linear homogen zweiter Ordnung."
+      },
+      {
+        fehler: "Man trennt Variablen, obwohl die Gleichung nicht separierbar ist.",
+        korrektur:
+          "Trennung ist nur erlaubt, wenn man wirklich alle y-Terme auf eine Seite und alle x-Terme auf die andere Seite bringen kann."
+      },
+      {
+        fehler: "Man vergisst beim Integrieren die Konstante.",
+        korrektur:
+          "Beim Lösen von Differenzialgleichungen entstehen Integrationskonstanten. Diese sind wichtig für die allgemeine Lösung."
+      },
+      {
+        fehler: "Man löst bei einer inhomogenen linearen DGL nur die homogene Gleichung.",
+        korrektur:
+          "Die homogene Lösung ist nur der erste Schritt. Danach muss noch der inhomogene Teil berücksichtigt werden."
+      },
+      {
+        fehler: "Man verwechselt λ mit y.",
+        korrektur:
+          "λ ist eine Hilfszahl aus dem charakteristischen Polynom. y ist die gesuchte Funktion."
+      },
+      {
+        fehler: "Man schreibt bei komplexen Nullstellen nur e^(μx) hin.",
+        korrektur:
+          "Bei komplexen Nullstellen gehören immer cos(βx) und sin(βx) dazu."
+      },
+      {
+        fehler: "Man setzt Anfangsbedingungen ein, bevor man die allgemeine Lösung gefunden hat.",
+        korrektur:
+          "Zuerst die allgemeine Lösung bestimmen, danach die Bedingungen einsetzen."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: DGL erkennen",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Erkläre, warum y' = 3x² eine Differenzialgleichung erster Ordnung ist.",
+        loesung: [
+          "In der Gleichung kommt die Ableitung y' vor.",
+          "Die höchste vorkommende Ableitung ist die erste Ableitung.",
+          "Deshalb ist es eine Differenzialgleichung erster Ordnung.",
+          "Gesucht ist eine Funktion y, deren Ableitung 3x² ist."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Einfache Integration",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Löse die Differenzialgleichung y' = 4x.",
+        loesung: [
+          "Gesucht ist eine Funktion y, deren Ableitung 4x ist.",
+          "Integriere beide Seiten nach x.",
+          "y = ∫ 4x dx.",
+          "Das ergibt y = 2x² + C.",
+          "C ist die Integrationskonstante."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Separierbare DGL",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Löse die Differenzialgleichung y' = xy.",
+        loesung: [
+          "Schreibe y' als dy/dx.",
+          "Dann gilt dy/dx = xy.",
+          "Trenne die Variablen: dy/y = x dx.",
+          "Integriere beide Seiten.",
+          "Links erhält man ln|y|.",
+          "Rechts erhält man x²/2 + C.",
+          "Also gilt ln|y| = x²/2 + C.",
+          "Durch Exponentieren erhält man y = K e^(x²/2), wobei K eine Konstante ist."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Anfangsbedingung",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Löse y' = 4x mit der Anfangsbedingung y(0) = 3.",
+        loesung: [
+          "Aus y' = 4x folgt durch Integration y = 2x² + C.",
+          "Verwende nun y(0) = 3.",
+          "Setze x = 0 ein: 3 = 2 · 0² + C.",
+          "Also ist C = 3.",
+          "Die spezielle Lösung lautet y = 2x² + 3."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Lineare DGL erster Ordnung erkennen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Erkläre, warum y' + 2y = x eine lineare inhomogene Differenzialgleichung erster Ordnung ist.",
+        loesung: [
+          "Es kommt nur die erste Ableitung y' vor.",
+          "Also ist es eine Differenzialgleichung erster Ordnung.",
+          "y und y' kommen nur linear vor, also nicht als y², sin(y) oder y · y'.",
+          "Die rechte Seite ist x und nicht 0.",
+          "Darum ist die Gleichung inhomogen."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Homogene DGL zweiter Ordnung",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Löse y'' - 5y' + 6y = 0.",
+        loesung: [
+          "Stelle das charakteristische Polynom auf.",
+          "Für y'' - 5y' + 6y = 0 lautet es λ² - 5λ + 6 = 0.",
+          "Faktorisiere: λ² - 5λ + 6 = (λ - 2)(λ - 3).",
+          "Die Nullstellen sind λ₁ = 2 und λ₂ = 3.",
+          "Bei zwei verschiedenen reellen Nullstellen lautet die allgemeine Lösung y = A e^(2x) + B e^(3x).",
+          "A und B sind freie Konstanten."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Komplexe Nullstellen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Löse y'' + 4y = 0.",
+        loesung: [
+          "Das charakteristische Polynom lautet λ² + 4 = 0.",
+          "Daraus folgt λ² = -4.",
+          "Also sind die Nullstellen λ = 2i und λ = -2i.",
+          "Das sind komplexe Nullstellen der Form μ ± βi mit μ = 0 und β = 2.",
+          "Die allgemeine Lösung lautet y = A cos(2x) + B sin(2x)."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Gedämpfte Schwingung",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Gib die allgemeine Lösung an, wenn das charakteristische Polynom die Nullstellen λ = -1 ± 3i hat.",
+        loesung: [
+          "Die Nullstellen haben die Form μ ± βi.",
+          "Hier ist μ = -1 und β = 3.",
+          "Der Realteil μ kommt in den Exponentialfaktor.",
+          "Der Imaginärteil β kommt in Sinus und Kosinus.",
+          "Die Lösung lautet y = e^(-x)(A cos(3x) + B sin(3x)).",
+          "Weil μ negativ ist, handelt es sich um eine gedämpfte Schwingung."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Anfangsbedingungen bei zweiter Ordnung",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Gegeben ist die allgemeine Lösung y = A e^x + B e^(-x). Verwende y(0) = 4 und y'(0) = 2, um A und B zu bestimmen.",
+        loesung: [
+          "Setze zuerst y(0) = 4 ein.",
+          "y(0) = A e^0 + B e^0 = A + B.",
+          "Also gilt A + B = 4.",
+          "Leite die Lösung ab: y' = A e^x - B e^(-x).",
+          "Setze y'(0) = 2 ein.",
+          "y'(0) = A - B = 2.",
+          "Nun löse das Gleichungssystem A + B = 4 und A - B = 2.",
+          "Addiere beide Gleichungen: 2A = 6, also A = 3.",
+          "Dann folgt B = 1.",
+          "Die spezielle Lösung lautet y = 3e^x + e^(-x)."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist eine Differenzialgleichung?",
+        antwort:
+          "Eine Differenzialgleichung ist eine Gleichung, in der eine unbekannte Funktion und ihre Ableitungen vorkommen. Gesucht ist also eine Funktion."
+      },
+      {
+        frage: "Was bedeutet die Ordnung einer Differenzialgleichung?",
+        antwort:
+          "Die Ordnung ist die höchste vorkommende Ableitung. Kommt y' als höchste Ableitung vor, ist es erste Ordnung. Kommt y'' vor, ist es zweite Ordnung."
+      },
+      {
+        frage: "Wann ist eine Differenzialgleichung separierbar?",
+        antwort:
+          "Sie ist separierbar, wenn man alle Terme mit y auf eine Seite und alle Terme mit x auf die andere Seite bringen kann."
+      },
+      {
+        frage: "Was ist eine lineare Differenzialgleichung erster Ordnung?",
+        antwort:
+          "Sie hat typischerweise die Form y' + p(x)y = q(x). Die Funktion y und ihre Ableitung kommen nur linear vor."
+      },
+      {
+        frage: "Was bedeutet inhomogen?",
+        antwort:
+          "Inhomogen bedeutet, dass auf der rechten Seite oder als zusätzlicher Term eine Funktion steht, die nicht 0 ist."
+      },
+      {
+        frage: "Was macht man bei der Variation der Konstanten?",
+        antwort:
+          "Man löst zuerst die homogene Gleichung und ersetzt dann die Konstante durch eine Funktion, die so bestimmt wird, dass die inhomogene Gleichung erfüllt ist."
+      },
+      {
+        frage: "Wozu dient das charakteristische Polynom?",
+        antwort:
+          "Es verwandelt eine lineare homogene Differenzialgleichung zweiter Ordnung mit konstanten Koeffizienten in eine algebraische Gleichung für λ."
+      },
+      {
+        frage: "Was bedeuten komplexe Nullstellen des charakteristischen Polynoms?",
+        antwort:
+          "Sie führen zu Lösungen mit Sinus und Kosinus. Der Realteil bestimmt Wachstum oder Dämpfung, der Imaginärteil bestimmt die Kreisfrequenz."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du erklären, was eine Differenzialgleichung ist?",
+      "Kannst du die Ordnung einer DGL bestimmen?",
+      "Kannst du separierbare Gleichungen erkennen?",
+      "Kannst du Variablen korrekt trennen?",
+      "Vergisst du beim Integrieren die Konstante nicht?",
+      "Kannst du lineare DGL erster Ordnung erkennen?",
+      "Weisst du, wie Variation der Konstanten grundsätzlich funktioniert?",
+      "Kannst du das charakteristische Polynom bei DGL zweiter Ordnung aufstellen?",
+      "Kannst du reelle Nullstellen in Exponentiallösungen übersetzen?",
+      "Kannst du komplexe Nullstellen in Sinus-Kosinus-Lösungen übersetzen?",
+      "Kannst du Anfangsbedingungen zur Bestimmung der Konstanten verwenden?"
+    ]
+  }
+  {
+    id: "lineare-algebra",
+    nummer: "8",
+    titel: "Lineare Algebra",
+    kurzbeschreibung:
+      "Matrizen als lineare Abbildungen verstehen, Matrizen multiplizieren, Eigenwerte und Eigenvektoren berechnen und Markov-Ketten anwenden.",
+    lernziele: [
+      "Du verstehst Matrizen als lineare Abbildungen.",
+      "Du kannst eine Matrix auf einen Vektor anwenden.",
+      "Du kannst Matrizen miteinander multiplizieren.",
+      "Du kannst erklären, was eine lineare Abbildung geometrisch macht.",
+      "Du kannst die Eigenwertgleichung aufstellen.",
+      "Du kannst Eigenwerte mit dem charakteristischen Polynom berechnen.",
+      "Du kannst Eigenvektoren zu einem Eigenwert bestimmen.",
+      "Du verstehst die Bedeutung von Eigenwerten und Eigenvektoren.",
+      "Du kannst einfache Markov-Ketten mit Übergangsmatrizen beschreiben.",
+      "Du kannst Zustandsvektoren mit Übergangsmatrizen weiterentwickeln."
+    ],
+    theorie: [
+      {
+        titel: "Was ist lineare Algebra?",
+        text:
+          "Lineare Algebra untersucht Vektoren, Matrizen und lineare Abbildungen. Sie beschreibt, wie Objekte verschoben, gestreckt, gespiegelt, gedreht oder kombiniert werden können."
+      },
+      {
+        titel: "Matrix als lineare Abbildung",
+        text:
+          "Eine Matrix kann man als Maschine verstehen, die einen Vektor nimmt und daraus einen neuen Vektor macht. Geometrisch kann eine Matrix zum Beispiel strecken, spiegeln, drehen oder scheren."
+      },
+      {
+        titel: "Matrix mal Vektor",
+        text:
+          "Wenn eine Matrix mit einem Vektor multipliziert wird, entsteht ein neuer Vektor. Jede Zeile der Matrix wird mit dem Vektor verrechnet."
+      },
+      {
+        titel: "Matrizenmultiplikation",
+        text:
+          "Bei der Matrizenmultiplikation wird jede Zeile der ersten Matrix mit jeder Spalte der zweiten Matrix kombiniert. Das Ergebnis beschreibt die Hintereinanderausführung zweier linearer Abbildungen."
+      },
+      {
+        titel: "Reihenfolge bei Matrizen",
+        text:
+          "Die Reihenfolge der Matrizenmultiplikation ist wichtig. Im Allgemeinen gilt AB nicht gleich BA. Das bedeutet: Zwei Abbildungen in anderer Reihenfolge können ein anderes Ergebnis liefern."
+      },
+      {
+        titel: "Eigenvektor",
+        text:
+          "Ein Eigenvektor ist ein Vektor, dessen Richtung durch die Matrix nicht verändert wird. Er darf höchstens gestreckt, gestaucht oder umgekehrt werden."
+      },
+      {
+        titel: "Eigenwert",
+        text:
+          "Der Eigenwert sagt, mit welchem Faktor der Eigenvektor gestreckt oder gestaucht wird. Wenn der Eigenwert negativ ist, wird zusätzlich die Richtung umgekehrt."
+      },
+      {
+        titel: "Eigenwertgleichung",
+        text:
+          "Die zentrale Gleichung lautet Av = λv. Dabei ist A die Matrix, v der Eigenvektor und λ der Eigenwert."
+      },
+      {
+        titel: "Charakteristisches Polynom",
+        text:
+          "Eigenwerte berechnet man meistens mit det(A - λI) = 0. Diese Gleichung heisst charakteristische Gleichung."
+      },
+      {
+        titel: "Eigenvektoren berechnen",
+        text:
+          "Wenn ein Eigenwert λ bekannt ist, setzt man ihn in A - λI ein und löst das Gleichungssystem (A - λI)v = 0. Die nichttrivialen Lösungen sind Eigenvektoren."
+      },
+      {
+        titel: "Markov-Kette",
+        text:
+          "Eine Markov-Kette beschreibt ein System, das zwischen Zuständen wechselt. Die Wahrscheinlichkeiten für die Wechsel stehen in einer Übergangsmatrix."
+      },
+      {
+        titel: "Zustandsvektor",
+        text:
+          "Ein Zustandsvektor gibt an, wie sich eine Gesamtmenge auf verschiedene Zustände verteilt. Multipliziert man ihn mit der Übergangsmatrix, erhält man den nächsten Zustand."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Matrix auf Vektor anwenden",
+        schritte: [
+          "1. Schreibe die Matrix und den Vektor sauber untereinander.",
+          "2. Multipliziere die erste Zeile der Matrix mit dem Vektor.",
+          "3. Addiere die Produkte. Das ergibt die erste Komponente des neuen Vektors.",
+          "4. Multipliziere die zweite Zeile der Matrix mit dem Vektor.",
+          "5. Addiere wieder die Produkte. Das ergibt die zweite Komponente.",
+          "6. Fahre so für alle Zeilen fort.",
+          "7. Schreibe den Ergebnisvektor auf."
+        ]
+      },
+      {
+        titel: "Methode: Matrizen multiplizieren",
+        schritte: [
+          "1. Prüfe zuerst, ob die Multiplikation erlaubt ist.",
+          "2. Die Anzahl Spalten der ersten Matrix muss zur Anzahl Zeilen der zweiten Matrix passen.",
+          "3. Berechne jeden Eintrag durch Zeile mal Spalte.",
+          "4. Der Eintrag oben links entsteht aus erster Zeile mal erster Spalte.",
+          "5. Der Eintrag oben rechts entsteht aus erster Zeile mal zweiter Spalte.",
+          "6. Wiederhole das für alle Zeilen und Spalten.",
+          "7. Kontrolliere die Dimension der Ergebnismatrix."
+        ]
+      },
+      {
+        titel: "Methode: Eigenwerte berechnen",
+        schritte: [
+          "1. Schreibe die Matrix A auf.",
+          "2. Bilde A - λI.",
+          "3. Berechne det(A - λI).",
+          "4. Setze det(A - λI) = 0.",
+          "5. Löse die entstehende Gleichung nach λ.",
+          "6. Die Lösungen sind die Eigenwerte."
+        ]
+      },
+      {
+        titel: "Methode: Eigenvektoren berechnen",
+        schritte: [
+          "1. Nimm einen berechneten Eigenwert λ.",
+          "2. Setze λ in A - λI ein.",
+          "3. Löse das Gleichungssystem (A - λI)v = 0.",
+          "4. Verwende einen freien Parameter, falls unendlich viele Lösungen entstehen.",
+          "5. Schreibe einen Eigenvektor oder den ganzen Eigenraum auf.",
+          "6. Wiederhole das für jeden Eigenwert."
+        ]
+      },
+      {
+        titel: "Methode: Markov-Kette berechnen",
+        schritte: [
+          "1. Bestimme die möglichen Zustände.",
+          "2. Schreibe den Anfangszustand als Zustandsvektor.",
+          "3. Stelle die Übergangsmatrix auf.",
+          "4. Multipliziere Übergangsmatrix und Zustandsvektor.",
+          "5. Das Ergebnis ist der Zustand nach einem Schritt.",
+          "6. Für mehrere Schritte multiplizierst du wiederholt mit der Übergangsmatrix.",
+          "7. Kontrolliere, ob die Einträge Wahrscheinlichkeiten bleiben und zusammen 1 ergeben."
+        ]
+      },
+      {
+        titel: "Methode: Stationären Zustand prüfen",
+        schritte: [
+          "1. Ein stationärer Zustand verändert sich durch die Übergangsmatrix nicht.",
+          "2. Stelle die Gleichung P v = v auf.",
+          "3. Bringe alles auf eine Seite: P v - v = 0.",
+          "4. Schreibe das als (P - I)v = 0.",
+          "5. Ergänze die Bedingung, dass die Einträge des Zustandsvektors zusammen 1 ergeben.",
+          "6. Löse das Gleichungssystem.",
+          "7. Der gefundene Vektor ist der stationäre Zustand."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Eine Matrix beschreibt eine lineare Abbildung.",
+      "Matrix mal Vektor ergibt einen neuen Vektor.",
+      "Matrizenmultiplikation bedeutet Hintereinanderausführung von Abbildungen.",
+      "Bei Matrizen ist die Reihenfolge meistens entscheidend.",
+      "Eigenvektoren behalten ihre Richtung.",
+      "Eigenwerte geben den Streckungsfaktor eines Eigenvektors an.",
+      "Eigenwerte findet man mit det(A - λI) = 0.",
+      "Eigenvektoren findet man mit (A - λI)v = 0.",
+      "Eine Markov-Kette beschreibt Zustandswechsel mit Wahrscheinlichkeiten.",
+      "Ein stationärer Zustand bleibt nach Anwendung der Übergangsmatrix gleich."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man multipliziert Matrizen elementweise.",
+        korrektur:
+          "Matrizenmultiplikation funktioniert nicht elementweise. Jeder Eintrag entsteht aus Zeile mal Spalte."
+      },
+      {
+        fehler: "Man vertauscht die Reihenfolge der Matrizen.",
+        korrektur:
+          "Bei Matrizen ist AB im Allgemeinen nicht gleich BA. Die Reihenfolge beschreibt die Reihenfolge der Abbildungen."
+      },
+      {
+        fehler: "Man denkt, jeder Vektor sei ein Eigenvektor.",
+        korrektur:
+          "Ein Eigenvektor ist nur ein Vektor, dessen Richtung durch die Matrix erhalten bleibt."
+      },
+      {
+        fehler: "Man setzt det(A) = 0 statt det(A - λI) = 0.",
+        korrektur:
+          "Für Eigenwerte braucht man das charakteristische Polynom det(A - λI), nicht einfach die Determinante von A."
+      },
+      {
+        fehler: "Man verwendet den Eigenwert nicht mehr beim Berechnen des Eigenvektors.",
+        korrektur:
+          "Für jeden Eigenwert muss man (A - λI)v = 0 lösen. Der Eigenwert gehört also direkt in das Gleichungssystem."
+      },
+      {
+        fehler: "Man nimmt den Nullvektor als Eigenvektor.",
+        korrektur:
+          "Der Nullvektor ist nie ein Eigenvektor, weil er keine Richtung hat."
+      },
+      {
+        fehler: "Man vergisst bei Markov-Ketten, dass Wahrscheinlichkeiten zusammen 1 ergeben müssen.",
+        korrektur:
+          "Ein Zustandsvektor beschreibt Verteilungen. Deshalb müssen die Einträge normalerweise nichtnegativ sein und zusammen 1 ergeben."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Matrix mal Vektor",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Berechne A v für A = [[2, 1], [0, 3]] und v = [4, 5].",
+        loesung: [
+          "Multipliziere die erste Zeile der Matrix mit dem Vektor.",
+          "Erste Komponente: 2 · 4 + 1 · 5 = 8 + 5 = 13.",
+          "Multipliziere die zweite Zeile der Matrix mit dem Vektor.",
+          "Zweite Komponente: 0 · 4 + 3 · 5 = 15.",
+          "Also ist A v = [13, 15]."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Geometrische Bedeutung",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Was macht die Matrix A = [[1, 0], [0, -1]] geometrisch?",
+        loesung: [
+          "Die Matrix bildet einen Vektor [x, y] auf [x, -y] ab.",
+          "Die x-Koordinate bleibt gleich.",
+          "Die y-Koordinate wechselt das Vorzeichen.",
+          "Das entspricht einer Spiegelung an der x-Achse."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Matrizenmultiplikation",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne AB für A = [[1, 2], [3, 4]] und B = [[2, 0], [1, 5]].",
+        loesung: [
+          "Der Eintrag oben links ist 1 · 2 + 2 · 1 = 4.",
+          "Der Eintrag oben rechts ist 1 · 0 + 2 · 5 = 10.",
+          "Der Eintrag unten links ist 3 · 2 + 4 · 1 = 10.",
+          "Der Eintrag unten rechts ist 3 · 0 + 4 · 5 = 20.",
+          "Also ist AB = [[4, 10], [10, 20]]."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Eigenwerte berechnen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme die Eigenwerte der Matrix A = [[3, 0], [0, 5]].",
+        loesung: [
+          "Bilde A - λI = [[3 - λ, 0], [0, 5 - λ]].",
+          "Berechne die Determinante: det(A - λI) = (3 - λ)(5 - λ).",
+          "Setze die Determinante gleich 0.",
+          "(3 - λ)(5 - λ) = 0.",
+          "Daraus folgt λ = 3 oder λ = 5.",
+          "Die Eigenwerte sind 3 und 5."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Eigenvektor zu einem Eigenwert",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme einen Eigenvektor zum Eigenwert λ = 3 der Matrix A = [[3, 0], [0, 5]].",
+        loesung: [
+          "Setze λ = 3 in A - λI ein.",
+          "A - 3I = [[0, 0], [0, 2]].",
+          "Löse (A - 3I)v = 0.",
+          "Für v = [x, y] ergibt sich 2y = 0.",
+          "Also ist y = 0, während x frei gewählt werden kann.",
+          "Ein möglicher Eigenvektor ist [1, 0]."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Bedeutung Eigenwert",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Erkläre, was es bedeutet, wenn A v = 4v gilt und v nicht der Nullvektor ist.",
+        loesung: [
+          "Die Gleichung hat die Form A v = λv.",
+          "Hier ist λ = 4.",
+          "Der Vektor v ist also ein Eigenvektor der Matrix A.",
+          "Die Matrix verändert die Richtung von v nicht.",
+          "Sie streckt v nur um den Faktor 4."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Charakteristisches Polynom",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Bestimme die Eigenwerte von A = [[2, 1], [1, 2]].",
+        loesung: [
+          "Bilde A - λI = [[2 - λ, 1], [1, 2 - λ]].",
+          "Berechne die Determinante: (2 - λ)(2 - λ) - 1 · 1.",
+          "Das ergibt (2 - λ)² - 1.",
+          "Setze gleich 0: (2 - λ)² - 1 = 0.",
+          "Also gilt (2 - λ)² = 1.",
+          "Daraus folgt 2 - λ = 1 oder 2 - λ = -1.",
+          "Damit sind die Eigenwerte λ = 1 und λ = 3."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Markov-Kette ein Schritt",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Ein System hat zwei Zustände. Die Übergangsmatrix ist P = [[0.8, 0.3], [0.2, 0.7]]. Der Anfangszustand ist v = [1, 0]. Berechne den nächsten Zustand P v.",
+        loesung: [
+          "Multipliziere P mit v.",
+          "Erste Komponente: 0.8 · 1 + 0.3 · 0 = 0.8.",
+          "Zweite Komponente: 0.2 · 1 + 0.7 · 0 = 0.2.",
+          "Der nächste Zustand ist [0.8, 0.2].",
+          "Die Summe der Einträge ist 1, also ist es wieder ein gültiger Zustandsvektor."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Markov-Kette zwei Schritte",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Verwende P = [[0.8, 0.3], [0.2, 0.7]] und v = [1, 0]. Berechne den Zustand nach zwei Schritten.",
+        loesung: [
+          "Aus dem ersten Schritt erhält man v₁ = [0.8, 0.2].",
+          "Berechne nun v₂ = P v₁.",
+          "Erste Komponente: 0.8 · 0.8 + 0.3 · 0.2 = 0.64 + 0.06 = 0.70.",
+          "Zweite Komponente: 0.2 · 0.8 + 0.7 · 0.2 = 0.16 + 0.14 = 0.30.",
+          "Der Zustand nach zwei Schritten ist [0.70, 0.30]."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Stationärer Zustand verstehen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Was bedeutet es, wenn für eine Übergangsmatrix P und einen Zustandsvektor v die Gleichung P v = v gilt?",
+        loesung: [
+          "Die Gleichung bedeutet, dass sich der Zustand durch einen weiteren Schritt nicht verändert.",
+          "Der Vektor v bleibt also stabil.",
+          "Man nennt v einen stationären Zustand.",
+          "Inhaltlich bedeutet das: Die Verteilung zwischen den Zuständen bleibt langfristig gleich, wenn das System bereits in dieser Verteilung ist."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was beschreibt eine Matrix geometrisch?",
+        antwort:
+          "Eine Matrix beschreibt eine lineare Abbildung. Sie kann Vektoren zum Beispiel strecken, drehen, spiegeln oder scheren."
+      },
+      {
+        frage: "Was bedeutet Matrizenmultiplikation?",
+        antwort:
+          "Matrizenmultiplikation beschreibt die Hintereinanderausführung zweier linearer Abbildungen. Die Reihenfolge ist dabei wichtig."
+      },
+      {
+        frage: "Was ist ein Eigenvektor?",
+        antwort:
+          "Ein Eigenvektor ist ein Vektor, dessen Richtung durch eine Matrix nicht verändert wird. Er wird nur gestreckt, gestaucht oder umgekehrt."
+      },
+      {
+        frage: "Was ist ein Eigenwert?",
+        antwort:
+          "Der Eigenwert ist der Faktor, mit dem ein Eigenvektor durch die Matrix gestreckt oder gestaucht wird."
+      },
+      {
+        frage: "Wie lautet die Eigenwertgleichung?",
+        antwort:
+          "Die Eigenwertgleichung lautet Av = λv. Dabei ist A die Matrix, v der Eigenvektor und λ der Eigenwert."
+      },
+      {
+        frage: "Warum benutzt man det(A - λI) = 0?",
+        antwort:
+          "Damit es einen Eigenvektor ungleich dem Nullvektor gibt, muss das Gleichungssystem (A - λI)v = 0 nichttriviale Lösungen haben. Das passiert, wenn die Determinante 0 ist."
+      },
+      {
+        frage: "Was ist eine Markov-Kette?",
+        antwort:
+          "Eine Markov-Kette beschreibt ein System, das zwischen verschiedenen Zuständen wechselt. Die Übergangswahrscheinlichkeiten stehen in einer Matrix."
+      },
+      {
+        frage: "Was ist ein stationärer Zustand?",
+        antwort:
+          "Ein stationärer Zustand ist ein Zustandsvektor, der sich durch Anwendung der Übergangsmatrix nicht mehr verändert."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du erklären, was eine Matrix geometrisch macht?",
+      "Kannst du Matrix mal Vektor berechnen?",
+      "Kannst du zwei Matrizen multiplizieren?",
+      "Prüfst du vor der Multiplikation die Dimensionen?",
+      "Weisst du, warum die Reihenfolge bei Matrizen wichtig ist?",
+      "Kannst du die Eigenwertgleichung Av = λv erklären?",
+      "Kannst du det(A - λI) = 0 aufstellen?",
+      "Kannst du Eigenwerte berechnen?",
+      "Kannst du zu einem Eigenwert Eigenvektoren bestimmen?",
+      "Weisst du, dass der Nullvektor kein Eigenvektor ist?",
+      "Kannst du eine Markov-Kette mit Übergangsmatrix berechnen?",
+      "Kannst du erklären, was ein stationärer Zustand bedeutet?"
+    ]
+  }
 ];
 
 
