@@ -350,7 +350,8 @@ const MATHEMATIK_THEMEN = [
       "Kannst du Exponentialgleichungen mit gleicher Basis lösen?",
       "Kannst du Exponentialgleichungen durch Logarithmieren lösen?"
     ]
-  }
+  },
+   
   {
     id: "kurvendiskussion",
     nummer: "2",
