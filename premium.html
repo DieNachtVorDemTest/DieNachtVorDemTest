@@ -848,11 +848,11 @@
 
         if (userData.premium === true) {
           showPremium();
-          setStatus("Zugriff erlaubt.");
-        } else {
-          showLocked("Du hast noch keinen Premium-Zugang.");
-          setStatus("Premium ist noch nicht aktiviert.");
-        }
+          setStatus("");
+      } else {
+  showLocked("Du hast noch keinen Premium-Zugang.");
+  setStatus("Premium ist noch nicht aktiviert.");
+}
       } catch (error) {
         showLocked("Fehler bei der Zugriffskontrolle.");
         setStatus("Fehler:\n" + error.message);
