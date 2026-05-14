@@ -453,8 +453,121 @@ const MATHEMATIK_THEMEN = [
           "12. Zeichne oder beschreibe den Graphen mit allen Informationen."
         ]
       }
+  },
+   merksaetze: [
+  "Nullstellen findet man mit \\(f(x)=0\\).",
+  "Der \\(y\\)-Achsenabschnitt ist \\(f(0)\\).",
+  "Die erste Ableitung \\(f'(x)\\) beschreibt die Steigung.",
+  "Mögliche Extremstellen findet man mit \\(f'(x)=0\\).",
+  "Bei \\(f''(x)>0\\) liegt ein Tiefpunkt vor, falls \\(f'(x)=0\\) gilt.",
+  "Bei \\(f''(x)<0\\) liegt ein Hochpunkt vor, falls \\(f'(x)=0\\) gilt.",
+  "Mögliche Wendepunkte findet man mit \\(f''(x)=0\\).",
+  "Ein Wendepunkt braucht einen Krümmungswechsel.",
+  "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente.",
+  "Die Tangente bei \\(x_0\\) hat die Steigung \\(f'(x_0)\\)."
+],
+typischeFehler: [
+  {
+    fehler: "Man setzt für Extremstellen die ursprüngliche Funktion \\(f(x)=0\\).",
+    korrektur:
+      "Für Extremstellen setzt man die erste Ableitung \\(f'(x)=0\\). Die Gleichung \\(f(x)=0\\) liefert Nullstellen, nicht Extremstellen."
+  },
+  {
+    fehler: "Man berechnet nur den \\(x\\)-Wert eines Extrempunkts.",
+    korrektur:
+      "Ein Punkt braucht immer \\(x\\)- und \\(y\\)-Koordinate. Den \\(y\\)-Wert erhält man durch Einsetzen des \\(x\\)-Werts in die ursprüngliche Funktion."
+  },
+  {
+    fehler: "Man denkt, \\(f'(x)=0\\) bedeutet automatisch Hochpunkt oder Tiefpunkt.",
+    korrektur:
+      "\\(f'(x)=0\\) bedeutet nur, dass eine waagrechte Tangente vorliegt. Es kann auch ein Sattelpunkt sein."
+  },
+  {
+    fehler: "Man bestimmt Wendepunkte mit \\(f'(x)=0\\).",
+    korrektur:
+      "Wendepunkte untersucht man mit der zweiten Ableitung. Man setzt \\(f''(x)=0\\) und prüft den Krümmungswechsel."
+  }
+],
+aufgaben: [
+  {
+    titel: "Aufgabe 1: y-Achsenabschnitt bestimmen",
+    schwierigkeit: "einfach",
+    aufgabe:
+      "Gegeben ist \\(f(x)=x^2-4x+1\\). Bestimme den Schnittpunkt mit der \\(y\\)-Achse.",
+    loesung: [
+      "Für den \\(y\\)-Achsenabschnitt setzt man \\(x=0\\) ein.",
+      "Also berechnet man \\(f(0)\\).",
+      "\\(f(0)=0^2-4\\cdot 0+1\\).",
+      "Das ergibt \\(f(0)=1\\).",
+      "Der Schnittpunkt mit der \\(y\\)-Achse ist also \\((0\\mid 1)\\)."
     ]
   },
+  {
+    titel: "Aufgabe 2: Nullstellen berechnen",
+    schwierigkeit: "einfach",
+    aufgabe:
+      "Bestimme die Nullstellen von \\(f(x)=x^2-6x+8\\).",
+    loesung: [
+      "Nullstellen findet man mit \\(f(x)=0\\).",
+      "Also: \\(x^2-6x+8=0\\).",
+      "Faktorisiere den Term.",
+      "\\(x^2-6x+8=(x-2)(x-4)\\).",
+      "Also ist \\(x=2\\) oder \\(x=4\\).",
+      "Die Nullstellen sind \\((2\\mid 0)\\) und \\((4\\mid 0)\\)."
+    ]
+  },
+  {
+    titel: "Aufgabe 3: Extremstelle bestimmen",
+    schwierigkeit: "mittel",
+    aufgabe:
+      "Untersuche \\(f(x)=x^2-4x+5\\) auf Extremstellen.",
+    loesung: [
+      "Zuerst berechnet man die erste Ableitung.",
+      "\\(f'(x)=2x-4\\).",
+      "Für mögliche Extremstellen setzt man \\(f'(x)=0\\).",
+      "\\(2x-4=0\\).",
+      "Daraus folgt \\(x=2\\).",
+      "Nun berechnet man die zweite Ableitung.",
+      "\\(f''(x)=2\\).",
+      "Da \\(f''(2)=2>0\\) ist, liegt ein Tiefpunkt vor.",
+      "Berechne den \\(y\\)-Wert mit \\(f(2)\\).",
+      "\\(f(2)=2^2-4\\cdot2+5=1\\).",
+      "Der Tiefpunkt ist \\(T(2\\mid 1)\\)."
+    ]
+  }
+],
+muendlich: [
+  {
+    frage: "Was untersucht man bei einer Kurvendiskussion?",
+    antwort:
+      "Man untersucht wichtige Eigenschaften eines Funktionsgraphen, zum Beispiel Nullstellen, Extremstellen, Wendepunkte, Monotonie, Krümmung und Tangenten."
+  },
+  {
+    frage: "Wie findet man Nullstellen?",
+    antwort:
+      "Man setzt die Funktion gleich \\(0\\) und löst die Gleichung \\(f(x)=0\\)."
+  },
+  {
+    frage: "Was sagt die erste Ableitung aus?",
+    antwort:
+      "Die erste Ableitung beschreibt die Steigung des Graphen."
+  },
+  {
+    frage: "Was sagt die zweite Ableitung aus?",
+    antwort:
+      "Die zweite Ableitung beschreibt die Krümmung des Graphen und hilft bei Extrempunkten und Wendepunkten."
+  }
+],
+nachtVorTest: [
+  "Kannst du Nullstellen mit \\(f(x)=0\\) berechnen?",
+  "Weisst du, dass \\(f(0)\\) den \\(y\\)-Achsenabschnitt liefert?",
+  "Kannst du die erste Ableitung als Steigung erklären?",
+  "Weisst du, dass mögliche Extremstellen mit \\(f'(x)=0\\) gefunden werden?",
+  "Kannst du mit \\(f''(x)\\) entscheiden, ob ein Hochpunkt oder Tiefpunkt vorliegt?",
+  "Weisst du, dass Wendepunkte mit \\(f''(x)=0\\) gesucht werden?",
+  "Prüfst du beim Wendepunkt den Krümmungswechsel?",
+  "Kannst du einen Sattelpunkt erklären?"
+]
 
   {
     id: "funktionen-parameter",
@@ -2871,8 +2984,6 @@ nachtVorTest: [
   }
    
 ];
-
-
 /* =========================
    RENDER-FUNKTION
 ========================= */
@@ -2904,7 +3015,7 @@ function render_mathematik(container) {
                 class="sf-math-topic-button ${index === 0 ? "active" : ""}"
                 data-topic-id="${thema.id}">
                 <span>${thema.nummer}</span>
-                ${escapeHTML(thema.titel)}
+                ${renderMathText(thema.titel)}
               </button>
             `).join("")}
           </div>
@@ -2927,7 +3038,9 @@ function render_mathematik(container) {
     });
 
     content.innerHTML = renderMathematikTopic(thema);
-attachMathematikInteractions(content);
+    attachMathematikInteractions(content);
+    typesetMathematik(content);
+  }
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -2947,9 +3060,9 @@ function renderMathematikTopic(thema) {
   return `
     <article class="sf-math-topic">
       <div class="sf-math-topic-header">
-        <p class="sf-math-kicker">Thema ${escapeHTML(thema.nummer)}</p>
-        <h2>${escapeHTML(thema.titel)}</h2>
-        <p>${escapeHTML(thema.kurzbeschreibung)}</p>
+        <p class="sf-math-kicker">Thema ${renderMathText(thema.nummer)}</p>
+        <h2>${renderMathText(thema.titel)}</h2>
+        <p>${renderMathText(thema.kurzbeschreibung)}</p>
       </div>
 
       ${renderMathematikSection("Lernziele", renderMathematikList(thema.lernziele))}
@@ -2975,7 +3088,7 @@ function renderMathematikTopic(thema) {
 function renderMathematikSection(title, content) {
   return `
     <section class="sf-math-card">
-      <h3>${escapeHTML(title)}</h3>
+      <h3>${renderMathText(title)}</h3>
       ${content}
     </section>
   `;
@@ -2989,8 +3102,8 @@ function renderMathematikTheory(items) {
       <div class="sf-math-grid">
         ${items.map(item => `
           <div class="sf-math-mini-card">
-            <h4>${escapeHTML(item.titel)}</h4>
-            <p>${escapeHTML(item.text)}</p>
+            <h4>${renderMathText(item.titel)}</h4>
+            <p>${renderMathText(item.text)}</p>
           </div>
         `).join("")}
       </div>
@@ -3007,7 +3120,7 @@ function renderMathematikMethods(methoden) {
         ${methoden.map(methode => `
           <div class="sf-math-accordion-item">
             <button class="sf-math-accordion-toggle" type="button">
-              <span>${escapeHTML(methode.titel)}</span>
+              <span>${renderMathText(methode.titel)}</span>
               <span class="sf-math-plus">+</span>
             </button>
             <div class="sf-math-accordion-body">
@@ -3029,9 +3142,9 @@ function renderMathematikErrors(errors) {
         ${errors.map(item => `
           <div class="sf-math-error-card">
             <h4>Fehler</h4>
-            <p>${escapeHTML(item.fehler)}</p>
+            <p>${renderMathText(item.fehler)}</p>
             <h4>Korrektur</h4>
-            <p>${escapeHTML(item.korrektur)}</p>
+            <p>${renderMathText(item.korrektur)}</p>
           </div>
         `).join("")}
       </div>
@@ -3048,10 +3161,10 @@ function renderMathematikExercises(exercises) {
         ${exercises.map(exercise => `
           <div class="sf-math-exercise">
             <div class="sf-math-exercise-top">
-              <h4>${escapeHTML(exercise.titel)}</h4>
-              <span>${escapeHTML(exercise.schwierigkeit)}</span>
+              <h4>${renderMathText(exercise.titel)}</h4>
+              <span>${renderMathText(exercise.schwierigkeit)}</span>
             </div>
-            <p>${escapeHTML(exercise.aufgabe)}</p>
+            <p>${renderMathText(exercise.aufgabe)}</p>
             <button class="sf-math-solution-button" type="button">
               Lösung anzeigen
             </button>
@@ -3073,8 +3186,8 @@ function renderMathematikOral(items) {
       <div class="sf-math-oral-list">
         ${items.map(item => `
           <div class="sf-math-oral-card">
-            <h4>${escapeHTML(item.frage)}</h4>
-            <p>${escapeHTML(item.antwort)}</p>
+            <h4>${renderMathText(item.frage)}</h4>
+            <p>${renderMathText(item.antwort)}</p>
           </div>
         `).join("")}
       </div>
@@ -3090,7 +3203,7 @@ function renderMathematikOral(items) {
 function renderMathematikList(items) {
   return `
     <ul class="sf-math-list">
-      ${items.map(item => `<li>${escapeHTML(item)}</li>`).join("")}
+      ${items.map(item => `<li>${renderMathText(item)}</li>`).join("")}
     </ul>
   `;
 }
@@ -3099,7 +3212,7 @@ function renderMathematikList(items) {
 function renderMathematikOrderedList(items) {
   return `
     <ol class="sf-math-ordered-list">
-      ${items.map(item => `<li>${escapeHTML(item)}</li>`).join("")}
+      ${items.map(item => `<li>${renderMathText(removeLeadingStepNumber(item))}</li>`).join("")}
     </ol>
   `;
 }
@@ -3111,11 +3224,16 @@ function renderMathematikChecklist(items) {
       ${items.map(item => `
         <label>
           <input type="checkbox">
-          <span>${escapeHTML(item)}</span>
+          <span>${renderMathText(item)}</span>
         </label>
       `).join("")}
     </div>
   `;
+}
+
+
+function removeLeadingStepNumber(value) {
+  return String(value).replace(/^\s*\d+\.\s*/, "");
 }
 
 
@@ -3126,6 +3244,8 @@ function attachMathematikInteractions(root) {
     button.addEventListener("click", () => {
       const item = button.closest(".sf-math-accordion-item");
       item.classList.toggle("open");
+
+      typesetMathematik(item);
     });
   });
 
@@ -3135,9 +3255,28 @@ function attachMathematikInteractions(root) {
     button.addEventListener("click", () => {
       const solution = button.nextElementSibling;
       const isOpen = solution.classList.toggle("open");
+
       button.textContent = isOpen ? "Lösung ausblenden" : "Lösung anzeigen";
+
+      if (isOpen) {
+        typesetMathematik(solution);
+      }
     });
   });
+}
+
+
+function typesetMathematik(element) {
+  if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+    window.MathJax.typesetPromise([element]).catch(function(error) {
+      console.error("MathJax Fehler:", error);
+    });
+  }
+}
+
+
+function renderMathText(value) {
+  return escapeHTML(value);
 }
 
 
@@ -3497,6 +3636,12 @@ function injectMathematikStyles() {
       padding: 18px;
       line-height: 1.6;
       margin-bottom: 24px;
+    }
+
+    .sf-math-card mjx-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
     }
 
     @media (max-width: 900px) {
