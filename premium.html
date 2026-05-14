@@ -491,7 +491,7 @@
       </section>
     </section>
 
-    <div id="status" class="status-panel"></div>
+    <div id="status" class="status-panel hidden"></div>
   </main>
 
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
@@ -570,13 +570,14 @@
     };
 
     function setStatus(message) {
-  statusBox.textContent = message;
-  if (!message) {
-    statusBox.classList.add("hidden");
-  } else {
-    statusBox.classList.remove("hidden");
-  }
-}
+      statusBox.textContent = message;
+
+      if (!message || message.trim() === "") {
+        statusBox.classList.add("hidden");
+      } else {
+        statusBox.classList.remove("hidden");
+      }
+    }
 
     function showLocked(message) {
       userInfo.textContent = message;
@@ -852,12 +853,12 @@
         const userData = userDoc.data();
 
         if (userData.premium === true) {
-  showPremium();
-  setStatus("Zugriff erlaubt.");
-} else {
-  showLocked("Du hast noch keinen Premium-Zugang.");
-  setStatus("Premium ist noch nicht aktiviert.");
-}
+          showPremium();
+          setStatus("");
+        } else {
+          showLocked("Du hast noch keinen Premium-Zugang.");
+          setStatus("Premium ist noch nicht aktiviert.");
+        }
       } catch (error) {
         showLocked("Fehler bei der Zugriffskontrolle.");
         setStatus("Fehler:\n" + error.message);
