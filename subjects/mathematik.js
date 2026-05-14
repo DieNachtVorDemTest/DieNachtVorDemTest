@@ -1195,6 +1195,399 @@ const MATHEMATIK_THEMEN = [
       "Kannst du bei Exponentialfunktionen die waagrechte Asymptote erkennen?",
       "Kannst du bei Logarithmusfunktionen den Definitionsbereich bestimmen?"
     ]
+  },
+     {
+    id: "umkehrfunktionen",
+    nummer: "4",
+    titel: "Umkehrfunktionen",
+    kurzbeschreibung:
+      "Umkehrfunktionen algebraisch und geometrisch verstehen, Definitionsmenge und Wertemenge korrekt vertauschen und besonders den Zusammenhang zwischen Exponential- und Logarithmusfunktionen erkennen.",
+    lernziele: [
+      "Du kannst erklären, was eine Umkehrfunktion ist.",
+      "Du kannst eine Umkehrfunktion algebraisch bestimmen.",
+      "Du verstehst die geometrische Bedeutung als Spiegelung an der Geraden y = x.",
+      "Du kannst Definitionsmenge und Wertemenge einer Funktion bestimmen.",
+      "Du weisst, dass bei der Umkehrfunktion Definitionsmenge und Wertemenge vertauscht werden.",
+      "Du erkennst, wann eine Funktion überhaupt umkehrbar ist.",
+      "Du kannst den Zusammenhang zwischen Exponentialfunktion und Logarithmusfunktion erklären.",
+      "Du kannst bei quadratischen Funktionen eine Einschränkung des Definitionsbereichs vornehmen.",
+      "Du erkennst typische Fehler beim Vertauschen von x und y.",
+      "Du kannst Umkehrfunktionen in Prüfungsaufgaben sauber begründen."
+    ],
+    theorie: [
+      {
+        titel: "Was ist eine Umkehrfunktion?",
+        text:
+          "Eine Umkehrfunktion macht die Wirkung einer Funktion rückgängig. Wenn eine Funktion x auf y abbildet, dann bildet die Umkehrfunktion dieses y wieder auf x zurück."
+      },
+      {
+        titel: "Schreibweise",
+        text:
+          "Die Umkehrfunktion von f schreibt man meistens als f⁻¹. Wichtig: f⁻¹ bedeutet hier nicht 1/f, sondern die inverse Funktion."
+      },
+      {
+        titel: "Grundidee",
+        text:
+          "Wenn f(a) = b gilt, dann gilt bei der Umkehrfunktion f⁻¹(b) = a. Die Eingabe und die Ausgabe werden also vertauscht."
+      },
+      {
+        titel: "Geometrische Bedeutung",
+        text:
+          "Der Graph einer Funktion und der Graph ihrer Umkehrfunktion sind Spiegelbilder an der Geraden y = x. Jeder Punkt (a | b) wird dabei zu (b | a)."
+      },
+      {
+        titel: "Definitionsmenge und Wertemenge",
+        text:
+          "Die Definitionsmenge beschreibt, welche x-Werte erlaubt sind. Die Wertemenge beschreibt, welche y-Werte herauskommen können."
+      },
+      {
+        titel: "Vertauschung bei der Umkehrfunktion",
+        text:
+          "Bei einer Umkehrfunktion werden Definitionsmenge und Wertemenge vertauscht. Die Wertemenge von f wird zur Definitionsmenge von f⁻¹, und die Definitionsmenge von f wird zur Wertemenge von f⁻¹."
+      },
+      {
+        titel: "Wann ist eine Funktion umkehrbar?",
+        text:
+          "Eine Funktion ist nur dann eindeutig umkehrbar, wenn jeder y-Wert höchstens einmal vorkommt. Anders gesagt: Zu jedem Funktionswert darf es nur einen passenden x-Wert geben."
+      },
+      {
+        titel: "Warum ist x² nicht direkt umkehrbar?",
+        text:
+          "Die Funktion f(x) = x² ist auf ganz ℝ nicht eindeutig umkehrbar, weil zum Beispiel f(2) = 4 und f(-2) = 4 gilt. Ein y-Wert gehört also zu zwei verschiedenen x-Werten."
+      },
+      {
+        titel: "Einschränkung des Definitionsbereichs",
+        text:
+          "Man kann eine nicht eindeutig umkehrbare Funktion oft umkehrbar machen, indem man den Definitionsbereich einschränkt. Bei f(x) = x² nimmt man zum Beispiel nur x ≥ 0 oder nur x ≤ 0."
+      },
+      {
+        titel: "Exponentialfunktion und Logarithmusfunktion",
+        text:
+          "Exponentialfunktion und Logarithmusfunktion sind Umkehrfunktionen voneinander. Wenn f(x) = aˣ gilt, dann ist die Umkehrfunktion f⁻¹(x) = logₐ(x)."
+      },
+      {
+        titel: "Definitionsmenge bei Exponentialfunktionen",
+        text:
+          "Eine Exponentialfunktion f(x) = aˣ mit a > 0 und a ≠ 1 ist für alle reellen x definiert. Ihre Werte sind aber immer positiv."
+      },
+      {
+        titel: "Definitionsmenge bei Logarithmusfunktionen",
+        text:
+          "Eine Logarithmusfunktion f(x) = logₐ(x) ist nur für x > 0 definiert. Ihre Werte können aber alle reellen Zahlen sein."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Umkehrfunktion algebraisch bestimmen",
+        schritte: [
+          "1. Schreibe die Funktion als y = f(x).",
+          "2. Vertausche x und y.",
+          "3. Löse die neue Gleichung nach y auf.",
+          "4. Schreibe das Ergebnis als f⁻¹(x).",
+          "5. Bestimme oder beachte Definitionsmenge und Wertemenge.",
+          "6. Prüfe bei Bedarf durch Einsetzen oder durch Verkettung."
+        ]
+      },
+      {
+        titel: "Methode: Umkehrbarkeit prüfen",
+        schritte: [
+          "1. Überlege, ob jeder y-Wert nur einmal vorkommt.",
+          "2. Prüfe grafisch, ob jede waagrechte Linie den Graphen höchstens einmal schneidet.",
+          "3. Prüfe rechnerisch, ob aus f(x₁) = f(x₂) zwingend x₁ = x₂ folgt.",
+          "4. Wenn ein y-Wert mehrfach vorkommt, ist die Funktion nicht eindeutig umkehrbar.",
+          "5. Überlege dann, ob der Definitionsbereich eingeschränkt werden kann."
+        ]
+      },
+      {
+        titel: "Methode: Umkehrfunktion geometrisch zeichnen",
+        schritte: [
+          "1. Zeichne den Graphen der ursprünglichen Funktion.",
+          "2. Zeichne die Gerade y = x als Spiegelachse.",
+          "3. Spiegle wichtige Punkte des Graphen an dieser Geraden.",
+          "4. Aus einem Punkt (a | b) wird der Punkt (b | a).",
+          "5. Verbinde die gespiegelten Punkte passend zum neuen Graphen."
+        ]
+      },
+      {
+        titel: "Methode: Definitionsmenge und Wertemenge vertauschen",
+        schritte: [
+          "1. Bestimme die Definitionsmenge der ursprünglichen Funktion.",
+          "2. Bestimme die Wertemenge der ursprünglichen Funktion.",
+          "3. Die Wertemenge der ursprünglichen Funktion wird zur Definitionsmenge der Umkehrfunktion.",
+          "4. Die Definitionsmenge der ursprünglichen Funktion wird zur Wertemenge der Umkehrfunktion.",
+          "5. Schreibe beide Mengen sauber auf."
+        ]
+      },
+      {
+        titel: "Methode: Umkehrfunktion einer linearen Funktion",
+        schritte: [
+          "1. Schreibe die Funktion als y = mx + q.",
+          "2. Vertausche x und y.",
+          "3. Löse nach y auf.",
+          "4. Achte darauf, dass m nicht 0 sein darf.",
+          "5. Gib die Umkehrfunktion an."
+        ]
+      },
+      {
+        titel: "Methode: Exponentialfunktion umkehren",
+        schritte: [
+          "1. Schreibe die Funktion als y = aˣ.",
+          "2. Vertausche x und y.",
+          "3. Du erhältst x = aʸ.",
+          "4. Löse mit dem Logarithmus nach y auf.",
+          "5. Es ergibt sich y = logₐ(x).",
+          "6. Beachte: Die Umkehrfunktion ist nur für x > 0 definiert."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Eine Umkehrfunktion macht die ursprüngliche Funktion rückgängig.",
+      "f⁻¹ bedeutet inverse Funktion, nicht Kehrwert.",
+      "Bei der Umkehrfunktion werden x und y vertauscht.",
+      "Grafisch ist die Umkehrfunktion die Spiegelung an y = x.",
+      "Aus dem Punkt (a | b) wird bei der Umkehrfunktion der Punkt (b | a).",
+      "Definitionsmenge und Wertemenge werden bei der Umkehrfunktion vertauscht.",
+      "Eine Funktion ist nur eindeutig umkehrbar, wenn jeder y-Wert höchstens einmal vorkommt.",
+      "x² ist auf ganz ℝ nicht eindeutig umkehrbar.",
+      "aˣ und logₐ(x) sind Umkehrfunktionen voneinander.",
+      "Der Logarithmus ist nur für positive Argumente definiert."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man verwechselt f⁻¹(x) mit 1/f(x).",
+        korrektur:
+          "f⁻¹(x) bedeutet Umkehrfunktion. Es ist nicht der Kehrwert der Funktion."
+      },
+      {
+        fehler: "Man vertauscht x und y, löst aber danach nicht nach y auf.",
+        korrektur:
+          "Nach dem Vertauschen muss die Gleichung nach y aufgelöst werden. Erst dann hat man die Umkehrfunktion."
+      },
+      {
+        fehler: "Man vergisst, Definitionsmenge und Wertemenge zu vertauschen.",
+        korrektur:
+          "Die Wertemenge von f wird zur Definitionsmenge von f⁻¹. Das ist besonders bei Logarithmen und Wurzeln wichtig."
+      },
+      {
+        fehler: "Man behauptet, f(x) = x² sei auf ganz ℝ einfach umkehrbar.",
+        korrektur:
+          "Das stimmt nicht, weil positive und negative x-Werte denselben Funktionswert ergeben können. Man muss den Definitionsbereich einschränken."
+      },
+      {
+        fehler: "Man spiegelt den Graphen an der x-Achse statt an y = x.",
+        korrektur:
+          "Die Umkehrfunktion entsteht durch Spiegelung an der Geraden y = x, nicht an der x-Achse."
+      },
+      {
+        fehler: "Man vergisst beim Logarithmus die Bedingung x > 0.",
+        korrektur:
+          "Da der Logarithmus die Umkehrfunktion einer Exponentialfunktion ist, ist sein Definitionsbereich nur x > 0."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Einfache lineare Umkehrfunktion",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Bestimme die Umkehrfunktion von f(x) = 2x + 3.",
+        loesung: [
+          "Schreibe zuerst y = 2x + 3.",
+          "Vertausche x und y.",
+          "Dann erhält man x = 2y + 3.",
+          "Löse nach y auf.",
+          "x - 3 = 2y.",
+          "y = (x - 3) / 2.",
+          "Also ist f⁻¹(x) = (x - 3) / 2."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Punkt spiegeln",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Der Punkt P(2 | 7) liegt auf dem Graphen von f. Welcher Punkt liegt auf dem Graphen von f⁻¹?",
+        loesung: [
+          "Bei der Umkehrfunktion werden x- und y-Koordinate vertauscht.",
+          "Aus dem Punkt (2 | 7) wird der Punkt (7 | 2).",
+          "Also liegt P'(7 | 2) auf dem Graphen von f⁻¹."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Definitionsmenge und Wertemenge vertauschen",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Eine Funktion f hat die Definitionsmenge D = [0, ∞) und die Wertemenge W = [-3, ∞). Gib Definitionsmenge und Wertemenge von f⁻¹ an.",
+        loesung: [
+          "Bei der Umkehrfunktion werden Definitionsmenge und Wertemenge vertauscht.",
+          "Die Wertemenge von f wird zur Definitionsmenge von f⁻¹.",
+          "Also ist D von f⁻¹ gleich [-3, ∞).",
+          "Die Definitionsmenge von f wird zur Wertemenge von f⁻¹.",
+          "Also ist W von f⁻¹ gleich [0, ∞)."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Umkehrfunktion mit Bruch",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme die Umkehrfunktion von f(x) = (x - 4) / 3.",
+        loesung: [
+          "Schreibe y = (x - 4) / 3.",
+          "Vertausche x und y.",
+          "Dann gilt x = (y - 4) / 3.",
+          "Multipliziere mit 3.",
+          "3x = y - 4.",
+          "Addiere 4.",
+          "y = 3x + 4.",
+          "Also ist f⁻¹(x) = 3x + 4."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Umkehrbarkeit von x²",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Erkläre, warum f(x) = x² auf ganz ℝ keine eindeutige Umkehrfunktion besitzt.",
+        loesung: [
+          "Eine Funktion ist eindeutig umkehrbar, wenn jeder y-Wert höchstens einmal vorkommt.",
+          "Bei f(x) = x² gilt aber f(2) = 4.",
+          "Gleichzeitig gilt auch f(-2) = 4.",
+          "Der Funktionswert 4 gehört also zu zwei verschiedenen x-Werten.",
+          "Deshalb kann man nicht eindeutig zurückgehen.",
+          "Also besitzt f(x) = x² auf ganz ℝ keine eindeutige Umkehrfunktion."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Eingeschränkte quadratische Funktion umkehren",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme die Umkehrfunktion von f(x) = x² für x ≥ 0.",
+        loesung: [
+          "Schreibe y = x².",
+          "Vertausche x und y.",
+          "Dann gilt x = y².",
+          "Löse nach y auf.",
+          "Eigentlich ergibt sich y = ±√x.",
+          "Da die ursprüngliche Funktion aber auf x ≥ 0 eingeschränkt ist, nimmt man nur den positiven Ast.",
+          "Also ist f⁻¹(x) = √x.",
+          "Die Definitionsmenge der Umkehrfunktion ist x ≥ 0."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Exponentialfunktion umkehren",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme die Umkehrfunktion von f(x) = 2ˣ.",
+        loesung: [
+          "Schreibe y = 2ˣ.",
+          "Vertausche x und y.",
+          "Dann gilt x = 2ʸ.",
+          "Löse mit dem Logarithmus zur Basis 2 nach y auf.",
+          "Daraus folgt y = log₂(x).",
+          "Also ist f⁻¹(x) = log₂(x).",
+          "Die Umkehrfunktion ist nur für x > 0 definiert."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Logarithmusfunktion umkehren",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme die Umkehrfunktion von f(x) = log₃(x).",
+        loesung: [
+          "Schreibe y = log₃(x).",
+          "Vertausche x und y.",
+          "Dann gilt x = log₃(y).",
+          "Schreibe die Logarithmusgleichung als Potenzgleichung.",
+          "Aus x = log₃(y) folgt 3ˣ = y.",
+          "Also ist f⁻¹(x) = 3ˣ."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Umkehrfunktion mit Verschiebung",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Bestimme die Umkehrfunktion von f(x) = 3ˣ + 5.",
+        loesung: [
+          "Schreibe y = 3ˣ + 5.",
+          "Vertausche x und y.",
+          "Dann gilt x = 3ʸ + 5.",
+          "Subtrahiere 5.",
+          "x - 5 = 3ʸ.",
+          "Löse mit dem Logarithmus zur Basis 3 nach y auf.",
+          "y = log₃(x - 5).",
+          "Also ist f⁻¹(x) = log₃(x - 5).",
+          "Der Definitionsbereich der Umkehrfunktion ist x > 5."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Umkehrfunktion kontrollieren",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Gegeben ist f(x) = 4x - 1 und f⁻¹(x) = (x + 1) / 4. Kontrolliere durch Verkettung, dass dies stimmt.",
+        loesung: [
+          "Man prüft, ob f(f⁻¹(x)) = x gilt.",
+          "Setze f⁻¹(x) in f ein.",
+          "f(f⁻¹(x)) = 4 · ((x + 1) / 4) - 1.",
+          "Das ergibt x + 1 - 1.",
+          "Also f(f⁻¹(x)) = x.",
+          "Man kann auch f⁻¹(f(x)) prüfen.",
+          "f⁻¹(f(x)) = ((4x - 1) + 1) / 4.",
+          "Das ergibt 4x / 4 = x.",
+          "Damit ist die Umkehrfunktion korrekt."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist eine Umkehrfunktion?",
+        antwort:
+          "Eine Umkehrfunktion macht die ursprüngliche Funktion rückgängig. Wenn f den Wert x auf y abbildet, dann bildet f⁻¹ den Wert y wieder auf x ab."
+      },
+      {
+        frage: "Was bedeutet f⁻¹?",
+        antwort:
+          "f⁻¹ bedeutet Umkehrfunktion. Es bedeutet nicht 1 durch f."
+      },
+      {
+        frage: "Wie bestimmt man eine Umkehrfunktion algebraisch?",
+        antwort:
+          "Man schreibt y = f(x), vertauscht x und y und löst danach wieder nach y auf."
+      },
+      {
+        frage: "Wie sieht die Umkehrfunktion geometrisch aus?",
+        antwort:
+          "Der Graph der Umkehrfunktion ist die Spiegelung des ursprünglichen Graphen an der Geraden y = x."
+      },
+      {
+        frage: "Was passiert mit Definitionsmenge und Wertemenge?",
+        antwort:
+          "Sie werden vertauscht. Die Wertemenge von f wird zur Definitionsmenge von f⁻¹ und die Definitionsmenge von f wird zur Wertemenge von f⁻¹."
+      },
+      {
+        frage: "Warum ist x² auf ganz ℝ nicht umkehrbar?",
+        antwort:
+          "Weil verschiedene x-Werte denselben y-Wert ergeben können, zum Beispiel 2 und -2. Deshalb ist das Zurückgehen nicht eindeutig."
+      },
+      {
+        frage: "Welche Funktion ist die Umkehrfunktion von aˣ?",
+        antwort:
+          "Die Umkehrfunktion von aˣ ist logₐ(x), sofern a positiv und nicht 1 ist."
+      },
+      {
+        frage: "Welche Bedingung gilt beim Logarithmus?",
+        antwort:
+          "Das Argument des Logarithmus muss positiv sein. Deshalb ist logₐ(x) nur für x > 0 definiert."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du erklären, was eine Umkehrfunktion macht?",
+      "Weisst du, dass f⁻¹ nicht 1/f bedeutet?",
+      "Kannst du x und y vertauschen und danach nach y auflösen?",
+      "Weisst du, dass der Graph an y = x gespiegelt wird?",
+      "Kannst du aus (a | b) den gespiegelten Punkt (b | a) bilden?",
+      "Weisst du, dass Definitionsmenge und Wertemenge vertauscht werden?",
+      "Kannst du erklären, warum x² auf ganz ℝ nicht eindeutig umkehrbar ist?",
+      "Kannst du eine Funktion durch Einschränkung des Definitionsbereichs umkehrbar machen?",
+      "Kennst du den Zusammenhang zwischen aˣ und logₐ(x)?",
+      "Prüfst du beim Logarithmus immer, ob das Argument positiv ist?"
+    ]
   }
    
 ];
