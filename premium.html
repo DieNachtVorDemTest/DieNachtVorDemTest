@@ -28,19 +28,46 @@
       z-index: 0;
     }
 
-    .container {
+    .page {
       width: 100%;
-      max-width: 1150px;
+      max-width: 1280px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .top-panel {
+      width: 100%;
       background: rgba(17, 24, 39, 0.91);
       border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 22px;
       padding: 34px;
       box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
-      position: relative;
-      z-index: 1;
       backdrop-filter: blur(4px);
-      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .content-panel {
+      width: 100%;
+      background: rgba(17, 24, 39, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(4px);
+      margin-bottom: 18px;
+    }
+
+    .status-panel {
+      width: 100%;
+      background: rgba(17, 24, 39, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 12px;
+      color: #cbd5e1;
+      white-space: pre-line;
+      font-size: 14px;
+      backdrop-filter: blur(4px);
     }
 
     .badge {
@@ -73,7 +100,6 @@
       justify-content: space-between;
       gap: 15px;
       align-items: center;
-      margin-bottom: 24px;
       flex-wrap: wrap;
     }
 
@@ -112,19 +138,7 @@
       background: #1f2937;
     }
 
-    .status {
-      margin-top: 18px;
-      padding: 12px;
-      background: rgba(2, 6, 23, 0.88);
-      border: 1px solid #374151;
-      border-radius: 12px;
-      color: #cbd5e1;
-      white-space: pre-line;
-      font-size: 14px;
-    }
-
     .locked {
-      margin-top: 24px;
       padding: 24px;
       border-radius: 18px;
       background: rgba(127, 29, 29, 0.88);
@@ -169,7 +183,6 @@
     }
 
     .folder-view {
-      margin-top: 28px;
       background: rgba(15, 23, 42, 0.90);
       border: 1px solid rgba(148, 163, 184, 0.28);
       border-radius: 18px;
@@ -223,14 +236,11 @@
     }
 
     .material-view {
-      margin-top: 28px;
       background: rgba(2, 6, 23, 0.88);
       border: 1px solid rgba(148, 163, 184, 0.28);
       border-radius: 18px;
       padding: 24px;
-      max-height: 78vh;
-      overflow-y: auto;
-      scroll-behavior: smooth;
+      overflow: visible;
       position: relative;
     }
 
@@ -242,22 +252,21 @@
       transform: translate(-50%, -50%) rotate(-24deg);
       font-size: 42px;
       font-weight: bold;
-      color: rgba(255, 255, 255, 0.045);
+      color: rgba(255, 255, 255, 0.035);
       pointer-events: none;
       z-index: 0;
       white-space: nowrap;
     }
 
     .material-header {
-      position: sticky;
-      top: -24px;
-      z-index: 50;
+      position: relative;
+      z-index: 2;
       background: #020617;
-      border-bottom: 1px solid #374151;
-      margin: -24px -24px 24px -24px;
+      border: 1px solid #374151;
+      border-radius: 18px;
       padding: 24px;
-      border-radius: 18px 18px 0 0;
-      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
+      margin-bottom: 24px;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.35);
     }
 
     .material-header h2 {
@@ -384,15 +393,24 @@
 
     @media (max-width: 700px) {
       body {
-        padding: 20px;
+        padding: 18px;
       }
 
-      .container {
-        padding: 26px 20px;
+      .top-panel,
+      .content-panel {
+        padding: 22px 18px;
       }
 
       h1 {
         font-size: 32px;
+      }
+
+      .material-view {
+        padding: 14px;
+      }
+
+      .material-header {
+        padding: 18px;
       }
 
       .material-view::before {
@@ -403,56 +421,60 @@
 </head>
 
 <body>
-  <main class="container">
-    <div class="topbar">
-      <div>
-        <span class="badge">Premium Bereich</span>
-        <h1>Lernhilfe Gymnasium</h1>
-        <p class="small">Die Nacht vor dem Test</p>
-        <p id="user-info">Zugriff wird geprüft...</p>
-      </div>
-
-      <button id="logout-btn" class="danger">Ausloggen</button>
-    </div>
-
-    <section id="locked-box" class="locked hidden">
-      <h2>Kein Premium-Zugriff</h2>
-      <p>Du bist entweder nicht eingeloggt oder noch nicht freigeschaltet.</p>
-      <a class="button" href="index.html">Zur Startseite</a>
-    </section>
-
-    <section id="premium-content" class="hidden">
-      <div id="subjects-area">
-        <p>
-          Wähle ein Fach aus. Mathematik ist nach GYM-Stufen geordnet, Anwendung der Mathematik ist als eigener Themenbereich aufgebaut.
-        </p>
-
-        <div id="subjects-grid" class="subjects-grid"></div>
-      </div>
-
-      <div id="folder-view" class="folder-view hidden">
-        <div class="folder-header">
-          <h2 id="selected-subject-title">Fach</h2>
-          <button class="secondary" onclick="backToSubjects()">Zurück zu allen Fächern</button>
+  <main class="page">
+    <section class="top-panel">
+      <div class="topbar">
+        <div>
+          <span class="badge">Premium Bereich</span>
+          <h1>Lernhilfe Gymnasium</h1>
+          <p class="small">Die Nacht vor dem Test</p>
+          <p id="user-info">Zugriff wird geprüft...</p>
         </div>
 
-        <div id="gym-grid" class="gym-grid"></div>
+        <button id="logout-btn" class="danger">Ausloggen</button>
       </div>
+    </section>
 
-      <div id="material-view" class="material-view hidden" data-watermark="Lernhilfe Gymnasium">
-        <div class="material-header">
-          <button class="secondary" onclick="backFromMaterial()">Zurück</button>
-          <h2 id="material-title">Material</h2>
-          <p class="small">
-            Eigenes Übungsmaterial. Keine Originalprüfung, kein Scan und kein offizielles Schulmaterial.
+    <section class="content-panel">
+      <section id="locked-box" class="locked hidden">
+        <h2>Kein Premium-Zugriff</h2>
+        <p>Du bist entweder nicht eingeloggt oder noch nicht freigeschaltet.</p>
+        <a class="button" href="index.html">Zur Startseite</a>
+      </section>
+
+      <section id="premium-content" class="hidden">
+        <div id="subjects-area">
+          <p>
+            Wähle ein Fach aus. Mathematik ist nach GYM-Stufen geordnet, Anwendung der Mathematik ist als eigener Themenbereich aufgebaut.
           </p>
+
+          <div id="subjects-grid" class="subjects-grid"></div>
         </div>
 
-        <div id="material-content"></div>
-      </div>
+        <div id="folder-view" class="folder-view hidden">
+          <div class="folder-header">
+            <h2 id="selected-subject-title">Fach</h2>
+            <button class="secondary" onclick="backToSubjects()">Zurück zu allen Fächern</button>
+          </div>
+
+          <div id="gym-grid" class="gym-grid"></div>
+        </div>
+
+        <div id="material-view" class="material-view hidden" data-watermark="Lernhilfe Gymnasium">
+          <div class="material-header">
+            <button class="secondary" onclick="backFromMaterial()">Zurück</button>
+            <h2 id="material-title">Material</h2>
+            <p class="small">
+              Eigenes Übungsmaterial. Keine Originalprüfung, kein Scan und kein offizielles Schulmaterial.
+            </p>
+          </div>
+
+          <div id="material-content"></div>
+        </div>
+      </section>
     </section>
 
-    <div id="status" class="status"></div>
+    <div id="status" class="status-panel"></div>
   </main>
 
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
@@ -662,7 +684,7 @@
       subjectsArea.classList.add("hidden");
       folderView.classList.add("hidden");
       materialView.classList.remove("hidden");
-      materialView.scrollTop = 0;
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
       if (!contentInfo) {
         materialTitle.textContent = subject.name + " · " + displayLevel;
@@ -695,7 +717,7 @@
       subjectsArea.classList.add("hidden");
       folderView.classList.add("hidden");
       materialView.classList.remove("hidden");
-      materialView.scrollTop = 0;
+      window.scrollTo({ top: 0, behavior: "smooth" });
 
       if (!contentInfo) {
         materialTitle.textContent = subject.name;
