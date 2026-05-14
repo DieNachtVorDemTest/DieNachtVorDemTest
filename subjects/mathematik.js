@@ -1,162 +1,78 @@
 /* =========================================================
-   SchoolFools – Mathematik GYM1
-   Datei: mathematik-gym1.js
+   SchoolFools – Mathematik
+   Datei: mathematik.js
+
+   Zweck:
+   - Mathematik ist NICHT mehr nach GYM1/GYM2/GYM3/GYM4 organisiert
+   - Mathematik ist wie Anwendung der Mathematik direkt nach Themen aufgebaut
+   - Alle Themen werden später nur in MATH_THEMEN ergänzt
+   - Keine echten Prüfungsaufgaben
+   - Keine kopierten Inhalte
+   - Alles selbst erstellte Lerninhalte
 
    Benötigte Render-Funktion:
-   render_mathematik_gym1(container)
+   render_mathematik(container)
 ========================================================= */
 
 
 /* =========================
    DATENBANK DER THEMEN
+   HIER SPÄTER DEINE THEMEN EINFÜGEN
 ========================= */
 
 const MATH_THEMEN = [
+  /*
+  Beispiel-Aufbau:
+
   {
     id: "logarithmen-potenzen",
     nummer: "1",
     titel: "Logarithmen und Potenzen",
     kurzbeschreibung:
-      "Potenzen mit rationalen Exponenten, Wurzeln, Logarithmen, Exponentialgleichungen und Logarithmusgleichungen.",
+      "Potenzen mit rationalen Exponenten, Logarithmengesetze und Exponentialgleichungen verständlich erklärt.",
     lernziele: [
-      "Du kannst Potenzen mit rationalen Exponenten in Wurzeln umschreiben.",
-      "Du kennst die wichtigsten Potenzgesetze.",
-      "Du verstehst den Logarithmus als Umkehrung des Potenzierens.",
-      "Du kannst Exponentialgleichungen mit gleicher Basis lösen.",
-      "Du kannst Exponentialgleichungen durch Logarithmieren lösen.",
-      "Du kannst Logarithmusgleichungen lösen und den Definitionsbereich prüfen."
+      "Du kannst Potenzen mit rationalen Exponenten umformen.",
+      "Du verstehst Logarithmen als Umkehrung des Potenzierens."
     ],
     theorie: [
       {
-        titel: "Potenzen mit rationalen Exponenten",
+        titel: "Was ist ein Logarithmus?",
         text:
-          "Ein rationaler Exponent ist ein Bruch. Der Nenner des Bruchs wird zur Wurzel, der Zähler bleibt als Potenz erhalten. Zum Beispiel gilt a^(m/n) = ⁿ√(a^m)."
-      },
-      {
-        titel: "Negative Exponenten",
-        text:
-          "Ein negativer Exponent bedeutet Kehrwert. Es gilt a^(-n) = 1/a^n, sofern a nicht 0 ist."
-      },
-      {
-        titel: "Potenzgesetze",
-        text:
-          "Bei gleicher Basis werden Exponenten beim Multiplizieren addiert und beim Dividieren subtrahiert. Zum Beispiel gilt x^a · x^b = x^(a+b)."
-      },
-      {
-        titel: "Logarithmus",
-        text:
-          "Der Logarithmus ist die Umkehrung des Potenzierens. log_a(b) = x bedeutet genau a^x = b."
-      },
-      {
-        titel: "Definitionsbereich beim Logarithmus",
-        text:
-          "Beim Logarithmus muss die Basis positiv und ungleich 1 sein. Das Argument des Logarithmus muss positiv sein."
-      },
-      {
-        titel: "Logarithmengesetze",
-        text:
-          "Die wichtigsten Gesetze sind log_a(xy) = log_a(x) + log_a(y), log_a(x/y) = log_a(x) - log_a(y) und log_a(x^r) = r log_a(x)."
+          "Ein Logarithmus ist ein Exponent. Die Gleichung log_a(b) = x bedeutet a^x = b."
       }
     ],
     methoden: [
       {
-        titel: "Methode: Potenzen vereinfachen",
-        schritte: [
-          "1. Prüfe, ob die Basen gleich sind.",
-          "2. Bei Multiplikation gleicher Basen addierst du die Exponenten.",
-          "3. Bei Division gleicher Basen subtrahierst du die Exponenten.",
-          "4. Bei Potenz einer Potenz multiplizierst du die Exponenten.",
-          "5. Schreibe negative Exponenten als Kehrwert.",
-          "6. Vereinfache Brüche im Exponenten."
-        ]
-      },
-      {
         titel: "Methode: Exponentialgleichung lösen",
         schritte: [
-          "1. Prüfe zuerst, ob beide Seiten als Potenz mit gleicher Basis geschrieben werden können.",
-          "2. Wenn ja, setze die Exponenten gleich.",
-          "3. Wenn nein, logarithmiere beide Seiten.",
-          "4. Ziehe den Exponenten mit dem Logarithmengesetz nach vorne.",
-          "5. Löse nach x auf.",
-          "6. Gib bei Bedarf eine Näherung mit dem Taschenrechner an."
-        ]
-      },
-      {
-        titel: "Methode: Logarithmusgleichung lösen",
-        schritte: [
-          "1. Bestimme zuerst den Definitionsbereich.",
-          "2. Fasse Logarithmen mit Logarithmengesetzen zusammen.",
-          "3. Schreibe die Logarithmusgleichung als Potenzgleichung.",
-          "4. Löse die entstehende Gleichung.",
-          "5. Prüfe am Schluss, ob alle Lösungen im Definitionsbereich liegen.",
-          "6. Streiche ungültige Lösungen."
+          "1. Prüfe, ob gleiche Basen hergestellt werden können.",
+          "2. Wenn nicht, logarithmiere beide Seiten.",
+          "3. Ziehe den Exponenten nach vorne.",
+          "4. Löse nach der gesuchten Variable auf."
         ]
       }
     ],
     merksaetze: [
       "Ein Logarithmus ist ein Exponent.",
-      "Bei log_a(x) muss immer x > 0 gelten.",
-      "Es gibt kein Gesetz für log(x + y).",
-      "Bei gleicher Basis darf man Exponenten vergleichen.",
-      "Wenn keine gleiche Basis möglich ist, logarithmiert man beide Seiten."
+      "Bei Logarithmusgleichungen müssen die Argumente positiv sein."
     ],
     typischeFehler: [
       {
         fehler: "Man schreibt log(x + y) = log(x) + log(y).",
         korrektur:
-          "Das ist falsch. Logarithmengesetze gelten für Produkte, Quotienten und Potenzen, aber nicht für Summen."
-      },
-      {
-        fehler: "Man vergisst den Definitionsbereich.",
-        korrektur:
-          "Bei Logarithmen müssen alle Argumente positiv sein. Lösungen ausserhalb des Definitionsbereichs sind ungültig."
-      },
-      {
-        fehler: "Man verwechselt x^(2/3) mit √(x³).",
-        korrektur:
-          "Richtig ist x^(2/3) = ³√(x²). Der Nenner des Exponenten bestimmt die Wurzel."
+          "Für Summen gibt es kein Logarithmengesetz."
       }
     ],
     aufgaben: [
       {
-        titel: "Aufgabe 1: Potenzen vereinfachen",
+        titel: "Aufgabe 1: Logarithmusgleichung",
         schwierigkeit: "einfach",
         aufgabe:
-          "Vereinfache x^(2/5) · x^(3/10).",
+          "Löse log_2(x) = 3.",
         loesung: [
-          "Die Basis ist in beiden Faktoren x.",
-          "Deshalb dürfen die Exponenten addiert werden.",
-          "2/5 + 3/10 = 4/10 + 3/10 = 7/10.",
-          "Das Ergebnis lautet x^(7/10)."
-        ]
-      },
-      {
-        titel: "Aufgabe 2: Exponentialgleichung",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Löse 2^(x - 3) = 32.",
-        loesung: [
-          "Schreibe 32 als Potenz zur Basis 2.",
-          "32 = 2^5.",
-          "Also gilt 2^(x - 3) = 2^5.",
-          "Die Exponenten müssen gleich sein.",
-          "x - 3 = 5.",
-          "Also x = 8."
-        ]
-      },
-      {
-        titel: "Aufgabe 3: Logarithmusgleichung",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Löse log_2(x) + log_2(x - 1) = 1.",
-        loesung: [
-          "Definitionsbereich: x > 1.",
-          "Fasse zusammen: log_2(x(x - 1)) = 1.",
-          "Schreibe als Potenzgleichung: x(x - 1) = 2.",
-          "Also x² - x - 2 = 0.",
-          "Faktorisieren: (x - 2)(x + 1) = 0.",
-          "Mögliche Lösungen: x = 2 oder x = -1.",
-          "Wegen x > 1 ist nur x = 2 gültig."
+          "Schreibe die Gleichung als Potenzgleichung.",
+          "x = 2^3.",
+          "Also ist x = 8."
         ]
       }
     ],
@@ -164,345 +80,16 @@ const MATH_THEMEN = [
       {
         frage: "Was ist ein Logarithmus?",
         antwort:
-          "Ein Logarithmus ist ein Exponent. log_a(b) fragt, mit welchem Exponenten man a potenzieren muss, um b zu erhalten."
-      },
-      {
-        frage: "Welche Bedingungen gelten für log_a(x)?",
-        antwort:
-          "Die Basis a muss positiv und ungleich 1 sein. Das Argument x muss positiv sein."
+          "Ein Logarithmus ist der Exponent, mit dem man eine Basis potenzieren muss, um eine bestimmte Zahl zu erhalten."
       }
     ],
     nachtVorTest: [
-      "Kannst du Potenzen mit rationalen Exponenten in Wurzeln umschreiben?",
-      "Kennst du die Potenzgesetze?",
-      "Kannst du Exponentialgleichungen mit gleicher Basis lösen?",
-      "Kannst du Exponentialgleichungen durch Logarithmieren lösen?",
-      "Prüfst du bei Logarithmusgleichungen den Definitionsbereich?"
-    ]
-  },
-
-  {
-    id: "kurvendiskussion",
-    nummer: "2",
-    titel: "Kurvendiskussion",
-    kurzbeschreibung:
-      "Nullstellen, Extremalstellen, Wendepunkte, Sattelpunkte, Monotonie und Krümmung systematisch untersuchen.",
-    lernziele: [
-      "Du kannst Nullstellen berechnen.",
-      "Du kannst Extremalstellen mit der ersten Ableitung finden.",
-      "Du kannst Hochpunkte und Tiefpunkte mit der zweiten Ableitung unterscheiden.",
-      "Du kannst Wendepunkte bestimmen.",
-      "Du kannst Sattelpunkte erkennen.",
-      "Du kannst Monotonie und Krümmung erklären."
-    ],
-    theorie: [
-      {
-        titel: "Ziel der Kurvendiskussion",
-        text:
-          "Bei einer Kurvendiskussion untersucht man den Verlauf eines Graphen. Man betrachtet Nullstellen, Extrempunkte, Wendepunkte, Monotonie und Krümmung."
-      },
-      {
-        titel: "Erste Ableitung",
-        text:
-          "Die erste Ableitung beschreibt die Steigung. Wenn f'(x) positiv ist, steigt der Graph. Wenn f'(x) negativ ist, fällt der Graph."
-      },
-      {
-        titel: "Zweite Ableitung",
-        text:
-          "Die zweite Ableitung beschreibt die Krümmung. Sie hilft auch, Hochpunkte und Tiefpunkte zu unterscheiden."
-      },
-      {
-        titel: "Extremalstellen",
-        text:
-          "Mögliche Extremalstellen findet man durch f'(x) = 0. Danach muss geprüft werden, ob ein Hochpunkt oder Tiefpunkt vorliegt."
-      },
-      {
-        titel: "Wendepunkte",
-        text:
-          "Mögliche Wendepunkte findet man durch f''(x) = 0. Danach muss ein Krümmungswechsel geprüft werden."
-      },
-      {
-        titel: "Sattelpunkt",
-        text:
-          "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente. Es gilt dort f'(x) = 0 und ein Krümmungswechsel liegt vor."
-      }
-    ],
-    methoden: [
-      {
-        titel: "Methode: Kurvendiskussion durchführen",
-        schritte: [
-          "1. Bestimme den Definitionsbereich.",
-          "2. Berechne den y-Achsenabschnitt mit f(0).",
-          "3. Berechne die Nullstellen mit f(x) = 0.",
-          "4. Berechne f'(x).",
-          "5. Setze f'(x) = 0 für mögliche Extremalstellen.",
-          "6. Prüfe mit f'' oder Vorzeichenwechsel von f'.",
-          "7. Berechne f''(x).",
-          "8. Setze f''(x) = 0 für mögliche Wendepunkte.",
-          "9. Prüfe den Krümmungswechsel.",
-          "10. Berechne alle y-Werte durch Einsetzen in f(x)."
-        ]
-      }
-    ],
-    merksaetze: [
-      "Nullstellen findet man mit f(x) = 0.",
-      "Mögliche Extremalstellen findet man mit f'(x) = 0.",
-      "f''(a) > 0 bedeutet Tiefpunkt.",
-      "f''(a) < 0 bedeutet Hochpunkt.",
-      "Mögliche Wendepunkte findet man mit f''(x) = 0.",
-      "Ein Sattelpunkt ist ein Wendepunkt mit f'(a) = 0."
-    ],
-    typischeFehler: [
-      {
-        fehler: "Man setzt f'(x) = 0 und behauptet sofort, es sei ein Extrempunkt.",
-        korrektur:
-          "f'(x) = 0 ist nur eine notwendige Bedingung. Man muss danach prüfen."
-      },
-      {
-        fehler: "Man vergisst die y-Werte.",
-        korrektur:
-          "Ein Punkt braucht immer x- und y-Koordinate. Den y-Wert erhält man durch Einsetzen in f(x)."
-      }
-    ],
-    aufgaben: [
-      {
-        titel: "Aufgabe 1: Extrempunkt",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Bestimme den Extrempunkt von f(x) = x² - 4x + 1.",
-        loesung: [
-          "Berechne f'(x) = 2x - 4.",
-          "Setze f'(x) = 0.",
-          "2x - 4 = 0, also x = 2.",
-          "Berechne f''(x) = 2.",
-          "Da f''(2) > 0, liegt ein Tiefpunkt vor.",
-          "Berechne f(2) = 4 - 8 + 1 = -3.",
-          "Der Tiefpunkt ist T(2 | -3)."
-        ]
-      }
-    ],
-    muendlich: [
-      {
-        frage: "Was zeigt die erste Ableitung?",
-        antwort:
-          "Die erste Ableitung zeigt die Steigung des Graphen."
-      },
-      {
-        frage: "Was ist ein Sattelpunkt?",
-        antwort:
-          "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente."
-      }
-    ],
-    nachtVorTest: [
-      "Kannst du Nullstellen berechnen?",
-      "Kannst du f'(x) bilden?",
-      "Kannst du Extremalstellen bestimmen?",
-      "Kannst du Hochpunkt und Tiefpunkt unterscheiden?",
-      "Kannst du Wendepunkte und Sattelpunkte erkennen?"
-    ]
-  },
-
-  {
-    id: "trigonometrie",
-    nummer: "3",
-    titel: "Trigonometrie",
-    kurzbeschreibung:
-      "Sinus, Kosinus, Tangens, Einheitskreis, Bogenmass, trigonometrische Gleichungen und Anwendungen.",
-    lernziele: [
-      "Du kannst Sinus, Kosinus und Tangens im rechtwinkligen Dreieck anwenden.",
-      "Du kannst Winkel zwischen Gradmass und Bogenmass umrechnen.",
-      "Du verstehst den Einheitskreis.",
-      "Du kannst Vorzeichen in den Quadranten bestimmen.",
-      "Du kannst einfache trigonometrische Gleichungen lösen."
-    ],
-    theorie: [
-      {
-        titel: "Sinus, Kosinus und Tangens",
-        text:
-          "Im rechtwinkligen Dreieck gilt sin(α) = Gegenkathete/Hypotenuse, cos(α) = Ankathete/Hypotenuse und tan(α) = Gegenkathete/Ankathete."
-      },
-      {
-        titel: "Einheitskreis",
-        text:
-          "Auf dem Einheitskreis hat ein Punkt zum Winkel α die Koordinaten P(cos(α) | sin(α))."
-      },
-      {
-        titel: "Bogenmass",
-        text:
-          "Es gilt 180° = π und 360° = 2π. Deshalb ist 90° = π/2 und 45° = π/4."
-      },
-      {
-        titel: "Periodizität",
-        text:
-          "Sinus und Kosinus haben die Periode 2π. Tangens hat die Periode π."
-      }
-    ],
-    methoden: [
-      {
-        titel: "Methode: Trigonometrische Gleichung lösen",
-        schritte: [
-          "1. Löse zuerst algebraisch nach sin, cos oder tan auf.",
-          "2. Bestimme den Referenzwinkel.",
-          "3. Nutze den Einheitskreis für die passenden Quadranten.",
-          "4. Schreibe alle Lösungen im verlangten Intervall auf.",
-          "5. Beachte die Periode."
-        ]
-      }
-    ],
-    merksaetze: [
-      "sin²(x) + cos²(x) = 1.",
-      "tan(x) = sin(x)/cos(x).",
-      "Sinus und Kosinus haben Periode 2π.",
-      "Tangens hat Periode π.",
-      "Bei trigonometrischen Gleichungen gibt es oft mehrere Lösungen."
-    ],
-    typischeFehler: [
-      {
-        fehler: "Man findet nur eine Lösung.",
-        korrektur:
-          "Der Einheitskreis zeigt meistens mehrere Lösungen im Intervall."
-      },
-      {
-        fehler: "Der Taschenrechner ist im falschen Modus.",
-        korrektur:
-          "Prüfe immer, ob Gradmass oder Bogenmass verlangt ist."
-      }
-    ],
-    aufgaben: [
-      {
-        titel: "Aufgabe 1: Bogenmass",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Wandle 135° ins Bogenmass um.",
-        loesung: [
-          "Verwende die Formel Winkel · π/180.",
-          "135° · π/180 = 3π/4.",
-          "Also gilt 135° = 3π/4."
-        ]
-      },
-      {
-        titel: "Aufgabe 2: Sinusgleichung",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Löse sin(x) = 1/2 im Intervall [0°, 360°].",
-        loesung: [
-          "Der Referenzwinkel ist 30°.",
-          "Sinus ist im 1. und 2. Quadranten positiv.",
-          "Also x = 30° oder x = 150°."
-        ]
-      }
-    ],
-    muendlich: [
-      {
-        frage: "Was bedeutet sin(α) im rechtwinkligen Dreieck?",
-        antwort:
-          "Sinus ist das Verhältnis Gegenkathete durch Hypotenuse."
-      }
-    ],
-    nachtVorTest: [
-      "Kannst du sin, cos und tan im Dreieck zuordnen?",
-      "Kennst du 180° = π?",
-      "Kannst du den Einheitskreis benutzen?",
-      "Findest du alle Lösungen einer trigonometrischen Gleichung?"
-    ]
-  },
-
-  {
-    id: "quadratische-funktionen",
-    nummer: "4",
-    titel: "Quadratische Funktionen",
-    kurzbeschreibung:
-      "Parabeln, Scheitelpunkt, Normalform, Scheitelpunktform, faktorisierte Form, Nullstellen und Diskriminante.",
-    lernziele: [
-      "Du erkennst quadratische Funktionen.",
-      "Du kannst den Scheitelpunkt bestimmen.",
-      "Du kannst Nullstellen berechnen.",
-      "Du kannst die Diskriminante interpretieren.",
-      "Du kannst zwischen Normalform, Scheitelpunktform und faktorisierter Form wechseln."
-    ],
-    theorie: [
-      {
-        titel: "Normalform",
-        text:
-          "Eine quadratische Funktion hat die Normalform f(x) = ax² + bx + c mit a ≠ 0."
-      },
-      {
-        titel: "Scheitelpunktform",
-        text:
-          "Die Scheitelpunktform lautet f(x) = a(x - d)² + e. Der Scheitelpunkt ist S(d | e)."
-      },
-      {
-        titel: "Nullstellen",
-        text:
-          "Nullstellen erhält man durch f(x) = 0. Eine Parabel kann zwei, eine doppelte oder keine reellen Nullstellen haben."
-      },
-      {
-        titel: "Diskriminante",
-        text:
-          "Die Diskriminante D = b² - 4ac zeigt die Anzahl reeller Lösungen: D > 0 zwei Lösungen, D = 0 eine doppelte Lösung, D < 0 keine reelle Lösung."
-      }
-    ],
-    methoden: [
-      {
-        titel: "Methode: Scheitelpunkt aus Normalform",
-        schritte: [
-          "1. Lies a und b aus f(x) = ax² + bx + c ab.",
-          "2. Berechne x_S = -b/(2a).",
-          "3. Setze x_S in f(x) ein.",
-          "4. Der Scheitelpunkt lautet S(x_S | f(x_S))."
-        ]
-      },
-      {
-        titel: "Methode: Nullstellen mit Lösungsformel",
-        schritte: [
-          "1. Bringe die Gleichung in die Form ax² + bx + c = 0.",
-          "2. Berechne D = b² - 4ac.",
-          "3. Setze in x = (-b ± √D)/(2a) ein.",
-          "4. Interpretiere die Anzahl Lösungen mit D."
-        ]
-      }
-    ],
-    merksaetze: [
-      "a > 0 bedeutet: Parabel öffnet nach oben.",
-      "a < 0 bedeutet: Parabel öffnet nach unten.",
-      "x_S = -b/(2a).",
-      "D = b² - 4ac.",
-      "D < 0 bedeutet keine reellen Nullstellen."
-    ],
-    typischeFehler: [
-      {
-        fehler: "Man liest bei (x + 3)² den Scheitelpunkt falsch ab.",
-        korrektur:
-          "Bei f(x) = (x + 3)² ist der x-Wert des Scheitelpunkts -3, nicht +3."
-      }
-    ],
-    aufgaben: [
-      {
-        titel: "Aufgabe 1: Scheitelpunkt",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Bestimme den Scheitelpunkt von f(x) = x² - 8x + 10.",
-        loesung: [
-          "a = 1 und b = -8.",
-          "x_S = -(-8)/(2 · 1) = 4.",
-          "f(4) = 16 - 32 + 10 = -6.",
-          "Der Scheitelpunkt ist S(4 | -6)."
-        ]
-      }
-    ],
-    muendlich: [
-      {
-        frage: "Was zeigt die Diskriminante?",
-        antwort:
-          "Die Diskriminante zeigt, wie viele reelle Nullstellen eine quadratische Gleichung hat."
-      }
-    ],
-    nachtVorTest: [
-      "Kannst du den Scheitelpunkt berechnen?",
-      "Kannst du die Lösungsformel anwenden?",
-      "Kannst du die Diskriminante interpretieren?"
+      "Kannst du Potenzgesetze anwenden?",
+      "Kannst du Logarithmusgleichungen lösen?",
+      "Prüfst du den Definitionsbereich?"
     ]
   }
+  */
 ];
 
 
@@ -510,13 +97,37 @@ const MATH_THEMEN = [
    RENDER-FUNKTION
 ========================= */
 
-function render_mathematik_gym1(container) {
+function render_mathematik(container) {
   if (!container) {
-    console.error("render_mathematik_gym1: Kein Container gefunden.");
+    console.error("render_mathematik: Kein Container gefunden.");
     return;
   }
 
   injectMathStyles();
+
+  if (!Array.isArray(MATH_THEMEN) || MATH_THEMEN.length === 0) {
+    container.innerHTML = `
+      <section class="sf-math-page">
+        <div class="sf-math-hero">
+          <h1>Mathematik</h1>
+          <p>
+            Prüfungsvorbereitung mit selbst erstellten Erklärungen, Methoden,
+            Aufgaben, Lösungen und mündlichen Prüfungsfragen.
+          </p>
+        </div>
+
+        <div class="sf-math-empty">
+          <h2>Noch keine Themen eingefügt</h2>
+          <p>
+            Füge deine Mathematik-Themen in die Konstante
+            <strong>MATH_THEMEN</strong> ein. Danach erscheinen sie automatisch
+            links in der Themenliste.
+          </p>
+        </div>
+      </section>
+    `;
+    return;
+  }
 
   container.innerHTML = `
     <section class="sf-math-page">
@@ -535,8 +146,8 @@ function render_mathematik_gym1(container) {
             ${MATH_THEMEN.map((thema, index) => `
               <button
                 class="sf-math-topic-button ${index === 0 ? "active" : ""}"
-                data-topic-id="${thema.id}">
-                <span>${thema.nummer}</span>
+                data-topic-id="${escapeMathHTML(thema.id)}">
+                <span>${escapeMathHTML(thema.nummer)}</span>
                 ${escapeMathHTML(thema.titel)}
               </button>
             `).join("")}
@@ -561,7 +172,6 @@ function render_mathematik_gym1(container) {
 
     content.innerHTML = renderMathTopic(thema);
     attachMathInteractions(content);
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   buttons.forEach(button => {
@@ -618,6 +228,8 @@ function renderMathSection(title, content) {
 
 
 function renderMathTheory(items) {
+  if (!items || items.length === 0) return "";
+
   return `
     <section class="sf-math-card">
       <h3>Theorie einfach erklärt</h3>
@@ -635,6 +247,8 @@ function renderMathTheory(items) {
 
 
 function renderMathMethods(methoden) {
+  if (!methoden || methoden.length === 0) return "";
+
   return `
     <section class="sf-math-card">
       <h3>Methoden</h3>
@@ -657,6 +271,8 @@ function renderMathMethods(methoden) {
 
 
 function renderMathErrors(errors) {
+  if (!errors || errors.length === 0) return "";
+
   return `
     <section class="sf-math-card">
       <h3>Typische Fehler</h3>
@@ -676,6 +292,8 @@ function renderMathErrors(errors) {
 
 
 function renderMathExercises(exercises) {
+  if (!exercises || exercises.length === 0) return "";
+
   return `
     <section class="sf-math-card">
       <h3>Eigene Übungsaufgaben mit Lösung</h3>
@@ -702,6 +320,8 @@ function renderMathExercises(exercises) {
 
 
 function renderMathOral(items) {
+  if (!items || items.length === 0) return "";
+
   return `
     <section class="sf-math-card">
       <h3>Mündliche Prüfungsfragen</h3>
@@ -723,6 +343,10 @@ function renderMathOral(items) {
 ========================= */
 
 function renderMathList(items) {
+  if (!items || items.length === 0) {
+    return `<p class="sf-math-muted">Noch keine Inhalte eingefügt.</p>`;
+  }
+
   return `
     <ul class="sf-math-list">
       ${items.map(item => `<li>${escapeMathHTML(item)}</li>`).join("")}
@@ -732,6 +356,10 @@ function renderMathList(items) {
 
 
 function renderMathOrderedList(items) {
+  if (!items || items.length === 0) {
+    return `<p class="sf-math-muted">Noch keine Lösungsschritte eingefügt.</p>`;
+  }
+
   return `
     <ol class="sf-math-ordered-list">
       ${items.map(item => `<li>${escapeMathHTML(item)}</li>`).join("")}
@@ -741,6 +369,10 @@ function renderMathOrderedList(items) {
 
 
 function renderMathChecklist(items) {
+  if (!items || items.length === 0) {
+    return `<p class="sf-math-muted">Noch keine Checkliste eingefügt.</p>`;
+  }
+
   return `
     <div class="sf-math-checklist">
       ${items.map(item => `
@@ -777,7 +409,7 @@ function attachMathInteractions(root) {
 
 
 function escapeMathHTML(value) {
-  return String(value)
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")
@@ -795,7 +427,6 @@ function injectMathStyles() {
 
   const style = document.createElement("style");
   style.id = "sf-math-styles";
-
   style.textContent = `
     .sf-math-page {
       width: 100%;
@@ -829,7 +460,6 @@ function injectMathStyles() {
       margin: 0 0 12px 0;
       font-size: clamp(32px, 5vw, 56px);
       line-height: 1;
-      color: white;
     }
 
     .sf-math-hero p {
@@ -838,7 +468,7 @@ function injectMathStyles() {
       font-size: 18px;
       line-height: 1.6;
       opacity: 0.92;
-      color: #e5e7eb;
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .sf-math-layout {
@@ -882,6 +512,7 @@ function injectMathStyles() {
       gap: 10px;
       align-items: center;
       transition: 0.2s ease;
+      width: 100%;
       font-size: 15px;
     }
 
@@ -1030,6 +661,7 @@ function injectMathStyles() {
     .sf-math-plus {
       font-size: 24px;
       line-height: 1;
+      transition: 0.2s ease;
     }
 
     .sf-math-accordion-body {
@@ -1089,6 +721,11 @@ function injectMathStyles() {
       padding: 10px 14px;
       font-weight: 700;
       cursor: pointer;
+      font-size: 15px;
+    }
+
+    .sf-math-solution-button:hover {
+      background: #273449;
     }
 
     .sf-math-solution {
@@ -1137,6 +774,30 @@ function injectMathStyles() {
       margin-bottom: 24px;
     }
 
+    .sf-math-empty {
+      background: white;
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .sf-math-empty h2 {
+      margin: 0 0 10px 0;
+      color: #172033;
+    }
+
+    .sf-math-empty p {
+      margin: 0;
+      color: #374151;
+      line-height: 1.6;
+    }
+
+    .sf-math-muted {
+      color: #6b7280;
+      margin: 0;
+      line-height: 1.6;
+    }
+
     @media (max-width: 900px) {
       .sf-math-layout {
         grid-template-columns: 1fr;
@@ -1157,6 +818,10 @@ function injectMathStyles() {
       .sf-math-hero {
         padding: 24px;
       }
+
+      .sf-math-topic-header h2 {
+        font-size: 28px;
+      }
     }
   `;
 
@@ -1168,4 +833,4 @@ function injectMathStyles() {
    GLOBAL VERFÜGBAR MACHEN
 ========================= */
 
-window.render_mathematik_gym1 = render_mathematik_gym1;
+window.render_mathematik = render_mathematik;
