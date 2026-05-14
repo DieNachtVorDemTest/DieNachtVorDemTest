@@ -2696,15 +2696,14 @@ function render_anwendung_mathematik(container) {
   injectAMStyles();
 
   container.innerHTML = `
-    <section class="sf-am-page">
-      <div class="sf-am-hero">
-        <p class="sf-am-kicker">SchoolFools</p>
-        <h1>Anwendung der Mathematik</h1>
-        <p>
-          Prüfungsvorbereitung mit selbst erstellten Erklärungen, Methoden,
-          Aufgaben, Lösungen und mündlichen Prüfungsfragen.
-        </p>
-      </div>
+  <section class="sf-am-page">
+    <div class="sf-am-hero">
+      <h1>Anwendung der Mathematik</h1>
+      <p>
+        Prüfungsvorbereitung mit selbst erstellten Erklärungen, Methoden,
+        Aufgaben, Lösungen und mündlichen Prüfungsfragen.
+      </p>
+    </div>
 
       <div class="sf-am-layout">
         <aside class="sf-am-sidebar">
@@ -2974,14 +2973,14 @@ function injectAMStyles() {
   style.id = "sf-am-styles";
   style.textContent = `
     .sf-am-page {
-      width: 100%;
-      min-height: 100vh;
-      background: #f6f7fb;
-      color: #172033;
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 24px;
-      box-sizing: border-box;
-    }
+  width: 100%;
+  background: #f6f7fb;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 24px;
+  box-sizing: border-box;
+  border-radius: 18px;
+}
 
     .sf-am-hero {
       background: linear-gradient(135deg, #111827, #273449);
