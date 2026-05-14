@@ -462,7 +462,7 @@
       <section id="premium-content" class="hidden">
         <div id="subjects-area">
           <p>
-            Wähle einen Lernbereich aus. Die Inhalte sind nach Fach, Stufe und prüfungsrelevanten Themen strukturiert.
+            Wähle einen Lernbereich aus. Die Inhalte sind nach Fach und prüfungsrelevanten Themen strukturiert.
           </p>
 
           <div id="subjects-grid" class="subjects-grid"></div>
@@ -536,11 +536,11 @@
 
     const subjects = [
       {
-  name: "Mathematik",
-  key: "mathematik",
-  mode: "direct",
-  description: "Zentrale Prüfungsthemen der Mathematik mit Erklärungen und Übungen"
-},
+        name: "Mathematik",
+        key: "mathematik",
+        mode: "direct",
+        description: "Zentrale Prüfungsthemen der Mathematik mit Erklärungen, Methoden und Übungen"
+      },
       {
         name: "Anwendung der Mathematik",
         key: "anwendung-mathematik",
@@ -568,17 +568,17 @@
     ];
 
     const availableContent = {
+      "mathematik": {
+        file: "subjects/mathematik.js",
+        renderFunction: "render_mathematik",
+        description: "Mathematik nach Themen aufgebaut"
+      },
+
       "anwendung-mathematik": {
         file: "subjects/anwendung_mathematik.js",
         renderFunction: "render_anwendung_mathematik",
         description: "Vertiefung: Gruppentheorie, komplexe Zahlen, Möbiustransformationen, Reihen, Differenzialgleichungen und lineare Algebra"
       },
-
-      "mathematik": {
-  file: "subjects/mathematik.js",
-  renderFunction: "render_mathematik",
-  description: "Logarithmen, Kurvendiskussion, Trigonometrie, quadratische Funktionen und Ableitungen"
-},
 
       "franzoesisch-gym1": {
         file: "subjects/franzoesisch-gym1.js",
@@ -622,6 +622,7 @@
       subjectsArea.classList.remove("hidden");
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
+      materialContent.innerHTML = "";
       currentSubject = null;
       currentIsDirectSubject = false;
 
@@ -682,6 +683,7 @@
       subjectsArea.classList.remove("hidden");
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
+      materialContent.innerHTML = "";
       currentSubject = null;
       currentIsDirectSubject = false;
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -691,6 +693,7 @@
       subjectsArea.classList.add("hidden");
       materialView.classList.add("hidden");
       folderView.classList.remove("hidden");
+      materialContent.innerHTML = "";
       currentIsDirectSubject = false;
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
