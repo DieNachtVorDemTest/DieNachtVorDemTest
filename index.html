@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Lernhilfe</title>
+  <title>Lernhilfe_Neufeld</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -15,23 +15,32 @@
       font-family: Arial, sans-serif;
       color: #f9fafb;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px;
-
-      /* NUR DER HINTERGRUND IST GEÄNDERT */
       background: url("hintergrund.png") center center / cover no-repeat fixed;
       position: relative;
     }
 
-    /* dunkle Schicht, damit man Text gut lesen kann */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       background: rgba(7, 12, 20, 0.45);
       z-index: 0;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+    }
+
+    .main-wrap {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
     }
 
     .container {
@@ -42,8 +51,6 @@
       border-radius: 22px;
       padding: 34px;
       box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
-      position: relative;
-      z-index: 1;
       backdrop-filter: blur(4px);
     }
 
@@ -172,8 +179,189 @@
       font-size: 14px;
     }
 
+    .payment-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(147, 197, 253, 0.25);
+      color: rgba(248, 250, 252, 0.9);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .payment-note a {
+      color: #93c5fd;
+    }
+
+    .terms-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: rgba(248, 250, 252, 0.88);
+      line-height: 1.45;
+    }
+
+    .terms-checkbox input {
+      width: auto;
+      margin: 3px 0 0 0;
+    }
+
+    .terms-checkbox a {
+      color: #93c5fd;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* APPLE-ÄHNLICHER FOOTER */
+
+    .apple-footer {
+      width: 100%;
+      background: #f5f5f7;
+      color: #6e6e73;
+      font-size: 13px;
+      line-height: 1.45;
+      padding: 18px 24px 22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .apple-footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      border-top: 1px solid #d2d2d7;
+      padding-top: 14px;
+    }
+
+    .apple-footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 6px;
+    }
+
+    .apple-footer-country {
+      color: #424245;
+      white-space: nowrap;
+    }
+
+    .apple-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      align-items: center;
+    }
+
+    .apple-footer-links button {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      color: #424245;
+      font-size: 13px;
+      font-weight: normal;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .apple-footer-links button:hover {
+      background: transparent;
+      text-decoration: underline;
+    }
+
+    .apple-separator {
+      color: #86868b;
+      margin: 0 10px;
+    }
+
+    /* MODALS FÜR RECHTLICHE TEXTE */
+
+    .legal-modal {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+      padding: 22px;
+    }
+
+    .legal-modal.active {
+      display: flex;
+    }
+
+    .legal-modal-content {
+      width: min(920px, 96vw);
+      max-height: 86vh;
+      overflow-y: auto;
+      background: #ffffff;
+      color: #1d1d1f;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      line-height: 1.6;
+    }
+
+    .legal-modal-content h2 {
+      color: #1d1d1f;
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .legal-modal-content h3 {
+      color: #1d1d1f;
+      margin-top: 28px;
+      font-size: 18px;
+    }
+
+    .legal-modal-content p,
+    .legal-modal-content li {
+      color: #424245;
+      font-size: 15px;
+    }
+
+    .legal-modal-content ul {
+      padding-left: 22px;
+    }
+
+    .legal-modal-content a {
+      color: #0066cc;
+    }
+
+    .legal-date {
+      color: #86868b !important;
+      font-size: 13px !important;
+      margin-bottom: 24px;
+    }
+
+    .legal-close {
+      float: right;
+      width: auto;
+      margin: 0 0 12px 16px;
+      background: #f5f5f7;
+      color: #1d1d1f;
+      border: 1px solid #d2d2d7;
+      border-radius: 999px;
+      padding: 8px 13px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: normal;
+    }
+
+    .legal-close:hover {
+      background: #e8e8ed;
+    }
+
     @media (max-width: 700px) {
-      body {
+      .main-wrap {
         padding: 20px;
       }
 
@@ -184,71 +372,536 @@
       h1 {
         font-size: 32px;
       }
+
+      .apple-footer {
+        padding: 16px 18px 20px;
+      }
+
+      .apple-footer-top {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .apple-footer-links {
+        display: block;
+      }
+
+      .apple-footer-links button {
+        display: inline;
+      }
+
+      .apple-separator {
+        margin: 0 7px;
+      }
+
+      .legal-modal-content {
+        padding: 22px;
+        border-radius: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
-    <span class="badge">Premium Zugang</span>
+  <div class="page">
 
-    <h1>Die Nacht vor dem Test</h1>
+    <div class="main-wrap">
+      <main class="container">
+        <span class="badge">Premium Zugang</span>
 
-    <p>
-      Erstelle ein Konto, bezahle CHF 17.– per TWINT und erhalte danach Zugriff auf den Premium-Bereich.
-    </p>
+        <h1>Die Nacht vor dem Test</h1>
 
-    <section id="auth-section">
-      <h2>Login / Registrierung</h2>
+        <p>
+          Erstelle ein Konto, bezahle CHF 17.– per TWINT und erhalte danach Zugriff auf den Premium-Bereich.
+        </p>
 
-      <input id="email" type="email" placeholder="E-Mail">
-      <input id="password" type="password" placeholder="Passwort, mindestens 6 Zeichen">
+        <section id="auth-section">
+          <h2>Login / Registrierung</h2>
 
-      <button id="register-btn">Konto erstellen</button>
-      <button id="login-btn" class="secondary">Einloggen</button>
-    </section>
+          <input id="email" type="email" placeholder="E-Mail">
+          <input id="password" type="password" placeholder="Passwort, mindestens 6 Zeichen">
 
-    <section id="user-section" class="hidden">
-      <h2>Dein Konto</h2>
+          <label class="terms-checkbox">
+            <input type="checkbox" id="acceptTerms">
+            <span>
+              Ich akzeptiere die
+              <a onclick="openLegalModal('agb')">AGB</a>,
+              <a onclick="openLegalModal('nutzung')">Nutzungsbedingungen</a>
+              und die
+              <a onclick="openLegalModal('datenschutz')">Datenschutzerklärung</a>.
+            </span>
+          </label>
 
-      <p id="user-email"></p>
+          <button id="register-btn">Konto erstellen</button>
+          <button id="login-btn" class="secondary">Einloggen</button>
+        </section>
 
-      <div class="price-box">
-        <div class="price">CHF 17.–</div>
-        <p>Einmalige Zahlung für Premium-Zugang.</p>
+        <section id="user-section" class="hidden">
+          <h2>Dein Konto</h2>
+
+          <p id="user-email"></p>
+
+          <div class="price-box">
+            <div class="price">CHF 17.–</div>
+            <p>Einmalige Zahlung für Premium-Zugang.</p>
+          </div>
+
+          <div class="twint-box">
+            <h2>TWINT-Zahlung</h2>
+            <p>Scanne den QR-Code und bezahle CHF 17.–.</p>
+
+            <img class="qr" src="twint-qr.png" alt="TWINT QR Code">
+
+            <p>Nach der Zahlung wirst du manuell freigeschaltet.</p>
+
+            <p class="payment-note">
+              Falls die Zahlung oder Freischaltung nicht funktioniert, schreibe bitte an
+              <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>
+              mit deinem Namen, deiner Kontakt-E-Mail, Datum/Uhrzeit der Zahlung, verwendetem Code
+              und einer kurzen Beschreibung des Problems. Sende keine vollständigen Kreditkartendaten,
+              Passwörter oder Login-Daten.
+            </p>
+          </div>
+
+          <a class="button" href="premium.html">Zum Premium-Bereich</a>
+          <button id="logout-btn" class="danger">Ausloggen</button>
+        </section>
+
+        <div id="status" class="status hidden"></div>
+      </main>
+    </div>
+
+    <footer class="apple-footer">
+      <div class="apple-footer-inner">
+        <div class="apple-footer-top">
+          <div>Copyright © 2026 Lernhilfe_Neufeld. Alle Rechte vorbehalten.</div>
+          <div class="apple-footer-country">Schweiz</div>
+        </div>
+
+        <div class="apple-footer-links">
+          <button onclick="openLegalModal('datenschutz')">Datenschutzrichtlinie</button>
+          <span class="apple-separator">|</span>
+          <button onclick="openLegalModal('cookies')">Verwendung von Cookies</button>
+          <span class="apple-separator">|</span>
+          <button onclick="openLegalModal('nutzung')">Nutzungsbedingungen</button>
+          <span class="apple-separator">|</span>
+          <button onclick="openLegalModal('agb')">Verkauf und Rückerstattung</button>
+          <span class="apple-separator">|</span>
+          <button onclick="openLegalModal('impressum')">Rechtliche Hinweise</button>
+          <span class="apple-separator">|</span>
+          <button onclick="scrollToTop()">Sitemap</button>
+        </div>
       </div>
+    </footer>
 
-      <div class="twint-box">
-        <h2>TWINT-Zahlung</h2>
-        <p>Scanne den QR-Code und bezahle CHF 17.–.</p>
+  </div>
 
-        <img class="qr" src="twint-qr.png" alt="TWINT QR Code">
+  <!-- IMPRESSUM / RECHTLICHE HINWEISE -->
+  <div id="impressum" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close" onclick="closeLegalModal('impressum')">Schliessen</button>
 
-        <p>Nach der Zahlung wirst du manuell freigeschaltet.</p>
-      </div>
+      <h2>Impressum und rechtliche Hinweise</h2>
+      <p class="legal-date">Stand: 14. Mai 2026</p>
 
-      <a class="button" href="premium.html">Zum Premium-Bereich</a>
-      <button id="logout-btn" class="danger">Ausloggen</button>
-    </section>
+      <h3>Anbieter und verantwortlich für den Inhalt</h3>
+      <p>
+        Betreiber von <strong>Lernhilfe_Neufeld</strong><br>
+        Neufeld, Schweiz
+      </p>
 
-    <div id="status" class="status hidden"></div>
-  </main>
+      <h3>Kontakt</h3>
+      <p>
+        E-Mail:
+        <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>
+      </p>
+
+      <h3>Hinweis zur Anbieteridentität</h3>
+      <p>
+        Aus Gründen des Persönlichkeitsschutzes werden private Wohnadresse und vollständiger privater Name
+        nicht öffentlich auf dieser Website angezeigt. Für berechtigte rechtliche, vertragliche oder
+        datenschutzrechtliche Anliegen kann die verantwortliche Person über die oben genannte E-Mail-Adresse
+        kontaktiert werden.
+      </p>
+
+      <h3>Keine offizielle Schulplattform</h3>
+      <p>
+        Lernhilfe_Neufeld ist keine offizielle Website einer Schule, Bildungsbehörde, Universität oder
+        Prüfungsinstitution. Es besteht keine Verbindung, Vertretung oder Partnerschaft mit solchen
+        Institutionen, sofern dies nicht ausdrücklich schriftlich angegeben wird.
+      </p>
+
+      <h3>Haftung für Inhalte</h3>
+      <p>
+        Die Inhalte dieser Website werden mit angemessener Sorgfalt erstellt. Dennoch wird keine Gewähr für
+        Richtigkeit, Vollständigkeit, Aktualität oder Eignung der Inhalte für einen bestimmten Zweck übernommen.
+        Lerninhalte, Erklärungen, Aufgaben, Lösungen und Zusammenfassungen dienen ausschliesslich der
+        Unterstützung beim Lernen und ersetzen keine eigene Prüfungsvorbereitung, keinen Unterricht und keine
+        verbindliche Auskunft einer Lehrperson, Schule oder Prüfungsinstitution.
+      </p>
+
+      <h3>Haftung für externe Links</h3>
+      <p>
+        Diese Website kann Links zu externen Websites enthalten. Für deren Inhalte, Verfügbarkeit, Sicherheit
+        und Datenschutz ist ausschliesslich der jeweilige Anbieter verantwortlich. Bei Bekanntwerden
+        offensichtlicher Rechtsverletzungen werden entsprechende Links nach Prüfung entfernt.
+      </p>
+
+      <h3>Urheberrecht</h3>
+      <p>
+        Alle selbst erstellten Inhalte dieser Website, insbesondere Texte, Struktur, Design, Lernmaterialien,
+        Erklärungen und Zusammenstellungen, sind urheberrechtlich geschützt, soweit gesetzlich zulässig.
+        Eine Vervielfältigung, Veröffentlichung, Weitergabe oder kommerzielle Nutzung ohne ausdrückliche
+        Zustimmung ist nicht erlaubt.
+      </p>
+
+      <p>
+        Falls du der Meinung bist, dass Inhalte auf dieser Website Rechte Dritter verletzen, kontaktiere mich
+        bitte per E-Mail mit einer genauen Beschreibung des betroffenen Inhalts und deiner Berechtigung.
+        Nach Prüfung wird der Inhalt entfernt oder angepasst, sofern eine Rechtsverletzung nachvollziehbar ist.
+      </p>
+    </div>
+  </div>
+
+  <!-- DATENSCHUTZ -->
+  <div id="datenschutz" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close" onclick="closeLegalModal('datenschutz')">Schliessen</button>
+
+      <h2>Datenschutzrichtlinie</h2>
+      <p class="legal-date">Stand: 14. Mai 2026</p>
+
+      <h3>1. Verantwortliche Stelle</h3>
+      <p>
+        Verantwortlich für die Bearbeitung von Personendaten auf dieser Website ist der Betreiber von
+        <strong>Lernhilfe_Neufeld</strong>, Neufeld, Schweiz.
+        Kontakt: <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>.
+      </p>
+
+      <h3>2. Grundsatz</h3>
+      <p>
+        Der Schutz deiner Personendaten ist mir wichtig. Ich bearbeite Personendaten nur, soweit dies für den
+        Betrieb der Website, die Bereitstellung der Lerninhalte, die Kommunikation mit Nutzerinnen und Nutzern,
+        die Abwicklung oder Prüfung von Zahlungen, die Freischaltung von Zugängen oder die technische Sicherheit
+        erforderlich ist.
+      </p>
+
+      <h3>3. Welche Daten bearbeitet werden können</h3>
+      <ul>
+        <li>Name, falls du ihn freiwillig angibst;</li>
+        <li>E-Mail-Adresse;</li>
+        <li>Angaben zu deinem Zugang oder Premium-Code;</li>
+        <li>Angaben zu Zahlungs- oder Freischaltungsproblemen;</li>
+        <li>technische Daten wie IP-Adresse, Browsertyp, Gerätetyp, Datum und Uhrzeit des Zugriffs;</li>
+        <li>Kommunikationsinhalte, wenn du mich per E-Mail kontaktierst.</li>
+      </ul>
+
+      <h3>4. Firebase und Login</h3>
+      <p>
+        Für Registrierung und Login kann Firebase von Google verwendet werden. Dabei können insbesondere
+        E-Mail-Adresse, Passwort-Authentifizierung, technische Zugriffsdaten und Login-Informationen verarbeitet
+        werden. Die Verarbeitung durch Firebase richtet sich zusätzlich nach den Bedingungen und Datenschutzhinweisen
+        von Google/Firebase.
+      </p>
+
+      <h3>5. Zahlungsdaten</h3>
+      <p>
+        Zahlungen erfolgen über TWINT oder andere Zahlungswege. Ich selbst speichere keine vollständigen
+        Kreditkartendaten und fordere dich ausdrücklich auf, mir per E-Mail keine vollständigen Kreditkartennummern,
+        Passwörter, Login-Daten oder andere besonders vertrauliche Zahlungsinformationen zu senden.
+      </p>
+
+      <h3>6. Zahlungs- oder Freischaltungsprobleme</h3>
+      <p>
+        Falls eine Zahlung technisch nicht funktioniert, ein Premium-Zugang nicht automatisch freigeschaltet wird
+        oder ein Code nicht funktioniert, kannst du mich per E-Mail kontaktieren. Damit ich den Fall prüfen kann,
+        soll deine E-Mail folgende Angaben enthalten:
+      </p>
+      <ul>
+        <li>deinen Namen oder die Bezeichnung, unter der du bestellt hast;</li>
+        <li>deine Kontakt-E-Mail-Adresse;</li>
+        <li>Datum und ungefähre Uhrzeit der Zahlung oder des Zahlungsversuchs;</li>
+        <li>den verwendeten Premium-Code, falls vorhanden;</li>
+        <li>eine kurze Beschreibung des Problems;</li>
+        <li>optional einen Screenshot der Fehlermeldung oder Zahlungsbestätigung, jedoch ohne vollständige Kreditkarten-, Passwort- oder Login-Daten.</li>
+      </ul>
+      <p>
+        Ich werde den Fall prüfen und, sofern eine Zahlung oder Berechtigung nachvollziehbar ist, den Zugang
+        manuell freischalten oder eine angemessene Lösung anbieten. Eine sofortige oder automatische Freischaltung
+        kann bei technischen Problemen nicht garantiert werden.
+      </p>
+
+      <h3>7. Zweck der Datenbearbeitung</h3>
+      <ul>
+        <li>Betrieb und Verbesserung der Website;</li>
+        <li>Bereitstellung kostenloser und kostenpflichtiger Lerninhalte;</li>
+        <li>Bearbeitung von Kontaktanfragen;</li>
+        <li>Prüfung und Lösung von Zahlungs-, Code- oder Zugangsproblemen;</li>
+        <li>Missbrauchsverhinderung und technische Sicherheit;</li>
+        <li>Erfüllung gesetzlicher Pflichten.</li>
+      </ul>
+
+      <h3>8. Weitergabe an Dritte</h3>
+      <p>
+        Personendaten werden nicht verkauft. Eine Weitergabe kann erfolgen, wenn dies für den Betrieb der Website,
+        Zahlungsabwicklung, technische Dienstleister, Hosting, Sicherheit, rechtliche Durchsetzung oder gesetzliche
+        Pflichten erforderlich ist.
+      </p>
+
+      <h3>9. Speicherung und Löschung</h3>
+      <p>
+        Personendaten werden nur so lange gespeichert, wie es für die genannten Zwecke erforderlich ist oder
+        gesetzliche Aufbewahrungspflichten bestehen. Kontaktanfragen und Supportfälle können zur Nachvollziehbarkeit
+        während einer angemessenen Frist gespeichert werden.
+      </p>
+
+      <h3>10. Rechte der betroffenen Personen</h3>
+      <p>
+        Du kannst im Rahmen des anwendbaren Datenschutzrechts Auskunft über deine Personendaten verlangen sowie
+        Berichtigung, Löschung oder Einschränkung der Bearbeitung verlangen, soweit keine gesetzlichen oder
+        berechtigten Gründe entgegenstehen. Anfragen können per E-Mail an
+        <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>
+        gestellt werden.
+      </p>
+
+      <h3>11. Datensicherheit</h3>
+      <p>
+        Ich treffe angemessene technische und organisatorische Massnahmen, um Personendaten vor Verlust, Missbrauch,
+        unberechtigtem Zugriff und Veränderung zu schützen. Eine vollständig risikofreie Datenübertragung im Internet
+        kann jedoch nicht garantiert werden.
+      </p>
+
+      <h3>12. Änderungen</h3>
+      <p>
+        Diese Datenschutzerklärung kann angepasst werden, wenn sich die Website, eingesetzte Dienste oder rechtliche
+        Anforderungen ändern. Es gilt die jeweils auf dieser Website veröffentlichte Version.
+      </p>
+    </div>
+  </div>
+
+  <!-- COOKIES -->
+  <div id="cookies" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close" onclick="closeLegalModal('cookies')">Schliessen</button>
+
+      <h2>Verwendung von Cookies</h2>
+      <p class="legal-date">Stand: 14. Mai 2026</p>
+
+      <h3>Technisch notwendige Speicherung</h3>
+      <p>
+        Lernhilfe_Neufeld kann technisch notwendige Cookies oder lokale Speicherfunktionen verwenden, damit Login,
+        Premium-Zugang, Einstellungen und Sicherheitsfunktionen korrekt funktionieren.
+      </p>
+
+      <h3>Firebase</h3>
+      <p>
+        Wenn du dich registrierst oder einloggst, können durch Firebase technische Informationen gespeichert oder
+        verarbeitet werden, die für die Authentifizierung notwendig sind.
+      </p>
+
+      <h3>Keine unnötige Werbung</h3>
+      <p>
+        Diese Website ist nicht darauf ausgelegt, unnötige Werbe-Cookies zu setzen. Falls später Analyse-, Tracking-
+        oder Marketing-Tools verwendet werden, muss diese Information entsprechend ergänzt werden.
+      </p>
+    </div>
+  </div>
+
+  <!-- AGB / VERKAUF UND RÜCKERSTATTUNG -->
+  <div id="agb" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close" onclick="closeLegalModal('agb')">Schliessen</button>
+
+      <h2>Verkauf, Rückerstattung und AGB</h2>
+      <p class="legal-date">Stand: 14. Mai 2026</p>
+
+      <h3>1. Geltungsbereich</h3>
+      <p>
+        Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung der Website <strong>Lernhilfe_Neufeld</strong>
+        und für alle kostenlosen sowie kostenpflichtigen digitalen Inhalte, Lernhilfen, Premium-Zugänge, Codes oder
+        vergleichbaren Angebote, die über diese Website bereitgestellt werden.
+      </p>
+
+      <h3>2. Anbieter</h3>
+      <p>
+        Anbieter ist der Betreiber von <strong>Lernhilfe_Neufeld</strong>, Neufeld, Schweiz.
+        Kontakt: <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>.
+      </p>
+
+      <h3>3. Angebot und Vertragsabschluss</h3>
+      <p>
+        Die Darstellung von Inhalten, Preisen, Codes oder Premium-Angeboten auf der Website stellt kein rechtlich
+        verbindliches Angebot dar, sondern eine Einladung zur Nutzung oder Bestellung. Ein Vertrag über kostenpflichtige
+        Inhalte kommt zustande, wenn die Zahlung erfolgreich abgeschlossen oder der Zugang durch mich freigeschaltet wird.
+      </p>
+
+      <h3>4. Leistungsumfang</h3>
+      <p>
+        Lernhilfe_Neufeld stellt digitale Lerninhalte, Erklärungen, Aufgaben, Zusammenfassungen, Rechenwege oder ähnliche
+        Hilfsmittel zur Verfügung. Inhalte können erweitert, verändert, neu strukturiert oder entfernt werden, sofern
+        dadurch der wesentliche Charakter eines bereits bezahlten Zugangs nicht unangemessen beeinträchtigt wird.
+      </p>
+
+      <h3>5. Keine Erfolgsgarantie</h3>
+      <p>
+        Die Nutzung der Website garantiert keine bestimmte Note, keinen Prüfungserfolg, keine Verbesserung schulischer
+        Leistungen und keine Fehlerfreiheit der Inhalte. Der Lernerfolg hängt wesentlich von der eigenen Vorbereitung,
+        dem Unterricht, den Prüfungsanforderungen und weiteren Faktoren ab.
+      </p>
+
+      <h3>6. Preise und Zahlung</h3>
+      <p>
+        Preise, Zahlungsarten und Zugangsbedingungen werden auf der Website angegeben. Kostenpflichtige Inhalte werden
+        grundsätzlich erst nach erfolgreicher Zahlung oder manueller Freischaltung zugänglich gemacht.
+      </p>
+
+      <h3>7. Zahlungsfehler, technische Probleme und manuelle Freischaltung</h3>
+      <p>
+        Es kann vorkommen, dass eine Zahlung technisch fehlschlägt, verzögert verarbeitet wird oder ein Zugang nicht
+        automatisch freigeschaltet wird. In einem solchen Fall besteht kein Anspruch auf sofortige automatische
+        Freischaltung. Nutzerinnen und Nutzer können mich per E-Mail kontaktieren.
+      </p>
+      <p>
+        Damit ich den Fall prüfen kann, muss die E-Mail folgende Angaben enthalten: Name, Kontakt-E-Mail-Adresse, Datum
+        und ungefähre Uhrzeit der Zahlung oder des Zahlungsversuchs, verwendeter Code falls vorhanden, Beschreibung des
+        Problems sowie optional ein Screenshot der Fehlermeldung oder Zahlungsbestätigung. Vollständige Kreditkartenangaben,
+        Passwörter oder andere geheime Daten dürfen nicht gesendet werden.
+      </p>
+      <p>
+        Wenn eine Zahlung oder Zugangsberechtigung nachvollziehbar ist, werde ich den Zugang manuell freischalten oder
+        eine angemessene Ersatzlösung anbieten. Ist keine Zahlung erfolgt oder nicht nachvollziehbar, besteht kein Anspruch
+        auf Freischaltung.
+      </p>
+
+      <h3>8. Rückerstattung und Widerruf</h3>
+      <p>
+        Bei digitalen Inhalten und sofort nutzbaren Premium-Zugängen besteht kein automatisches Rückgaberecht, sofern kein
+        zwingendes gesetzliches Recht anwendbar ist. Eine Rückerstattung erfolgt nur, wenn sie ausdrücklich zugesagt wurde,
+        gesetzlich vorgeschrieben ist oder im Einzelfall aus Kulanz gewährt wird.
+      </p>
+      <p>
+        Wurde ein Zugang aufgrund eines nachweisbaren technischen Problems trotz erfolgreicher Zahlung nicht bereitgestellt
+        und kann das Problem nicht innerhalb angemessener Zeit gelöst werden, kann eine Ersatzlösung oder Rückerstattung
+        geprüft werden.
+      </p>
+
+      <h3>9. Premium-Codes und Zugangsdaten</h3>
+      <p>
+        Premium-Codes, Passwörter oder sonstige Zugangsdaten sind persönlich zu verwenden und dürfen nicht öffentlich
+        geteilt, weiterverkauft oder missbräuchlich genutzt werden. Bei Verdacht auf Missbrauch kann der Zugang
+        vorübergehend oder dauerhaft gesperrt werden.
+      </p>
+
+      <h3>10. Verfügbarkeit</h3>
+      <p>
+        Ich bemühe mich um eine zuverlässige Verfügbarkeit der Website. Eine ununterbrochene Verfügbarkeit wird jedoch
+        nicht garantiert. Wartung, technische Störungen, Drittanbieterprobleme, Hosting-Ausfälle oder höhere Gewalt können
+        zu Einschränkungen führen.
+      </p>
+
+      <h3>11. Haftungsbeschränkung</h3>
+      <p>
+        Soweit gesetzlich zulässig, ist die Haftung für indirekte Schäden, Folgeschäden, entgangenen Gewinn, Datenverlust,
+        schulische Nachteile, Prüfungsergebnisse oder Schäden aus der Nutzung oder Nichtverfügbarkeit der Website
+        ausgeschlossen. Vorbehalten bleibt die Haftung für rechtswidrige Absicht oder grobe Fahrlässigkeit, soweit ein
+        Ausschluss gesetzlich nicht zulässig ist.
+      </p>
+
+      <h3>12. Anwendbares Recht</h3>
+      <p>
+        Es gilt schweizerisches Recht. Zwingende gesetzliche Gerichtsstände und zwingende Konsumentenschutzrechte bleiben
+        vorbehalten. Soweit zulässig, ist Gerichtsstand Neufeld, Schweiz.
+      </p>
+    </div>
+  </div>
+
+  <!-- NUTZUNGSBEDINGUNGEN -->
+  <div id="nutzung" class="legal-modal">
+    <div class="legal-modal-content">
+      <button class="legal-close" onclick="closeLegalModal('nutzung')">Schliessen</button>
+
+      <h2>Nutzungsbedingungen</h2>
+      <p class="legal-date">Stand: 14. Mai 2026</p>
+
+      <h3>1. Zweck der Website</h3>
+      <p>
+        Lernhilfe_Neufeld ist eine digitale Lernhilfe. Die Inhalte sollen beim Verstehen, Wiederholen und Üben von
+        Schulstoff helfen. Die Website ersetzt keinen Unterricht, keine offizielle Prüfungsvorbereitung und keine
+        verbindliche Auskunft einer Lehrperson oder Schule.
+      </p>
+
+      <h3>2. Zulässige Nutzung</h3>
+      <p>
+        Die Website darf für private, schulische und persönliche Lernzwecke genutzt werden. Du darfst Inhalte lesen,
+        bearbeiten, zum eigenen Lernen verwenden und dir eigene Notizen daraus machen.
+      </p>
+
+      <h3>3. Unzulässige Nutzung</h3>
+      <ul>
+        <li>das Umgehen von Login-, Code- oder Bezahlsystemen;</li>
+        <li>das öffentliche Teilen, Verkaufen oder Veröffentlichen von Premium-Inhalten;</li>
+        <li>das automatisierte Auslesen der Website;</li>
+        <li>das Hochladen oder Einsenden rechtswidriger Inhalte;</li>
+        <li>die Nutzung der Website zur Täuschung bei Prüfungen oder Leistungsnachweisen;</li>
+        <li>Angriffe auf die technische Infrastruktur der Website.</li>
+      </ul>
+
+      <h3>4. Lerninhalte und Fehler</h3>
+      <p>
+        Ich bemühe mich, Inhalte verständlich und korrekt zu erstellen. Trotzdem können Fehler, Ungenauigkeiten oder
+        veraltete Informationen vorkommen. Du bist selbst dafür verantwortlich, wichtige Inhalte mit Unterrichtsmaterial,
+        Lehrpersonen oder offiziellen Vorgaben abzugleichen.
+      </p>
+
+      <h3>5. Keine Verantwortung für Prüfungsergebnisse</h3>
+      <p>
+        Die Nutzung von Lernhilfe_Neufeld erfolgt auf eigene Verantwortung. Ich übernehme keine Haftung dafür, ob du eine
+        Prüfung bestehst, eine bestimmte Note erreichst oder ob bestimmte Inhalte an deiner Schule tatsächlich geprüft
+        werden.
+      </p>
+
+      <h3>6. Account, Codes und Sperrung</h3>
+      <p>
+        Falls die Website Accounts, Codes oder Premium-Zugänge verwendet, bist du dafür verantwortlich, deine Zugangsdaten
+        vertraulich zu behandeln. Bei Missbrauch, Weitergabe, Manipulation oder Umgehung technischer Schutzmassnahmen
+        kann der Zugang gesperrt werden.
+      </p>
+
+      <h3>7. Meldung von Problemen</h3>
+      <p>
+        Fehler, technische Probleme, Zahlungsprobleme oder mögliche Rechtsverletzungen können per E-Mail an
+        <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>
+        gemeldet werden. Bitte beschreibe das Problem möglichst genau und gib deine Kontaktdaten an, damit ich antworten
+        und den Fall prüfen kann.
+      </p>
+
+      <h3>8. Änderungen der Website</h3>
+      <p>
+        Die Website kann jederzeit technisch, inhaltlich oder gestalterisch angepasst werden. Einzelne Inhalte, Funktionen
+        oder Bereiche können ergänzt, geändert oder entfernt werden.
+      </p>
+
+      <h3>9. Schlussbestimmungen</h3>
+      <p>
+        Sollten einzelne Bestimmungen dieser Nutzungsbedingungen unwirksam sein oder werden, bleibt die Wirksamkeit der
+        übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung gilt eine rechtlich zulässige Regelung, die
+        dem wirtschaftlichen und sachlichen Zweck möglichst nahekommt.
+      </p>
+    </div>
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
 
   <script>
     const firebaseConfig = {
-  apiKey: "AIzaSyAPynV_IaVbvl6PAcg8MJB_MLvLvoIUW8E",
-  authDomain: "schoolfools.firebaseapp.com",
-  projectId: "schoolfools",
-  storageBucket: "schoolfools.firebasestorage.app",
-  messagingSenderId: "338912295447",
-  appId: "1:338912295447:web:b8f965686dc4119d777a52"
-};
-
-// Initialize Firebase
-
+      apiKey: "AIzaSyAPynV_IaVbvl6PAcg8MJB_MLvLvoIUW8E",
+      authDomain: "schoolfools.firebaseapp.com",
+      projectId: "schoolfools",
+      storageBucket: "schoolfools.firebasestorage.app",
+      messagingSenderId: "338912295447",
+      appId: "1:338912295447:web:b8f965686dc4119d777a52"
+    };
 
     firebase.initializeApp(firebaseConfig);
 
@@ -265,6 +918,7 @@
     const registerBtn = document.getElementById("register-btn");
     const loginBtn = document.getElementById("login-btn");
     const logoutBtn = document.getElementById("logout-btn");
+    const acceptTerms = document.getElementById("acceptTerms");
 
     function showStatus(message) {
       statusBox.classList.remove("hidden");
@@ -301,9 +955,16 @@
       return { email, password };
     }
 
+    function requireAcceptedTerms() {
+      if (!acceptTerms.checked) {
+        throw new Error("Bitte akzeptiere zuerst die AGB, Nutzungsbedingungen und Datenschutzerklärung.");
+      }
+    }
+
     registerBtn.addEventListener("click", async function () {
       try {
         clearStatus();
+        requireAcceptedTerms();
 
         const { email, password } = getEmailAndPassword();
 
@@ -318,6 +979,7 @@
     loginBtn.addEventListener("click", async function () {
       try {
         clearStatus();
+        requireAcceptedTerms();
 
         const { email, password } = getEmailAndPassword();
 
@@ -351,6 +1013,45 @@
         userEmail.textContent = "";
       }
     });
+
+    function openLegalModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+    }
+
+    function closeLegalModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    }
+
+    document.addEventListener("click", function(event) {
+      if (event.target.classList.contains("legal-modal")) {
+        event.target.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.querySelectorAll(".legal-modal.active").forEach(function(modal) {
+          modal.classList.remove("active");
+        });
+        document.body.style.overflow = "";
+      }
+    });
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
   </script>
 </body>
 </html>
