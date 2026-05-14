@@ -351,6 +351,462 @@ const MATHEMATIK_THEMEN = [
       "Kannst du Exponentialgleichungen durch Logarithmieren lösen?"
     ]
   }
+  {
+    id: "kurvendiskussion",
+    nummer: "2",
+    titel: "Kurvendiskussion",
+    kurzbeschreibung:
+      "Nullstellen, Extremstellen, Wendepunkte, Sattelpunkte, Monotonie, Krümmung, Symmetrie, Tangenten und das systematische Untersuchen von Funktionsgraphen.",
+    lernziele: [
+      "Du kannst eine Funktion systematisch untersuchen.",
+      "Du kannst Nullstellen berechnen und grafisch deuten.",
+      "Du kannst Extremstellen mit der ersten und zweiten Ableitung bestimmen.",
+      "Du kannst Wendepunkte mit der zweiten und dritten Ableitung untersuchen.",
+      "Du erkennst den Unterschied zwischen Hochpunkt, Tiefpunkt, Wendepunkt und Sattelpunkt.",
+      "Du kannst Monotonieintervalle bestimmen.",
+      "Du kannst Krümmungsverhalten beschreiben.",
+      "Du kannst Tangentengleichungen an einer bestimmten Stelle aufstellen.",
+      "Du kannst aus Ableitungen Informationen über den Graphen gewinnen.",
+      "Du erkennst typische Prüfungsfallen bei Kurvendiskussionen."
+    ],
+    theorie: [
+      {
+        titel: "Was ist eine Kurvendiskussion?",
+        text:
+          "Bei einer Kurvendiskussion untersucht man eine Funktion möglichst vollständig. Man fragt zum Beispiel: Wo schneidet der Graph die Achsen? Wo steigt oder fällt er? Wo hat er Hochpunkte, Tiefpunkte oder Wendepunkte?"
+      },
+      {
+        titel: "Nullstellen",
+        text:
+          "Nullstellen sind die x-Werte, bei denen der Funktionswert 0 ist. Man löst also die Gleichung f(x) = 0. Grafisch sind Nullstellen die Schnittpunkte des Graphen mit der x-Achse."
+      },
+      {
+        titel: "y-Achsenabschnitt",
+        text:
+          "Den Schnittpunkt mit der y-Achse erhält man durch Einsetzen von x = 0. Der Punkt lautet dann (0 | f(0))."
+      },
+      {
+        titel: "Erste Ableitung",
+        text:
+          "Die erste Ableitung f'(x) beschreibt die Steigung des Graphen. Ist f'(x) positiv, steigt der Graph. Ist f'(x) negativ, fällt der Graph. Ist f'(x) = 0, kann dort eine Extremstelle oder ein Sattelpunkt liegen."
+      },
+      {
+        titel: "Extremstellen",
+        text:
+          "Extremstellen sind Stellen, an denen ein Graph lokal besonders hoch oder besonders tief liegt. Mögliche Extremstellen findet man meistens mit f'(x) = 0."
+      },
+      {
+        titel: "Zweite Ableitung",
+        text:
+          "Die zweite Ableitung f''(x) beschreibt die Krümmung des Graphen. Ist f''(x) positiv, ist der Graph linksgekrümmt. Ist f''(x) negativ, ist der Graph rechtsgekrümmt."
+      },
+      {
+        titel: "Hochpunkt und Tiefpunkt",
+        text:
+          "Wenn f'(x₀) = 0 und f''(x₀) > 0 gilt, liegt ein Tiefpunkt vor. Wenn f'(x₀) = 0 und f''(x₀) < 0 gilt, liegt ein Hochpunkt vor."
+      },
+      {
+        titel: "Wendepunkt",
+        text:
+          "Ein Wendepunkt ist ein Punkt, an dem der Graph sein Krümmungsverhalten ändert. Mögliche Wendestellen findet man mit f''(x) = 0. Danach muss man prüfen, ob wirklich ein Krümmungswechsel stattfindet."
+      },
+      {
+        titel: "Sattelpunkt",
+        text:
+          "Ein Sattelpunkt ist ein besonderer Wendepunkt mit waagrechter Tangente. Das bedeutet: f'(x₀) = 0 und gleichzeitig liegt ein Wendepunkt vor."
+      },
+      {
+        titel: "Tangente",
+        text:
+          "Die Tangente an den Graphen bei x₀ hat die Steigung f'(x₀). Ihre Gleichung lautet y = f'(x₀)(x - x₀) + f(x₀)."
+      },
+      {
+        titel: "Monotonie",
+        text:
+          "Monotonie beschreibt, wo ein Graph steigt oder fällt. Dazu untersucht man das Vorzeichen der ersten Ableitung."
+      },
+      {
+        titel: "Krümmung",
+        text:
+          "Die Krümmung beschreibt, ob der Graph nach links oder rechts gebogen ist. Dazu untersucht man das Vorzeichen der zweiten Ableitung."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Kurvendiskussion systematisch durchführen",
+        schritte: [
+          "1. Bestimme zuerst den Definitionsbereich.",
+          "2. Untersuche mögliche Symmetrien.",
+          "3. Berechne den y-Achsenabschnitt mit f(0).",
+          "4. Berechne die Nullstellen mit f(x) = 0.",
+          "5. Berechne die erste Ableitung f'(x).",
+          "6. Bestimme mögliche Extremstellen mit f'(x) = 0.",
+          "7. Berechne die zweite Ableitung f''(x).",
+          "8. Entscheide mit f''(x), ob Hochpunkte oder Tiefpunkte vorliegen.",
+          "9. Bestimme mögliche Wendestellen mit f''(x) = 0.",
+          "10. Prüfe den Krümmungswechsel oder verwende f'''(x), falls sinnvoll.",
+          "11. Berechne die y-Werte der gefundenen Punkte.",
+          "12. Zeichne oder beschreibe den Graphen mit allen Informationen."
+        ]
+      },
+      {
+        titel: "Methode: Nullstellen berechnen",
+        schritte: [
+          "1. Setze die Funktion gleich 0.",
+          "2. Vereinfache die Gleichung so weit wie möglich.",
+          "3. Faktorisiere, falls möglich.",
+          "4. Verwende bei quadratischen Gleichungen die passende Lösungsformel oder Faktorisierung.",
+          "5. Prüfe, ob alle Lösungen im Definitionsbereich liegen.",
+          "6. Schreibe die Nullstellen als Punkte auf der x-Achse."
+        ]
+      },
+      {
+        titel: "Methode: Extremstellen bestimmen",
+        schritte: [
+          "1. Berechne die erste Ableitung f'(x).",
+          "2. Setze f'(x) = 0.",
+          "3. Löse die Gleichung nach x.",
+          "4. Berechne die zweite Ableitung f''(x).",
+          "5. Setze die gefundenen x-Werte in f''(x) ein.",
+          "6. Bei f''(x) > 0 liegt ein Tiefpunkt vor.",
+          "7. Bei f''(x) < 0 liegt ein Hochpunkt vor.",
+          "8. Berechne den y-Wert mit der ursprünglichen Funktion f(x)."
+        ]
+      },
+      {
+        titel: "Methode: Wendepunkte bestimmen",
+        schritte: [
+          "1. Berechne die zweite Ableitung f''(x).",
+          "2. Setze f''(x) = 0.",
+          "3. Löse die Gleichung nach x.",
+          "4. Prüfe, ob ein Krümmungswechsel stattfindet.",
+          "5. Alternativ kann man bei vielen Aufgaben prüfen, ob f'''(x) nicht 0 ist.",
+          "6. Berechne den y-Wert mit der ursprünglichen Funktion f(x).",
+          "7. Schreibe den Wendepunkt als Koordinate auf."
+        ]
+      },
+      {
+        titel: "Methode: Monotonieintervalle bestimmen",
+        schritte: [
+          "1. Berechne die erste Ableitung f'(x).",
+          "2. Bestimme die kritischen Stellen mit f'(x) = 0.",
+          "3. Teile die x-Achse durch diese Stellen in Intervalle.",
+          "4. Wähle in jedem Intervall einen Testwert.",
+          "5. Setze den Testwert in f'(x) ein.",
+          "6. Ist f'(x) positiv, steigt die Funktion dort.",
+          "7. Ist f'(x) negativ, fällt die Funktion dort."
+        ]
+      },
+      {
+        titel: "Methode: Tangentengleichung aufstellen",
+        schritte: [
+          "1. Bestimme die Stelle x₀.",
+          "2. Berechne den Funktionswert f(x₀).",
+          "3. Berechne die Ableitung f'(x).",
+          "4. Berechne die Steigung m = f'(x₀).",
+          "5. Setze alles in y = m(x - x₀) + f(x₀) ein.",
+          "6. Vereinfache die Gleichung, falls verlangt."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Nullstellen findet man mit f(x) = 0.",
+      "Der y-Achsenabschnitt ist f(0).",
+      "Die erste Ableitung beschreibt die Steigung.",
+      "Mögliche Extremstellen findet man mit f'(x) = 0.",
+      "f''(x) > 0 bedeutet Tiefpunkt, falls f'(x) = 0 gilt.",
+      "f''(x) < 0 bedeutet Hochpunkt, falls f'(x) = 0 gilt.",
+      "Mögliche Wendepunkte findet man mit f''(x) = 0.",
+      "Ein Wendepunkt braucht einen Krümmungswechsel.",
+      "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente.",
+      "Die Tangente bei x₀ hat die Steigung f'(x₀)."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man setzt für Extremstellen die ursprüngliche Funktion f(x) = 0.",
+        korrektur:
+          "Für Extremstellen setzt man die erste Ableitung f'(x) = 0. Die Gleichung f(x) = 0 liefert Nullstellen, nicht Extremstellen."
+      },
+      {
+        fehler: "Man berechnet nur den x-Wert eines Extrempunkts.",
+        korrektur:
+          "Ein Punkt braucht immer x- und y-Koordinate. Den y-Wert erhält man durch Einsetzen des x-Werts in die ursprüngliche Funktion f(x)."
+      },
+      {
+        fehler: "Man denkt, f'(x) = 0 bedeutet automatisch Hochpunkt oder Tiefpunkt.",
+        korrektur:
+          "f'(x) = 0 bedeutet nur, dass eine waagrechte Tangente vorliegt. Es kann auch ein Sattelpunkt sein."
+      },
+      {
+        fehler: "Man bestimmt Wendepunkte mit f'(x) = 0.",
+        korrektur:
+          "Wendepunkte untersucht man mit der zweiten Ableitung. Man setzt f''(x) = 0 und prüft den Krümmungswechsel."
+      },
+      {
+        fehler: "Man verwechselt Funktionswert und Ableitungswert.",
+        korrektur:
+          "f(x) gibt die Höhe des Graphen an. f'(x) gibt die Steigung des Graphen an."
+      },
+      {
+        fehler: "Man verwendet f''(x) zur Monotonie.",
+        korrektur:
+          "Monotonie untersucht man mit f'(x). Die zweite Ableitung beschreibt die Krümmung, nicht direkt das Steigen oder Fallen."
+      },
+      {
+        fehler: "Man vergisst bei Tangenten den Punkt einzusetzen.",
+        korrektur:
+          "Für eine Tangente braucht man die Steigung f'(x₀) und den Punkt (x₀ | f(x₀)). Erst dann kann man die Tangentengleichung aufstellen."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: y-Achsenabschnitt bestimmen",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Gegeben ist f(x) = x² - 4x + 1. Bestimme den Schnittpunkt mit der y-Achse.",
+        loesung: [
+          "Für den y-Achsenabschnitt setzt man x = 0 ein.",
+          "Also berechnet man f(0).",
+          "f(0) = 0² - 4 · 0 + 1.",
+          "Das ergibt f(0) = 1.",
+          "Der Schnittpunkt mit der y-Achse ist also (0 | 1)."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Nullstellen einer quadratischen Funktion",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Bestimme die Nullstellen von f(x) = x² - 6x + 8.",
+        loesung: [
+          "Nullstellen findet man mit f(x) = 0.",
+          "Also: x² - 6x + 8 = 0.",
+          "Faktorisiere den Term.",
+          "x² - 6x + 8 = (x - 2)(x - 4).",
+          "Damit gilt (x - 2)(x - 4) = 0.",
+          "Also ist x = 2 oder x = 4.",
+          "Die Nullstellen sind (2 | 0) und (4 | 0)."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Erste Ableitung und Steigung",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Gegeben ist f(x) = x³ - 2x. Berechne die Steigung des Graphen bei x = 2.",
+        loesung: [
+          "Die Steigung erhält man mit der ersten Ableitung.",
+          "f'(x) = 3x² - 2.",
+          "Setze x = 2 ein.",
+          "f'(2) = 3 · 2² - 2.",
+          "f'(2) = 12 - 2 = 10.",
+          "Die Steigung bei x = 2 ist also 10."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Extremstelle bestimmen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Untersuche f(x) = x² - 4x + 5 auf Extremstellen.",
+        loesung: [
+          "Zuerst berechnet man die erste Ableitung.",
+          "f'(x) = 2x - 4.",
+          "Für mögliche Extremstellen setzt man f'(x) = 0.",
+          "2x - 4 = 0.",
+          "Daraus folgt x = 2.",
+          "Nun berechnet man die zweite Ableitung.",
+          "f''(x) = 2.",
+          "Da f''(2) = 2 > 0 ist, liegt ein Tiefpunkt vor.",
+          "Berechne den y-Wert mit f(2).",
+          "f(2) = 2² - 4 · 2 + 5 = 4 - 8 + 5 = 1.",
+          "Der Tiefpunkt ist T(2 | 1)."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Hochpunkt oder Tiefpunkt?",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Gegeben ist f(x) = -x² + 6x - 4. Bestimme den Extrempunkt.",
+        loesung: [
+          "Berechne zuerst die erste Ableitung.",
+          "f'(x) = -2x + 6.",
+          "Setze f'(x) = 0.",
+          "-2x + 6 = 0.",
+          "Daraus folgt x = 3.",
+          "Berechne die zweite Ableitung.",
+          "f''(x) = -2.",
+          "Da f''(3) = -2 < 0 ist, liegt ein Hochpunkt vor.",
+          "Berechne den y-Wert.",
+          "f(3) = -3² + 6 · 3 - 4 = -9 + 18 - 4 = 5.",
+          "Der Hochpunkt ist H(3 | 5)."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Wendepunkt bestimmen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme den Wendepunkt von f(x) = x³ - 3x² + 2.",
+        loesung: [
+          "Für Wendepunkte betrachtet man die zweite Ableitung.",
+          "Zuerst berechnet man f'(x) = 3x² - 6x.",
+          "Dann berechnet man f''(x) = 6x - 6.",
+          "Setze f''(x) = 0.",
+          "6x - 6 = 0.",
+          "Daraus folgt x = 1.",
+          "Zur Kontrolle kann man die dritte Ableitung berechnen.",
+          "f'''(x) = 6.",
+          "Da f'''(1) = 6 nicht 0 ist, liegt ein Wendepunkt vor.",
+          "Berechne den y-Wert.",
+          "f(1) = 1³ - 3 · 1² + 2 = 1 - 3 + 2 = 0.",
+          "Der Wendepunkt ist W(1 | 0)."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Sattelpunkt erkennen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Zeige, dass f(x) = x³ bei x = 0 einen Sattelpunkt besitzt.",
+        loesung: [
+          "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente.",
+          "Berechne die erste Ableitung.",
+          "f'(x) = 3x².",
+          "Setze x = 0 ein.",
+          "f'(0) = 0, also ist die Tangente waagrecht.",
+          "Berechne die zweite Ableitung.",
+          "f''(x) = 6x.",
+          "f''(0) = 0, also ist x = 0 eine mögliche Wendestelle.",
+          "Links von 0 ist f''(x) negativ, rechts von 0 ist f''(x) positiv.",
+          "Es findet also ein Krümmungswechsel statt.",
+          "Der Funktionswert ist f(0) = 0.",
+          "Damit liegt bei S(0 | 0) ein Sattelpunkt vor."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Monotonie untersuchen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Untersuche die Monotonie von f(x) = x² - 2x.",
+        loesung: [
+          "Berechne zuerst die erste Ableitung.",
+          "f'(x) = 2x - 2.",
+          "Bestimme die kritische Stelle mit f'(x) = 0.",
+          "2x - 2 = 0.",
+          "Daraus folgt x = 1.",
+          "Nun prüft man die Intervalle links und rechts von 1.",
+          "Für x < 1 ist f'(x) negativ.",
+          "Für x > 1 ist f'(x) positiv.",
+          "Also fällt die Funktion auf dem Intervall (-∞, 1).",
+          "Sie steigt auf dem Intervall (1, ∞)."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Tangentengleichung aufstellen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Bestimme die Tangente an f(x) = x² + 2x bei x₀ = 1.",
+        loesung: [
+          "Zuerst berechnet man den Punkt auf dem Graphen.",
+          "f(1) = 1² + 2 · 1 = 3.",
+          "Der Berührpunkt ist also (1 | 3).",
+          "Nun berechnet man die Ableitung.",
+          "f'(x) = 2x + 2.",
+          "Die Steigung an der Stelle x₀ = 1 ist f'(1) = 4.",
+          "Die Tangentengleichung lautet y = m(x - x₀) + f(x₀).",
+          "Setze m = 4, x₀ = 1 und f(x₀) = 3 ein.",
+          "y = 4(x - 1) + 3.",
+          "Vereinfacht ergibt das y = 4x - 1."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Vollständige kleine Kurvendiskussion",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Untersuche f(x) = x³ - 3x auf Nullstellen, Extremstellen und Wendepunkt.",
+        loesung: [
+          "Zuerst berechnet man die Nullstellen.",
+          "Setze f(x) = 0.",
+          "x³ - 3x = 0.",
+          "Faktorisiere x aus.",
+          "x(x² - 3) = 0.",
+          "Also ist x = 0 oder x² - 3 = 0.",
+          "Daraus folgen die Nullstellen x = 0, x = √3 und x = -√3.",
+          "Nun berechnet man die erste Ableitung.",
+          "f'(x) = 3x² - 3.",
+          "Für Extremstellen setzt man f'(x) = 0.",
+          "3x² - 3 = 0.",
+          "x² = 1.",
+          "Also x = -1 oder x = 1.",
+          "Berechne die zweite Ableitung.",
+          "f''(x) = 6x.",
+          "Bei x = -1 gilt f''(-1) = -6 < 0, also liegt ein Hochpunkt vor.",
+          "Bei x = 1 gilt f''(1) = 6 > 0, also liegt ein Tiefpunkt vor.",
+          "Berechne die y-Werte.",
+          "f(-1) = (-1)³ - 3(-1) = -1 + 3 = 2.",
+          "f(1) = 1³ - 3 · 1 = -2.",
+          "Der Hochpunkt ist H(-1 | 2).",
+          "Der Tiefpunkt ist T(1 | -2).",
+          "Für den Wendepunkt setzt man f''(x) = 0.",
+          "6x = 0, also x = 0.",
+          "Da f'''(x) = 6 nicht 0 ist, liegt ein Wendepunkt vor.",
+          "f(0) = 0.",
+          "Der Wendepunkt ist W(0 | 0)."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was untersucht man bei einer Kurvendiskussion?",
+        antwort:
+          "Man untersucht wichtige Eigenschaften eines Funktionsgraphen, zum Beispiel Nullstellen, Extremstellen, Wendepunkte, Monotonie, Krümmung und Tangenten."
+      },
+      {
+        frage: "Wie findet man Nullstellen?",
+        antwort:
+          "Man setzt die Funktion gleich 0 und löst die Gleichung f(x) = 0. Die Lösungen sind die x-Werte, bei denen der Graph die x-Achse schneidet."
+      },
+      {
+        frage: "Was sagt die erste Ableitung aus?",
+        antwort:
+          "Die erste Ableitung beschreibt die Steigung des Graphen. Sie zeigt, ob der Graph steigt, fällt oder eine waagrechte Tangente hat."
+      },
+      {
+        frage: "Wie findet man mögliche Extremstellen?",
+        antwort:
+          "Man berechnet die erste Ableitung und setzt f'(x) = 0. Danach prüft man mit der zweiten Ableitung oder einem Vorzeichenwechsel, ob ein Hochpunkt oder Tiefpunkt vorliegt."
+      },
+      {
+        frage: "Was sagt die zweite Ableitung aus?",
+        antwort:
+          "Die zweite Ableitung beschreibt die Krümmung des Graphen. Sie hilft bei der Entscheidung, ob ein Extrempunkt ein Hochpunkt oder Tiefpunkt ist, und bei der Suche nach Wendepunkten."
+      },
+      {
+        frage: "Was ist ein Wendepunkt?",
+        antwort:
+          "Ein Wendepunkt ist ein Punkt, an dem der Graph seine Krümmung wechselt, also zum Beispiel von rechtsgekrümmt zu linksgekrümmt."
+      },
+      {
+        frage: "Was ist ein Sattelpunkt?",
+        antwort:
+          "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente. Dort gilt also f'(x) = 0 und gleichzeitig findet ein Krümmungswechsel statt."
+      },
+      {
+        frage: "Wie stellt man eine Tangente auf?",
+        antwort:
+          "Man berechnet zuerst den Punkt (x₀ | f(x₀)) und die Steigung f'(x₀). Danach setzt man beides in y = f'(x₀)(x - x₀) + f(x₀) ein."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du Nullstellen mit f(x) = 0 berechnen?",
+      "Weisst du, dass f(0) den y-Achsenabschnitt liefert?",
+      "Kannst du die erste Ableitung als Steigung erklären?",
+      "Weisst du, dass mögliche Extremstellen mit f'(x) = 0 gefunden werden?",
+      "Kannst du mit f''(x) entscheiden, ob ein Hochpunkt oder Tiefpunkt vorliegt?",
+      "Weisst du, dass Wendepunkte mit f''(x) = 0 gesucht werden?",
+      "Prüfst du beim Wendepunkt den Krümmungswechsel?",
+      "Kannst du einen Sattelpunkt erklären?",
+      "Kannst du Monotonieintervalle mit f'(x) bestimmen?",
+      "Kannst du eine Tangentengleichung mit y = f'(x₀)(x - x₀) + f(x₀) aufstellen?"
+    ]
+  }
+   
 ];
 
 
