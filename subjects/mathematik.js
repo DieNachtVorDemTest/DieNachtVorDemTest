@@ -536,710 +536,708 @@ const MATHEMATIK_THEMEN = [
           "Bei Logarithmusfunktionen beeinflussen Parameter die Lage des Graphen, den Definitionsbereich und die senkrechte Asymptote. Verschiebungen in \\(x\\)-Richtung sind hier besonders wichtig."
       }
     ],
-    methoden: [
-      {
-        titel: "Methode: Parameter in \\(g(x)=a\\cdot f(bx+c)+d\\) deuten",
-        schritte: [
-          "1. Betrachte zuerst den Parameter \\(a\\) vor der Funktion.",
-          "2. Entscheide, ob eine Streckung, Stauchung oder Spiegelung an der \\(x\\)-Achse vorliegt.",
-          "3. Betrachte danach den Parameter \\(d\\) ausserhalb der Funktion.",
-          "4. Bestimme die Verschiebung nach oben oder unten.",
-          "5. Betrachte nun den Ausdruck innerhalb der Klammer.",
-          "6. Entscheide, wie \\(b\\) den Graphen horizontal verändert.",
-          "7. Bestimme zuletzt die horizontale Verschiebung durch \\(c\\).",
-          "8. Beschreibe die Veränderungen in einer sinnvollen Reihenfolge."
-        ]
-      }
+   methoden: [
+  {
+    titel: "Methode: Parameter in \\(g(x)=a\\cdot f(bx+c)+d\\) deuten",
+    schritte: [
+      "1. Betrachte zuerst den Parameter \\(a\\) vor der Funktion.",
+      "2. Entscheide, ob eine Streckung, Stauchung oder Spiegelung an der \\(x\\)-Achse vorliegt.",
+      "3. Betrachte danach den Parameter \\(d\\) ausserhalb der Funktion.",
+      "4. Bestimme die Verschiebung nach oben oder unten.",
+      "5. Betrachte nun den Ausdruck innerhalb der Klammer.",
+      "6. Entscheide, wie \\(b\\) den Graphen horizontal verändert.",
+      "7. Bestimme zuletzt die horizontale Verschiebung durch \\(c\\).",
+      "8. Beschreibe die Veränderungen in einer sinnvollen Reihenfolge."
+    ]
+  },
+  {
+    titel: "Methode: Verschiebung bei \\(f(x-u)\\) erkennen",
+    schritte: [
+      "1. Schaue genau auf den Ausdruck in der Klammer.",
+      "2. Steht dort \\(x-u\\), wird der Graph um \\(u\\) nach rechts verschoben.",
+      "3. Steht dort \\(x+u\\), wird der Graph um \\(u\\) nach links verschoben.",
+      "4. Merke: Die horizontale Verschiebung wirkt scheinbar umgekehrt.",
+      "5. Kontrolliere die Verschiebung, indem du überlegst, wann die Klammer \\(0\\) wird."
+    ]
+  },
+  {
+    titel: "Methode: Scheitelpunktform untersuchen",
+    schritte: [
+      "1. Bringe die Funktion in die Form \\(f(x)=a(x-u)^2+v\\).",
+      "2. Lies den Scheitelpunkt \\(S(u\\mid v)\\) ab.",
+      "3. Prüfe das Vorzeichen von \\(a\\).",
+      "4. Bei \\(a>0\\) öffnet die Parabel nach oben.",
+      "5. Bei \\(a<0\\) öffnet die Parabel nach unten.",
+      "6. Prüfe die Grösse von \\(|a|\\) für Streckung oder Stauchung."
+    ]
+  },
+  {
+    titel: "Methode: Sinusfunktion mit Parametern untersuchen",
+    schritte: [
+      "1. Bringe die Funktion in die Form \\(f(x)=a\\cdot\\sin(bx+c)+d\\).",
+      "2. Die Amplitude ist \\(|a|\\).",
+      "3. Die Mittellinie ist \\(y=d\\).",
+      "4. Die Periode ist \\(\\frac{2\\pi}{|b|}\\).",
+      "5. Die horizontale Verschiebung erhält man, indem man \\(bx+c=0\\) löst.",
+      "6. Beschreibe danach den Graphen mit Amplitude, Periode, Verschiebung und Mittellinie."
+    ]
+  },
+  {
+    titel: "Methode: Exponentialfunktion mit Verschiebung deuten",
+    schritte: [
+      "1. Erkenne zuerst die Grundform der Exponentialfunktion.",
+      "2. Prüfe den Faktor vor der Exponentialfunktion.",
+      "3. Prüfe, ob der Graph nach oben oder unten verschoben wurde.",
+      "4. Bestimme daraus die waagrechte Asymptote.",
+      "5. Prüfe, ob eine Spiegelung vorliegt.",
+      "6. Beschreibe das Wachstums- oder Zerfallsverhalten."
+    ]
+  },
+  {
+    titel: "Methode: Logarithmusfunktion mit Verschiebung deuten",
+    schritte: [
+      "1. Schaue zuerst auf das Argument des Logarithmus.",
+      "2. Setze das Argument grösser als \\(0\\), um den Definitionsbereich zu bestimmen.",
+      "3. Bestimme daraus auch die senkrechte Asymptote.",
+      "4. Prüfe Verschiebungen nach oben oder unten.",
+      "5. Prüfe Streckung, Stauchung oder Spiegelung.",
+      "6. Beschreibe den Graphen mit Definitionsbereich und Asymptote."
     ]
   }
-];
-        titel: "Methode: Verschiebung bei f(x - u) erkennen",
-        schritte: [
-          "1. Schaue genau auf den Ausdruck in der Klammer.",
-          "2. Steht dort x - u, wird der Graph um u nach rechts verschoben.",
-          "3. Steht dort x + u, wird der Graph um u nach links verschoben.",
-          "4. Merke: Die horizontale Verschiebung wirkt scheinbar umgekehrt.",
-          "5. Kontrolliere die Verschiebung, indem du überlegst, wann die Klammer 0 wird."
-        ]
-      },
-      {
-        titel: "Methode: Scheitelpunktform untersuchen",
-        schritte: [
-          "1. Bringe die Funktion in die Form f(x) = a(x - u)² + v.",
-          "2. Lies den Scheitelpunkt S(u | v) ab.",
-          "3. Prüfe das Vorzeichen von a.",
-          "4. Bei a > 0 öffnet die Parabel nach oben.",
-          "5. Bei a < 0 öffnet die Parabel nach unten.",
-          "6. Prüfe die Grösse von |a| für Streckung oder Stauchung."
-        ]
-      },
-      {
-        titel: "Methode: Sinusfunktion mit Parametern untersuchen",
-        schritte: [
-          "1. Bringe die Funktion in die Form f(x) = a · sin(bx + c) + d.",
-          "2. Die Amplitude ist |a|.",
-          "3. Die Mittellinie ist y = d.",
-          "4. Die Periode ist 2π / |b|.",
-          "5. Die horizontale Verschiebung erhält man, indem man bx + c = 0 löst.",
-          "6. Beschreibe danach den Graphen mit Amplitude, Periode, Verschiebung und Mittellinie."
-        ]
-      },
-      {
-        titel: "Methode: Exponentialfunktion mit Verschiebung deuten",
-        schritte: [
-          "1. Erkenne zuerst die Grundform der Exponentialfunktion.",
-          "2. Prüfe den Faktor vor der Exponentialfunktion.",
-          "3. Prüfe, ob der Graph nach oben oder unten verschoben wurde.",
-          "4. Bestimme daraus die waagrechte Asymptote.",
-          "5. Prüfe, ob eine Spiegelung vorliegt.",
-          "6. Beschreibe das Wachstums- oder Zerfallsverhalten."
-        ]
-      },
-      {
-        titel: "Methode: Logarithmusfunktion mit Verschiebung deuten",
-        schritte: [
-          "1. Schaue zuerst auf das Argument des Logarithmus.",
-          "2. Setze das Argument grösser als 0, um den Definitionsbereich zu bestimmen.",
-          "3. Bestimme daraus auch die senkrechte Asymptote.",
-          "4. Prüfe Verschiebungen nach oben oder unten.",
-          "5. Prüfe Streckung, Stauchung oder Spiegelung.",
-          "6. Beschreibe den Graphen mit Definitionsbereich und Asymptote."
-        ]
-      }
-    ],
-    merksaetze: [
-      "Parameter verändern Form oder Lage eines Graphen.",
-      "a wirkt vertikal: Streckung, Stauchung oder Spiegelung an der x-Achse.",
-      "d verschiebt den Graphen nach oben oder unten.",
-      "b wirkt horizontal: Stauchung, Streckung oder Spiegelung an der y-Achse.",
-      "c bewirkt eine horizontale Verschiebung.",
-      "f(x - u) verschiebt den Graphen nach rechts.",
-      "f(x + u) verschiebt den Graphen nach links.",
-      "Bei f(x) = a(x - u)² + v ist der Scheitelpunkt S(u | v).",
-      "Bei Sinusfunktionen ist die Amplitude |a|.",
-      "Bei Sinusfunktionen ist die Periode 2π / |b|.",
-      "Bei Exponentialfunktionen zeigt d oft die waagrechte Asymptote.",
-      "Bei Logarithmusfunktionen bestimmt das Argument den Definitionsbereich."
-    ],
-    typischeFehler: [
-      {
-        fehler: "Man denkt, f(x - 3) verschiebe den Graphen nach links.",
-        korrektur:
-          "Richtig ist: f(x - 3) verschiebt den Graphen nach rechts. Man kann prüfen, wann die Klammer 0 wird: x - 3 = 0 ergibt x = 3."
-      },
-      {
-        fehler: "Man verwechselt vertikale und horizontale Streckung.",
-        korrektur:
-          "Ein Faktor ausserhalb der Funktion wirkt vertikal. Ein Faktor innerhalb der Klammer wirkt horizontal."
-      },
-      {
-        fehler: "Man vergisst bei negativem a die Spiegelung.",
-        korrektur:
-          "Ist a negativ, wird der Graph an der x-Achse gespiegelt. Danach kann zusätzlich eine Streckung oder Stauchung vorliegen."
-      },
-      {
-        fehler: "Man liest den Scheitelpunkt aus f(x) = a(x + 2)² - 5 falsch ab.",
-        korrektur:
-          "Der Scheitelpunkt ist S(-2 | -5), nicht S(2 | -5). In der Klammer wirkt die Verschiebung umgekehrt."
-      },
-      {
-        fehler: "Man sagt bei sin(2x), die Periode werde doppelt so gross.",
-        korrektur:
-          "Richtig ist: Die Periode wird halb so gross. Bei sin(bx) gilt die Periode 2π / |b|."
-      },
-      {
-        fehler: "Man ignoriert bei Logarithmusfunktionen den Definitionsbereich.",
-        korrektur:
-          "Beim Logarithmus muss das Argument positiv sein. Diese Bedingung bestimmt oft den Definitionsbereich und die senkrechte Asymptote."
-      }
-    ],
-    aufgaben: [
-      {
-        titel: "Aufgabe 1: Vertikale Verschiebung",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Beschreibe, wie der Graph von g(x) = x² + 4 aus dem Graphen von f(x) = x² entsteht.",
-        loesung: [
-          "Die Grundfunktion ist f(x) = x².",
-          "Bei g(x) = x² + 4 steht ausserhalb der Funktion plus 4.",
-          "Das bedeutet eine Verschiebung in y-Richtung.",
-          "Der Graph wird um 4 Einheiten nach oben verschoben."
-        ]
-      },
-      {
-        titel: "Aufgabe 2: Horizontale Verschiebung",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Beschreibe, wie der Graph von g(x) = (x - 5)² aus dem Graphen von f(x) = x² entsteht.",
-        loesung: [
-          "Die Grundfunktion ist f(x) = x².",
-          "In der Klammer steht x - 5.",
-          "Eine Form f(x - u) verschiebt den Graphen um u nach rechts.",
-          "Also wird der Graph um 5 Einheiten nach rechts verschoben."
-        ]
-      },
-      {
-        titel: "Aufgabe 3: Spiegelung und Streckung",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Beschreibe die Veränderung von g(x) = -3x² gegenüber f(x) = x².",
-        loesung: [
-          "Der Faktor vor x² ist -3.",
-          "Der Betrag 3 bedeutet eine vertikale Streckung um den Faktor 3.",
-          "Das Minuszeichen bedeutet eine Spiegelung an der x-Achse.",
-          "Der Graph wird also gestreckt und nach unten geöffnet."
-        ]
-      },
-      {
-        titel: "Aufgabe 4: Scheitelpunkt ablesen",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Bestimme den Scheitelpunkt von f(x) = 2(x - 3)² - 7 und beschreibe die Öffnung.",
-        loesung: [
-          "Die Funktion steht in Scheitelpunktform.",
-          "Die Form lautet f(x) = a(x - u)² + v.",
-          "Hier ist u = 3 und v = -7.",
-          "Der Scheitelpunkt ist also S(3 | -7).",
-          "Da a = 2 positiv ist, öffnet die Parabel nach oben.",
-          "Da |a| > 1 ist, ist sie schmaler als die Normalparabel."
-        ]
-      },
-      {
-        titel: "Aufgabe 5: Allgemeine Transformation beschreiben",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Beschreibe die Transformation von g(x) = 2 · f(x + 4) - 1 gegenüber f(x).",
-        loesung: [
-          "Der Faktor 2 steht ausserhalb der Funktion.",
-          "Das bedeutet eine vertikale Streckung um den Faktor 2.",
-          "In der Klammer steht x + 4.",
-          "Das bedeutet eine Verschiebung um 4 Einheiten nach links.",
-          "Das -1 ausserhalb der Funktion verschiebt den Graphen um 1 Einheit nach unten.",
-          "Insgesamt: links 4, vertikal gestreckt mit Faktor 2, danach 1 nach unten."
-        ]
-      },
-      {
-        titel: "Aufgabe 6: Sinusfunktion untersuchen",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Gegeben ist f(x) = 3 · sin(2x) - 1. Bestimme Amplitude, Periode und Mittellinie.",
-        loesung: [
-          "Die Funktion hat die Form f(x) = a · sin(bx) + d.",
-          "Hier ist a = 3.",
-          "Die Amplitude ist |a| = 3.",
-          "Hier ist b = 2.",
-          "Die Periode ist 2π / |b|.",
-          "Also ist die Periode 2π / 2 = π.",
-          "Hier ist d = -1.",
-          "Die Mittellinie ist y = -1."
-        ]
-      },
-      {
-        titel: "Aufgabe 7: Exponentialfunktion deuten",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Beschreibe den Graphen von g(x) = 2 · eˣ + 5 im Vergleich zu f(x) = eˣ.",
-        loesung: [
-          "Die Grundfunktion ist f(x) = eˣ.",
-          "Der Faktor 2 steht vor eˣ.",
-          "Das bedeutet eine vertikale Streckung um den Faktor 2.",
-          "Das +5 verschiebt den Graphen um 5 Einheiten nach oben.",
-          "Die waagrechte Asymptote ist dadurch y = 5."
-        ]
-      },
-      {
-        titel: "Aufgabe 8: Logarithmusfunktion mit Definitionsbereich",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Bestimme den Definitionsbereich von f(x) = log(x - 4) und beschreibe die Verschiebung gegenüber log(x).",
-        loesung: [
-          "Beim Logarithmus muss das Argument positiv sein.",
-          "Also gilt x - 4 > 0.",
-          "Daraus folgt x > 4.",
-          "Der Definitionsbereich ist also x > 4.",
-          "Gegenüber log(x) ist der Graph um 4 Einheiten nach rechts verschoben.",
-          "Die senkrechte Asymptote ist x = 4."
-        ]
-      },
-      {
-        titel: "Aufgabe 9: Parameter bestimmen",
-        schwierigkeit: "schwer",
-        aufgabe:
-          "Eine Parabel hat den Scheitelpunkt S(2 | -3) und ist nach unten geöffnet. Gib eine mögliche Funktionsgleichung in Scheitelpunktform an.",
-        loesung: [
-          "Die Scheitelpunktform lautet f(x) = a(x - u)² + v.",
-          "Der Scheitelpunkt S(2 | -3) bedeutet u = 2 und v = -3.",
-          "Also hat die Funktion die Form f(x) = a(x - 2)² - 3.",
-          "Da die Parabel nach unten geöffnet ist, muss a negativ sein.",
-          "Eine mögliche Wahl ist a = -1.",
-          "Eine mögliche Funktionsgleichung ist also f(x) = -(x - 2)² - 3."
-        ]
-      },
-      {
-        titel: "Aufgabe 10: Verschiebung durch Klammer bestimmen",
-        schwierigkeit: "schwer",
-        aufgabe:
-          "Beschreibe die Transformation von g(x) = -0.5 · f(3(x - 2)) + 4 gegenüber f(x).",
-        loesung: [
-          "Der Faktor -0.5 steht ausserhalb der Funktion.",
-          "Der Betrag 0.5 bedeutet eine vertikale Stauchung.",
-          "Das Minuszeichen bedeutet eine Spiegelung an der x-Achse.",
-          "Innerhalb der Funktion steht 3(x - 2).",
-          "Der Faktor 3 bewirkt eine horizontale Stauchung.",
-          "Der Ausdruck x - 2 bewirkt eine Verschiebung um 2 Einheiten nach rechts.",
-          "Das +4 ausserhalb verschiebt den Graphen um 4 Einheiten nach oben.",
-          "Insgesamt: horizontal gestaucht, 2 nach rechts, vertikal gestaucht, an der x-Achse gespiegelt und 4 nach oben verschoben."
-        ]
-      }
-    ],
-    muendlich: [
-      {
-        frage: "Was ist ein Parameter?",
-        antwort:
-          "Ein Parameter ist eine feste Zahl oder ein Buchstabe, der die Form oder Lage eines Funktionsgraphen verändert."
-      },
-      {
-        frage: "Was bewirkt der Parameter a in a · f(x)?",
-        antwort:
-          "Er verändert den Graphen in y-Richtung. Bei negativem a wird zusätzlich an der x-Achse gespiegelt."
-      },
-      {
-        frage: "Was bewirkt der Parameter d in f(x) + d?",
-        antwort:
-          "Er verschiebt den Graphen nach oben oder unten. Bei positivem d nach oben, bei negativem d nach unten."
-      },
-      {
-        frage: "Warum verschiebt f(x - 3) den Graphen nach rechts?",
-        antwort:
-          "Weil der ursprüngliche x-Wert erst bei x = 3 erreicht wird. Man kann es sehen, indem man x - 3 = 0 setzt."
-      },
-      {
-        frage: "Wie liest man den Scheitelpunkt aus f(x) = a(x - u)² + v ab?",
-        antwort:
-          "Der Scheitelpunkt ist S(u | v). Das Vorzeichen in der Klammer muss dabei richtig interpretiert werden."
-      },
-      {
-        frage: "Was bedeutet bei einer Sinusfunktion die Amplitude?",
-        antwort:
-          "Die Amplitude ist der maximale Abstand des Graphen von seiner Mittellinie. Bei a · sin(x) ist sie |a|."
-      },
-      {
-        frage: "Wie berechnet man die Periode von sin(bx)?",
-        antwort:
-          "Die Periode ist 2π / |b|. Ein grösseres b macht die Periode kleiner."
-      },
-      {
-        frage: "Was muss man bei Logarithmusfunktionen immer prüfen?",
-        antwort:
-          "Man muss prüfen, für welche x-Werte das Argument positiv ist. Daraus folgen Definitionsbereich und oft auch die senkrechte Asymptote."
-      }
-    ],
-    nachtVorTest: [
-      "Kannst du erklären, was ein Parameter ist?",
-      "Weisst du, dass a den Graphen vertikal streckt, staucht oder spiegelt?",
-      "Weisst du, dass d den Graphen nach oben oder unten verschiebt?",
-      "Kannst du erklären, warum f(x - 3) nach rechts verschoben wird?",
-      "Kannst du den Scheitelpunkt aus a(x - u)² + v ablesen?",
-      "Kannst du bei negativem a die Spiegelung erkennen?",
-      "Kannst du bei Sinusfunktionen die Amplitude bestimmen?",
-      "Kannst du bei Sinusfunktionen die Periode mit 2π / |b| berechnen?",
-      "Kannst du bei Exponentialfunktionen die waagrechte Asymptote erkennen?",
-      "Kannst du bei Logarithmusfunktionen den Definitionsbereich bestimmen?"
+],
+merksaetze: [
+  "Parameter verändern Form oder Lage eines Graphen.",
+  "\\(a\\) wirkt vertikal: Streckung, Stauchung oder Spiegelung an der \\(x\\)-Achse.",
+  "\\(d\\) verschiebt den Graphen nach oben oder unten.",
+  "\\(b\\) wirkt horizontal: Stauchung, Streckung oder Spiegelung an der \\(y\\)-Achse.",
+  "\\(c\\) bewirkt eine horizontale Verschiebung.",
+  "\\(f(x-u)\\) verschiebt den Graphen nach rechts.",
+  "\\(f(x+u)\\) verschiebt den Graphen nach links.",
+  "Bei \\(f(x)=a(x-u)^2+v\\) ist der Scheitelpunkt \\(S(u\\mid v)\\).",
+  "Bei Sinusfunktionen ist die Amplitude \\(|a|\\).",
+  "Bei Sinusfunktionen ist die Periode \\(\\frac{2\\pi}{|b|}\\).",
+  "Bei Exponentialfunktionen zeigt \\(d\\) oft die waagrechte Asymptote.",
+  "Bei Logarithmusfunktionen bestimmt das Argument den Definitionsbereich."
+],
+typischeFehler: [
+  {
+    fehler: "Man denkt, \\(f(x-3)\\) verschiebe den Graphen nach links.",
+    korrektur:
+      "Richtig ist: \\(f(x-3)\\) verschiebt den Graphen nach rechts. Man kann prüfen, wann die Klammer \\(0\\) wird: \\(x-3=0\\) ergibt \\(x=3\\)."
+  },
+  {
+    fehler: "Man verwechselt vertikale und horizontale Streckung.",
+    korrektur:
+      "Ein Faktor ausserhalb der Funktion wirkt vertikal. Ein Faktor innerhalb der Klammer wirkt horizontal."
+  },
+  {
+    fehler: "Man vergisst bei negativem \\(a\\) die Spiegelung.",
+    korrektur:
+      "Ist \\(a<0\\), wird der Graph an der \\(x\\)-Achse gespiegelt. Danach kann zusätzlich eine Streckung oder Stauchung vorliegen."
+  },
+  {
+    fehler: "Man liest den Scheitelpunkt aus \\(f(x)=a(x+2)^2-5\\) falsch ab.",
+    korrektur:
+      "Der Scheitelpunkt ist \\(S(-2\\mid -5)\\), nicht \\(S(2\\mid -5)\\). In der Klammer wirkt die Verschiebung umgekehrt."
+  },
+  {
+    fehler: "Man sagt bei \\(\\sin(2x)\\), die Periode werde doppelt so gross.",
+    korrektur:
+      "Richtig ist: Die Periode wird halb so gross. Bei \\(\\sin(bx)\\) gilt die Periode \\(\\frac{2\\pi}{|b|}\\)."
+  },
+  {
+    fehler: "Man ignoriert bei Logarithmusfunktionen den Definitionsbereich.",
+    korrektur:
+      "Beim Logarithmus muss das Argument positiv sein. Diese Bedingung bestimmt oft den Definitionsbereich und die senkrechte Asymptote."
+  }
+],
+aufgaben: [
+  {
+    titel: "Aufgabe 1: Vertikale Verschiebung",
+    schwierigkeit: "einfach",
+    aufgabe:
+      "Beschreibe, wie der Graph von \\(g(x)=x^2+4\\) aus dem Graphen von \\(f(x)=x^2\\) entsteht.",
+    loesung: [
+      "Die Grundfunktion ist \\(f(x)=x^2\\).",
+      "Bei \\(g(x)=x^2+4\\) steht ausserhalb der Funktion \\(+4\\).",
+      "Das bedeutet eine Verschiebung in \\(y\\)-Richtung.",
+      "Der Graph wird um \\(4\\) Einheiten nach oben verschoben."
     ]
   },
-     {
-    id: "umkehrfunktionen",
-    nummer: "4",
-    titel: "Umkehrfunktionen",
-    kurzbeschreibung:
-      "Umkehrfunktionen algebraisch und geometrisch verstehen, Definitionsmenge und Wertemenge korrekt vertauschen und besonders den Zusammenhang zwischen Exponential- und Logarithmusfunktionen erkennen.",
-    lernziele: [
-      "Du kannst erklären, was eine Umkehrfunktion ist.",
-      "Du kannst eine Umkehrfunktion algebraisch bestimmen.",
-      "Du verstehst die geometrische Bedeutung als Spiegelung an der Geraden y = x.",
-      "Du kannst Definitionsmenge und Wertemenge einer Funktion bestimmen.",
-      "Du weisst, dass bei der Umkehrfunktion Definitionsmenge und Wertemenge vertauscht werden.",
-      "Du erkennst, wann eine Funktion überhaupt umkehrbar ist.",
-      "Du kannst den Zusammenhang zwischen Exponentialfunktion und Logarithmusfunktion erklären.",
-      "Du kannst bei quadratischen Funktionen eine Einschränkung des Definitionsbereichs vornehmen.",
-      "Du erkennst typische Fehler beim Vertauschen von x und y.",
-      "Du kannst Umkehrfunktionen in Prüfungsaufgaben sauber begründen."
-    ],
-    theorie: [
-      {
-        titel: "Was ist eine Umkehrfunktion?",
-        text:
-          "Eine Umkehrfunktion macht die Wirkung einer Funktion rückgängig. Wenn eine Funktion x auf y abbildet, dann bildet die Umkehrfunktion dieses y wieder auf x zurück."
-      },
-      {
-        titel: "Schreibweise",
-        text:
-          "Die Umkehrfunktion von f schreibt man meistens als f⁻¹. Wichtig: f⁻¹ bedeutet hier nicht 1/f, sondern die inverse Funktion."
-      },
-      {
-        titel: "Grundidee",
-        text:
-          "Wenn f(a) = b gilt, dann gilt bei der Umkehrfunktion f⁻¹(b) = a. Die Eingabe und die Ausgabe werden also vertauscht."
-      },
-      {
-        titel: "Geometrische Bedeutung",
-        text:
-          "Der Graph einer Funktion und der Graph ihrer Umkehrfunktion sind Spiegelbilder an der Geraden y = x. Jeder Punkt (a | b) wird dabei zu (b | a)."
-      },
-      {
-        titel: "Definitionsmenge und Wertemenge",
-        text:
-          "Die Definitionsmenge beschreibt, welche x-Werte erlaubt sind. Die Wertemenge beschreibt, welche y-Werte herauskommen können."
-      },
-      {
-        titel: "Vertauschung bei der Umkehrfunktion",
-        text:
-          "Bei einer Umkehrfunktion werden Definitionsmenge und Wertemenge vertauscht. Die Wertemenge von f wird zur Definitionsmenge von f⁻¹, und die Definitionsmenge von f wird zur Wertemenge von f⁻¹."
-      },
-      {
-        titel: "Wann ist eine Funktion umkehrbar?",
-        text:
-          "Eine Funktion ist nur dann eindeutig umkehrbar, wenn jeder y-Wert höchstens einmal vorkommt. Anders gesagt: Zu jedem Funktionswert darf es nur einen passenden x-Wert geben."
-      },
-      {
-        titel: "Warum ist x² nicht direkt umkehrbar?",
-        text:
-          "Die Funktion f(x) = x² ist auf ganz ℝ nicht eindeutig umkehrbar, weil zum Beispiel f(2) = 4 und f(-2) = 4 gilt. Ein y-Wert gehört also zu zwei verschiedenen x-Werten."
-      },
-      {
-        titel: "Einschränkung des Definitionsbereichs",
-        text:
-          "Man kann eine nicht eindeutig umkehrbare Funktion oft umkehrbar machen, indem man den Definitionsbereich einschränkt. Bei f(x) = x² nimmt man zum Beispiel nur x ≥ 0 oder nur x ≤ 0."
-      },
-      {
-        titel: "Exponentialfunktion und Logarithmusfunktion",
-        text:
-          "Exponentialfunktion und Logarithmusfunktion sind Umkehrfunktionen voneinander. Wenn f(x) = aˣ gilt, dann ist die Umkehrfunktion f⁻¹(x) = logₐ(x)."
-      },
-      {
-        titel: "Definitionsmenge bei Exponentialfunktionen",
-        text:
-          "Eine Exponentialfunktion f(x) = aˣ mit a > 0 und a ≠ 1 ist für alle reellen x definiert. Ihre Werte sind aber immer positiv."
-      },
-      {
-        titel: "Definitionsmenge bei Logarithmusfunktionen",
-        text:
-          "Eine Logarithmusfunktion f(x) = logₐ(x) ist nur für x > 0 definiert. Ihre Werte können aber alle reellen Zahlen sein."
-      }
-    ],
-    methoden: [
-      {
-        titel: "Methode: Umkehrfunktion algebraisch bestimmen",
-        schritte: [
-          "1. Schreibe die Funktion als y = f(x).",
-          "2. Vertausche x und y.",
-          "3. Löse die neue Gleichung nach y auf.",
-          "4. Schreibe das Ergebnis als f⁻¹(x).",
-          "5. Bestimme oder beachte Definitionsmenge und Wertemenge.",
-          "6. Prüfe bei Bedarf durch Einsetzen oder durch Verkettung."
-        ]
-      },
-      {
-        titel: "Methode: Umkehrbarkeit prüfen",
-        schritte: [
-          "1. Überlege, ob jeder y-Wert nur einmal vorkommt.",
-          "2. Prüfe grafisch, ob jede waagrechte Linie den Graphen höchstens einmal schneidet.",
-          "3. Prüfe rechnerisch, ob aus f(x₁) = f(x₂) zwingend x₁ = x₂ folgt.",
-          "4. Wenn ein y-Wert mehrfach vorkommt, ist die Funktion nicht eindeutig umkehrbar.",
-          "5. Überlege dann, ob der Definitionsbereich eingeschränkt werden kann."
-        ]
-      },
-      {
-        titel: "Methode: Umkehrfunktion geometrisch zeichnen",
-        schritte: [
-          "1. Zeichne den Graphen der ursprünglichen Funktion.",
-          "2. Zeichne die Gerade y = x als Spiegelachse.",
-          "3. Spiegle wichtige Punkte des Graphen an dieser Geraden.",
-          "4. Aus einem Punkt (a | b) wird der Punkt (b | a).",
-          "5. Verbinde die gespiegelten Punkte passend zum neuen Graphen."
-        ]
-      },
-      {
-        titel: "Methode: Definitionsmenge und Wertemenge vertauschen",
-        schritte: [
-          "1. Bestimme die Definitionsmenge der ursprünglichen Funktion.",
-          "2. Bestimme die Wertemenge der ursprünglichen Funktion.",
-          "3. Die Wertemenge der ursprünglichen Funktion wird zur Definitionsmenge der Umkehrfunktion.",
-          "4. Die Definitionsmenge der ursprünglichen Funktion wird zur Wertemenge der Umkehrfunktion.",
-          "5. Schreibe beide Mengen sauber auf."
-        ]
-      },
-      {
-        titel: "Methode: Umkehrfunktion einer linearen Funktion",
-        schritte: [
-          "1. Schreibe die Funktion als y = mx + q.",
-          "2. Vertausche x und y.",
-          "3. Löse nach y auf.",
-          "4. Achte darauf, dass m nicht 0 sein darf.",
-          "5. Gib die Umkehrfunktion an."
-        ]
-      },
-      {
-        titel: "Methode: Exponentialfunktion umkehren",
-        schritte: [
-          "1. Schreibe die Funktion als y = aˣ.",
-          "2. Vertausche x und y.",
-          "3. Du erhältst x = aʸ.",
-          "4. Löse mit dem Logarithmus nach y auf.",
-          "5. Es ergibt sich y = logₐ(x).",
-          "6. Beachte: Die Umkehrfunktion ist nur für x > 0 definiert."
-        ]
-      }
-    ],
-    merksaetze: [
-      "Eine Umkehrfunktion macht die ursprüngliche Funktion rückgängig.",
-      "f⁻¹ bedeutet inverse Funktion, nicht Kehrwert.",
-      "Bei der Umkehrfunktion werden x und y vertauscht.",
-      "Grafisch ist die Umkehrfunktion die Spiegelung an y = x.",
-      "Aus dem Punkt (a | b) wird bei der Umkehrfunktion der Punkt (b | a).",
-      "Definitionsmenge und Wertemenge werden bei der Umkehrfunktion vertauscht.",
-      "Eine Funktion ist nur eindeutig umkehrbar, wenn jeder y-Wert höchstens einmal vorkommt.",
-      "x² ist auf ganz ℝ nicht eindeutig umkehrbar.",
-      "aˣ und logₐ(x) sind Umkehrfunktionen voneinander.",
-      "Der Logarithmus ist nur für positive Argumente definiert."
-    ],
-    typischeFehler: [
-      {
-        fehler: "Man verwechselt f⁻¹(x) mit 1/f(x).",
-        korrektur:
-          "f⁻¹(x) bedeutet Umkehrfunktion. Es ist nicht der Kehrwert der Funktion."
-      },
-      {
-        fehler: "Man vertauscht x und y, löst aber danach nicht nach y auf.",
-        korrektur:
-          "Nach dem Vertauschen muss die Gleichung nach y aufgelöst werden. Erst dann hat man die Umkehrfunktion."
-      },
-      {
-        fehler: "Man vergisst, Definitionsmenge und Wertemenge zu vertauschen.",
-        korrektur:
-          "Die Wertemenge von f wird zur Definitionsmenge von f⁻¹. Das ist besonders bei Logarithmen und Wurzeln wichtig."
-      },
-      {
-        fehler: "Man behauptet, f(x) = x² sei auf ganz ℝ einfach umkehrbar.",
-        korrektur:
-          "Das stimmt nicht, weil positive und negative x-Werte denselben Funktionswert ergeben können. Man muss den Definitionsbereich einschränken."
-      },
-      {
-        fehler: "Man spiegelt den Graphen an der x-Achse statt an y = x.",
-        korrektur:
-          "Die Umkehrfunktion entsteht durch Spiegelung an der Geraden y = x, nicht an der x-Achse."
-      },
-      {
-        fehler: "Man vergisst beim Logarithmus die Bedingung x > 0.",
-        korrektur:
-          "Da der Logarithmus die Umkehrfunktion einer Exponentialfunktion ist, ist sein Definitionsbereich nur x > 0."
-      }
-    ],
-    aufgaben: [
-      {
-        titel: "Aufgabe 1: Einfache lineare Umkehrfunktion",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Bestimme die Umkehrfunktion von f(x) = 2x + 3.",
-        loesung: [
-          "Schreibe zuerst y = 2x + 3.",
-          "Vertausche x und y.",
-          "Dann erhält man x = 2y + 3.",
-          "Löse nach y auf.",
-          "x - 3 = 2y.",
-          "y = (x - 3) / 2.",
-          "Also ist f⁻¹(x) = (x - 3) / 2."
-        ]
-      },
-      {
-        titel: "Aufgabe 2: Punkt spiegeln",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Der Punkt P(2 | 7) liegt auf dem Graphen von f. Welcher Punkt liegt auf dem Graphen von f⁻¹?",
-        loesung: [
-          "Bei der Umkehrfunktion werden x- und y-Koordinate vertauscht.",
-          "Aus dem Punkt (2 | 7) wird der Punkt (7 | 2).",
-          "Also liegt P'(7 | 2) auf dem Graphen von f⁻¹."
-        ]
-      },
-      {
-        titel: "Aufgabe 3: Definitionsmenge und Wertemenge vertauschen",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Eine Funktion f hat die Definitionsmenge D = [0, ∞) und die Wertemenge W = [-3, ∞). Gib Definitionsmenge und Wertemenge von f⁻¹ an.",
-        loesung: [
-          "Bei der Umkehrfunktion werden Definitionsmenge und Wertemenge vertauscht.",
-          "Die Wertemenge von f wird zur Definitionsmenge von f⁻¹.",
-          "Also ist D von f⁻¹ gleich [-3, ∞).",
-          "Die Definitionsmenge von f wird zur Wertemenge von f⁻¹.",
-          "Also ist W von f⁻¹ gleich [0, ∞)."
-        ]
-      },
-      {
-        titel: "Aufgabe 4: Umkehrfunktion mit Bruch",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Bestimme die Umkehrfunktion von f(x) = (x - 4) / 3.",
-        loesung: [
-          "Schreibe y = (x - 4) / 3.",
-          "Vertausche x und y.",
-          "Dann gilt x = (y - 4) / 3.",
-          "Multipliziere mit 3.",
-          "3x = y - 4.",
-          "Addiere 4.",
-          "y = 3x + 4.",
-          "Also ist f⁻¹(x) = 3x + 4."
-        ]
-      },
-      {
-        titel: "Aufgabe 5: Umkehrbarkeit von x²",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Erkläre, warum f(x) = x² auf ganz ℝ keine eindeutige Umkehrfunktion besitzt.",
-        loesung: [
-          "Eine Funktion ist eindeutig umkehrbar, wenn jeder y-Wert höchstens einmal vorkommt.",
-          "Bei f(x) = x² gilt aber f(2) = 4.",
-          "Gleichzeitig gilt auch f(-2) = 4.",
-          "Der Funktionswert 4 gehört also zu zwei verschiedenen x-Werten.",
-          "Deshalb kann man nicht eindeutig zurückgehen.",
-          "Also besitzt f(x) = x² auf ganz ℝ keine eindeutige Umkehrfunktion."
-        ]
-      },
-      {
-        titel: "Aufgabe 6: Eingeschränkte quadratische Funktion umkehren",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Bestimme die Umkehrfunktion von f(x) = x² für x ≥ 0.",
-        loesung: [
-          "Schreibe y = x².",
-          "Vertausche x und y.",
-          "Dann gilt x = y².",
-          "Löse nach y auf.",
-          "Eigentlich ergibt sich y = ±√x.",
-          "Da die ursprüngliche Funktion aber auf x ≥ 0 eingeschränkt ist, nimmt man nur den positiven Ast.",
-          "Also ist f⁻¹(x) = √x.",
-          "Die Definitionsmenge der Umkehrfunktion ist x ≥ 0."
-        ]
-      },
-      {
-        titel: "Aufgabe 7: Exponentialfunktion umkehren",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Bestimme die Umkehrfunktion von f(x) = 2ˣ.",
-        loesung: [
-          "Schreibe y = 2ˣ.",
-          "Vertausche x und y.",
-          "Dann gilt x = 2ʸ.",
-          "Löse mit dem Logarithmus zur Basis 2 nach y auf.",
-          "Daraus folgt y = log₂(x).",
-          "Also ist f⁻¹(x) = log₂(x).",
-          "Die Umkehrfunktion ist nur für x > 0 definiert."
-        ]
-      },
-      {
-        titel: "Aufgabe 8: Logarithmusfunktion umkehren",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Bestimme die Umkehrfunktion von f(x) = log₃(x).",
-        loesung: [
-          "Schreibe y = log₃(x).",
-          "Vertausche x und y.",
-          "Dann gilt x = log₃(y).",
-          "Schreibe die Logarithmusgleichung als Potenzgleichung.",
-          "Aus x = log₃(y) folgt 3ˣ = y.",
-          "Also ist f⁻¹(x) = 3ˣ."
-        ]
-      },
-      {
-        titel: "Aufgabe 9: Umkehrfunktion mit Verschiebung",
-        schwierigkeit: "schwer",
-        aufgabe:
-          "Bestimme die Umkehrfunktion von f(x) = 3ˣ + 5.",
-        loesung: [
-          "Schreibe y = 3ˣ + 5.",
-          "Vertausche x und y.",
-          "Dann gilt x = 3ʸ + 5.",
-          "Subtrahiere 5.",
-          "x - 5 = 3ʸ.",
-          "Löse mit dem Logarithmus zur Basis 3 nach y auf.",
-          "y = log₃(x - 5).",
-          "Also ist f⁻¹(x) = log₃(x - 5).",
-          "Der Definitionsbereich der Umkehrfunktion ist x > 5."
-        ]
-      },
-      {
-        titel: "Aufgabe 10: Umkehrfunktion kontrollieren",
-        schwierigkeit: "schwer",
-        aufgabe:
-          "Gegeben ist f(x) = 4x - 1 und f⁻¹(x) = (x + 1) / 4. Kontrolliere durch Verkettung, dass dies stimmt.",
-        loesung: [
-          "Man prüft, ob f(f⁻¹(x)) = x gilt.",
-          "Setze f⁻¹(x) in f ein.",
-          "f(f⁻¹(x)) = 4 · ((x + 1) / 4) - 1.",
-          "Das ergibt x + 1 - 1.",
-          "Also f(f⁻¹(x)) = x.",
-          "Man kann auch f⁻¹(f(x)) prüfen.",
-          "f⁻¹(f(x)) = ((4x - 1) + 1) / 4.",
-          "Das ergibt 4x / 4 = x.",
-          "Damit ist die Umkehrfunktion korrekt."
-        ]
-      }
-    ],
-    muendlich: [
-      {
-        frage: "Was ist eine Umkehrfunktion?",
-        antwort:
-          "Eine Umkehrfunktion macht die ursprüngliche Funktion rückgängig. Wenn f den Wert x auf y abbildet, dann bildet f⁻¹ den Wert y wieder auf x ab."
-      },
-      {
-        frage: "Was bedeutet f⁻¹?",
-        antwort:
-          "f⁻¹ bedeutet Umkehrfunktion. Es bedeutet nicht 1 durch f."
-      },
-      {
-        frage: "Wie bestimmt man eine Umkehrfunktion algebraisch?",
-        antwort:
-          "Man schreibt y = f(x), vertauscht x und y und löst danach wieder nach y auf."
-      },
-      {
-        frage: "Wie sieht die Umkehrfunktion geometrisch aus?",
-        antwort:
-          "Der Graph der Umkehrfunktion ist die Spiegelung des ursprünglichen Graphen an der Geraden y = x."
-      },
-      {
-        frage: "Was passiert mit Definitionsmenge und Wertemenge?",
-        antwort:
-          "Sie werden vertauscht. Die Wertemenge von f wird zur Definitionsmenge von f⁻¹ und die Definitionsmenge von f wird zur Wertemenge von f⁻¹."
-      },
-      {
-        frage: "Warum ist x² auf ganz ℝ nicht umkehrbar?",
-        antwort:
-          "Weil verschiedene x-Werte denselben y-Wert ergeben können, zum Beispiel 2 und -2. Deshalb ist das Zurückgehen nicht eindeutig."
-      },
-      {
-        frage: "Welche Funktion ist die Umkehrfunktion von aˣ?",
-        antwort:
-          "Die Umkehrfunktion von aˣ ist logₐ(x), sofern a positiv und nicht 1 ist."
-      },
-      {
-        frage: "Welche Bedingung gilt beim Logarithmus?",
-        antwort:
-          "Das Argument des Logarithmus muss positiv sein. Deshalb ist logₐ(x) nur für x > 0 definiert."
-      }
-    ],
-    nachtVorTest: [
-      "Kannst du erklären, was eine Umkehrfunktion macht?",
-      "Weisst du, dass f⁻¹ nicht 1/f bedeutet?",
-      "Kannst du x und y vertauschen und danach nach y auflösen?",
-      "Weisst du, dass der Graph an y = x gespiegelt wird?",
-      "Kannst du aus (a | b) den gespiegelten Punkt (b | a) bilden?",
-      "Weisst du, dass Definitionsmenge und Wertemenge vertauscht werden?",
-      "Kannst du erklären, warum x² auf ganz ℝ nicht eindeutig umkehrbar ist?",
-      "Kannst du eine Funktion durch Einschränkung des Definitionsbereichs umkehrbar machen?",
-      "Kennst du den Zusammenhang zwischen aˣ und logₐ(x)?",
-      "Prüfst du beim Logarithmus immer, ob das Argument positiv ist?"
+  {
+    titel: "Aufgabe 2: Horizontale Verschiebung",
+    schwierigkeit: "einfach",
+    aufgabe:
+      "Beschreibe, wie der Graph von \\(g(x)=(x-5)^2\\) aus dem Graphen von \\(f(x)=x^2\\) entsteht.",
+    loesung: [
+      "Die Grundfunktion ist \\(f(x)=x^2\\).",
+      "In der Klammer steht \\(x-5\\).",
+      "Eine Form \\(f(x-u)\\) verschiebt den Graphen um \\(u\\) nach rechts.",
+      "Also wird der Graph um \\(5\\) Einheiten nach rechts verschoben."
     ]
   },
+  {
+    titel: "Aufgabe 3: Spiegelung und Streckung",
+    schwierigkeit: "einfach",
+    aufgabe:
+      "Beschreibe die Veränderung von \\(g(x)=-3x^2\\) gegenüber \\(f(x)=x^2\\).",
+    loesung: [
+      "Der Faktor vor \\(x^2\\) ist \\(-3\\).",
+      "Der Betrag \\(3\\) bedeutet eine vertikale Streckung um den Faktor \\(3\\).",
+      "Das Minuszeichen bedeutet eine Spiegelung an der \\(x\\)-Achse.",
+      "Der Graph wird also gestreckt und nach unten geöffnet."
+    ]
+  },
+  {
+    titel: "Aufgabe 4: Scheitelpunkt ablesen",
+    schwierigkeit: "mittel",
+    aufgabe:
+      "Bestimme den Scheitelpunkt von \\(f(x)=2(x-3)^2-7\\) und beschreibe die Öffnung.",
+    loesung: [
+      "Die Funktion steht in Scheitelpunktform.",
+      "Die Form lautet \\(f(x)=a(x-u)^2+v\\).",
+      "Hier ist \\(u=3\\) und \\(v=-7\\).",
+      "Der Scheitelpunkt ist also \\(S(3\\mid -7)\\).",
+      "Da \\(a=2\\) positiv ist, öffnet die Parabel nach oben.",
+      "Da \\(|a|>1\\) ist, ist sie schmaler als die Normalparabel."
+    ]
+  },
+  {
+    titel: "Aufgabe 5: Allgemeine Transformation beschreiben",
+    schwierigkeit: "mittel",
+    aufgabe:
+      "Beschreibe die Transformation von \\(g(x)=2\\cdot f(x+4)-1\\) gegenüber \\(f(x)\\).",
+    loesung: [
+      "Der Faktor \\(2\\) steht ausserhalb der Funktion.",
+      "Das bedeutet eine vertikale Streckung um den Faktor \\(2\\).",
+      "In der Klammer steht \\(x+4\\).",
+      "Das bedeutet eine Verschiebung um \\(4\\) Einheiten nach links.",
+      "Das \\(-1\\) ausserhalb der Funktion verschiebt den Graphen um \\(1\\) Einheit nach unten.",
+      "Insgesamt: links \\(4\\), vertikal gestreckt mit Faktor \\(2\\), danach \\(1\\) nach unten."
+    ]
+  },
+  {
+    titel: "Aufgabe 6: Sinusfunktion untersuchen",
+    schwierigkeit: "mittel",
+    aufgabe:
+      "Gegeben ist \\(f(x)=3\\cdot\\sin(2x)-1\\). Bestimme Amplitude, Periode und Mittellinie.",
+    loesung: [
+      "Die Funktion hat die Form \\(f(x)=a\\cdot\\sin(bx)+d\\).",
+      "Hier ist \\(a=3\\).",
+      "Die Amplitude ist \\(|a|=3\\).",
+      "Hier ist \\(b=2\\).",
+      "Die Periode ist \\(\\frac{2\\pi}{|b|}\\).",
+      "Also ist die Periode \\(\\frac{2\\pi}{2}=\\pi\\).",
+      "Hier ist \\(d=-1\\).",
+      "Die Mittellinie ist \\(y=-1\\)."
+    ]
+  },
+  {
+    titel: "Aufgabe 7: Exponentialfunktion deuten",
+    schwierigkeit: "mittel",
+    aufgabe:
+      "Beschreibe den Graphen von \\(g(x)=2\\cdot e^x+5\\) im Vergleich zu \\(f(x)=e^x\\).",
+    loesung: [
+      "Die Grundfunktion ist \\(f(x)=e^x\\).",
+      "Der Faktor \\(2\\) steht vor \\(e^x\\).",
+      "Das bedeutet eine vertikale Streckung um den Faktor \\(2\\).",
+      "Das \\(+5\\) verschiebt den Graphen um \\(5\\) Einheiten nach oben.",
+      "Die waagrechte Asymptote ist dadurch \\(y=5\\)."
+    ]
+  },
+  {
+    titel: "Aufgabe 8: Logarithmusfunktion mit Definitionsbereich",
+    schwierigkeit: "mittel",
+    aufgabe:
+      "Bestimme den Definitionsbereich von \\(f(x)=\\log(x-4)\\) und beschreibe die Verschiebung gegenüber \\(\\log(x)\\).",
+    loesung: [
+      "Beim Logarithmus muss das Argument positiv sein.",
+      "Also gilt \\(x-4>0\\).",
+      "Daraus folgt \\(x>4\\).",
+      "Der Definitionsbereich ist also \\(x>4\\).",
+      "Gegenüber \\(\\log(x)\\) ist der Graph um \\(4\\) Einheiten nach rechts verschoben.",
+      "Die senkrechte Asymptote ist \\(x=4\\)."
+    ]
+  },
+  {
+    titel: "Aufgabe 9: Parameter bestimmen",
+    schwierigkeit: "schwer",
+    aufgabe:
+      "Eine Parabel hat den Scheitelpunkt \\(S(2\\mid -3)\\) und ist nach unten geöffnet. Gib eine mögliche Funktionsgleichung in Scheitelpunktform an.",
+    loesung: [
+      "Die Scheitelpunktform lautet \\(f(x)=a(x-u)^2+v\\).",
+      "Der Scheitelpunkt \\(S(2\\mid -3)\\) bedeutet \\(u=2\\) und \\(v=-3\\).",
+      "Also hat die Funktion die Form \\(f(x)=a(x-2)^2-3\\).",
+      "Da die Parabel nach unten geöffnet ist, muss \\(a\\) negativ sein.",
+      "Eine mögliche Wahl ist \\(a=-1\\).",
+      "Eine mögliche Funktionsgleichung ist also \\(f(x)=-(x-2)^2-3\\)."
+    ]
+  },
+  {
+    titel: "Aufgabe 10: Verschiebung durch Klammer bestimmen",
+    schwierigkeit: "schwer",
+    aufgabe:
+      "Beschreibe die Transformation von \\(g(x)=-0.5\\cdot f(3(x-2))+4\\) gegenüber \\(f(x)\\).",
+    loesung: [
+      "Der Faktor \\(-0.5\\) steht ausserhalb der Funktion.",
+      "Der Betrag \\(0.5\\) bedeutet eine vertikale Stauchung.",
+      "Das Minuszeichen bedeutet eine Spiegelung an der \\(x\\)-Achse.",
+      "Innerhalb der Funktion steht \\(3(x-2)\\).",
+      "Der Faktor \\(3\\) bewirkt eine horizontale Stauchung.",
+      "Der Ausdruck \\(x-2\\) bewirkt eine Verschiebung um \\(2\\) Einheiten nach rechts.",
+      "Das \\(+4\\) ausserhalb verschiebt den Graphen um \\(4\\) Einheiten nach oben.",
+      "Insgesamt: horizontal gestaucht, \\(2\\) nach rechts, vertikal gestaucht, an der \\(x\\)-Achse gespiegelt und \\(4\\) nach oben verschoben."
+    ]
+  }
+],
+muendlich: [
+  {
+    frage: "Was ist ein Parameter?",
+    antwort:
+      "Ein Parameter ist eine feste Zahl oder ein Buchstabe, der die Form oder Lage eines Funktionsgraphen verändert."
+  },
+  {
+    frage: "Was bewirkt der Parameter \\(a\\) in \\(a\\cdot f(x)\\)?",
+    antwort:
+      "Er verändert den Graphen in \\(y\\)-Richtung. Bei negativem \\(a\\) wird zusätzlich an der \\(x\\)-Achse gespiegelt."
+  },
+  {
+    frage: "Was bewirkt der Parameter \\(d\\) in \\(f(x)+d\\)?",
+    antwort:
+      "Er verschiebt den Graphen nach oben oder unten. Bei positivem \\(d\\) nach oben, bei negativem \\(d\\) nach unten."
+  },
+  {
+    frage: "Warum verschiebt \\(f(x-3)\\) den Graphen nach rechts?",
+    antwort:
+      "Weil der ursprüngliche \\(x\\)-Wert erst bei \\(x=3\\) erreicht wird. Man kann es sehen, indem man \\(x-3=0\\) setzt."
+  },
+  {
+    frage: "Wie liest man den Scheitelpunkt aus \\(f(x)=a(x-u)^2+v\\) ab?",
+    antwort:
+      "Der Scheitelpunkt ist \\(S(u\\mid v)\\). Das Vorzeichen in der Klammer muss dabei richtig interpretiert werden."
+  },
+  {
+    frage: "Was bedeutet bei einer Sinusfunktion die Amplitude?",
+    antwort:
+      "Die Amplitude ist der maximale Abstand des Graphen von seiner Mittellinie. Bei \\(a\\cdot\\sin(x)\\) ist sie \\(|a|\\)."
+  },
+  {
+    frage: "Wie berechnet man die Periode von \\(\\sin(bx)\\)?",
+    antwort:
+      "Die Periode ist \\(\\frac{2\\pi}{|b|}\\). Ein grösseres \\(b\\) macht die Periode kleiner."
+  },
+  {
+    frage: "Was muss man bei Logarithmusfunktionen immer prüfen?",
+    antwort:
+      "Man muss prüfen, für welche \\(x\\)-Werte das Argument positiv ist. Daraus folgen Definitionsbereich und oft auch die senkrechte Asymptote."
+  }
+],
+nachtVorTest: [
+  "Kannst du erklären, was ein Parameter ist?",
+  "Weisst du, dass \\(a\\) den Graphen vertikal streckt, staucht oder spiegelt?",
+  "Weisst du, dass \\(d\\) den Graphen nach oben oder unten verschiebt?",
+  "Kannst du erklären, warum \\(f(x-3)\\) nach rechts verschoben wird?",
+  "Kannst du den Scheitelpunkt aus \\(a(x-u)^2+v\\) ablesen?",
+  "Kannst du bei negativem \\(a\\) die Spiegelung erkennen?",
+  "Kannst du bei Sinusfunktionen die Amplitude bestimmen?",
+  "Kannst du bei Sinusfunktionen die Periode mit \\(\\frac{2\\pi}{|b|}\\) berechnen?",
+  "Kannst du bei Exponentialfunktionen die waagrechte Asymptote erkennen?",
+  "Kannst du bei Logarithmusfunktionen den Definitionsbereich bestimmen?"
+]
+},
+{
+  id: "umkehrfunktionen",
+  nummer: "4",
+  titel: "Umkehrfunktionen",
+  kurzbeschreibung:
+    "Umkehrfunktionen algebraisch und geometrisch verstehen, Definitionsmenge und Wertemenge korrekt vertauschen und besonders den Zusammenhang zwischen Exponential- und Logarithmusfunktionen erkennen.",
+  lernziele: [
+    "Du kannst erklären, was eine Umkehrfunktion ist.",
+    "Du kannst eine Umkehrfunktion algebraisch bestimmen.",
+    "Du verstehst die geometrische Bedeutung als Spiegelung an der Geraden \\(y=x\\).",
+    "Du kannst Definitionsmenge und Wertemenge einer Funktion bestimmen.",
+    "Du weisst, dass bei der Umkehrfunktion Definitionsmenge und Wertemenge vertauscht werden.",
+    "Du erkennst, wann eine Funktion überhaupt umkehrbar ist.",
+    "Du kannst den Zusammenhang zwischen Exponentialfunktion und Logarithmusfunktion erklären.",
+    "Du kannst bei quadratischen Funktionen eine Einschränkung des Definitionsbereichs vornehmen.",
+    "Du erkennst typische Fehler beim Vertauschen von \\(x\\) und \\(y\\).",
+    "Du kannst Umkehrfunktionen in Prüfungsaufgaben sauber begründen."
+  ],
+  theorie: [
+    {
+      titel: "Was ist eine Umkehrfunktion?",
+      text:
+        "Eine Umkehrfunktion macht die Wirkung einer Funktion rückgängig. Wenn eine Funktion \\(x\\) auf \\(y\\) abbildet, dann bildet die Umkehrfunktion dieses \\(y\\) wieder auf \\(x\\) zurück."
+    },
+    {
+      titel: "Schreibweise",
+      text:
+        "Die Umkehrfunktion von \\(f\\) schreibt man meistens als \\(f^{-1}\\). Wichtig: \\(f^{-1}\\) bedeutet hier nicht \\(\\frac{1}{f}\\), sondern die inverse Funktion."
+    },
+    {
+      titel: "Grundidee",
+      text:
+        "Wenn \\(f(a)=b\\) gilt, dann gilt bei der Umkehrfunktion \\(f^{-1}(b)=a\\). Die Eingabe und die Ausgabe werden also vertauscht."
+    },
+    {
+      titel: "Geometrische Bedeutung",
+      text:
+        "Der Graph einer Funktion und der Graph ihrer Umkehrfunktion sind Spiegelbilder an der Geraden \\(y=x\\). Jeder Punkt \\((a\\mid b)\\) wird dabei zu \\((b\\mid a)\\)."
+    },
+    {
+      titel: "Definitionsmenge und Wertemenge",
+      text:
+        "Die Definitionsmenge beschreibt, welche \\(x\\)-Werte erlaubt sind. Die Wertemenge beschreibt, welche \\(y\\)-Werte herauskommen können."
+    },
+    {
+      titel: "Vertauschung bei der Umkehrfunktion",
+      text:
+        "Bei einer Umkehrfunktion werden Definitionsmenge und Wertemenge vertauscht. Die Wertemenge von \\(f\\) wird zur Definitionsmenge von \\(f^{-1}\\), und die Definitionsmenge von \\(f\\) wird zur Wertemenge von \\(f^{-1}\\)."
+    },
+    {
+      titel: "Wann ist eine Funktion umkehrbar?",
+      text:
+        "Eine Funktion ist nur dann eindeutig umkehrbar, wenn jeder \\(y\\)-Wert höchstens einmal vorkommt. Anders gesagt: Zu jedem Funktionswert darf es nur einen passenden \\(x\\)-Wert geben."
+    },
+    {
+      titel: "Warum ist \\(x^2\\) nicht direkt umkehrbar?",
+      text:
+        "Die Funktion \\(f(x)=x^2\\) ist auf ganz \\(\\mathbb{R}\\) nicht eindeutig umkehrbar, weil zum Beispiel \\(f(2)=4\\) und \\(f(-2)=4\\) gilt. Ein \\(y\\)-Wert gehört also zu zwei verschiedenen \\(x\\)-Werten."
+    },
+    {
+      titel: "Einschränkung des Definitionsbereichs",
+      text:
+        "Man kann eine nicht eindeutig umkehrbare Funktion oft umkehrbar machen, indem man den Definitionsbereich einschränkt. Bei \\(f(x)=x^2\\) nimmt man zum Beispiel nur \\(x\\ge 0\\) oder nur \\(x\\le 0\\)."
+    },
+    {
+      titel: "Exponentialfunktion und Logarithmusfunktion",
+      text:
+        "Exponentialfunktion und Logarithmusfunktion sind Umkehrfunktionen voneinander. Wenn \\(f(x)=a^x\\) gilt, dann ist die Umkehrfunktion \\(f^{-1}(x)=\\log_a(x)\\)."
+    },
+    {
+      titel: "Definitionsmenge bei Exponentialfunktionen",
+      text:
+        "Eine Exponentialfunktion \\(f(x)=a^x\\) mit \\(a>0\\) und \\(a\\ne 1\\) ist für alle reellen \\(x\\) definiert. Ihre Werte sind aber immer positiv."
+    },
+    {
+      titel: "Definitionsmenge bei Logarithmusfunktionen",
+      text:
+        "Eine Logarithmusfunktion \\(f(x)=\\log_a(x)\\) ist nur für \\(x>0\\) definiert. Ihre Werte können aber alle reellen Zahlen sein."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Umkehrfunktion algebraisch bestimmen",
+      schritte: [
+        "1. Schreibe die Funktion als \\(y=f(x)\\).",
+        "2. Vertausche \\(x\\) und \\(y\\).",
+        "3. Löse die neue Gleichung nach \\(y\\) auf.",
+        "4. Schreibe das Ergebnis als \\(f^{-1}(x)\\).",
+        "5. Bestimme oder beachte Definitionsmenge und Wertemenge.",
+        "6. Prüfe bei Bedarf durch Einsetzen oder durch Verkettung."
+      ]
+    },
+    {
+      titel: "Methode: Umkehrbarkeit prüfen",
+      schritte: [
+        "1. Überlege, ob jeder \\(y\\)-Wert nur einmal vorkommt.",
+        "2. Prüfe grafisch, ob jede waagrechte Linie den Graphen höchstens einmal schneidet.",
+        "3. Prüfe rechnerisch, ob aus \\(f(x_1)=f(x_2)\\) zwingend \\(x_1=x_2\\) folgt.",
+        "4. Wenn ein \\(y\\)-Wert mehrfach vorkommt, ist die Funktion nicht eindeutig umkehrbar.",
+        "5. Überlege dann, ob der Definitionsbereich eingeschränkt werden kann."
+      ]
+    },
+    {
+      titel: "Methode: Umkehrfunktion geometrisch zeichnen",
+      schritte: [
+        "1. Zeichne den Graphen der ursprünglichen Funktion.",
+        "2. Zeichne die Gerade \\(y=x\\) als Spiegelachse.",
+        "3. Spiegle wichtige Punkte des Graphen an dieser Geraden.",
+        "4. Aus einem Punkt \\((a\\mid b)\\) wird der Punkt \\((b\\mid a)\\).",
+        "5. Verbinde die gespiegelten Punkte passend zum neuen Graphen."
+      ]
+    },
+    {
+      titel: "Methode: Definitionsmenge und Wertemenge vertauschen",
+      schritte: [
+        "1. Bestimme die Definitionsmenge der ursprünglichen Funktion.",
+        "2. Bestimme die Wertemenge der ursprünglichen Funktion.",
+        "3. Die Wertemenge der ursprünglichen Funktion wird zur Definitionsmenge der Umkehrfunktion.",
+        "4. Die Definitionsmenge der ursprünglichen Funktion wird zur Wertemenge der Umkehrfunktion.",
+        "5. Schreibe beide Mengen sauber auf."
+      ]
+    },
+    {
+      titel: "Methode: Umkehrfunktion einer linearen Funktion",
+      schritte: [
+        "1. Schreibe die Funktion als \\(y=mx+q\\).",
+        "2. Vertausche \\(x\\) und \\(y\\).",
+        "3. Löse nach \\(y\\) auf.",
+        "4. Achte darauf, dass \\(m\\ne 0\\) sein darf.",
+        "5. Gib die Umkehrfunktion an."
+      ]
+    },
+    {
+      titel: "Methode: Exponentialfunktion umkehren",
+      schritte: [
+        "1. Schreibe die Funktion als \\(y=a^x\\).",
+        "2. Vertausche \\(x\\) und \\(y\\).",
+        "3. Du erhältst \\(x=a^y\\).",
+        "4. Löse mit dem Logarithmus nach \\(y\\) auf.",
+        "5. Es ergibt sich \\(y=\\log_a(x)\\).",
+        "6. Beachte: Die Umkehrfunktion ist nur für \\(x>0\\) definiert."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Eine Umkehrfunktion macht die ursprüngliche Funktion rückgängig.",
+    "\\(f^{-1}\\) bedeutet inverse Funktion, nicht Kehrwert.",
+    "Bei der Umkehrfunktion werden \\(x\\) und \\(y\\) vertauscht.",
+    "Grafisch ist die Umkehrfunktion die Spiegelung an \\(y=x\\).",
+    "Aus dem Punkt \\((a\\mid b)\\) wird bei der Umkehrfunktion der Punkt \\((b\\mid a)\\).",
+    "Definitionsmenge und Wertemenge werden bei der Umkehrfunktion vertauscht.",
+    "Eine Funktion ist nur eindeutig umkehrbar, wenn jeder \\(y\\)-Wert höchstens einmal vorkommt.",
+    "\\(x^2\\) ist auf ganz \\(\\mathbb{R}\\) nicht eindeutig umkehrbar.",
+    "\\(a^x\\) und \\(\\log_a(x)\\) sind Umkehrfunktionen voneinander.",
+    "Der Logarithmus ist nur für positive Argumente definiert."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwechselt \\(f^{-1}(x)\\) mit \\(\\frac{1}{f(x)}\\).",
+      korrektur:
+        "\\(f^{-1}(x)\\) bedeutet Umkehrfunktion. Es ist nicht der Kehrwert der Funktion."
+    },
+    {
+      fehler: "Man vertauscht \\(x\\) und \\(y\\), löst aber danach nicht nach \\(y\\) auf.",
+      korrektur:
+        "Nach dem Vertauschen muss die Gleichung nach \\(y\\) aufgelöst werden. Erst dann hat man die Umkehrfunktion."
+    },
+    {
+      fehler: "Man vergisst, Definitionsmenge und Wertemenge zu vertauschen.",
+      korrektur:
+        "Die Wertemenge von \\(f\\) wird zur Definitionsmenge von \\(f^{-1}\\). Das ist besonders bei Logarithmen und Wurzeln wichtig."
+    },
+    {
+      fehler: "Man behauptet, \\(f(x)=x^2\\) sei auf ganz \\(\\mathbb{R}\\) einfach umkehrbar.",
+      korrektur:
+        "Das stimmt nicht, weil positive und negative \\(x\\)-Werte denselben Funktionswert ergeben können. Man muss den Definitionsbereich einschränken."
+    },
+    {
+      fehler: "Man spiegelt den Graphen an der \\(x\\)-Achse statt an \\(y=x\\).",
+      korrektur:
+        "Die Umkehrfunktion entsteht durch Spiegelung an der Geraden \\(y=x\\), nicht an der \\(x\\)-Achse."
+    },
+    {
+      fehler: "Man vergisst beim Logarithmus die Bedingung \\(x>0\\).",
+      korrektur:
+        "Da der Logarithmus die Umkehrfunktion einer Exponentialfunktion ist, ist sein Definitionsbereich nur \\(x>0\\)."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Einfache lineare Umkehrfunktion",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Bestimme die Umkehrfunktion von \\(f(x)=2x+3\\).",
+      loesung: [
+        "Schreibe zuerst \\(y=2x+3\\).",
+        "Vertausche \\(x\\) und \\(y\\).",
+        "Dann erhält man \\(x=2y+3\\).",
+        "Löse nach \\(y\\) auf.",
+        "\\(x-3=2y\\).",
+        "\\(y=\\frac{x-3}{2}\\).",
+        "Also ist \\(f^{-1}(x)=\\frac{x-3}{2}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Punkt spiegeln",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Der Punkt \\(P(2\\mid 7)\\) liegt auf dem Graphen von \\(f\\). Welcher Punkt liegt auf dem Graphen von \\(f^{-1}\\)?",
+      loesung: [
+        "Bei der Umkehrfunktion werden \\(x\\)- und \\(y\\)-Koordinate vertauscht.",
+        "Aus dem Punkt \\((2\\mid 7)\\) wird der Punkt \\((7\\mid 2)\\).",
+        "Also liegt \\(P'(7\\mid 2)\\) auf dem Graphen von \\(f^{-1}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Definitionsmenge und Wertemenge vertauschen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Eine Funktion \\(f\\) hat die Definitionsmenge \\(D=[0,\\infty)\\) und die Wertemenge \\(W=[-3,\\infty)\\). Gib Definitionsmenge und Wertemenge von \\(f^{-1}\\) an.",
+      loesung: [
+        "Bei der Umkehrfunktion werden Definitionsmenge und Wertemenge vertauscht.",
+        "Die Wertemenge von \\(f\\) wird zur Definitionsmenge von \\(f^{-1}\\).",
+        "Also ist \\(D_{f^{-1}}=[-3,\\infty)\\).",
+        "Die Definitionsmenge von \\(f\\) wird zur Wertemenge von \\(f^{-1}\\).",
+        "Also ist \\(W_{f^{-1}}=[0,\\infty)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Umkehrfunktion mit Bruch",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme die Umkehrfunktion von \\(f(x)=\\frac{x-4}{3}\\).",
+      loesung: [
+        "Schreibe \\(y=\\frac{x-4}{3}\\).",
+        "Vertausche \\(x\\) und \\(y\\).",
+        "Dann gilt \\(x=\\frac{y-4}{3}\\).",
+        "Multipliziere mit \\(3\\).",
+        "\\(3x=y-4\\).",
+        "Addiere \\(4\\).",
+        "\\(y=3x+4\\).",
+        "Also ist \\(f^{-1}(x)=3x+4\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Umkehrbarkeit von \\(x^2\\)",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Erkläre, warum \\(f(x)=x^2\\) auf ganz \\(\\mathbb{R}\\) keine eindeutige Umkehrfunktion besitzt.",
+      loesung: [
+        "Eine Funktion ist eindeutig umkehrbar, wenn jeder \\(y\\)-Wert höchstens einmal vorkommt.",
+        "Bei \\(f(x)=x^2\\) gilt aber \\(f(2)=4\\).",
+        "Gleichzeitig gilt auch \\(f(-2)=4\\).",
+        "Der Funktionswert \\(4\\) gehört also zu zwei verschiedenen \\(x\\)-Werten.",
+        "Deshalb kann man nicht eindeutig zurückgehen.",
+        "Also besitzt \\(f(x)=x^2\\) auf ganz \\(\\mathbb{R}\\) keine eindeutige Umkehrfunktion."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Eingeschränkte quadratische Funktion umkehren",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme die Umkehrfunktion von \\(f(x)=x^2\\) für \\(x\\ge 0\\).",
+      loesung: [
+        "Schreibe \\(y=x^2\\).",
+        "Vertausche \\(x\\) und \\(y\\).",
+        "Dann gilt \\(x=y^2\\).",
+        "Löse nach \\(y\\) auf.",
+        "Eigentlich ergibt sich \\(y=\\pm\\sqrt{x}\\).",
+        "Da die ursprüngliche Funktion aber auf \\(x\\ge 0\\) eingeschränkt ist, nimmt man nur den positiven Ast.",
+        "Also ist \\(f^{-1}(x)=\\sqrt{x}\\).",
+        "Die Definitionsmenge der Umkehrfunktion ist \\(x\\ge 0\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Exponentialfunktion umkehren",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme die Umkehrfunktion von \\(f(x)=2^x\\).",
+      loesung: [
+        "Schreibe \\(y=2^x\\).",
+        "Vertausche \\(x\\) und \\(y\\).",
+        "Dann gilt \\(x=2^y\\).",
+        "Löse mit dem Logarithmus zur Basis \\(2\\) nach \\(y\\) auf.",
+        "Daraus folgt \\(y=\\log_2(x)\\).",
+        "Also ist \\(f^{-1}(x)=\\log_2(x)\\).",
+        "Die Umkehrfunktion ist nur für \\(x>0\\) definiert."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Logarithmusfunktion umkehren",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme die Umkehrfunktion von \\(f(x)=\\log_3(x)\\).",
+      loesung: [
+        "Schreibe \\(y=\\log_3(x)\\).",
+        "Vertausche \\(x\\) und \\(y\\).",
+        "Dann gilt \\(x=\\log_3(y)\\).",
+        "Schreibe die Logarithmusgleichung als Potenzgleichung.",
+        "Aus \\(x=\\log_3(y)\\) folgt \\(3^x=y\\).",
+        "Also ist \\(f^{-1}(x)=3^x\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Umkehrfunktion mit Verschiebung",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Bestimme die Umkehrfunktion von \\(f(x)=3^x+5\\).",
+      loesung: [
+        "Schreibe \\(y=3^x+5\\).",
+        "Vertausche \\(x\\) und \\(y\\).",
+        "Dann gilt \\(x=3^y+5\\).",
+        "Subtrahiere \\(5\\).",
+        "\\(x-5=3^y\\).",
+        "Löse mit dem Logarithmus zur Basis \\(3\\) nach \\(y\\) auf.",
+        "\\(y=\\log_3(x-5)\\).",
+        "Also ist \\(f^{-1}(x)=\\log_3(x-5)\\).",
+        "Der Definitionsbereich der Umkehrfunktion ist \\(x>5\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Umkehrfunktion kontrollieren",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Gegeben ist \\(f(x)=4x-1\\) und \\(f^{-1}(x)=\\frac{x+1}{4}\\). Kontrolliere durch Verkettung, dass dies stimmt.",
+      loesung: [
+        "Man prüft, ob \\(f(f^{-1}(x))=x\\) gilt.",
+        "Setze \\(f^{-1}(x)\\) in \\(f\\) ein.",
+        "\\(f(f^{-1}(x))=4\\cdot\\frac{x+1}{4}-1\\).",
+        "Das ergibt \\(x+1-1\\).",
+        "Also \\(f(f^{-1}(x))=x\\).",
+        "Man kann auch \\(f^{-1}(f(x))\\) prüfen.",
+        "\\(f^{-1}(f(x))=\\frac{(4x-1)+1}{4}\\).",
+        "Das ergibt \\(\\frac{4x}{4}=x\\).",
+        "Damit ist die Umkehrfunktion korrekt."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist eine Umkehrfunktion?",
+      antwort:
+        "Eine Umkehrfunktion macht die ursprüngliche Funktion rückgängig. Wenn \\(f\\) den Wert \\(x\\) auf \\(y\\) abbildet, dann bildet \\(f^{-1}\\) den Wert \\(y\\) wieder auf \\(x\\) ab."
+    },
+    {
+      frage: "Was bedeutet \\(f^{-1}\\)?",
+      antwort:
+        "\\(f^{-1}\\) bedeutet Umkehrfunktion. Es bedeutet nicht \\(\\frac{1}{f}\\)."
+    },
+    {
+      frage: "Wie bestimmt man eine Umkehrfunktion algebraisch?",
+      antwort:
+        "Man schreibt \\(y=f(x)\\), vertauscht \\(x\\) und \\(y\\) und löst danach wieder nach \\(y\\) auf."
+    },
+    {
+      frage: "Wie sieht die Umkehrfunktion geometrisch aus?",
+      antwort:
+        "Der Graph der Umkehrfunktion ist die Spiegelung des ursprünglichen Graphen an der Geraden \\(y=x\\)."
+    },
+    {
+      frage: "Was passiert mit Definitionsmenge und Wertemenge?",
+      antwort:
+        "Sie werden vertauscht. Die Wertemenge von \\(f\\) wird zur Definitionsmenge von \\(f^{-1}\\) und die Definitionsmenge von \\(f\\) wird zur Wertemenge von \\(f^{-1}\\)."
+    },
+    {
+      frage: "Warum ist \\(x^2\\) auf ganz \\(\\mathbb{R}\\) nicht umkehrbar?",
+      antwort:
+        "Weil verschiedene \\(x\\)-Werte denselben \\(y\\)-Wert ergeben können, zum Beispiel \\(2\\) und \\(-2\\). Deshalb ist das Zurückgehen nicht eindeutig."
+    },
+    {
+      frage: "Welche Funktion ist die Umkehrfunktion von \\(a^x\\)?",
+      antwort:
+        "Die Umkehrfunktion von \\(a^x\\) ist \\(\\log_a(x)\\), sofern \\(a\\) positiv und nicht \\(1\\) ist."
+    },
+    {
+      frage: "Welche Bedingung gilt beim Logarithmus?",
+      antwort:
+        "Das Argument des Logarithmus muss positiv sein. Deshalb ist \\(\\log_a(x)\\) nur für \\(x>0\\) definiert."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was eine Umkehrfunktion macht?",
+    "Weisst du, dass \\(f^{-1}\\) nicht \\(\\frac{1}{f}\\) bedeutet?",
+    "Kannst du \\(x\\) und \\(y\\) vertauschen und danach nach \\(y\\) auflösen?",
+    "Weisst du, dass der Graph an \\(y=x\\) gespiegelt wird?",
+    "Kannst du aus \\((a\\mid b)\\) den gespiegelten Punkt \\((b\\mid a)\\) bilden?",
+    "Weisst du, dass Definitionsmenge und Wertemenge vertauscht werden?",
+    "Kannst du erklären, warum \\(x^2\\) auf ganz \\(\\mathbb{R}\\) nicht eindeutig umkehrbar ist?",
+    "Kannst du eine Funktion durch Einschränkung des Definitionsbereichs umkehrbar machen?",
+    "Kennst du den Zusammenhang zwischen \\(a^x\\) und \\(\\log_a(x)\\)?",
+    "Prüfst du beim Logarithmus immer, ob das Argument positiv ist?"
+  ]
+},
      {
     id: "differentialrechnung",
     nummer: "5",
