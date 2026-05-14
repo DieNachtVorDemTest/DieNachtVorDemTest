@@ -2018,6 +2018,414 @@ const MATHEMATIK_THEMEN = [
       "Vergisst du bei der Kettenregel nicht die innere Ableitung?",
       "Kannst du eine Tangentengleichung mit Punkt und Steigung aufstellen?"
     ]
+  },
+     {
+    id: "ableitung-spezieller-funktionen",
+    nummer: "6",
+    titel: "Ableitung spezieller Funktionen",
+    kurzbeschreibung:
+      "Ableitung von Exponentialfunktionen, Logarithmusfunktionen, Wurzelfunktionen, Potenzfunktionen mit rationalen Exponenten sowie trigonometrischen Funktionen.",
+    lernziele: [
+      "Du kannst Exponentialfunktionen ableiten.",
+      "Du kennst die besondere Ableitung von eˣ.",
+      "Du kannst Funktionen der Form aˣ ableiten.",
+      "Du kannst Logarithmusfunktionen ableiten.",
+      "Du kannst Wurzelfunktionen durch Potenzschreibweise ableiten.",
+      "Du kannst Potenzfunktionen mit rationalen Exponenten ableiten.",
+      "Du kannst sin(x), cos(x) und tan(x) ableiten.",
+      "Du kannst bei speziellen Funktionen die Kettenregel anwenden.",
+      "Du erkennst Definitionsbedingungen bei Wurzel- und Logarithmusfunktionen.",
+      "Du erkennst typische Vorzeichenfehler bei trigonometrischen Ableitungen."
+    ],
+    theorie: [
+      {
+        titel: "Warum spezielle Ableitungen?",
+        text:
+          "Nicht alle Funktionen bestehen nur aus einfachen Potenzen wie x² oder x³. In vielen Aufgaben kommen Exponentialfunktionen, Logarithmen, Wurzeln und trigonometrische Funktionen vor. Für diese braucht man eigene Ableitungsregeln."
+      },
+      {
+        titel: "Ableitung von eˣ",
+        text:
+          "Die Funktion eˣ ist besonders, weil ihre Ableitung wieder eˣ ist. Das bedeutet: f(x) = eˣ hat die Ableitung f'(x) = eˣ."
+      },
+      {
+        titel: "Ableitung von e hoch u(x)",
+        text:
+          "Wenn im Exponenten nicht nur x steht, sondern ein Ausdruck u(x), braucht man die Kettenregel. Die Ableitung von e hoch u(x) ist e hoch u(x) mal u'(x)."
+      },
+      {
+        titel: "Ableitung von aˣ",
+        text:
+          "Für eine Exponentialfunktion mit Basis a gilt: Die Ableitung von aˣ ist aˣ · ln(a), wobei a positiv und nicht 1 sein darf."
+      },
+      {
+        titel: "Ableitung von ln(x)",
+        text:
+          "Die natürliche Logarithmusfunktion ln(x) hat die Ableitung 1/x. Dabei gilt x > 0."
+      },
+      {
+        titel: "Ableitung von ln(u(x))",
+        text:
+          "Bei ln(u(x)) braucht man die Kettenregel. Die Ableitung ist u'(x) / u(x), solange u(x) positiv ist."
+      },
+      {
+        titel: "Ableitung von logₐ(x)",
+        text:
+          "Die Ableitung von logₐ(x) ist 1 / (x · ln(a)). Die Basis a muss positiv sein und darf nicht 1 sein."
+      },
+      {
+        titel: "Wurzelfunktionen ableiten",
+        text:
+          "Wurzeln kann man meistens einfacher ableiten, indem man sie als Potenzen schreibt. Zum Beispiel ist √x gleich x hoch 1/2."
+      },
+      {
+        titel: "Rationale Exponenten",
+        text:
+          "Auch bei rationalen Exponenten gilt die Potenzregel. Die Ableitung von x hoch r ist r · x hoch r - 1, sofern der Ausdruck im betrachteten Bereich definiert ist."
+      },
+      {
+        titel: "Ableitung von sin(x)",
+        text:
+          "Die Ableitung von sin(x) ist cos(x). Das bedeutet: Wenn f(x) = sin(x), dann ist f'(x) = cos(x)."
+      },
+      {
+        titel: "Ableitung von cos(x)",
+        text:
+          "Die Ableitung von cos(x) ist -sin(x). Das Minuszeichen ist eine häufige Fehlerquelle."
+      },
+      {
+        titel: "Ableitung von tan(x)",
+        text:
+          "Die Ableitung von tan(x) ist 1 / cos²(x). Diese Regel gilt nur dort, wo tan(x) definiert ist."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Exponentialfunktion e hoch u(x) ableiten",
+        schritte: [
+          "1. Erkenne die Form e hoch u(x).",
+          "2. Bestimme die innere Funktion u(x).",
+          "3. Leite die innere Funktion ab.",
+          "4. Schreibe e hoch u(x) wieder hin.",
+          "5. Multipliziere mit u'(x).",
+          "6. Vereinfache das Ergebnis."
+        ]
+      },
+      {
+        titel: "Methode: Funktion a hoch x ableiten",
+        schritte: [
+          "1. Erkenne die Basis a.",
+          "2. Prüfe, ob a positiv und nicht 1 ist.",
+          "3. Verwende die Regel: Die Ableitung von aˣ ist aˣ · ln(a).",
+          "4. Falls im Exponenten ein Ausdruck u(x) steht, verwende zusätzlich die Kettenregel.",
+          "5. Vereinfache das Ergebnis."
+        ]
+      },
+      {
+        titel: "Methode: Logarithmusfunktion ableiten",
+        schritte: [
+          "1. Erkenne, ob es sich um ln(x), ln(u(x)) oder logₐ(x) handelt.",
+          "2. Bei ln(x) ist die Ableitung 1/x.",
+          "3. Bei ln(u(x)) ist die Ableitung u'(x) / u(x).",
+          "4. Bei logₐ(x) ist die Ableitung 1 / (x · ln(a)).",
+          "5. Beachte immer den Definitionsbereich."
+        ]
+      },
+      {
+        titel: "Methode: Wurzelfunktion ableiten",
+        schritte: [
+          "1. Schreibe die Wurzel als Potenz.",
+          "2. Zum Beispiel wird √x zu x hoch 1/2.",
+          "3. Wende die Potenzregel an.",
+          "4. Ziehe den Exponenten nach vorne.",
+          "5. Verringere den Exponenten um 1.",
+          "6. Schreibe das Ergebnis bei Bedarf wieder als Wurzel."
+        ]
+      },
+      {
+        titel: "Methode: Trigonometrische Funktion ableiten",
+        schritte: [
+          "1. Erkenne, ob sin, cos oder tan vorkommt.",
+          "2. Verwende die passende Grundregel.",
+          "3. sin(x) wird zu cos(x).",
+          "4. cos(x) wird zu -sin(x).",
+          "5. tan(x) wird zu 1 / cos²(x).",
+          "6. Falls in der Klammer mehr als x steht, verwende zusätzlich die Kettenregel."
+        ]
+      },
+      {
+        titel: "Methode: Spezielle Funktion mit Kettenregel ableiten",
+        schritte: [
+          "1. Erkenne die äussere spezielle Funktion.",
+          "2. Bestimme die innere Funktion.",
+          "3. Leite zuerst die äussere Funktion ab und lasse die innere Funktion stehen.",
+          "4. Multipliziere mit der Ableitung der inneren Funktion.",
+          "5. Kontrolliere Vorzeichen, Definitionsbereich und Klammern."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Die Ableitung von eˣ ist eˣ.",
+      "Die Ableitung von e hoch u(x) ist e hoch u(x) mal u'(x).",
+      "Die Ableitung von aˣ ist aˣ · ln(a).",
+      "Die Ableitung von ln(x) ist 1/x.",
+      "Die Ableitung von ln(u(x)) ist u'(x) / u(x).",
+      "Die Ableitung von logₐ(x) ist 1 / (x · ln(a)).",
+      "Wurzeln kann man als Potenzen schreiben.",
+      "√x ist x hoch 1/2.",
+      "Die Ableitung von sin(x) ist cos(x).",
+      "Die Ableitung von cos(x) ist -sin(x).",
+      "Die Ableitung von tan(x) ist 1 / cos²(x).",
+      "Bei Klammern immer an die Kettenregel denken."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man leitet eˣ zu x · eˣ ab.",
+        korrektur:
+          "Das ist falsch. Die Ableitung von eˣ ist einfach eˣ."
+      },
+      {
+        fehler: "Man vergisst bei e hoch 3x die innere Ableitung.",
+        korrektur:
+          "Bei e hoch 3x braucht man die Kettenregel. Die Ableitung ist 3e hoch 3x."
+      },
+      {
+        fehler: "Man leitet 2ˣ zu x · 2ˣ⁻¹ ab.",
+        korrektur:
+          "Das wäre die Potenzregel, aber hier steht x im Exponenten. Richtig ist: Die Ableitung von 2ˣ ist 2ˣ · ln(2)."
+      },
+      {
+        fehler: "Man leitet ln(x) zu ln'(x) = x ab.",
+        korrektur:
+          "Richtig ist: Die Ableitung von ln(x) ist 1/x."
+      },
+      {
+        fehler: "Man vergisst bei ln(3x + 1) den Zähler durch die innere Ableitung.",
+        korrektur:
+          "Die Ableitung ist 3 / (3x + 1), nicht nur 1 / (3x + 1)."
+      },
+      {
+        fehler: "Man leitet √x direkt falsch ab.",
+        korrektur:
+          "Schreibe zuerst √x = x hoch 1/2. Dann ergibt sich die Ableitung 1/2 · x hoch -1/2."
+      },
+      {
+        fehler: "Man vergisst bei cos(x) das Minuszeichen.",
+        korrektur:
+          "Die Ableitung von cos(x) ist -sin(x)."
+      },
+      {
+        fehler: "Man leitet sin(4x) zu cos(4x) ab.",
+        korrektur:
+          "Die innere Ableitung fehlt. Richtig ist 4cos(4x)."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: e-Funktion ableiten",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Leite f(x) = eˣ ab.",
+        loesung: [
+          "Die Funktion eˣ ist eine besondere Exponentialfunktion.",
+          "Ihre Ableitung ist wieder eˣ.",
+          "Also gilt f'(x) = eˣ."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: e-Funktion mit Faktor",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Leite f(x) = 5eˣ ab.",
+        loesung: [
+          "Der Faktor 5 bleibt beim Ableiten erhalten.",
+          "Die Ableitung von eˣ ist eˣ.",
+          "Also ist f'(x) = 5eˣ."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: e-Funktion mit Kettenregel",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = e hoch 4x ab.",
+        loesung: [
+          "Die Funktion hat die Form e hoch u(x).",
+          "Die innere Funktion ist u(x) = 4x.",
+          "Die innere Ableitung ist u'(x) = 4.",
+          "Die Ableitung von e hoch u(x) ist e hoch u(x) mal u'(x).",
+          "Also ist f'(x) = 4e hoch 4x."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Allgemeine Exponentialfunktion",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = 3ˣ ab.",
+        loesung: [
+          "Hier steht x im Exponenten.",
+          "Es handelt sich um eine Exponentialfunktion mit Basis 3.",
+          "Die Regel lautet: Die Ableitung von aˣ ist aˣ · ln(a).",
+          "Also ist f'(x) = 3ˣ · ln(3)."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Natürlicher Logarithmus",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Leite f(x) = ln(x) ab.",
+        loesung: [
+          "Die Grundregel lautet: Die Ableitung von ln(x) ist 1/x.",
+          "Also ist f'(x) = 1/x.",
+          "Dabei gilt x > 0."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Logarithmus mit Kettenregel",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = ln(2x - 5) ab.",
+        loesung: [
+          "Die Funktion hat die Form ln(u(x)).",
+          "Die innere Funktion ist u(x) = 2x - 5.",
+          "Die innere Ableitung ist u'(x) = 2.",
+          "Die Regel lautet: Die Ableitung von ln(u(x)) ist u'(x) / u(x).",
+          "Also ist f'(x) = 2 / (2x - 5).",
+          "Der Definitionsbereich ist x > 2.5."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Wurzelfunktion ableiten",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = √x ab.",
+        loesung: [
+          "Schreibe die Wurzel als Potenz.",
+          "√x = x hoch 1/2.",
+          "Wende die Potenzregel an.",
+          "Die Ableitung ist 1/2 · x hoch -1/2.",
+          "Das kann man auch schreiben als 1 / (2√x).",
+          "Also ist f'(x) = 1 / (2√x)."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Rationale Potenz ableiten",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = x hoch 3/2 ab.",
+        loesung: [
+          "Verwende die Potenzregel auch für rationale Exponenten.",
+          "Der Exponent 3/2 wird nach vorne gezogen.",
+          "Danach wird der Exponent um 1 verringert.",
+          "3/2 - 1 = 1/2.",
+          "Also ist f'(x) = 3/2 · x hoch 1/2.",
+          "Das kann man auch als f'(x) = 3/2 · √x schreiben."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Sinus ableiten",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Leite f(x) = sin(x) ab.",
+        loesung: [
+          "Die Ableitung von sin(x) ist cos(x).",
+          "Also ist f'(x) = cos(x)."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Cosinus ableiten",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Leite f(x) = cos(x) ab.",
+        loesung: [
+          "Die Ableitung von cos(x) ist -sin(x).",
+          "Also ist f'(x) = -sin(x).",
+          "Das Minuszeichen ist wichtig."
+        ]
+      },
+      {
+        titel: "Aufgabe 11: Trigonometrische Funktion mit Kettenregel",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = sin(3x + 1) ab.",
+        loesung: [
+          "Die äussere Funktion ist sin.",
+          "Die innere Funktion ist 3x + 1.",
+          "Die Ableitung von sin(u) ist cos(u) mal u'.",
+          "Die innere Ableitung von 3x + 1 ist 3.",
+          "Also ist f'(x) = 3cos(3x + 1)."
+        ]
+      },
+      {
+        titel: "Aufgabe 12: Gemischte spezielle Funktion",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Leite f(x) = e hoch x · ln(x) ab.",
+        loesung: [
+          "Die Funktion ist ein Produkt.",
+          "Setze u(x) = e hoch x und v(x) = ln(x).",
+          "Dann ist u'(x) = e hoch x.",
+          "Die Ableitung von ln(x) ist 1/x, also v'(x) = 1/x.",
+          "Verwende die Produktregel: f'(x) = u' · v + u · v'.",
+          "Also ist f'(x) = e hoch x · ln(x) + e hoch x · 1/x.",
+          "Man kann e hoch x ausklammern.",
+          "Dann erhält man f'(x) = e hoch x · (ln(x) + 1/x)."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist das Besondere an der Ableitung von eˣ?",
+        antwort:
+          "Die Ableitung von eˣ ist wieder eˣ. Die Funktion bleibt beim Ableiten unverändert."
+      },
+      {
+        frage: "Wie leitet man e hoch u(x) ab?",
+        antwort:
+          "Man schreibt e hoch u(x) wieder hin und multipliziert mit der inneren Ableitung u'(x)."
+      },
+      {
+        frage: "Wie lautet die Ableitung von aˣ?",
+        antwort:
+          "Die Ableitung von aˣ ist aˣ · ln(a), wobei a positiv und nicht 1 ist."
+      },
+      {
+        frage: "Wie lautet die Ableitung von ln(x)?",
+        antwort:
+          "Die Ableitung von ln(x) ist 1/x. Dabei muss x positiv sein."
+      },
+      {
+        frage: "Wie leitet man ln(u(x)) ab?",
+        antwort:
+          "Man verwendet die Kettenregel. Die Ableitung ist u'(x) / u(x)."
+      },
+      {
+        frage: "Wie leitet man √x am einfachsten ab?",
+        antwort:
+          "Man schreibt √x zuerst als x hoch 1/2 und verwendet dann die Potenzregel."
+      },
+      {
+        frage: "Wie lauten die Ableitungen von sin(x) und cos(x)?",
+        antwort:
+          "Die Ableitung von sin(x) ist cos(x). Die Ableitung von cos(x) ist -sin(x)."
+      },
+      {
+        frage: "Wann braucht man bei speziellen Funktionen die Kettenregel?",
+        antwort:
+          "Man braucht sie immer dann, wenn in der Funktion nicht nur x steht, sondern ein zusammengesetzter Ausdruck wie 3x + 1 oder x² - 4."
+      }
+    ],
+    nachtVorTest: [
+      "Weisst du, dass die Ableitung von eˣ wieder eˣ ist?",
+      "Kannst du e hoch u(x) mit der Kettenregel ableiten?",
+      "Kennst du die Ableitung von aˣ?",
+      "Weisst du, dass die Ableitung von ln(x) gleich 1/x ist?",
+      "Kannst du ln(u(x)) zu u'(x) / u(x) ableiten?",
+      "Schreibst du Wurzeln vor dem Ableiten als Potenzen?",
+      "Kannst du x hoch 3/2 ableiten?",
+      "Kennst du die Ableitung von sin(x)?",
+      "Kennst du die Ableitung von cos(x) inklusive Minuszeichen?",
+      "Denkst du bei sin(3x) oder ln(2x - 5) an die Kettenregel?"
+    ]
   }
    
 ];
