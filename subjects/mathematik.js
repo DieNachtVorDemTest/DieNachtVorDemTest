@@ -806,6 +806,395 @@ const MATHEMATIK_THEMEN = [
       "Kannst du Monotonieintervalle mit f'(x) bestimmen?",
       "Kannst du eine Tangentengleichung mit y = f'(x₀)(x - x₀) + f(x₀) aufstellen?"
     ]
+  },
+     {
+    id: "funktionen-parameter",
+    nummer: "3",
+    titel: "Funktionen mit Parametern",
+    kurzbeschreibung:
+      "Einfluss von Parametern auf Funktionsgraphen, besonders bei g(x) = a · f(bx + c) + d sowie bei quadratischen, trigonometrischen, Exponential- und Logarithmusfunktionen.",
+    lernziele: [
+      "Du kannst erklären, was ein Parameter in einer Funktion bedeutet.",
+      "Du kannst den Einfluss von a, b, c und d auf einen Graphen beschreiben.",
+      "Du erkennst Streckung, Stauchung, Spiegelung und Verschiebung.",
+      "Du kannst Funktionsgraphen ohne Wertetabelle transformieren.",
+      "Du kannst quadratische Funktionen mit Parametern untersuchen.",
+      "Du kannst trigonometrische Funktionen mit Parametern interpretieren.",
+      "Du kannst Exponentialfunktionen mit Parametern deuten.",
+      "Du kannst Logarithmusfunktionen mit Parametern deuten.",
+      "Du kannst aus einer Funktionsgleichung den veränderten Graphen beschreiben.",
+      "Du erkennst typische Fehler bei Klammern und Verschiebungen."
+    ],
+    theorie: [
+      {
+        titel: "Was ist ein Parameter?",
+        text:
+          "Ein Parameter ist eine Zahl oder ein Buchstabe, der die Form oder Lage eines Graphen verändert. Im Gegensatz zur Variable x wird ein Parameter meistens als fest betrachtet."
+      },
+      {
+        titel: "Grundidee",
+        text:
+          "Man beginnt mit einer bekannten Grundfunktion f(x), zum Beispiel x², sin(x), eˣ oder log(x). Durch Parameter wird dieser Grundgraph verschoben, gestreckt, gestaucht oder gespiegelt."
+      },
+      {
+        titel: "Allgemeine Form",
+        text:
+          "Eine typische Schreibweise ist g(x) = a · f(bx + c) + d. Die Parameter a und d wirken in y-Richtung. Die Parameter b und c wirken in x-Richtung."
+      },
+      {
+        titel: "Parameter a",
+        text:
+          "Der Parameter a verändert den Graphen in y-Richtung. Ist |a| grösser als 1, wird der Graph vertikal gestreckt. Ist |a| zwischen 0 und 1, wird er vertikal gestaucht. Ist a negativ, wird der Graph zusätzlich an der x-Achse gespiegelt."
+      },
+      {
+        titel: "Parameter d",
+        text:
+          "Der Parameter d verschiebt den Graphen nach oben oder unten. Bei d > 0 wird der Graph nach oben verschoben. Bei d < 0 wird er nach unten verschoben."
+      },
+      {
+        titel: "Parameter b",
+        text:
+          "Der Parameter b verändert den Graphen in x-Richtung. Ist |b| grösser als 1, wird der Graph horizontal gestaucht. Ist |b| zwischen 0 und 1, wird er horizontal gestreckt. Ist b negativ, wird der Graph an der y-Achse gespiegelt."
+      },
+      {
+        titel: "Parameter c",
+        text:
+          "Der Parameter c verschiebt den Graphen horizontal. Bei f(x + c) verschiebt sich der Graph nach links, wenn c positiv ist, und nach rechts, wenn c negativ ist. Das wirkt auf viele Schüler zuerst umgekehrt."
+      },
+      {
+        titel: "Warum ist die x-Richtung ungewohnt?",
+        text:
+          "Veränderungen innerhalb der Klammer wirken auf die x-Werte. Deshalb erscheinen sie oft umgekehrt: f(x - 3) verschiebt den Graphen nach rechts, obwohl ein Minuszeichen steht."
+      },
+      {
+        titel: "Quadratische Funktionen mit Parametern",
+        text:
+          "Bei Funktionen wie f(x) = a(x - u)² + v erkennt man den Scheitelpunkt direkt. Der Scheitelpunkt ist S(u | v). Der Parameter a entscheidet über Öffnung, Streckung und Spiegelung."
+      },
+      {
+        titel: "Trigonometrische Funktionen mit Parametern",
+        text:
+          "Bei Funktionen wie f(x) = a · sin(bx + c) + d verändert a die Amplitude, b die Periode, c die horizontale Verschiebung und d die Mittellinie."
+      },
+      {
+        titel: "Exponentialfunktionen mit Parametern",
+        text:
+          "Bei Exponentialfunktionen verändern Parameter die Anfangshöhe, das Wachstum, die Verschiebung und die waagrechte Asymptote. Besonders d beeinflusst die waagrechte Asymptote."
+      },
+      {
+        titel: "Logarithmusfunktionen mit Parametern",
+        text:
+          "Bei Logarithmusfunktionen beeinflussen Parameter die Lage des Graphen, den Definitionsbereich und die senkrechte Asymptote. Verschiebungen in x-Richtung sind hier besonders wichtig."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Parameter in g(x) = a · f(bx + c) + d deuten",
+        schritte: [
+          "1. Betrachte zuerst den Parameter a vor der Funktion.",
+          "2. Entscheide, ob eine Streckung, Stauchung oder Spiegelung an der x-Achse vorliegt.",
+          "3. Betrachte danach den Parameter d ausserhalb der Funktion.",
+          "4. Bestimme die Verschiebung nach oben oder unten.",
+          "5. Betrachte nun den Ausdruck innerhalb der Klammer.",
+          "6. Entscheide, wie b den Graphen horizontal verändert.",
+          "7. Bestimme zuletzt die horizontale Verschiebung durch c.",
+          "8. Beschreibe die Veränderungen in einer sinnvollen Reihenfolge."
+        ]
+      },
+      {
+        titel: "Methode: Verschiebung bei f(x - u) erkennen",
+        schritte: [
+          "1. Schaue genau auf den Ausdruck in der Klammer.",
+          "2. Steht dort x - u, wird der Graph um u nach rechts verschoben.",
+          "3. Steht dort x + u, wird der Graph um u nach links verschoben.",
+          "4. Merke: Die horizontale Verschiebung wirkt scheinbar umgekehrt.",
+          "5. Kontrolliere die Verschiebung, indem du überlegst, wann die Klammer 0 wird."
+        ]
+      },
+      {
+        titel: "Methode: Scheitelpunktform untersuchen",
+        schritte: [
+          "1. Bringe die Funktion in die Form f(x) = a(x - u)² + v.",
+          "2. Lies den Scheitelpunkt S(u | v) ab.",
+          "3. Prüfe das Vorzeichen von a.",
+          "4. Bei a > 0 öffnet die Parabel nach oben.",
+          "5. Bei a < 0 öffnet die Parabel nach unten.",
+          "6. Prüfe die Grösse von |a| für Streckung oder Stauchung."
+        ]
+      },
+      {
+        titel: "Methode: Sinusfunktion mit Parametern untersuchen",
+        schritte: [
+          "1. Bringe die Funktion in die Form f(x) = a · sin(bx + c) + d.",
+          "2. Die Amplitude ist |a|.",
+          "3. Die Mittellinie ist y = d.",
+          "4. Die Periode ist 2π / |b|.",
+          "5. Die horizontale Verschiebung erhält man, indem man bx + c = 0 löst.",
+          "6. Beschreibe danach den Graphen mit Amplitude, Periode, Verschiebung und Mittellinie."
+        ]
+      },
+      {
+        titel: "Methode: Exponentialfunktion mit Verschiebung deuten",
+        schritte: [
+          "1. Erkenne zuerst die Grundform der Exponentialfunktion.",
+          "2. Prüfe den Faktor vor der Exponentialfunktion.",
+          "3. Prüfe, ob der Graph nach oben oder unten verschoben wurde.",
+          "4. Bestimme daraus die waagrechte Asymptote.",
+          "5. Prüfe, ob eine Spiegelung vorliegt.",
+          "6. Beschreibe das Wachstums- oder Zerfallsverhalten."
+        ]
+      },
+      {
+        titel: "Methode: Logarithmusfunktion mit Verschiebung deuten",
+        schritte: [
+          "1. Schaue zuerst auf das Argument des Logarithmus.",
+          "2. Setze das Argument grösser als 0, um den Definitionsbereich zu bestimmen.",
+          "3. Bestimme daraus auch die senkrechte Asymptote.",
+          "4. Prüfe Verschiebungen nach oben oder unten.",
+          "5. Prüfe Streckung, Stauchung oder Spiegelung.",
+          "6. Beschreibe den Graphen mit Definitionsbereich und Asymptote."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Parameter verändern Form oder Lage eines Graphen.",
+      "a wirkt vertikal: Streckung, Stauchung oder Spiegelung an der x-Achse.",
+      "d verschiebt den Graphen nach oben oder unten.",
+      "b wirkt horizontal: Stauchung, Streckung oder Spiegelung an der y-Achse.",
+      "c bewirkt eine horizontale Verschiebung.",
+      "f(x - u) verschiebt den Graphen nach rechts.",
+      "f(x + u) verschiebt den Graphen nach links.",
+      "Bei f(x) = a(x - u)² + v ist der Scheitelpunkt S(u | v).",
+      "Bei Sinusfunktionen ist die Amplitude |a|.",
+      "Bei Sinusfunktionen ist die Periode 2π / |b|.",
+      "Bei Exponentialfunktionen zeigt d oft die waagrechte Asymptote.",
+      "Bei Logarithmusfunktionen bestimmt das Argument den Definitionsbereich."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man denkt, f(x - 3) verschiebe den Graphen nach links.",
+        korrektur:
+          "Richtig ist: f(x - 3) verschiebt den Graphen nach rechts. Man kann prüfen, wann die Klammer 0 wird: x - 3 = 0 ergibt x = 3."
+      },
+      {
+        fehler: "Man verwechselt vertikale und horizontale Streckung.",
+        korrektur:
+          "Ein Faktor ausserhalb der Funktion wirkt vertikal. Ein Faktor innerhalb der Klammer wirkt horizontal."
+      },
+      {
+        fehler: "Man vergisst bei negativem a die Spiegelung.",
+        korrektur:
+          "Ist a negativ, wird der Graph an der x-Achse gespiegelt. Danach kann zusätzlich eine Streckung oder Stauchung vorliegen."
+      },
+      {
+        fehler: "Man liest den Scheitelpunkt aus f(x) = a(x + 2)² - 5 falsch ab.",
+        korrektur:
+          "Der Scheitelpunkt ist S(-2 | -5), nicht S(2 | -5). In der Klammer wirkt die Verschiebung umgekehrt."
+      },
+      {
+        fehler: "Man sagt bei sin(2x), die Periode werde doppelt so gross.",
+        korrektur:
+          "Richtig ist: Die Periode wird halb so gross. Bei sin(bx) gilt die Periode 2π / |b|."
+      },
+      {
+        fehler: "Man ignoriert bei Logarithmusfunktionen den Definitionsbereich.",
+        korrektur:
+          "Beim Logarithmus muss das Argument positiv sein. Diese Bedingung bestimmt oft den Definitionsbereich und die senkrechte Asymptote."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Vertikale Verschiebung",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Beschreibe, wie der Graph von g(x) = x² + 4 aus dem Graphen von f(x) = x² entsteht.",
+        loesung: [
+          "Die Grundfunktion ist f(x) = x².",
+          "Bei g(x) = x² + 4 steht ausserhalb der Funktion plus 4.",
+          "Das bedeutet eine Verschiebung in y-Richtung.",
+          "Der Graph wird um 4 Einheiten nach oben verschoben."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Horizontale Verschiebung",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Beschreibe, wie der Graph von g(x) = (x - 5)² aus dem Graphen von f(x) = x² entsteht.",
+        loesung: [
+          "Die Grundfunktion ist f(x) = x².",
+          "In der Klammer steht x - 5.",
+          "Eine Form f(x - u) verschiebt den Graphen um u nach rechts.",
+          "Also wird der Graph um 5 Einheiten nach rechts verschoben."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Spiegelung und Streckung",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Beschreibe die Veränderung von g(x) = -3x² gegenüber f(x) = x².",
+        loesung: [
+          "Der Faktor vor x² ist -3.",
+          "Der Betrag 3 bedeutet eine vertikale Streckung um den Faktor 3.",
+          "Das Minuszeichen bedeutet eine Spiegelung an der x-Achse.",
+          "Der Graph wird also gestreckt und nach unten geöffnet."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Scheitelpunkt ablesen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme den Scheitelpunkt von f(x) = 2(x - 3)² - 7 und beschreibe die Öffnung.",
+        loesung: [
+          "Die Funktion steht in Scheitelpunktform.",
+          "Die Form lautet f(x) = a(x - u)² + v.",
+          "Hier ist u = 3 und v = -7.",
+          "Der Scheitelpunkt ist also S(3 | -7).",
+          "Da a = 2 positiv ist, öffnet die Parabel nach oben.",
+          "Da |a| > 1 ist, ist sie schmaler als die Normalparabel."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Allgemeine Transformation beschreiben",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Beschreibe die Transformation von g(x) = 2 · f(x + 4) - 1 gegenüber f(x).",
+        loesung: [
+          "Der Faktor 2 steht ausserhalb der Funktion.",
+          "Das bedeutet eine vertikale Streckung um den Faktor 2.",
+          "In der Klammer steht x + 4.",
+          "Das bedeutet eine Verschiebung um 4 Einheiten nach links.",
+          "Das -1 ausserhalb der Funktion verschiebt den Graphen um 1 Einheit nach unten.",
+          "Insgesamt: links 4, vertikal gestreckt mit Faktor 2, danach 1 nach unten."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Sinusfunktion untersuchen",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Gegeben ist f(x) = 3 · sin(2x) - 1. Bestimme Amplitude, Periode und Mittellinie.",
+        loesung: [
+          "Die Funktion hat die Form f(x) = a · sin(bx) + d.",
+          "Hier ist a = 3.",
+          "Die Amplitude ist |a| = 3.",
+          "Hier ist b = 2.",
+          "Die Periode ist 2π / |b|.",
+          "Also ist die Periode 2π / 2 = π.",
+          "Hier ist d = -1.",
+          "Die Mittellinie ist y = -1."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Exponentialfunktion deuten",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Beschreibe den Graphen von g(x) = 2 · eˣ + 5 im Vergleich zu f(x) = eˣ.",
+        loesung: [
+          "Die Grundfunktion ist f(x) = eˣ.",
+          "Der Faktor 2 steht vor eˣ.",
+          "Das bedeutet eine vertikale Streckung um den Faktor 2.",
+          "Das +5 verschiebt den Graphen um 5 Einheiten nach oben.",
+          "Die waagrechte Asymptote ist dadurch y = 5."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Logarithmusfunktion mit Definitionsbereich",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme den Definitionsbereich von f(x) = log(x - 4) und beschreibe die Verschiebung gegenüber log(x).",
+        loesung: [
+          "Beim Logarithmus muss das Argument positiv sein.",
+          "Also gilt x - 4 > 0.",
+          "Daraus folgt x > 4.",
+          "Der Definitionsbereich ist also x > 4.",
+          "Gegenüber log(x) ist der Graph um 4 Einheiten nach rechts verschoben.",
+          "Die senkrechte Asymptote ist x = 4."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Parameter bestimmen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Eine Parabel hat den Scheitelpunkt S(2 | -3) und ist nach unten geöffnet. Gib eine mögliche Funktionsgleichung in Scheitelpunktform an.",
+        loesung: [
+          "Die Scheitelpunktform lautet f(x) = a(x - u)² + v.",
+          "Der Scheitelpunkt S(2 | -3) bedeutet u = 2 und v = -3.",
+          "Also hat die Funktion die Form f(x) = a(x - 2)² - 3.",
+          "Da die Parabel nach unten geöffnet ist, muss a negativ sein.",
+          "Eine mögliche Wahl ist a = -1.",
+          "Eine mögliche Funktionsgleichung ist also f(x) = -(x - 2)² - 3."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Verschiebung durch Klammer bestimmen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Beschreibe die Transformation von g(x) = -0.5 · f(3(x - 2)) + 4 gegenüber f(x).",
+        loesung: [
+          "Der Faktor -0.5 steht ausserhalb der Funktion.",
+          "Der Betrag 0.5 bedeutet eine vertikale Stauchung.",
+          "Das Minuszeichen bedeutet eine Spiegelung an der x-Achse.",
+          "Innerhalb der Funktion steht 3(x - 2).",
+          "Der Faktor 3 bewirkt eine horizontale Stauchung.",
+          "Der Ausdruck x - 2 bewirkt eine Verschiebung um 2 Einheiten nach rechts.",
+          "Das +4 ausserhalb verschiebt den Graphen um 4 Einheiten nach oben.",
+          "Insgesamt: horizontal gestaucht, 2 nach rechts, vertikal gestaucht, an der x-Achse gespiegelt und 4 nach oben verschoben."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist ein Parameter?",
+        antwort:
+          "Ein Parameter ist eine feste Zahl oder ein Buchstabe, der die Form oder Lage eines Funktionsgraphen verändert."
+      },
+      {
+        frage: "Was bewirkt der Parameter a in a · f(x)?",
+        antwort:
+          "Er verändert den Graphen in y-Richtung. Bei negativem a wird zusätzlich an der x-Achse gespiegelt."
+      },
+      {
+        frage: "Was bewirkt der Parameter d in f(x) + d?",
+        antwort:
+          "Er verschiebt den Graphen nach oben oder unten. Bei positivem d nach oben, bei negativem d nach unten."
+      },
+      {
+        frage: "Warum verschiebt f(x - 3) den Graphen nach rechts?",
+        antwort:
+          "Weil der ursprüngliche x-Wert erst bei x = 3 erreicht wird. Man kann es sehen, indem man x - 3 = 0 setzt."
+      },
+      {
+        frage: "Wie liest man den Scheitelpunkt aus f(x) = a(x - u)² + v ab?",
+        antwort:
+          "Der Scheitelpunkt ist S(u | v). Das Vorzeichen in der Klammer muss dabei richtig interpretiert werden."
+      },
+      {
+        frage: "Was bedeutet bei einer Sinusfunktion die Amplitude?",
+        antwort:
+          "Die Amplitude ist der maximale Abstand des Graphen von seiner Mittellinie. Bei a · sin(x) ist sie |a|."
+      },
+      {
+        frage: "Wie berechnet man die Periode von sin(bx)?",
+        antwort:
+          "Die Periode ist 2π / |b|. Ein grösseres b macht die Periode kleiner."
+      },
+      {
+        frage: "Was muss man bei Logarithmusfunktionen immer prüfen?",
+        antwort:
+          "Man muss prüfen, für welche x-Werte das Argument positiv ist. Daraus folgen Definitionsbereich und oft auch die senkrechte Asymptote."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du erklären, was ein Parameter ist?",
+      "Weisst du, dass a den Graphen vertikal streckt, staucht oder spiegelt?",
+      "Weisst du, dass d den Graphen nach oben oder unten verschiebt?",
+      "Kannst du erklären, warum f(x - 3) nach rechts verschoben wird?",
+      "Kannst du den Scheitelpunkt aus a(x - u)² + v ablesen?",
+      "Kannst du bei negativem a die Spiegelung erkennen?",
+      "Kannst du bei Sinusfunktionen die Amplitude bestimmen?",
+      "Kannst du bei Sinusfunktionen die Periode mit 2π / |b| berechnen?",
+      "Kannst du bei Exponentialfunktionen die waagrechte Asymptote erkennen?",
+      "Kannst du bei Logarithmusfunktionen den Definitionsbereich bestimmen?"
+    ]
   }
    
 ];
