@@ -2426,6 +2426,404 @@ const MATHEMATIK_THEMEN = [
       "Kennst du die Ableitung von cos(x) inklusive Minuszeichen?",
       "Denkst du bei sin(3x) oder ln(2x - 5) an die Kettenregel?"
     ]
+  },
+     {
+    id: "integralrechnung",
+    nummer: "7",
+    titel: "Integralrechnung",
+    kurzbeschreibung:
+      "Stammfunktionen, unbestimmte und bestimmte Integrale, Flächenberechnung, Hauptsatz der Differential- und Integralrechnung sowie einfache Integrationsregeln.",
+    lernziele: [
+      "Du kannst erklären, was eine Stammfunktion ist.",
+      "Du verstehst das unbestimmte Integral als Menge aller Stammfunktionen.",
+      "Du kannst einfache Potenzfunktionen integrieren.",
+      "Du kannst Summenregel und Faktorregel beim Integrieren anwenden.",
+      "Du kannst bestimmte Integrale mit Stammfunktionen berechnen.",
+      "Du verstehst den Hauptsatz der Differential- und Integralrechnung.",
+      "Du kannst Flächen zwischen Graph und x-Achse berechnen.",
+      "Du erkennst, wann man Beträge oder Teilintervalle bei Flächen braucht.",
+      "Du kannst einfache e-Funktionen, trigonometrische Funktionen und rationale Potenzen integrieren.",
+      "Du erkennst typische Fehler bei Integrationskonstante, Grenzen und Vorzeichen."
+    ],
+    theorie: [
+      {
+        titel: "Was ist Integralrechnung?",
+        text:
+          "Die Integralrechnung ist gewissermassen die Umkehrung der Differentialrechnung. Während man beim Ableiten von einer Funktion zur Steigungsfunktion kommt, sucht man beim Integrieren eine Funktion, deren Ableitung wieder die gegebene Funktion ist."
+      },
+      {
+        titel: "Stammfunktion",
+        text:
+          "Eine Funktion F ist eine Stammfunktion von f, wenn F'(x) = f(x) gilt. Man sucht also eine Funktion, die beim Ableiten die gegebene Funktion ergibt."
+      },
+      {
+        titel: "Unbestimmtes Integral",
+        text:
+          "Das unbestimmte Integral beschreibt alle Stammfunktionen einer Funktion. Deshalb schreibt man am Ende immer eine Integrationskonstante C dazu."
+      },
+      {
+        titel: "Warum braucht man + C?",
+        text:
+          "Konstanten fallen beim Ableiten weg. Deshalb haben zum Beispiel x², x² + 5 und x² - 12 alle dieselbe Ableitung 2x. Beim Integrieren muss man diese mögliche Konstante mit + C berücksichtigen."
+      },
+      {
+        titel: "Bestimmtes Integral",
+        text:
+          "Ein bestimmtes Integral hat feste Grenzen. Es liefert einen orientierten Flächeninhalt zwischen Graph und x-Achse. Flächen oberhalb der x-Achse zählen positiv, Flächen unterhalb der x-Achse negativ."
+      },
+      {
+        titel: "Hauptsatz der Integralrechnung",
+        text:
+          "Wenn F eine Stammfunktion von f ist, dann gilt für das bestimmte Integral von a bis b: Man berechnet F(b) - F(a)."
+      },
+      {
+        titel: "Orientierter Flächeninhalt",
+        text:
+          "Ein bestimmtes Integral kann negativ sein, wenn der Graph im betrachteten Intervall unterhalb der x-Achse liegt. Es ist also nicht automatisch der geometrische Flächeninhalt."
+      },
+      {
+        titel: "Geometrischer Flächeninhalt",
+        text:
+          "Wenn der echte Flächeninhalt gesucht ist, muss man Flächen unterhalb der x-Achse positiv zählen. Dafür teilt man das Intervall an Nullstellen auf oder nimmt Beträge der Teilintegrale."
+      },
+      {
+        titel: "Potenzregel beim Integrieren",
+        text:
+          "Die Stammfunktion von xⁿ ist xⁿ⁺¹ geteilt durch n + 1, solange n nicht -1 ist. Der Exponent wird also um 1 erhöht und durch den neuen Exponenten geteilt."
+      },
+      {
+        titel: "Sonderfall 1/x",
+        text:
+          "Die Funktion 1/x hat nicht die Stammfunktion x⁰. Der Sonderfall lautet: Eine Stammfunktion von 1/x ist ln(|x|)."
+      },
+      {
+        titel: "Faktorregel und Summenregel",
+        text:
+          "Konstante Faktoren bleiben beim Integrieren erhalten. Summen werden gliedweise integriert."
+      },
+      {
+        titel: "Integral und Fläche",
+        text:
+          "Integrale werden oft verwendet, um Flächen zu berechnen. Dazu braucht man die Schnittpunkte mit der x-Achse oder die gegebenen Grenzen."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Einfache Stammfunktion bestimmen",
+        schritte: [
+          "1. Zerlege die Funktion in einzelne Summanden.",
+          "2. Behandle konstante Faktoren separat.",
+          "3. Erhöhe bei Potenzen den Exponenten um 1.",
+          "4. Teile durch den neuen Exponenten.",
+          "5. Integriere jeden Summanden einzeln.",
+          "6. Schreibe beim unbestimmten Integral am Ende + C dazu.",
+          "7. Kontrolliere durch Ableiten deiner Stammfunktion."
+        ]
+      },
+      {
+        titel: "Methode: Bestimmtes Integral berechnen",
+        schritte: [
+          "1. Bestimme zuerst eine Stammfunktion F(x) von f(x).",
+          "2. Setze die obere Grenze in F ein.",
+          "3. Setze die untere Grenze in F ein.",
+          "4. Berechne F(obere Grenze) - F(untere Grenze).",
+          "5. Vereinfache das Ergebnis.",
+          "6. Interpretiere das Ergebnis als orientierten Flächeninhalt."
+        ]
+      },
+      {
+        titel: "Methode: Fläche zwischen Graph und x-Achse berechnen",
+        schritte: [
+          "1. Kläre, ob der echte geometrische Flächeninhalt gesucht ist.",
+          "2. Bestimme die Nullstellen der Funktion im Intervall.",
+          "3. Teile das Intervall an diesen Nullstellen auf.",
+          "4. Berechne die bestimmten Integrale auf den Teilintervallen.",
+          "5. Nimm bei negativen Teilintegralen den Betrag.",
+          "6. Addiere die positiven Flächenstücke."
+        ]
+      },
+      {
+        titel: "Methode: Stammfunktion kontrollieren",
+        schritte: [
+          "1. Leite deine gefundene Stammfunktion ab.",
+          "2. Vergleiche das Ergebnis mit der ursprünglichen Funktion.",
+          "3. Stimmen beide überein, ist die Stammfunktion korrekt.",
+          "4. Falls nicht, prüfe Exponenten, Faktoren und Vorzeichen.",
+          "5. Vergiss nicht, dass + C beim Ableiten verschwindet."
+        ]
+      },
+      {
+        titel: "Methode: e-Funktion integrieren",
+        schritte: [
+          "1. Prüfe, ob es sich um eˣ oder e hoch kx handelt.",
+          "2. Eine Stammfunktion von eˣ ist eˣ.",
+          "3. Bei e hoch kx muss durch k geteilt werden.",
+          "4. Kontrolliere durch Ableiten mit der Kettenregel.",
+          "5. Füge beim unbestimmten Integral + C hinzu."
+        ]
+      },
+      {
+        titel: "Methode: Sinus und Cosinus integrieren",
+        schritte: [
+          "1. Merke: Eine Stammfunktion von cos(x) ist sin(x).",
+          "2. Merke: Eine Stammfunktion von sin(x) ist -cos(x).",
+          "3. Kontrolliere immer durch Ableiten.",
+          "4. Bei inneren Faktoren wie sin(3x) muss zusätzlich durch den inneren Faktor geteilt werden.",
+          "5. Achte besonders auf das Minuszeichen bei sin(x)."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Integrieren ist das Suchen einer Stammfunktion.",
+      "F ist eine Stammfunktion von f, wenn F'(x) = f(x) gilt.",
+      "Beim unbestimmten Integral gehört + C dazu.",
+      "Beim bestimmten Integral rechnet man F(b) - F(a).",
+      "Das bestimmte Integral ist ein orientierter Flächeninhalt.",
+      "Flächen unterhalb der x-Achse zählen im Integral negativ.",
+      "Für echte Flächeninhalte muss man negative Teilflächen positiv zählen.",
+      "Die Stammfunktion von xⁿ ist xⁿ⁺¹ / (n + 1), falls n ≠ -1.",
+      "Die Stammfunktion von 1/x ist ln(|x|).",
+      "Eine Stammfunktion von eˣ ist eˣ.",
+      "Eine Stammfunktion von cos(x) ist sin(x).",
+      "Eine Stammfunktion von sin(x) ist -cos(x)."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man vergisst beim unbestimmten Integral die Konstante + C.",
+        korrektur:
+          "Beim unbestimmten Integral muss immer + C stehen, weil Konstanten beim Ableiten wegfallen."
+      },
+      {
+        fehler: "Man berechnet beim bestimmten Integral F(a) - F(b).",
+        korrektur:
+          "Richtig ist obere Grenze minus untere Grenze, also F(b) - F(a)."
+      },
+      {
+        fehler: "Man denkt, jedes bestimmte Integral sei automatisch ein positiver Flächeninhalt.",
+        korrektur:
+          "Ein bestimmtes Integral ist orientiert. Unterhalb der x-Achse wird die Fläche negativ gezählt."
+      },
+      {
+        fehler: "Man verwendet die Potenzregel auch für 1/x falsch.",
+        korrektur:
+          "Für x hoch -1 gilt die normale Potenzregel beim Integrieren nicht. Die Stammfunktion von 1/x ist ln(|x|)."
+      },
+      {
+        fehler: "Man erhöht den Exponenten, vergisst aber durch den neuen Exponenten zu teilen.",
+        korrektur:
+          "Aus x³ wird beim Integrieren x⁴/4, nicht nur x⁴."
+      },
+      {
+        fehler: "Man vergisst bei e hoch 3x den Faktor 1/3.",
+        korrektur:
+          "Eine Stammfunktion von e hoch 3x ist 1/3 · e hoch 3x. Kontrolle durch Ableiten zeigt den Faktor 3."
+      },
+      {
+        fehler: "Man integriert sin(x) zu cos(x).",
+        korrektur:
+          "Richtig ist: Eine Stammfunktion von sin(x) ist -cos(x), weil die Ableitung von -cos(x) gleich sin(x) ist."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Einfache Stammfunktion",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Bestimme eine Stammfunktion von f(x) = x³.",
+        loesung: [
+          "Verwende die Potenzregel für Integrale.",
+          "Der Exponent 3 wird um 1 erhöht.",
+          "Der neue Exponent ist 4.",
+          "Danach teilt man durch 4.",
+          "Eine Stammfunktion ist F(x) = x⁴ / 4.",
+          "Beim unbestimmten Integral schreibt man allgemein F(x) = x⁴ / 4 + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Summenregel anwenden",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Bestimme das unbestimmte Integral von f(x) = 4x³ - 6x + 2.",
+        loesung: [
+          "Integriere jeden Summanden einzeln.",
+          "Eine Stammfunktion von 4x³ ist x⁴.",
+          "Eine Stammfunktion von -6x ist -3x².",
+          "Eine Stammfunktion von 2 ist 2x.",
+          "Also ist F(x) = x⁴ - 3x² + 2x + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Bestimmtes Integral",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Berechne das Integral von f(x) = 2x im Intervall von 0 bis 3.",
+        loesung: [
+          "Eine Stammfunktion von f(x) = 2x ist F(x) = x².",
+          "Nun berechnet man F(3) - F(0).",
+          "F(3) = 3² = 9.",
+          "F(0) = 0² = 0.",
+          "Also ist das Integral 9 - 0 = 9."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Stammfunktion kontrollieren",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Prüfe, ob F(x) = 2x³ - x² + 5 eine Stammfunktion von f(x) = 6x² - 2x ist.",
+        loesung: [
+          "Um eine Stammfunktion zu prüfen, leitet man F(x) ab.",
+          "Die Ableitung von 2x³ ist 6x².",
+          "Die Ableitung von -x² ist -2x.",
+          "Die Ableitung von 5 ist 0.",
+          "Also ist F'(x) = 6x² - 2x.",
+          "Das stimmt mit f(x) überein.",
+          "Also ist F(x) eine Stammfunktion von f(x)."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Fläche unter einer Parabel",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne den orientierten Flächeninhalt von f(x) = x² im Intervall von 0 bis 2.",
+        loesung: [
+          "Eine Stammfunktion von x² ist F(x) = x³ / 3.",
+          "Berechne F(2) - F(0).",
+          "F(2) = 2³ / 3 = 8/3.",
+          "F(0) = 0.",
+          "Das Integral ist 8/3.",
+          "Da der Graph in diesem Intervall oberhalb der x-Achse liegt, ist auch der geometrische Flächeninhalt 8/3."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Integral mit negativer Fläche",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne das bestimmte Integral von f(x) = x im Intervall von -2 bis 0 und erkläre das Vorzeichen.",
+        loesung: [
+          "Eine Stammfunktion von f(x) = x ist F(x) = x² / 2.",
+          "Berechne F(0) - F(-2).",
+          "F(0) = 0.",
+          "F(-2) = (-2)² / 2 = 2.",
+          "Also ist das Integral 0 - 2 = -2.",
+          "Das Ergebnis ist negativ, weil der Graph im Intervall von -2 bis 0 unterhalb der x-Achse liegt."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Echter Flächeninhalt",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne den geometrischen Flächeninhalt zwischen f(x) = x und der x-Achse im Intervall von -2 bis 2.",
+        loesung: [
+          "Die Funktion f(x) = x hat im Intervall eine Nullstelle bei x = 0.",
+          "Man teilt deshalb das Intervall in [-2, 0] und [0, 2].",
+          "Das Integral von -2 bis 0 ist -2.",
+          "Der geometrische Flächeninhalt dieses Teils ist deshalb 2.",
+          "Das Integral von 0 bis 2 ist 2.",
+          "Dieser Teil liegt oberhalb der x-Achse.",
+          "Der gesamte geometrische Flächeninhalt ist 2 + 2 = 4."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: e-Funktion integrieren",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme eine Stammfunktion von f(x) = e hoch 2x.",
+        loesung: [
+          "Eine Stammfunktion von e hoch kx ist 1/k · e hoch kx.",
+          "Hier ist k = 2.",
+          "Also ist eine Stammfunktion F(x) = 1/2 · e hoch 2x.",
+          "Kontrolle: Die Ableitung von 1/2 · e hoch 2x ist 1/2 · 2 · e hoch 2x = e hoch 2x.",
+          "Allgemein schreibt man F(x) = 1/2 · e hoch 2x + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Trigonometrische Funktion integrieren",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme eine Stammfunktion von f(x) = cos(x) - 2sin(x).",
+        loesung: [
+          "Eine Stammfunktion von cos(x) ist sin(x).",
+          "Eine Stammfunktion von sin(x) ist -cos(x).",
+          "Deshalb ist eine Stammfunktion von -2sin(x) gleich 2cos(x).",
+          "Also ist F(x) = sin(x) + 2cos(x) + C.",
+          "Kontrolle: Die Ableitung von sin(x) ist cos(x), die Ableitung von 2cos(x) ist -2sin(x)."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Integral mit Nullstelle im Intervall",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Berechne den geometrischen Flächeninhalt zwischen f(x) = x² - 1 und der x-Achse im Intervall von 0 bis 2.",
+        loesung: [
+          "Zuerst bestimmt man die Nullstellen im Intervall.",
+          "x² - 1 = 0 ergibt x = -1 oder x = 1.",
+          "Im Intervall von 0 bis 2 liegt die Nullstelle x = 1.",
+          "Deshalb teilt man das Intervall in [0, 1] und [1, 2].",
+          "Eine Stammfunktion ist F(x) = x³ / 3 - x.",
+          "Berechne das Integral von 0 bis 1.",
+          "F(1) - F(0) = (1/3 - 1) - 0 = -2/3.",
+          "Dieser Teil liegt unterhalb der x-Achse, daher zählt die Fläche positiv als 2/3.",
+          "Berechne das Integral von 1 bis 2.",
+          "F(2) - F(1) = (8/3 - 2) - (1/3 - 1).",
+          "Das ist 2/3 - (-2/3) = 4/3.",
+          "Der gesamte geometrische Flächeninhalt ist 2/3 + 4/3 = 2."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist eine Stammfunktion?",
+        antwort:
+          "Eine Stammfunktion F von f ist eine Funktion, deren Ableitung wieder f ergibt. Es gilt also F'(x) = f(x)."
+      },
+      {
+        frage: "Warum schreibt man beim unbestimmten Integral + C?",
+        antwort:
+          "Weil Konstanten beim Ableiten verschwinden. Deshalb gibt es unendlich viele Stammfunktionen, die sich nur durch eine Konstante unterscheiden."
+      },
+      {
+        frage: "Was ist der Unterschied zwischen unbestimmtem und bestimmtem Integral?",
+        antwort:
+          "Das unbestimmte Integral liefert eine Stammfunktion mit + C. Das bestimmte Integral hat Grenzen und liefert einen Zahlenwert."
+      },
+      {
+        frage: "Wie berechnet man ein bestimmtes Integral mit einer Stammfunktion?",
+        antwort:
+          "Man bestimmt eine Stammfunktion F und berechnet dann obere Grenze minus untere Grenze, also F(b) - F(a)."
+      },
+      {
+        frage: "Warum kann ein bestimmtes Integral negativ sein?",
+        antwort:
+          "Weil es einen orientierten Flächeninhalt beschreibt. Flächen unterhalb der x-Achse werden negativ gezählt."
+      },
+      {
+        frage: "Wie berechnet man den echten geometrischen Flächeninhalt?",
+        antwort:
+          "Man teilt das Intervall an Nullstellen auf und zählt alle Teilflächen positiv, also bei negativen Integralen mit Betrag."
+      },
+      {
+        frage: "Wie lautet die Potenzregel beim Integrieren?",
+        antwort:
+          "Die Stammfunktion von xⁿ ist xⁿ⁺¹ geteilt durch n + 1, solange n nicht -1 ist."
+      },
+      {
+        frage: "Was ist der Sonderfall bei 1/x?",
+        antwort:
+          "Die Stammfunktion von 1/x ist ln(|x|). Hier funktioniert die normale Potenzregel nicht."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du erklären, was eine Stammfunktion ist?",
+      "Schreibst du beim unbestimmten Integral immer + C?",
+      "Kannst du eine Stammfunktion durch Ableiten kontrollieren?",
+      "Kannst du die Potenzregel beim Integrieren anwenden?",
+      "Weisst du, dass bei x hoch n durch n + 1 geteilt wird?",
+      "Kennst du den Sonderfall 1/x mit ln(|x|)?",
+      "Kannst du bestimmte Integrale mit F(b) - F(a) berechnen?",
+      "Weisst du, dass bestimmte Integrale orientierte Flächeninhalte sind?",
+      "Kannst du bei geometrischen Flächen an Nullstellen aufteilen?",
+      "Kennst du Stammfunktionen von eˣ, sin(x) und cos(x)?"
+    ]
   }
    
 ];
