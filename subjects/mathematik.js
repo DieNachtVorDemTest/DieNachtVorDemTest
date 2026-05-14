@@ -1,32 +1,285 @@
-function render_mathematik(container) {
+function ensureMathematikDesign() {
+  if (document.getElementById("mathematik-design")) return;
+
+  const style = document.createElement("style");
+  style.id = "mathematik-design";
+  function ensureMathematikDesign() {
+  if (document.getElementById("mathematik-design")) return;
+
+  const style = document.createElement("style");
+  style.id = "mathematik-design";
+
+  style.textContent = `
+    .math-shell {
+      background: #f3f4f6;
+      color: #111827;
+      border-radius: 22px;
+      padding: 24px;
+      margin-top: 8px;
+    }
+
+    .math-hero {
+      background: #172033;
+      color: white;
+      border-radius: 18px;
+      padding: 38px;
+      margin-bottom: 24px;
+    }
+
+    .math-hero h1 {
+      margin: 0 0 12px;
+      font-size: 44px;
+      letter-spacing: 0.02em;
+      color: white;
+    }
+
+    .math-hero p {
+      color: #d1d5db;
+      font-size: 17px;
+      margin: 0;
+      max-width: 900px;
+      line-height: 1.7;
+    }
+
+    .math-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .math-sidebar {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      position: sticky;
+      top: 18px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .math-sidebar h2 {
+      color: #111827;
+      margin: 0 0 16px;
+      font-size: 24px;
+    }
+
+    .math-topic-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f9fafb;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      text-align: left;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .math-topic-btn:hover {
+      background: #eef2ff;
+      border-color: #c7d2fe;
+    }
+
+    .math-topic-btn.active {
+      background: #172033;
+      color: white;
+      border-color: #172033;
+    }
+
+    .math-topic-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #111827;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .math-topic-btn.active .math-topic-number {
+      background: white;
+      color: #172033;
+    }
+
+    .math-main {
+      min-width: 0;
+    }
+
+    .math-title-card {
+      background: white;
+      color: #111827;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 18px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .math-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .math-title-card h2 {
+      margin: 0 0 10px;
+      color: #111827;
+      font-size: 34px;
+    }
+
+    .math-title-card p {
+      color: #374151;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .math-content-card {
+      background: white;
+      color: #111827;
+      border-radius: 18px;
+      padding: 26px;
+      margin-bottom: 18px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .math-content-card h3 {
+      color: #111827;
+      font-size: 25px;
+      margin: 0 0 14px;
+    }
+
+    .math-content-card p,
+    .math-content-card li {
+      color: #1f2937;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .math-content-card ul,
+    .math-content-card ol {
+      padding-left: 24px;
+    }
+
+    .math-formula {
+      background: #eef2ff;
+      color: #1e1b4b;
+      border: 1px solid #c7d2fe;
+      border-radius: 12px;
+      padding: 14px;
+      margin: 14px 0;
+      font-family: "Courier New", monospace;
+      overflow-x: auto;
+      line-height: 1.7;
+    }
+
+    .math-notice {
+      background: #fff7ed;
+      color: #7c2d12;
+      border: 1px solid #fed7aa;
+      border-radius: 12px;
+      padding: 14px;
+      margin: 16px 0;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .math-small {
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 900px) {
+      .math-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .math-sidebar {
+        position: static;
+      }
+
+      .math-hero {
+        padding: 28px;
+      }
+
+      .math-hero h1 {
+        font-size: 34px;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+}
+
+  document.head.appendChild(style);
+}
+
+function render_mathematik_gym1(container) {
+  ensureMathematikDesign();
+
   container.innerHTML = `
-    <div class="exercise-card">
-      <h3>Mathematik</h3>
-      <p>
-        Wähle ein Thema aus. Die Inhalte sind als eigenes Übungs- und Erklärungsmaterial
-        aufgebaut und auf prüfungsrelevante Grundlagen ausgerichtet.
-      </p>
+    <div class="math-shell">
+      <div class="math-hero">
+        <h1>Mathematik</h1>
+        <p>
+          Prüfungsvorbereitung mit selbst erstellten Erklärungen, Methoden,
+          Aufgaben, Lösungen und typischen Prüfungsstrategien.
+        </p>
+      </div>
 
-      <div class="gym-grid">
-        <div class="gym-card" onclick="render_mathematik_thema1()">
-          <h3>Thema 1</h3>
-          <p>Logarithmen und Potenzen mit rationalen Exponenten</p>
-        </div>
+      <div class="math-layout">
+        <aside class="math-sidebar">
+          <h2>Themen</h2>
 
-        <div class="gym-card" onclick="render_mathematik_thema2()">
-          <h3>Thema 2</h3>
-          <p>Kurvendiskussion: Nullstellen, Extremalstellen, Wendepunkte, Sattelpunkte</p>
-        </div>
+          <button class="math-topic-btn" onclick="render_mathematik_thema1()">
+            <span class="math-topic-number">1</span>
+            Logarithmen und Potenzen
+          </button>
 
-        <div class="gym-card" onclick="render_mathematik_thema3()">
-          <h3>Thema 3</h3>
-          <p>Trigonometrie: Sinus, Kosinus, Tangens, Einheitskreis und Gleichungen</p>
-        </div>
+          <button class="math-topic-btn" onclick="render_mathematik_thema2()">
+            <span class="math-topic-number">2</span>
+            Kurvendiskussion
+          </button>
 
-        <div class="gym-card" onclick="render_mathematik_thema4()">
-          <h3>Thema 4</h3>
-          <p>Quadratische Funktionen: Parabeln, Scheitelpunkt, Nullstellen und Gleichungen</p>
-        </div>
+          <button class="math-topic-btn" onclick="render_mathematik_thema3()">
+            <span class="math-topic-number">3</span>
+            Trigonometrie
+          </button>
+
+          <button class="math-topic-btn" onclick="render_mathematik_thema4()">
+            <span class="math-topic-number">4</span>
+            Quadratische Funktionen
+          </button>
+        </aside>
+
+        <main class="math-main">
+          <div class="math-title-card">
+            <div class="math-label">Übersicht</div>
+            <h2>Mathematik</h2>
+            <p>
+              Wähle links ein Thema aus. Die Themen sind auf Gym-Niveau aufgebaut
+              und enthalten Theorie, Beispiele, Prüfungsstrategien und Aufgaben.
+            </p>
+          </div>
+
+          <div class="math-content-card">
+            <h3>Hinweis</h3>
+            <p>
+              Die Inhalte sind eigenes Übungsmaterial. Keine Originalprüfung,
+              kein Scan und kein offizielles Schulmaterial.
+            </p>
+          </div>
+        </main>
       </div>
     </div>
   `;
@@ -34,7 +287,79 @@ function render_mathematik(container) {
 
 function backToMathematikOverview() {
   const container = document.getElementById("material-content");
-  render_mathematik(container);
+  render_mathematik_gym1(container);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+
+  ensureMathematikDesign();
+
+  container.innerHTML = `
+    <div class="math-shell">
+      <div class="math-hero">
+        <h1>Mathematik</h1>
+        <p>
+          Prüfungsvorbereitung mit selbst erstellten Erklärungen, Methoden,
+          Aufgaben, Lösungen und typischen Prüfungsstrategien.
+        </p>
+      </div>
+
+      <div class="math-layout">
+        <aside class="math-sidebar">
+          <h2>Themen</h2>
+
+          <button class="math-topic-btn" onclick="render_mathematik_thema1()">
+            <span class="math-topic-number">1</span>
+            Logarithmen und Potenzen
+          </button>
+
+          <button class="math-topic-btn" onclick="render_mathematik_thema2()">
+            <span class="math-topic-number">2</span>
+            Kurvendiskussion
+          </button>
+
+          <button class="math-topic-btn" onclick="render_mathematik_thema3()">
+            <span class="math-topic-number">3</span>
+            Trigonometrie
+          </button>
+
+          <button class="math-topic-btn" onclick="render_mathematik_thema4()">
+            <span class="math-topic-number">4</span>
+            Quadratische Funktionen
+          </button>
+
+          <button class="math-topic-btn" onclick="render_mathematik_thema5()">
+            <span class="math-topic-number">5</span>
+            Differentialrechnung
+          </button>
+        </aside>
+
+        <main class="math-main">
+          <div class="math-title-card">
+            <div class="math-label">Übersicht</div>
+            <h2>Mathematik</h2>
+            <p>
+              Wähle links ein Thema aus. Die Themen sind auf Gym-Niveau aufgebaut
+              und enthalten Theorie, Beispiele, Prüfungsstrategien und Aufgaben.
+            </p>
+          </div>
+
+          <div class="math-content-card">
+            <h3>Hinweis</h3>
+            <p>
+              Die Inhalte sind eigenes Übungsmaterial. Keine Originalprüfung,
+              kein Scan und kein offizielles Schulmaterial.
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  `;
+}
+
+function backToMathematikOverview() {
+  const container = document.getElementById("material-content");
+  render_mathematik_gym1(container);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
