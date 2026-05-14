@@ -453,7 +453,7 @@ const MATHEMATIK_THEMEN = [
           "12. Zeichne oder beschreibe den Graphen mit allen Informationen."
         ]
       }
-  },
+    ],
    merksaetze: [
   "Nullstellen findet man mit \\(f(x)=0\\).",
   "Der \\(y\\)-Achsenabschnitt ist \\(f(0)\\).",
@@ -568,9 +568,9 @@ nachtVorTest: [
   "Prüfst du beim Wendepunkt den Krümmungswechsel?",
   "Kannst du einen Sattelpunkt erklären?"
 ]
-
-  {
-    id: "funktionen-parameter",
+},
+{
+  id: "funktionen-parameter",
     nummer: "3",
     titel: "Funktionen mit Parametern",
     kurzbeschreibung:
