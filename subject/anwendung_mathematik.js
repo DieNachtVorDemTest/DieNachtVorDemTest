@@ -1526,6 +1526,381 @@ const AM_THEMEN = [
       "Kannst du am Schluss einen vollständigen Schlusssatz schreiben?"
     ]
   }
+  {
+    id: "potenz-und-taylorreihen",
+    nummer: "6",
+    titel: "Potenz- und Taylorreihen",
+    kurzbeschreibung:
+      "Funktionen als unendliche Reihen darstellen, Taylorreihen entwickeln und Potenzreihen durch Ableiten, Integrieren und Umformen gewinnen.",
+    lernziele: [
+      "Du verstehst die Grundidee einer Potenzreihe.",
+      "Du kannst eine Potenzreihe um einen Entwicklungspunkt x = a erkennen.",
+      "Du kannst einfache Funktionen in eine Potenzreihe umformen.",
+      "Du kannst die geometrische Reihe als wichtigste Grundreihe verwenden.",
+      "Du kannst eine Taylorreihe mit Ableitungen aufstellen.",
+      "Du kannst Taylorreihen um x = 0 und um x = a unterscheiden.",
+      "Du kannst Potenzreihen ableiten und integrieren.",
+      "Du kannst den Konvergenzbereich einfacher Potenzreihen bestimmen.",
+      "Du kannst Funktionen der Form b/(c + x) in Potenzreihen entwickeln."
+    ],
+    theorie: [
+      {
+        titel: "Was ist eine Potenzreihe?",
+        text:
+          "Eine Potenzreihe ist eine unendliche Summe von Potenzen. Sie sieht ähnlich aus wie ein Polynom, hat aber unendlich viele Terme. Typisch ist eine Form wie a₀ + a₁(x - p) + a₂(x - p)² + a₃(x - p)³ und so weiter."
+      },
+      {
+        titel: "Entwicklungspunkt",
+        text:
+          "Der Entwicklungspunkt ist der Punkt, um den die Reihe aufgebaut wird. Bei einer Reihe in Potenzen von x ist der Entwicklungspunkt 0. Bei einer Reihe in Potenzen von x - a ist der Entwicklungspunkt a."
+      },
+      {
+        titel: "Warum braucht man Reihen?",
+        text:
+          "Mit Reihen kann man komplizierte Funktionen durch einfachere Potenzausdrücke annähern. Das ist besonders nützlich, wenn man Funktionen ableiten, integrieren oder lokal untersuchen will."
+      },
+      {
+        titel: "Geometrische Reihe",
+        text:
+          "Die wichtigste Grundreihe ist 1/(1 - q) = 1 + q + q² + q³ + ... für |q| < 1. Viele Potenzreihen entstehen, indem man eine Funktion so umformt, dass diese Struktur sichtbar wird."
+      },
+      {
+        titel: "Taylorreihe",
+        text:
+          "Die Taylorreihe stellt eine Funktion mithilfe ihrer Ableitungen an einem Punkt dar. Die Koeffizienten werden aus den Funktionswerten der Ableitungen am Entwicklungspunkt berechnet."
+      },
+      {
+        titel: "Taylorreihe um 0",
+        text:
+          "Eine Taylorreihe um 0 nennt man auch Maclaurinreihe. Sie verwendet Potenzen von x und Ableitungen an der Stelle 0."
+      },
+      {
+        titel: "Taylorreihe um a",
+        text:
+          "Bei einer Taylorreihe um a verwendet man Potenzen von x - a. Der Funktionswert und die Ableitungen werden an der Stelle a berechnet."
+      },
+      {
+        titel: "Ableiten von Potenzreihen",
+        text:
+          "Potenzreihen dürfen innerhalb ihres Konvergenzbereichs gliedweise abgeleitet werden. Dabei wird jeder Term wie ein gewöhnlicher Potenzterm abgeleitet."
+      },
+      {
+        titel: "Integrieren von Potenzreihen",
+        text:
+          "Potenzreihen dürfen innerhalb ihres Konvergenzbereichs gliedweise integriert werden. Dabei erhält jeder Term einen um eins höheren Exponenten und wird durch den neuen Exponenten geteilt."
+      },
+      {
+        titel: "Konvergenzbereich",
+        text:
+          "Eine Potenzreihe gilt nicht automatisch für alle x-Werte. Meistens gibt es einen Bereich um den Entwicklungspunkt, in dem die Reihe konvergiert."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Taylorreihe mit Formel aufstellen",
+        schritte: [
+          "1. Bestimme den Entwicklungspunkt a.",
+          "2. Berechne f(a).",
+          "3. Berechne f'(a).",
+          "4. Berechne f''(a).",
+          "5. Berechne bei Bedarf weitere Ableitungen.",
+          "6. Setze die Werte in die Taylorformel ein.",
+          "7. Schreibe die Reihe in Potenzen von x - a.",
+          "8. Vereinfache die ersten Terme."
+        ]
+      },
+      {
+        titel: "Methode: Potenzreihe aus geometrischer Reihe gewinnen",
+        schritte: [
+          "1. Erinnere dich an die Grundformel 1/(1 - q) = 1 + q + q² + q³ + ...",
+          "2. Forme deine Funktion so um, dass im Nenner 1 - q steht.",
+          "3. Lies q ab.",
+          "4. Setze q in die geometrische Reihe ein.",
+          "5. Vereinfache die ersten Terme.",
+          "6. Bestimme die Bedingung |q| < 1."
+        ]
+      },
+      {
+        titel: "Methode: b/(c + x) um x = 0 entwickeln",
+        schritte: [
+          "1. Klammere im Nenner c aus.",
+          "2. Schreibe c + x als c(1 + x/c).",
+          "3. Ziehe den Faktor 1/c vor den Bruch.",
+          "4. Schreibe 1/(1 + x/c) als 1/(1 - q) mit q = -x/c.",
+          "5. Verwende die geometrische Reihe.",
+          "6. Multipliziere am Ende mit b/c.",
+          "7. Die Reihe gilt für |x/c| < 1."
+        ]
+      },
+      {
+        titel: "Methode: Potenzreihe um x = a entwickeln",
+        schritte: [
+          "1. Setze u = x - a.",
+          "2. Schreibe x als a + u.",
+          "3. Forme die Funktion vollständig in u um.",
+          "4. Bringe den Ausdruck in eine bekannte Reihenform.",
+          "5. Entwickle die Reihe in Potenzen von u.",
+          "6. Ersetze am Schluss u wieder durch x - a."
+        ]
+      },
+      {
+        titel: "Methode: Potenzreihe ableiten",
+        schritte: [
+          "1. Schreibe die Potenzreihe klar als Summe von Potenztermen.",
+          "2. Leite jeden Term einzeln ab.",
+          "3. Reduziere den Exponenten jeweils um 1.",
+          "4. Multipliziere mit dem ursprünglichen Exponenten.",
+          "5. Beachte, dass der konstante Term beim Ableiten verschwindet."
+        ]
+      },
+      {
+        titel: "Methode: Potenzreihe integrieren",
+        schritte: [
+          "1. Schreibe die Reihe Term für Term auf.",
+          "2. Integriere jeden Potenzterm einzeln.",
+          "3. Erhöhe den Exponenten jeweils um 1.",
+          "4. Teile durch den neuen Exponenten.",
+          "5. Ergänze bei einer unbestimmten Stammfunktion eine Integrationskonstante."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Eine Potenzreihe ist wie ein Polynom mit unendlich vielen Termen.",
+      "Der Entwicklungspunkt entscheidet, ob Potenzen von x oder von x - a vorkommen.",
+      "Die geometrische Reihe ist die wichtigste Grundreihe.",
+      "Viele Aufgaben lassen sich lösen, indem man eine Funktion in die Form 1/(1 - q) bringt.",
+      "Bei Taylorreihen kommen die Ableitungen am Entwicklungspunkt in die Koeffizienten.",
+      "Eine Taylorreihe um 0 verwendet Potenzen von x.",
+      "Eine Taylorreihe um a verwendet Potenzen von x - a.",
+      "Potenzreihen dürfen innerhalb ihres Konvergenzbereichs gliedweise abgeleitet und integriert werden.",
+      "Der Konvergenzbereich gehört zur Reihe dazu und sollte nicht vergessen werden."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man entwickelt um den falschen Punkt.",
+        korrektur:
+          "Achte genau darauf, ob um x = 0 oder um x = a entwickelt werden soll. Bei x = a müssen Potenzen von x - a vorkommen."
+      },
+      {
+        fehler: "Man vergisst die Fakultäten in der Taylorreihe.",
+        korrektur:
+          "In der Taylorreihe wird der Term mit der n-ten Ableitung durch n! geteilt."
+      },
+      {
+        fehler: "Man verwendet die geometrische Reihe ohne die Form 1/(1 - q).",
+        korrektur:
+          "Vorher muss die Funktion wirklich in die passende Form gebracht werden. Erst dann darf man q einsetzen."
+      },
+      {
+        fehler: "Man vergisst den Konvergenzbereich.",
+        korrektur:
+          "Die geometrische Reihe gilt nur für |q| < 1. Daraus muss man den gültigen x-Bereich bestimmen."
+      },
+      {
+        fehler: "Man leitet eine Potenzreihe ab und lässt den konstanten Term stehen.",
+        korrektur:
+          "Der konstante Term wird beim Ableiten zu 0."
+      },
+      {
+        fehler: "Man integriert und vergisst die Integrationskonstante.",
+        korrektur:
+          "Bei einer unbestimmten Stammfunktion gehört eine Konstante dazu."
+      },
+      {
+        fehler: "Man verwechselt x und x - a.",
+        korrektur:
+          "Bei einer Entwicklung um a müssen die Terme in Potenzen von x - a geschrieben werden, nicht nur in Potenzen von x."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Geometrische Grundreihe",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Schreibe die ersten fünf Terme der Reihe für 1/(1 - x) auf.",
+        loesung: [
+          "Die geometrische Grundreihe lautet 1/(1 - q) = 1 + q + q² + q³ + ...",
+          "Hier ist q = x.",
+          "Also gilt 1/(1 - x) = 1 + x + x² + x³ + x⁴ + ...",
+          "Die ersten fünf Terme sind 1, x, x², x³ und x⁴.",
+          "Die Reihe gilt für |x| < 1."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Vorzeichen erkennen",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Entwickle 1/(1 + x) als Potenzreihe um 0.",
+        loesung: [
+          "Bringe die Funktion in die Form 1/(1 - q).",
+          "Es gilt 1 + x = 1 - (-x).",
+          "Also ist q = -x.",
+          "Setze q = -x in die geometrische Reihe ein.",
+          "Man erhält 1 - x + x² - x³ + x⁴ - ...",
+          "Die Reihe gilt für |x| < 1."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Funktion der Form b/(c + x)",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Entwickle 3/(2 + x) als Potenzreihe um 0.",
+        loesung: [
+          "Klammere im Nenner 2 aus: 2 + x = 2(1 + x/2).",
+          "Dann gilt 3/(2 + x) = 3/[2(1 + x/2)].",
+          "Das ist 3/2 · 1/(1 + x/2).",
+          "Schreibe 1 + x/2 als 1 - (-x/2).",
+          "Also ist q = -x/2.",
+          "Damit ist 1/(1 + x/2) = 1 - x/2 + x²/4 - x³/8 + ...",
+          "Multipliziere mit 3/2.",
+          "Die Reihe lautet 3/2 - 3x/4 + 3x²/8 - 3x³/16 + ...",
+          "Die Reihe gilt für |x/2| < 1, also |x| < 2."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Taylorreihe erster Terme",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme die Taylorreihe von f(x) = eˣ um 0 bis zum Term mit x³.",
+        loesung: [
+          "Für f(x) = eˣ sind alle Ableitungen wieder eˣ.",
+          "Am Punkt 0 gilt e⁰ = 1.",
+          "Also sind f(0), f'(0), f''(0) und f'''(0) alle gleich 1.",
+          "Die Taylorreihe beginnt mit f(0) + f'(0)x + f''(0)x²/2! + f'''(0)x³/3!.",
+          "Einsetzen ergibt 1 + x + x²/2 + x³/6.",
+          "Bis zum Term mit x³ lautet die Reihe also 1 + x + x²/2 + x³/6."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Taylorreihe um a",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Entwickle f(x) = x² um a = 1 bis zum quadratischen Term.",
+        loesung: [
+          "Bei einer Entwicklung um a = 1 schreibt man Potenzen von x - 1.",
+          "f(x) = x².",
+          "f(1) = 1.",
+          "f'(x) = 2x, also f'(1) = 2.",
+          "f''(x) = 2, also f''(1) = 2.",
+          "Die Taylorformel gibt f(x) = 1 + 2(x - 1) + 2/2 · (x - 1)².",
+          "Also f(x) = 1 + 2(x - 1) + (x - 1)².",
+          "Da x² ein Polynom zweiten Grades ist, ist diese Darstellung exakt."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Ableiten einer Potenzreihe",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite die Reihe 1 + x + x² + x³ + x⁴ + ... gliedweise ab.",
+        loesung: [
+          "Der konstante Term 1 wird beim Ableiten zu 0.",
+          "x wird zu 1.",
+          "x² wird zu 2x.",
+          "x³ wird zu 3x².",
+          "x⁴ wird zu 4x³.",
+          "Die abgeleitete Reihe lautet 1 + 2x + 3x² + 4x³ + ...",
+          "Das gilt innerhalb des ursprünglichen Konvergenzbereichs."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Integrieren einer Potenzreihe",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Integriere die Reihe 1 - x + x² - x³ + ... gliedweise.",
+        loesung: [
+          "Integriere jeden Term einzeln.",
+          "Das Integral von 1 ist x.",
+          "Das Integral von -x ist -x²/2.",
+          "Das Integral von x² ist x³/3.",
+          "Das Integral von -x³ ist -x⁴/4.",
+          "Die Stammfunktion beginnt also mit x - x²/2 + x³/3 - x⁴/4 + ... + C.",
+          "C ist die Integrationskonstante."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Entwicklung um einen anderen Punkt",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Entwickle 1/x um den Punkt a = 2 bis zu den ersten vier Termen.",
+        loesung: [
+          "Setze u = x - 2. Dann ist x = 2 + u.",
+          "Damit gilt 1/x = 1/(2 + u).",
+          "Klammere 2 aus: 1/(2 + u) = 1/[2(1 + u/2)].",
+          "Das ist 1/2 · 1/(1 + u/2).",
+          "Schreibe 1 + u/2 als 1 - (-u/2).",
+          "Verwende die geometrische Reihe mit q = -u/2.",
+          "Man erhält 1/(1 + u/2) = 1 - u/2 + u²/4 - u³/8 + ...",
+          "Multipliziere mit 1/2.",
+          "Das ergibt 1/2 - u/4 + u²/8 - u³/16 + ...",
+          "Ersetze u wieder durch x - 2.",
+          "Die Reihe lautet 1/2 - (x - 2)/4 + (x - 2)²/8 - (x - 2)³/16 + ..."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Konvergenzbereich",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Bestimme den Konvergenzbereich der Reihe aus 3/(2 + x).",
+        loesung: [
+          "Bei der Entwicklung wurde q = -x/2 verwendet.",
+          "Die geometrische Reihe gilt für |q| < 1.",
+          "Also muss |-x/2| < 1 gelten.",
+          "Das ist gleichbedeutend mit |x/2| < 1.",
+          "Multipliziere mit 2: |x| < 2.",
+          "Der Konvergenzbereich ist also -2 < x < 2."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist eine Potenzreihe?",
+        antwort:
+          "Eine Potenzreihe ist eine unendliche Summe von Potenzen, meistens in der Form a₀ + a₁(x - p) + a₂(x - p)² und so weiter."
+      },
+      {
+        frage: "Was ist der Entwicklungspunkt?",
+        antwort:
+          "Der Entwicklungspunkt ist der Punkt, um den die Reihe aufgebaut wird. Bei einer Entwicklung um a erscheinen Potenzen von x - a."
+      },
+      {
+        frage: "Was ist die wichtigste Grundreihe?",
+        antwort:
+          "Die wichtigste Grundreihe ist die geometrische Reihe 1/(1 - q) = 1 + q + q² + q³ + ... für |q| < 1."
+      },
+      {
+        frage: "Was ist eine Taylorreihe?",
+        antwort:
+          "Eine Taylorreihe stellt eine Funktion mithilfe ihrer Ableitungen an einem bestimmten Entwicklungspunkt als Potenzreihe dar."
+      },
+      {
+        frage: "Was ist der Unterschied zwischen Taylorreihe um 0 und um a?",
+        antwort:
+          "Bei einer Taylorreihe um 0 verwendet man Potenzen von x. Bei einer Taylorreihe um a verwendet man Potenzen von x - a."
+      },
+      {
+        frage: "Warum ist der Konvergenzbereich wichtig?",
+        antwort:
+          "Weil eine Potenzreihe meistens nur in einem bestimmten Bereich wirklich gegen die Funktion konvergiert. Ausserhalb dieses Bereichs darf man die Reihe nicht einfach verwenden."
+      },
+      {
+        frage: "Wie entwickelt man b/(c + x)?",
+        antwort:
+          "Man klammert c aus, bringt den Ausdruck in die Form 1/(1 - q) und verwendet dann die geometrische Reihe."
+      }
+    ],
+    nachtVorTest: [
+      "Kennst du die geometrische Reihe 1/(1 - q)?",
+      "Weisst du, dass sie nur für |q| < 1 gilt?",
+      "Kannst du eine Funktion in die Form 1/(1 - q) bringen?",
+      "Kannst du b/(c + x) um 0 entwickeln?",
+      "Kannst du zwischen Entwicklung um 0 und Entwicklung um a unterscheiden?",
+      "Kannst du die ersten Terme einer Taylorreihe mit Ableitungen berechnen?",
+      "Vergisst du die Fakultäten in der Taylorformel nicht?",
+      "Kannst du Potenzreihen gliedweise ableiten?",
+      "Kannst du Potenzreihen gliedweise integrieren?",
+      "Bestimmst du am Schluss den Konvergenzbereich?"
+    ]
+  }
 
 ];
 
