@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Premium Bereich - Lernhilfe Gymnasium</title>
+  <title>Premium - Lernhilfe Gymnasium</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -462,7 +462,7 @@
       <section id="premium-content" class="hidden">
         <div id="subjects-area">
           <p>
-            Wähle ein Fach aus. Mathematik ist nach GYM-Stufen geordnet, Anwendung der Mathematik ist als eigener Themenbereich aufgebaut.
+            Wähle einen Lernbereich aus. Die Inhalte sind nach Fach, Stufe und prüfungsrelevanten Themen strukturiert.
           </p>
 
           <div id="subjects-grid" class="subjects-grid"></div>
@@ -535,37 +535,61 @@
     let currentIsDirectSubject = false;
 
     const subjects = [
-      { name: "Mathematik", key: "mathematik", mode: "gym" },
-      { name: "Anwendung der Mathematik", key: "anwendung-mathematik", mode: "direct" },
-      { name: "Physik", key: "physik", mode: "gym" },
-      { name: "Deutsch", key: "deutsch", mode: "gym" },
-      { name: "Französisch", key: "franzoesisch", mode: "gym" },
-      { name: "Englisch", key: "englisch", mode: "gym" }
+      {
+        name: "Mathematik",
+        key: "mathematik",
+        mode: "gym",
+        description: "Strukturiert nach GYM-Stufen und zentralen Prüfungsthemen"
+      },
+      {
+        name: "Anwendung der Mathematik",
+        key: "anwendung-mathematik",
+        mode: "direct",
+        description: "Vertiefter Themenbereich mit erweiterten mathematischen Methoden"
+      },
+      {
+        name: "Deutsch",
+        key: "deutsch",
+        mode: "gym",
+        description: "Sprachanalyse, Textverständnis und prüfungsorientierte Schreibkompetenz"
+      },
+      {
+        name: "Französisch",
+        key: "franzoesisch",
+        mode: "gym",
+        description: "Grammatik, Wortschatz und Textarbeit für die Gymnasialstufe"
+      },
+      {
+        name: "Englisch",
+        key: "englisch",
+        mode: "gym",
+        description: "Vocabulary, grammar, text analysis and exam-focused writing"
+      }
     ];
 
     const availableContent = {
       "anwendung-mathematik": {
         file: "subjects/anwendung_mathematik.js",
         renderFunction: "render_anwendung_mathematik",
-        description: "Themen: Gruppentheorie, komplexe Zahlen, Partialbruchzerlegung, Möbiustransformationen, vollständige Induktion, Potenz- und Taylorreihen, Differenzialgleichungen, lineare Algebra"
+        description: "Vertiefung: Gruppentheorie, komplexe Zahlen, Möbiustransformationen, Reihen, Differenzialgleichungen und lineare Algebra"
       },
 
       "mathematik-gym1": {
         file: "subjects/mathematik-gym1.js",
         renderFunction: "render_mathematik_gym1",
-        description: "Themen: Trigonometrie, quadratische Funktionen"
+        description: "Grundlagen und Übungsaufgaben zu zentralen mathematischen Themen"
       },
 
       "franzoesisch-gym1": {
         file: "subjects/franzoesisch-gym1.js",
         renderFunction: "render_franzoesisch_gym1",
-        description: "Themen: Wortschatz, Relativpronomen, Zeiten der Vergangenheit"
+        description: "Wortschatz, Grammatik und Anwendung in kurzen Prüfungskontexten"
       },
 
       "englisch-gym1": {
         file: "subjects/englisch-gym1.js",
         renderFunction: "render_englisch_gym1",
-        description: "Themen: Vocabulary, word families, present perfect, comparatives"
+        description: "Vocabulary, grammar and structured practice for written tasks"
       }
     };
 
@@ -608,14 +632,9 @@
           openFolder(subject);
         };
 
-        const description =
-          subject.mode === "direct"
-            ? "Direkt öffnen · eigener Themenbereich"
-            : "Öffnen und nach GYM1–GYM4 sortieren";
-
         card.innerHTML = `
           <h3>${subject.name}</h3>
-          <p>${description}</p>
+          <p>${subject.description}</p>
         `;
 
         subjectsGrid.appendChild(card);
@@ -652,7 +671,7 @@
 
         card.innerHTML = `
           <h3>${displayLevel}</h3>
-          <p>${contentInfo ? contentInfo.description : "Noch keine Inhalte hinzugefügt"}</p>
+          <p>${contentInfo ? contentInfo.description : "Inhalte für diese Stufe werden vorbereitet"}</p>
         `;
 
         gymGrid.appendChild(card);
@@ -715,8 +734,8 @@
         materialTitle.textContent = subject.name + " · " + displayLevel;
         materialContent.innerHTML = `
           <div class="exercise-card">
-            <h3>Noch keine Inhalte</h3>
-            <p>Für ${subject.name} · ${displayLevel} wurden noch keine Materialien hinzugefügt.</p>
+            <h3>Inhalte in Vorbereitung</h3>
+            <p>Für ${subject.name} · ${displayLevel} werden aktuell noch keine Materialien angezeigt.</p>
           </div>
         `;
         return;
@@ -748,8 +767,8 @@
         materialTitle.textContent = subject.name;
         materialContent.innerHTML = `
           <div class="exercise-card">
-            <h3>Noch keine Inhalte</h3>
-            <p>Für ${subject.name} wurden noch keine Materialien hinzugefügt.</p>
+            <h3>Inhalte in Vorbereitung</h3>
+            <p>Für ${subject.name} werden aktuell noch keine Materialien angezeigt.</p>
           </div>
         `;
         return;
