@@ -584,7 +584,8 @@ const AM_THEMEN = [
       "Kannst du durch eine komplexe Zahl dividieren, indem du mit der konjugierten Zahl erweiterst?",
       "Kannst du erklären, warum zⁿ = w mehrere Lösungen haben kann?"
     ]
-  }
+  },
+   
   {
     id: "partialbruchzerlegung",
     nummer: "3",
@@ -890,7 +891,7 @@ const AM_THEMEN = [
       "Kannst du einen Koeffizientenvergleich durchführen?",
       "Setzt du am Schluss die gefundenen Werte wieder in die Zerlegung ein?"
     ]
-  }
+  },
 
   {
     id: "moebiustransformationen",
@@ -1242,7 +1243,8 @@ const AM_THEMEN = [
       "Kannst du erklären, warum Geraden und Kreise als verallgemeinerte Kreise betrachtet werden?",
       "Kannst du aus einfachen Bildbedingungen eine Transformation aufstellen?"
     ]
-  }
+  },
+   
   {
     id: "vollstaendige-induktion",
     nummer: "5",
@@ -1525,7 +1527,8 @@ const AM_THEMEN = [
       "Kannst du die Induktionsannahme an der richtigen Stelle verwenden?",
       "Kannst du am Schluss einen vollständigen Schlusssatz schreiben?"
     ]
-  }
+  },
+   
   {
     id: "potenz-und-taylorreihen",
     nummer: "6",
@@ -1900,7 +1903,8 @@ const AM_THEMEN = [
       "Kannst du Potenzreihen gliedweise integrieren?",
       "Bestimmst du am Schluss den Konvergenzbereich?"
     ]
-  }
+  },
+   
   {
     id: "differenzialgleichungen",
     nummer: "7",
@@ -2282,7 +2286,8 @@ const AM_THEMEN = [
       "Kannst du komplexe Nullstellen in Sinus-Kosinus-Lösungen übersetzen?",
       "Kannst du Anfangsbedingungen zur Bestimmung der Konstanten verwenden?"
     ]
-  }
+  },
+   
   {
     id: "lineare-algebra",
     nummer: "8",
