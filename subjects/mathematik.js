@@ -1588,6 +1588,436 @@ const MATHEMATIK_THEMEN = [
       "Kennst du den Zusammenhang zwischen aˣ und logₐ(x)?",
       "Prüfst du beim Logarithmus immer, ob das Argument positiv ist?"
     ]
+  },
+     {
+    id: "differentialrechnung",
+    nummer: "5",
+    titel: "Differentialrechnung",
+    kurzbeschreibung:
+      "Differenzenquotient, Differentialquotient, Steigung der Tangente, Ableitungsbegriff und zentrale Ableitungsregeln wie Faktorregel, Summenregel, Produktregel und Kettenregel.",
+    lernziele: [
+      "Du kannst den Differenzenquotienten erklären und berechnen.",
+      "Du verstehst den Differentialquotienten als Grenzwert des Differenzenquotienten.",
+      "Du kannst die Ableitung als momentane Änderungsrate interpretieren.",
+      "Du kannst die Ableitung als Tangentensteigung deuten.",
+      "Du kannst einfache Funktionen mit Ableitungsregeln ableiten.",
+      "Du beherrschst Faktorregel, Summenregel und Potenzregel.",
+      "Du kannst die Produktregel anwenden.",
+      "Du kannst die Kettenregel anwenden.",
+      "Du kannst Tangentengleichungen mithilfe der Ableitung aufstellen.",
+      "Du erkennst typische Fehler beim Ableiten zusammengesetzter Funktionen."
+    ],
+    theorie: [
+      {
+        titel: "Was ist Differentialrechnung?",
+        text:
+          "Die Differentialrechnung untersucht, wie sich eine Funktion an einer bestimmten Stelle verändert. Zentral ist die Frage: Wie steil ist der Graph genau an einem Punkt?"
+      },
+      {
+        titel: "Mittlere Änderungsrate",
+        text:
+          "Die mittlere Änderungsrate beschreibt die durchschnittliche Veränderung einer Funktion zwischen zwei x-Werten. Grafisch entspricht sie der Steigung einer Sekante."
+      },
+      {
+        titel: "Differenzenquotient",
+        text:
+          "Der Differenzenquotient ist die Steigung zwischen zwei Punkten eines Graphen. Er lautet (f(x₂) - f(x₁)) / (x₂ - x₁)."
+      },
+      {
+        titel: "Sekante",
+        text:
+          "Eine Sekante ist eine Gerade, die den Graphen in zwei Punkten schneidet. Ihre Steigung beschreibt die durchschnittliche Veränderung zwischen diesen beiden Punkten."
+      },
+      {
+        titel: "Momentane Änderungsrate",
+        text:
+          "Die momentane Änderungsrate beschreibt die Veränderung genau an einer Stelle. Sie entsteht, wenn man die zwei Punkte des Differenzenquotienten immer näher zusammenrücken lässt."
+      },
+      {
+        titel: "Differentialquotient",
+        text:
+          "Der Differentialquotient ist der Grenzwert des Differenzenquotienten. Er liefert die Ableitung an einer bestimmten Stelle."
+      },
+      {
+        titel: "Tangente",
+        text:
+          "Eine Tangente berührt den Graphen lokal an einer Stelle. Ihre Steigung ist die Ableitung f'(x₀) an dieser Stelle."
+      },
+      {
+        titel: "Ableitungsfunktion",
+        text:
+          "Die Ableitungsfunktion f'(x) ordnet jedem x-Wert die Steigung des Graphen an dieser Stelle zu. Sie beschreibt also, wie sich die Steigung entlang des Graphen verändert."
+      },
+      {
+        titel: "Potenzregel",
+        text:
+          "Für Potenzfunktionen gilt: Die Ableitung von xⁿ ist n · xⁿ⁻¹. Der Exponent wird nach vorne gezogen und danach um 1 verringert."
+      },
+      {
+        titel: "Faktorregel",
+        text:
+          "Ein konstanter Faktor bleibt beim Ableiten erhalten. Aus c · f(x) wird c · f'(x)."
+      },
+      {
+        titel: "Summenregel",
+        text:
+          "Eine Summe wird gliedweise abgeleitet. Aus f(x) + g(x) wird f'(x) + g'(x)."
+      },
+      {
+        titel: "Produktregel",
+        text:
+          "Bei einem Produkt zweier Funktionen darf man nicht einfach beide Funktionen einzeln ableiten und multiplizieren. Es gilt: (u · v)' = u' · v + u · v'."
+      },
+      {
+        titel: "Kettenregel",
+        text:
+          "Die Kettenregel verwendet man bei verschachtelten Funktionen. Man leitet zuerst die äussere Funktion ab und multipliziert danach mit der Ableitung der inneren Funktion."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Differenzenquotient berechnen",
+        schritte: [
+          "1. Bestimme die beiden x-Werte x₁ und x₂.",
+          "2. Berechne die zugehörigen Funktionswerte f(x₁) und f(x₂).",
+          "3. Setze alles in (f(x₂) - f(x₁)) / (x₂ - x₁) ein.",
+          "4. Vereinfache den Bruch.",
+          "5. Interpretiere das Ergebnis als mittlere Änderungsrate oder Sekantensteigung."
+        ]
+      },
+      {
+        titel: "Methode: Differentialquotient verstehen",
+        schritte: [
+          "1. Starte mit dem Differenzenquotienten.",
+          "2. Schreibe den zweiten x-Wert als x₀ + h.",
+          "3. Der Quotient lautet dann (f(x₀ + h) - f(x₀)) / h.",
+          "4. Lasse h gegen 0 gehen.",
+          "5. Der Grenzwert ist die momentane Steigung bei x₀.",
+          "6. Dieser Grenzwert heisst Differentialquotient."
+        ]
+      },
+      {
+        titel: "Methode: Funktion mit Potenzregel ableiten",
+        schritte: [
+          "1. Erkenne Terme der Form xⁿ.",
+          "2. Ziehe den Exponenten n als Faktor nach vorne.",
+          "3. Verringere den Exponenten um 1.",
+          "4. Leite jeden Term einzeln ab.",
+          "5. Konstanten ohne x fallen beim Ableiten weg."
+        ]
+      },
+      {
+        titel: "Methode: Faktor- und Summenregel anwenden",
+        schritte: [
+          "1. Zerlege die Funktion in einzelne Summanden.",
+          "2. Behalte konstante Faktoren vor den Termen bei.",
+          "3. Leite jeden Summanden einzeln ab.",
+          "4. Fasse gleichartige Terme zusammen, falls möglich.",
+          "5. Kontrolliere besonders Vorzeichen und Exponenten."
+        ]
+      },
+      {
+        titel: "Methode: Produktregel anwenden",
+        schritte: [
+          "1. Erkenne, dass die Funktion als Produkt u(x) · v(x) aufgebaut ist.",
+          "2. Bestimme u(x) und v(x).",
+          "3. Berechne u'(x) und v'(x).",
+          "4. Setze in u' · v + u · v' ein.",
+          "5. Vereinfache das Ergebnis, falls verlangt."
+        ]
+      },
+      {
+        titel: "Methode: Kettenregel anwenden",
+        schritte: [
+          "1. Erkenne die äussere Funktion und die innere Funktion.",
+          "2. Leite die äussere Funktion ab und lasse die innere Funktion zunächst stehen.",
+          "3. Multipliziere mit der Ableitung der inneren Funktion.",
+          "4. Vereinfache das Ergebnis.",
+          "5. Prüfe, ob nochmals eine Kettenregel nötig ist."
+        ]
+      },
+      {
+        titel: "Methode: Tangentengleichung aufstellen",
+        schritte: [
+          "1. Bestimme die Stelle x₀.",
+          "2. Berechne den Punkt P(x₀ | f(x₀)).",
+          "3. Berechne die Ableitung f'(x).",
+          "4. Setze x₀ in f'(x) ein, um die Steigung m zu erhalten.",
+          "5. Setze in y = m(x - x₀) + f(x₀) ein.",
+          "6. Vereinfache die Gleichung."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Der Differenzenquotient beschreibt die Steigung einer Sekante.",
+      "Der Differentialquotient ist der Grenzwert des Differenzenquotienten.",
+      "Die Ableitung beschreibt die momentane Änderungsrate.",
+      "Die Ableitung an einer Stelle ist die Tangentensteigung.",
+      "Die Ableitung von xⁿ ist n · xⁿ⁻¹.",
+      "Konstanten fallen beim Ableiten weg.",
+      "Konstante Faktoren bleiben beim Ableiten erhalten.",
+      "Summen werden gliedweise abgeleitet.",
+      "Bei Produkten braucht man die Produktregel.",
+      "Bei verschachtelten Funktionen braucht man die Kettenregel.",
+      "Für Tangenten braucht man Punkt und Steigung."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man verwechselt Differenzenquotient und Differentialquotient.",
+        korrektur:
+          "Der Differenzenquotient beschreibt eine durchschnittliche Steigung zwischen zwei Punkten. Der Differentialquotient beschreibt die momentane Steigung an einem Punkt."
+      },
+      {
+        fehler: "Man vergisst beim Ableiten, den Exponenten um 1 zu verringern.",
+        korrektur:
+          "Bei der Potenzregel wird der Exponent nach vorne gezogen und danach um 1 kleiner gemacht. Aus x⁵ wird 5x⁴."
+      },
+      {
+        fehler: "Man leitet eine Konstante nicht zu 0 ab.",
+        korrektur:
+          "Eine reine Zahl hat keine Veränderung. Deshalb ist die Ableitung einer Konstante 0."
+      },
+      {
+        fehler: "Man multipliziert bei Produkten einfach die einzelnen Ableitungen.",
+        korrektur:
+          "Das ist falsch. Bei Produkten gilt nicht (u · v)' = u' · v'. Richtig ist u' · v + u · v'."
+      },
+      {
+        fehler: "Man vergisst bei der Kettenregel die innere Ableitung.",
+        korrektur:
+          "Bei verschachtelten Funktionen muss man immer mit der Ableitung der inneren Funktion multiplizieren."
+      },
+      {
+        fehler: "Man setzt bei der Tangente nur die Steigung ein und vergisst den Punkt.",
+        korrektur:
+          "Eine Tangente braucht sowohl die Steigung als auch den Berührpunkt. Deshalb verwendet man y = m(x - x₀) + f(x₀)."
+      },
+      {
+        fehler: "Man verwechselt f(x₀) mit f'(x₀).",
+        korrektur:
+          "f(x₀) ist der y-Wert des Punktes. f'(x₀) ist die Steigung an dieser Stelle."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Differenzenquotient berechnen",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Gegeben ist f(x) = x². Berechne die mittlere Änderungsrate im Intervall von x = 1 bis x = 4.",
+        loesung: [
+          "Die mittlere Änderungsrate berechnet man mit dem Differenzenquotienten.",
+          "Die Formel lautet (f(4) - f(1)) / (4 - 1).",
+          "f(4) = 4² = 16.",
+          "f(1) = 1² = 1.",
+          "Also ergibt sich (16 - 1) / 3.",
+          "Das ist 15 / 3 = 5.",
+          "Die mittlere Änderungsrate beträgt 5."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Ableitung mit Potenzregel",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Leite f(x) = x⁵ ab.",
+        loesung: [
+          "Verwende die Potenzregel.",
+          "Die Ableitung von xⁿ ist n · xⁿ⁻¹.",
+          "Hier ist n = 5.",
+          "Also ist f'(x) = 5x⁴."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Faktor- und Summenregel",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Leite f(x) = 3x⁴ - 2x² + 7 ab.",
+        loesung: [
+          "Leite jeden Summanden einzeln ab.",
+          "Die Ableitung von 3x⁴ ist 12x³.",
+          "Die Ableitung von -2x² ist -4x.",
+          "Die Ableitung der Konstanten 7 ist 0.",
+          "Also ist f'(x) = 12x³ - 4x."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Steigung an einer Stelle",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Gegeben ist f(x) = x³ - x. Berechne die Steigung bei x = 2.",
+        loesung: [
+          "Die Steigung erhält man mit der ersten Ableitung.",
+          "f'(x) = 3x² - 1.",
+          "Setze x = 2 ein.",
+          "f'(2) = 3 · 2² - 1.",
+          "f'(2) = 12 - 1 = 11.",
+          "Die Steigung bei x = 2 ist 11."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Produktregel",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = x² · (x + 3) ab, ohne zuerst auszumultiplizieren.",
+        loesung: [
+          "Die Funktion ist ein Produkt.",
+          "Setze u(x) = x² und v(x) = x + 3.",
+          "Dann ist u'(x) = 2x und v'(x) = 1.",
+          "Die Produktregel lautet f'(x) = u' · v + u · v'.",
+          "Also ist f'(x) = 2x(x + 3) + x² · 1.",
+          "Vereinfacht ergibt das 2x² + 6x + x².",
+          "Also f'(x) = 3x² + 6x."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Kettenregel",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = (2x + 1)⁴ ab.",
+        loesung: [
+          "Die äussere Funktion ist eine vierte Potenz.",
+          "Die innere Funktion ist 2x + 1.",
+          "Leite zuerst die äussere Funktion ab.",
+          "Das ergibt 4(2x + 1)³.",
+          "Nun multipliziert man mit der inneren Ableitung.",
+          "Die Ableitung von 2x + 1 ist 2.",
+          "Also ist f'(x) = 4(2x + 1)³ · 2.",
+          "Damit ist f'(x) = 8(2x + 1)³."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Produktregel und Kettenregel kombiniert",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Leite f(x) = x · (x² + 4)³ ab.",
+        loesung: [
+          "Die Funktion ist ein Produkt.",
+          "Setze u(x) = x und v(x) = (x² + 4)³.",
+          "Dann ist u'(x) = 1.",
+          "Für v'(x) braucht man die Kettenregel.",
+          "Die äussere Ableitung ergibt 3(x² + 4)².",
+          "Die innere Ableitung von x² + 4 ist 2x.",
+          "Also ist v'(x) = 3(x² + 4)² · 2x.",
+          "Damit ist v'(x) = 6x(x² + 4)².",
+          "Nun Produktregel: f'(x) = u' · v + u · v'.",
+          "Also f'(x) = 1 · (x² + 4)³ + x · 6x(x² + 4)².",
+          "Das ergibt f'(x) = (x² + 4)³ + 6x²(x² + 4)²."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Tangentengleichung",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Bestimme die Tangente an f(x) = x² + 1 bei x₀ = 2.",
+        loesung: [
+          "Zuerst berechnet man den Berührpunkt.",
+          "f(2) = 2² + 1 = 5.",
+          "Der Punkt ist P(2 | 5).",
+          "Nun berechnet man die Ableitung.",
+          "f'(x) = 2x.",
+          "Die Steigung bei x₀ = 2 ist f'(2) = 4.",
+          "Setze in y = m(x - x₀) + f(x₀) ein.",
+          "y = 4(x - 2) + 5.",
+          "Vereinfacht ergibt das y = 4x - 3."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Differentialquotient ausrechnen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Zeige mit dem Differentialquotienten, dass die Ableitung von f(x) = x² an der Stelle x₀ gleich 2x₀ ist.",
+        loesung: [
+          "Der Differentialquotient lautet lim h→0 von (f(x₀ + h) - f(x₀)) / h.",
+          "Setze f(x) = x² ein.",
+          "Dann erhält man ((x₀ + h)² - x₀²) / h.",
+          "Multipliziere aus.",
+          "(x₀ + h)² = x₀² + 2x₀h + h².",
+          "Damit steht im Zähler x₀² + 2x₀h + h² - x₀².",
+          "Das vereinfacht sich zu 2x₀h + h².",
+          "Der Quotient ist also (2x₀h + h²) / h.",
+          "Klammere h aus.",
+          "Das ergibt h(2x₀ + h) / h.",
+          "Kürze h.",
+          "Es bleibt 2x₀ + h.",
+          "Nun lässt man h gegen 0 gehen.",
+          "Der Grenzwert ist 2x₀.",
+          "Also ist die Ableitung von x² gleich 2x."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Ableitungsregeln erkennen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Leite f(x) = (x² + 1)(3x - 2)² ab und benenne die verwendeten Regeln.",
+        loesung: [
+          "Die Funktion ist ein Produkt aus zwei Faktoren.",
+          "Man braucht also die Produktregel.",
+          "Setze u(x) = x² + 1 und v(x) = (3x - 2)².",
+          "Dann ist u'(x) = 2x.",
+          "Für v'(x) braucht man die Kettenregel.",
+          "Die äussere Ableitung ergibt 2(3x - 2).",
+          "Die innere Ableitung von 3x - 2 ist 3.",
+          "Also ist v'(x) = 6(3x - 2).",
+          "Nun Produktregel einsetzen.",
+          "f'(x) = u' · v + u · v'.",
+          "Also f'(x) = 2x(3x - 2)² + (x² + 1) · 6(3x - 2).",
+          "Verwendet wurden Produktregel, Kettenregel, Potenzregel und Summenregel."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Was ist der Differenzenquotient?",
+        antwort:
+          "Der Differenzenquotient beschreibt die mittlere Änderungsrate einer Funktion zwischen zwei Stellen. Grafisch ist er die Steigung einer Sekante."
+      },
+      {
+        frage: "Was ist der Differentialquotient?",
+        antwort:
+          "Der Differentialquotient ist der Grenzwert des Differenzenquotienten, wenn der Abstand der beiden Stellen gegen 0 geht. Er beschreibt die momentane Steigung."
+      },
+      {
+        frage: "Was bedeutet die Ableitung geometrisch?",
+        antwort:
+          "Die Ableitung gibt die Steigung der Tangente an den Graphen an einer bestimmten Stelle an."
+      },
+      {
+        frage: "Was bedeutet die Ableitung inhaltlich?",
+        antwort:
+          "Sie beschreibt die momentane Änderungsrate, also wie schnell sich ein Funktionswert genau an einer Stelle verändert."
+      },
+      {
+        frage: "Wie lautet die Potenzregel?",
+        antwort:
+          "Die Ableitung von xⁿ ist n · xⁿ⁻¹. Der Exponent wird nach vorne gezogen und um 1 verringert."
+      },
+      {
+        frage: "Wann braucht man die Produktregel?",
+        antwort:
+          "Man braucht die Produktregel, wenn zwei von x abhängige Funktionen miteinander multipliziert werden."
+      },
+      {
+        frage: "Wann braucht man die Kettenregel?",
+        antwort:
+          "Man braucht die Kettenregel bei verschachtelten Funktionen, also wenn eine Funktion in eine andere Funktion eingesetzt ist."
+      },
+      {
+        frage: "Wie stellt man eine Tangentengleichung auf?",
+        antwort:
+          "Man berechnet den Punkt P(x₀ | f(x₀)) und die Steigung m = f'(x₀). Danach setzt man in y = m(x - x₀) + f(x₀) ein."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du den Differenzenquotienten als Sekantensteigung erklären?",
+      "Kannst du den Differentialquotienten als Grenzwert erklären?",
+      "Weisst du, dass die Ableitung die Tangentensteigung ist?",
+      "Kannst du die Potenzregel sicher anwenden?",
+      "Weisst du, dass Konstanten beim Ableiten 0 werden?",
+      "Kannst du Faktorregel und Summenregel anwenden?",
+      "Erkennst du, wann die Produktregel nötig ist?",
+      "Erkennst du, wann die Kettenregel nötig ist?",
+      "Vergisst du bei der Kettenregel nicht die innere Ableitung?",
+      "Kannst du eine Tangentengleichung mit Punkt und Steigung aufstellen?"
+    ]
   }
    
 ];
