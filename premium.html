@@ -570,8 +570,13 @@
     };
 
     function setStatus(message) {
-      statusBox.textContent = message;
-    }
+  statusBox.textContent = message;
+  if (!message) {
+    statusBox.classList.add("hidden");
+  } else {
+    statusBox.classList.remove("hidden");
+  }
+}
 
     function showLocked(message) {
       userInfo.textContent = message;
@@ -847,9 +852,9 @@
         const userData = userDoc.data();
 
         if (userData.premium === true) {
-          showPremium();
-          setStatus("");
-      } else {
+  showPremium();
+  setStatus("Zugriff erlaubt.");
+} else {
   showLocked("Du hast noch keinen Premium-Zugang.");
   setStatus("Premium ist noch nicht aktiviert.");
 }
