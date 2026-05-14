@@ -536,11 +536,11 @@
 
     const subjects = [
       {
-        name: "Mathematik",
-        key: "mathematik",
-        mode: "gym",
-        description: "Strukturiert nach GYM-Stufen und zentralen Prüfungsthemen"
-      },
+  name: "Mathematik",
+  key: "mathematik",
+  mode: "direct",
+  description: "Zentrale Prüfungsthemen der Mathematik mit Erklärungen und Übungen"
+},
       {
         name: "Anwendung der Mathematik",
         key: "anwendung-mathematik",
@@ -574,11 +574,11 @@
         description: "Vertiefung: Gruppentheorie, komplexe Zahlen, Möbiustransformationen, Reihen, Differenzialgleichungen und lineare Algebra"
       },
 
-      "mathematik-gym1": {
-        file: "subjects/mathematik-gym1.js",
-        renderFunction: "render_mathematik_gym1",
-        description: "Grundlagen und Übungsaufgaben zu zentralen mathematischen Themen"
-      },
+      "mathematik": {
+  file: "subjects/mathematik.js",
+  renderFunction: "render_mathematik",
+  description: "Logarithmen, Kurvendiskussion, Trigonometrie, quadratische Funktionen und Ableitungen"
+},
 
       "franzoesisch-gym1": {
         file: "subjects/franzoesisch-gym1.js",
