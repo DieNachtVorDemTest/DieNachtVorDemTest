@@ -40,72 +40,73 @@ const MATHEMATIK_THEMEN = [
       {
         titel: "Potenzen mit rationalen Exponenten",
         text:
-          "Ein rationaler Exponent ist ein Exponent, der als Bruch geschrieben werden kann. Zum Beispiel sind 1/2, 3/4 und -2/5 rationale Exponenten. Solche Potenzen hängen direkt mit Wurzeln zusammen."
+          "Ein rationaler Exponent ist ein Exponent, der als Bruch geschrieben werden kann. Zum Beispiel sind \\(\\frac{1}{2}\\), \\(\\frac{3}{4}\\) und \\(-\\frac{2}{5}\\) rationale Exponenten. Solche Potenzen hängen direkt mit Wurzeln zusammen."
       },
       {
         titel: "Grundregel für rationale Exponenten",
         text:
-          "Für positive a gilt: a hoch m/n entspricht der n-ten Wurzel aus a hoch m. Der Nenner des Bruchs bestimmt also die Wurzel, der Zähler bestimmt die Potenz."
+          "Für \\(a>0\\) gilt: \\(a^{\\frac{m}{n}}=\\sqrt[n]{a^m}\\). Der Nenner des Bruchs bestimmt also die Wurzel, der Zähler bestimmt die Potenz."
       },
       {
         titel: "Beispiele für rationale Exponenten",
         text:
-          "a hoch 1/2 ist die Quadratwurzel aus a. a hoch 1/3 ist die dritte Wurzel aus a. a hoch 2/3 ist die dritte Wurzel aus a²."
+          "\\(a^{\\frac{1}{2}}=\\sqrt{a}\\). \\(a^{\\frac{1}{3}}=\\sqrt[3]{a}\\). \\(a^{\\frac{2}{3}}=\\sqrt[3]{a^2}\\)."
       },
       {
         titel: "Negative Exponenten",
         text:
-          "Ein negativer Exponent bedeutet Kehrwertbildung. Zum Beispiel gilt a hoch -n gleich 1 durch a hoch n. Auch bei rationalen Exponenten gilt diese Regel."
+          "Ein negativer Exponent bedeutet Kehrwertbildung. Zum Beispiel gilt \\(a^{-n}=\\frac{1}{a^n}\\). Auch bei rationalen Exponenten gilt diese Regel."
       },
       {
         titel: "Definitionsbedingungen bei Wurzeln",
         text:
-          "Im reellen Zahlenbereich darf unter einer geraden Wurzel kein negativer Ausdruck stehen. Deshalb ist √x nur für x ≥ 0 definiert. Ungerade Wurzeln wie die dritte Wurzel sind hingegen für alle reellen Zahlen definiert."
+          "Im reellen Zahlenbereich darf unter einer geraden Wurzel kein negativer Ausdruck stehen. Deshalb ist \\(\\sqrt{x}\\) nur für \\(x\\ge 0\\) definiert. Ungerade Wurzeln wie \\(\\sqrt[3]{x}\\) sind hingegen für alle reellen Zahlen definiert."
       },
       {
         titel: "Potenzgesetze",
         text:
-          "Potenzgesetze erlauben es, Terme mit gleicher Basis zu vereinfachen. Wichtig ist: Exponenten werden nur addiert oder subtrahiert, wenn die Basis gleich ist."
+          "Potenzgesetze erlauben es, Terme mit gleicher Basis zu vereinfachen. Wichtig ist: Exponenten werden nur addiert oder subtrahiert, wenn die Basis gleich ist. Zum Beispiel gilt \\(a^m\\cdot a^n=a^{m+n}\\)."
       },
       {
         titel: "Was ist ein Logarithmus?",
         text:
-          "Der Logarithmus ist die Umkehrung des Potenzierens. Die Aussage logₐ(b) = x bedeutet: aˣ = b. Ein Logarithmus fragt also nach dem Exponenten."
+          "Der Logarithmus ist die Umkehrung des Potenzierens. Die Aussage \\(\\log_a(b)=x\\) bedeutet: \\(a^x=b\\). Ein Logarithmus fragt also nach dem Exponenten."
       },
       {
         titel: "Definitionsbedingungen beim Logarithmus",
         text:
-          "Bei logₐ(x) muss die Basis a positiv sein, sie darf nicht 1 sein, und das Argument x muss positiv sein. Besonders das Argument wird in Prüfungen oft vergessen."
+          "Bei \\(\\log_a(x)\\) muss die Basis \\(a\\) positiv sein, sie darf nicht \\(1\\) sein, und das Argument \\(x\\) muss positiv sein. Also gilt: \\(a>0\\), \\(a\\ne 1\\) und \\(x>0\\)."
       },
       {
         titel: "Logarithmengesetze",
         text:
-          "Logarithmengesetze helfen beim Umformen von Produkten, Quotienten und Potenzen. Es gibt aber kein Gesetz für logₐ(x + y). Summen im Logarithmus dürfen also nicht einfach getrennt werden."
+          "Logarithmengesetze helfen beim Umformen von Produkten, Quotienten und Potenzen. Zum Beispiel gilt \\(\\log_a(xy)=\\log_a(x)+\\log_a(y)\\), aber es gibt kein Gesetz für \\(\\log_a(x+y)\\). Summen im Logarithmus dürfen also nicht einfach getrennt werden."
       },
       {
         titel: "Exponentialgleichungen",
         text:
-          "Bei Exponentialgleichungen steht die Variable im Exponenten. Wenn möglich, stellt man zuerst gleiche Basen her. Wenn das nicht geht, logarithmiert man beide Seiten."
+          "Bei Exponentialgleichungen steht die Variable im Exponenten, zum Beispiel \\(3^x=50\\). Wenn möglich, stellt man zuerst gleiche Basen her. Wenn das nicht geht, logarithmiert man beide Seiten."
       }
     ],
     methoden: [
       {
         titel: "Methode: Potenz mit rationalem Exponenten umschreiben",
         schritte: [
-          "1. Betrachte den Exponenten als Bruch.",
-          "2. Der Nenner wird zum Wurzelexponenten.",
-          "3. Der Zähler bleibt als Potenz erhalten.",
-          "4. Bei negativem Exponenten bildest du zusätzlich den Kehrwert.",
-          "5. Prüfe bei geraden Wurzeln den Definitionsbereich."
+          "1. Betrachte den Exponenten als Bruch, zum Beispiel \\(\\frac{m}{n}\\).",
+          "2. Der Nenner \\(n\\) wird zum Wurzelexponenten.",
+          "3. Der Zähler \\(m\\) bleibt als Potenz erhalten.",
+          "4. Es gilt \\(a^{\\frac{m}{n}}=\\sqrt[n]{a^m}\\).",
+          "5. Bei negativem Exponenten bildest du zusätzlich den Kehrwert.",
+          "6. Prüfe bei geraden Wurzeln den Definitionsbereich."
         ]
       },
       {
         titel: "Methode: Potenzterme vereinfachen",
         schritte: [
           "1. Prüfe zuerst, ob die Basen gleich sind.",
-          "2. Bei gleicher Basis und Multiplikation addierst du die Exponenten.",
-          "3. Bei gleicher Basis und Division subtrahierst du die Exponenten.",
-          "4. Bei einer Potenz von einer Potenz multiplizierst du die Exponenten.",
+          "2. Bei gleicher Basis und Multiplikation addierst du die Exponenten: \\(a^m\\cdot a^n=a^{m+n}\\).",
+          "3. Bei gleicher Basis und Division subtrahierst du die Exponenten: \\(\\frac{a^m}{a^n}=a^{m-n}\\).",
+          "4. Bei einer Potenz von einer Potenz multiplizierst du die Exponenten: \\((a^m)^n=a^{mn}\\).",
           "5. Vereinfache Brüche in den Exponenten vollständig."
         ]
       },
@@ -113,10 +114,11 @@ const MATHEMATIK_THEMEN = [
         titel: "Methode: Exponentialgleichung mit gleicher Basis lösen",
         schritte: [
           "1. Schreibe beide Seiten als Potenzen mit gleicher Basis.",
-          "2. Wenn die Basen gleich sind, müssen die Exponenten gleich sein.",
-          "3. Setze die Exponenten gleich.",
-          "4. Löse die entstehende Gleichung nach x.",
-          "5. Kontrolliere das Ergebnis durch Einsetzen."
+          "2. Beispiel: \\(16=2^4\\).",
+          "3. Wenn die Basen gleich sind, müssen die Exponenten gleich sein.",
+          "4. Setze die Exponenten gleich.",
+          "5. Löse die entstehende Gleichung nach \\(x\\).",
+          "6. Kontrolliere das Ergebnis durch Einsetzen."
         ]
       },
       {
@@ -124,9 +126,10 @@ const MATHEMATIK_THEMEN = [
         schritte: [
           "1. Prüfe, ob sich gleiche Basen herstellen lassen.",
           "2. Wenn nicht, logarithmiere beide Seiten.",
-          "3. Ziehe den Exponenten mit dem Logarithmengesetz nach vorne.",
-          "4. Löse nach x auf.",
-          "5. Gib das Ergebnis exakt oder als Näherungswert an."
+          "3. Beispiel: Aus \\(3^x=50\\) wird \\(\\log(3^x)=\\log(50)\\).",
+          "4. Ziehe den Exponenten mit dem Logarithmengesetz nach vorne: \\(x\\log(3)=\\log(50)\\).",
+          "5. Löse nach \\(x\\) auf: \\(x=\\frac{\\log(50)}{\\log(3)}\\).",
+          "6. Gib das Ergebnis exakt oder als Näherungswert an."
         ]
       },
       {
@@ -141,35 +144,35 @@ const MATHEMATIK_THEMEN = [
       }
     ],
     merksaetze: [
-      "Der Nenner eines rationalen Exponenten bestimmt die Wurzel.",
-      "Ein negativer Exponent bedeutet Kehrwert.",
+      "Der Nenner eines rationalen Exponenten bestimmt die Wurzel: \\(a^{\\frac{m}{n}}=\\sqrt[n]{a^m}\\).",
+      "Ein negativer Exponent bedeutet Kehrwert: \\(a^{-n}=\\frac{1}{a^n}\\).",
       "Exponenten werden nur bei gleicher Basis addiert oder subtrahiert.",
       "Ein Logarithmus ist ein Exponent.",
-      "logₐ(b) = x bedeutet dasselbe wie aˣ = b.",
+      "\\(\\log_a(b)=x\\) bedeutet dasselbe wie \\(a^x=b\\).",
       "Das Argument eines Logarithmus muss immer positiv sein.",
-      "Es gibt kein Logarithmengesetz für Summen.",
+      "Es gibt kein Logarithmengesetz für Summen: \\(\\log_a(x+y)\\ne\\log_a(x)+\\log_a(y)\\).",
       "Bei Exponentialgleichungen ohne gleiche Basis logarithmiert man beide Seiten."
     ],
     typischeFehler: [
       {
-        fehler: "Man schreibt x hoch 2/3 fälschlicherweise als √(x³).",
+        fehler: "Man schreibt \\(x^{\\frac{2}{3}}\\) fälschlicherweise als \\(\\sqrt{x^3}\\).",
         korrektur:
-          "Richtig ist: x hoch 2/3 bedeutet dritte Wurzel aus x². Der Nenner des Exponenten bestimmt die Wurzel."
+          "Richtig ist: \\(x^{\\frac{2}{3}}=\\sqrt[3]{x^2}\\). Der Nenner des Exponenten bestimmt die Wurzel."
       },
       {
         fehler: "Man addiert Exponenten, obwohl die Basen verschieden sind.",
         korrektur:
-          "Exponenten darf man bei der Multiplikation nur addieren, wenn die Basis gleich ist. x² · y³ kann nicht zu einer einzigen Potenz zusammengefasst werden."
+          "Exponenten darf man bei der Multiplikation nur addieren, wenn die Basis gleich ist. \\(x^2\\cdot y^3\\) kann nicht zu einer einzigen Potenz zusammengefasst werden."
       },
       {
-        fehler: "Man schreibt logₐ(x + y) = logₐ(x) + logₐ(y).",
+        fehler: "Man schreibt \\(\\log_a(x+y)=\\log_a(x)+\\log_a(y)\\).",
         korrektur:
           "Das ist falsch. Logarithmengesetze gelten für Produkte, Quotienten und Potenzen, aber nicht für Summen."
       },
       {
         fehler: "Man vergisst die Definitionsbedingung beim Logarithmus.",
         korrektur:
-          "Das Argument eines Logarithmus muss positiv sein. Lösungen, die das Argument negativ oder 0 machen, sind ungültig."
+          "Das Argument eines Logarithmus muss positiv sein. Bei \\(\\log_a(x-2)\\) muss zum Beispiel \\(x-2>0\\), also \\(x>2\\), gelten."
       },
       {
         fehler: "Man logarithmiert nur eine Seite einer Gleichung.",
@@ -179,7 +182,7 @@ const MATHEMATIK_THEMEN = [
       {
         fehler: "Man vergisst bei negativen Exponenten den Kehrwert.",
         korrektur:
-          "a hoch -n bedeutet 1 durch a hoch n. Das Minus im Exponenten macht den Wert nicht einfach negativ."
+          "\\(a^{-n}\\) bedeutet \\(\\frac{1}{a^n}\\). Das Minus im Exponenten macht den Wert nicht einfach negativ."
       }
     ],
     aufgaben: [
@@ -187,122 +190,122 @@ const MATHEMATIK_THEMEN = [
         titel: "Aufgabe 1: Potenz als Wurzel schreiben",
         schwierigkeit: "einfach",
         aufgabe:
-          "Schreibe x hoch 3/4 als Wurzelausdruck.",
+          "Schreibe \\(x^{\\frac{3}{4}}\\) als Wurzelausdruck.",
         loesung: [
-          "Der Exponent ist 3/4.",
-          "Der Nenner 4 wird zum Wurzelexponenten.",
-          "Der Zähler 3 bleibt als Potenz erhalten.",
-          "Also gilt: x hoch 3/4 ist die vierte Wurzel aus x³."
+          "Der Exponent ist \\(\\frac{3}{4}\\).",
+          "Der Nenner \\(4\\) wird zum Wurzelexponenten.",
+          "Der Zähler \\(3\\) bleibt als Potenz erhalten.",
+          "Also gilt: \\(x^{\\frac{3}{4}}=\\sqrt[4]{x^3}\\)."
         ]
       },
       {
         titel: "Aufgabe 2: Wurzel als Potenz schreiben",
         schwierigkeit: "einfach",
         aufgabe:
-          "Schreibe die fünfte Wurzel aus a² als Potenz.",
+          "Schreibe \\(\\sqrt[5]{a^2}\\) als Potenz.",
         loesung: [
-          "Eine n-te Wurzel entspricht einem Exponenten mit Nenner n.",
-          "Hier ist der Wurzelexponent 5.",
-          "Unter der Wurzel steht a².",
-          "Also ist die fünfte Wurzel aus a² gleich a hoch 2/5."
+          "Eine \\(n\\)-te Wurzel entspricht einem Exponenten mit Nenner \\(n\\).",
+          "Hier ist der Wurzelexponent \\(5\\).",
+          "Unter der Wurzel steht \\(a^2\\).",
+          "Also gilt: \\(\\sqrt[5]{a^2}=a^{\\frac{2}{5}}\\)."
         ]
       },
       {
         titel: "Aufgabe 3: Potenzterm vereinfachen",
         schwierigkeit: "einfach",
         aufgabe:
-          "Vereinfache x hoch 2/5 mal x hoch 3/10.",
+          "Vereinfache \\(x^{\\frac{2}{5}}\\cdot x^{\\frac{3}{10}}\\).",
         loesung: [
-          "Die Basis ist in beiden Faktoren x.",
+          "Die Basis ist in beiden Faktoren \\(x\\).",
           "Bei gleicher Basis werden die Exponenten addiert.",
-          "Also rechnet man 2/5 + 3/10.",
-          "Schreibe 2/5 als 4/10.",
-          "Dann ergibt sich 4/10 + 3/10 = 7/10.",
-          "Das Ergebnis ist x hoch 7/10."
+          "Also rechnet man \\(\\frac{2}{5}+\\frac{3}{10}\\).",
+          "Schreibe \\(\\frac{2}{5}\\) als \\(\\frac{4}{10}\\).",
+          "Dann ergibt sich \\(\\frac{4}{10}+\\frac{3}{10}=\\frac{7}{10}\\).",
+          "Das Ergebnis ist \\(x^{\\frac{7}{10}}\\)."
         ]
       },
       {
         titel: "Aufgabe 4: Negative Exponenten",
         schwierigkeit: "einfach",
         aufgabe:
-          "Schreibe a hoch -3 als Bruch.",
+          "Schreibe \\(a^{-3}\\) als Bruch.",
         loesung: [
           "Ein negativer Exponent bedeutet Kehrwert.",
-          "a hoch -3 ist deshalb 1 durch a hoch 3.",
-          "Also gilt: a hoch -3 = 1/a³."
+          "\\(a^{-3}\\) ist deshalb \\(\\frac{1}{a^3}\\).",
+          "Also gilt: \\(a^{-3}=\\frac{1}{a^3}\\)."
         ]
       },
       {
         titel: "Aufgabe 5: Logarithmus als Potenzgleichung",
         schwierigkeit: "einfach",
         aufgabe:
-          "Schreibe log₂(32) = 5 als Potenzgleichung.",
+          "Schreibe \\(\\log_2(32)=5\\) als Potenzgleichung.",
         loesung: [
           "Ein Logarithmus ist ein Exponent.",
-          "log₂(32) = 5 bedeutet: Die Basis 2 muss mit 5 potenziert werden.",
-          "Also lautet die Potenzgleichung: 2⁵ = 32."
+          "\\(\\log_2(32)=5\\) bedeutet: Die Basis \\(2\\) muss mit \\(5\\) potenziert werden.",
+          "Also lautet die Potenzgleichung: \\(2^5=32\\)."
         ]
       },
       {
         titel: "Aufgabe 6: Einfache Logarithmusgleichung",
         schwierigkeit: "mittel",
         aufgabe:
-          "Löse log₃(x) = 4.",
+          "Löse \\(\\log_3(x)=4\\).",
         loesung: [
           "Schreibe die Gleichung als Potenzgleichung.",
-          "log₃(x) = 4 bedeutet 3⁴ = x.",
-          "3⁴ = 81.",
-          "Also ist x = 81.",
-          "Da x positiv ist, ist die Lösung gültig."
+          "\\(\\log_3(x)=4\\) bedeutet \\(3^4=x\\).",
+          "\\(3^4=81\\).",
+          "Also ist \\(x=81\\).",
+          "Da \\(x>0\\) gilt, ist die Lösung gültig."
         ]
       },
       {
         titel: "Aufgabe 7: Exponentialgleichung mit gleicher Basis",
         schwierigkeit: "mittel",
         aufgabe:
-          "Löse 2 hoch x+1 = 16.",
+          "Löse \\(2^{x+1}=16\\).",
         loesung: [
-          "Schreibe 16 als Potenz zur Basis 2.",
-          "Es gilt 16 = 2⁴.",
-          "Damit steht 2 hoch x+1 = 2⁴.",
+          "Schreibe \\(16\\) als Potenz zur Basis \\(2\\).",
+          "Es gilt \\(16=2^4\\).",
+          "Damit steht \\(2^{x+1}=2^4\\).",
           "Bei gleicher Basis müssen die Exponenten gleich sein.",
-          "Also gilt x + 1 = 4.",
-          "Daraus folgt x = 3."
+          "Also gilt \\(x+1=4\\).",
+          "Daraus folgt \\(x=3\\)."
         ]
       },
       {
         titel: "Aufgabe 8: Exponentialgleichung durch Logarithmieren",
         schwierigkeit: "mittel",
         aufgabe:
-          "Löse 3 hoch x = 50.",
+          "Löse \\(3^x=50\\).",
         loesung: [
           "Es lässt sich keine einfache gleiche Basis herstellen.",
           "Deshalb logarithmiert man beide Seiten.",
-          "Aus 3 hoch x = 50 wird log(3ˣ) = log(50).",
-          "Mit dem Logarithmengesetz wird daraus x · log(3) = log(50).",
-          "Teile durch log(3).",
-          "Also gilt x = log(50) / log(3).",
-          "Näherungsweise ist x ≈ 3.56."
+          "Aus \\(3^x=50\\) wird \\(\\log(3^x)=\\log(50)\\).",
+          "Mit dem Logarithmengesetz wird daraus \\(x\\log(3)=\\log(50)\\).",
+          "Teile durch \\(\\log(3)\\).",
+          "Also gilt \\(x=\\frac{\\log(50)}{\\log(3)}\\).",
+          "Näherungsweise ist \\(x\\approx 3.56\\)."
         ]
       },
       {
         titel: "Aufgabe 9: Logarithmusgleichung mit Definitionsbereich",
         schwierigkeit: "schwer",
         aufgabe:
-          "Löse log₂(x) + log₂(x - 2) = 3.",
+          "Löse \\(\\log_2(x)+\\log_2(x-2)=3\\).",
         loesung: [
           "Zuerst bestimmt man den Definitionsbereich.",
-          "Es muss x > 0 und x - 2 > 0 gelten.",
-          "Also ist x > 2.",
+          "Es muss \\(x>0\\) und \\(x-2>0\\) gelten.",
+          "Also ist \\(x>2\\).",
           "Fasse die Logarithmen zusammen.",
-          "log₂(x) + log₂(x - 2) = log₂(x(x - 2)).",
-          "Damit gilt log₂(x(x - 2)) = 3.",
-          "Schreibe als Potenzgleichung: x(x - 2) = 2³.",
-          "Also x² - 2x = 8.",
-          "Bringe alles auf eine Seite: x² - 2x - 8 = 0.",
-          "Faktorisieren ergibt (x - 4)(x + 2) = 0.",
-          "Die möglichen Lösungen sind x = 4 und x = -2.",
-          "Wegen x > 2 ist nur x = 4 gültig."
+          "\\(\\log_2(x)+\\log_2(x-2)=\\log_2(x(x-2))\\).",
+          "Damit gilt \\(\\log_2(x(x-2))=3\\).",
+          "Schreibe als Potenzgleichung: \\(x(x-2)=2^3\\).",
+          "Also \\(x^2-2x=8\\).",
+          "Bringe alles auf eine Seite: \\(x^2-2x-8=0\\).",
+          "Faktorisieren ergibt \\((x-4)(x+2)=0\\).",
+          "Die möglichen Lösungen sind \\(x=4\\) und \\(x=-2\\).",
+          "Wegen \\(x>2\\) ist nur \\(x=4\\) gültig."
         ]
       }
     ],
@@ -310,48 +313,48 @@ const MATHEMATIK_THEMEN = [
       {
         frage: "Was bedeutet ein rationaler Exponent?",
         antwort:
-          "Ein rationaler Exponent ist ein Exponent in Bruchform. Der Nenner beschreibt die Wurzel, der Zähler beschreibt die Potenz."
+          "Ein rationaler Exponent ist ein Exponent in Bruchform. Bei \\(a^{\\frac{m}{n}}\\) beschreibt der Nenner \\(n\\) die Wurzel und der Zähler \\(m\\) die Potenz."
       },
       {
         frage: "Was bedeutet ein negativer Exponent?",
         antwort:
-          "Ein negativer Exponent bedeutet, dass man den Kehrwert bildet. Zum Beispiel ist a hoch -n gleich 1 durch a hoch n."
+          "Ein negativer Exponent bedeutet, dass man den Kehrwert bildet. Zum Beispiel gilt \\(a^{-n}=\\frac{1}{a^n}\\)."
       },
       {
         frage: "Was ist ein Logarithmus?",
         antwort:
-          "Ein Logarithmus ist ein Exponent. logₐ(b) = x bedeutet, dass a hoch x gleich b ist."
+          "Ein Logarithmus ist ein Exponent. \\(\\log_a(b)=x\\) bedeutet, dass \\(a^x=b\\) gilt."
       },
       {
-        frage: "Welche Bedingungen gelten für logₐ(x)?",
+        frage: "Welche Bedingungen gelten für \\(\\log_a(x)\\)?",
         antwort:
-          "Die Basis a muss positiv sein und darf nicht 1 sein. Das Argument x muss positiv sein."
+          "Die Basis \\(a\\) muss positiv sein und darf nicht \\(1\\) sein. Das Argument \\(x\\) muss positiv sein. Also: \\(a>0\\), \\(a\\ne 1\\), \\(x>0\\)."
       },
       {
-        frage: "Warum ist log(x + y) nicht gleich log(x) + log(y)?",
+        frage: "Warum ist \\(\\log(x+y)\\) nicht gleich \\(\\log(x)+\\log(y)\\)?",
         antwort:
           "Weil es kein Logarithmengesetz für Summen gibt. Logarithmengesetze gelten für Produkte, Quotienten und Potenzen."
       },
       {
         frage: "Wann logarithmiert man bei Exponentialgleichungen?",
         antwort:
-          "Man logarithmiert, wenn die Variable im Exponenten steht und man keine gleiche Basis herstellen kann."
+          "Man logarithmiert, wenn die Variable im Exponenten steht und man keine gleiche Basis herstellen kann, zum Beispiel bei \\(3^x=50\\)."
       }
     ],
     nachtVorTest: [
-      "Kannst du a hoch m/n als Wurzel schreiben?",
-      "Weisst du, dass der Nenner des Exponenten die Wurzel bestimmt?",
-      "Kannst du negative Exponenten als Kehrwert schreiben?",
+      "Kannst du \\(a^{\\frac{m}{n}}\\) als Wurzel schreiben?",
+      "Weisst du, dass bei \\(a^{\\frac{m}{n}}\\) der Nenner die Wurzel bestimmt?",
+      "Kannst du negative Exponenten als Kehrwert schreiben, zum Beispiel \\(a^{-n}=\\frac{1}{a^n}\\)?",
       "Kennst du die Potenzgesetze für gleiche Basen?",
       "Kannst du erklären, warum ein Logarithmus ein Exponent ist?",
-      "Kannst du logₐ(b) = x in aˣ = b umschreiben?",
+      "Kannst du \\(\\log_a(b)=x\\) in \\(a^x=b\\) umschreiben?",
       "Prüfst du bei Logarithmusgleichungen den Definitionsbereich?",
-      "Weisst du, dass log(x + y) nicht aufgeteilt werden darf?",
+      "Weisst du, dass \\(\\log(x+y)\\) nicht aufgeteilt werden darf?",
       "Kannst du Exponentialgleichungen mit gleicher Basis lösen?",
       "Kannst du Exponentialgleichungen durch Logarithmieren lösen?"
     ]
   },
-   
+
   {
     id: "kurvendiskussion",
     nummer: "2",
@@ -379,57 +382,57 @@ const MATHEMATIK_THEMEN = [
       {
         titel: "Nullstellen",
         text:
-          "Nullstellen sind die x-Werte, bei denen der Funktionswert 0 ist. Man löst also die Gleichung f(x) = 0. Grafisch sind Nullstellen die Schnittpunkte des Graphen mit der x-Achse."
+          "Nullstellen sind die \\(x\\)-Werte, bei denen der Funktionswert \\(0\\) ist. Man löst also die Gleichung \\(f(x)=0\\). Grafisch sind Nullstellen die Schnittpunkte des Graphen mit der \\(x\\)-Achse."
       },
       {
         titel: "y-Achsenabschnitt",
         text:
-          "Den Schnittpunkt mit der y-Achse erhält man durch Einsetzen von x = 0. Der Punkt lautet dann (0 | f(0))."
+          "Den Schnittpunkt mit der \\(y\\)-Achse erhält man durch Einsetzen von \\(x=0\\). Der Punkt lautet dann \\((0\\mid f(0))\\)."
       },
       {
         titel: "Erste Ableitung",
         text:
-          "Die erste Ableitung f'(x) beschreibt die Steigung des Graphen. Ist f'(x) positiv, steigt der Graph. Ist f'(x) negativ, fällt der Graph. Ist f'(x) = 0, kann dort eine Extremstelle oder ein Sattelpunkt liegen."
+          "Die erste Ableitung \\(f'(x)\\) beschreibt die Steigung des Graphen. Ist \\(f'(x)>0\\), steigt der Graph. Ist \\(f'(x)<0\\), fällt der Graph. Ist \\(f'(x)=0\\), kann dort eine Extremstelle oder ein Sattelpunkt liegen."
       },
       {
         titel: "Extremstellen",
         text:
-          "Extremstellen sind Stellen, an denen ein Graph lokal besonders hoch oder besonders tief liegt. Mögliche Extremstellen findet man meistens mit f'(x) = 0."
+          "Extremstellen sind Stellen, an denen ein Graph lokal besonders hoch oder besonders tief liegt. Mögliche Extremstellen findet man meistens mit \\(f'(x)=0\\)."
       },
       {
         titel: "Zweite Ableitung",
         text:
-          "Die zweite Ableitung f''(x) beschreibt die Krümmung des Graphen. Ist f''(x) positiv, ist der Graph linksgekrümmt. Ist f''(x) negativ, ist der Graph rechtsgekrümmt."
+          "Die zweite Ableitung \\(f''(x)\\) beschreibt die Krümmung des Graphen. Ist \\(f''(x)>0\\), ist der Graph linksgekrümmt. Ist \\(f''(x)<0\\), ist der Graph rechtsgekrümmt."
       },
       {
         titel: "Hochpunkt und Tiefpunkt",
         text:
-          "Wenn f'(x₀) = 0 und f''(x₀) > 0 gilt, liegt ein Tiefpunkt vor. Wenn f'(x₀) = 0 und f''(x₀) < 0 gilt, liegt ein Hochpunkt vor."
+          "Wenn \\(f'(x_0)=0\\) und \\(f''(x_0)>0\\) gilt, liegt ein Tiefpunkt vor. Wenn \\(f'(x_0)=0\\) und \\(f''(x_0)<0\\) gilt, liegt ein Hochpunkt vor."
       },
       {
         titel: "Wendepunkt",
         text:
-          "Ein Wendepunkt ist ein Punkt, an dem der Graph sein Krümmungsverhalten ändert. Mögliche Wendestellen findet man mit f''(x) = 0. Danach muss man prüfen, ob wirklich ein Krümmungswechsel stattfindet."
+          "Ein Wendepunkt ist ein Punkt, an dem der Graph sein Krümmungsverhalten ändert. Mögliche Wendestellen findet man mit \\(f''(x)=0\\). Danach muss man prüfen, ob wirklich ein Krümmungswechsel stattfindet."
       },
       {
         titel: "Sattelpunkt",
         text:
-          "Ein Sattelpunkt ist ein besonderer Wendepunkt mit waagrechter Tangente. Das bedeutet: f'(x₀) = 0 und gleichzeitig liegt ein Wendepunkt vor."
+          "Ein Sattelpunkt ist ein besonderer Wendepunkt mit waagrechter Tangente. Das bedeutet: \\(f'(x_0)=0\\) und gleichzeitig liegt ein Wendepunkt vor."
       },
       {
         titel: "Tangente",
         text:
-          "Die Tangente an den Graphen bei x₀ hat die Steigung f'(x₀). Ihre Gleichung lautet y = f'(x₀)(x - x₀) + f(x₀)."
+          "Die Tangente an den Graphen bei \\(x_0\\) hat die Steigung \\(f'(x_0)\\). Ihre Gleichung lautet \\(y=f'(x_0)(x-x_0)+f(x_0)\\)."
       },
       {
         titel: "Monotonie",
         text:
-          "Monotonie beschreibt, wo ein Graph steigt oder fällt. Dazu untersucht man das Vorzeichen der ersten Ableitung."
+          "Monotonie beschreibt, wo ein Graph steigt oder fällt. Dazu untersucht man das Vorzeichen der ersten Ableitung \\(f'(x)\\)."
       },
       {
         titel: "Krümmung",
         text:
-          "Die Krümmung beschreibt, ob der Graph nach links oder rechts gebogen ist. Dazu untersucht man das Vorzeichen der zweiten Ableitung."
+          "Die Krümmung beschreibt, ob der Graph nach links oder rechts gebogen ist. Dazu untersucht man das Vorzeichen der zweiten Ableitung \\(f''(x)\\)."
       }
     ],
     methoden: [
@@ -438,384 +441,30 @@ const MATHEMATIK_THEMEN = [
         schritte: [
           "1. Bestimme zuerst den Definitionsbereich.",
           "2. Untersuche mögliche Symmetrien.",
-          "3. Berechne den y-Achsenabschnitt mit f(0).",
-          "4. Berechne die Nullstellen mit f(x) = 0.",
-          "5. Berechne die erste Ableitung f'(x).",
-          "6. Bestimme mögliche Extremstellen mit f'(x) = 0.",
-          "7. Berechne die zweite Ableitung f''(x).",
-          "8. Entscheide mit f''(x), ob Hochpunkte oder Tiefpunkte vorliegen.",
-          "9. Bestimme mögliche Wendestellen mit f''(x) = 0.",
-          "10. Prüfe den Krümmungswechsel oder verwende f'''(x), falls sinnvoll.",
-          "11. Berechne die y-Werte der gefundenen Punkte.",
+          "3. Berechne den \\(y\\)-Achsenabschnitt mit \\(f(0)\\).",
+          "4. Berechne die Nullstellen mit \\(f(x)=0\\).",
+          "5. Berechne die erste Ableitung \\(f'(x)\\).",
+          "6. Bestimme mögliche Extremstellen mit \\(f'(x)=0\\).",
+          "7. Berechne die zweite Ableitung \\(f''(x)\\).",
+          "8. Entscheide mit \\(f''(x)\\), ob Hochpunkte oder Tiefpunkte vorliegen.",
+          "9. Bestimme mögliche Wendestellen mit \\(f''(x)=0\\).",
+          "10. Prüfe den Krümmungswechsel oder verwende \\(f'''(x)\\), falls sinnvoll.",
+          "11. Berechne die \\(y\\)-Werte der gefundenen Punkte.",
           "12. Zeichne oder beschreibe den Graphen mit allen Informationen."
         ]
-      },
-      {
-        titel: "Methode: Nullstellen berechnen",
-        schritte: [
-          "1. Setze die Funktion gleich 0.",
-          "2. Vereinfache die Gleichung so weit wie möglich.",
-          "3. Faktorisiere, falls möglich.",
-          "4. Verwende bei quadratischen Gleichungen die passende Lösungsformel oder Faktorisierung.",
-          "5. Prüfe, ob alle Lösungen im Definitionsbereich liegen.",
-          "6. Schreibe die Nullstellen als Punkte auf der x-Achse."
-        ]
-      },
-      {
-        titel: "Methode: Extremstellen bestimmen",
-        schritte: [
-          "1. Berechne die erste Ableitung f'(x).",
-          "2. Setze f'(x) = 0.",
-          "3. Löse die Gleichung nach x.",
-          "4. Berechne die zweite Ableitung f''(x).",
-          "5. Setze die gefundenen x-Werte in f''(x) ein.",
-          "6. Bei f''(x) > 0 liegt ein Tiefpunkt vor.",
-          "7. Bei f''(x) < 0 liegt ein Hochpunkt vor.",
-          "8. Berechne den y-Wert mit der ursprünglichen Funktion f(x)."
-        ]
-      },
-      {
-        titel: "Methode: Wendepunkte bestimmen",
-        schritte: [
-          "1. Berechne die zweite Ableitung f''(x).",
-          "2. Setze f''(x) = 0.",
-          "3. Löse die Gleichung nach x.",
-          "4. Prüfe, ob ein Krümmungswechsel stattfindet.",
-          "5. Alternativ kann man bei vielen Aufgaben prüfen, ob f'''(x) nicht 0 ist.",
-          "6. Berechne den y-Wert mit der ursprünglichen Funktion f(x).",
-          "7. Schreibe den Wendepunkt als Koordinate auf."
-        ]
-      },
-      {
-        titel: "Methode: Monotonieintervalle bestimmen",
-        schritte: [
-          "1. Berechne die erste Ableitung f'(x).",
-          "2. Bestimme die kritischen Stellen mit f'(x) = 0.",
-          "3. Teile die x-Achse durch diese Stellen in Intervalle.",
-          "4. Wähle in jedem Intervall einen Testwert.",
-          "5. Setze den Testwert in f'(x) ein.",
-          "6. Ist f'(x) positiv, steigt die Funktion dort.",
-          "7. Ist f'(x) negativ, fällt die Funktion dort."
-        ]
-      },
-      {
-        titel: "Methode: Tangentengleichung aufstellen",
-        schritte: [
-          "1. Bestimme die Stelle x₀.",
-          "2. Berechne den Funktionswert f(x₀).",
-          "3. Berechne die Ableitung f'(x).",
-          "4. Berechne die Steigung m = f'(x₀).",
-          "5. Setze alles in y = m(x - x₀) + f(x₀) ein.",
-          "6. Vereinfache die Gleichung, falls verlangt."
-        ]
       }
-    ],
-    merksaetze: [
-      "Nullstellen findet man mit f(x) = 0.",
-      "Der y-Achsenabschnitt ist f(0).",
-      "Die erste Ableitung beschreibt die Steigung.",
-      "Mögliche Extremstellen findet man mit f'(x) = 0.",
-      "f''(x) > 0 bedeutet Tiefpunkt, falls f'(x) = 0 gilt.",
-      "f''(x) < 0 bedeutet Hochpunkt, falls f'(x) = 0 gilt.",
-      "Mögliche Wendepunkte findet man mit f''(x) = 0.",
-      "Ein Wendepunkt braucht einen Krümmungswechsel.",
-      "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente.",
-      "Die Tangente bei x₀ hat die Steigung f'(x₀)."
-    ],
-    typischeFehler: [
-      {
-        fehler: "Man setzt für Extremstellen die ursprüngliche Funktion f(x) = 0.",
-        korrektur:
-          "Für Extremstellen setzt man die erste Ableitung f'(x) = 0. Die Gleichung f(x) = 0 liefert Nullstellen, nicht Extremstellen."
-      },
-      {
-        fehler: "Man berechnet nur den x-Wert eines Extrempunkts.",
-        korrektur:
-          "Ein Punkt braucht immer x- und y-Koordinate. Den y-Wert erhält man durch Einsetzen des x-Werts in die ursprüngliche Funktion f(x)."
-      },
-      {
-        fehler: "Man denkt, f'(x) = 0 bedeutet automatisch Hochpunkt oder Tiefpunkt.",
-        korrektur:
-          "f'(x) = 0 bedeutet nur, dass eine waagrechte Tangente vorliegt. Es kann auch ein Sattelpunkt sein."
-      },
-      {
-        fehler: "Man bestimmt Wendepunkte mit f'(x) = 0.",
-        korrektur:
-          "Wendepunkte untersucht man mit der zweiten Ableitung. Man setzt f''(x) = 0 und prüft den Krümmungswechsel."
-      },
-      {
-        fehler: "Man verwechselt Funktionswert und Ableitungswert.",
-        korrektur:
-          "f(x) gibt die Höhe des Graphen an. f'(x) gibt die Steigung des Graphen an."
-      },
-      {
-        fehler: "Man verwendet f''(x) zur Monotonie.",
-        korrektur:
-          "Monotonie untersucht man mit f'(x). Die zweite Ableitung beschreibt die Krümmung, nicht direkt das Steigen oder Fallen."
-      },
-      {
-        fehler: "Man vergisst bei Tangenten den Punkt einzusetzen.",
-        korrektur:
-          "Für eine Tangente braucht man die Steigung f'(x₀) und den Punkt (x₀ | f(x₀)). Erst dann kann man die Tangentengleichung aufstellen."
-      }
-    ],
-    aufgaben: [
-      {
-        titel: "Aufgabe 1: y-Achsenabschnitt bestimmen",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Gegeben ist f(x) = x² - 4x + 1. Bestimme den Schnittpunkt mit der y-Achse.",
-        loesung: [
-          "Für den y-Achsenabschnitt setzt man x = 0 ein.",
-          "Also berechnet man f(0).",
-          "f(0) = 0² - 4 · 0 + 1.",
-          "Das ergibt f(0) = 1.",
-          "Der Schnittpunkt mit der y-Achse ist also (0 | 1)."
-        ]
-      },
-      {
-        titel: "Aufgabe 2: Nullstellen einer quadratischen Funktion",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Bestimme die Nullstellen von f(x) = x² - 6x + 8.",
-        loesung: [
-          "Nullstellen findet man mit f(x) = 0.",
-          "Also: x² - 6x + 8 = 0.",
-          "Faktorisiere den Term.",
-          "x² - 6x + 8 = (x - 2)(x - 4).",
-          "Damit gilt (x - 2)(x - 4) = 0.",
-          "Also ist x = 2 oder x = 4.",
-          "Die Nullstellen sind (2 | 0) und (4 | 0)."
-        ]
-      },
-      {
-        titel: "Aufgabe 3: Erste Ableitung und Steigung",
-        schwierigkeit: "einfach",
-        aufgabe:
-          "Gegeben ist f(x) = x³ - 2x. Berechne die Steigung des Graphen bei x = 2.",
-        loesung: [
-          "Die Steigung erhält man mit der ersten Ableitung.",
-          "f'(x) = 3x² - 2.",
-          "Setze x = 2 ein.",
-          "f'(2) = 3 · 2² - 2.",
-          "f'(2) = 12 - 2 = 10.",
-          "Die Steigung bei x = 2 ist also 10."
-        ]
-      },
-      {
-        titel: "Aufgabe 4: Extremstelle bestimmen",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Untersuche f(x) = x² - 4x + 5 auf Extremstellen.",
-        loesung: [
-          "Zuerst berechnet man die erste Ableitung.",
-          "f'(x) = 2x - 4.",
-          "Für mögliche Extremstellen setzt man f'(x) = 0.",
-          "2x - 4 = 0.",
-          "Daraus folgt x = 2.",
-          "Nun berechnet man die zweite Ableitung.",
-          "f''(x) = 2.",
-          "Da f''(2) = 2 > 0 ist, liegt ein Tiefpunkt vor.",
-          "Berechne den y-Wert mit f(2).",
-          "f(2) = 2² - 4 · 2 + 5 = 4 - 8 + 5 = 1.",
-          "Der Tiefpunkt ist T(2 | 1)."
-        ]
-      },
-      {
-        titel: "Aufgabe 5: Hochpunkt oder Tiefpunkt?",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Gegeben ist f(x) = -x² + 6x - 4. Bestimme den Extrempunkt.",
-        loesung: [
-          "Berechne zuerst die erste Ableitung.",
-          "f'(x) = -2x + 6.",
-          "Setze f'(x) = 0.",
-          "-2x + 6 = 0.",
-          "Daraus folgt x = 3.",
-          "Berechne die zweite Ableitung.",
-          "f''(x) = -2.",
-          "Da f''(3) = -2 < 0 ist, liegt ein Hochpunkt vor.",
-          "Berechne den y-Wert.",
-          "f(3) = -3² + 6 · 3 - 4 = -9 + 18 - 4 = 5.",
-          "Der Hochpunkt ist H(3 | 5)."
-        ]
-      },
-      {
-        titel: "Aufgabe 6: Wendepunkt bestimmen",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Bestimme den Wendepunkt von f(x) = x³ - 3x² + 2.",
-        loesung: [
-          "Für Wendepunkte betrachtet man die zweite Ableitung.",
-          "Zuerst berechnet man f'(x) = 3x² - 6x.",
-          "Dann berechnet man f''(x) = 6x - 6.",
-          "Setze f''(x) = 0.",
-          "6x - 6 = 0.",
-          "Daraus folgt x = 1.",
-          "Zur Kontrolle kann man die dritte Ableitung berechnen.",
-          "f'''(x) = 6.",
-          "Da f'''(1) = 6 nicht 0 ist, liegt ein Wendepunkt vor.",
-          "Berechne den y-Wert.",
-          "f(1) = 1³ - 3 · 1² + 2 = 1 - 3 + 2 = 0.",
-          "Der Wendepunkt ist W(1 | 0)."
-        ]
-      },
-      {
-        titel: "Aufgabe 7: Sattelpunkt erkennen",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Zeige, dass f(x) = x³ bei x = 0 einen Sattelpunkt besitzt.",
-        loesung: [
-          "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente.",
-          "Berechne die erste Ableitung.",
-          "f'(x) = 3x².",
-          "Setze x = 0 ein.",
-          "f'(0) = 0, also ist die Tangente waagrecht.",
-          "Berechne die zweite Ableitung.",
-          "f''(x) = 6x.",
-          "f''(0) = 0, also ist x = 0 eine mögliche Wendestelle.",
-          "Links von 0 ist f''(x) negativ, rechts von 0 ist f''(x) positiv.",
-          "Es findet also ein Krümmungswechsel statt.",
-          "Der Funktionswert ist f(0) = 0.",
-          "Damit liegt bei S(0 | 0) ein Sattelpunkt vor."
-        ]
-      },
-      {
-        titel: "Aufgabe 8: Monotonie untersuchen",
-        schwierigkeit: "mittel",
-        aufgabe:
-          "Untersuche die Monotonie von f(x) = x² - 2x.",
-        loesung: [
-          "Berechne zuerst die erste Ableitung.",
-          "f'(x) = 2x - 2.",
-          "Bestimme die kritische Stelle mit f'(x) = 0.",
-          "2x - 2 = 0.",
-          "Daraus folgt x = 1.",
-          "Nun prüft man die Intervalle links und rechts von 1.",
-          "Für x < 1 ist f'(x) negativ.",
-          "Für x > 1 ist f'(x) positiv.",
-          "Also fällt die Funktion auf dem Intervall (-∞, 1).",
-          "Sie steigt auf dem Intervall (1, ∞)."
-        ]
-      },
-      {
-        titel: "Aufgabe 9: Tangentengleichung aufstellen",
-        schwierigkeit: "schwer",
-        aufgabe:
-          "Bestimme die Tangente an f(x) = x² + 2x bei x₀ = 1.",
-        loesung: [
-          "Zuerst berechnet man den Punkt auf dem Graphen.",
-          "f(1) = 1² + 2 · 1 = 3.",
-          "Der Berührpunkt ist also (1 | 3).",
-          "Nun berechnet man die Ableitung.",
-          "f'(x) = 2x + 2.",
-          "Die Steigung an der Stelle x₀ = 1 ist f'(1) = 4.",
-          "Die Tangentengleichung lautet y = m(x - x₀) + f(x₀).",
-          "Setze m = 4, x₀ = 1 und f(x₀) = 3 ein.",
-          "y = 4(x - 1) + 3.",
-          "Vereinfacht ergibt das y = 4x - 1."
-        ]
-      },
-      {
-        titel: "Aufgabe 10: Vollständige kleine Kurvendiskussion",
-        schwierigkeit: "schwer",
-        aufgabe:
-          "Untersuche f(x) = x³ - 3x auf Nullstellen, Extremstellen und Wendepunkt.",
-        loesung: [
-          "Zuerst berechnet man die Nullstellen.",
-          "Setze f(x) = 0.",
-          "x³ - 3x = 0.",
-          "Faktorisiere x aus.",
-          "x(x² - 3) = 0.",
-          "Also ist x = 0 oder x² - 3 = 0.",
-          "Daraus folgen die Nullstellen x = 0, x = √3 und x = -√3.",
-          "Nun berechnet man die erste Ableitung.",
-          "f'(x) = 3x² - 3.",
-          "Für Extremstellen setzt man f'(x) = 0.",
-          "3x² - 3 = 0.",
-          "x² = 1.",
-          "Also x = -1 oder x = 1.",
-          "Berechne die zweite Ableitung.",
-          "f''(x) = 6x.",
-          "Bei x = -1 gilt f''(-1) = -6 < 0, also liegt ein Hochpunkt vor.",
-          "Bei x = 1 gilt f''(1) = 6 > 0, also liegt ein Tiefpunkt vor.",
-          "Berechne die y-Werte.",
-          "f(-1) = (-1)³ - 3(-1) = -1 + 3 = 2.",
-          "f(1) = 1³ - 3 · 1 = -2.",
-          "Der Hochpunkt ist H(-1 | 2).",
-          "Der Tiefpunkt ist T(1 | -2).",
-          "Für den Wendepunkt setzt man f''(x) = 0.",
-          "6x = 0, also x = 0.",
-          "Da f'''(x) = 6 nicht 0 ist, liegt ein Wendepunkt vor.",
-          "f(0) = 0.",
-          "Der Wendepunkt ist W(0 | 0)."
-        ]
-      }
-    ],
-    muendlich: [
-      {
-        frage: "Was untersucht man bei einer Kurvendiskussion?",
-        antwort:
-          "Man untersucht wichtige Eigenschaften eines Funktionsgraphen, zum Beispiel Nullstellen, Extremstellen, Wendepunkte, Monotonie, Krümmung und Tangenten."
-      },
-      {
-        frage: "Wie findet man Nullstellen?",
-        antwort:
-          "Man setzt die Funktion gleich 0 und löst die Gleichung f(x) = 0. Die Lösungen sind die x-Werte, bei denen der Graph die x-Achse schneidet."
-      },
-      {
-        frage: "Was sagt die erste Ableitung aus?",
-        antwort:
-          "Die erste Ableitung beschreibt die Steigung des Graphen. Sie zeigt, ob der Graph steigt, fällt oder eine waagrechte Tangente hat."
-      },
-      {
-        frage: "Wie findet man mögliche Extremstellen?",
-        antwort:
-          "Man berechnet die erste Ableitung und setzt f'(x) = 0. Danach prüft man mit der zweiten Ableitung oder einem Vorzeichenwechsel, ob ein Hochpunkt oder Tiefpunkt vorliegt."
-      },
-      {
-        frage: "Was sagt die zweite Ableitung aus?",
-        antwort:
-          "Die zweite Ableitung beschreibt die Krümmung des Graphen. Sie hilft bei der Entscheidung, ob ein Extrempunkt ein Hochpunkt oder Tiefpunkt ist, und bei der Suche nach Wendepunkten."
-      },
-      {
-        frage: "Was ist ein Wendepunkt?",
-        antwort:
-          "Ein Wendepunkt ist ein Punkt, an dem der Graph seine Krümmung wechselt, also zum Beispiel von rechtsgekrümmt zu linksgekrümmt."
-      },
-      {
-        frage: "Was ist ein Sattelpunkt?",
-        antwort:
-          "Ein Sattelpunkt ist ein Wendepunkt mit waagrechter Tangente. Dort gilt also f'(x) = 0 und gleichzeitig findet ein Krümmungswechsel statt."
-      },
-      {
-        frage: "Wie stellt man eine Tangente auf?",
-        antwort:
-          "Man berechnet zuerst den Punkt (x₀ | f(x₀)) und die Steigung f'(x₀). Danach setzt man beides in y = f'(x₀)(x - x₀) + f(x₀) ein."
-      }
-    ],
-    nachtVorTest: [
-      "Kannst du Nullstellen mit f(x) = 0 berechnen?",
-      "Weisst du, dass f(0) den y-Achsenabschnitt liefert?",
-      "Kannst du die erste Ableitung als Steigung erklären?",
-      "Weisst du, dass mögliche Extremstellen mit f'(x) = 0 gefunden werden?",
-      "Kannst du mit f''(x) entscheiden, ob ein Hochpunkt oder Tiefpunkt vorliegt?",
-      "Weisst du, dass Wendepunkte mit f''(x) = 0 gesucht werden?",
-      "Prüfst du beim Wendepunkt den Krümmungswechsel?",
-      "Kannst du einen Sattelpunkt erklären?",
-      "Kannst du Monotonieintervalle mit f'(x) bestimmen?",
-      "Kannst du eine Tangentengleichung mit y = f'(x₀)(x - x₀) + f(x₀) aufstellen?"
     ]
   },
-     {
+
+  {
     id: "funktionen-parameter",
     nummer: "3",
     titel: "Funktionen mit Parametern",
     kurzbeschreibung:
-      "Einfluss von Parametern auf Funktionsgraphen, besonders bei g(x) = a · f(bx + c) + d sowie bei quadratischen, trigonometrischen, Exponential- und Logarithmusfunktionen.",
+      "Einfluss von Parametern auf Funktionsgraphen, besonders bei \\(g(x)=a\\cdot f(bx+c)+d\\) sowie bei quadratischen, trigonometrischen, Exponential- und Logarithmusfunktionen.",
     lernziele: [
       "Du kannst erklären, was ein Parameter in einer Funktion bedeutet.",
-      "Du kannst den Einfluss von a, b, c und d auf einen Graphen beschreiben.",
+      "Du kannst den Einfluss von \\(a\\), \\(b\\), \\(c\\) und \\(d\\) auf einen Graphen beschreiben.",
       "Du erkennst Streckung, Stauchung, Spiegelung und Verschiebung.",
       "Du kannst Funktionsgraphen ohne Wertetabelle transformieren.",
       "Du kannst quadratische Funktionen mit Parametern untersuchen.",
@@ -829,79 +478,81 @@ const MATHEMATIK_THEMEN = [
       {
         titel: "Was ist ein Parameter?",
         text:
-          "Ein Parameter ist eine Zahl oder ein Buchstabe, der die Form oder Lage eines Graphen verändert. Im Gegensatz zur Variable x wird ein Parameter meistens als fest betrachtet."
+          "Ein Parameter ist eine Zahl oder ein Buchstabe, der die Form oder Lage eines Graphen verändert. Im Gegensatz zur Variable \\(x\\) wird ein Parameter meistens als fest betrachtet."
       },
       {
         titel: "Grundidee",
         text:
-          "Man beginnt mit einer bekannten Grundfunktion f(x), zum Beispiel x², sin(x), eˣ oder log(x). Durch Parameter wird dieser Grundgraph verschoben, gestreckt, gestaucht oder gespiegelt."
+          "Man beginnt mit einer bekannten Grundfunktion \\(f(x)\\), zum Beispiel \\(x^2\\), \\(\\sin(x)\\), \\(e^x\\) oder \\(\\log(x)\\). Durch Parameter wird dieser Grundgraph verschoben, gestreckt, gestaucht oder gespiegelt."
       },
       {
         titel: "Allgemeine Form",
         text:
-          "Eine typische Schreibweise ist g(x) = a · f(bx + c) + d. Die Parameter a und d wirken in y-Richtung. Die Parameter b und c wirken in x-Richtung."
+          "Eine typische Schreibweise ist \\(g(x)=a\\cdot f(bx+c)+d\\). Die Parameter \\(a\\) und \\(d\\) wirken in \\(y\\)-Richtung. Die Parameter \\(b\\) und \\(c\\) wirken in \\(x\\)-Richtung."
       },
       {
         titel: "Parameter a",
         text:
-          "Der Parameter a verändert den Graphen in y-Richtung. Ist |a| grösser als 1, wird der Graph vertikal gestreckt. Ist |a| zwischen 0 und 1, wird er vertikal gestaucht. Ist a negativ, wird der Graph zusätzlich an der x-Achse gespiegelt."
+          "Der Parameter \\(a\\) verändert den Graphen in \\(y\\)-Richtung. Ist \\(|a|>1\\), wird der Graph vertikal gestreckt. Ist \\(0<|a|<1\\), wird er vertikal gestaucht. Ist \\(a<0\\), wird der Graph zusätzlich an der \\(x\\)-Achse gespiegelt."
       },
       {
         titel: "Parameter d",
         text:
-          "Der Parameter d verschiebt den Graphen nach oben oder unten. Bei d > 0 wird der Graph nach oben verschoben. Bei d < 0 wird er nach unten verschoben."
+          "Der Parameter \\(d\\) verschiebt den Graphen nach oben oder unten. Bei \\(d>0\\) wird der Graph nach oben verschoben. Bei \\(d<0\\) wird er nach unten verschoben."
       },
       {
         titel: "Parameter b",
         text:
-          "Der Parameter b verändert den Graphen in x-Richtung. Ist |b| grösser als 1, wird der Graph horizontal gestaucht. Ist |b| zwischen 0 und 1, wird er horizontal gestreckt. Ist b negativ, wird der Graph an der y-Achse gespiegelt."
+          "Der Parameter \\(b\\) verändert den Graphen in \\(x\\)-Richtung. Ist \\(|b|>1\\), wird der Graph horizontal gestaucht. Ist \\(0<|b|<1\\), wird er horizontal gestreckt. Ist \\(b<0\\), wird der Graph an der \\(y\\)-Achse gespiegelt."
       },
       {
         titel: "Parameter c",
         text:
-          "Der Parameter c verschiebt den Graphen horizontal. Bei f(x + c) verschiebt sich der Graph nach links, wenn c positiv ist, und nach rechts, wenn c negativ ist. Das wirkt auf viele Schüler zuerst umgekehrt."
+          "Der Parameter \\(c\\) verschiebt den Graphen horizontal. Bei \\(f(x+c)\\) verschiebt sich der Graph nach links, wenn \\(c\\) positiv ist, und nach rechts, wenn \\(c\\) negativ ist. Das wirkt auf viele Schüler zuerst umgekehrt."
       },
       {
         titel: "Warum ist die x-Richtung ungewohnt?",
         text:
-          "Veränderungen innerhalb der Klammer wirken auf die x-Werte. Deshalb erscheinen sie oft umgekehrt: f(x - 3) verschiebt den Graphen nach rechts, obwohl ein Minuszeichen steht."
+          "Veränderungen innerhalb der Klammer wirken auf die \\(x\\)-Werte. Deshalb erscheinen sie oft umgekehrt: \\(f(x-3)\\) verschiebt den Graphen nach rechts, obwohl ein Minuszeichen steht."
       },
       {
         titel: "Quadratische Funktionen mit Parametern",
         text:
-          "Bei Funktionen wie f(x) = a(x - u)² + v erkennt man den Scheitelpunkt direkt. Der Scheitelpunkt ist S(u | v). Der Parameter a entscheidet über Öffnung, Streckung und Spiegelung."
+          "Bei Funktionen wie \\(f(x)=a(x-u)^2+v\\) erkennt man den Scheitelpunkt direkt. Der Scheitelpunkt ist \\(S(u\\mid v)\\). Der Parameter \\(a\\) entscheidet über Öffnung, Streckung und Spiegelung."
       },
       {
         titel: "Trigonometrische Funktionen mit Parametern",
         text:
-          "Bei Funktionen wie f(x) = a · sin(bx + c) + d verändert a die Amplitude, b die Periode, c die horizontale Verschiebung und d die Mittellinie."
+          "Bei Funktionen wie \\(f(x)=a\\cdot\\sin(bx+c)+d\\) verändert \\(a\\) die Amplitude, \\(b\\) die Periode, \\(c\\) die horizontale Verschiebung und \\(d\\) die Mittellinie."
       },
       {
         titel: "Exponentialfunktionen mit Parametern",
         text:
-          "Bei Exponentialfunktionen verändern Parameter die Anfangshöhe, das Wachstum, die Verschiebung und die waagrechte Asymptote. Besonders d beeinflusst die waagrechte Asymptote."
+          "Bei Exponentialfunktionen verändern Parameter die Anfangshöhe, das Wachstum, die Verschiebung und die waagrechte Asymptote. Besonders \\(d\\) beeinflusst die waagrechte Asymptote."
       },
       {
         titel: "Logarithmusfunktionen mit Parametern",
         text:
-          "Bei Logarithmusfunktionen beeinflussen Parameter die Lage des Graphen, den Definitionsbereich und die senkrechte Asymptote. Verschiebungen in x-Richtung sind hier besonders wichtig."
+          "Bei Logarithmusfunktionen beeinflussen Parameter die Lage des Graphen, den Definitionsbereich und die senkrechte Asymptote. Verschiebungen in \\(x\\)-Richtung sind hier besonders wichtig."
       }
     ],
     methoden: [
       {
-        titel: "Methode: Parameter in g(x) = a · f(bx + c) + d deuten",
+        titel: "Methode: Parameter in \\(g(x)=a\\cdot f(bx+c)+d\\) deuten",
         schritte: [
-          "1. Betrachte zuerst den Parameter a vor der Funktion.",
-          "2. Entscheide, ob eine Streckung, Stauchung oder Spiegelung an der x-Achse vorliegt.",
-          "3. Betrachte danach den Parameter d ausserhalb der Funktion.",
+          "1. Betrachte zuerst den Parameter \\(a\\) vor der Funktion.",
+          "2. Entscheide, ob eine Streckung, Stauchung oder Spiegelung an der \\(x\\)-Achse vorliegt.",
+          "3. Betrachte danach den Parameter \\(d\\) ausserhalb der Funktion.",
           "4. Bestimme die Verschiebung nach oben oder unten.",
           "5. Betrachte nun den Ausdruck innerhalb der Klammer.",
-          "6. Entscheide, wie b den Graphen horizontal verändert.",
-          "7. Bestimme zuletzt die horizontale Verschiebung durch c.",
+          "6. Entscheide, wie \\(b\\) den Graphen horizontal verändert.",
+          "7. Bestimme zuletzt die horizontale Verschiebung durch \\(c\\).",
           "8. Beschreibe die Veränderungen in einer sinnvollen Reihenfolge."
         ]
-      },
-      {
+      }
+    ]
+  }
+];
         titel: "Methode: Verschiebung bei f(x - u) erkennen",
         schritte: [
           "1. Schaue genau auf den Ausdruck in der Klammer.",
