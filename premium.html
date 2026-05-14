@@ -324,6 +324,12 @@
       overflow-x: auto;
     }
 
+    .mjx-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+    }
+
     .notice {
       background: rgba(234, 179, 8, 0.12);
       border: 1px solid rgba(234, 179, 8, 0.35);
@@ -435,6 +441,24 @@
       }
     }
   </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [["\\(", "\\)"]],
+        displayMath: [["\\[", "\\]"]],
+        processEscapes: true
+      },
+      svg: {
+        fontCache: "global"
+      },
+      startup: {
+        typeset: false
+      }
+    };
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -593,6 +617,28 @@
       }
     };
 
+    function typesetMath(root) {
+      if (!root) return;
+
+      if (window.MathJax && window.MathJax.typesetPromise) {
+        window.MathJax.typesetPromise([root]).catch(function(error) {
+          console.error("MathJax Fehler:", error);
+        });
+      }
+    }
+
+    window.typesetMath = typesetMath;
+
+    function scheduleMathTypeset() {
+      window.setTimeout(function() {
+        typesetMath(materialContent);
+      }, 0);
+    }
+
+    materialContent.addEventListener("click", function() {
+      scheduleMathTypeset();
+    });
+
     function setStatus(message) {
       statusBox.textContent = message;
 
@@ -712,12 +758,14 @@
 
     function setMaterialContent(html) {
       materialContent.innerHTML = html;
+      scheduleMathTypeset();
     }
 
     function toggleInfo(id) {
       const box = document.getElementById(id);
       if (!box) return;
       box.classList.toggle("hidden");
+      scheduleMathTypeset();
     }
 
     function openMaterial(subject, levelKey) {
@@ -741,6 +789,7 @@
             <p>Für ${subject.name} · ${displayLevel} werden aktuell noch keine Materialien angezeigt.</p>
           </div>
         `;
+        scheduleMathTypeset();
         return;
       }
 
@@ -774,6 +823,7 @@
             <p>Für ${subject.name} werden aktuell noch keine Materialien angezeigt.</p>
           </div>
         `;
+        scheduleMathTypeset();
         return;
       }
 
@@ -819,6 +869,7 @@
     function runRenderFunction(renderFunctionName) {
       if (typeof window[renderFunctionName] === "function") {
         window[renderFunctionName](materialContent);
+        scheduleMathTypeset();
       } else {
         materialContent.innerHTML = `
           <div class="exercise-card">
