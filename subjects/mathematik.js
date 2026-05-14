@@ -2824,6 +2824,401 @@ const MATHEMATIK_THEMEN = [
       "Kannst du bei geometrischen Flächen an Nullstellen aufteilen?",
       "Kennst du Stammfunktionen von eˣ, sin(x) und cos(x)?"
     ]
+  },
+     {
+    id: "integrationstechniken",
+    nummer: "8",
+    titel: "Integrationstechniken",
+    kurzbeschreibung:
+      "Substitution, partielle Integration, einfache Umformungen vor dem Integrieren und Erkennen passender Integrationsmethoden.",
+    lernziele: [
+      "Du kannst erkennen, wann eine Substitution sinnvoll ist.",
+      "Du kannst einfache Integrale mit Substitution lösen.",
+      "Du verstehst die Rücksubstitution am Ende einer Substitution.",
+      "Du kannst partielle Integration anwenden.",
+      "Du erkennst Produkte, bei denen partielle Integration sinnvoll ist.",
+      "Du kannst Integrale vor dem Rechnen vereinfachen.",
+      "Du kannst entscheiden, ob Potenzregel, Substitution oder partielle Integration passt.",
+      "Du kannst bestimmte Integrale mit Substitution berechnen.",
+      "Du erkennst typische Fehler bei dx, du und Grenzen.",
+      "Du kannst deine Stammfunktion durch Ableiten kontrollieren."
+    ],
+    theorie: [
+      {
+        titel: "Warum braucht man Integrationstechniken?",
+        text:
+          "Nicht jedes Integral lässt sich direkt mit der einfachen Potenzregel lösen. Wenn Funktionen verschachtelt oder multipliziert sind, braucht man zusätzliche Methoden wie Substitution oder partielle Integration."
+      },
+      {
+        titel: "Substitution",
+        text:
+          "Substitution bedeutet, dass man einen komplizierten inneren Ausdruck durch eine neue Variable ersetzt. Dadurch wird das Integral oft einfacher."
+      },
+      {
+        titel: "Grundidee der Substitution",
+        text:
+          "Wenn in einem Integral eine innere Funktion und ungefähr ihre Ableitung vorkommen, ist Substitution meistens sinnvoll. Man ersetzt die innere Funktion durch u."
+      },
+      {
+        titel: "Rücksubstitution",
+        text:
+          "Nach dem Integrieren mit u muss man wieder zur ursprünglichen Variable x zurückkehren. Das nennt man Rücksubstitution."
+      },
+      {
+        titel: "Substitution bei bestimmten Integralen",
+        text:
+          "Bei bestimmten Integralen kann man entweder die Grenzen mit substituieren oder nach der Rücksubstitution die ursprünglichen x-Grenzen verwenden. Wichtig ist, dass man nicht beides vermischt."
+      },
+      {
+        titel: "Partielle Integration",
+        text:
+          "Partielle Integration verwendet man oft bei Produkten zweier Funktionen. Sie ist gewissermassen die Umkehrung der Produktregel."
+      },
+      {
+        titel: "Formel der partiellen Integration",
+        text:
+          "Die Grundformel lautet: Integral von u · v' ist u · v minus Integral von u' · v. Man wählt also einen Faktor zum Ableiten und einen Faktor zum Integrieren."
+      },
+      {
+        titel: "Wann partielle Integration?",
+        text:
+          "Partielle Integration ist oft sinnvoll bei Produkten wie x · eˣ, x · sin(x), x · cos(x) oder ln(x). Besonders hilfreich ist sie, wenn ein Faktor beim Ableiten einfacher wird."
+      },
+      {
+        titel: "Vorher vereinfachen",
+        text:
+          "Viele Integrale wirken schwieriger, als sie sind. Man sollte zuerst ausmultiplizieren, kürzen, Potenzen umschreiben oder Brüche aufteilen, bevor man eine komplizierte Methode benutzt."
+      },
+      {
+        titel: "Methode erkennen",
+        text:
+          "Direkte Integration passt bei einfachen Summen und Potenzen. Substitution passt bei verschachtelten Funktionen. Partielle Integration passt häufig bei Produkten."
+      }
+    ],
+    methoden: [
+      {
+        titel: "Methode: Substitution durchführen",
+        schritte: [
+          "1. Suche einen inneren Ausdruck, der das Integral kompliziert macht.",
+          "2. Setze diesen Ausdruck gleich u.",
+          "3. Berechne die Ableitung du/dx.",
+          "4. Forme nach dx oder nach dem passenden Ausdruck um.",
+          "5. Ersetze im Integral alles durch u.",
+          "6. Integriere das einfachere Integral.",
+          "7. Ersetze am Schluss u wieder durch den ursprünglichen Ausdruck.",
+          "8. Kontrolliere durch Ableiten."
+        ]
+      },
+      {
+        titel: "Methode: Substitution bei bestimmten Integralen",
+        schritte: [
+          "1. Wähle wie gewohnt eine Substitution u.",
+          "2. Berechne du/dx.",
+          "3. Ersetze den Integranden und dx passend.",
+          "4. Ersetze auch die Grenzen durch neue u-Grenzen.",
+          "5. Berechne das Integral vollständig in u.",
+          "6. Setze die neuen Grenzen ein.",
+          "7. Verwende dann keine x-Grenzen mehr."
+        ]
+      },
+      {
+        titel: "Methode: Partielle Integration anwenden",
+        schritte: [
+          "1. Erkenne ein Produkt zweier Funktionen.",
+          "2. Wähle u so, dass u beim Ableiten einfacher wird.",
+          "3. Wähle v' als den Teil, den du gut integrieren kannst.",
+          "4. Berechne u' und v.",
+          "5. Setze in die Formel Integral u · v' = u · v - Integral u' · v ein.",
+          "6. Berechne das neue Integral.",
+          "7. Füge beim unbestimmten Integral + C hinzu."
+        ]
+      },
+      {
+        titel: "Methode: Vor dem Integrieren vereinfachen",
+        schritte: [
+          "1. Prüfe, ob man ausmultiplizieren kann.",
+          "2. Prüfe, ob man kürzen kann.",
+          "3. Schreibe Wurzeln als Potenzen.",
+          "4. Teile Brüche in mehrere einfachere Terme auf.",
+          "5. Integriere erst danach.",
+          "6. Kontrolliere, ob eine komplizierte Methode überhaupt nötig war."
+        ]
+      },
+      {
+        titel: "Methode: Passende Integrationstechnik erkennen",
+        schritte: [
+          "1. Ist es eine einfache Summe von Potenzen, integriere direkt.",
+          "2. Steht eine verschachtelte Funktion mit innerer Ableitung da, verwende Substitution.",
+          "3. Steht ein Produkt aus zwei unterschiedlichen Funktionen da, prüfe partielle Integration.",
+          "4. Kommt ln(x) allein vor, kann partielle Integration mit 1 · ln(x) helfen.",
+          "5. Wenn du unsicher bist, versuche zuerst zu vereinfachen."
+        ]
+      }
+    ],
+    merksaetze: [
+      "Substitution ist die Umkehridee der Kettenregel.",
+      "Partielle Integration ist die Umkehridee der Produktregel.",
+      "Bei Substitution ersetzt man einen inneren Ausdruck durch u.",
+      "Am Ende einer Substitution muss man wieder zurück zu x.",
+      "Bei bestimmten Integralen darf man x-Grenzen und u-Grenzen nicht vermischen.",
+      "Partielle Integration passt oft bei Produkten.",
+      "Bei partieller Integration sollte u beim Ableiten einfacher werden.",
+      "Vor dem Integrieren immer zuerst vereinfachen.",
+      "Nicht jedes Produkt braucht partielle Integration.",
+      "Jede Stammfunktion kann man durch Ableiten kontrollieren."
+    ],
+    typischeFehler: [
+      {
+        fehler: "Man substituiert u, vergisst aber dx passend zu ersetzen.",
+        korrektur:
+          "Bei der Substitution muss nicht nur der Ausdruck, sondern auch das Differential angepasst werden. Sonst ist die Rechnung unvollständig."
+      },
+      {
+        fehler: "Man vergisst die Rücksubstitution.",
+        korrektur:
+          "Beim unbestimmten Integral muss am Schluss wieder x stehen, nicht u."
+      },
+      {
+        fehler: "Man vermischt bei bestimmten Integralen alte x-Grenzen mit neuer u-Variable.",
+        korrektur:
+          "Wenn du die Grenzen substituierst, rechnest du vollständig mit u-Grenzen. Wenn du zurücksubstituierst, verwendest du die ursprünglichen x-Grenzen."
+      },
+      {
+        fehler: "Man wählt bei partieller Integration u ungünstig.",
+        korrektur:
+          "u sollte beim Ableiten einfacher werden. Bei x · eˣ ist meistens u = x sinnvoll, weil x zu 1 wird."
+      },
+      {
+        fehler: "Man vergisst das Minuszeichen in der Formel der partiellen Integration.",
+        korrektur:
+          "Die Formel lautet Integral u · v' = u · v minus Integral u' · v. Das Minus ist entscheidend."
+      },
+      {
+        fehler: "Man verwendet eine komplizierte Methode, obwohl man zuerst kürzen könnte.",
+        korrektur:
+          "Vor jeder Integration sollte man prüfen, ob der Term durch Umformen einfacher wird."
+      }
+    ],
+    aufgaben: [
+      {
+        titel: "Aufgabe 1: Einfaches Integral durch Vereinfachen",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Berechne das unbestimmte Integral von f(x) = x(x + 2).",
+        loesung: [
+          "Zuerst vereinfacht man den Integranden.",
+          "x(x + 2) = x² + 2x.",
+          "Nun integriert man gliedweise.",
+          "Eine Stammfunktion von x² ist x³ / 3.",
+          "Eine Stammfunktion von 2x ist x².",
+          "Also ist F(x) = x³ / 3 + x² + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 2: Wurzel vor dem Integrieren umschreiben",
+        schwierigkeit: "einfach",
+        aufgabe:
+          "Bestimme das unbestimmte Integral von √x.",
+        loesung: [
+          "Schreibe die Wurzel zuerst als Potenz.",
+          "√x = x hoch 1/2.",
+          "Erhöhe den Exponenten um 1.",
+          "1/2 + 1 = 3/2.",
+          "Teile durch den neuen Exponenten.",
+          "Eine Stammfunktion ist x hoch 3/2 geteilt durch 3/2.",
+          "Das ist 2/3 · x hoch 3/2.",
+          "Also F(x) = 2/3 · x hoch 3/2 + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 3: Substitution mit linearer innerer Funktion",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne das unbestimmte Integral von (2x + 1)⁵.",
+        loesung: [
+          "Setze u = 2x + 1.",
+          "Dann ist du/dx = 2.",
+          "Also gilt du = 2 dx.",
+          "Damit ist dx = du / 2.",
+          "Das Integral wird zu Integral u⁵ · 1/2 du.",
+          "Das ist 1/2 · u⁶ / 6.",
+          "Also 1/12 · u⁶.",
+          "Nun zurücksubstituieren.",
+          "F(x) = 1/12 · (2x + 1)⁶ + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 4: Substitution bei e-Funktion",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne das unbestimmte Integral von 3e hoch 3x.",
+        loesung: [
+          "Man kann hier direkt erkennen, dass die innere Ableitung 3 ist.",
+          "Setze u = 3x.",
+          "Dann ist du = 3 dx.",
+          "Das Integral von 3e hoch 3x dx wird zu Integral e hoch u du.",
+          "Eine Stammfunktion von e hoch u ist e hoch u.",
+          "Rücksubstitution ergibt e hoch 3x.",
+          "Also ist F(x) = e hoch 3x + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 5: Substitution mit Logarithmus",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne das unbestimmte Integral von 2 / (2x + 5).",
+        loesung: [
+          "Setze u = 2x + 5.",
+          "Dann ist du = 2 dx.",
+          "Der Zähler 2 passt genau zur inneren Ableitung.",
+          "Das Integral wird zu Integral 1/u du.",
+          "Eine Stammfunktion von 1/u ist ln(|u|).",
+          "Rücksubstitution ergibt ln(|2x + 5|) + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 6: Bestimmtes Integral mit Substitution",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne das Integral von 0 bis 1 von 2x · (x² + 1)³.",
+        loesung: [
+          "Setze u = x² + 1.",
+          "Dann ist du = 2x dx.",
+          "Nun müssen auch die Grenzen ersetzt werden.",
+          "Für x = 0 gilt u = 0² + 1 = 1.",
+          "Für x = 1 gilt u = 1² + 1 = 2.",
+          "Das Integral wird zu Integral von 1 bis 2 von u³ du.",
+          "Eine Stammfunktion ist u⁴ / 4.",
+          "Setze die Grenzen ein.",
+          "Das ergibt 2⁴ / 4 - 1⁴ / 4.",
+          "Das ist 16/4 - 1/4 = 15/4."
+        ]
+      },
+      {
+        titel: "Aufgabe 7: Partielle Integration mit x · eˣ",
+        schwierigkeit: "mittel",
+        aufgabe:
+          "Berechne das unbestimmte Integral von x · eˣ.",
+        loesung: [
+          "Verwende partielle Integration.",
+          "Wähle u = x, weil x beim Ableiten einfacher wird.",
+          "Dann ist u' = 1.",
+          "Wähle v' = eˣ.",
+          "Dann ist v = eˣ.",
+          "Die Formel lautet Integral u · v' = u · v - Integral u' · v.",
+          "Also ergibt sich x · eˣ - Integral 1 · eˣ dx.",
+          "Das ist x · eˣ - eˣ + C.",
+          "Also F(x) = eˣ(x - 1) + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 8: Partielle Integration mit x · cos(x)",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Berechne das unbestimmte Integral von x · cos(x).",
+        loesung: [
+          "Verwende partielle Integration.",
+          "Wähle u = x.",
+          "Dann ist u' = 1.",
+          "Wähle v' = cos(x).",
+          "Dann ist v = sin(x).",
+          "Setze in die Formel ein.",
+          "Integral x · cos(x) dx = x · sin(x) - Integral 1 · sin(x) dx.",
+          "Eine Stammfunktion von sin(x) ist -cos(x).",
+          "Also ist minus Integral sin(x) dx gleich plus cos(x).",
+          "Damit ist F(x) = x · sin(x) + cos(x) + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 9: Integral von ln(x)",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Berechne das unbestimmte Integral von ln(x).",
+        loesung: [
+          "Man schreibt ln(x) als Produkt 1 · ln(x).",
+          "Verwende partielle Integration.",
+          "Wähle u = ln(x), weil die Ableitung einfacher wird.",
+          "Dann ist u' = 1/x.",
+          "Wähle v' = 1.",
+          "Dann ist v = x.",
+          "Die Formel ergibt x ln(x) - Integral x · 1/x dx.",
+          "Das vereinfacht sich zu x ln(x) - Integral 1 dx.",
+          "Also ist F(x) = x ln(x) - x + C."
+        ]
+      },
+      {
+        titel: "Aufgabe 10: Methode erkennen",
+        schwierigkeit: "schwer",
+        aufgabe:
+          "Entscheide, welche Methode sinnvoll ist: Integral von 4x(x² + 3)⁶ dx. Berechne danach das Integral.",
+        loesung: [
+          "Der Ausdruck ist eine verschachtelte Funktion.",
+          "Innen steht x² + 3.",
+          "Die Ableitung davon ist 2x.",
+          "Im Integral steht 4x, also ein Vielfaches der inneren Ableitung.",
+          "Daher ist Substitution sinnvoll.",
+          "Setze u = x² + 3.",
+          "Dann ist du = 2x dx.",
+          "Da 4x dx = 2du gilt, wird das Integral zu 2 · Integral u⁶ du.",
+          "Das ergibt 2 · u⁷ / 7.",
+          "Rücksubstitution ergibt F(x) = 2/7 · (x² + 3)⁷ + C."
+        ]
+      }
+    ],
+    muendlich: [
+      {
+        frage: "Wann ist Substitution sinnvoll?",
+        antwort:
+          "Substitution ist sinnvoll, wenn eine verschachtelte Funktion vorkommt und die innere Ableitung ebenfalls im Integral erscheint oder fast erscheint."
+      },
+      {
+        frage: "Was ist die Grundidee der Substitution?",
+        antwort:
+          "Man ersetzt einen komplizierten inneren Ausdruck durch eine neue Variable u, damit das Integral einfacher wird."
+      },
+      {
+        frage: "Was bedeutet Rücksubstitution?",
+        antwort:
+          "Nach dem Integrieren ersetzt man u wieder durch den ursprünglichen Ausdruck in x."
+      },
+      {
+        frage: "Was muss man bei bestimmten Integralen mit Substitution beachten?",
+        antwort:
+          "Man muss entweder die Grenzen in u-Grenzen umrechnen oder nach der Rücksubstitution die ursprünglichen x-Grenzen verwenden. Man darf beides nicht vermischen."
+      },
+      {
+        frage: "Wann verwendet man partielle Integration?",
+        antwort:
+          "Man verwendet sie häufig bei Produkten zweier Funktionen, besonders wenn ein Faktor beim Ableiten einfacher wird."
+      },
+      {
+        frage: "Welche Ableitungsregel steckt hinter der partiellen Integration?",
+        antwort:
+          "Die partielle Integration ist die Umkehrung der Produktregel."
+      },
+      {
+        frage: "Welche Ableitungsregel steckt hinter der Substitution?",
+        antwort:
+          "Die Substitution ist die Umkehrung der Kettenregel."
+      },
+      {
+        frage: "Warum sollte man vor dem Integrieren vereinfachen?",
+        antwort:
+          "Weil viele Integrale durch Ausmultiplizieren, Kürzen oder Umschreiben viel einfacher werden und keine spezielle Methode brauchen."
+      }
+    ],
+    nachtVorTest: [
+      "Kannst du erkennen, wann Substitution sinnvoll ist?",
+      "Findest du bei Substitution die innere Funktion u?",
+      "Vergisst du bei Substitution nicht du und dx?",
+      "Machst du am Ende die Rücksubstitution?",
+      "Kannst du bei bestimmten Integralen die Grenzen korrekt umrechnen?",
+      "Kennst du die Formel der partiellen Integration?",
+      "Wählst du u so, dass es beim Ableiten einfacher wird?",
+      "Vergisst du bei partieller Integration das Minuszeichen nicht?",
+      "Prüfst du vor dem Integrieren, ob man vereinfachen kann?",
+      "Kontrollierst du Stammfunktionen durch Ableiten?"
+    ]
   }
    
 ];
@@ -2883,8 +3278,7 @@ function render_mathematik(container) {
     });
 
     content.innerHTML = renderMathematikTopic(thema);
-    attachMathematikInteractions(content);
-  }
+attachMathematikInteractions(content);
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
