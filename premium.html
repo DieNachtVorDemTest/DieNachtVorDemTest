@@ -424,7 +424,7 @@
     <section id="premium-content" class="hidden">
       <div id="subjects-area">
         <p>
-          Wähle ein Fach aus. Danach findest du die Inhalte geordnet nach GYM1, GYM2, GYM3 und GYM4.
+          Wähle ein Fach aus. Mathematik ist nach GYM-Stufen geordnet, Anwendung der Mathematik ist als eigener Themenbereich aufgebaut.
         </p>
 
         <div id="subjects-grid" class="subjects-grid"></div>
@@ -441,7 +441,7 @@
 
       <div id="material-view" class="material-view hidden" data-watermark="Lernhilfe Gymnasium">
         <div class="material-header">
-          <button class="secondary" onclick="backToGym()">Zurück zu GYM1–GYM4</button>
+          <button class="secondary" onclick="backFromMaterial()">Zurück</button>
           <h2 id="material-title">Material</h2>
           <p class="small">
             Eigenes Übungsmaterial. Keine Originalprüfung, kein Scan und kein offizielles Schulmaterial.
@@ -492,26 +492,37 @@
 
     const loadedSubjectScripts = {};
 
+    let currentSubject = null;
+    let currentIsDirectSubject = false;
+
     const subjects = [
-      { name: "Mathematik", key: "mathematik" },
-      { name: "Anwendung der Mathematik", key: "anwendung-mathematik" },
-      { name: "Physik", key: "physik" },
-      { name: "Deutsch", key: "deutsch" },
-      { name: "Französisch", key: "franzoesisch" },
-      { name: "Englisch", key: "englisch" }
+      { name: "Mathematik", key: "mathematik", mode: "gym" },
+      { name: "Anwendung der Mathematik", key: "anwendung-mathematik", mode: "direct" },
+      { name: "Physik", key: "physik", mode: "gym" },
+      { name: "Deutsch", key: "deutsch", mode: "gym" },
+      { name: "Französisch", key: "franzoesisch", mode: "gym" },
+      { name: "Englisch", key: "englisch", mode: "gym" }
     ];
 
     const availableContent = {
+      "anwendung-mathematik": {
+        file: "subjects/anwendung_mathematik.js",
+        renderFunction: "render_anwendung_mathematik",
+        description: "Themen: Gruppentheorie, komplexe Zahlen, Partialbruchzerlegung, Möbiustransformationen, vollständige Induktion, Potenz- und Taylorreihen, Differenzialgleichungen, lineare Algebra"
+      },
+
       "mathematik-gym1": {
         file: "subjects/mathematik-gym1.js",
         renderFunction: "render_mathematik_gym1",
         description: "Themen: Trigonometrie, quadratische Funktionen"
       },
+
       "franzoesisch-gym1": {
         file: "subjects/franzoesisch-gym1.js",
         renderFunction: "render_franzoesisch_gym1",
         description: "Themen: Wortschatz, Relativpronomen, Zeiten der Vergangenheit"
       },
+
       "englisch-gym1": {
         file: "subjects/englisch-gym1.js",
         renderFunction: "render_englisch_gym1",
@@ -542,6 +553,8 @@
       subjectsArea.classList.remove("hidden");
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
+      currentSubject = null;
+      currentIsDirectSubject = false;
 
       subjects.forEach(function(subject) {
         const card = document.createElement("div");
@@ -550,9 +563,14 @@
           openFolder(subject);
         };
 
+        const description =
+          subject.mode === "direct"
+            ? "Direkt öffnen · eigener Themenbereich"
+            : "Öffnen und nach GYM1–GYM4 sortieren";
+
         card.innerHTML = `
           <h3>${subject.name}</h3>
-          <p>Öffnen und nach GYM1–GYM4 sortieren</p>
+          <p>${description}</p>
         `;
 
         subjectsGrid.appendChild(card);
@@ -560,6 +578,14 @@
     }
 
     function openFolder(subject) {
+      currentSubject = subject;
+
+      if (subject.mode === "direct") {
+        openMaterialDirect(subject);
+        return;
+      }
+
+      currentIsDirectSubject = false;
       selectedSubjectTitle.textContent = subject.name;
 
       subjectsArea.classList.add("hidden");
@@ -592,12 +618,23 @@
       subjectsArea.classList.remove("hidden");
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
+      currentSubject = null;
+      currentIsDirectSubject = false;
     }
 
     function backToGym() {
       subjectsArea.classList.add("hidden");
       materialView.classList.add("hidden");
       folderView.classList.remove("hidden");
+      currentIsDirectSubject = false;
+    }
+
+    function backFromMaterial() {
+      if (currentIsDirectSubject) {
+        backToSubjects();
+      } else {
+        backToGym();
+      }
     }
 
     function setMaterialTitle(title) {
@@ -615,6 +652,9 @@
     }
 
     function openMaterial(subject, levelKey) {
+      currentSubject = subject;
+      currentIsDirectSubject = false;
+
       const displayLevel = levelKey.toUpperCase();
       const contentKey = subject.key + "-" + levelKey;
       const contentInfo = availableContent[contentKey];
@@ -636,6 +676,39 @@
       }
 
       materialTitle.textContent = subject.name + " · " + displayLevel;
+      materialContent.innerHTML = `
+        <div class="exercise-card">
+          <h3>Inhalt wird geladen...</h3>
+          <p>Bitte kurz warten.</p>
+        </div>
+      `;
+
+      loadSubjectScript(contentInfo.file, contentInfo.renderFunction);
+    }
+
+    function openMaterialDirect(subject) {
+      currentSubject = subject;
+      currentIsDirectSubject = true;
+
+      const contentInfo = availableContent[subject.key];
+
+      subjectsArea.classList.add("hidden");
+      folderView.classList.add("hidden");
+      materialView.classList.remove("hidden");
+      materialView.scrollTop = 0;
+
+      if (!contentInfo) {
+        materialTitle.textContent = subject.name;
+        materialContent.innerHTML = `
+          <div class="exercise-card">
+            <h3>Noch keine Inhalte</h3>
+            <p>Für ${subject.name} wurden noch keine Materialien hinzugefügt.</p>
+          </div>
+        `;
+        return;
+      }
+
+      materialTitle.textContent = subject.name;
       materialContent.innerHTML = `
         <div class="exercise-card">
           <h3>Inhalt wird geladen...</h3>
@@ -676,7 +749,7 @@
 
     function runRenderFunction(renderFunctionName) {
       if (typeof window[renderFunctionName] === "function") {
-        window[renderFunctionName]();
+        window[renderFunctionName](materialContent);
       } else {
         materialContent.innerHTML = `
           <div class="exercise-card">
@@ -689,6 +762,7 @@
 
     window.backToSubjects = backToSubjects;
     window.backToGym = backToGym;
+    window.backFromMaterial = backFromMaterial;
     window.setMaterialTitle = setMaterialTitle;
     window.setMaterialContent = setMaterialContent;
     window.toggleInfo = toggleInfo;
