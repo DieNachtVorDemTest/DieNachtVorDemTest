@@ -2729,16 +2729,25 @@ function render_anwendung_mathematik(container) {
   const buttons = container.querySelectorAll(".sf-am-topic-button");
 
   function showTopic(topicId) {
-    const thema = AM_THEMEN.find(t => t.id === topicId);
-    if (!thema) return;
+  const thema = AM_THEMEN.find(t => t.id === topicId);
+  if (!thema) return;
 
-    buttons.forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.topicId === topicId);
+  buttons.forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.topicId === topicId);
+  });
+
+  content.innerHTML = renderAMTopic(thema);
+  attachAMInteractions(content);
+
+  const pageTop = container.querySelector(".sf-am-page");
+
+  if (pageTop) {
+    pageTop.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
-
-    content.innerHTML = renderAMTopic(thema);
-    attachAMInteractions(content);
   }
+}
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
