@@ -5017,7 +5017,7 @@ function render_mathematik(container) {
   const content = container.querySelector("#sf-math-content");
   const buttons = container.querySelectorAll(".sf-math-topic-button");
 
-  function showTopic(topicId) {
+    function showTopic(topicId) {
     const thema = MATHEMATIK_THEMEN.find(t => t.id === topicId);
     if (!thema) return;
 
@@ -5026,13 +5026,14 @@ function render_mathematik(container) {
     });
 
     content.innerHTML = renderMathematikTopic(thema);
-attachMathematikInteractions(content);
-typesetMathematik(content);
+    attachMathematikInteractions(content);
+    typesetMathematik(content);
 
-content.scrollIntoView({
-  behavior: "smooth",
-  block: "start"
-});
+    content.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
