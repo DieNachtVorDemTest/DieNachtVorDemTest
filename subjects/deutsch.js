@@ -1489,3 +1489,699 @@ const DEUTSCH_GYM_STUFEN = [
     ]
   }
 ];
+
+/* =========================
+   RENDER-FUNKTION
+========================= */
+
+function render_deutsch(container) {
+  if (!container) {
+    console.error("render_deutsch: Kein Container gefunden.");
+    return;
+  }
+
+  injectDeutschStyles();
+
+  const deutschThemen = getAllDeutschTopics();
+
+  container.innerHTML = `
+    <section class="sf-de-page">
+      <div class="sf-de-hero">
+        <h1>Deutsch</h1>
+        <p>
+          Prüfungsvorbereitung mit selbst erstellten Erklärungen, Methoden,
+          Aufgaben, Lösungen und mündlichen Prüfungsfragen.
+        </p>
+      </div>
+
+      <div class="sf-de-layout">
+        <aside class="sf-de-sidebar">
+          <h2>Themen</h2>
+          <div class="sf-de-topic-list">
+            ${deutschThemen.map((item, index) => `
+              <button
+                class="sf-de-topic-button ${index === 0 ? "active" : ""}"
+                data-topic-id="${escapeHTML(item.thema.id)}">
+                <span>${escapeHTML(item.stufe.titel)}</span>
+                ${escapeHTML(item.thema.titel)}
+              </button>
+            `).join("")}
+          </div>
+        </aside>
+
+        <main class="sf-de-content" id="sf-de-content"></main>
+      </div>
+    </section>
+  `;
+
+  const content = container.querySelector("#sf-de-content");
+  const buttons = container.querySelectorAll(".sf-de-topic-button");
+
+  function showTopic(topicId, shouldScroll = true) {
+    const found = findDeutschTopic(topicId);
+    if (!found) return;
+
+    buttons.forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.topicId === topicId);
+    });
+
+    content.innerHTML = renderDeutschTopic(found.thema, found.stufe);
+    attachDeutschInteractions(content);
+
+    if (shouldScroll) {
+      window.setTimeout(() => {
+        content.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 0);
+    }
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      showTopic(button.dataset.topicId, true);
+    });
+  });
+
+  if (deutschThemen.length > 0) {
+    showTopic(deutschThemen[0].thema.id, false);
+  }
+}
+
+
+/* =========================
+   SUCHFUNKTIONEN
+========================= */
+
+function getAllDeutschTopics() {
+  const result = [];
+
+  DEUTSCH_GYM_STUFEN.forEach(stufe => {
+    stufe.themen.forEach(thema => {
+      result.push({ stufe, thema });
+    });
+  });
+
+  return result;
+}
+
+
+function findDeutschTopic(topicId) {
+  for (const stufe of DEUTSCH_GYM_STUFEN) {
+    const thema = stufe.themen.find(t => t.id === topicId);
+    if (thema) {
+      return { stufe, thema };
+    }
+  }
+
+  return null;
+}
+
+
+/* =========================
+   EINZELNES THEMA RENDERN
+========================= */
+
+function renderDeutschTopic(thema, stufe) {
+  return `
+    <article class="sf-de-topic">
+      <div class="sf-de-topic-header">
+        <p class="sf-de-kicker">${escapeHTML(stufe.titel)} · Thema ${escapeHTML(thema.nummer)}</p>
+        <h2>${escapeHTML(thema.titel)}</h2>
+        <p>${escapeHTML(thema.kurzbeschreibung)}</p>
+      </div>
+
+      ${renderDeutschSection("Lernziele", renderDeutschList(thema.lernziele))}
+      ${renderDeutschTheory(thema.theorie)}
+      ${renderDeutschMethods(thema.methoden)}
+      ${renderDeutschSection("Merksätze", renderDeutschList(thema.merksaetze))}
+      ${renderDeutschErrors(thema.typischeFehler)}
+      ${renderDeutschExercises(thema.aufgaben)}
+      ${renderDeutschOral(thema.muendlich)}
+      ${renderDeutschSection("Nacht-vor-dem-Test-Check", renderDeutschChecklist(thema.nachtVorTest))}
+
+      <div class="sf-de-disclaimer">
+        <strong>Hinweis:</strong>
+        Alle Inhalte und Aufgaben auf dieser Seite sind selbst erstellt und dienen
+        der Prüfungsvorbereitung. Es handelt sich nicht um kopierte Originalprüfungen,
+        fremde Lehrmittel oder offizielle Schulunterlagen.
+      </div>
+    </article>
+  `;
+}
+
+
+function renderDeutschSection(title, content) {
+  return `
+    <section class="sf-de-card">
+      <h3>${escapeHTML(title)}</h3>
+      ${content}
+    </section>
+  `;
+}
+
+
+function renderDeutschTheory(items) {
+  return `
+    <section class="sf-de-card">
+      <h3>Theorie einfach erklärt</h3>
+      <div class="sf-de-grid">
+        ${items.map(item => `
+          <div class="sf-de-mini-card">
+            <h4>${escapeHTML(item.titel)}</h4>
+            <p>${escapeHTML(item.text)}</p>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+
+function renderDeutschMethods(methoden) {
+  return `
+    <section class="sf-de-card">
+      <h3>Methoden</h3>
+      <div class="sf-de-accordion">
+        ${methoden.map(methode => `
+          <div class="sf-de-accordion-item">
+            <button class="sf-de-accordion-toggle" type="button">
+              <span>${escapeHTML(methode.titel)}</span>
+              <span class="sf-de-plus">+</span>
+            </button>
+            <div class="sf-de-accordion-body">
+              ${renderDeutschOrderedList(methode.schritte)}
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+
+function renderDeutschErrors(errors) {
+  return `
+    <section class="sf-de-card">
+      <h3>Typische Fehler</h3>
+      <div class="sf-de-error-list">
+        ${errors.map(item => `
+          <div class="sf-de-error-card">
+            <h4>Fehler</h4>
+            <p>${escapeHTML(item.fehler)}</p>
+            <h4>Korrektur</h4>
+            <p>${escapeHTML(item.korrektur)}</p>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+
+function renderDeutschExercises(exercises) {
+  return `
+    <section class="sf-de-card">
+      <h3>Eigene Übungsaufgaben mit Lösung</h3>
+      <div class="sf-de-exercises">
+        ${exercises.map(exercise => `
+          <div class="sf-de-exercise">
+            <div class="sf-de-exercise-top">
+              <h4>${escapeHTML(exercise.titel)}</h4>
+              <span>${escapeHTML(exercise.schwierigkeit)}</span>
+            </div>
+            <p>${escapeHTML(exercise.aufgabe)}</p>
+            <button class="sf-de-solution-button" type="button">
+              Lösung anzeigen
+            </button>
+            <div class="sf-de-solution">
+              ${renderDeutschOrderedList(exercise.loesung)}
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+
+function renderDeutschOral(items) {
+  return `
+    <section class="sf-de-card">
+      <h3>Mündliche Prüfungsfragen</h3>
+      <div class="sf-de-oral-list">
+        ${items.map(item => `
+          <div class="sf-de-oral-card">
+            <h4>${escapeHTML(item.frage)}</h4>
+            <p>${escapeHTML(item.antwort)}</p>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
+
+/* =========================
+   HILFSFUNKTIONEN
+========================= */
+
+function renderDeutschList(items) {
+  return `
+    <ul class="sf-de-list">
+      ${items.map(item => `<li>${escapeHTML(item)}</li>`).join("")}
+    </ul>
+  `;
+}
+
+
+function renderDeutschOrderedList(items) {
+  return `
+    <ol class="sf-de-ordered-list">
+      ${items.map(item => `<li>${escapeHTML(item)}</li>`).join("")}
+    </ol>
+  `;
+}
+
+
+function renderDeutschChecklist(items) {
+  return `
+    <div class="sf-de-checklist">
+      ${items.map(item => `
+        <label>
+          <input type="checkbox">
+          <span>${escapeHTML(item)}</span>
+        </label>
+      `).join("")}
+    </div>
+  `;
+}
+
+
+function attachDeutschInteractions(root) {
+  const accordionButtons = root.querySelectorAll(".sf-de-accordion-toggle");
+
+  accordionButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const item = button.closest(".sf-de-accordion-item");
+      item.classList.toggle("open");
+    });
+  });
+
+  const solutionButtons = root.querySelectorAll(".sf-de-solution-button");
+
+  solutionButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const solution = button.nextElementSibling;
+      const isOpen = solution.classList.toggle("open");
+      button.textContent = isOpen ? "Lösung ausblenden" : "Lösung anzeigen";
+    });
+  });
+}
+
+
+function escapeHTML(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+
+/* =========================
+   CSS EINMALIG EINFÜGEN
+========================= */
+
+function injectDeutschStyles() {
+  if (document.getElementById("sf-de-styles")) return;
+
+  const style = document.createElement("style");
+  style.id = "sf-de-styles";
+  style.textContent = `
+    .sf-de-page {
+      width: 100%;
+      background: #f6f7fb;
+      color: #172033;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 24px;
+      box-sizing: border-box;
+      border-radius: 18px;
+    }
+
+    .sf-de-hero {
+      background: linear-gradient(135deg, #111827, #273449);
+      color: white;
+      border-radius: 24px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+    }
+
+    .sf-de-kicker {
+      margin: 0 0 8px 0;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      font-weight: 700;
+    }
+
+    .sf-de-hero h1 {
+      margin: 0 0 12px 0;
+      font-size: clamp(32px, 5vw, 56px);
+      line-height: 1;
+    }
+
+    .sf-de-hero p {
+      max-width: 780px;
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    .sf-de-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .sf-de-sidebar {
+      position: sticky;
+      top: 20px;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .sf-de-sidebar h2 {
+      margin: 0 0 16px 0;
+      font-size: 22px;
+    }
+
+    .sf-de-topic-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sf-de-topic-button {
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      color: #172033;
+      border-radius: 14px;
+      padding: 12px 14px;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      transition: 0.2s ease;
+    }
+
+    .sf-de-topic-button span {
+      display: inline-flex;
+      min-width: 42px;
+      height: 28px;
+      align-items: center;
+      justify-content: center;
+      background: #e5e7eb;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .sf-de-topic-button:hover {
+      transform: translateY(-1px);
+      background: #eef2ff;
+    }
+
+    .sf-de-topic-button.active {
+      background: #172033;
+      color: white;
+      border-color: #172033;
+    }
+
+    .sf-de-topic-button.active span {
+      background: white;
+      color: #172033;
+    }
+
+    .sf-de-content {
+      min-width: 0;
+    }
+
+    .sf-de-topic-header {
+      background: white;
+      border-radius: 20px;
+      padding: 26px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .sf-de-topic-header h2 {
+      margin: 0 0 10px 0;
+      font-size: 34px;
+    }
+
+    .sf-de-topic-header p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .sf-de-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .sf-de-card h3 {
+      margin: 0 0 18px 0;
+      font-size: 24px;
+    }
+
+    .sf-de-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .sf-de-mini-card,
+    .sf-de-error-card,
+    .sf-de-oral-card,
+    .sf-de-exercise {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 18px;
+      background: #f9fafb;
+    }
+
+    .sf-de-mini-card h4,
+    .sf-de-error-card h4,
+    .sf-de-oral-card h4,
+    .sf-de-exercise h4 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+    }
+
+    .sf-de-mini-card p,
+    .sf-de-error-card p,
+    .sf-de-oral-card p,
+    .sf-de-exercise p {
+      margin: 0;
+      line-height: 1.6;
+      color: #374151;
+    }
+
+    .sf-de-list,
+    .sf-de-ordered-list {
+      margin: 0;
+      padding-left: 22px;
+      line-height: 1.8;
+      color: #374151;
+    }
+
+    .sf-de-list li,
+    .sf-de-ordered-list li {
+      margin-bottom: 6px;
+    }
+
+    .sf-de-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sf-de-accordion-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f9fafb;
+    }
+
+    .sf-de-accordion-toggle {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 16px 18px;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #172033;
+    }
+
+    .sf-de-plus {
+      font-size: 24px;
+      line-height: 1;
+      transition: 0.2s ease;
+    }
+
+    .sf-de-accordion-body {
+      display: none;
+      padding: 0 18px 18px 18px;
+    }
+
+    .sf-de-accordion-item.open .sf-de-accordion-body {
+      display: block;
+    }
+
+    .sf-de-accordion-item.open .sf-de-plus {
+      transform: rotate(45deg);
+    }
+
+    .sf-de-error-list,
+    .sf-de-oral-list,
+    .sf-de-exercises {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .sf-de-error-card h4:nth-of-type(1) {
+      color: #991b1b;
+    }
+
+    .sf-de-error-card h4:nth-of-type(2) {
+      margin-top: 14px;
+      color: #166534;
+    }
+
+    .sf-de-exercise-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .sf-de-exercise-top span {
+      background: #e5e7eb;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #374151;
+      white-space: nowrap;
+    }
+
+    .sf-de-solution-button {
+      margin-top: 14px;
+      border: 0;
+      background: #172033;
+      color: white;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .sf-de-solution {
+      display: none;
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 14px;
+      background: white;
+      border: 1px solid #e5e7eb;
+    }
+
+    .sf-de-solution.open {
+      display: block;
+    }
+
+    .sf-de-checklist {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .sf-de-checklist label {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+
+    .sf-de-checklist input {
+      margin-top: 3px;
+    }
+
+    .sf-de-disclaimer {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      border-radius: 18px;
+      padding: 18px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .sf-de-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sf-de-sidebar {
+        position: static;
+      }
+
+      .sf-de-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sf-de-page {
+        padding: 14px;
+      }
+
+      .sf-de-hero {
+        padding: 24px;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+}
+
+
+/* =========================
+   GLOBAL VERFÜGBAR MACHEN
+========================= */
+
+window.render_deutsch = render_deutsch;
