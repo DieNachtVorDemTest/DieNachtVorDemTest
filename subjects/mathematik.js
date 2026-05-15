@@ -8559,19 +8559,32 @@ nachtVorTest: [
       ]
     }
   ],
-  merksaetze: [
-    "Im Dreieck gilt immer \\(\\alpha+\\beta+\\gamma=180^\\circ\\).",
-    "Die Seite \\(a\\) liegt gegenüber vom Winkel \\(\\alpha\\).",
-    "Die Seite \\(b\\) liegt gegenüber vom Winkel \\(\\beta\\).",
-    "Die Seite \\(c\\) liegt gegenüber vom Winkel \\(\\gamma\\).",
-    "Der Sinussatz lautet \\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}=\\frac{c}{\\sin(\\gamma)}\\).",
-    "Für den Sinussatz braucht man meistens ein bekanntes Gegenüber-Paar.",
-    "Der Kosinussatz lautet \\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\).",
-    "Den Kosinussatz verwendet man bei zwei Seiten mit eingeschlossenem Winkel oder bei drei bekannten Seiten.",
-    "Die Flächenformel lautet \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\), wenn \\(\\alpha\\) zwischen \\(b\\) und \\(c\\) liegt.",
-    "Beim Sinussatz kann es bei Winkelberechnungen zwei mögliche Lösungen geben.",
-    "Bei Gradangaben muss der Taschenrechner im Gradmodus sein.",
-    "Der Kosinussatz wird bei \\(90^\\circ\\) zum Satz des Pythagoras."
+ merksaetze: [
+  "Im Dreieck gilt immer \\(\\alpha+\\beta+\\gamma=180^\\circ\\).",
+  "Die Seite \\(a\\) liegt gegenüber vom Winkel \\(\\alpha\\).",
+  "Die Seite \\(b\\) liegt gegenüber vom Winkel \\(\\beta\\).",
+  "Die Seite \\(c\\) liegt gegenüber vom Winkel \\(\\gamma\\).",
+
+  "Im selbst gezeichneten Einheitskreis liegt der Mittelpunkt im Ursprung \\((0\\mid0)\\) und der Radius ist genau \\(1\\).",
+  "Ein Punkt \\(P\\) auf dem Einheitskreis kann als \\(P(\\cos(\\alpha)\\mid\\sin(\\alpha))\\) geschrieben werden.",
+  "\\(\\cos(\\alpha)\\) ist die waagrechte Koordinate des Punktes auf dem Einheitskreis.",
+  "\\(\\sin(\\alpha)\\) ist die senkrechte Koordinate des Punktes auf dem Einheitskreis.",
+  "Man kann sich also merken: Cosinus geht nach rechts oder links, Sinus geht nach oben oder unten.",
+  "\\(\\tan(\\alpha)\\) beschreibt das Verhältnis von Sinus zu Cosinus: \\(\\tan(\\alpha)=\\frac{\\sin(\\alpha)}{\\cos(\\alpha)}\\).",
+  "Im Koordinatensystem bedeutet \\(\\tan(\\alpha)\\): Wie stark steigt der Strahl im Verhältnis zu seiner waagrechten Bewegung?",
+  "Wenn \\(\\cos(\\alpha)=0\\), ist \\(\\tan(\\alpha)\\) nicht definiert, weil man nicht durch \\(0\\) teilen darf.",
+  "Im rechtwinkligen Dreieck entspricht \\(\\cos(\\alpha)\\) dem Verhältnis Ankathete durch Hypotenuse.",
+  "Im rechtwinkligen Dreieck entspricht \\(\\sin(\\alpha)\\) dem Verhältnis Gegenkathete durch Hypotenuse.",
+  "Im rechtwinkligen Dreieck entspricht \\(\\tan(\\alpha)\\) dem Verhältnis Gegenkathete durch Ankathete.",
+
+  "Der Sinussatz lautet \\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}=\\frac{c}{\\sin(\\gamma)}\\).",
+  "Für den Sinussatz braucht man meistens ein bekanntes Gegenüber-Paar.",
+  "Der Kosinussatz lautet \\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\).",
+  "Den Kosinussatz verwendet man bei zwei Seiten mit eingeschlossenem Winkel oder bei drei bekannten Seiten.",
+  "Die Flächenformel lautet \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\), wenn \\(\\alpha\\) zwischen \\(b\\) und \\(c\\) liegt.",
+  "Beim Sinussatz kann es bei Winkelberechnungen zwei mögliche Lösungen geben.",
+  "Bei Gradangaben muss der Taschenrechner im Gradmodus sein.",
+  "Der Kosinussatz wird bei \\(90^\\circ\\) zum Satz des Pythagoras."
   ],
   typischeFehler: [
     {
@@ -8900,6 +8913,13 @@ function render_mathematik(container) {
   content.innerHTML = renderMathematikTopic(thema);
   attachMathematikInteractions(content);
   typesetMathematik(content);
+
+  requestAnimationFrame(() => {
+    content.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
 }
 
   buttons.forEach(button => {
