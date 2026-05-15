@@ -1,1494 +1,2204 @@
-/* =========================
-   DATENBANK DER GYM-STUFEN
-========================= */
+/* =========================================================
+   SchoolFools – Deutsch
+   Datei: deutsch.js
 
-const DEUTSCH_GYM_STUFEN = [
+   Neuer Aufbau:
+   - Links nur GYM1, GYM2, GYM3, GYM4
+   - Rechts jeweils der ganze Inhalt dieser Stufe
+   - Keine künstlichen Lernziele/Merksätze-Boxen
+   - Fokus auf wirklich nutzbares Wissen
+   - Alle Inhalte selbst erstellt
+========================================================= */
+
+const DEUTSCH_BEREICHE = [
   {
     id: "gym1",
     titel: "GYM1",
+    untertitel: "Grammatik und Stil",
     beschreibung:
-      "Grundlagen der deutschen Sprache: Grammatik, Satzbau, Ausdruck und stilistische Sicherheit.",
-    themen: [
-      {
-        id: "grammatik-stil",
-        nummer: "1",
-        titel: "Grammatik und Stil",
-        kurzbeschreibung:
-          "Satzbau, Wortarten, Fälle, Zeiten, Kommasetzung und präziser Ausdruck als Grundlage für gute schulische Texte.",
-        lernziele: [
-          "Du kannst Wortarten wie Nomen, Verb, Adjektiv, Pronomen, Präposition und Konjunktion sicher unterscheiden.",
-          "Du kannst Subjekt, Prädikat, Objekt und adverbiale Bestimmungen in einem Satz erkennen.",
-          "Du verstehst, wie Hauptsätze und Nebensätze aufgebaut sind.",
-          "Du kannst Kommas bei Nebensätzen, Aufzählungen und Einschüben korrekt setzen.",
-          "Du kannst zwischen Umgangssprache, Standardsprache und gehobener Schriftsprache unterscheiden.",
-          "Du kannst ungenaue, zu lange oder holprige Sätze sprachlich verbessern.",
-          "Du kannst Tempusformen bewusst verwenden und Zeitwechsel vermeiden.",
-          "Du kannst deinen Ausdruck an die Textsorte anpassen."
-        ],
-        theorie: [
-          {
-            titel: "Warum Grammatik im Gymnasium wichtig ist",
-            text:
-              "Grammatik ist nicht nur Fehlervermeidung. Sie ist die Grundlage dafür, Gedanken präzise, logisch und überzeugend auszudrücken. Wer Satzstrukturen versteht, kann eigene Texte besser planen, fremde Texte genauer analysieren und sprachliche Wirkungen bewusster beschreiben."
-          },
-          {
-            titel: "Wortarten",
-            text:
-              "Wortarten beschreiben die Funktion einzelner Wörter. Nomen bezeichnen Dinge, Personen, Gefühle oder Begriffe. Verben drücken Handlungen, Vorgänge oder Zustände aus. Adjektive beschreiben Eigenschaften. Pronomen ersetzen oder begleiten Nomen. Präpositionen stellen Beziehungen her, zum Beispiel räumlich, zeitlich oder kausal. Konjunktionen verbinden Wörter, Satzteile oder ganze Sätze."
-          },
-          {
-            titel: "Satzglieder",
-            text:
-              "Satzglieder sind funktionale Einheiten im Satz. Das Subjekt nennt meistens die handelnde oder betroffene Person oder Sache. Das Prädikat ist der verbale Kern des Satzes. Objekte ergänzen das Verb. Adverbiale Bestimmungen geben genauere Informationen zu Ort, Zeit, Grund, Art und Weise oder Zweck."
-          },
-          {
-            titel: "Hauptsatz und Nebensatz",
-            text:
-              "Ein Hauptsatz kann grammatisch selbstständig stehen. In einem Nebensatz steht das konjugierte Verb im Deutschen meistens am Ende. Nebensätze werden häufig durch Wörter wie weil, obwohl, dass, wenn, während oder nachdem eingeleitet."
-          },
-          {
-            titel: "Kommasetzung",
-            text:
-              "Kommas dienen der Strukturierung. Besonders wichtig sind Kommas zwischen Haupt- und Nebensätzen, bei Aufzählungen, bei Einschüben und bei Infinitivgruppen mit zu, wenn sie erweitert sind oder von bestimmten Signalwörtern abhängen."
-          },
-          {
-            titel: "Tempus und Zeitlogik",
-            text:
-              "Die Wahl der Zeitform muss zur Aussage passen. In Inhaltsangaben verwendet man meistens Präsens. Bei Vorzeitigkeit kann Perfekt oder Plusquamperfekt nötig sein. Unbegründete Zeitwechsel wirken unsauber und stören den Textfluss."
-          },
-          {
-            titel: "Stil und Ausdruck",
-            text:
-              "Stil bedeutet, wie ein Text sprachlich wirkt. Ein guter schulischer Stil ist präzise, sachlich, klar und der Textsorte angemessen. Umgangssprachliche Formulierungen, unnötige Füllwörter und vage Aussagen schwächen einen Text."
-          },
-          {
-            titel: "Präzision statt Allgemeinheit",
-            text:
-              "Formulierungen wie Der Autor macht viele Sachen mit Sprache oder Der Text ist irgendwie spannend sind zu ungenau. Besser ist es, genau zu benennen, wodurch eine Wirkung entsteht, zum Beispiel durch kurze Hauptsätze, düstere Bildsprache oder rhetorische Fragen."
-          }
-        ],
-        methoden: [
-          {
-            titel: "Methode: Einen Satz grammatisch untersuchen",
-            schritte: [
-              "1. Suche zuerst das konjugierte Verb, weil es den Satz grammatisch organisiert.",
-              "2. Frage nach dem Subjekt: Wer oder was tut etwas oder befindet sich in einem Zustand?",
-              "3. Prüfe, welche Ergänzungen das Verb verlangt, zum Beispiel Akkusativobjekt, Dativobjekt oder Präpositionalobjekt.",
-              "4. Bestimme adverbiale Angaben: Wann? Wo? Warum? Wie? Wozu?",
-              "5. Prüfe, ob Hauptsatz und Nebensatz korrekt verbunden sind.",
-              "6. Kontrolliere die Kommasetzung.",
-              "7. Lies den Satz abschliessend auf Verständlichkeit und Stil."
-            ]
-          },
-          {
-            titel: "Methode: Einen schlechten Satz verbessern",
-            schritte: [
-              "1. Markiere unklare Wörter wie irgendwie, Sachen, gut, schlecht oder interessant.",
-              "2. Frage dich: Was genau ist gemeint?",
-              "3. Ersetze allgemeine Wörter durch präzisere Begriffe.",
-              "4. Teile überlange Sätze in sinnvolle Einheiten.",
-              "5. Streiche Wiederholungen und Füllwörter.",
-              "6. Achte auf eine sachliche und schulisch passende Sprache.",
-              "7. Prüfe, ob der neue Satz inhaltlich genauer ist als der alte."
-            ]
-          },
-          {
-            titel: "Methode: Kommas bei Nebensätzen setzen",
-            schritte: [
-              "1. Suche nach typischen Einleitewörtern wie weil, dass, obwohl, wenn, als, während oder nachdem.",
-              "2. Prüfe, ob ein Nebensatz vorliegt.",
-              "3. Beachte: Im Nebensatz steht das konjugierte Verb meist am Ende.",
-              "4. Trenne Hauptsatz und Nebensatz durch ein Komma.",
-              "5. Wenn der Nebensatz eingeschoben ist, setzt du am Anfang und am Ende ein Komma.",
-              "6. Lies den Satz noch einmal und kontrolliere, ob die Satzstruktur klar ist."
-            ]
-          },
-          {
-            titel: "Methode: Stil einer schulischen Antwort verbessern",
-            schritte: [
-              "1. Vermeide Ich finde, wenn eine sachliche Analyse verlangt ist.",
-              "2. Verwende präzise Fachbegriffe.",
-              "3. Begründe deine Aussagen.",
-              "4. Verknüpfe Beobachtung und Wirkung.",
-              "5. Schreibe nicht: Der Autor will zeigen, wenn du es nicht belegen kannst.",
-              "6. Formuliere vorsichtiger: Der Text legt nahe, dass ... oder Die Formulierung wirkt ..."
-            ]
-          }
-        ],
-        merksaetze: [
-          "Grammatik ist die Architektur eines Satzes.",
-          "Ein guter Satz ist nicht möglichst lang, sondern möglichst klar.",
-          "Das Verb ist der Kern des Satzes.",
-          "Nebensätze erkennt man oft daran, dass das konjugierte Verb am Ende steht.",
-          "Kommas machen die Struktur eines Satzes sichtbar.",
-          "Präziser Ausdruck ist wichtiger als komplizierte Formulierungen.",
-          "In einer Analyse ersetzt man Alltagssprache durch Fachsprache.",
-          "Guter Stil bedeutet: klar, passend, präzise und nicht unnötig überladen."
-        ],
-        typischeFehler: [
-          {
-            fehler: "Man schreibt sehr lange Sätze mit mehreren Gedanken ohne klare Ordnung.",
-            korrektur:
-              "Teile den Satz in mehrere klare Einheiten. Jeder Satz sollte einen Hauptgedanken tragen."
-          },
-          {
-            fehler: "Man verwendet Wörter wie irgendwie, halt, Sachen, gut oder schlecht.",
-            korrektur:
-              "Ersetze solche Wörter durch präzisere Begriffe, zum Beispiel spannungsvoll, widersprüchlich, sachlich, emotional oder abwertend."
-          },
-          {
-            fehler: "Man setzt Kommas nur nach Gefühl.",
-            korrektur:
-              "Bestimme zuerst die Satzstruktur. Besonders Hauptsatz-Nebensatz-Gefüge brauchen Kommas."
-          },
-          {
-            fehler: "Man wechselt ohne Grund zwischen Präsens, Präteritum und Perfekt.",
-            korrektur:
-              "Entscheide dich passend zur Textsorte. Inhaltsangaben und Analysen stehen normalerweise im Präsens."
-          },
-          {
-            fehler: "Man verwechselt Autor, Erzähler und Sprecher.",
-            korrektur:
-              "In literarischen Texten ist die sprechende Instanz nicht automatisch der reale Autor."
-          }
-        ],
-        aufgaben: [
-          {
-            titel: "Aufgabe 1: Ungenaue Formulierung verbessern",
-            schwierigkeit: "einfach",
-            aufgabe:
-              "Verbessere den Satz: Der Text ist irgendwie spannend und der Autor macht viele Sachen mit Sprache.",
-            loesung: [
-              "Der Satz ist zu ungenau und enthält Umgangssprache.",
-              "Irgendwie sollte gestrichen werden.",
-              "Viele Sachen mit Sprache muss durch konkrete Beobachtungen ersetzt werden.",
-              "Eine bessere Version wäre: Der Text erzeugt Spannung, weil kurze Hauptsätze, bedrohliche Verben und düstere Bildsprache verwendet werden.",
-              "Diese Version ist genauer, weil sie die sprachlichen Mittel benennt und mit ihrer Wirkung verbindet."
-            ]
-          },
-          {
-            titel: "Aufgabe 2: Hauptsatz und Nebensatz erkennen",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Setze die Kommas und erkläre die Satzstruktur: Obwohl der Erzähler ruhig wirkt zeigt seine Wortwahl dass er innerlich verunsichert ist.",
-            loesung: [
-              "Richtig lautet der Satz: Obwohl der Erzähler ruhig wirkt, zeigt seine Wortwahl, dass er innerlich verunsichert ist.",
-              "Obwohl der Erzähler ruhig wirkt ist ein Nebensatz.",
-              "zeigt seine Wortwahl ist der Hauptsatz.",
-              "dass er innerlich verunsichert ist ist ein weiterer Nebensatz.",
-              "Die Kommas trennen die Nebensätze vom Hauptsatz."
-            ]
-          },
-          {
-            titel: "Aufgabe 3: Stilistisch verbessern",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Verbessere den Satz: Die Figur ist schlecht, weil sie lügt und so.",
-            loesung: [
-              "Der Satz ist wertend, unpräzise und umgangssprachlich.",
-              "Schlecht ist zu allgemein.",
-              "und so ist ungeeignet für einen schulischen Text.",
-              "Besser: Die Figur wirkt moralisch fragwürdig, weil sie bewusst die Wahrheit verschweigt und dadurch das Vertrauen der anderen Figuren missbraucht.",
-              "Die neue Formulierung ist präziser und begründet die Bewertung."
-            ]
-          },
-          {
-            titel: "Aufgabe 4: Satzglieder bestimmen",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Bestimme die wichtigsten Satzglieder: Der alte Mann erzählt dem Kind am Abend eine rätselhafte Geschichte.",
-            loesung: [
-              "Prädikat: erzählt.",
-              "Subjekt: Der alte Mann.",
-              "Dativobjekt: dem Kind.",
-              "Akkusativobjekt: eine rätselhafte Geschichte.",
-              "Adverbiale Bestimmung der Zeit: am Abend.",
-              "Der Satz ist klar aufgebaut, weil das Verb erzählen mehrere Ergänzungen verlangt."
-            ]
-          }
-        ],
-        muendlich: [
-          {
-            frage: "Warum ist Grammatik für das Fach Deutsch wichtig?",
-            antwort:
-              "Grammatik ermöglicht präzises Verstehen und Formulieren. Sie hilft, Satzstrukturen zu erkennen, Fehler zu vermeiden und sprachliche Wirkungen genauer zu beschreiben."
-          },
-          {
-            frage: "Was unterscheidet Umgangssprache von schulischer Standardsprache?",
-            antwort:
-              "Umgangssprache ist oft spontaner, ungenauer und alltagsnah. Schulische Standardsprache ist sachlicher, präziser und stärker an klarer Argumentation oder Analyse orientiert."
-          },
-          {
-            frage: "Warum sollte man in einer Analyse präzise Fachbegriffe verwenden?",
-            antwort:
-              "Fachbegriffe zeigen genau, was beobachtet wurde. Sie machen eine Analyse nachvollziehbarer und vermeiden vage Aussagen."
-          }
-        ],
-        nachtVorTest: [
-          "Kannst du Subjekt, Prädikat und Objekt bestimmen?",
-          "Kannst du Hauptsatz und Nebensatz unterscheiden?",
-          "Kannst du Kommas bei Nebensätzen setzen?",
-          "Kannst du ungenaue Wörter durch präzise Begriffe ersetzen?",
-          "Vermeidest du Umgangssprache in schulischen Texten?",
-          "Schreibst du Analysen im Präsens?",
-          "Kannst du deine Formulierungen sachlich und genau halten?"
-        ]
-      }
-    ]
+      "Hier lernst du die wichtigsten Grammatikregeln und wie du Sätze sauber, korrekt und gymnasial formulierst.",
+    html: `
+      <section class="sf-de-section">
+        <h2>GYM1 – Grammatik und Stil</h2>
+        <p class="sf-de-lead">
+          In Deutsch bringt dir Grammatik nur dann etwas, wenn du dadurch besser schreiben kannst.
+          Deshalb geht es hier nicht nur um Begriffe, sondern darum, wie du Sätze wirklich verstehst,
+          korrigierst und besser formulierst.
+        </p>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>1. Die wichtigsten Wortarten</h3>
+        <p>
+          Wortarten zeigen dir, welche Aufgabe ein Wort im Satz hat. Wenn du Wortarten erkennst,
+          verstehst du Sätze schneller und machst weniger Fehler bei Kommas, Fällen und Satzbau.
+        </p>
+
+        <div class="sf-de-table-wrap">
+          <table class="sf-de-table">
+            <thead>
+              <tr>
+                <th>Wortart</th>
+                <th>Erklärung</th>
+                <th>Beispiele</th>
+                <th>Woran du sie erkennst</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nomen</td>
+                <td>Bezeichnet Personen, Dinge, Gefühle, Zustände oder Begriffe.</td>
+                <td>Schüler, Haus, Angst, Freiheit, Sprache</td>
+                <td>Meist mit Artikel: der, die, das, ein, eine.</td>
+              </tr>
+              <tr>
+                <td>Verb</td>
+                <td>Beschreibt eine Handlung, einen Vorgang oder einen Zustand.</td>
+                <td>gehen, schreiben, denken, sein, werden</td>
+                <td>Kann konjugiert werden: ich gehe, du gehst, er geht.</td>
+              </tr>
+              <tr>
+                <td>Adjektiv</td>
+                <td>Beschreibt eine Eigenschaft.</td>
+                <td>gross, dunkel, schwierig, präzise</td>
+                <td>Kann meistens gesteigert werden: gross, grösser, am grössten.</td>
+              </tr>
+              <tr>
+                <td>Pronomen</td>
+                <td>Ersetzt oder begleitet ein Nomen.</td>
+                <td>ich, du, er, sie, mein, dieser, jemand</td>
+                <td>Steht oft anstelle einer Person oder Sache.</td>
+              </tr>
+              <tr>
+                <td>Präposition</td>
+                <td>Zeigt ein Verhältnis an: Ort, Zeit, Grund oder Art.</td>
+                <td>in, auf, unter, wegen, trotz, mit, für</td>
+                <td>Steht häufig vor einem Nomen oder Pronomen.</td>
+              </tr>
+              <tr>
+                <td>Konjunktion</td>
+                <td>Verbindet Wörter, Satzteile oder ganze Sätze.</td>
+                <td>und, oder, aber, weil, obwohl, dass</td>
+                <td>Leitet oft einen Nebensatz ein.</td>
+              </tr>
+              <tr>
+                <td>Adverb</td>
+                <td>Gibt genauere Umstände an.</td>
+                <td>heute, dort, deshalb, gern, oft</td>
+                <td>Beschreibt wann, wo, warum oder wie etwas geschieht.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sf-de-example">
+          <h4>Beispiel</h4>
+          <p>
+            <strong>Der müde Schüler schreibt heute einen kurzen Text.</strong>
+          </p>
+          <ul>
+            <li><strong>Der</strong> = Artikel</li>
+            <li><strong>müde</strong> = Adjektiv</li>
+            <li><strong>Schüler</strong> = Nomen</li>
+            <li><strong>schreibt</strong> = Verb</li>
+            <li><strong>heute</strong> = Adverb</li>
+            <li><strong>einen kurzen Text</strong> = Ergänzung zum Verb</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>2. Satzglieder: Wie ein Satz gebaut ist</h3>
+        <p>
+          Satzglieder sind grössere Bausteine im Satz. Sie können aus einem Wort oder aus mehreren
+          Wörtern bestehen. Der wichtigste Trick: Satzglieder kann man meistens verschieben.
+        </p>
+
+        <div class="sf-de-rule">
+          <h4>Verschiebeprobe</h4>
+          <p>
+            Was zusammen verschoben werden kann, bildet meistens ein Satzglied.
+          </p>
+          <p>
+            <strong>Am Abend</strong> liest <strong>die Schülerin</strong> <strong>ein Buch</strong>.<br>
+            <strong>Die Schülerin</strong> liest <strong>am Abend</strong> <strong>ein Buch</strong>.<br>
+            <strong>Ein Buch</strong> liest <strong>die Schülerin</strong> <strong>am Abend</strong>.
+          </p>
+        </div>
+
+        <div class="sf-de-table-wrap">
+          <table class="sf-de-table">
+            <thead>
+              <tr>
+                <th>Satzglied</th>
+                <th>Frage</th>
+                <th>Beispiel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Subjekt</td>
+                <td>Wer oder was?</td>
+                <td>Die Schülerin liest.</td>
+              </tr>
+              <tr>
+                <td>Prädikat</td>
+                <td>Was geschieht?</td>
+                <td>Die Schülerin liest.</td>
+              </tr>
+              <tr>
+                <td>Akkusativobjekt</td>
+                <td>Wen oder was?</td>
+                <td>Sie liest ein Buch.</td>
+              </tr>
+              <tr>
+                <td>Dativobjekt</td>
+                <td>Wem?</td>
+                <td>Sie gibt dem Freund ein Buch.</td>
+              </tr>
+              <tr>
+                <td>Genitivobjekt</td>
+                <td>Wessen?</td>
+                <td>Er erinnert sich des Vorfalls.</td>
+              </tr>
+              <tr>
+                <td>Adverbiale der Zeit</td>
+                <td>Wann?</td>
+                <td>Am Abend liest sie.</td>
+              </tr>
+              <tr>
+                <td>Adverbiale des Ortes</td>
+                <td>Wo?</td>
+                <td>Im Zimmer liest sie.</td>
+              </tr>
+              <tr>
+                <td>Adverbiale des Grundes</td>
+                <td>Warum?</td>
+                <td>Wegen des Tests lernt sie.</td>
+              </tr>
+              <tr>
+                <td>Adverbiale der Art und Weise</td>
+                <td>Wie?</td>
+                <td>Konzentriert liest sie den Text.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sf-de-example">
+          <h4>Beispielanalyse</h4>
+          <p>
+            <strong>Wegen des schlechten Wetters schreibt der Schüler am Nachmittag einen Bericht.</strong>
+          </p>
+          <ul>
+            <li><strong>Wegen des schlechten Wetters</strong> = Adverbiale des Grundes</li>
+            <li><strong>schreibt</strong> = Prädikat</li>
+            <li><strong>der Schüler</strong> = Subjekt</li>
+            <li><strong>am Nachmittag</strong> = Adverbiale der Zeit</li>
+            <li><strong>einen Bericht</strong> = Akkusativobjekt</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>3. Die vier Fälle</h3>
+        <p>
+          Die Fälle zeigen, welche Funktion ein Nomen oder Pronomen im Satz hat.
+          Viele Fehler entstehen, weil man nicht merkt, welchen Fall ein Verb oder eine Präposition verlangt.
+        </p>
+
+        <div class="sf-de-table-wrap">
+          <table class="sf-de-table">
+            <thead>
+              <tr>
+                <th>Fall</th>
+                <th>Frage</th>
+                <th>Beispiel</th>
+                <th>Funktion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nominativ</td>
+                <td>Wer oder was?</td>
+                <td>Der Schüler liest.</td>
+                <td>Meist Subjekt</td>
+              </tr>
+              <tr>
+                <td>Akkusativ</td>
+                <td>Wen oder was?</td>
+                <td>Er liest den Text.</td>
+                <td>Direktes Objekt</td>
+              </tr>
+              <tr>
+                <td>Dativ</td>
+                <td>Wem?</td>
+                <td>Er hilft dem Freund.</td>
+                <td>Indirektes Objekt</td>
+              </tr>
+              <tr>
+                <td>Genitiv</td>
+                <td>Wessen?</td>
+                <td>Die Aussage des Textes ist klar.</td>
+                <td>Besitz, Zugehörigkeit oder Bezug</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Typische Verben mit Dativ</h4>
+          <p>
+            helfen, danken, folgen, gefallen, gehören, vertrauen, antworten, begegnen
+          </p>
+          <p>
+            Richtig: <strong>Ich helfe dem Schüler.</strong><br>
+            Falsch: <strong>Ich helfe den Schüler.</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Typische Verben mit Akkusativ</h4>
+          <p>
+            sehen, lesen, schreiben, fragen, besuchen, suchen, brauchen, kaufen
+          </p>
+          <p>
+            Richtig: <strong>Ich sehe den Schüler.</strong><br>
+            Falsch: <strong>Ich sehe dem Schüler.</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Präpositionen mit Dativ</h4>
+          <p>
+            aus, bei, mit, nach, seit, von, zu
+          </p>
+          <p>
+            Beispiel: <strong>mit dem Freund</strong>, <strong>nach der Schule</strong>, <strong>bei dem Lehrer</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Präpositionen mit Akkusativ</h4>
+          <p>
+            durch, für, gegen, ohne, um
+          </p>
+          <p>
+            Beispiel: <strong>für den Freund</strong>, <strong>gegen den Vorschlag</strong>, <strong>ohne die Hilfe</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Wechselpräpositionen</h4>
+          <p>
+            an, auf, hinter, in, neben, über, unter, vor, zwischen
+          </p>
+          <p>
+            Bei Ort/Ruhe steht der Dativ: <strong>Das Buch liegt auf dem Tisch.</strong><br>
+            Bei Richtung/Bewegung steht der Akkusativ: <strong>Ich lege das Buch auf den Tisch.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>4. Hauptsatz und Nebensatz</h3>
+        <p>
+          Der Unterschied zwischen Hauptsatz und Nebensatz ist extrem wichtig, weil viele Kommas davon abhängen.
+        </p>
+
+        <div class="sf-de-compare">
+          <div>
+            <h4>Hauptsatz</h4>
+            <p>
+              Ein Hauptsatz kann allein stehen. Das konjugierte Verb steht meistens an zweiter Stelle.
+            </p>
+            <p>
+              <strong>Der Schüler liest den Text.</strong>
+            </p>
+          </div>
+          <div>
+            <h4>Nebensatz</h4>
+            <p>
+              Ein Nebensatz kann nicht sinnvoll allein stehen. Das konjugierte Verb steht meistens am Ende.
+            </p>
+            <p>
+              <strong>weil der Schüler den Text liest</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Häufige Nebensatz-Einleitungen</h4>
+          <p>
+            weil, dass, obwohl, wenn, als, während, nachdem, bevor, damit, sodass, ob, falls
+          </p>
+        </div>
+
+        <div class="sf-de-example">
+          <h4>Beispiele</h4>
+          <p>
+            <strong>Ich lerne Deutsch, weil ich meine Texte verbessern möchte.</strong>
+          </p>
+          <p>
+            Hauptsatz: <strong>Ich lerne Deutsch</strong><br>
+            Nebensatz: <strong>weil ich meine Texte verbessern möchte</strong>
+          </p>
+          <p>
+            Das Komma steht zwischen Hauptsatz und Nebensatz.
+          </p>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>5. Kommaregeln, die du wirklich brauchst</h3>
+
+        <div class="sf-de-rule">
+          <h4>Regel 1: Komma zwischen Hauptsatz und Nebensatz</h4>
+          <p>
+            <strong>Ich gehe nach Hause, weil ich müde bin.</strong><br>
+            <strong>Obwohl es spät ist, schreibt sie weiter.</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 2: Komma bei eingeschobenem Nebensatz</h4>
+          <p>
+            Wenn ein Nebensatz mitten in einem Hauptsatz steht, braucht er vorne und hinten ein Komma.
+          </p>
+          <p>
+            <strong>Der Schüler, der den Text gelesen hat, beantwortet die Frage.</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 3: Komma bei Aufzählungen</h4>
+          <p>
+            Bei Aufzählungen setzt man Kommas, wenn kein und/oder steht.
+          </p>
+          <p>
+            <strong>Der Text wirkt sachlich, klar, überzeugend und gut strukturiert.</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 4: Komma vor aber, sondern, doch, jedoch</h4>
+          <p>
+            <strong>Der Satz ist lang, aber verständlich.</strong><br>
+            <strong>Die Figur wirkt nicht mutig, sondern unsicher.</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 5: Komma bei Infinitivgruppen mit zu</h4>
+          <p>
+            Ein Komma steht häufig bei erweiterten Infinitivgruppen mit <strong>zu</strong>, besonders bei Signalwörtern wie
+            <strong>um</strong>, <strong>ohne</strong>, <strong>statt</strong>, <strong>anstatt</strong>, <strong>ausser</strong>.
+          </p>
+          <p>
+            <strong>Sie lernt, um den Test zu bestehen.</strong><br>
+            <strong>Er schreibt weiter, ohne lange nachzudenken.</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 6: Kein Komma zwischen Subjekt und Prädikat</h4>
+          <p>
+            Falsch: <strong>Der Schüler, schreibt einen Text.</strong><br>
+            Richtig: <strong>Der Schüler schreibt einen Text.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>6. Gross- und Kleinschreibung</h3>
+        <p>
+          Im Deutschen schreibt man Nomen gross. Schwieriger wird es, wenn Verben oder Adjektive wie Nomen gebraucht werden.
+        </p>
+
+        <div class="sf-de-rule">
+          <h4>Regel 1: Nomen schreibt man gross</h4>
+          <p>
+            <strong>der Text</strong>, <strong>die Sprache</strong>, <strong>das Argument</strong>, <strong>eine Analyse</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 2: Nominalisierte Verben schreibt man gross</h4>
+          <p>
+            Wenn vor einem Verb ein Artikel oder eine Präposition mit Artikel steht, wird es oft wie ein Nomen gebraucht.
+          </p>
+          <p>
+            <strong>das Lesen</strong>, <strong>beim Schreiben</strong>, <strong>zum Lernen</strong>, <strong>nach dem Essen</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 3: Nominalisierte Adjektive schreibt man gross</h4>
+          <p>
+            <strong>das Gute</strong>, <strong>etwas Wichtiges</strong>, <strong>nichts Neues</strong>, <strong>viel Interessantes</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Regel 4: Adjektive vor Nomen schreibt man klein</h4>
+          <p>
+            <strong>ein guter Text</strong>, <strong>eine schwierige Aufgabe</strong>, <strong>eine klare Aussage</strong>
+          </p>
+        </div>
+
+        <div class="sf-de-example">
+          <h4>Vergleich</h4>
+          <p>
+            <strong>Das schnelle Lesen hilft beim Lernen.</strong>
+          </p>
+          <ul>
+            <li><strong>schnelle</strong> klein, weil es das Nomen Lesen beschreibt.</li>
+            <li><strong>Lesen</strong> gross, weil das Verb nominalisiert ist.</li>
+            <li><strong>Lernen</strong> gross, weil es nach beim steht.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>7. Zeiten richtig verwenden</h3>
+        <p>
+          In der Schule ist besonders wichtig, dass du in Analysen, Inhaltsangaben und Interpretationen
+          die richtige Zeitform verwendest.
+        </p>
+
+        <div class="sf-de-table-wrap">
+          <table class="sf-de-table">
+            <thead>
+              <tr>
+                <th>Textsorte</th>
+                <th>Normalerweise verwendete Zeit</th>
+                <th>Beispiel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Inhaltsangabe</td>
+                <td>Präsens</td>
+                <td>Die Figur verlässt das Haus.</td>
+              </tr>
+              <tr>
+                <td>Textanalyse</td>
+                <td>Präsens</td>
+                <td>Der Autor verwendet eine rhetorische Frage.</td>
+              </tr>
+              <tr>
+                <td>Gedichtanalyse</td>
+                <td>Präsens</td>
+                <td>Das lyrische Ich beschreibt eine einsame Landschaft.</td>
+              </tr>
+              <tr>
+                <td>Erörterung</td>
+                <td>Präsens</td>
+                <td>Ein späterer Schulbeginn kann die Konzentration verbessern.</td>
+              </tr>
+              <tr>
+                <td>Erzählung</td>
+                <td>Präteritum oder Präsens, aber einheitlich</td>
+                <td>Er ging nach Hause. / Er geht nach Hause.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Vorzeitigkeit</h4>
+          <p>
+            Wenn etwas vor dem eigentlichen Geschehen passiert ist, kann Perfekt oder Plusquamperfekt nötig sein.
+          </p>
+          <p>
+            <strong>Die Figur ist misstrauisch, weil sie zuvor enttäuscht worden ist.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>8. Stil: So klingt dein Text gymnasialer</h3>
+        <p>
+          Ein guter Deutschtext ist nicht künstlich kompliziert. Er ist klar, genau und sachlich.
+          Der wichtigste Unterschied ist: Du schreibst nicht irgendwie, sondern du benennst genau, was du meinst.
+        </p>
+
+        <div class="sf-de-table-wrap">
+          <table class="sf-de-table">
+            <thead>
+              <tr>
+                <th>Schwach</th>
+                <th>Besser</th>
+                <th>Warum besser?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Der Text ist irgendwie spannend.</td>
+                <td>Der Text erzeugt Spannung durch kurze Sätze und bedrohliche Verben.</td>
+                <td>Die Wirkung wird erklärt.</td>
+              </tr>
+              <tr>
+                <td>Der Autor macht viele Sachen mit Sprache.</td>
+                <td>Der Autor verwendet Wiederholungen, um die Aussage zu verstärken.</td>
+                <td>Das sprachliche Mittel wird konkret genannt.</td>
+              </tr>
+              <tr>
+                <td>Die Figur ist schlecht.</td>
+                <td>Die Figur wirkt moralisch fragwürdig, weil sie bewusst lügt.</td>
+                <td>Die Bewertung wird begründet.</td>
+              </tr>
+              <tr>
+                <td>Ich finde, das Gedicht ist traurig.</td>
+                <td>Das Gedicht wirkt melancholisch, weil dunkle Naturbilder dominieren.</td>
+                <td>Es klingt sachlicher und analytischer.</td>
+              </tr>
+              <tr>
+                <td>Das Zitat zeigt, dass es so ist.</td>
+                <td>Die Formulierung verdeutlicht die Unsicherheit der Figur.</td>
+                <td>Die Aussage ist genauer.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Gute Verben für Analysen</h4>
+          <p>
+            zeigt, verdeutlicht, betont, verstärkt, erzeugt, veranschaulicht, kritisiert,
+            stellt dar, verweist auf, legt nahe, macht sichtbar, kontrastiert, problematisiert
+          </p>
+        </div>
+
+        <div class="sf-de-rule">
+          <h4>Gute Adjektive für Wirkungen</h4>
+          <p>
+            sachlich, emotional, kritisch, distanziert, ironisch, bedrohlich, melancholisch,
+            nüchtern, eindringlich, dramatisch, ruhig, angespannt, abwertend, feierlich
+          </p>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>9. Häufige Schreibfehler und bessere Varianten</h3>
+
+        <div class="sf-de-correction">
+          <p><strong>Falsch:</strong> Wegen dem Wetter blieb er zu Hause.</p>
+          <p><strong>Besser:</strong> Wegen des Wetters blieb er zu Hause.</p>
+          <p><strong>Erklärung:</strong> Wegen steht standardsprachlich mit Genitiv.</p>
+        </div>
+
+        <div class="sf-de-correction">
+          <p><strong>Falsch:</strong> Der Text, zeigt die Angst der Figur.</p>
+          <p><strong>Besser:</strong> Der Text zeigt die Angst der Figur.</p>
+          <p><strong>Erklärung:</strong> Zwischen Subjekt und Prädikat steht kein Komma.</p>
+        </div>
+
+        <div class="sf-de-correction">
+          <p><strong>Falsch:</strong> Ich helfe den Freund.</p>
+          <p><strong>Besser:</strong> Ich helfe dem Freund.</p>
+          <p><strong>Erklärung:</strong> Helfen verlangt den Dativ.</p>
+        </div>
+
+        <div class="sf-de-correction">
+          <p><strong>Falsch:</strong> Der Autor will uns sagen, dass...</p>
+          <p><strong>Besser:</strong> Der Text legt nahe, dass...</p>
+          <p><strong>Erklärung:</strong> In Analysen sollte man vorsichtig formulieren und nicht unbelegt die Absicht des Autors behaupten.</p>
+        </div>
+
+        <div class="sf-de-correction">
+          <p><strong>Falsch:</strong> Die Person ist traurig und so.</p>
+          <p><strong>Besser:</strong> Die Figur wirkt traurig, weil ihre Sprache kurz und resigniert ist.</p>
+          <p><strong>Erklärung:</strong> Umgangssprache wird durch genaue Analyse ersetzt.</p>
+        </div>
+      </section>
+
+      <section class="sf-de-section">
+        <h3>10. Mini-Training für GYM1</h3>
+        <p>
+          Diese kurzen Aufgaben prüfen, ob du die Regeln wirklich anwenden kannst.
+        </p>
+
+        <div class="sf-de-task">
+          <h4>Aufgabe 1: Kommas setzen</h4>
+          <p>
+            Setze die Kommas:
+          </p>
+          <p>
+            <strong>Obwohl der Text einfach wirkt enthält er viele sprachliche Feinheiten die man genau untersuchen muss.</strong>
+          </p>
+          <button class="sf-de-toggle" onclick="toggleDeutschBox('gym1-loesung-1')">Lösung anzeigen</button>
+          <div id="gym1-loesung-1" class="sf-de-hidden-box">
+            <p>
+              <strong>Obwohl der Text einfach wirkt, enthält er viele sprachliche Feinheiten, die man genau untersuchen muss.</strong>
+            </p>
+            <p>
+              Erstes Komma: Nebensatz mit obwohl. Zweites Komma: Relativsatz mit die.
+            </p>
+          </div>
+        </div>
+
+        <div class="sf-de-task">
+          <h4>Aufgabe 2: Fall bestimmen</h4>
+          <p>
+            Bestimme den Fall von <strong>dem Schüler</strong>:
+          </p>
+          <p>
+            <strong>Die Lehrerin erklärt dem Schüler die Aufgabe.</strong>
+          </p>
+          <button class="sf-de-toggle" onclick="toggleDeutschBox('gym1-loesung-2')">Lösung anzeigen</button>
+          <div id="gym1-loesung-2" class="sf-de-hidden-box">
+            <p>
+              <strong>dem Schüler</strong> steht im Dativ.
+            </p>
+            <p>
+              Frage: Wem erklärt die Lehrerin die Aufgabe? Antwort: dem Schüler.
+            </p>
+          </div>
+        </div>
+
+        <div class="sf-de-task">
+          <h4>Aufgabe 3: Stil verbessern</h4>
+          <p>
+            Verbessere den Satz:
+          </p>
+          <p>
+            <strong>Der Text ist irgendwie komisch und der Autor macht viele Sachen.</strong>
+          </p>
+          <button class="sf-de-toggle" onclick="toggleDeutschBox('gym1-loesung-3')">Lösung anzeigen</button>
+          <div id="gym1-loesung-3" class="sf-de-hidden-box">
+            <p>
+              Eine bessere Variante:
+            </p>
+            <p>
+              <strong>Der Text wirkt irritierend, weil die Handlung sprunghaft erzählt wird und die Wortwahl zunehmend bedrohlich erscheint.</strong>
+            </p>
+            <p>
+              Diese Version ist besser, weil sie die Wirkung erklärt und konkrete sprachliche Beobachtungen nennt.
+            </p>
+          </div>
+        </div>
+
+        <div class="sf-de-task">
+          <h4>Aufgabe 4: Gross- und Kleinschreibung</h4>
+          <p>
+            Korrigiere:
+          </p>
+          <p>
+            <strong>Beim schnellen lesen übersieht man oft das wichtige.</strong>
+          </p>
+          <button class="sf-de-toggle" onclick="toggleDeutschBox('gym1-loesung-4')">Lösung anzeigen</button>
+          <div id="gym1-loesung-4" class="sf-de-hidden-box">
+            <p>
+              <strong>Beim schnellen Lesen übersieht man oft das Wichtige.</strong>
+            </p>
+            <p>
+              Lesen wird grossgeschrieben, weil es nominalisiert ist. Wichtige wird grossgeschrieben, weil es nach das wie ein Nomen gebraucht wird.
+            </p>
+          </div>
+        </div>
+      </section>
+    `
   },
 
   {
-    id: "gym2",
-    titel: "GYM2",
-    beschreibung:
-      "Schreibtraining: Texte planen, strukturieren, argumentieren, formulieren und überarbeiten.",
-    themen: [
-      {
-        id: "schreibtraining",
-        nummer: "1",
-        titel: "Schreibtraining",
-        kurzbeschreibung:
-          "Von der Aufgabenstellung zum fertigen Text: Ideen sammeln, gliedern, Absätze aufbauen, sprachlich präzise formulieren und systematisch überarbeiten.",
-        lernziele: [
-          "Du kannst eine Aufgabenstellung genau lesen und den Operator erkennen.",
-          "Du kannst zwischen beschreiben, analysieren, interpretieren, erklären, beurteilen und erörtern unterscheiden.",
-          "Du kannst vor dem Schreiben eine sinnvolle Gliederung erstellen.",
-          "Du kannst Absätze mit klarer Funktion schreiben.",
-          "Du kannst Einleitung, Hauptteil und Schluss passend zur Textsorte gestalten.",
-          "Du kannst Gedanken logisch miteinander verbinden.",
-          "Du kannst deinen Text sprachlich und inhaltlich überarbeiten.",
-          "Du kannst Behauptungen begründen und mit Beispielen stützen."
-        ],
-        theorie: [
-          {
-            titel: "Schreiben als Denkprozess",
-            text:
-              "Gutes Schreiben ist nicht nur das Aufschreiben fertiger Gedanken. Beim Schreiben ordnet, prüft und entwickelt man Gedanken. Deshalb gehören Planung, Formulierung und Überarbeitung zusammen."
-          },
-          {
-            titel: "Die Aufgabenstellung",
-            text:
-              "Die Aufgabenstellung entscheidet, was du tun musst. Der Operator ist besonders wichtig. Analysiere verlangt eine Untersuchung der Gestaltung und Wirkung. Erörtere verlangt Argumente. Beurteile verlangt ein begründetes Urteil."
-          },
-          {
-            titel: "Der rote Faden",
-            text:
-              "Ein Text hat einen roten Faden, wenn alle Teile logisch miteinander verbunden sind. Der Leser soll jederzeit verstehen, warum ein Gedanke auf den nächsten folgt."
-          },
-          {
-            titel: "Absätze",
-            text:
-              "Ein Absatz ist keine zufällige optische Unterbrechung. Jeder Absatz sollte einen klaren Teilgedanken enthalten. Beginnt ein neuer Gedanke, ein neues Argument oder ein neuer Analyseschritt, ist ein neuer Absatz sinnvoll."
-          },
-          {
-            titel: "Einleitung",
-            text:
-              "Die Einleitung führt zum Thema hin. Je nach Textsorte nennt sie Titel, Autor, Textsorte, Erscheinungsjahr, Thema oder Fragestellung. Sie sollte nicht zu allgemein sein und keine leeren Floskeln enthalten."
-          },
-          {
-            titel: "Hauptteil",
-            text:
-              "Der Hauptteil ist der argumentative oder analytische Kern des Textes. Hier werden Gedanken entfaltet, belegt, erklärt und miteinander verbunden."
-          },
-          {
-            titel: "Schluss",
-            text:
-              "Der Schluss fasst nicht einfach alles mechanisch zusammen, sondern zieht ein Fazit. Er sollte zur Fragestellung zurückführen und den Text gedanklich abrunden."
-          },
-          {
-            titel: "Überarbeitung",
-            text:
-              "Überarbeitung ist ein eigener Arbeitsschritt. Dabei prüft man zuerst Inhalt und Struktur, danach Stil, Grammatik, Rechtschreibung und Zeichensetzung."
-          }
-        ],
-        methoden: [
-          {
-            titel: "Methode: Eine Schreibaufgabe erschliessen",
-            schritte: [
-              "1. Lies die Aufgabenstellung zweimal.",
-              "2. Markiere den Operator.",
-              "3. Kläre, welche Textsorte verlangt ist.",
-              "4. Bestimme das Thema und die genaue Fragestellung.",
-              "5. Notiere, welches Material verwendet werden muss.",
-              "6. Überlege, welche Leistung erwartet wird: Zusammenfassung, Analyse, Deutung, Argumentation oder Urteil.",
-              "7. Plane erst danach deinen Text."
-            ]
-          },
-          {
-            titel: "Methode: Eine Gliederung erstellen",
-            schritte: [
-              "1. Sammle zuerst ungeordnet Ideen.",
-              "2. Streiche Gedanken, die nicht zur Fragestellung passen.",
-              "3. Ordne die übrigen Gedanken nach logischer Reihenfolge.",
-              "4. Gruppiere verwandte Gedanken zu Abschnitten.",
-              "5. Formuliere für jeden Abschnitt eine klare Funktion.",
-              "6. Prüfe, ob Einleitung, Hauptteil und Schluss zusammenpassen.",
-              "7. Schreibe erst danach den Fliesstext."
-            ]
-          },
-          {
-            titel: "Methode: Einen starken Absatz schreiben",
-            schritte: [
-              "1. Beginne mit einem klaren Teilgedanken.",
-              "2. Erkläre diesen Gedanken genauer.",
-              "3. Füge ein Beispiel, einen Beleg oder eine Begründung hinzu.",
-              "4. Erkläre, warum dieser Punkt wichtig ist.",
-              "5. Verbinde den Absatz mit der Fragestellung.",
-              "6. Vermeide, mehrere unverbundene Gedanken in einen Absatz zu packen."
-            ]
-          },
-          {
-            titel: "Methode: Text überarbeiten",
-            schritte: [
-              "1. Prüfe zuerst: Beantwortet der Text die Aufgabenstellung?",
-              "2. Prüfe den Aufbau: Gibt es einen roten Faden?",
-              "3. Prüfe die Absätze: Hat jeder Absatz eine klare Funktion?",
-              "4. Prüfe die Sprache: Gibt es ungenaue oder umgangssprachliche Formulierungen?",
-              "5. Prüfe die Satzstruktur: Sind Sätze zu lang oder unklar?",
-              "6. Prüfe Grammatik, Rechtschreibung und Kommas.",
-              "7. Lies den Text zuletzt noch einmal als Ganzes."
-            ]
-          }
-        ],
-        merksaetze: [
-          "Wer die Aufgabenstellung nicht genau versteht, schreibt am Thema vorbei.",
-          "Ein guter Text beginnt mit einer klaren Planung.",
-          "Jeder Absatz braucht eine erkennbare Funktion.",
-          "Ein roter Faden entsteht durch logische Ordnung und passende Verknüpfungen.",
-          "Behauptungen werden erst durch Begründungen überzeugend.",
-          "Ein Beispiel ersetzt keine Begründung, sondern unterstützt sie.",
-          "Überarbeitung ist kein Zusatz, sondern Teil des Schreibprozesses.",
-          "Gute Sprache ist präzise, nicht künstlich kompliziert."
-        ],
-        typischeFehler: [
-          {
-            fehler: "Man beginnt sofort zu schreiben, ohne den Operator zu beachten.",
-            korrektur:
-              "Markiere zuerst den Operator und kläre, welche Denkhandlung verlangt wird."
-          },
-          {
-            fehler: "Der Text hat keine erkennbare Struktur.",
-            korrektur:
-              "Erstelle vor dem Schreiben eine Gliederung mit klaren Abschnitten."
-          },
-          {
-            fehler: "Absätze werden zufällig gesetzt.",
-            korrektur:
-              "Setze Absätze dort, wo ein neuer Teilgedanke beginnt."
-          },
-          {
-            fehler: "Man schreibt viele Behauptungen, begründet sie aber nicht.",
-            korrektur:
-              "Jede wichtige Behauptung braucht eine Begründung oder ein Beispiel."
-          },
-          {
-            fehler: "Der Schluss wiederholt nur die Einleitung.",
-            korrektur:
-              "Der Schluss soll ein Ergebnis formulieren und zur Fragestellung zurückführen."
-          }
-        ],
-        aufgaben: [
-          {
-            titel: "Aufgabe 1: Operator erkennen",
-            schwierigkeit: "einfach",
-            aufgabe:
-              "Erkläre den Unterschied zwischen den Operatoren beschreiben, analysieren und beurteilen.",
-            loesung: [
-              "Beschreiben bedeutet, sachlich wiederzugeben, was erkennbar ist.",
-              "Analysieren bedeutet, etwas in Bestandteile zu zerlegen und deren Funktion oder Wirkung zu erklären.",
-              "Beurteilen bedeutet, auf Grundlage von Argumenten ein begründetes Urteil zu formulieren.",
-              "Die Operatoren verlangen also unterschiedlich anspruchsvolle Denkhandlungen."
-            ]
-          },
-          {
-            titel: "Aufgabe 2: Gliederung erstellen",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Erstelle eine Gliederung zur Frage: Sollte die Schule später beginnen?",
-            loesung: [
-              "Einleitung: Kurze Hinführung zum Thema Schlaf, Konzentration und Schulalltag.",
-              "Hauptteil 1: Argument für späteren Schulbeginn: Jugendliche sind morgens oft weniger leistungsfähig.",
-              "Hauptteil 2: Weiteres Pro-Argument: Mehr Schlaf kann Konzentration und Gesundheit fördern.",
-              "Hauptteil 3: Gegenargument: Späterer Beginn kann Freizeit, Sport und Familienorganisation erschweren.",
-              "Hauptteil 4: Abwägung: Ein späterer Beginn wäre sinnvoll, müsste aber organisatorisch gut geplant werden.",
-              "Schluss: Begründetes Fazit zur Ausgangsfrage."
-            ]
-          },
-          {
-            titel: "Aufgabe 3: Absatz verbessern",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Verbessere diesen Absatzanfang: Handys sind gut. Viele benutzen sie. In der Schule kann man auch Sachen machen.",
-            loesung: [
-              "Der Absatz ist zu ungenau und argumentiert nicht.",
-              "Eine bessere Version wäre: Smartphones können im Unterricht sinnvoll eingesetzt werden, wenn sie gezielt für Lernzwecke genutzt werden. Sie ermöglichen schnelle Recherche, digitale Zusammenarbeit und den Zugriff auf Lernplattformen. Entscheidend ist jedoch, dass klare Regeln verhindern, dass sie zur Ablenkung werden.",
-              "Die verbesserte Version enthält eine klare These, Begründungen und eine Einschränkung."
-            ]
-          },
-          {
-            titel: "Aufgabe 4: Text überarbeiten",
-            schwierigkeit: "schwer",
-            aufgabe:
-              "Formuliere den Satz schulisch präziser: Ich finde, der Text zeigt halt, dass die Person traurig ist.",
-            loesung: [
-              "Ich finde ist für eine Analyse meist zu subjektiv.",
-              "halt ist umgangssprachlich.",
-              "die Person ist ungenau, falls Figur oder Erzähler gemeint ist.",
-              "Besser: Der Text verdeutlicht die Traurigkeit der Figur durch ihre einsilbigen Antworten und die wiederholte Beschreibung ihrer körperlichen Erschöpfung.",
-              "Die neue Version benennt konkrete Hinweise und verbindet sie mit der Wirkung."
-            ]
-          }
-        ],
-        muendlich: [
-          {
-            frage: "Warum ist der Operator in einer Aufgabenstellung so wichtig?",
-            antwort:
-              "Der Operator zeigt, welche Denkhandlung verlangt wird. Ohne ihn besteht die Gefahr, dass man nur zusammenfasst, obwohl eine Analyse, Beurteilung oder Erörterung erwartet wird."
-          },
-          {
-            frage: "Was macht einen guten Absatz aus?",
-            antwort:
-              "Ein guter Absatz enthält einen klaren Teilgedanken, entfaltet ihn mit Begründung oder Beleg und verbindet ihn mit der übergeordneten Fragestellung."
-          },
-          {
-            frage: "Was bedeutet roter Faden?",
-            antwort:
-              "Der rote Faden ist die logische Verbindung der Gedanken. Er sorgt dafür, dass der Text nicht wie eine Sammlung einzelner Ideen wirkt."
-          }
-        ],
-        nachtVorTest: [
-          "Hast du den Operator verstanden?",
-          "Hast du eine klare Gliederung?",
-          "Hat jeder Absatz eine Funktion?",
-          "Begründest du deine Aussagen?",
-          "Verwendest du passende Beispiele oder Belege?",
-          "Ist dein Schluss mehr als eine Wiederholung?",
-          "Hast du Sprache, Grammatik und Kommas kontrolliert?"
-        ]
-      }
-    ]
-  },
+  id: "gym2",
+  titel: "GYM2",
+  untertitel: "Schreibtraining und Rechtschreibübungen",
+  beschreibung:
+    "50 konkrete Übungen zu Kommasetzung, Gross-/Kleinschreibung, Fällen, Satzbau, Stil und Rechtschreibung – mit Lösungen.",
+  html: `
+    <section class="sf-de-section">
+      <h2>GYM2 – Schreibtraining und Rechtschreibung</h2>
+      <p class="sf-de-lead">
+        In diesem Bereich übst du nicht theoretisch, sondern praktisch. Jede Übung trainiert eine Regel,
+        die in Deutschtests, Aufsätzen und Analysen ständig vorkommt. Die Übungen sind nach Themen geordnet:
+        Kommasetzung, Gross-/Kleinschreibung, Fälle, Satzbau, dass/das, Zeitformen, Stil und typische Rechtschreibfehler.
+      </p>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>A. Kommasetzung – 10 Übungen</h3>
+      <p>
+        Kommas sind nicht einfach Gefühlssache. Meistens musst du zuerst erkennen, ob ein Nebensatz,
+        eine Aufzählung, ein Einschub oder eine Infinitivgruppe vorliegt.
+      </p>
+
+      <div class="sf-de-task">
+        <h4>Übung 1 – Nebensatz mit weil</h4>
+        <p>Setze das Komma:</p>
+        <p><strong>Ich lerne Deutsch weil ich meine Texte verbessern möchte.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k1')">Lösung anzeigen</button>
+        <div id="gym2-k1" class="sf-de-hidden-box">
+          <p><strong>Ich lerne Deutsch, weil ich meine Texte verbessern möchte.</strong></p>
+          <p>Vor <strong>weil</strong> beginnt ein Nebensatz. Deshalb steht ein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 2 – Nebensatz am Anfang</h4>
+        <p>Setze das Komma:</p>
+        <p><strong>Obwohl der Text kurz ist enthält er viele wichtige Aussagen.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k2')">Lösung anzeigen</button>
+        <div id="gym2-k2" class="sf-de-hidden-box">
+          <p><strong>Obwohl der Text kurz ist, enthält er viele wichtige Aussagen.</strong></p>
+          <p>Der Nebensatz steht am Anfang. Nach dem Nebensatz folgt ein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 3 – Relativsatz</h4>
+        <p>Setze die Kommas:</p>
+        <p><strong>Die Figur die am Anfang unsicher wirkt verändert sich im Verlauf der Handlung.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k3')">Lösung anzeigen</button>
+        <div id="gym2-k3" class="sf-de-hidden-box">
+          <p><strong>Die Figur, die am Anfang unsicher wirkt, verändert sich im Verlauf der Handlung.</strong></p>
+          <p>Der Relativsatz <strong>die am Anfang unsicher wirkt</strong> ist eingeschoben und wird mit zwei Kommas abgetrennt.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 4 – Aufzählung</h4>
+        <p>Setze die Kommas:</p>
+        <p><strong>Der Text wirkt sachlich ruhig klar und überzeugend.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k4')">Lösung anzeigen</button>
+        <div id="gym2-k4" class="sf-de-hidden-box">
+          <p><strong>Der Text wirkt sachlich, ruhig, klar und überzeugend.</strong></p>
+          <p>Bei einer Aufzählung setzt man Kommas. Vor <strong>und</strong> steht normalerweise kein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 5 – Komma vor aber</h4>
+        <p>Setze das Komma:</p>
+        <p><strong>Die Aussage ist verständlich aber sprachlich ungenau.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k5')">Lösung anzeigen</button>
+        <div id="gym2-k5" class="sf-de-hidden-box">
+          <p><strong>Die Aussage ist verständlich, aber sprachlich ungenau.</strong></p>
+          <p>Vor <strong>aber</strong> steht in solchen Satzverbindungen ein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 6 – Infinitivgruppe mit um zu</h4>
+        <p>Setze das Komma:</p>
+        <p><strong>Sie liest den Text mehrmals um die Aussage genauer zu verstehen.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k6')">Lösung anzeigen</button>
+        <div id="gym2-k6" class="sf-de-hidden-box">
+          <p><strong>Sie liest den Text mehrmals, um die Aussage genauer zu verstehen.</strong></p>
+          <p>Bei Infinitivgruppen mit <strong>um zu</strong> steht ein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 7 – dass-Satz</h4>
+        <p>Setze das Komma:</p>
+        <p><strong>Der Erzähler zeigt dass die Figur innerlich unsicher ist.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k7')">Lösung anzeigen</button>
+        <div id="gym2-k7" class="sf-de-hidden-box">
+          <p><strong>Der Erzähler zeigt, dass die Figur innerlich unsicher ist.</strong></p>
+          <p>Vor einem Nebensatz mit <strong>dass</strong> steht ein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 8 – Kein Komma zwischen Subjekt und Prädikat</h4>
+        <p>Korrigiere den Satz:</p>
+        <p><strong>Der Autor, verwendet viele Wiederholungen.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k8')">Lösung anzeigen</button>
+        <div id="gym2-k8" class="sf-de-hidden-box">
+          <p><strong>Der Autor verwendet viele Wiederholungen.</strong></p>
+          <p>Zwischen Subjekt und Prädikat steht kein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 9 – Eingeschobener Nebensatz</h4>
+        <p>Setze die Kommas:</p>
+        <p><strong>Der Text obwohl er einfach formuliert ist enthält eine kritische Botschaft.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k9')">Lösung anzeigen</button>
+        <div id="gym2-k9" class="sf-de-hidden-box">
+          <p><strong>Der Text, obwohl er einfach formuliert ist, enthält eine kritische Botschaft.</strong></p>
+          <p>Der Nebensatz ist eingeschoben. Deshalb braucht er vorne und hinten ein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 10 – Zwei Nebensätze</h4>
+        <p>Setze die Kommas:</p>
+        <p><strong>Wenn man genau liest erkennt man dass die Figur ihre Angst versteckt.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-k10')">Lösung anzeigen</button>
+        <div id="gym2-k10" class="sf-de-hidden-box">
+          <p><strong>Wenn man genau liest, erkennt man, dass die Figur ihre Angst versteckt.</strong></p>
+          <p>Nach dem Nebensatz mit <strong>wenn</strong> steht ein Komma. Vor dem Nebensatz mit <strong>dass</strong> steht ebenfalls ein Komma.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>B. Gross- und Kleinschreibung – 8 Übungen</h3>
+      <p>
+        Grossgeschrieben werden Nomen und Wörter, die wie Nomen gebraucht werden. Besonders wichtig sind nominalisierte Verben und Adjektive.
+      </p>
+
+      <div class="sf-de-task">
+        <h4>Übung 11 – Nominalisiertes Verb</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Beim lesen muss man auf die Wortwahl achten.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g1')">Lösung anzeigen</button>
+        <div id="gym2-g1" class="sf-de-hidden-box">
+          <p><strong>Beim Lesen muss man auf die Wortwahl achten.</strong></p>
+          <p><strong>Lesen</strong> wird grossgeschrieben, weil es nach <strong>beim</strong> wie ein Nomen gebraucht wird.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 12 – Nominalisiertes Adjektiv</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Der Text zeigt etwas wichtiges.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g2')">Lösung anzeigen</button>
+        <div id="gym2-g2" class="sf-de-hidden-box">
+          <p><strong>Der Text zeigt etwas Wichtiges.</strong></p>
+          <p>Nach <strong>etwas</strong> wird ein nominalisiertes Adjektiv grossgeschrieben.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 13 – Das Gute</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Das gute an der Argumentation ist ihre klare Struktur.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g3')">Lösung anzeigen</button>
+        <div id="gym2-g3" class="sf-de-hidden-box">
+          <p><strong>Das Gute an der Argumentation ist ihre klare Struktur.</strong></p>
+          <p><strong>Gute</strong> wird grossgeschrieben, weil es nach <strong>das</strong> als Nomen verwendet wird.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 14 – Adjektiv vor Nomen</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Eine Klare Aussage ist für eine Analyse wichtig.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g4')">Lösung anzeigen</button>
+        <div id="gym2-g4" class="sf-de-hidden-box">
+          <p><strong>Eine klare Aussage ist für eine Analyse wichtig.</strong></p>
+          <p><strong>klare</strong> beschreibt das Nomen <strong>Aussage</strong> und wird deshalb klein geschrieben.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 15 – Zum Schreiben</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Zum schreiben braucht man Konzentration.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g5')">Lösung anzeigen</button>
+        <div id="gym2-g5" class="sf-de-hidden-box">
+          <p><strong>Zum Schreiben braucht man Konzentration.</strong></p>
+          <p><strong>Schreiben</strong> wird grossgeschrieben, weil es nach <strong>zum</strong> nominalisiert ist.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 16 – Nichts Neues</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Die Aussage enthält nichts neues.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g6')">Lösung anzeigen</button>
+        <div id="gym2-g6" class="sf-de-hidden-box">
+          <p><strong>Die Aussage enthält nichts Neues.</strong></p>
+          <p>Nach <strong>nichts</strong> wird ein nominalisiertes Adjektiv grossgeschrieben.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 17 – Beim genauen Lesen</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Beim genauen lesen erkennt man die Absicht des Textes.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g7')">Lösung anzeigen</button>
+        <div id="gym2-g7" class="sf-de-hidden-box">
+          <p><strong>Beim genauen Lesen erkennt man die Absicht des Textes.</strong></p>
+          <p><strong>Lesen</strong> ist nominalisiert. <strong>genauen</strong> bleibt klein, weil es Lesen näher beschreibt.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 18 – Viel Interessantes</h4>
+        <p>Korrigiere:</p>
+        <p><strong>In der Szene passiert viel interessantes.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-g8')">Lösung anzeigen</button>
+        <div id="gym2-g8" class="sf-de-hidden-box">
+          <p><strong>In der Szene passiert viel Interessantes.</strong></p>
+          <p>Nach <strong>viel</strong> kann ein nominalisiertes Adjektiv stehen. Deshalb wird <strong>Interessantes</strong> grossgeschrieben.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>C. Fälle und Kasus – 8 Übungen</h3>
+      <p>
+        Viele Sätze klingen falsch, weil Dativ, Akkusativ oder Genitiv verwechselt werden.
+        Frage immer: Wer? Wen? Wem? Wessen?
+      </p>
+
+      <div class="sf-de-task">
+        <h4>Übung 19 – Helfen mit Dativ</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Ich helfe den Schüler bei der Aufgabe.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f1')">Lösung anzeigen</button>
+        <div id="gym2-f1" class="sf-de-hidden-box">
+          <p><strong>Ich helfe dem Schüler bei der Aufgabe.</strong></p>
+          <p><strong>helfen</strong> verlangt den Dativ: Wem helfe ich? Dem Schüler.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 20 – Fragen mit Akkusativ</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Die Lehrerin fragt dem Schüler.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f2')">Lösung anzeigen</button>
+        <div id="gym2-f2" class="sf-de-hidden-box">
+          <p><strong>Die Lehrerin fragt den Schüler.</strong></p>
+          <p><strong>fragen</strong> verlangt hier den Akkusativ: Wen fragt sie? Den Schüler.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 21 – Wegen mit Genitiv</h4>
+        <p>Korrigiere standardsprachlich:</p>
+        <p><strong>Wegen dem Test lernt sie länger.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f3')">Lösung anzeigen</button>
+        <div id="gym2-f3" class="sf-de-hidden-box">
+          <p><strong>Wegen des Tests lernt sie länger.</strong></p>
+          <p>Standardsprachlich steht <strong>wegen</strong> mit Genitiv.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 22 – Dativ nach mit</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Sie spricht mit den Lehrer.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f4')">Lösung anzeigen</button>
+        <div id="gym2-f4" class="sf-de-hidden-box">
+          <p><strong>Sie spricht mit dem Lehrer.</strong></p>
+          <p><strong>mit</strong> verlangt den Dativ.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 23 – Akkusativ nach für</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Der Text ist für dem Leser verständlich.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f5')">Lösung anzeigen</button>
+        <div id="gym2-f5" class="sf-de-hidden-box">
+          <p><strong>Der Text ist für den Leser verständlich.</strong></p>
+          <p><strong>für</strong> verlangt den Akkusativ.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 24 – Wechselpräposition Ort</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Das Heft liegt auf den Tisch.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f6')">Lösung anzeigen</button>
+        <div id="gym2-f6" class="sf-de-hidden-box">
+          <p><strong>Das Heft liegt auf dem Tisch.</strong></p>
+          <p>Bei Ort/Ruhe steht bei Wechselpräpositionen der Dativ: Wo liegt es? Auf dem Tisch.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 25 – Wechselpräposition Richtung</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Ich lege das Heft auf dem Tisch.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f7')">Lösung anzeigen</button>
+        <div id="gym2-f7" class="sf-de-hidden-box">
+          <p><strong>Ich lege das Heft auf den Tisch.</strong></p>
+          <p>Bei Richtung/Bewegung steht der Akkusativ: Wohin lege ich es? Auf den Tisch.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 26 – Genitiv bei Zugehörigkeit</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Die Aussage von dem Text ist kritisch.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-f8')">Lösung anzeigen</button>
+        <div id="gym2-f8" class="sf-de-hidden-box">
+          <p><strong>Die Aussage des Textes ist kritisch.</strong></p>
+          <p>In schulischen Texten klingt der Genitiv oft präziser und schriftsprachlicher.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>D. Dass oder das – 6 Übungen</h3>
+      <p>
+        Der einfachste Test: Wenn du <strong>das</strong> durch <strong>dieses</strong>, <strong>jenes</strong> oder <strong>welches</strong> ersetzen kannst, schreibt man <strong>das</strong>.
+        Wenn es einen Nebensatz einleitet, schreibt man meistens <strong>dass</strong>.
+      </p>
+
+      <div class="sf-de-task">
+        <h4>Übung 27</h4>
+        <p>Setze <strong>dass</strong> oder <strong>das</strong> ein:</p>
+        <p><strong>Ich denke ___ der Text eine klare Aussage hat.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-d1')">Lösung anzeigen</button>
+        <div id="gym2-d1" class="sf-de-hidden-box">
+          <p><strong>Ich denke, dass der Text eine klare Aussage hat.</strong></p>
+          <p><strong>dass</strong> leitet einen Nebensatz ein.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 28</h4>
+        <p>Setze ein:</p>
+        <p><strong>Das Argument, ___ sie nennt, ist überzeugend.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-d2')">Lösung anzeigen</button>
+        <div id="gym2-d2" class="sf-de-hidden-box">
+          <p><strong>Das Argument, das sie nennt, ist überzeugend.</strong></p>
+          <p>Hier kann man sagen: <strong>welches sie nennt</strong>. Deshalb schreibt man <strong>das</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 29</h4>
+        <p>Setze ein:</p>
+        <p><strong>Es fällt auf ___ die Figur kaum spricht.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-d3')">Lösung anzeigen</button>
+        <div id="gym2-d3" class="sf-de-hidden-box">
+          <p><strong>Es fällt auf, dass die Figur kaum spricht.</strong></p>
+          <p><strong>dass</strong> leitet einen Nebensatz ein. Vor dem Nebensatz steht ein Komma.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 30</h4>
+        <p>Setze ein:</p>
+        <p><strong>Das Bild, ___ im Gedicht verwendet wird, wirkt düster.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-d4')">Lösung anzeigen</button>
+        <div id="gym2-d4" class="sf-de-hidden-box">
+          <p><strong>Das Bild, das im Gedicht verwendet wird, wirkt düster.</strong></p>
+          <p>Man kann ersetzen: <strong>welches im Gedicht verwendet wird</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 31</h4>
+        <p>Setze ein:</p>
+        <p><strong>Der Autor zeigt ___ die Situation gefährlich ist.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-d5')">Lösung anzeigen</button>
+        <div id="gym2-d5" class="sf-de-hidden-box">
+          <p><strong>Der Autor zeigt, dass die Situation gefährlich ist.</strong></p>
+          <p><strong>dass</strong> leitet den Inhalt dessen ein, was gezeigt wird.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 32</h4>
+        <p>Setze ein:</p>
+        <p><strong>Ich verstehe ___ nicht.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-d6')">Lösung anzeigen</button>
+        <div id="gym2-d6" class="sf-de-hidden-box">
+          <p><strong>Ich verstehe das nicht.</strong></p>
+          <p>Hier steht <strong>das</strong> als Pronomen. Man könnte sagen: <strong>Ich verstehe dieses nicht.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>E. Satzbau – 6 Übungen</h3>
+      <p>
+        Gute Sätze sind nicht möglichst lang, sondern klar. Viele Texte werden besser, wenn du lange Satzketten
+        aufteilst und die Reihenfolge sauber machst.
+      </p>
+
+      <div class="sf-de-task">
+        <h4>Übung 33 – Satz entwirren</h4>
+        <p>Verbessere den Satz:</p>
+        <p><strong>Der Text der von einem Jugendlichen handelt der sich unverstanden fühlt zeigt viele Probleme.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-s1')">Lösung anzeigen</button>
+        <div id="gym2-s1" class="sf-de-hidden-box">
+          <p><strong>Der Text handelt von einem Jugendlichen, der sich unverstanden fühlt, und zeigt verschiedene Probleme des Erwachsenwerdens.</strong></p>
+          <p>Der Satz ist klarer, weil die Relativsätze sauber abgetrennt und die Aussage genauer formuliert wird.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 34 – Zu langer Satz</h4>
+        <p>Verbessere:</p>
+        <p><strong>Die Figur ist traurig und sie spricht wenig und man merkt dass sie Probleme hat und der Text zeigt das.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-s2')">Lösung anzeigen</button>
+        <div id="gym2-s2" class="sf-de-hidden-box">
+          <p><strong>Die Figur wirkt traurig, weil sie nur wenig spricht. Ihre knappen Antworten zeigen, dass sie innerlich belastet ist.</strong></p>
+          <p>Die neue Version ist präziser und trennt zwei Gedanken sauber.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 35 – Wortstellung</h4>
+        <p>Verbessere:</p>
+        <p><strong>Weil sie Angst hat, sie schweigt.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-s3')">Lösung anzeigen</button>
+        <div id="gym2-s3" class="sf-de-hidden-box">
+          <p><strong>Weil sie Angst hat, schweigt sie.</strong></p>
+          <p>Nach einem vorangestellten Nebensatz folgt im Hauptsatz zuerst das konjugierte Verb.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 36 – Wiederholung vermeiden</h4>
+        <p>Verbessere:</p>
+        <p><strong>Der Text zeigt die Angst der Figur und die Angst der Figur wird durch die Sprache gezeigt.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-s4')">Lösung anzeigen</button>
+        <div id="gym2-s4" class="sf-de-hidden-box">
+          <p><strong>Der Text verdeutlicht die Angst der Figur vor allem durch die sprachliche Gestaltung.</strong></p>
+          <p>Die Wiederholung wird entfernt und die Aussage wird knapper.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 37 – Unklare Bezüge</h4>
+        <p>Verbessere:</p>
+        <p><strong>Sie sagt zu ihr dass sie traurig ist.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-s5')">Lösung anzeigen</button>
+        <div id="gym2-s5" class="sf-de-hidden-box">
+          <p><strong>Anna sagt zu Lea, dass sie traurig ist.</strong></p>
+          <p>Noch klarer wäre: <strong>Anna sagt zu Lea, dass Anna traurig ist.</strong> oder <strong>Anna sagt zu Lea, dass Lea traurig wirkt.</strong></p>
+          <p>Pronomen wie <strong>sie</strong> können unklar sein, wenn mehrere weibliche Figuren vorkommen.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 38 – Präziser Hauptsatz</h4>
+        <p>Verbessere:</p>
+        <p><strong>Es wird im Text irgendwie gezeigt dass Schule stressig ist.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-s6')">Lösung anzeigen</button>
+        <div id="gym2-s6" class="sf-de-hidden-box">
+          <p><strong>Der Text zeigt den schulischen Leistungsdruck durch die wiederholte Beschreibung von Müdigkeit, Zeitmangel und Angst vor Fehlern.</strong></p>
+          <p>Die Formulierung ist genauer, weil sie benennt, wodurch die Aussage entsteht.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>F. Stil verbessern – 6 Übungen</h3>
+      <p>
+        Stil bedeutet: Deine Sprache soll zur Aufgabe passen. In einer Analyse brauchst du keine Alltagssprache,
+        sondern genaue und sachliche Formulierungen.
+      </p>
+
+      <div class="sf-de-task">
+        <h4>Übung 39 – Umgangssprache ersetzen</h4>
+        <p>Verbessere:</p>
+        <p><strong>Die Figur ist voll komisch.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-st1')">Lösung anzeigen</button>
+        <div id="gym2-st1" class="sf-de-hidden-box">
+          <p><strong>Die Figur wirkt widersprüchlich, weil ihr Verhalten nicht zu ihren Aussagen passt.</strong></p>
+          <p><strong>voll komisch</strong> ist umgangssprachlich und ungenau.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 40 – Genauere Wirkung</h4>
+        <p>Verbessere:</p>
+        <p><strong>Das macht den Text interessanter.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-st2')">Lösung anzeigen</button>
+        <div id="gym2-st2" class="sf-de-hidden-box">
+          <p><strong>Dadurch wirkt der Text eindringlicher und lenkt die Aufmerksamkeit stärker auf die innere Anspannung der Figur.</strong></p>
+          <p><strong>interessanter</strong> ist meistens zu allgemein. Besser ist eine genaue Wirkung.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 41 – Nicht unbelegt Autorabsicht behaupten</h4>
+        <p>Verbessere:</p>
+        <p><strong>Der Autor will sagen dass Menschen schlecht sind.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-st3')">Lösung anzeigen</button>
+        <div id="gym2-st3" class="sf-de-hidden-box">
+          <p><strong>Der Text legt nahe, dass menschliches Verhalten unter Druck moralisch fragwürdig werden kann.</strong></p>
+          <p>Diese Formulierung ist vorsichtiger und analytischer.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 42 – Ich-Form vermeiden</h4>
+        <p>Verbessere:</p>
+        <p><strong>Ich finde das Gedicht sehr traurig.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-st4')">Lösung anzeigen</button>
+        <div id="gym2-st4" class="sf-de-hidden-box">
+          <p><strong>Das Gedicht wirkt melancholisch, weil dunkle Naturbilder und eine ruhige Sprache dominieren.</strong></p>
+          <p>In Analysen sollte man nicht nur die eigene Meinung nennen, sondern die Wirkung begründen.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 43 – Präziser Ausdruck</h4>
+        <p>Verbessere:</p>
+        <p><strong>Die Sprache ist gut.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-st5')">Lösung anzeigen</button>
+        <div id="gym2-st5" class="sf-de-hidden-box">
+          <p><strong>Die Sprache ist präzise und sachlich, wodurch die Argumentation klar und überzeugend wirkt.</strong></p>
+          <p><strong>gut</strong> ist zu allgemein. Sage genauer, was gut ist.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 44 – Analyse statt Nacherzählung</h4>
+        <p>Verbessere:</p>
+        <p><strong>Dann geht die Figur weg und danach ist sie traurig.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-st6')">Lösung anzeigen</button>
+        <div id="gym2-st6" class="sf-de-hidden-box">
+          <p><strong>Der Weggang markiert einen Wendepunkt, weil die Figur danach zunehmend isoliert und emotional erschöpft erscheint.</strong></p>
+          <p>Die bessere Version erklärt die Bedeutung des Geschehens.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>G. Zeitformen und Analyse-Präsens – 3 Übungen</h3>
+
+      <div class="sf-de-task">
+        <h4>Übung 45 – Inhaltsangabe im Präsens</h4>
+        <p>Korrigiere:</p>
+        <p><strong>In der Geschichte ging die Figur nach Hause und sprach mit ihrer Mutter.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-z1')">Lösung anzeigen</button>
+        <div id="gym2-z1" class="sf-de-hidden-box">
+          <p><strong>In der Geschichte geht die Figur nach Hause und spricht mit ihrer Mutter.</strong></p>
+          <p>Inhaltsangaben schreibt man normalerweise im Präsens.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 46 – Analyse im Präsens</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Der Autor verwendete eine Metapher und erzeugte dadurch Spannung.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-z2')">Lösung anzeigen</button>
+        <div id="gym2-z2" class="sf-de-hidden-box">
+          <p><strong>Der Autor verwendet eine Metapher und erzeugt dadurch Spannung.</strong></p>
+          <p>Textanalysen schreibt man normalerweise im Präsens.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 47 – Vorzeitigkeit</h4>
+        <p>Verbessere:</p>
+        <p><strong>Die Figur ist misstrauisch, weil sie früher enttäuscht wird.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-z3')">Lösung anzeigen</button>
+        <div id="gym2-z3" class="sf-de-hidden-box">
+          <p><strong>Die Figur ist misstrauisch, weil sie früher enttäuscht worden ist.</strong></p>
+          <p>Die Enttäuschung liegt vor dem aktuellen Zustand. Deshalb braucht man eine Form der Vorzeitigkeit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>H. Typische Rechtschreib- und Ausdrucksfehler – 3 Übungen</h3>
+
+      <div class="sf-de-task">
+        <h4>Übung 48 – seid oder seit</h4>
+        <p>Setze richtig ein:</p>
+        <p><strong>___ dem Morgen ___ ihr konzentriert am Arbeiten.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-r1')">Lösung anzeigen</button>
+        <div id="gym2-r1" class="sf-de-hidden-box">
+          <p><strong>Seit dem Morgen seid ihr konzentriert am Arbeiten.</strong></p>
+          <p><strong>seit</strong> bezieht sich auf Zeit. <strong>seid</strong> ist eine Form von <strong>sein</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 49 – wieder oder wider</h4>
+        <p>Setze richtig ein:</p>
+        <p><strong>Die Figur versucht ___ aufzustehen, obwohl alles ___ sie spricht.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-r2')">Lösung anzeigen</button>
+        <div id="gym2-r2" class="sf-de-hidden-box">
+          <p><strong>Die Figur versucht wieder aufzustehen, obwohl alles wider sie spricht.</strong></p>
+          <p><strong>wieder</strong> bedeutet nochmals. <strong>wider</strong> bedeutet gegen.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Übung 50 – Standardsprachlich formulieren</h4>
+        <p>Verbessere:</p>
+        <p><strong>Der Text ist halt so geschrieben dass man merkt es ist traurig.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym2-r3')">Lösung anzeigen</button>
+        <div id="gym2-r3" class="sf-de-hidden-box">
+          <p><strong>Der Text erzeugt eine traurige Stimmung, weil die Wortwahl von Verlust, Dunkelheit und Einsamkeit geprägt ist.</strong></p>
+          <p>Die bessere Version vermeidet Umgangssprache und nennt konkrete sprachliche Hinweise.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>So solltest du mit diesen Übungen lernen</h3>
+      <p>
+        Lies nicht nur die Lösung. Schreibe zuerst deine eigene Lösung auf. Erst danach öffnest du die Musterlösung.
+        Wenn deine Lösung falsch war, schreibst du den korrigierten Satz nochmals sauber ab. Genau dadurch lernst du die Regel.
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Die beste Lernmethode</h4>
+        <p>
+          1. Aufgabe lösen, ohne Lösung anzuschauen.<br>
+          2. Lösung öffnen und vergleichen.<br>
+          3. Regel in einem Satz erklären.<br>
+          4. Den richtigen Satz nochmals abschreiben.<br>
+          5. Am nächsten Tag dieselbe Übung nochmals kurz wiederholen.
+        </p>
+      </div>
+    </section>
+  `
+},
 
   {
-    id: "gym3",
-    titel: "GYM3",
-    beschreibung:
-      "Literatur verstehen und sprachliche Gestaltungsmittel sicher erkennen, benennen und deuten.",
-    themen: [
-      {
-        id: "literaturverstaendnis",
-        nummer: "1",
-        titel: "Literaturverständnis",
-        kurzbeschreibung:
-          "Literarische Texte nicht nur nacherzählen, sondern Figuren, Konflikte, Motive, Erzählweise und Deutung systematisch untersuchen.",
-        lernziele: [
-          "Du kannst Handlung und Deutung eines literarischen Textes unterscheiden.",
-          "Du kannst Figuren anhand von Verhalten, Sprache, Gedanken und Beziehungen charakterisieren.",
-          "Du kannst zentrale Konflikte erkennen und erklären.",
-          "Du kannst Motive, Symbole und Themen eines Textes benennen.",
-          "Du kannst Erzählperspektive und Erzählverhalten untersuchen.",
-          "Du kannst direkte und indirekte Charakterisierung unterscheiden.",
-          "Du kannst literarische Aussagen mit Textbelegen stützen.",
-          "Du kannst eine begründete Gesamtdeutung formulieren."
-        ],
-        theorie: [
-          {
-            titel: "Literatur verstehen heisst mehr als nacherzählen",
-            text:
-              "Eine Inhaltsangabe beantwortet die Frage, was passiert. Literaturverständnis geht weiter: Es fragt, warum etwas passiert, wie es dargestellt wird und welche Bedeutung daraus entsteht. Entscheidend ist die Verbindung von Handlung, Sprache, Figuren und Deutung."
-          },
-          {
-            titel: "Figurenanalyse",
-            text:
-              "Figuren werden durch ihr Verhalten, ihre Sprache, ihre Gedanken, ihr Verhältnis zu anderen Figuren und durch Erzählerkommentare charakterisiert. Eine gute Figurenanalyse beschreibt nicht nur Eigenschaften, sondern begründet sie am Text."
-          },
-          {
-            titel: "Direkte und indirekte Charakterisierung",
-            text:
-              "Bei direkter Charakterisierung wird eine Eigenschaft ausdrücklich genannt. Bei indirekter Charakterisierung muss man aus Verhalten, Sprache oder Reaktionen anderer Figuren auf Eigenschaften schliessen."
-          },
-          {
-            titel: "Konflikt",
-            text:
-              "Ein Konflikt ist eine Spannung zwischen gegensätzlichen Kräften. Das kann ein äusserer Konflikt zwischen Figuren sein oder ein innerer Konflikt innerhalb einer Figur, zum Beispiel zwischen Pflicht und Wunsch, Angst und Mut oder Anpassung und Widerstand."
-          },
-          {
-            titel: "Motiv und Thema",
-            text:
-              "Ein Thema ist ein übergeordneter Gegenstand, etwa Liebe, Schuld, Macht oder Freiheit. Ein Motiv ist ein wiederkehrendes Element, das dieses Thema konkretisiert, zum Beispiel ein Fenster als Motiv für Sehnsucht oder Grenze."
-          },
-          {
-            titel: "Symbol",
-            text:
-              "Ein Symbol ist ein konkretes Zeichen, das über sich hinausweist. Eine zerbrochene Uhr kann zum Beispiel für Stillstand, Verlust oder das Ende einer Lebensphase stehen. Die Bedeutung ergibt sich aus dem Textzusammenhang."
-          },
-          {
-            titel: "Erzählperspektive",
-            text:
-              "Die Erzählperspektive bestimmt, was Leserinnen und Leser wissen. Ein Ich-Erzähler wirkt subjektiv und begrenzt. Ein personaler Erzähler bleibt nahe bei einer Figur. Ein auktorialer Erzähler kann Überblick, Kommentare und Vorausdeutungen geben."
-          },
-          {
-            titel: "Deutung",
-            text:
-              "Eine Deutung ist eine begründete Erklärung der Bedeutung eines Textes. Sie darf nicht beliebig sein, sondern muss durch Textbeobachtungen gestützt werden."
-          }
-        ],
-        methoden: [
-          {
-            titel: "Methode: Literarischen Text erschliessen",
-            schritte: [
-              "1. Lies den Text zuerst ohne Markieren, um Handlung und Stimmung zu erfassen.",
-              "2. Kläre unbekannte Wörter und schwierige Stellen.",
-              "3. Fasse die Handlung knapp zusammen.",
-              "4. Markiere wichtige Figuren, Konflikte und Wendepunkte.",
-              "5. Achte auf auffällige Sprache, Bilder und Wiederholungen.",
-              "6. Bestimme Erzählperspektive und Erzählverhalten.",
-              "7. Frage: Welche zentrale Spannung oder Aussage trägt der Text?",
-              "8. Formuliere eine Deutung, die du mit Textstellen begründen kannst."
-            ]
-          },
-          {
-            titel: "Methode: Figur charakterisieren",
-            schritte: [
-              "1. Sammle alle wichtigen Informationen zur Figur.",
-              "2. Unterscheide äussere Merkmale, soziale Rolle und innere Eigenschaften.",
-              "3. Untersuche, wie die Figur spricht.",
-              "4. Untersuche, wie sie handelt und worauf sie reagiert.",
-              "5. Beachte, wie andere Figuren über sie sprechen.",
-              "6. Unterscheide direkte und indirekte Charakterisierung.",
-              "7. Formuliere Eigenschaften nicht nur als Adjektive, sondern begründe sie.",
-              "8. Erkläre, welche Funktion die Figur im Text hat."
-            ]
-          },
-          {
-            titel: "Methode: Konflikt analysieren",
-            schritte: [
-              "1. Bestimme, zwischen welchen Personen, Werten oder Zielen eine Spannung besteht.",
-              "2. Unterscheide inneren und äusseren Konflikt.",
-              "3. Suche Textstellen, an denen der Konflikt sichtbar wird.",
-              "4. Erkläre, wie der Konflikt die Handlung antreibt.",
-              "5. Prüfe, ob der Konflikt gelöst, verschärft oder offen gelassen wird.",
-              "6. Verbinde den Konflikt mit dem Thema des Textes."
-            ]
-          }
-        ],
-        merksaetze: [
-          "Literatur muss nicht nur verstanden, sondern gedeutet werden.",
-          "Eine Deutung ohne Textbeleg bleibt Behauptung.",
-          "Figuren erkennt man vor allem an Verhalten, Sprache und Beziehungen.",
-          "Ein Konflikt ist oft der Motor der Handlung.",
-          "Motive wiederholen sich und tragen zur Bedeutung bei.",
-          "Der Erzähler ist nicht automatisch der Autor.",
-          "Die Erzählperspektive steuert das Wissen und die Sympathie der Lesenden.",
-          "Gute Literaturinterpretation verbindet Inhalt, Form und Wirkung."
-        ],
-        typischeFehler: [
-          {
-            fehler: "Man erzählt nur die Handlung nach.",
-            korrektur:
-              "Erkläre zusätzlich, was die Handlung bedeutet und wie sie sprachlich dargestellt wird."
-          },
-          {
-            fehler: "Man beschreibt eine Figur mit Adjektiven, ohne Belege zu nennen.",
-            korrektur:
-              "Begründe Eigenschaften durch Verhalten, Sprache oder konkrete Textstellen."
-          },
-          {
-            fehler: "Man verwechselt Autor und Erzähler.",
-            korrektur:
-              "Der Erzähler ist eine Textinstanz. Der Autor ist die reale Person ausserhalb des Textes."
-          },
-          {
-            fehler: "Man deutet Symbole völlig frei.",
-            korrektur:
-              "Symboldeutungen müssen aus dem Textzusammenhang hervorgehen."
-          },
-          {
-            fehler: "Man ignoriert die Erzählperspektive.",
-            korrektur:
-              "Frage immer, wer erzählt, was diese Instanz weiss und wie zuverlässig sie wirkt."
-          }
-        ],
-        aufgaben: [
-          {
-            titel: "Aufgabe 1: Direkte und indirekte Charakterisierung",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Eine Figur sagt kaum etwas, hilft aber einer anderen Figur heimlich und verzichtet auf Anerkennung. Charakterisiere sie begründet.",
-            loesung: [
-              "Die Figur wirkt zurückhaltend, weil sie kaum spricht.",
-              "Ihr heimliches Helfen zeigt Hilfsbereitschaft.",
-              "Dass sie auf Anerkennung verzichtet, deutet auf Bescheidenheit hin.",
-              "Man könnte sie als still, verantwortungsbewusst und uneigennützig charakterisieren.",
-              "Wichtig ist: Diese Eigenschaften werden indirekt aus Verhalten erschlossen."
-            ]
-          },
-          {
-            titel: "Aufgabe 2: Konflikt erkennen",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Eine Figur möchte ihre Familie nicht enttäuschen, will aber gleichzeitig ihren eigenen Lebensweg gehen. Welcher Konflikt liegt vor?",
-            loesung: [
-              "Es handelt sich um einen inneren Konflikt.",
-              "Die Figur steht zwischen familiärer Erwartung und persönlicher Selbstbestimmung.",
-              "Der Konflikt betrifft Werte wie Pflicht, Zugehörigkeit, Freiheit und Identität.",
-              "Ein solcher Konflikt kann die Handlung stark prägen, weil jede Entscheidung einen Verlust bedeutet."
-            ]
-          },
-          {
-            titel: "Aufgabe 3: Symbol deuten",
-            schwierigkeit: "schwer",
-            aufgabe:
-              "In einer Erzählung blickt eine Figur wiederholt durch ein geschlossenes Fenster nach draussen. Deute dieses Motiv.",
-            loesung: [
-              "Das Fenster trennt Innenraum und Aussenwelt.",
-              "Der Blick nach draussen kann Sehnsucht, Hoffnung oder den Wunsch nach Veränderung zeigen.",
-              "Dass das Fenster geschlossen ist, kann auf Begrenzung oder Gefangensein hinweisen.",
-              "Die Wiederholung macht das Fenster zu einem Motiv.",
-              "Eine mögliche Deutung: Die Figur sehnt sich nach Freiheit, bleibt aber in ihrer aktuellen Lebenssituation eingeschlossen."
-            ]
-          }
-        ],
-        muendlich: [
-          {
-            frage: "Was ist der Unterschied zwischen Inhaltsangabe und Interpretation?",
-            antwort:
-              "Eine Inhaltsangabe fasst zusammen, was geschieht. Eine Interpretation erklärt, welche Bedeutung das Geschehen, die Figuren und die sprachliche Gestaltung haben."
-          },
-          {
-            frage: "Wie charakterisiert man eine Figur überzeugend?",
-            antwort:
-              "Man untersucht Verhalten, Sprache, Gedanken, Beziehungen und Erzählerkommentare und belegt daraus abgeleitete Eigenschaften am Text."
-          },
-          {
-            frage: "Warum ist die Erzählperspektive wichtig?",
-            antwort:
-              "Sie bestimmt, was die Lesenden wissen, wie nah sie an Figuren herankommen und wie zuverlässig die Darstellung wirkt."
-          }
-        ],
-        nachtVorTest: [
-          "Kannst du Handlung und Deutung unterscheiden?",
-          "Kannst du direkte und indirekte Charakterisierung erklären?",
-          "Kannst du innere und äussere Konflikte unterscheiden?",
-          "Kannst du Motive und Symbole im Textzusammenhang deuten?",
-          "Kannst du Erzähler und Autor auseinanderhalten?",
-          "Kannst du eine Deutung mit Textbelegen stützen?"
-        ]
-      },
+  id: "gym3",
+  titel: "GYM3",
+  untertitel: "Rhetorische Mittel",
+  beschreibung:
+    "Eine grosse, klare Liste rhetorischer Mittel mit Erklärung, Beispiel und Wirkung – so, dass man sie in Text- und Gedichtanalysen wirklich verwenden kann.",
+  html: `
+    <section class="sf-de-section">
+      <h2>GYM3 – Rhetorische Mittel</h2>
+      <p class="sf-de-lead">
+        Rhetorische Mittel bringen dir nur dann etwas, wenn du sie nicht nur auswendig kennst,
+        sondern ihre Wirkung erklären kannst. In einer Analyse reicht es nicht zu schreiben:
+        „Das ist eine Metapher.“ Du musst zeigen, was die Formulierung im Text bewirkt.
+      </p>
 
-      {
-        id: "rhetorische-mittel",
-        nummer: "2",
-        titel: "Rhetorische Mittel",
-        kurzbeschreibung:
-          "Die wichtigsten rhetorischen und sprachlichen Mittel erkennen, korrekt benennen und ihre Wirkung im Textzusammenhang erklären.",
-        lernziele: [
-          "Du kannst zentrale rhetorische Mittel sicher erkennen.",
-          "Du kannst zwischen Metapher, Vergleich, Personifikation und Symbol unterscheiden.",
-          "Du kannst Wiederholung, Anapher, Parallelismus, Klimax und Antithese erklären.",
-          "Du kannst Klangmittel und Satzfiguren benennen.",
-          "Du kannst die Wirkung eines sprachlichen Mittels präzise formulieren.",
-          "Du kannst rhetorische Mittel in Gedichten, Reden, Kommentaren und literarischen Texten analysieren.",
-          "Du vermeidest reine Aufzählungen ohne Deutung.",
-          "Du kannst Form, Inhalt und Wirkung miteinander verbinden."
-        ],
-        theorie: [
-          {
-            titel: "Was sind rhetorische Mittel?",
-            text:
-              "Rhetorische Mittel sind sprachliche Gestaltungsmittel. Sie beeinflussen, wie eine Aussage wirkt. Sie können betonen, veranschaulichen, emotionalisieren, zuspitzen, strukturieren oder einen Text rhythmisch gestalten."
-          },
-          {
-            titel: "Benennen reicht nicht",
-            text:
-              "In einer Analyse genügt es nicht, ein sprachliches Mittel nur zu finden. Entscheidend ist die Wirkung. Man muss erklären, warum dieses Mittel an genau dieser Stelle wichtig ist."
-          },
-          {
-            titel: "Metapher",
-            text:
-              "Eine Metapher ist eine Bedeutungsübertragung ohne Vergleichswort. Beispiel: ein Meer aus Stimmen. Die Metapher macht eine Aussage bildhaft und verdichtet Bedeutung."
-          },
-          {
-            titel: "Vergleich",
-            text:
-              "Ein Vergleich verbindet zwei Bereiche mit einem Vergleichswort wie wie oder als. Beispiel: Er schweigt wie eine Mauer. Der Vergleich macht eine Eigenschaft anschaulich."
-          },
-          {
-            titel: "Personifikation",
-            text:
-              "Eine Personifikation gibt Dingen, Naturerscheinungen oder abstrakten Begriffen menschliche Eigenschaften. Beispiel: Die Angst kroch durch den Raum. Dadurch wirkt etwas lebendig oder bedrohlich."
-          },
-          {
-            titel: "Anapher",
-            text:
-              "Eine Anapher ist die Wiederholung eines Wortes oder einer Wortgruppe am Anfang aufeinanderfolgender Sätze oder Verse. Sie erzeugt Nachdruck, Rhythmus und Struktur."
-          },
-          {
-            titel: "Parallelismus",
-            text:
-              "Ein Parallelismus ist ein gleichartiger Satzbau. Er macht Aussagen geordnet, einprägsam und rhythmisch."
-          },
-          {
-            titel: "Antithese",
-            text:
-              "Eine Antithese stellt Gegensätze einander gegenüber. Sie verschärft einen Konflikt oder macht eine Spannung deutlich."
-          },
-          {
-            titel: "Klimax",
-            text:
-              "Eine Klimax ist eine Steigerung. Sie führt von einem schwächeren zu einem stärkeren Ausdruck und erhöht die Intensität."
-          },
-          {
-            titel: "Rhetorische Frage",
-            text:
-              "Eine rhetorische Frage erwartet keine echte Antwort. Sie lenkt die Aufmerksamkeit und kann Zustimmung, Zweifel oder Druck erzeugen."
-          },
-          {
-            titel: "Hyperbel",
-            text:
-              "Eine Hyperbel ist eine starke Übertreibung. Sie kann etwas besonders emotional, dramatisch oder ironisch wirken lassen."
-          },
-          {
-            titel: "Alliteration",
-            text:
-              "Eine Alliteration ist die Wiederholung gleicher Anfangslaute. Sie kann einen Ausdruck einprägsamer, klangvoller oder pointierter machen."
-          }
-        ],
-        methoden: [
-          {
-            titel: "Methode: Rhetorisches Mittel analysieren",
-            schritte: [
-              "1. Suche eine sprachlich auffällige Stelle.",
-              "2. Zitiere nur so viel wie nötig.",
-              "3. Benenne das rhetorische Mittel korrekt.",
-              "4. Erkläre kurz, wie das Mittel funktioniert.",
-              "5. Beschreibe die Wirkung an dieser konkreten Stelle.",
-              "6. Verbinde die Wirkung mit Thema, Figur, Stimmung oder Aussage des Textes.",
-              "7. Vermeide die Formulierung: Das macht den Text schöner. Sie ist zu ungenau."
-            ]
-          },
-          {
-            titel: "Methode: Wirkung präzise formulieren",
-            schritte: [
-              "1. Frage: Wird etwas betont, veranschaulicht oder emotionalisiert?",
-              "2. Frage: Entsteht Spannung, Ironie, Dramatik, Nähe oder Distanz?",
-              "3. Frage: Unterstützt das Mittel eine Figurendarstellung oder ein Argument?",
-              "4. Frage: Passt die sprachliche Form zur Gesamtaussage?",
-              "5. Formuliere die Wirkung mit Begriffen wie eindringlich, bedrohlich, abwertend, feierlich, distanziert, dynamisch oder widersprüchlich."
-            ]
-          }
-        ],
-        merksaetze: [
-          "Rhetorische Mittel sind kein Selbstzweck.",
-          "Die Wirkung ist wichtiger als das blosse Benennen.",
-          "Ein Mittel kann je nach Kontext unterschiedliche Wirkungen haben.",
-          "Metapher bedeutet Bedeutungsübertragung ohne wie.",
-          "Ein Vergleich enthält meistens wie oder als.",
-          "Eine Personifikation macht Nicht-Menschliches menschlich.",
-          "Anaphern und Parallelismen schaffen Nachdruck und Rhythmus.",
-          "Eine gute Analyse verbindet sprachliche Form mit inhaltlicher Aussage."
-        ],
-        typischeFehler: [
-          {
-            fehler: "Man zählt viele rhetorische Mittel auf, erklärt aber keine Wirkung.",
-            korrektur:
-              "Wähle wenige wichtige Mittel und analysiere sie genau."
-          },
-          {
-            fehler: "Man nennt jedes sprachliche Bild eine Metapher.",
-            korrektur:
-              "Prüfe, ob ein Vergleichswort vorhanden ist oder ob eine Personifikation vorliegt."
-          },
-          {
-            fehler: "Man schreibt: Das macht den Text interessanter.",
-            korrektur:
-              "Erkläre genauer: Erzeugt es Spannung, Emotionalität, Anschaulichkeit, Ironie oder Nachdruck?"
-          },
-          {
-            fehler: "Man trennt Sprache und Inhalt.",
-            korrektur:
-              "Zeige, wie die sprachliche Gestaltung die Aussage des Textes unterstützt."
-          }
-        ],
-        aufgaben: [
-          {
-            titel: "Aufgabe 1: Metapher analysieren",
-            schwierigkeit: "einfach",
-            aufgabe:
-              "Analysiere die Formulierung: Ein Sturm aus Vorwürfen brach über ihn herein.",
-            loesung: [
-              "Die Formulierung ist eine Metapher.",
-              "Vorwürfe werden mit einem Sturm verglichen, ohne dass das Wort wie verwendet wird.",
-              "Dadurch wirken die Vorwürfe heftig, unkontrollierbar und bedrohlich.",
-              "Die Figur erscheint ihnen ausgeliefert.",
-              "Die Metapher verstärkt also die emotionale Gewalt der Situation."
-            ]
-          },
-          {
-            titel: "Aufgabe 2: Anapher und Parallelismus",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Analysiere: Wir warten auf Gerechtigkeit. Wir warten auf Antworten. Wir warten auf Veränderung.",
-            loesung: [
-              "Die Wiederholung von Wir warten am Satzanfang ist eine Anapher.",
-              "Der ähnliche Satzbau bildet zusätzlich einen Parallelismus.",
-              "Die Wiederholung erzeugt Nachdruck und Rhythmus.",
-              "Die Aussage wirkt eindringlich und kollektiv.",
-              "Inhaltlich wird die lange Dauer des Wartens betont."
-            ]
-          },
-          {
-            titel: "Aufgabe 3: Antithese deuten",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Analysiere die Aussage: Er besitzt alles und hat doch nichts.",
-            loesung: [
-              "Die Formulierung enthält eine Antithese.",
-              "Alles und nichts stehen im Gegensatz.",
-              "Der Gegensatz zeigt eine Spannung zwischen äusserem Besitz und innerer Leere.",
-              "Die Aussage wirkt zugespitzt und nachdenklich.",
-              "Sie legt nahe, dass materieller Reichtum nicht automatisch Sinn oder Erfüllung bedeutet."
-            ]
-          },
-          {
-            titel: "Aufgabe 4: Rhetorische Frage",
-            schwierigkeit: "schwer",
-            aufgabe:
-              "Erkläre die Wirkung der Frage in einer Rede: Wie lange wollen wir noch schweigen?",
-            loesung: [
-              "Es handelt sich um eine rhetorische Frage.",
-              "Die Frage erwartet keine sachliche Antwort.",
-              "Sie übt moralischen Druck auf die Zuhörenden aus.",
-              "Das Schweigen wird indirekt als problematisch dargestellt.",
-              "Die Formulierung ruft zum Handeln auf und steigert die Dringlichkeit der Rede."
-            ]
-          }
-        ],
-        muendlich: [
-          {
-            frage: "Warum reicht es nicht, rhetorische Mittel nur zu benennen?",
-            antwort:
-              "Weil die Analyse zeigen muss, welche Funktion das Mittel im Text hat. Entscheidend ist die Wirkung im konkreten Zusammenhang."
-          },
-          {
-            frage: "Was ist der Unterschied zwischen Metapher und Vergleich?",
-            antwort:
-              "Ein Vergleich verwendet ein Vergleichswort wie wie oder als. Eine Metapher überträgt Bedeutung direkt, ohne Vergleichswort."
-          },
-          {
-            frage: "Was bewirken Wiederholungen?",
-            antwort:
-              "Wiederholungen können Nachdruck, Rhythmus, Eindringlichkeit, Struktur oder emotionale Intensität erzeugen."
-          }
-        ],
-        nachtVorTest: [
-          "Kannst du Metapher, Vergleich und Personifikation unterscheiden?",
-          "Kannst du Anapher und Parallelismus erkennen?",
-          "Kannst du Antithese, Klimax und rhetorische Frage erklären?",
-          "Kannst du Wirkung präzise formulieren?",
-          "Vermeidest du blosse Aufzählungen?",
-          "Verbindest du sprachliche Mittel mit Thema und Aussage?"
-        ]
-      }
-    ]
-  },
+      <div class="sf-de-rule">
+        <h4>Grundformel für jede Analyse</h4>
+        <p>
+          <strong>1. Stelle nennen:</strong> Wo steht das sprachliche Mittel?<br>
+          <strong>2. Mittel benennen:</strong> Was ist es?<br>
+          <strong>3. Wirkung erklären:</strong> Was macht es mit der Aussage, Stimmung oder Figur?
+        </p>
+        <p>
+          Beispiel: Die Metapher <strong>„auf dünnem Eis stehen“</strong> verdeutlicht,
+          dass sich eine Person in einer unsicheren oder gefährlichen Lage befindet.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>1. Bildhafte Mittel</h3>
+      <p>
+        Bildhafte Mittel machen Sprache anschaulich. Sie übersetzen eine abstrakte Aussage in ein Bild.
+        Genau deshalb sind sie in Gedichten, Reden, Kommentaren und literarischen Texten besonders wichtig.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Metapher</td>
+              <td>Ein Ausdruck wird bildlich gebraucht, ohne Vergleichswort.</td>
+              <td>Er steht auf dünnem Eis.</td>
+              <td>Die Situation wirkt unsicher, gefährlich oder instabil.</td>
+            </tr>
+            <tr>
+              <td>Vergleich</td>
+              <td>Zwei Bereiche werden mit wie oder als verbunden.</td>
+              <td>Sie schweigt wie eine Mauer.</td>
+              <td>Eine Eigenschaft wird anschaulich und leicht verständlich gemacht.</td>
+            </tr>
+            <tr>
+              <td>Personifikation</td>
+              <td>Etwas Nicht-Menschliches erhält menschliche Eigenschaften.</td>
+              <td>Die Angst kroch durch den Raum.</td>
+              <td>Ein Gefühl oder Zustand wirkt lebendig, greifbar oder bedrohlich.</td>
+            </tr>
+            <tr>
+              <td>Symbol</td>
+              <td>Ein konkreter Gegenstand steht für eine tiefere Bedeutung.</td>
+              <td>Eine zerbrochene Uhr steht für Stillstand.</td>
+              <td>Ein abstrakter Gedanke wird durch einen Gegenstand dargestellt.</td>
+            </tr>
+            <tr>
+              <td>Allegorie</td>
+              <td>Ein ganzer Gedanke wird durch ein ausgebautes Bild dargestellt.</td>
+              <td>Ein Schiff im Sturm als Bild für einen Staat in Krise.</td>
+              <td>Komplexe Zusammenhänge werden bildlich verständlich gemacht.</td>
+            </tr>
+            <tr>
+              <td>Chiffre</td>
+              <td>Ein rätselhaftes Bild, das nicht eindeutig auflösbar ist.</td>
+              <td>Schwarze Milch der Frühe.</td>
+              <td>Die Aussage wirkt verdichtet, fremd, vieldeutig oder verstörend.</td>
+            </tr>
+            <tr>
+              <td>Synästhesie</td>
+              <td>Verschiedene Sinneseindrücke werden vermischt.</td>
+              <td>Ein grelles Schweigen.</td>
+              <td>Die Wahrnehmung wirkt intensiv, ungewöhnlich oder poetisch.</td>
+            </tr>
+            <tr>
+              <td>Metonymie</td>
+              <td>Ein Begriff wird durch einen sachlich nahen Begriff ersetzt.</td>
+              <td>Das Weisse Haus entscheidet.</td>
+              <td>Die Aussage wird verkürzt und prägnanter.</td>
+            </tr>
+            <tr>
+              <td>Synekdoche</td>
+              <td>Ein Teil steht für das Ganze oder das Ganze für einen Teil.</td>
+              <td>Alle Hände an Deck.</td>
+              <td>Die Aussage wird verdichtet und bildlicher.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>So formulierst du es in einer Analyse</h4>
+        <p>
+          <strong>Schwach:</strong> Hier gibt es eine Metapher.
+        </p>
+        <p>
+          <strong>Besser:</strong> Die Metapher <strong>„auf dünnem Eis stehen“</strong>
+          macht die Unsicherheit der Figur anschaulich. Sie zeigt, dass die Figur sich in einer Lage befindet,
+          in der bereits ein kleiner Fehler schwerwiegende Folgen haben kann.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>2. Wiederholungsfiguren</h3>
+      <p>
+        Wiederholungen erzeugen Nachdruck. Sie sind besonders wichtig in Reden, Gedichten und dramatischen Texten.
+        Meistens zeigen sie, dass ein Gedanke besonders wichtig ist.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wiederholung</td>
+              <td>Ein Wort oder Ausdruck erscheint mehrfach.</td>
+              <td>Nie wieder. Nie wieder Krieg.</td>
+              <td>Die Aussage wirkt eindringlicher und bleibt besser im Gedächtnis.</td>
+            </tr>
+            <tr>
+              <td>Anapher</td>
+              <td>Wiederholung am Anfang mehrerer Sätze oder Verse.</td>
+              <td>Wir warten. Wir hoffen. Wir kämpfen.</td>
+              <td>Erzeugt Rhythmus, Nachdruck und Zusammenhalt.</td>
+            </tr>
+            <tr>
+              <td>Epipher</td>
+              <td>Wiederholung am Ende mehrerer Sätze oder Verse.</td>
+              <td>Ich will Freiheit. Du willst Freiheit. Wir alle wollen Freiheit.</td>
+              <td>Der Schlussgedanke wird besonders betont.</td>
+            </tr>
+            <tr>
+              <td>Symploke</td>
+              <td>Kombination aus Anapher und Epipher.</td>
+              <td>Was ist der Mensch? Was kann der Mensch?</td>
+              <td>Die Aussage wirkt stark strukturiert und rhetorisch zugespitzt.</td>
+            </tr>
+            <tr>
+              <td>Parallelismus</td>
+              <td>Gleicher oder sehr ähnlicher Satzbau.</td>
+              <td>Heisse Tage, kalte Nächte.</td>
+              <td>Die Aussage wirkt geordnet, rhythmisch und einprägsam.</td>
+            </tr>
+            <tr>
+              <td>Chiasmus</td>
+              <td>Überkreuzstellung von Satzteilen.</td>
+              <td>Ich schlafe am Tag, nachts wache ich.</td>
+              <td>Erzeugt eine kunstvolle, oft gegensätzliche Struktur.</td>
+            </tr>
+            <tr>
+              <td>Refrain</td>
+              <td>Wiederkehrender Vers oder Satzteil.</td>
+              <td>Und immer wieder fällt der Regen.</td>
+              <td>Verstärkt ein zentrales Motiv oder eine Stimmung.</td>
+            </tr>
+            <tr>
+              <td>Leitmotiv</td>
+              <td>Wiederkehrendes Motiv, Bild oder Thema.</td>
+              <td>Ein Fenster erscheint immer wieder als Bild für Sehnsucht.</td>
+              <td>Verbindet verschiedene Textstellen und vertieft die Bedeutung.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Die Anapher <strong>„Wir warten. Wir hoffen. Wir kämpfen.“</strong> erzeugt einen klaren Rhythmus.
+          Durch die Wiederholung des Pronomens <strong>„wir“</strong> entsteht ein Gemeinschaftsgefühl.
+          Gleichzeitig steigert sich die Aussage von passivem Warten zu aktivem Kämpfen.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>3. Gegensätze und Steigerungen</h3>
+      <p>
+        Gegensätze und Steigerungen helfen, Spannungen sichtbar zu machen.
+        Sie zeigen oft Konflikte, innere Widersprüche oder eine dramatische Entwicklung.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Antithese</td>
+              <td>Gegensätzliche Begriffe oder Gedanken werden gegenübergestellt.</td>
+              <td>Er besitzt alles und hat doch nichts.</td>
+              <td>Ein innerer oder äusserer Widerspruch wird deutlich.</td>
+            </tr>
+            <tr>
+              <td>Oxymoron</td>
+              <td>Zwei widersprüchliche Begriffe stehen direkt zusammen.</td>
+              <td>beredtes Schweigen</td>
+              <td>Die Aussage wirkt spannungsvoll, paradox oder tiefgründig.</td>
+            </tr>
+            <tr>
+              <td>Paradoxon</td>
+              <td>Scheinbar widersprüchliche Aussage mit tieferem Sinn.</td>
+              <td>Weniger ist mehr.</td>
+              <td>Regt zum Nachdenken an und bricht Erwartungen.</td>
+            </tr>
+            <tr>
+              <td>Klimax</td>
+              <td>Steigerung von schwächer zu stärker.</td>
+              <td>Ich kam, sah und siegte.</td>
+              <td>Die Aussage wird intensiver und dramatischer.</td>
+            </tr>
+            <tr>
+              <td>Antiklimax</td>
+              <td>Abfall von stärker zu schwächer.</td>
+              <td>Er verlor sein Haus, sein Geld, seinen Stift.</td>
+              <td>Kann Enttäuschung, Ironie oder Lächerlichkeit erzeugen.</td>
+            </tr>
+            <tr>
+              <td>Kontrast</td>
+              <td>Zwei unterschiedliche Bereiche werden deutlich gegenübergestellt.</td>
+              <td>Die helle Stadt und der dunkle Wald.</td>
+              <td>Unterschiede werden sichtbar und oft symbolisch aufgeladen.</td>
+            </tr>
+            <tr>
+              <td>Ironie</td>
+              <td>Das Gegenteil des Gemeinten wird gesagt.</td>
+              <td>Das hast du ja grossartig gemacht. nach einem Fehler</td>
+              <td>Kann Kritik, Spott oder Distanz ausdrücken.</td>
+            </tr>
+            <tr>
+              <td>Sarkasmus</td>
+              <td>Beissende, verletzende Form von Ironie.</td>
+              <td>Natürlich, du bist wie immer perfekt vorbereitet.</td>
+              <td>Wirkt scharf, abwertend oder verletzend.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Die Antithese <strong>„Er besitzt alles und hat doch nichts“</strong> stellt äusseren Besitz und innere Leere gegenüber.
+          Dadurch wird deutlich, dass materieller Erfolg nicht mit seelischer Erfüllung gleichgesetzt werden kann.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>4. Übertreibung, Abschwächung und Auslassung</h3>
+      <p>
+        Diese Mittel verändern die Stärke einer Aussage. Sie können etwas dramatisieren,
+        verharmlosen, höflicher machen oder bewusst offenlassen.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hyperbel</td>
+              <td>Starke Übertreibung.</td>
+              <td>Ich habe dir das tausendmal gesagt.</td>
+              <td>Verstärkt eine Aussage emotional oder dramatisch.</td>
+            </tr>
+            <tr>
+              <td>Litotes</td>
+              <td>Abschwächung durch Verneinung des Gegenteils.</td>
+              <td>Das ist nicht schlecht.</td>
+              <td>Wirkt zurückhaltend, ironisch oder vorsichtig.</td>
+            </tr>
+            <tr>
+              <td>Euphemismus</td>
+              <td>Beschönigende Formulierung.</td>
+              <td>entschlafen statt sterben</td>
+              <td>Eine harte Aussage wird milder oder angenehmer gemacht.</td>
+            </tr>
+            <tr>
+              <td>Ellipse</td>
+              <td>Unvollständiger Satz, bei dem etwas ausgelassen wird.</td>
+              <td>Je schneller, desto besser.</td>
+              <td>Die Aussage wirkt knapp, direkt oder dynamisch.</td>
+            </tr>
+            <tr>
+              <td>Aposiopese</td>
+              <td>Ein Satz wird abgebrochen.</td>
+              <td>Wenn du das noch einmal machst...</td>
+              <td>Erzeugt Spannung, Drohung oder emotionale Überforderung.</td>
+            </tr>
+            <tr>
+              <td>Pleonasmus</td>
+              <td>Überflüssige Dopplung ähnlicher Bedeutung.</td>
+              <td>weisser Schimmel</td>
+              <td>Kann unbeabsichtigt falsch wirken oder bewusst verstärken.</td>
+            </tr>
+            <tr>
+              <td>Tautologie</td>
+              <td>Gleiche Bedeutung wird mit anderen Worten wiederholt.</td>
+              <td>immer und ewig</td>
+              <td>Verstärkt eine Aussage oder wirkt formelhaft.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Die Hyperbel <strong>„Ich habe dir das tausendmal gesagt“</strong> übertreibt die tatsächliche Anzahl.
+          Dadurch wird nicht eine genaue Zahl genannt, sondern die Verärgerung und Ungeduld der sprechenden Person betont.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>5. Satzfiguren und rhetorische Fragen</h3>
+      <p>
+        Satzfiguren verändern den Aufbau eines Satzes. Sie sind besonders wichtig, wenn ein Text appelliert,
+        provoziert oder besonders eindringlich wirken soll.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rhetorische Frage</td>
+              <td>Frage, auf die keine echte Antwort erwartet wird.</td>
+              <td>Wollen wir wirklich so weiterleben?</td>
+              <td>Spricht Leser direkt an und erzeugt Druck oder Nachdenklichkeit.</td>
+            </tr>
+            <tr>
+              <td>Ausruf</td>
+              <td>Emotional verstärkte Aussage.</td>
+              <td>Was für ein Tag!</td>
+              <td>Wirkt emotional, spontan oder dramatisch.</td>
+            </tr>
+            <tr>
+              <td>Inversion</td>
+              <td>Ungewöhnliche Umstellung der normalen Wortfolge.</td>
+              <td>Dunkel war die Nacht.</td>
+              <td>Hebt bestimmte Wörter hervor und wirkt poetisch oder betont.</td>
+            </tr>
+            <tr>
+              <td>Parenthese</td>
+              <td>Einschub in einen Satz.</td>
+              <td>Der Text zeigt – und das ist entscheidend – die innere Unsicherheit.</td>
+              <td>Ein Gedanke wird nachträglich ergänzt oder hervorgehoben.</td>
+            </tr>
+            <tr>
+              <td>Asyndeton</td>
+              <td>Reihung ohne Bindewörter.</td>
+              <td>Er kam, sah, siegte.</td>
+              <td>Wirkt schnell, knapp, entschlossen oder dramatisch.</td>
+            </tr>
+            <tr>
+              <td>Polysyndeton</td>
+              <td>Viele Bindewörter werden wiederholt.</td>
+              <td>Und es regnete und es stürmte und es wurde dunkel.</td>
+              <td>Wirkt schwer, langsam, aufzählend oder überwältigend.</td>
+            </tr>
+            <tr>
+              <td>Imperativ</td>
+              <td>Befehlsform.</td>
+              <td>Hört endlich zu!</td>
+              <td>Wirkt auffordernd, direkt oder autoritär.</td>
+            </tr>
+            <tr>
+              <td>Exclamatio</td>
+              <td>Rhetorischer Ausruf.</td>
+              <td>Welch ein Unglück!</td>
+              <td>Verstärkt Emotionalität oder Betroffenheit.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Die rhetorische Frage <strong>„Wollen wir wirklich so weiterleben?“</strong> richtet sich direkt an die Leserinnen und Leser.
+          Sie zwingt sie, die eigene Haltung zu überprüfen, und verstärkt dadurch den appellativen Charakter des Textes.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>6. Klangliche Mittel</h3>
+      <p>
+        Klangliche Mittel sind vor allem in Gedichten wichtig. Sie beeinflussen, wie ein Text klingt:
+        weich, hart, ruhig, aggressiv, fliessend oder stockend.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alliteration</td>
+              <td>Mehrere Wörter beginnen mit demselben Laut.</td>
+              <td>Milch macht müde Männer munter.</td>
+              <td>Wirkt einprägsam, rhythmisch oder werbend.</td>
+            </tr>
+            <tr>
+              <td>Assonanz</td>
+              <td>Gleiche oder ähnliche Vokale wiederholen sich.</td>
+              <td>Der See steht schwer und leer.</td>
+              <td>Erzeugt Klangwirkung und verbindet Wörter atmosphärisch.</td>
+            </tr>
+            <tr>
+              <td>Lautmalerei / Onomatopoesie</td>
+              <td>Ein Wort ahmt ein Geräusch nach.</td>
+              <td>Es knallt, zischt und rauscht.</td>
+              <td>Der Text wirkt sinnlicher und unmittelbarer.</td>
+            </tr>
+            <tr>
+              <td>Reim</td>
+              <td>Gleicher oder ähnlicher Klang am Versende.</td>
+              <td>Haus – Maus</td>
+              <td>Erzeugt Ordnung, Rhythmus oder Geschlossenheit.</td>
+            </tr>
+            <tr>
+              <td>Innenreim</td>
+              <td>Reim innerhalb eines Verses.</td>
+              <td>Er rennt und kennt keine Angst.</td>
+              <td>Verstärkt den Rhythmus innerhalb der Zeile.</td>
+            </tr>
+            <tr>
+              <td>Enjambement</td>
+              <td>Satz läuft über das Versende hinaus.</td>
+              <td>Ich ging hinaus / in die kalte Nacht.</td>
+              <td>Der Lesefluss wird beschleunigt oder Spannung entsteht.</td>
+            </tr>
+            <tr>
+              <td>Zäsur</td>
+              <td>Deutlicher Einschnitt im Vers.</td>
+              <td>Ich ging hinaus – und alles schwieg.</td>
+              <td>Erzeugt Pause, Betonung oder Nachdenklichkeit.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Die Alliteration <strong>„schwer und still“</strong> verbindet die beiden Begriffe klanglich miteinander.
+          Dadurch wird die ruhige, bedrückende Stimmung des Gedichts verstärkt.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>7. Stilmittel der Wortwahl</h3>
+      <p>
+        Nicht nur einzelne rhetorische Figuren sind wichtig. Auch die Wortwahl insgesamt kann sachlich,
+        emotional, abwertend, gehoben, umgangssprachlich oder aggressiv wirken.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel / Begriff</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wertende Wortwahl</td>
+              <td>Wörter enthalten bereits eine Bewertung.</td>
+              <td>rücksichtslos, mutig, lächerlich</td>
+              <td>Lenkt die Haltung der Leserinnen und Leser.</td>
+            </tr>
+            <tr>
+              <td>Abwertende Wortwahl</td>
+              <td>Wörter stellen etwas negativ dar.</td>
+              <td>Geschwätz, Hetze, Versagen</td>
+              <td>Erzeugt Kritik, Distanz oder Ablehnung.</td>
+            </tr>
+            <tr>
+              <td>Aufwertende Wortwahl</td>
+              <td>Wörter stellen etwas positiv dar.</td>
+              <td>mutig, verantwortungsvoll, wegweisend</td>
+              <td>Erzeugt Zustimmung oder Sympathie.</td>
+            </tr>
+            <tr>
+              <td>Fachsprache</td>
+              <td>Begriffe aus einem bestimmten Fachgebiet.</td>
+              <td>Analyse, Argumentationsstruktur, Symbolik</td>
+              <td>Wirkt sachlich, genau und kompetent.</td>
+            </tr>
+            <tr>
+              <td>Umgangssprache</td>
+              <td>Alltagssprachliche Ausdrücke.</td>
+              <td>krass, voll, mega, halt</td>
+              <td>Wirkt locker, mündlich oder unpräzise.</td>
+            </tr>
+            <tr>
+              <td>Neologismus</td>
+              <td>Wortneuschöpfung.</td>
+              <td>Gedankensturm, Bildschirmmensch</td>
+              <td>Kann kreativ, modern oder irritierend wirken.</td>
+            </tr>
+            <tr>
+              <td>Archaismus</td>
+              <td>Veraltetes Wort.</td>
+              <td>hold, Antlitz, Gemach</td>
+              <td>Wirkt altertümlich, feierlich oder distanziert.</td>
+            </tr>
+            <tr>
+              <td>Anglizismus</td>
+              <td>Aus dem Englischen übernommener Ausdruck.</td>
+              <td>Update, Lifestyle, Feedback</td>
+              <td>Kann modern, global oder werblich wirken.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Die abwertende Wortwahl <strong>„Geschwätz“</strong> zeigt, dass der Sprecher die Aussage der anderen Figur nicht ernst nimmt.
+          Dadurch entsteht eine herablassende und konfliktreiche Gesprächssituation.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>8. Sprachliche Mittel in Argumentationen und Reden</h3>
+      <p>
+        In Reden und Kommentaren geht es oft darum, Leser oder Zuhörer zu überzeugen.
+        Deshalb sind direkte Anrede, Wiederholungen, Fragen und starke Wertungen besonders wichtig.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Mittel</th>
+              <th>Erklärung</th>
+              <th>Beispiel</th>
+              <th>Wirkung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Direkte Anrede</td>
+              <td>Leser oder Zuhörer werden direkt angesprochen.</td>
+              <td>Stellen Sie sich vor...</td>
+              <td>Erzeugt Nähe und bindet das Publikum ein.</td>
+            </tr>
+            <tr>
+              <td>Appell</td>
+              <td>Aufforderung zum Denken oder Handeln.</td>
+              <td>Wir müssen jetzt handeln.</td>
+              <td>Wirkt aktivierend und handlungsorientiert.</td>
+            </tr>
+            <tr>
+              <td>Wir-Form</td>
+              <td>Der Sprecher schliesst sich mit dem Publikum zusammen.</td>
+              <td>Wir tragen Verantwortung.</td>
+              <td>Erzeugt Gemeinschaftsgefühl und Verantwortung.</td>
+            </tr>
+            <tr>
+              <td>These</td>
+              <td>Klare Behauptung.</td>
+              <td>Hausaufgaben sollten reduziert werden.</td>
+              <td>Gibt der Argumentation eine klare Richtung.</td>
+            </tr>
+            <tr>
+              <td>Beispiel</td>
+              <td>Konkreter Fall zur Veranschaulichung.</td>
+              <td>Viele Jugendliche schlafen weniger als sieben Stunden.</td>
+              <td>Macht eine Aussage nachvollziehbarer.</td>
+            </tr>
+            <tr>
+              <td>Gegenüberstellung</td>
+              <td>Zwei Positionen werden verglichen.</td>
+              <td>Während die einen profitieren, geraten andere unter Druck.</td>
+              <td>Macht Unterschiede und Konflikte sichtbar.</td>
+            </tr>
+            <tr>
+              <td>Emotionalisierung</td>
+              <td>Gefühle werden gezielt angesprochen.</td>
+              <td>Niemand sollte mit Angst zur Schule gehen.</td>
+              <td>Erzeugt Betroffenheit und Zustimmung.</td>
+            </tr>
+            <tr>
+              <td>Autoritätsargument</td>
+              <td>Berufung auf Experten oder Institutionen.</td>
+              <td>Fachleute weisen darauf hin, dass...</td>
+              <td>Kann die Glaubwürdigkeit einer Aussage stärken.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Die Wir-Form <strong>„Wir tragen Verantwortung“</strong> bindet das Publikum direkt ein.
+          Der Sprecher stellt das Problem dadurch nicht als fremdes Thema dar, sondern als gemeinsame Aufgabe.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>9. Sehr nützliche Formulierungen für Analysen</h3>
+      <p>
+        Diese Sätze kannst du fast direkt in Textanalysen und Gedichtanalysen verwenden.
+        Wichtig ist nur, dass du sie mit einem konkreten Beispiel aus dem Text verbindest.
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Wenn du ein sprachliches Mittel benennst</h4>
+        <p>
+          Der Text verwendet eine Metapher, um ... zu verdeutlichen.<br>
+          Die Wiederholung von ... verstärkt ...<br>
+          Die rhetorische Frage richtet sich direkt an die Leserinnen und Leser.<br>
+          Die Personifikation lässt ... lebendig und bedrohlich erscheinen.<br>
+          Der Vergleich macht ... anschaulich.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Wenn du die Wirkung erklärst</h4>
+        <p>
+          Dadurch wirkt die Aussage eindringlicher.<br>
+          Dadurch entsteht eine bedrohliche Stimmung.<br>
+          Die Formulierung lenkt die Aufmerksamkeit auf ...<br>
+          Die Wortwahl zeigt, dass ...<br>
+          Die sprachliche Gestaltung verstärkt den Eindruck von ...
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Wenn du vorsichtig deuten willst</h4>
+        <p>
+          Dies legt nahe, dass ...<br>
+          Die Formulierung kann als Hinweis auf ... verstanden werden.<br>
+          Daraus lässt sich schliessen, dass ...<br>
+          Im Zusammenhang mit ... wirkt die Stelle ...<br>
+          Die Stelle deutet darauf hin, dass ...
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Wenn du nicht künstlich klingen willst</h4>
+        <p>
+          Schreib nicht: <strong>Das Stilmittel macht den Text schöner.</strong><br>
+          Schreib besser: <strong>Die Metapher macht die Unsicherheit der Figur anschaulich.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>10. Mini-Training: Rhetorische Mittel erkennen</h3>
+      <p>
+        Versuche zuerst selbst, das Mittel zu erkennen. Danach öffnest du die Lösung.
+      </p>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 1</h4>
+        <p><strong>Die Hoffnung klopfte leise an die Tür.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l1')">Lösung anzeigen</button>
+        <div id="gym3-l1" class="sf-de-hidden-box">
+          <p><strong>Personifikation.</strong></p>
+          <p>Die Hoffnung wird wie ein Mensch dargestellt, der an eine Tür klopfen kann. Dadurch wirkt das abstrakte Gefühl lebendig und vorsichtig.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 2</h4>
+        <p><strong>Er kämpfte wie ein Löwe.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l2')">Lösung anzeigen</button>
+        <div id="gym3-l2" class="sf-de-hidden-box">
+          <p><strong>Vergleich.</strong></p>
+          <p>Das Wort <strong>wie</strong> zeigt den Vergleich. Die Person wirkt mutig, stark und entschlossen.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 3</h4>
+        <p><strong>Ein Meer aus Stimmen erfüllte den Platz.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l3')">Lösung anzeigen</button>
+        <div id="gym3-l3" class="sf-de-hidden-box">
+          <p><strong>Metapher.</strong></p>
+          <p>Die Stimmen werden als Meer dargestellt. Dadurch wirkt die Menge gross, mächtig und kaum überschaubar.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 4</h4>
+        <p><strong>Wir fordern Gerechtigkeit. Wir fordern Verantwortung. Wir fordern Veränderung.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l4')">Lösung anzeigen</button>
+        <div id="gym3-l4" class="sf-de-hidden-box">
+          <p><strong>Anapher und Parallelismus.</strong></p>
+          <p>Die Wiederholung von <strong>Wir fordern</strong> am Satzanfang ist eine Anapher. Der ähnliche Satzbau erzeugt Nachdruck und Rhythmus.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 5</h4>
+        <p><strong>Er hat alles gewonnen und doch alles verloren.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l5')">Lösung anzeigen</button>
+        <div id="gym3-l5" class="sf-de-hidden-box">
+          <p><strong>Antithese / Paradoxon.</strong></p>
+          <p>Gewinnen und Verlieren stehen im Gegensatz. Die Aussage zeigt einen Widerspruch zwischen äusserem Erfolg und innerem Verlust.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 6</h4>
+        <p><strong>Das hast du ja grossartig gemacht.</strong> nach einem klaren Fehler</p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l6')">Lösung anzeigen</button>
+        <div id="gym3-l6" class="sf-de-hidden-box">
+          <p><strong>Ironie.</strong></p>
+          <p>Gemeint ist das Gegenteil des Gesagten. Die Aussage kritisiert den Fehler indirekt.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 7</h4>
+        <p><strong>Ich habe dir das tausendmal erklärt.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l7')">Lösung anzeigen</button>
+        <div id="gym3-l7" class="sf-de-hidden-box">
+          <p><strong>Hyperbel.</strong></p>
+          <p>Die Zahl ist übertrieben. Dadurch wird Ungeduld oder Ärger verstärkt.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 8</h4>
+        <p><strong>Wollen wir wirklich weiter schweigen?</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l8')">Lösung anzeigen</button>
+        <div id="gym3-l8" class="sf-de-hidden-box">
+          <p><strong>Rhetorische Frage.</strong></p>
+          <p>Die Frage erwartet keine echte Antwort. Sie fordert indirekt zum Handeln auf.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 9</h4>
+        <p><strong>Leise lachte das Licht.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l9')">Lösung anzeigen</button>
+        <div id="gym3-l9" class="sf-de-hidden-box">
+          <p><strong>Alliteration und Personifikation.</strong></p>
+          <p>Die Wörter beginnen mit ähnlichem Laut. Gleichzeitig wird das Licht vermenschlicht, weil es lachen kann.</p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 10</h4>
+        <p><strong>Der Regen fiel und fiel und fiel.</strong></p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym3-l10')">Lösung anzeigen</button>
+        <div id="gym3-l10" class="sf-de-hidden-box">
+          <p><strong>Wiederholung / Polysyndeton.</strong></p>
+          <p>Die Wiederholung verstärkt den Eindruck von Dauer. Durch das wiederholte <strong>und</strong> wirkt die Situation langgezogen und belastend.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>11. Das Wichtigste für Prüfungen</h3>
+      <div class="sf-de-rule">
+        <h4>Was Lehrpersonen wirklich sehen wollen</h4>
+        <p>
+          Nicht: <strong>„Es hat eine Metapher.“</strong><br>
+          Sondern: <strong>„Die Metapher zeigt, dass die Figur sich in einer unsicheren Lage befindet.“</strong>
+        </p>
+        <p>
+          Nicht: <strong>„Die Wiederholung macht es spannender.“</strong><br>
+          Sondern: <strong>„Die Wiederholung verstärkt den Druck und zeigt, dass der Gedanke die Figur nicht loslässt.“</strong>
+        </p>
+        <p>
+          Nicht: <strong>„Die rhetorische Frage ist interessant.“</strong><br>
+          Sondern: <strong>„Die rhetorische Frage spricht die Leser direkt an und macht sie moralisch mitverantwortlich.“</strong>
+        </p>
+      </div>
+    </section>
+  `
+},
 
   {
     id: "gym4",
     titel: "GYM4",
+    untertitel: "Erörterung, Textanalyse und Gedichtanalyse",
     beschreibung:
-      "Prüfungsvorbereitung auf gymnasialem Niveau: Textanalyse, Gedichtanalyse und Erörterung.",
-    themen: [
-      {
-        id: "textanalyse",
-        nummer: "1",
-        titel: "Textanalyse",
-        kurzbeschreibung:
-          "Sachtexte, literarische Texte und argumentative Texte systematisch untersuchen: Inhalt, Aufbau, Sprache, Wirkung und Aussage.",
-        lernziele: [
-          "Du kannst Thema, Hauptaussage und Intention eines Textes bestimmen.",
-          "Du kannst Inhaltsangabe und Analyse klar unterscheiden.",
-          "Du kannst den Aufbau eines Textes untersuchen.",
-          "Du kannst sprachliche Mittel und Argumentationsstrategien erkennen.",
-          "Du kannst Textbelege korrekt und sinnvoll einbauen.",
-          "Du kannst die Wirkung sprachlicher Gestaltung erklären.",
-          "Du kannst eine geschlossene Analyse mit Einleitung, Hauptteil und Schluss schreiben.",
-          "Du kannst sachlich, präzise und im Präsens formulieren."
-        ],
-        theorie: [
-          {
-            titel: "Was ist eine Textanalyse?",
-            text:
-              "Eine Textanalyse untersucht nicht nur, was ein Text sagt, sondern wie er seine Aussage erzeugt. Sie verbindet Inhalt, Aufbau, Sprache, Perspektive, Wirkung und mögliche Intention."
-          },
-          {
-            titel: "Inhaltsangabe vs. Analyse",
-            text:
-              "Eine Inhaltsangabe fasst den Text knapp und sachlich zusammen. Eine Analyse erklärt zusätzlich, wie der Text aufgebaut ist, welche sprachlichen Mittel verwendet werden und welche Wirkung dadurch entsteht."
-          },
-          {
-            titel: "Thema und Aussage",
-            text:
-              "Das Thema ist der Gegenstand des Textes, zum Beispiel soziale Medien, Leistungsdruck oder Freiheit. Die Aussage ist das, was der Text über dieses Thema vermittelt."
-          },
-          {
-            titel: "Aufbau",
-            text:
-              "Der Aufbau zeigt, wie der Text seine Gedanken ordnet. Bei Sachtexten kann dies eine Problemstellung, Argumentation, Gegenargumentation und Schlussfolgerung sein. Bei literarischen Texten können Exposition, Wendepunkt oder Steigerung wichtig sein."
-          },
-          {
-            titel: "Sprache",
-            text:
-              "Zur sprachlichen Analyse gehören Wortwahl, Satzbau, rhetorische Mittel, Bildlichkeit, Ton, Register und Wiederholungen. Entscheidend ist immer die Wirkung."
-          },
-          {
-            titel: "Intention",
-            text:
-              "Die Intention beschreibt, worauf der Text abzielt. Er kann informieren, kritisieren, überzeugen, provozieren, warnen, emotionalisieren oder zum Nachdenken anregen."
-          },
-          {
-            titel: "Belege",
-            text:
-              "Eine Analyse braucht Belege. Kurze Zitate oder genaue Verweise zeigen, dass deine Aussagen aus dem Text abgeleitet sind. Ein Zitat muss immer erklärt werden."
-          },
-          {
-            titel: "Analysesprache",
-            text:
-              "Eine gute Analyse verwendet sachliche Formulierungen: Der Text verdeutlicht, Die Metapher betont, Die Wortwahl erzeugt, Die Argumentation legt nahe, Die Wiederholung verstärkt."
-          }
-        ],
-        methoden: [
-          {
-            titel: "Methode: Textanalyse schreiben",
-            schritte: [
-              "1. Lies den Text vollständig und kläre die Textsorte.",
-              "2. Bestimme Thema, Hauptaussage und mögliche Intention.",
-              "3. Fasse den Inhalt knapp zusammen.",
-              "4. Untersuche den Aufbau: Wie entwickelt sich der Gedankengang?",
-              "5. Analysiere zentrale sprachliche Mittel.",
-              "6. Erkläre die Wirkung der sprachlichen Gestaltung.",
-              "7. Verwende kurze, passende Textbelege.",
-              "8. Verbinde Einzelbeobachtungen mit der Gesamtaussage.",
-              "9. Formuliere ein abschliessendes Fazit."
-            ]
-          },
-          {
-            titel: "Methode: Einen Analyseabschnitt aufbauen",
-            schritte: [
-              "1. Beginne mit einer Beobachtung.",
-              "2. Nenne ein passendes Textbeispiel oder Zitat.",
-              "3. Benenne gegebenenfalls das sprachliche Mittel.",
-              "4. Erkläre die Wirkung.",
-              "5. Verbinde die Beobachtung mit Thema, Aussage oder Intention.",
-              "6. Achte darauf, nicht beim blossen Zitieren stehenzubleiben."
-            ]
-          }
-        ],
-        merksaetze: [
-          "Analyse bedeutet: zeigen, wie ein Text wirkt und wodurch diese Wirkung entsteht.",
-          "Inhalt und Form müssen gemeinsam betrachtet werden.",
-          "Ein Zitat ersetzt keine Erklärung.",
-          "Nicht jedes Detail ist wichtig; wähle zentrale Beobachtungen.",
-          "Die Analyse steht normalerweise im Präsens.",
-          "Die Intention muss aus dem Text abgeleitet werden.",
-          "Gute Analyse ist sachlich, präzise und belegt.",
-          "Am stärksten sind Abschnitte, die Beobachtung, Beleg und Deutung verbinden."
-        ],
-        typischeFehler: [
-          {
-            fehler: "Man schreibt fast nur eine Inhaltsangabe.",
-            korrektur:
-              "Erkläre zusätzlich Aufbau, Sprache, Wirkung und Aussage."
-          },
-          {
-            fehler: "Man verwendet lange Zitate ohne Erklärung.",
-            korrektur:
-              "Zitiere kurz und erkläre genau, warum die Stelle wichtig ist."
-          },
-          {
-            fehler: "Man behauptet eine Intention, ohne sie am Text zu zeigen.",
-            korrektur:
-              "Leite die Intention aus Wortwahl, Aufbau, Argumentation und Wirkung ab."
-          },
-          {
-            fehler: "Man analysiert jedes kleine Detail gleich ausführlich.",
-            korrektur:
-              "Konzentriere dich auf zentrale Beobachtungen, die zur Gesamtdeutung beitragen."
-          }
-        ],
-        aufgaben: [
-          {
-            titel: "Aufgabe 1: Analyse statt Inhaltsangabe",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Verbessere diese Aussage: Der Text handelt von Jugendlichen und Social Media.",
-            loesung: [
-              "Die Aussage nennt nur grob das Thema.",
-              "Eine analytischere Formulierung wäre: Der Text setzt sich kritisch mit dem Einfluss sozialer Medien auf das Selbstbild Jugendlicher auseinander.",
-              "Noch genauer: Durch wertende Wortwahl und kontrastierende Beispiele verdeutlicht der Text, dass soziale Medien einerseits Austausch ermöglichen, andererseits aber Leistungsdruck und Vergleichsdenken verstärken.",
-              "Diese Version enthält Thema, Haltung und erste Hinweise auf die Gestaltung."
-            ]
-          },
-          {
-            titel: "Aufgabe 2: Wirkung erklären",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Ein Kommentar beginnt mit der Frage: Wollen wir wirklich in einer Welt leben, in der jede freie Minute bewertet wird? Erkläre die Wirkung.",
-            loesung: [
-              "Die Frage ist rhetorisch.",
-              "Sie richtet sich direkt an die Lesenden.",
-              "Dadurch werden diese in die Problematik hineingezogen.",
-              "Die Formulierung wirklich verstärkt den kritischen Ton.",
-              "Die Frage legt nahe, dass die beschriebene Entwicklung problematisch ist.",
-              "Sie eignet sich als zugespitzter Einstieg in einen kritischen Kommentar."
-            ]
-          },
-          {
-            titel: "Aufgabe 3: Analyseabschnitt formulieren",
-            schwierigkeit: "schwer",
-            aufgabe:
-              "Formuliere einen kurzen Analyseabschnitt zur Aussage: Die ständige Wiederholung des Wortes leer prägt die Stimmung des Textes.",
-            loesung: [
-              "Mögliche Lösung:",
-              "Die wiederholte Verwendung des Wortes leer prägt die Atmosphäre des Textes entscheidend. Der Begriff verweist nicht nur auf einen äusseren Zustand, sondern deutet auch auf innere Orientierungslosigkeit und emotionale Erschöpfung hin. Durch die Wiederholung entsteht ein monotoner, bedrückender Eindruck, der die Ausweglosigkeit der Figur sprachlich erfahrbar macht.",
-              "Der Abschnitt verbindet Beobachtung, Wirkung und Deutung."
-            ]
-          }
-        ],
-        muendlich: [
-          {
-            frage: "Was unterscheidet eine Textanalyse von einer Inhaltsangabe?",
-            antwort:
-              "Eine Inhaltsangabe fasst zusammen, was im Text steht. Eine Textanalyse erklärt, wie der Text aufgebaut ist, wie Sprache eingesetzt wird und welche Wirkung oder Aussage daraus entsteht."
-          },
-          {
-            frage: "Wie verwendet man Zitate richtig?",
-            antwort:
-              "Zitate sollten kurz, passend und in den eigenen Satz eingebettet sein. Danach muss erklärt werden, was sie zeigen und warum sie für die Analyse wichtig sind."
-          },
-          {
-            frage: "Was bedeutet Intention eines Textes?",
-            antwort:
-              "Die Intention beschreibt, worauf der Text abzielt, zum Beispiel informieren, kritisieren, überzeugen, warnen oder emotionalisieren."
-          }
-        ],
-        nachtVorTest: [
-          "Kannst du Thema und Aussage unterscheiden?",
-          "Kannst du Inhalt knapp zusammenfassen?",
-          "Kannst du Aufbau und Gedankengang beschreiben?",
-          "Kannst du sprachliche Mittel mit Wirkung erklären?",
-          "Verwendest du kurze Belege?",
-          "Schreibst du im Präsens?",
-          "Verbindest du Einzelbeobachtungen mit der Gesamtaussage?"
-        ]
-      },
-
-      {
-        id: "gedichtanalyse",
-        nummer: "2",
-        titel: "Gedichtanalyse",
-        kurzbeschreibung:
-          "Gedichte auf gymnasialem Niveau analysieren: Inhalt, lyrisches Ich, Form, Sprache, Klang, Stimmung und Gesamtdeutung.",
-        lernziele: [
-          "Du kannst Thema und Stimmung eines Gedichts bestimmen.",
-          "Du kannst das lyrische Ich und die Sprechsituation beschreiben.",
-          "Du kannst Strophen, Verse, Reimschema, Metrum und Rhythmus untersuchen.",
-          "Du kannst sprachliche Bilder, Symbole und Klangmittel deuten.",
-          "Du kannst Form und Inhalt miteinander verbinden.",
-          "Du kannst eine schlüssige Gesamtdeutung formulieren.",
-          "Du kannst Gedichtanalysen sachlich und strukturiert schreiben.",
-          "Du kannst vermeiden, nur formale Merkmale aufzuzählen."
-        ],
-        theorie: [
-          {
-            titel: "Was ist eine Gedichtanalyse?",
-            text:
-              "Eine Gedichtanalyse untersucht, wie ein Gedicht durch Inhalt, Form, Sprache und Klang Bedeutung erzeugt. Ziel ist nicht eine blosse Beschreibung, sondern eine begründete Gesamtdeutung."
-          },
-          {
-            titel: "Lyrisches Ich",
-            text:
-              "Das lyrische Ich ist die Stimme im Gedicht. Es kann ausdrücklich als Ich auftreten, muss aber nicht. Es ist nicht automatisch mit der Autorin oder dem Autor gleichzusetzen."
-          },
-          {
-            titel: "Sprechsituation",
-            text:
-              "Die Sprechsituation fragt danach, wer spricht, zu wem gesprochen wird, in welcher Lage gesprochen wird und welche Haltung dabei sichtbar wird."
-          },
-          {
-            titel: "Form",
-            text:
-              "Zur Form gehören Strophenzahl, Verszahl, Reimschema, Metrum und Rhythmus. Diese Merkmale sollten nicht isoliert genannt, sondern in ihrer Wirkung erklärt werden."
-          },
-          {
-            titel: "Metrum und Rhythmus",
-            text:
-              "Das Metrum beschreibt ein regelmässiges Muster betonter und unbetonter Silben. Der Rhythmus beschreibt den tatsächlichen Sprachfluss. Abweichungen vom Metrum können besondere Stellen hervorheben."
-          },
-          {
-            titel: "Reim",
-            text:
-              "Reime können Ordnung, Geschlossenheit, Harmonie oder auch Künstlichkeit erzeugen. Ein fehlender Reim kann Freiheit, Unruhe oder Modernität signalisieren."
-          },
-          {
-            titel: "Bildsprache",
-            text:
-              "Gedichte arbeiten oft mit Metaphern, Vergleichen, Symbolen und Personifikationen. Diese verdichten Bedeutung und erzeugen Atmosphäre."
-          },
-          {
-            titel: "Gesamtdeutung",
-            text:
-              "Die Gesamtdeutung beantwortet die Frage, was das Gedicht im Kern ausdrückt. Sie entsteht aus dem Zusammenspiel von Inhalt, Form und Sprache."
-          }
-        ],
-        methoden: [
-          {
-            titel: "Methode: Gedicht analysieren",
-            schritte: [
-              "1. Lies das Gedicht mehrmals laut oder innerlich.",
-              "2. Bestimme das Thema und die Grundstimmung.",
-              "3. Kläre die Sprechsituation und das lyrische Ich.",
-              "4. Fasse den Inhalt strophenweise kurz zusammen.",
-              "5. Untersuche Form: Strophen, Verse, Reim, Metrum und Rhythmus.",
-              "6. Analysiere auffällige sprachliche Mittel.",
-              "7. Erkläre die Wirkung von Form und Sprache.",
-              "8. Verbinde deine Beobachtungen zu einer Gesamtdeutung.",
-              "9. Schreibe einen klar strukturierten Analyseaufsatz."
-            ]
-          },
-          {
-            titel: "Methode: Form und Inhalt verbinden",
-            schritte: [
-              "1. Nenne ein formales Merkmal, zum Beispiel regelmässiger Reim.",
-              "2. Frage, welche Wirkung dieses Merkmal erzeugt.",
-              "3. Prüfe, ob diese Wirkung zur Stimmung oder Aussage passt.",
-              "4. Vermeide reine Aussagen wie Das Gedicht hat vier Strophen.",
-              "5. Formuliere stattdessen: Die regelmässige Form steht im Kontrast zur inneren Unruhe des lyrischen Ichs."
-            ]
-          }
-        ],
-        merksaetze: [
-          "Eine Gedichtanalyse braucht eine Gesamtdeutung.",
-          "Das lyrische Ich ist nicht automatisch der Autor.",
-          "Formmerkmale müssen gedeutet werden.",
-          "Reim und Metrum sind nur wichtig, wenn ihre Wirkung erklärt wird.",
-          "Bildsprache verdichtet Bedeutung.",
-          "Klang kann Stimmung erzeugen.",
-          "Auffällige Abweichungen sind oft besonders deutungsrelevant.",
-          "Eine gute Gedichtanalyse verbindet Inhalt, Form, Sprache und Wirkung."
-        ],
-        typischeFehler: [
-          {
-            fehler: "Man zählt nur Reimschema und Metrum auf.",
-            korrektur:
-              "Erkläre, welche Wirkung diese Formmerkmale haben und wie sie zur Aussage passen."
-          },
-          {
-            fehler: "Man setzt das lyrische Ich mit dem Autor gleich.",
-            korrektur:
-              "Sprich vom lyrischen Ich oder von der Sprecherinstanz, nicht automatisch vom Autor."
-          },
-          {
-            fehler: "Man deutet jedes Bild einzeln, ohne Gesamtzusammenhang.",
-            korrektur:
-              "Verbinde sprachliche Bilder mit Thema, Stimmung und Gesamtdeutung."
-          },
-          {
-            fehler: "Man formuliert die Deutung zu allgemein.",
-            korrektur:
-              "Stütze deine Deutung auf konkrete Beobachtungen zu Inhalt, Form und Sprache."
-          }
-        ],
-        aufgaben: [
-          {
-            titel: "Aufgabe 1: Bildsprache deuten",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Deute die Formulierung: Der Abend legt ein graues Tuch über die Stadt.",
-            loesung: [
-              "Der Abend wird personifiziert, weil er wie ein handelndes Wesen dargestellt wird.",
-              "Das graue Tuch ist eine Metapher für Dunkelheit, Schwere oder Melancholie.",
-              "Die Stadt wirkt dadurch gedämpft und bedrückt.",
-              "Die Formulierung erzeugt eine ruhige, aber auch schwermütige Stimmung.",
-              "Sie könnte auf Einsamkeit, Müdigkeit oder ein Ende hinweisen."
-            ]
-          },
-          {
-            titel: "Aufgabe 2: Form deuten",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Ein Gedicht über innere Unruhe hat unregelmässig lange Verse und kein festes Reimschema. Welche Wirkung kann das haben?",
-            loesung: [
-              "Die unregelmässige Form kann die innere Unruhe spiegeln.",
-              "Das fehlende Reimschema erzeugt Offenheit oder Instabilität.",
-              "Die Form passt damit zum Inhalt.",
-              "Wenn ein Gedicht über Unordnung auch formal ungeordnet wirkt, unterstützt die Form die Aussage.",
-              "Wichtig ist, diesen Zusammenhang im Text konkret zu belegen."
-            ]
-          },
-          {
-            titel: "Aufgabe 3: Gesamtdeutung formulieren",
-            schwierigkeit: "schwer",
-            aufgabe:
-              "Ein Gedicht beschreibt einen Wanderer, der nachts allein durch eine kalte Landschaft geht. Immer wieder erscheinen Wörter wie still, fern und dunkel. Formuliere eine mögliche Gesamtdeutung.",
-            loesung: [
-              "Eine mögliche Gesamtdeutung lautet:",
-              "Das Gedicht gestaltet den Weg des Wanderers als Bild innerer Einsamkeit und Orientierungslosigkeit.",
-              "Die kalte Landschaft spiegelt nicht nur eine äussere Umgebung, sondern auch den seelischen Zustand des lyrischen Ichs.",
-              "Die wiederholten Wörter still, fern und dunkel verstärken die Distanz zur Welt und erzeugen eine melancholische Atmosphäre.",
-              "Die Naturdarstellung wird dadurch zum Ausdruck einer inneren Erfahrung."
-            ]
-          }
-        ],
-        muendlich: [
-          {
-            frage: "Was ist das Ziel einer Gedichtanalyse?",
-            antwort:
-              "Ziel ist eine begründete Deutung des Gedichts durch die Untersuchung von Inhalt, Form, Sprache, Klang und Stimmung."
-          },
-          {
-            frage: "Warum darf man das lyrische Ich nicht einfach mit dem Autor gleichsetzen?",
-            antwort:
-              "Weil das lyrische Ich eine gestaltete Stimme im Gedicht ist. Es kann eine Rolle, Perspektive oder erfundene Sprecherinstanz sein."
-          },
-          {
-            frage: "Wie verbindet man Form und Inhalt?",
-            antwort:
-              "Man erklärt, wie formale Merkmale wie Reim, Rhythmus oder Strophenbau die Aussage, Stimmung oder Entwicklung des Gedichts unterstützen oder kontrastieren."
-          }
-        ],
-        nachtVorTest: [
-          "Kannst du Thema und Stimmung benennen?",
-          "Kannst du das lyrische Ich beschreiben?",
-          "Kannst du Reim, Metrum und Rhythmus untersuchen?",
-          "Erklärst du die Wirkung der Form?",
-          "Kannst du Metaphern und Symbole deuten?",
-          "Formulierst du eine Gesamtdeutung?",
-          "Verbindest du Inhalt, Form und Sprache?"
-        ]
-      },
-
-      {
-        id: "eroerterung",
-        nummer: "3",
-        titel: "Erörterung",
-        kurzbeschreibung:
-          "Eine Streitfrage differenziert bearbeiten: Argumente entwickeln, ordnen, abwägen und zu einem begründeten Urteil gelangen.",
-        lernziele: [
-          "Du kannst eine Streitfrage genau erfassen.",
-          "Du kannst These, Argument, Begründung und Beispiel unterscheiden.",
-          "Du kannst lineare und dialektische Erörterung unterscheiden.",
-          "Du kannst Pro- und Contra-Argumente sammeln und ordnen.",
-          "Du kannst Argumente nach Stärke gewichten.",
-          "Du kannst Gegenargumente fair darstellen.",
-          "Du kannst ein begründetes Fazit formulieren.",
-          "Du kannst sachlich, strukturiert und überzeugend schreiben."
-        ],
-        theorie: [
-          {
-            titel: "Was ist eine Erörterung?",
-            text:
-              "Eine Erörterung ist ein argumentativer Aufsatz. Sie untersucht eine Frage, entfaltet Argumente, wägt Positionen ab und kommt zu einem begründeten Urteil."
-          },
-          {
-            titel: "Streitfrage",
-            text:
-              "Eine Erörterung beginnt mit einer strittigen Frage. Sie darf nicht nur eine einfache Wissensfrage sein. Typisch sind Fragen wie: Sollte..., Ist es sinnvoll..., Inwiefern..."
-          },
-          {
-            titel: "These",
-            text:
-              "Eine These ist eine klare Behauptung oder Position. Sie muss begründet werden, sonst bleibt sie eine blosse Meinung."
-          },
-          {
-            titel: "Argument",
-            text:
-              "Ein vollständiges Argument besteht aus Behauptung, Begründung und Beispiel. Die Begründung erklärt, warum die Behauptung plausibel ist. Das Beispiel macht sie anschaulich."
-          },
-          {
-            titel: "Lineare Erörterung",
-            text:
-              "Bei einer linearen Erörterung wird eine Position entfaltet. Die Argumente führen in eine Richtung und werden meistens steigernd angeordnet."
-          },
-          {
-            titel: "Dialektische Erörterung",
-            text:
-              "Bei einer dialektischen Erörterung werden Pro- und Contra-Argumente gegenübergestellt. Ziel ist eine abgewogene Entscheidung."
-          },
-          {
-            titel: "Argumentationsordnung",
-            text:
-              "Argumente sollten nicht zufällig angeordnet sein. Häufig beginnt man mit einem schwächeren Argument und steigert sich zum stärksten. Bei dialektischen Erörterungen muss die Ordnung besonders klar sein."
-          },
-          {
-            titel: "Fazit",
-            text:
-              "Das Fazit beantwortet die Ausgangsfrage. Es soll nicht einfach eine Meinung behaupten, sondern aus der vorherigen Argumentation hervorgehen."
-          }
-        ],
-        methoden: [
-          {
-            titel: "Methode: Erörterung planen",
-            schritte: [
-              "1. Formuliere die Streitfrage mit eigenen Worten.",
-              "2. Kläre, ob eine lineare oder dialektische Erörterung verlangt ist.",
-              "3. Sammle Pro- und Contra-Argumente.",
-              "4. Streiche schwache oder doppelte Argumente.",
-              "5. Ordne die Argumente nach Gewicht.",
-              "6. Ergänze zu jedem Argument eine Begründung und ein Beispiel.",
-              "7. Überlege dir dein Fazit vor dem Schreiben.",
-              "8. Schreibe danach den Text strukturiert aus."
-            ]
-          },
-          {
-            titel: "Methode: Argument ausbauen",
-            schritte: [
-              "1. Formuliere eine klare Behauptung.",
-              "2. Begründe, warum diese Behauptung plausibel ist.",
-              "3. Füge ein konkretes Beispiel hinzu.",
-              "4. Erkläre, was das Beispiel zeigt.",
-              "5. Verbinde das Argument mit der Streitfrage.",
-              "6. Vermeide unbelegte Behauptungen."
-            ]
-          },
-          {
-            titel: "Methode: Dialektisch abwägen",
-            schritte: [
-              "1. Stelle zuerst eine Seite sachlich dar.",
-              "2. Stelle danach die Gegenseite ebenfalls fair dar.",
-              "3. Vergleiche die Stärke der Argumente.",
-              "4. Zeige, welches Argument unter welchen Bedingungen stärker wiegt.",
-              "5. Vermeide Schwarz-Weiss-Denken.",
-              "6. Formuliere ein differenziertes Fazit."
-            ]
-          }
-        ],
-        merksaetze: [
-          "Eine Erörterung ist kein ungeordneter Meinungstext.",
-          "Ein Argument braucht Behauptung, Begründung und Beispiel.",
-          "Ein Beispiel allein ist noch kein Argument.",
-          "Gute Argumentation ist sachlich und nachvollziehbar.",
-          "Gegenargumente müssen fair dargestellt werden.",
-          "Das stärkste Argument sollte besonders überzeugend ausgeführt werden.",
-          "Ein Fazit muss aus der Argumentation hervorgehen.",
-          "Differenziert zu urteilen ist stärker als extreme Vereinfachung."
-        ],
-        typischeFehler: [
-          {
-            fehler: "Man schreibt nur persönliche Meinungen auf.",
-            korrektur:
-              "Formuliere Argumente mit Begründungen und Beispielen."
-          },
-          {
-            fehler: "Pro und Contra werden durcheinander vermischt.",
-            korrektur:
-              "Ordne die Argumente sichtbar und logisch."
-          },
-          {
-            fehler: "Das Fazit passt nicht zur Argumentation.",
-            korrektur:
-              "Das Fazit muss aus den vorherigen Argumenten folgen."
-          },
-          {
-            fehler: "Man verwendet Beispiele ohne Erklärung.",
-            korrektur:
-              "Erkläre immer, was das Beispiel für die Streitfrage beweist oder veranschaulicht."
-          },
-          {
-            fehler: "Man stellt die Gegenseite unfair oder lächerlich dar.",
-            korrektur:
-              "Eine gute Erörterung zeigt, dass man beide Seiten ernsthaft verstanden hat."
-          }
-        ],
-        aufgaben: [
-          {
-            titel: "Aufgabe 1: Argument vollständig ausbauen",
-            schwierigkeit: "einfach",
-            aufgabe:
-              "Baue das Argument aus: Smartphones können im Unterricht sinnvoll sein.",
-            loesung: [
-              "Behauptung: Smartphones können im Unterricht sinnvoll sein.",
-              "Begründung: Sie ermöglichen schnellen Zugriff auf Informationen und digitale Lernwerkzeuge.",
-              "Beispiel: Schülerinnen und Schüler können unbekannte Begriffe recherchieren, Lernapps verwenden oder gemeinsam an einem digitalen Dokument arbeiten.",
-              "Erklärung: Dadurch kann der Unterricht interaktiver und eigenständiger werden.",
-              "Einschränkung: Voraussetzung ist jedoch, dass klare Regeln gegen Ablenkung bestehen."
-            ]
-          },
-          {
-            titel: "Aufgabe 2: Gegenargument formulieren",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Formuliere ein starkes Gegenargument zur These: Hausaufgaben sollten abgeschafft werden.",
-            loesung: [
-              "Ein mögliches Gegenargument lautet:",
-              "Hausaufgaben sollten nicht vollständig abgeschafft werden, weil sie selbstständiges Üben ermöglichen.",
-              "Im Unterricht bleibt oft wenig Zeit, um neue Inhalte ausreichend zu festigen.",
-              "Wenn Schülerinnen und Schüler zu Hause Aufgaben lösen, erkennen sie, ob sie den Stoff wirklich verstanden haben.",
-              "Allerdings müssten Hausaufgaben sinnvoll dosiert und klar auf den Unterricht bezogen sein."
-            ]
-          },
-          {
-            titel: "Aufgabe 3: Fazit formulieren",
-            schwierigkeit: "mittel",
-            aufgabe:
-              "Formuliere ein differenziertes Fazit zur Frage: Sollte die Schule später beginnen?",
-            loesung: [
-              "Ein mögliches Fazit lautet:",
-              "Ein späterer Schulbeginn wäre grundsätzlich sinnvoll, weil er dem Schlafrhythmus vieler Jugendlicher entgegenkommen und die Konzentration verbessern könnte.",
-              "Gleichzeitig müssten organisatorische Probleme wie Stundenplan, Freizeitaktivitäten und Betreuung berücksichtigt werden.",
-              "Deshalb erscheint kein radikaler Wechsel, sondern ein moderat späterer Beginn an besonders frühen Tagen als überzeugender Kompromiss."
-            ]
-          },
-          {
-            titel: "Aufgabe 4: Argumentationsfehler erkennen",
-            schwierigkeit: "schwer",
-            aufgabe:
-              "Erkläre den Fehler: Alle benutzen soziale Medien, also können sie nicht schädlich sein.",
-            loesung: [
-              "Das Argument ist logisch schwach.",
-              "Aus der Häufigkeit einer Nutzung folgt nicht automatisch, dass etwas unschädlich ist.",
-              "Viele Menschen können etwas verwenden, obwohl es Risiken hat.",
-              "Ein besseres Argument müsste erklären, unter welchen Bedingungen soziale Medien nützlich oder problematisch sind.",
-              "Der Fehler besteht also in einer vorschnellen Schlussfolgerung."
-            ]
-          }
-        ],
-        muendlich: [
-          {
-            frage: "Was ist eine Erörterung?",
-            antwort:
-              "Eine Erörterung ist ein argumentativer Text, der eine Streitfrage untersucht, Argumente entfaltet, abwägt und zu einem begründeten Urteil kommt."
-          },
-          {
-            frage: "Wie ist ein vollständiges Argument aufgebaut?",
-            antwort:
-              "Ein vollständiges Argument besteht aus Behauptung, Begründung und Beispiel. Zusätzlich sollte erklärt werden, was das Beispiel zeigt."
-          },
-          {
-            frage: "Was ist der Unterschied zwischen linearer und dialektischer Erörterung?",
-            antwort:
-              "Eine lineare Erörterung entfaltet eine Position. Eine dialektische Erörterung stellt Pro- und Contra-Argumente gegenüber und wägt sie ab."
-          },
-          {
-            frage: "Was macht ein gutes Fazit aus?",
-            antwort:
-              "Ein gutes Fazit beantwortet die Ausgangsfrage, greift die wichtigsten Argumente auf und formuliert ein begründetes, differenziertes Urteil."
-          }
-        ],
-        nachtVorTest: [
-          "Kannst du die Streitfrage genau formulieren?",
-          "Kennst du den Unterschied zwischen These und Argument?",
-          "Hat jedes Argument eine Begründung und ein Beispiel?",
-          "Kannst du Pro und Contra klar ordnen?",
-          "Kannst du Argumente nach Stärke gewichten?",
-          "Stellst du Gegenargumente fair dar?",
-          "Ist dein Fazit aus der Argumentation ableitbar?",
-          "Vermeidest du reine Meinungen ohne Begründung?"
-        ]
-      }
-    ]
+      "Hier wird ausführlich erklärt, wie man Erörterung, Textanalyse und Gedichtanalyse schreibt.",
+    html: `
+      <section class="sf-de-section">
+        <h2>GYM4 – Analyse und Aufsatzformen</h2>
+        <p class="sf-de-lead">
+          Dieser Bereich wird danach sehr ausführlich ausgearbeitet:
+          Erörterung, Textanalyse, Gedichtanalyse, Aufbau, Zitieren, Satzanfänge und Formulierungen.
+        </p>
+      </section>
+    `
   }
 ];
+
 
 /* =========================
    RENDER-FUNKTION
@@ -1502,55 +2212,65 @@ function render_deutsch(container) {
 
   injectDeutschStyles();
 
-  const deutschThemen = getAllDeutschTopics();
-
   container.innerHTML = `
     <section class="sf-de-page">
-      <div class="sf-de-hero">
-        <h1>Deutsch</h1>
-        <p>
-          Prüfungsvorbereitung mit selbst erstellten Erklärungen, Methoden,
-          Aufgaben, Lösungen und mündlichen Prüfungsfragen.
-        </p>
-      </div>
-
       <div class="sf-de-layout">
         <aside class="sf-de-sidebar">
-          <h2>Themen</h2>
-          <div class="sf-de-topic-list">
-            ${deutschThemen.map((item, index) => `
+          <h2>Deutsch</h2>
+          <p>
+            Wähle die Stufe aus.
+          </p>
+
+          <div class="sf-de-gym-list">
+            ${DEUTSCH_BEREICHE.map((bereich, index) => `
               <button
-                class="sf-de-topic-button ${index === 0 ? "active" : ""}"
-                data-topic-id="${escapeHTML(item.thema.id)}">
-                <span>${escapeHTML(item.stufe.titel)}</span>
-                ${escapeHTML(item.thema.titel)}
+                class="sf-de-gym-button ${index === 0 ? "active" : ""}"
+                data-gym-id="${bereich.id}">
+                <strong>${bereich.titel}</strong>
+                <span>${bereich.untertitel}</span>
               </button>
             `).join("")}
           </div>
         </aside>
 
-        <main class="sf-de-content" id="sf-de-content"></main>
+        <main class="sf-de-content">
+          <div id="sf-de-content-inner"></div>
+        </main>
       </div>
     </section>
   `;
 
-  const content = container.querySelector("#sf-de-content");
-  const buttons = container.querySelectorAll(".sf-de-topic-button");
+  const contentInner = container.querySelector("#sf-de-content-inner");
+  const buttons = container.querySelectorAll(".sf-de-gym-button");
 
-  function showTopic(topicId, shouldScroll = true) {
-    const found = findDeutschTopic(topicId);
-    if (!found) return;
+  function showBereich(id, shouldScroll) {
+    const bereich = DEUTSCH_BEREICHE.find(item => item.id === id);
+    if (!bereich) return;
 
-    buttons.forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.topicId === topicId);
+    buttons.forEach(button => {
+      button.classList.toggle("active", button.dataset.gymId === id);
     });
 
-    content.innerHTML = renderDeutschTopic(found.thema, found.stufe);
-    attachDeutschInteractions(content);
+    contentInner.innerHTML = `
+      <article class="sf-de-topic">
+        <header class="sf-de-topic-header">
+          <p>${bereich.titel}</p>
+          <h1>${bereich.untertitel}</h1>
+          <span>${bereich.beschreibung}</span>
+        </header>
+
+        ${bereich.html}
+
+        <div class="sf-de-legal">
+          Alle Inhalte, Beispiele und Übungen sind selbst erstellt und dienen der Prüfungsvorbereitung.
+          Es handelt sich nicht um kopierte Prüfungsaufgaben oder fremde Lehrmittelinhalte.
+        </div>
+      </article>
+    `;
 
     if (shouldScroll) {
       window.setTimeout(() => {
-        content.scrollIntoView({
+        contentInner.scrollIntoView({
           behavior: "smooth",
           block: "start"
         });
@@ -1560,259 +2280,29 @@ function render_deutsch(container) {
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
-      showTopic(button.dataset.topicId, true);
+      showBereich(button.dataset.gymId, true);
     });
   });
 
-  if (deutschThemen.length > 0) {
-    showTopic(deutschThemen[0].thema.id, false);
-  }
+  showBereich("gym1", false);
 }
 
 
 /* =========================
-   SUCHFUNKTIONEN
+   INTERAKTIONEN
 ========================= */
 
-function getAllDeutschTopics() {
-  const result = [];
-
-  DEUTSCH_GYM_STUFEN.forEach(stufe => {
-    stufe.themen.forEach(thema => {
-      result.push({ stufe, thema });
-    });
-  });
-
-  return result;
+function toggleDeutschBox(id) {
+  const box = document.getElementById(id);
+  if (!box) return;
+  box.classList.toggle("open");
 }
 
-
-function findDeutschTopic(topicId) {
-  for (const stufe of DEUTSCH_GYM_STUFEN) {
-    const thema = stufe.themen.find(t => t.id === topicId);
-    if (thema) {
-      return { stufe, thema };
-    }
-  }
-
-  return null;
-}
+window.toggleDeutschBox = toggleDeutschBox;
 
 
 /* =========================
-   EINZELNES THEMA RENDERN
-========================= */
-
-function renderDeutschTopic(thema, stufe) {
-  return `
-    <article class="sf-de-topic">
-      <div class="sf-de-topic-header">
-        <p class="sf-de-kicker">${escapeHTML(stufe.titel)} · Thema ${escapeHTML(thema.nummer)}</p>
-        <h2>${escapeHTML(thema.titel)}</h2>
-        <p>${escapeHTML(thema.kurzbeschreibung)}</p>
-      </div>
-
-      ${renderDeutschSection("Lernziele", renderDeutschList(thema.lernziele))}
-      ${renderDeutschTheory(thema.theorie)}
-      ${renderDeutschMethods(thema.methoden)}
-      ${renderDeutschSection("Merksätze", renderDeutschList(thema.merksaetze))}
-      ${renderDeutschErrors(thema.typischeFehler)}
-      ${renderDeutschExercises(thema.aufgaben)}
-      ${renderDeutschOral(thema.muendlich)}
-      ${renderDeutschSection("Nacht-vor-dem-Test-Check", renderDeutschChecklist(thema.nachtVorTest))}
-
-      <div class="sf-de-disclaimer">
-        <strong>Hinweis:</strong>
-        Alle Inhalte und Aufgaben auf dieser Seite sind selbst erstellt und dienen
-        der Prüfungsvorbereitung. Es handelt sich nicht um kopierte Originalprüfungen,
-        fremde Lehrmittel oder offizielle Schulunterlagen.
-      </div>
-    </article>
-  `;
-}
-
-
-function renderDeutschSection(title, content) {
-  return `
-    <section class="sf-de-card">
-      <h3>${escapeHTML(title)}</h3>
-      ${content}
-    </section>
-  `;
-}
-
-
-function renderDeutschTheory(items) {
-  return `
-    <section class="sf-de-card">
-      <h3>Theorie einfach erklärt</h3>
-      <div class="sf-de-grid">
-        ${items.map(item => `
-          <div class="sf-de-mini-card">
-            <h4>${escapeHTML(item.titel)}</h4>
-            <p>${escapeHTML(item.text)}</p>
-          </div>
-        `).join("")}
-      </div>
-    </section>
-  `;
-}
-
-
-function renderDeutschMethods(methoden) {
-  return `
-    <section class="sf-de-card">
-      <h3>Methoden</h3>
-      <div class="sf-de-accordion">
-        ${methoden.map(methode => `
-          <div class="sf-de-accordion-item">
-            <button class="sf-de-accordion-toggle" type="button">
-              <span>${escapeHTML(methode.titel)}</span>
-              <span class="sf-de-plus">+</span>
-            </button>
-            <div class="sf-de-accordion-body">
-              ${renderDeutschOrderedList(methode.schritte)}
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    </section>
-  `;
-}
-
-
-function renderDeutschErrors(errors) {
-  return `
-    <section class="sf-de-card">
-      <h3>Typische Fehler</h3>
-      <div class="sf-de-error-list">
-        ${errors.map(item => `
-          <div class="sf-de-error-card">
-            <h4>Fehler</h4>
-            <p>${escapeHTML(item.fehler)}</p>
-            <h4>Korrektur</h4>
-            <p>${escapeHTML(item.korrektur)}</p>
-          </div>
-        `).join("")}
-      </div>
-    </section>
-  `;
-}
-
-
-function renderDeutschExercises(exercises) {
-  return `
-    <section class="sf-de-card">
-      <h3>Eigene Übungsaufgaben mit Lösung</h3>
-      <div class="sf-de-exercises">
-        ${exercises.map(exercise => `
-          <div class="sf-de-exercise">
-            <div class="sf-de-exercise-top">
-              <h4>${escapeHTML(exercise.titel)}</h4>
-              <span>${escapeHTML(exercise.schwierigkeit)}</span>
-            </div>
-            <p>${escapeHTML(exercise.aufgabe)}</p>
-            <button class="sf-de-solution-button" type="button">
-              Lösung anzeigen
-            </button>
-            <div class="sf-de-solution">
-              ${renderDeutschOrderedList(exercise.loesung)}
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    </section>
-  `;
-}
-
-
-function renderDeutschOral(items) {
-  return `
-    <section class="sf-de-card">
-      <h3>Mündliche Prüfungsfragen</h3>
-      <div class="sf-de-oral-list">
-        ${items.map(item => `
-          <div class="sf-de-oral-card">
-            <h4>${escapeHTML(item.frage)}</h4>
-            <p>${escapeHTML(item.antwort)}</p>
-          </div>
-        `).join("")}
-      </div>
-    </section>
-  `;
-}
-
-
-/* =========================
-   HILFSFUNKTIONEN
-========================= */
-
-function renderDeutschList(items) {
-  return `
-    <ul class="sf-de-list">
-      ${items.map(item => `<li>${escapeHTML(item)}</li>`).join("")}
-    </ul>
-  `;
-}
-
-
-function renderDeutschOrderedList(items) {
-  return `
-    <ol class="sf-de-ordered-list">
-      ${items.map(item => `<li>${escapeHTML(item)}</li>`).join("")}
-    </ol>
-  `;
-}
-
-
-function renderDeutschChecklist(items) {
-  return `
-    <div class="sf-de-checklist">
-      ${items.map(item => `
-        <label>
-          <input type="checkbox">
-          <span>${escapeHTML(item)}</span>
-        </label>
-      `).join("")}
-    </div>
-  `;
-}
-
-
-function attachDeutschInteractions(root) {
-  const accordionButtons = root.querySelectorAll(".sf-de-accordion-toggle");
-
-  accordionButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const item = button.closest(".sf-de-accordion-item");
-      item.classList.toggle("open");
-    });
-  });
-
-  const solutionButtons = root.querySelectorAll(".sf-de-solution-button");
-
-  solutionButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const solution = button.nextElementSibling;
-      const isOpen = solution.classList.toggle("open");
-      button.textContent = isOpen ? "Lösung ausblenden" : "Lösung anzeigen";
-    });
-  });
-}
-
-
-function escapeHTML(value) {
-  return String(value)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
-
-/* =========================
-   CSS EINMALIG EINFÜGEN
+   CSS
 ========================= */
 
 function injectDeutschStyles() {
@@ -1820,337 +2310,291 @@ function injectDeutschStyles() {
 
   const style = document.createElement("style");
   style.id = "sf-de-styles";
+
   style.textContent = `
     .sf-de-page {
       width: 100%;
-      background: #f6f7fb;
-      color: #172033;
+      color: #111827;
       font-family: Arial, Helvetica, sans-serif;
-      padding: 24px;
-      box-sizing: border-box;
-      border-radius: 18px;
-    }
-
-    .sf-de-hero {
-      background: linear-gradient(135deg, #111827, #273449);
-      color: white;
-      border-radius: 24px;
-      padding: 32px;
-      margin-bottom: 24px;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
-    }
-
-    .sf-de-kicker {
-      margin: 0 0 8px 0;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.75;
-      font-weight: 700;
-    }
-
-    .sf-de-hero h1 {
-      margin: 0 0 12px 0;
-      font-size: clamp(32px, 5vw, 56px);
-      line-height: 1;
-    }
-
-    .sf-de-hero p {
-      max-width: 780px;
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.6;
-      opacity: 0.92;
     }
 
     .sf-de-layout {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 24px;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 22px;
       align-items: start;
     }
 
     .sf-de-sidebar {
       position: sticky;
-      top: 20px;
-      background: white;
+      top: 18px;
+      background: #ffffff;
       border-radius: 20px;
       padding: 20px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      border: 1px solid #e5e7eb;
     }
 
     .sf-de-sidebar h2 {
-      margin: 0 0 16px 0;
-      font-size: 22px;
+      margin: 0 0 6px;
+      font-size: 26px;
+      color: #111827;
     }
 
-    .sf-de-topic-list {
+    .sf-de-sidebar p {
+      margin: 0 0 18px;
+      color: #6b7280;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .sf-de-gym-list {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
-    .sf-de-topic-button {
+    .sf-de-gym-button {
+      width: 100%;
       border: 1px solid #e5e7eb;
       background: #f9fafb;
-      color: #172033;
-      border-radius: 14px;
-      padding: 12px 14px;
-      text-align: left;
+      color: #111827;
+      border-radius: 16px;
+      padding: 14px;
       cursor: pointer;
-      font-weight: 700;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      transition: 0.2s ease;
+      text-align: left;
+      transition: 0.15s ease;
     }
 
-    .sf-de-topic-button span {
-      display: inline-flex;
-      min-width: 42px;
-      height: 28px;
-      align-items: center;
-      justify-content: center;
-      background: #e5e7eb;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 800;
+    .sf-de-gym-button strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 3px;
     }
 
-    .sf-de-topic-button:hover {
+    .sf-de-gym-button span {
+      display: block;
+      font-size: 13px;
+      line-height: 1.35;
+      color: #6b7280;
+    }
+
+    .sf-de-gym-button:hover {
       transform: translateY(-1px);
       background: #eef2ff;
+      border-color: #818cf8;
     }
 
-    .sf-de-topic-button.active {
-      background: #172033;
-      color: white;
-      border-color: #172033;
+    .sf-de-gym-button.active {
+      background: #111827;
+      color: #ffffff;
+      border-color: #111827;
     }
 
-    .sf-de-topic-button.active span {
-      background: white;
-      color: #172033;
+    .sf-de-gym-button.active span {
+      color: #d1d5db;
     }
 
     .sf-de-content {
       min-width: 0;
     }
 
-    .sf-de-topic-header {
-      background: white;
-      border-radius: 20px;
-      padding: 26px;
-      margin-bottom: 18px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    .sf-de-topic {
+      background: #f3f4f6;
+      border-radius: 24px;
+      padding: 22px;
+      border: 1px solid #e5e7eb;
     }
 
-    .sf-de-topic-header h2 {
-      margin: 0 0 10px 0;
-      font-size: 34px;
+    .sf-de-topic-header {
+      background: linear-gradient(135deg, #111827, #334155);
+      color: #ffffff;
+      border-radius: 22px;
+      padding: 30px;
+      margin-bottom: 18px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
     }
 
     .sf-de-topic-header p {
-      margin: 0;
-      font-size: 17px;
-      line-height: 1.6;
-      color: #4b5563;
+      margin: 0 0 8px;
+      color: #cbd5e1;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
     }
 
-    .sf-de-card {
-      background: white;
+    .sf-de-topic-header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+    }
+
+    .sf-de-topic-header span {
+      display: block;
+      color: #e5e7eb;
+      line-height: 1.6;
+      max-width: 900px;
+      font-size: 17px;
+    }
+
+    .sf-de-section {
+      background: #ffffff;
       border-radius: 20px;
       padding: 24px;
       margin-bottom: 18px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
     }
 
-    .sf-de-card h3 {
-      margin: 0 0 18px 0;
-      font-size: 24px;
+    .sf-de-section h2 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      color: #111827;
     }
 
-    .sf-de-grid {
+    .sf-de-section h3 {
+      margin: 0 0 14px;
+      font-size: 26px;
+      color: #111827;
+    }
+
+    .sf-de-section h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #111827;
+    }
+
+    .sf-de-section p {
+      color: #374151;
+      line-height: 1.7;
+      margin: 0 0 14px;
+      font-size: 16px;
+    }
+
+    .sf-de-lead {
+      font-size: 18px !important;
+      color: #374151 !important;
+      line-height: 1.75 !important;
+    }
+
+    .sf-de-table-wrap {
+      overflow-x: auto;
+      margin: 18px 0;
+    }
+
+    .sf-de-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      font-size: 15px;
+    }
+
+    .sf-de-table th {
+      background: #111827;
+      color: #ffffff;
+      text-align: left;
+      padding: 13px;
+      border: 1px solid #1f2937;
+      vertical-align: top;
+    }
+
+    .sf-de-table td {
+      padding: 13px;
+      border: 1px solid #e5e7eb;
+      color: #374151;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+
+    .sf-de-table tr:nth-child(even) td {
+      background: #f9fafb;
+    }
+
+    .sf-de-rule,
+    .sf-de-example,
+    .sf-de-task,
+    .sf-de-correction {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-left: 5px solid #6366f1;
+      border-radius: 16px;
+      padding: 18px;
+      margin: 16px 0;
+    }
+
+    .sf-de-example {
+      border-left-color: #16a34a;
+    }
+
+    .sf-de-task {
+      border-left-color: #f59e0b;
+    }
+
+    .sf-de-correction {
+      border-left-color: #dc2626;
+    }
+
+    .sf-de-rule ul,
+    .sf-de-example ul,
+    .sf-de-task ul {
+      color: #374151;
+      line-height: 1.7;
+      margin: 8px 0 0 20px;
+      padding: 0;
+    }
+
+    .sf-de-compare {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
+      margin: 18px 0;
     }
 
-    .sf-de-mini-card,
-    .sf-de-error-card,
-    .sf-de-oral-card,
-    .sf-de-exercise {
+    .sf-de-compare > div {
+      background: #f9fafb;
       border: 1px solid #e5e7eb;
       border-radius: 16px;
       padding: 18px;
-      background: #f9fafb;
     }
 
-    .sf-de-mini-card h4,
-    .sf-de-error-card h4,
-    .sf-de-oral-card h4,
-    .sf-de-exercise h4 {
-      margin: 0 0 8px 0;
-      font-size: 18px;
-    }
-
-    .sf-de-mini-card p,
-    .sf-de-error-card p,
-    .sf-de-oral-card p,
-    .sf-de-exercise p {
-      margin: 0;
-      line-height: 1.6;
-      color: #374151;
-    }
-
-    .sf-de-list,
-    .sf-de-ordered-list {
-      margin: 0;
-      padding-left: 22px;
-      line-height: 1.8;
-      color: #374151;
-    }
-
-    .sf-de-list li,
-    .sf-de-ordered-list li {
-      margin-bottom: 6px;
-    }
-
-    .sf-de-accordion {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .sf-de-accordion-item {
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #f9fafb;
-    }
-
-    .sf-de-accordion-toggle {
-      width: 100%;
+    .sf-de-toggle {
+      margin-top: 6px;
       border: 0;
-      background: transparent;
-      padding: 16px 18px;
-      cursor: pointer;
-      font-weight: 800;
-      font-size: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #172033;
-    }
-
-    .sf-de-plus {
-      font-size: 24px;
-      line-height: 1;
-      transition: 0.2s ease;
-    }
-
-    .sf-de-accordion-body {
-      display: none;
-      padding: 0 18px 18px 18px;
-    }
-
-    .sf-de-accordion-item.open .sf-de-accordion-body {
-      display: block;
-    }
-
-    .sf-de-accordion-item.open .sf-de-plus {
-      transform: rotate(45deg);
-    }
-
-    .sf-de-error-list,
-    .sf-de-oral-list,
-    .sf-de-exercises {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .sf-de-error-card h4:nth-of-type(1) {
-      color: #991b1b;
-    }
-
-    .sf-de-error-card h4:nth-of-type(2) {
-      margin-top: 14px;
-      color: #166534;
-    }
-
-    .sf-de-exercise-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-
-    .sf-de-exercise-top span {
-      background: #e5e7eb;
-      border-radius: 999px;
-      padding: 5px 10px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #374151;
-      white-space: nowrap;
-    }
-
-    .sf-de-solution-button {
-      margin-top: 14px;
-      border: 0;
-      background: #172033;
-      color: white;
-      border-radius: 12px;
+      background: #111827;
+      color: #ffffff;
       padding: 10px 14px;
+      border-radius: 12px;
       font-weight: 700;
       cursor: pointer;
     }
 
-    .sf-de-solution {
-      display: none;
-      margin-top: 14px;
-      padding: 16px;
-      border-radius: 14px;
-      background: white;
-      border: 1px solid #e5e7eb;
+    .sf-de-toggle:hover {
+      background: #374151;
     }
 
-    .sf-de-solution.open {
+    .sf-de-hidden-box {
+      display: none;
+      margin-top: 14px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .sf-de-hidden-box.open {
       display: block;
     }
 
-    .sf-de-checklist {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .sf-de-checklist label {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 12px;
-      background: #f9fafb;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
-      cursor: pointer;
-      line-height: 1.5;
-    }
-
-    .sf-de-checklist input {
-      margin-top: 3px;
-    }
-
-    .sf-de-disclaimer {
+    .sf-de-legal {
       background: #fff7ed;
-      border: 1px solid #fed7aa;
       color: #7c2d12;
-      border-radius: 18px;
-      padding: 18px;
+      border: 1px solid #fed7aa;
+      border-radius: 16px;
+      padding: 16px;
       line-height: 1.6;
-      margin-bottom: 24px;
+      font-size: 14px;
     }
 
     @media (max-width: 900px) {
@@ -2162,16 +2606,16 @@ function injectDeutschStyles() {
         position: static;
       }
 
-      .sf-de-grid {
+      .sf-de-compare {
         grid-template-columns: 1fr;
       }
 
-      .sf-de-page {
+      .sf-de-topic {
         padding: 14px;
       }
 
-      .sf-de-hero {
-        padding: 24px;
+      .sf-de-section {
+        padding: 18px;
       }
     }
   `;
