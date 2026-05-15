@@ -8418,6 +8418,75 @@ nachtVorTest: [
         "Bei Aufgaben mit Gradangaben muss der Taschenrechner im Gradmodus sein. Wenn der Taschenrechner im Bogenmass eingestellt ist, entstehen falsche Ergebnisse."
     }
   ],
+        grafik: `
+    <div class="sf-unitcircle-wrap">
+      <svg viewBox="0 0 620 430" class="sf-unitcircle-svg" role="img" aria-label="Selbst erstellter Einheitskreis zur Erklärung von Sinus, Kosinus und Tangens">
+        <defs>
+          <marker id="arrowUnit21" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L8,3 L0,6 Z" fill="#172033"></path>
+          </marker>
+        </defs>
+
+        <rect x="0" y="0" width="620" height="430" rx="22" fill="#f8fafc"></rect>
+
+        <!-- Achsen -->
+        <line x1="70" y1="215" x2="550" y2="215" stroke="#172033" stroke-width="2.2" marker-end="url(#arrowUnit21)"></line>
+        <line x1="310" y1="375" x2="310" y2="55" stroke="#172033" stroke-width="2.2" marker-end="url(#arrowUnit21)"></line>
+
+        <!-- Achsenbeschriftung -->
+        <text x="558" y="220" font-size="17" fill="#172033" font-weight="700">x</text>
+        <text x="318" y="50" font-size="17" fill="#172033" font-weight="700">y</text>
+
+        <!-- Gitter / Markierungen -->
+        <line x1="430" y1="210" x2="430" y2="220" stroke="#64748b" stroke-width="2"></line>
+        <line x1="190" y1="210" x2="190" y2="220" stroke="#64748b" stroke-width="2"></line>
+        <line x1="305" y1="95" x2="315" y2="95" stroke="#64748b" stroke-width="2"></line>
+        <line x1="305" y1="335" x2="315" y2="335" stroke="#64748b" stroke-width="2"></line>
+
+        <text x="424" y="240" font-size="14" fill="#64748b">1</text>
+        <text x="181" y="240" font-size="14" fill="#64748b">-1</text>
+        <text x="322" y="100" font-size="14" fill="#64748b">1</text>
+        <text x="322" y="340" font-size="14" fill="#64748b">-1</text>
+        <text x="292" y="236" font-size="14" fill="#64748b">0</text>
+
+        <!-- Einheitskreis -->
+        <circle cx="310" cy="215" r="120" fill="none" stroke="#2563eb" stroke-width="4"></circle>
+
+        <!-- Winkelbogen -->
+        <path d="M360 215 A50 50 0 0 0 345.4 179.6" fill="none" stroke="#f97316" stroke-width="4"></path>
+        <text x="365" y="190" font-size="18" fill="#f97316" font-weight="700">α</text>
+
+        <!-- Radius zum Punkt -->
+        <line x1="310" y1="215" x2="394.9" y2="130.1" stroke="#0f172a" stroke-width="3"></line>
+
+        <!-- Punkt P -->
+        <circle cx="394.9" cy="130.1" r="6" fill="#dc2626"></circle>
+        <text x="404" y="125" font-size="16" fill="#dc2626" font-weight="700">P(cos α | sin α)</text>
+
+        <!-- cos-Projektion -->
+        <line x1="310" y1="215" x2="394.9" y2="215" stroke="#16a34a" stroke-width="5"></line>
+        <text x="340" y="205" font-size="16" fill="#16a34a" font-weight="700">cos α</text>
+
+        <!-- sin-Projektion -->
+        <line x1="394.9" y1="215" x2="394.9" y2="130.1" stroke="#9333ea" stroke-width="5"></line>
+        <text x="402" y="178" font-size="16" fill="#9333ea" font-weight="700">sin α</text>
+
+        <!-- Tangente rechts bei x=1 -->
+        <line x1="430" y1="75" x2="430" y2="355" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 7"></line>
+        <text x="438" y="83" font-size="14" fill="#64748b">Tangentenlinie x = 1</text>
+
+        <!-- Tangens-Linie vom Ursprung verlängert -->
+        <line x1="310" y1="215" x2="430" y2="95" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 5"></line>
+        <line x1="430" y1="215" x2="430" y2="95" stroke="#ef4444" stroke-width="5"></line>
+        <text x="438" y="158" font-size="16" fill="#ef4444" font-weight="700">tan α</text>
+
+        <!-- Erklärung unten -->
+        <text x="70" y="395" font-size="15" fill="#334155">
+          Im Einheitskreis hat der Radius die Länge 1. Der Punkt P zeigt: x = cos(α), y = sin(α), tan(α) = sin(α) / cos(α).
+        </text>
+      </svg>
+    </div>
+  `,
   methoden: [
     {
       titel: "Methode: Fehlenden Winkel mit der Winkelsumme berechnen",
