@@ -108,7 +108,8 @@
       flex-wrap: wrap;
     }
 
-    button, a.button {
+    button,
+    a.button {
       border: none;
       border-radius: 12px;
       padding: 14px 18px;
@@ -122,7 +123,8 @@
       text-align: center;
     }
 
-    button:hover, a.button:hover {
+    button:hover,
+    a.button:hover {
       background: #4f46e5;
     }
 
@@ -574,8 +576,8 @@
       {
         name: "Deutsch",
         key: "deutsch",
-        mode: "gym",
-        description: "Sprachanalyse, Textverständnis und prüfungsorientierte Schreibkompetenz"
+        mode: "direct",
+        description: "GYM1 bis GYM4: Grammatik, Schreibtraining, Literatur, rhetorische Mittel, Textanalyse, Gedichtanalyse und Erörterung"
       },
       {
         name: "Französisch",
@@ -602,6 +604,12 @@
         file: "subjects/anwendung_mathematik.js",
         renderFunction: "render_anwendung_mathematik",
         description: "Vertiefung: Gruppentheorie, komplexe Zahlen, Möbiustransformationen, Reihen, Differenzialgleichungen und lineare Algebra"
+      },
+
+      "deutsch": {
+        file: "subjects/deutsch.js",
+        renderFunction: "render_deutsch",
+        description: "Deutsch mit GYM1, GYM2, GYM3 und GYM4 innerhalb des Fachbereichs"
       },
 
       "franzoesisch-gym1": {
@@ -797,7 +805,7 @@
       materialContent.innerHTML = `
         <div class="exercise-card">
           <h3>Inhalt wird geladen...</h3>
-          <p>Bitte kurz warten.</p>
+          <p>Die Datei wird geöffnet.</p>
         </div>
       `;
 
@@ -831,7 +839,7 @@
       materialContent.innerHTML = `
         <div class="exercise-card">
           <h3>Inhalt wird geladen...</h3>
-          <p>Bitte kurz warten.</p>
+          <p>Die Datei wird geöffnet.</p>
         </div>
       `;
 
@@ -859,6 +867,7 @@
           <div class="exercise-card">
             <h3>Datei konnte nicht geladen werden</h3>
             <p>Die Datei <strong>${file}</strong> wurde nicht gefunden oder enthält einen Fehler.</p>
+            <p class="small">Prüfe, ob die Datei wirklich genau an diesem Ort liegt und exakt so heisst.</p>
           </div>
         `;
       };
@@ -875,6 +884,7 @@
           <div class="exercise-card">
             <h3>Render-Funktion fehlt</h3>
             <p>Die Funktion <strong>${renderFunctionName}</strong> wurde nicht gefunden.</p>
+            <p class="small">Prüfe, ob die geladene JavaScript-Datei am Ende zum Beispiel <strong>window.${renderFunctionName} = ${renderFunctionName};</strong> enthält.</p>
           </div>
         `;
       }
