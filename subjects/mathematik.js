@@ -8937,6 +8937,15 @@ function render_mathematik(container) {
 ========================= */
 
 function renderMathematikTopic(thema) {
+  function renderMathematikGraphic(grafik) {
+    return `
+      <section class="sf-math-card">
+        <h3>Anschauliches Koordinatensystem</h3>
+        ${grafik}
+      </section>
+    `;
+  }
+
   return `
     <article class="sf-math-topic">
       <div class="sf-math-topic-header">
@@ -8947,6 +8956,7 @@ function renderMathematikTopic(thema) {
 
       ${renderMathematikSection("Lernziele", renderMathematikList(thema.lernziele))}
       ${renderMathematikTheory(thema.theorie)}
+      ${thema.grafik ? renderMathematikGraphic(thema.grafik) : ""}
       ${renderMathematikMethods(thema.methoden)}
       ${renderMathematikSection("Merksätze", renderMathematikList(thema.merksaetze))}
       ${renderMathematikErrors(thema.typischeFehler)}
@@ -8964,6 +8974,14 @@ function renderMathematikTopic(thema) {
   `;
 }
 
+function renderMathematikGraphic(grafik) {
+  return `
+    <section class="sf-math-card">
+      <h3>Anschauliches Koordinatensystem</h3>
+      ${grafik}
+    </section>
+  `;
+}
 
 function renderMathematikSection(title, content) {
   return `
@@ -9189,7 +9207,19 @@ function injectMathematikStyles() {
       box-sizing: border-box;
       border-radius: 18px;
     }
+    
+    .sf-unitcircle-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
 
+.sf-unitcircle-svg {
+  width: 100%;
+  max-width: 720px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 22px;
+}
     .sf-math-hero {
       background: linear-gradient(135deg, #111827, #273449);
       color: white;
