@@ -3056,7 +3056,698 @@ const DEUTSCH_BEREICHE = [
       </div>
     </section>
   `
+},
+   {
+  id: "literaturepochen",
+  titel: "Zusatz",
+  untertitel: "Literaturepochen",
+  beschreibung:
+    "Zusatzbereich zu GYM4: Die wichtigsten Literaturepochen einfach erklärt, mit Merkmalen, typischen Themen und Formulierungen für Analysen.",
+  html: `
+    <section class="sf-de-section">
+      <h2>Zusatz: Literaturepochen</h2>
+      <p class="sf-de-lead">
+        Literaturepochen helfen dir, Texte historisch einzuordnen. Wichtig ist aber:
+        Du darfst eine Epoche nicht einfach nur nennen. Du musst immer zeigen,
+        welches Merkmal im Text sichtbar wird und warum es für die Deutung wichtig ist.
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Die wichtigste Regel</h4>
+        <p>
+          Schreibe nie nur: <strong>Das Gedicht gehört zur Romantik.</strong><br>
+          Schreibe besser: <strong>Das Gedicht weist romantische Merkmale auf, weil die Natur als Spiegel innerer Sehnsucht erscheint.</strong>
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>3-Schritt-Methode für Epochen</h4>
+        <p>
+          <strong>1. Merkmal nennen:</strong> Welche Eigenschaft der Epoche erkennst du?<br>
+          <strong>2. Textbeleg nennen:</strong> Woran sieht man das im Text?<br>
+          <strong>3. Wirkung erklären:</strong> Was bedeutet das für die Deutung?
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>1. Barock</h3>
+      <p>
+        Der Barock ist stark geprägt vom Dreissigjährigen Krieg, religiösem Denken und der Erfahrung von Tod,
+        Leid und Vergänglichkeit. Viele Texte zeigen den Gegensatz zwischen Lebensfreude und Todesbewusstsein.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1600–1720</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>Vergänglichkeit, Tod, religiöse Orientierung, starke Gegensätze, kunstvolle Sprache, feste Formen</td>
+            </tr>
+            <tr>
+              <th>Typische Begriffe</th>
+              <td>Vanitas, Memento mori, Carpe diem, Diesseits, Jenseits</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>Bilder von Verfall, Tod, Sanduhr, verwelkenden Blumen, Grab, Staub, kurzer Lebenszeit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Das Gedicht weist typische Merkmale des Barock auf, da es die Vergänglichkeit des menschlichen Lebens betont.
+          Bilder von Verfall und Tod verdeutlichen, dass irdischer Besitz und Schönheit nur vorübergehend sind.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>2. Aufklärung</h3>
+      <p>
+        Die Aufklärung stellt die Vernunft ins Zentrum. Menschen sollen selbstständig denken,
+        Vorurteile prüfen und Autoritäten nicht blind folgen.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1720–1785</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>Vernunft, Bildung, Toleranz, Kritik an Vorurteilen, Kritik an absoluter Autorität</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Mündigkeit, Erziehung, Freiheit des Denkens, moralisches Handeln</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>sachliche Argumentation, moralische Botschaft, Kritik an Unwissenheit oder Unterdrückung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text lässt sich mit Gedanken der Aufklärung verbinden, weil er selbstständiges Denken fordert
+          und blinde Autoritätsgläubigkeit kritisiert. Die Argumentation zielt darauf, Vorurteile durch Vernunft zu überwinden.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>3. Sturm und Drang</h3>
+      <p>
+        Der Sturm und Drang betont Gefühl, Freiheit und Individualität. Viele Texte zeigen Figuren,
+        die sich gegen gesellschaftliche Regeln oder Autoritäten auflehnen.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1765–1785</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>starke Gefühle, Natur, Geniegedanke, Rebellion, Freiheit, Leidenschaft</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Konflikt mit Autoritäten, Selbstverwirklichung, Liebe, innere Zerrissenheit</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>Ausrufe, leidenschaftliche Sprache, starke Naturbilder, emotionale Zuspitzung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text zeigt Merkmale des Sturm und Drang, weil die Figur stark von Gefühl und Freiheitsdrang bestimmt ist.
+          Die leidenschaftliche Sprache und der Konflikt mit gesellschaftlichen Erwartungen verdeutlichen den Wunsch nach Selbstbestimmung.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>4. Klassik</h3>
+      <p>
+        Die Klassik sucht nach Harmonie, Mass und Humanität. Im Mittelpunkt steht oft die Idee,
+        dass der Mensch sich moralisch bilden und zu innerer Ausgeglichenheit gelangen soll.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1786–1832</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>Harmonie, Humanität, Bildung, Mass, Ausgleich zwischen Gefühl und Vernunft</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>moralische Reifung, Verantwortung, Schönheit, idealer Mensch</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>klare Form, ausgewogene Sprache, moralische Entwicklung, ruhiger Ton</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text erinnert an klassische Ideale, weil er nicht einseitig Gefühl oder Vernunft betont,
+          sondern nach einem Ausgleich sucht. Die ruhige Sprache und die klare Form unterstützen den Eindruck von Ordnung und Mass.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>5. Romantik</h3>
+      <p>
+        Die Romantik interessiert sich für Sehnsucht, Traum, Nacht, Natur, Fantasie und das Geheimnisvolle.
+        Die Wirklichkeit wird oft nicht als nüchterne Realität gezeigt, sondern als etwas Tieferes und Rätselhaftes.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1795–1840</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>Sehnsucht, Natur, Nacht, Traum, Fantasie, Geheimnis, Innerlichkeit</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Fernweh, Liebe, Einsamkeit, Flucht aus dem Alltag, Überschreitung der Wirklichkeit</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>Nachtmotive, Natur als Spiegel der Seele, Traumhaftes, Märchenhaftes, Ferne</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Das Gedicht weist romantische Merkmale auf, weil die Natur nicht nur als Landschaft,
+          sondern als Spiegel innerer Sehnsucht erscheint. Motive wie Nacht, Ferne und Traum verstärken den Eindruck
+          einer geheimnisvollen Welt jenseits des Alltags.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>6. Biedermeier</h3>
+      <p>
+        Das Biedermeier ist geprägt vom Rückzug ins Private. Statt grosser politischer Umbrüche stehen Familie,
+        Häuslichkeit, Ordnung und stille Innerlichkeit im Vordergrund.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1815–1848</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>Rückzug ins Private, Familie, Ordnung, Häuslichkeit, Bescheidenheit</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Alltag, Natur, Sicherheit, kleine Lebenswelt, stille Melancholie</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>ruhige Sprache, private Szenen, Naturbetrachtung, wenig offene Politik</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text lässt sich mit dem Biedermeier verbinden, weil er nicht den grossen politischen Konflikt,
+          sondern eine private und überschaubare Lebenswelt darstellt. Die ruhige Sprache verstärkt den Eindruck von Rückzug und Innerlichkeit.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>7. Vormärz / Junges Deutschland</h3>
+      <p>
+        Der Vormärz ist politisch. Texte dieser Zeit kritisieren Unterdrückung, Zensur und soziale Ungerechtigkeit.
+        Literatur soll nicht nur schön sein, sondern gesellschaftlich wirken.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1815–1848</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>politische Kritik, Forderung nach Freiheit, soziale Gerechtigkeit, Kritik an Zensur</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Armut, Revolution, Bürgerrechte, Unterdrückung, politische Veränderung</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>anklagender Ton, politische Begriffe, Kritik an Machtverhältnissen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text zeigt Merkmale des Vormärz, da er gesellschaftliche Missstände nicht nur beschreibt,
+          sondern deutlich kritisiert. Der anklagende Ton und die Forderung nach Veränderung machen die politische Funktion des Textes sichtbar.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>8. Realismus</h3>
+      <p>
+        Der Realismus stellt die Wirklichkeit nicht übertrieben dramatisch dar, sondern beobachtet genau.
+        Häufig geht es um bürgerliches Leben, soziale Erwartungen und Konflikte im Alltag.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1848–1890</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>wirklichkeitsnahe Darstellung, genaue Beobachtung, bürgerliche Welt, soziale Zwänge</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Familie, Stand, Ehe, Gesellschaft, Alltag, Konflikte im bürgerlichen Leben</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>genaue Beschreibungen, sachlicher Ton, realistische Figuren, gesellschaftliche Normen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text weist realistische Merkmale auf, weil er eine alltägliche Situation genau beobachtet
+          und die Figuren in ihren sozialen Abhängigkeiten zeigt. Die nüchterne Darstellung lässt den Konflikt glaubwürdig wirken.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>9. Naturalismus</h3>
+      <p>
+        Der Naturalismus will die Wirklichkeit noch ungeschönter zeigen als der Realismus.
+        Besonders soziale Not, Armut, Krankheit, Milieu und Vererbung stehen im Zentrum.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1880–1900</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>radikale Wirklichkeitsnähe, soziale Probleme, Milieu, Vererbung, Sekundenstil</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Armut, Alkoholismus, soziale Not, Krankheit, Determination</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>ungeschönte Darstellung, Dialekt, genaue Alltagssprache, Elend, soziale Enge</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text zeigt naturalistische Merkmale, weil er soziale Not ungeschönt darstellt.
+          Die genaue Wiedergabe von Sprache und Milieu verdeutlicht, wie stark die Figur durch ihre Lebensumstände geprägt ist.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>10. Expressionismus</h3>
+      <p>
+        Der Expressionismus zeigt die Welt oft als bedrohlich, chaotisch und zerfallen.
+        Typisch sind Grossstadt, Krieg, Angst, Ich-Zerfall und starke, manchmal schockierende Bilder.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1910–1925</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>starke Bilder, Krise, Grossstadt, Angst, Zerfall, Verfremdung</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Entfremdung, Weltuntergang, Krieg, Technik, Einsamkeit, Ich-Zerfall</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>düstere Stimmung, harte Metaphern, chaotische Stadtbilder, extreme Wahrnehmung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text weist expressionistische Merkmale auf, da die Grossstadt als chaotischer und bedrohlicher Raum erscheint.
+          Harte Bilder von Lärm, Enge und Dunkelheit machen die innere Überforderung des modernen Menschen sichtbar.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>11. Neue Sachlichkeit</h3>
+      <p>
+        Die Neue Sachlichkeit reagiert auf Pathos und extreme Gefühlsdarstellung mit Nüchternheit.
+        Texte wirken oft kühl, beobachtend und gesellschaftskritisch.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1920–1933</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>nüchterner Stil, klare Beobachtung, wenig Pathos, gesellschaftliche Realität</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Grossstadt, Arbeit, Politik, moderne Gesellschaft, soziale Rollen</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>knappe Sprache, sachlicher Ton, distanzierte Darstellung, Alltagsnähe</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text erinnert an die Neue Sachlichkeit, weil er gesellschaftliche Wirklichkeit nüchtern und ohne starke Emotionalisierung darstellt.
+          Der knappe Stil lässt die beschriebenen Zustände besonders kühl und sachlich wirken.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>12. Exilliteratur</h3>
+      <p>
+        Exilliteratur entsteht durch politische Verfolgung und Flucht. Viele Texte handeln von Heimatverlust,
+        Diktatur, Widerstand und der Erfahrung, nicht mehr frei schreiben oder leben zu können.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1933–1945</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>Kritik an Diktatur, Flucht, Heimatverlust, politische Bedrohung, Widerstand</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Faschismus, Exil, Sprache, Identität, Verlust, Verfolgung</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>politische Warnung, Erfahrung von Vertreibung, Fremde, Verlust von Heimat</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text lässt sich mit Exilliteratur verbinden, weil Heimat nicht als sicherer Ort erscheint,
+          sondern als verlorener Raum. Die Erfahrung von Flucht und politischer Bedrohung prägt die Darstellung.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>13. Trümmerliteratur / Nachkriegsliteratur</h3>
+      <p>
+        Nach dem Zweiten Weltkrieg zeigt Literatur oft zerstörte Städte, Schuld, Hunger, Heimkehrer und sprachliche Kargheit.
+        Viele Texte sind bewusst schlicht geschrieben.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>ca. 1945–1950er-Jahre</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>knappe Sprache, zerstörte Welt, moralischer Neuanfang, Schweigen, Schuld</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Krieg, Heimkehr, Hunger, zerstörte Städte, Schuld, Neubeginn</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>kurze Sätze, nüchterne Darstellung, kaputte Räume, schweigende Figuren</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text weist Merkmale der Nachkriegsliteratur auf, weil er eine zerstörte Lebenswelt in knapper Sprache beschreibt.
+          Die Schlichtheit der Darstellung verstärkt den Eindruck von Verlust, Sprachlosigkeit und moralischer Erschütterung.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>14. Moderne und Gegenwartsliteratur</h3>
+      <p>
+        Moderne und Gegenwartsliteratur arbeiten oft mit offenen Formen, Perspektivwechseln,
+        unsicheren Identitäten und gesellschaftlichen Krisen. Es gibt nicht immer eine eindeutige Lösung.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <tbody>
+            <tr>
+              <th>Zeit</th>
+              <td>20. und 21. Jahrhundert</td>
+            </tr>
+            <tr>
+              <th>Typische Merkmale</th>
+              <td>offene Formen, fragmentarischer Aufbau, Perspektivwechsel, Sprachkritik, offene Enden</td>
+            </tr>
+            <tr>
+              <th>Typische Themen</th>
+              <td>Identität, Migration, Erinnerung, Medien, Gesellschaft, Krise, Einsamkeit</td>
+            </tr>
+            <tr>
+              <th>Woran du es erkennst</th>
+              <td>wechselnde Perspektiven, Alltagssprache, Brüche, offene Deutung, unsicheres Erzählen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Gute Analyseformulierung</h4>
+        <p>
+          Der Text wirkt modern, weil er keine geschlossene Deutung vorgibt.
+          Der fragmentarische Aufbau und die wechselnde Perspektive spiegeln eine unsichere und komplexe Wirklichkeit.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>15. Wie du Epochen in einer Prüfung verwendest</h3>
+
+      <div class="sf-de-rule">
+        <h4>Gute Formulierungen</h4>
+        <p>
+          Der Text weist Merkmale der ... auf.<br>
+          Das Gedicht lässt sich teilweise der ... zuordnen.<br>
+          Besonders auffällig ist das für die ... typische Motiv der ...<br>
+          Die Darstellung erinnert an zentrale Themen der ...<br>
+          Dies zeigt sich besonders an ...
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Vorsichtig formulieren</h4>
+        <p>
+          Schreibe lieber <strong>weist Merkmale der Romantik auf</strong> statt <strong>ist eindeutig romantisch</strong>.
+          Viele Texte enthalten nämlich Merkmale verschiedener Epochen.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Prüfungsformel</h4>
+        <p>
+          <strong>Epoche + Merkmal + Textbeleg + Wirkung</strong>
+        </p>
+        <p>
+          Beispiel: <strong>Das Gedicht weist romantische Merkmale auf, weil die Nacht als geheimnisvoller Raum dargestellt wird.
+          Dadurch entsteht eine Atmosphäre der Sehnsucht und Weltflucht.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>16. Mini-Training: Epochen erkennen</h3>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 1</h4>
+        <p>
+          Ein Gedicht spricht ständig von Tod, Staub, Vergänglichkeit und davon,
+          dass der Mensch sein Leben nutzen soll. Welche Epoche passt?
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('epochen-l1')">Lösung anzeigen</button>
+        <div id="epochen-l1" class="sf-de-hidden-box">
+          <p>
+            <strong>Barock.</strong> Typisch sind Vergänglichkeit, Tod, Vanitas und Carpe diem.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 2</h4>
+        <p>
+          Ein Text fordert, dass Menschen selbstständig denken und sich nicht blind Autoritäten unterwerfen.
+          Welche Epoche passt?
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('epochen-l2')">Lösung anzeigen</button>
+        <div id="epochen-l2" class="sf-de-hidden-box">
+          <p>
+            <strong>Aufklärung.</strong> Typisch sind Vernunft, Mündigkeit, Bildung und Kritik an Vorurteilen.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 3</h4>
+        <p>
+          Ein Gedicht enthält Nacht, Traum, Ferne, Sehnsucht und eine geheimnisvolle Natur.
+          Welche Epoche passt?
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('epochen-l3')">Lösung anzeigen</button>
+        <div id="epochen-l3" class="sf-de-hidden-box">
+          <p>
+            <strong>Romantik.</strong> Typisch sind Sehnsucht, Nacht, Traum, Natur, Ferne und das Geheimnisvolle.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 4</h4>
+        <p>
+          Ein Gedicht beschreibt eine laute Grossstadt mit Bildern von Angst, Enge, Dunkelheit und Zerfall.
+          Welche Epoche passt?
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('epochen-l4')">Lösung anzeigen</button>
+        <div id="epochen-l4" class="sf-de-hidden-box">
+          <p>
+            <strong>Expressionismus.</strong> Typisch sind Grossstadt, Krise, Ich-Zerfall, Angst und starke Bilder.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 5</h4>
+        <p>
+          Ein Text beschreibt Armut und soziale Not sehr ungeschönt. Auch Dialekt und genaue Alltagssprache kommen vor.
+          Welche Epoche passt?
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('epochen-l5')">Lösung anzeigen</button>
+        <div id="epochen-l5" class="sf-de-hidden-box">
+          <p>
+            <strong>Naturalismus.</strong> Typisch sind soziale Not, Milieu, ungeschönte Darstellung und genaue Alltagssprache.
+          </p>
+        </div>
+      </div>
+    </section>
+  `
 }
+   
+   
 ];
 
 
