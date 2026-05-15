@@ -2182,21 +2182,881 @@ const DEUTSCH_BEREICHE = [
 },
 
   {
-    id: "gym4",
-    titel: "GYM4",
-    untertitel: "Erörterung, Textanalyse und Gedichtanalyse",
-    beschreibung:
-      "Hier wird ausführlich erklärt, wie man Erörterung, Textanalyse und Gedichtanalyse schreibt.",
-    html: `
-      <section class="sf-de-section">
-        <h2>GYM4 – Analyse und Aufsatzformen</h2>
-        <p class="sf-de-lead">
-          Dieser Bereich wird danach sehr ausführlich ausgearbeitet:
-          Erörterung, Textanalyse, Gedichtanalyse, Aufbau, Zitieren, Satzanfänge und Formulierungen.
+  id: "gym4",
+  titel: "GYM4",
+  untertitel: "Erörterung, Textanalyse und Gedichtanalyse",
+  beschreibung:
+    "Sehr konkrete Anleitung, wie man Erörterungen, Textanalysen und Gedichtanalysen schreibt: Aufbau, Satzanfänge, Zitieren, Absätze und Formulierungen.",
+  html: `
+    <section class="sf-de-section">
+      <h2>GYM4 – Erörterung, Textanalyse und Gedichtanalyse</h2>
+      <p class="sf-de-lead">
+        In GYM4 geht es nicht mehr darum, einzelne Begriffe zu kennen. Du musst ganze Texte schreiben können.
+        Entscheidend ist: Du brauchst einen klaren Aufbau, gute Übergänge, genaue Formulierungen und Belege.
+        Diese Seite zeigt dir deshalb ganz praktisch, wie du eine Erörterung, eine Textanalyse und eine Gedichtanalyse aufbaust.
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Grundregel für gute Deutschaufsätze</h4>
+        <p>
+          Ein guter Aufsatz besteht nicht aus schönen Sätzen, sondern aus klaren Gedanken.
+          Jeder Absatz muss eine Aufgabe erfüllen: erklären, belegen, analysieren, abwägen oder zusammenfassen.
         </p>
-      </section>
-    `
-  }
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>1. Erörterung – Was ist das?</h3>
+      <p>
+        Eine Erörterung ist ein argumentativer Text. Du bekommst eine Streitfrage und musst dazu eine begründete Position entwickeln.
+        Es geht nicht darum, einfach deine Meinung aufzuschreiben. Du musst zeigen, warum deine Meinung überzeugend ist.
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Typische Streitfragen</h4>
+        <p>
+          Sollte die Schule später beginnen?<br>
+          Sollten Hausaufgaben abgeschafft werden?<br>
+          Sollte die Handynutzung an Schulen stärker eingeschränkt werden?<br>
+          Ist Lesen in Zeiten von Social Media noch wichtig?<br>
+          Sollte man Prüfungen durch Projekte ersetzen?
+        </p>
+      </div>
+
+      <div class="sf-de-compare">
+        <div>
+          <h4>Schwach</h4>
+          <p>
+            Ich finde, Handys sollten erlaubt sein, weil alle eins haben und es praktisch ist.
+          </p>
+        </div>
+        <div>
+          <h4>Besser</h4>
+          <p>
+            Smartphones können im Unterricht sinnvoll sein, wenn sie gezielt als Lernwerkzeug eingesetzt werden.
+            Sie ermöglichen schnelle Recherche, digitale Zusammenarbeit und den Zugriff auf Lernplattformen.
+            Gleichzeitig braucht es klare Regeln, damit sie nicht zur Ablenkung werden.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>2. Lineare und dialektische Erörterung</h3>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Form</th>
+              <th>Was bedeutet das?</th>
+              <th>Wann benutzt man sie?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lineare Erörterung</td>
+              <td>Du argumentierst hauptsächlich in eine Richtung.</td>
+              <td>Wenn die Frage nicht ausdrücklich Pro und Contra verlangt.</td>
+            </tr>
+            <tr>
+              <td>Dialektische Erörterung</td>
+              <td>Du stellst Pro- und Contra-Argumente gegenüber.</td>
+              <td>Wenn eine Streitfrage zwei Seiten hat und du abwägen sollst.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Merke</h4>
+        <p>
+          In der Schule ist meistens die dialektische Erörterung wichtiger, weil du zeigen musst,
+          dass du beide Seiten verstanden hast und trotzdem zu einem eigenen Urteil kommst.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>3. Aufbau einer dialektischen Erörterung</h3>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Teil</th>
+              <th>Was gehört hinein?</th>
+              <th>Beispielformulierung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Einleitung</td>
+              <td>Thema einführen und Streitfrage nennen.</td>
+              <td>Die Frage, ob ..., wird heute zunehmend diskutiert.</td>
+            </tr>
+            <tr>
+              <td>Hauptteil Contra</td>
+              <td>Argumente gegen deine spätere Position.</td>
+              <td>Gegen diese Forderung spricht zunächst, dass ...</td>
+            </tr>
+            <tr>
+              <td>Überleitung</td>
+              <td>Zur anderen Seite wechseln.</td>
+              <td>Dennoch gibt es gewichtige Gründe, die für ... sprechen.</td>
+            </tr>
+            <tr>
+              <td>Hauptteil Pro</td>
+              <td>Argumente für deine Position, meistens stärker als Contra.</td>
+              <td>Besonders überzeugend ist das Argument, dass ...</td>
+            </tr>
+            <tr>
+              <td>Schluss</td>
+              <td>Abwägen und klare Antwort geben.</td>
+              <td>Insgesamt überwiegen die Argumente für ..., weil ...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Reihenfolge bei der dialektischen Erörterung</h4>
+        <p>
+          Wenn du am Schluss dafür bist, beginnst du meistens mit den Gegenargumenten und endest mit den Pro-Argumenten.
+          So bleibt deine eigene Position stärker im Gedächtnis.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>4. Ein vollständiges Argument schreiben</h3>
+      <p>
+        Viele Schüler schreiben nur Behauptungen. Ein gutes Argument besteht aber aus drei Teilen:
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Teil</th>
+              <th>Funktion</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Behauptung</td>
+              <td>Was ist dein Punkt?</td>
+              <td>Ein späterer Schulbeginn kann die Konzentration verbessern.</td>
+            </tr>
+            <tr>
+              <td>Begründung</td>
+              <td>Warum ist das plausibel?</td>
+              <td>Viele Jugendliche sind früh am Morgen noch wenig leistungsfähig.</td>
+            </tr>
+            <tr>
+              <td>Beispiel</td>
+              <td>Woran sieht man das konkret?</td>
+              <td>Wenn Prüfungen sehr früh stattfinden, fällt es vielen schwerer, konzentriert zu arbeiten.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Guter Argumentationsabsatz</h4>
+        <p>
+          Ein späterer Schulbeginn könnte die Konzentration vieler Schülerinnen und Schüler verbessern.
+          Gerade Jugendliche sind früh am Morgen häufig noch müde und weniger aufnahmefähig.
+          Wenn wichtige Prüfungen bereits in der ersten Lektion stattfinden, kann dies dazu führen,
+          dass nicht nur Wissen, sondern auch der Schlafrhythmus über die Leistung entscheidet.
+          Deshalb wäre ein moderat späterer Beginn aus pädagogischer Sicht sinnvoll.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>5. Gute Satzanfänge für Erörterungen</h3>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Funktion</th>
+              <th>Satzanfänge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ein Argument beginnen</td>
+              <td>Ein wichtiger Grund ist, dass ...<br>Für diese Position spricht zunächst, dass ...<br>Ein weiteres Argument besteht darin, dass ...</td>
+            </tr>
+            <tr>
+              <td>Begründen</td>
+              <td>Dies lässt sich damit erklären, dass ...<br>Der Grund dafür ist ...<br>Dies ist besonders relevant, weil ...</td>
+            </tr>
+            <tr>
+              <td>Beispiel geben</td>
+              <td>Das zeigt sich zum Beispiel daran, dass ...<br>Ein konkretes Beispiel dafür ist ...<br>Im Schulalltag erkennt man dies etwa daran, dass ...</td>
+            </tr>
+            <tr>
+              <td>Gegenargument einführen</td>
+              <td>Gegen diese Sichtweise lässt sich einwenden, dass ...<br>Allerdings muss berücksichtigt werden, dass ...<br>Kritisch ist jedoch, dass ...</td>
+            </tr>
+            <tr>
+              <td>Abwägen</td>
+              <td>Dieses Argument ist zwar nachvollziehbar, dennoch ...<br>Im Vergleich dazu wiegt schwerer, dass ...<br>Trotz dieses Einwands überwiegt ...</td>
+            </tr>
+            <tr>
+              <td>Fazit ziehen</td>
+              <td>Insgesamt zeigt sich, dass ...<br>Zusammenfassend lässt sich sagen, dass ...<br>Aus diesen Gründen erscheint ... überzeugender.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>6. Textanalyse – Was ist das?</h3>
+      <p>
+        Bei einer Textanalyse erklärst du nicht nur, was im Text steht. Du erklärst, wie der Text gemacht ist
+        und welche Wirkung dadurch entsteht. Du untersuchst Inhalt, Aufbau, Sprache, Argumentation und Aussage.
+      </p>
+
+      <div class="sf-de-compare">
+        <div>
+          <h4>Inhaltsangabe</h4>
+          <p>
+            Der Text handelt von Jugendlichen, die unter Leistungsdruck stehen.
+          </p>
+        </div>
+        <div>
+          <h4>Analyse</h4>
+          <p>
+            Der Text stellt schulischen Leistungsdruck kritisch dar. Durch wertende Begriffe wie
+            „ständiger Druck“ und „Angst vor Fehlern“ entsteht ein problematisches Bild des Schulalltags.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Wichtig</h4>
+        <p>
+          Eine Textanalyse steht normalerweise im Präsens:
+          <strong>Der Text zeigt...</strong>, <strong>Der Autor verwendet...</strong>, <strong>Die Wortwahl verdeutlicht...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>7. Aufbau einer Textanalyse</h3>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Teil</th>
+              <th>Inhalt</th>
+              <th>Beispielformulierung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Einleitung</td>
+              <td>Titel, Autor, Textsorte, Thema, Erscheinungsjahr falls bekannt.</td>
+              <td>Der Kommentar „...“ von ... beschäftigt sich mit ...</td>
+            </tr>
+            <tr>
+              <td>Kurze Inhaltsangabe</td>
+              <td>Worum geht es? Nur knapp.</td>
+              <td>Der Text thematisiert ..., indem er ...</td>
+            </tr>
+            <tr>
+              <td>Aufbau</td>
+              <td>Wie ist der Text gegliedert?</td>
+              <td>Zu Beginn wird ..., anschliessend ..., am Ende ...</td>
+            </tr>
+            <tr>
+              <td>Sprache</td>
+              <td>Wortwahl, Satzbau, rhetorische Mittel.</td>
+              <td>Die wiederholte Verwendung von ... verstärkt ...</td>
+            </tr>
+            <tr>
+              <td>Wirkung / Aussage</td>
+              <td>Was erreicht der Text dadurch?</td>
+              <td>Dadurch wirkt der Text ... und legt nahe, dass ...</td>
+            </tr>
+            <tr>
+              <td>Schluss</td>
+              <td>Gesamtaussage zusammenfassen.</td>
+              <td>Insgesamt kritisiert der Text ..., indem ...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>8. Einen Analyseabsatz schreiben</h3>
+      <p>
+        Ein guter Analyseabsatz hat fast immer denselben Aufbau:
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Analyseabsatz-Bauplan</h4>
+        <p>
+          <strong>1. Beobachtung:</strong> Was fällt auf?<br>
+          <strong>2. Beleg:</strong> Welche Stelle zeigt das?<br>
+          <strong>3. Erklärung:</strong> Was bedeutet das?<br>
+          <strong>4. Wirkung:</strong> Wie wirkt es?<br>
+          <strong>5. Verbindung:</strong> Wie passt es zur Gesamtaussage?
+        </p>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Beispiel</h4>
+        <p>
+          Die wiederholte Verwendung des Begriffs <strong>„Druck“</strong> prägt die Darstellung des Schulalltags.
+          Der Ausdruck verweist nicht nur auf eine einzelne Belastung, sondern auf einen dauerhaften Zustand.
+          Dadurch wirkt die Schule im Text nicht als Ort des Lernens, sondern als Raum ständiger Anspannung.
+          Die Wortwahl unterstützt somit die kritische Haltung des Textes gegenüber übermässigem Leistungsdruck.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Schlechte Analyse-Sätze vermeiden</h4>
+        <p>
+          Nicht schreiben: <strong>Das macht den Text interessanter.</strong><br>
+          Besser: <strong>Dadurch wirkt die Aussage eindringlicher und die Kritik am Leistungsdruck wird verstärkt.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>9. Richtig zitieren</h3>
+      <p>
+        Zitate sollen deine Aussage belegen. Sie dürfen aber nicht einfach in den Text geworfen werden.
+        Ein Zitat muss immer eingebettet und erklärt werden.
+      </p>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Art</th>
+              <th>Beispiel</th>
+              <th>Wann sinnvoll?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Direktes Zitat</td>
+              <td>Der Text spricht von „ständigem Druck“.</td>
+              <td>Wenn die genaue Formulierung wichtig ist.</td>
+            </tr>
+            <tr>
+              <td>Kurzes eingebettetes Zitat</td>
+              <td>Die Formulierung „ständiger Druck“ verdeutlicht die dauerhafte Belastung.</td>
+              <td>Meistens die beste Variante.</td>
+            </tr>
+            <tr>
+              <td>Indirekter Verweis</td>
+              <td>Zu Beginn beschreibt der Text den Schulalltag als belastend.</td>
+              <td>Wenn der genaue Wortlaut nicht entscheidend ist.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Zitat-Regeln</h4>
+        <p>
+          Zitiere kurz.<br>
+          Erkläre jedes Zitat.<br>
+          Baue Zitate grammatisch in deinen Satz ein.<br>
+          Verwende keine langen Zitatblöcke, wenn ein kurzer Ausdruck reicht.<br>
+          Ein Zitat ersetzt nie deine Analyse.
+        </p>
+      </div>
+
+      <div class="sf-de-compare">
+        <div>
+          <h4>Schwach</h4>
+          <p>
+            Der Text sagt „ständiger Druck“. Das zeigt Stress.
+          </p>
+        </div>
+        <div>
+          <h4>Besser</h4>
+          <p>
+            Die Formulierung <strong>„ständiger Druck“</strong> verdeutlicht,
+            dass die Belastung nicht als Ausnahme, sondern als dauerhafter Zustand dargestellt wird.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>10. Gute Formulierungen für Textanalysen</h3>
+
+      <div class="sf-de-rule">
+        <h4>Für den Einstieg</h4>
+        <p>
+          Der Text beschäftigt sich mit ...<br>
+          Im Zentrum des Textes steht ...<br>
+          Der Text setzt sich kritisch mit ... auseinander.<br>
+          Die Autorin / der Autor thematisiert ...
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Für den Aufbau</h4>
+        <p>
+          Zu Beginn wird ... dargestellt.<br>
+          Im weiteren Verlauf verschiebt sich der Fokus auf ...<br>
+          Anschliessend wird ... genauer ausgeführt.<br>
+          Am Ende mündet der Text in ...
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Für Sprache und Wirkung</h4>
+        <p>
+          Die Wortwahl wirkt ...<br>
+          Die Formulierung verdeutlicht ...<br>
+          Die Wiederholung verstärkt ...<br>
+          Der Satzbau erzeugt ...<br>
+          Die rhetorische Frage spricht die Lesenden direkt an.<br>
+          Dadurch entsteht der Eindruck, dass ...
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Für Deutung und Schluss</h4>
+        <p>
+          Insgesamt legt der Text nahe, dass ...<br>
+          Die sprachliche Gestaltung unterstützt die Aussage, dass ...<br>
+          Der Text kritisiert somit ...<br>
+          Zusammenfassend zeigt sich, dass ...
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>11. Gedichtanalyse – Was ist das?</h3>
+      <p>
+        Bei einer Gedichtanalyse untersuchst du Inhalt, Form, Sprache und Wirkung eines Gedichts.
+        Ziel ist eine Gesamtdeutung: Was zeigt das Gedicht eigentlich?
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Wichtig</h4>
+        <p>
+          Schreibe nicht einfach: <strong>Das Gedicht hat drei Strophen und einen Kreuzreim.</strong><br>
+          Das ist nur Beschreibung. Du musst erklären, was diese Form bewirkt.
+        </p>
+      </div>
+
+      <div class="sf-de-compare">
+        <div>
+          <h4>Schwach</h4>
+          <p>
+            Das Gedicht hat vier Strophen und einen Kreuzreim.
+          </p>
+        </div>
+        <div>
+          <h4>Besser</h4>
+          <p>
+            Die regelmässige Strophenform erzeugt zunächst einen geordneten Eindruck.
+            Dieser steht jedoch im Kontrast zur inneren Unruhe des lyrischen Ichs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>12. Aufbau einer Gedichtanalyse</h3>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Teil</th>
+              <th>Was gehört hinein?</th>
+              <th>Beispielformulierung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Einleitung</td>
+              <td>Titel, Autor, Gedichtart falls bekannt, Thema.</td>
+              <td>Das Gedicht „...“ von ... thematisiert ...</td>
+            </tr>
+            <tr>
+              <td>Inhalt</td>
+              <td>Kurze Zusammenfassung, am besten strophenweise.</td>
+              <td>In der ersten Strophe beschreibt das lyrische Ich ...</td>
+            </tr>
+            <tr>
+              <td>Sprechsituation</td>
+              <td>Wer spricht? Zu wem? In welcher Lage?</td>
+              <td>Das lyrische Ich wirkt ...</td>
+            </tr>
+            <tr>
+              <td>Form</td>
+              <td>Strophen, Verse, Reim, Metrum, Rhythmus.</td>
+              <td>Die regelmässige Form steht im Gegensatz zu ...</td>
+            </tr>
+            <tr>
+              <td>Sprache</td>
+              <td>Metaphern, Symbole, Wortfelder, Klang.</td>
+              <td>Die dunkle Bildsprache erzeugt ...</td>
+            </tr>
+            <tr>
+              <td>Deutung</td>
+              <td>Was bedeutet das Gedicht insgesamt?</td>
+              <td>Insgesamt kann das Gedicht als Darstellung von ... verstanden werden.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>13. Inhalt eines Gedichts richtig zusammenfassen</h3>
+      <p>
+        Du musst den Inhalt knapp zusammenfassen, aber nicht jede Zeile nacherzählen.
+        Am besten erklärst du, was in den einzelnen Strophen passiert oder dargestellt wird.
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Gute Strophen-Formulierungen</h4>
+        <p>
+          In der ersten Strophe wird ... beschrieben.<br>
+          Die zweite Strophe erweitert dieses Bild, indem ...<br>
+          In der dritten Strophe verändert sich die Stimmung, weil ...<br>
+          Die letzte Strophe führt zu einer Art Erkenntnis / Zuspitzung / Resignation.
+        </p>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Beispiel</h4>
+        <p>
+          In der ersten Strophe beschreibt das lyrische Ich eine dunkle und stille Landschaft.
+          In der zweiten Strophe verschiebt sich der Fokus stärker auf die innere Wahrnehmung des Sprechers.
+          Dadurch wird deutlich, dass die Natur nicht nur äusserlich beschrieben wird, sondern den seelischen Zustand spiegelt.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>14. Form eines Gedichts deuten</h3>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Formmerkmal</th>
+              <th>Was du nicht tun solltest</th>
+              <th>Was du stattdessen schreiben kannst</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Strophen</td>
+              <td>Das Gedicht hat vier Strophen.</td>
+              <td>Die vier regelmässigen Strophen geben dem Gedicht eine äussere Ordnung.</td>
+            </tr>
+            <tr>
+              <td>Reim</td>
+              <td>Es hat einen Kreuzreim.</td>
+              <td>Der Kreuzreim erzeugt eine regelmässige Struktur und verbindet die Verse klanglich.</td>
+            </tr>
+            <tr>
+              <td>Kein Reim</td>
+              <td>Es reimt sich nicht.</td>
+              <td>Der fehlende Reim lässt das Gedicht freier und unruhiger wirken.</td>
+            </tr>
+            <tr>
+              <td>Kurze Verse</td>
+              <td>Die Verse sind kurz.</td>
+              <td>Die kurzen Verse verlangsamen den Lesefluss und lassen die Aussagen isoliert wirken.</td>
+            </tr>
+            <tr>
+              <td>Enjambement</td>
+              <td>Der Satz geht in der nächsten Zeile weiter.</td>
+              <td>Das Enjambement beschleunigt den Lesefluss und verbindet die beiden Verse eng miteinander.</td>
+            </tr>
+            <tr>
+              <td>Zäsur</td>
+              <td>Da ist ein Strich.</td>
+              <td>Die Zäsur unterbricht den Lesefluss und betont den folgenden Gedanken.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>15. Sprache eines Gedichts deuten</h3>
+      <p>
+        In Gedichten ist fast jedes auffällige Wort wichtig. Achte besonders auf Wortfelder, Bilder, Gegensätze und Wiederholungen.
+      </p>
+
+      <div class="sf-de-rule">
+        <h4>Wortfelder</h4>
+        <p>
+          Wenn mehrere Wörter zu demselben Bereich gehören, spricht man von einem Wortfeld.
+          Wörter wie <strong>Nacht, Schatten, dunkel, kalt, still</strong> können zum Beispiel ein Wortfeld der Dunkelheit oder Einsamkeit bilden.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Bildsprache</h4>
+        <p>
+          Metaphern, Symbole und Personifikationen sind in Gedichten besonders wichtig,
+          weil sie innere Zustände sichtbar machen können.
+        </p>
+      </div>
+
+      <div class="sf-de-example">
+        <h4>Analysebeispiel</h4>
+        <p>
+          Das Wortfeld der Dunkelheit mit Begriffen wie <strong>„Nacht“</strong>, <strong>„Schatten“</strong> und <strong>„kalt“</strong>
+          erzeugt eine bedrückende Atmosphäre. Die Natur wirkt dadurch nicht nur äusserlich dunkel,
+          sondern spiegelt die innere Einsamkeit des lyrischen Ichs.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>16. Gute Formulierungen für Gedichtanalysen</h3>
+
+      <div class="sf-de-rule">
+        <h4>Für die Einleitung</h4>
+        <p>
+          Das Gedicht „...“ von ... thematisiert ...<br>
+          Im Zentrum des Gedichts steht ...<br>
+          Das Gedicht gestaltet die Erfahrung von ...<br>
+          Das Gedicht kann als Auseinandersetzung mit ... verstanden werden.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Für das lyrische Ich</h4>
+        <p>
+          Das lyrische Ich wirkt ...<br>
+          Die Sprechsituation ist geprägt von ...<br>
+          Die Aussagen des lyrischen Ichs lassen auf ... schliessen.<br>
+          Das lyrische Ich befindet sich offenbar in einer Situation von ...
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Für Form und Wirkung</h4>
+        <p>
+          Die regelmässige Form erzeugt ...<br>
+          Der fehlende Reim verstärkt ...<br>
+          Die kurzen Verse lassen ...<br>
+          Das Enjambement beschleunigt ...<br>
+          Die Zäsur hebt ... besonders hervor.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Für Bildsprache</h4>
+        <p>
+          Die Metapher verdeutlicht ...<br>
+          Das Symbol kann als Hinweis auf ... verstanden werden.<br>
+          Die Personifikation lässt ... lebendig erscheinen.<br>
+          Das Wortfeld der ... erzeugt eine ... Stimmung.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Für die Gesamtdeutung</h4>
+        <p>
+          Insgesamt zeigt das Gedicht ...<br>
+          Das Gedicht kann als Darstellung von ... verstanden werden.<br>
+          Die Verbindung von Form und Sprache verdeutlicht ...<br>
+          Am Ende entsteht der Eindruck, dass ...
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>17. Mini-Muster: Gedichtanalyse-Absatz</h3>
+
+      <div class="sf-de-example">
+        <h4>Beispielabsatz</h4>
+        <p>
+          Die Naturbeschreibung ist stark von dunklen Bildern geprägt. Begriffe wie <strong>„Nacht“</strong>,
+          <strong>„Schatten“</strong> und <strong>„kalt“</strong> erzeugen eine bedrückende Atmosphäre.
+          Diese Wortwahl lässt die Landschaft nicht nur als äusseren Ort erscheinen, sondern als Spiegel des inneren Zustands
+          des lyrischen Ichs. Die Dunkelheit kann daher als Ausdruck von Einsamkeit und Orientierungslosigkeit verstanden werden.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Warum ist dieser Absatz gut?</h4>
+        <p>
+          Er nennt eine Beobachtung, gibt kurze Belege, erklärt die Wirkung und verbindet alles mit einer Deutung.
+          Genau das braucht eine gute Gedichtanalyse.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>18. Was du in Prüfungen vermeiden solltest</h3>
+
+      <div class="sf-de-table-wrap">
+        <table class="sf-de-table">
+          <thead>
+            <tr>
+              <th>Schwach</th>
+              <th>Besser</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ich finde den Text gut.</td>
+              <td>Der Text wirkt überzeugend, weil die Argumentation klar aufgebaut ist.</td>
+            </tr>
+            <tr>
+              <td>Der Autor will sagen...</td>
+              <td>Der Text legt nahe, dass...</td>
+            </tr>
+            <tr>
+              <td>Das Zitat zeigt das.</td>
+              <td>Die Formulierung verdeutlicht...</td>
+            </tr>
+            <tr>
+              <td>Das Gedicht hat einen Kreuzreim.</td>
+              <td>Der Kreuzreim erzeugt eine regelmässige, geordnete Wirkung.</td>
+            </tr>
+            <tr>
+              <td>Die Metapher macht es schöner.</td>
+              <td>Die Metapher macht die Unsicherheit der Figur anschaulich.</td>
+            </tr>
+            <tr>
+              <td>Man merkt, dass es traurig ist.</td>
+              <td>Die melancholische Stimmung entsteht durch dunkle Bildsprache und langsamen Rhythmus.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>19. Mini-Training GYM4</h3>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 1 – Erörterung</h4>
+        <p>
+          Baue dieses Argument vollständig aus:
+        </p>
+        <p>
+          <strong>Hausaufgaben können sinnvoll sein.</strong>
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym4-l1')">Lösung anzeigen</button>
+        <div id="gym4-l1" class="sf-de-hidden-box">
+          <p>
+            Hausaufgaben können sinnvoll sein, weil sie Schülerinnen und Schülern ermöglichen,
+            den Unterrichtsstoff selbstständig zu wiederholen. Gerade in Fächern wie Mathematik oder Sprachen
+            reicht das reine Verstehen im Unterricht oft nicht aus; man muss Inhalte anwenden und festigen.
+            Wenn Hausaufgaben gezielt gestellt werden und nicht zu umfangreich sind, können sie den Lernprozess unterstützen.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 2 – Textanalyse</h4>
+        <p>
+          Verbessere den Satz:
+        </p>
+        <p>
+          <strong>Der Text ist spannend, weil der Autor gute Wörter benutzt.</strong>
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym4-l2')">Lösung anzeigen</button>
+        <div id="gym4-l2" class="sf-de-hidden-box">
+          <p>
+            Der Text erzeugt Spannung durch kurze Hauptsätze und bedrohliche Verben wie <strong>„zittern“</strong>,
+            <strong>„fliehen“</strong> und <strong>„verstummen“</strong>. Dadurch entsteht eine angespannte Atmosphäre,
+            in der die Unsicherheit der Figur deutlich wird.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 3 – Gedichtanalyse</h4>
+        <p>
+          Deute diese Formulierung:
+        </p>
+        <p>
+          <strong>Der Abend legt ein graues Tuch über die Stadt.</strong>
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym4-l3')">Lösung anzeigen</button>
+        <div id="gym4-l3" class="sf-de-hidden-box">
+          <p>
+            Die Formulierung ist eine Personifikation, weil der Abend wie ein handelndes Wesen dargestellt wird.
+            Das <strong>„graue Tuch“</strong> kann als Metapher für Dunkelheit, Schwere oder Melancholie verstanden werden.
+            Dadurch wirkt die Stadt gedämpft und traurig. Die Bildsprache erzeugt also eine ruhige, aber bedrückende Stimmung.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-de-task">
+        <h4>Aufgabe 4 – Zitieren</h4>
+        <p>
+          Verbessere:
+        </p>
+        <p>
+          <strong>Da steht „ständig müde“ und das zeigt, dass es schlecht ist.</strong>
+        </p>
+        <button class="sf-de-toggle" onclick="toggleDeutschBox('gym4-l4')">Lösung anzeigen</button>
+        <div id="gym4-l4" class="sf-de-hidden-box">
+          <p>
+            Die Formulierung <strong>„ständig müde“</strong> verdeutlicht,
+            dass die Erschöpfung der Figur nicht nur vorübergehend ist, sondern ihren Alltag dauerhaft prägt.
+            Dadurch entsteht der Eindruck einer anhaltenden Überforderung.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-de-section">
+      <h3>20. Das Wichtigste für GYM4</h3>
+
+      <div class="sf-de-rule">
+        <h4>Erörterung</h4>
+        <p>
+          Behauptung, Begründung, Beispiel. Ohne Begründung ist es nur Meinung.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Textanalyse</h4>
+        <p>
+          Inhalt, Sprache und Wirkung verbinden. Nicht nur sagen, was passiert.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Gedichtanalyse</h4>
+        <p>
+          Form, Sprache und Deutung verbinden. Nicht nur Reim und Strophen aufzählen.
+        </p>
+      </div>
+
+      <div class="sf-de-rule">
+        <h4>Zitieren</h4>
+        <p>
+          Kurz zitieren, sauber einbauen, danach erklären. Ein Zitat ist kein Ersatz für Analyse.
+        </p>
+      </div>
+    </section>
+  `
+}
 ];
 
 
