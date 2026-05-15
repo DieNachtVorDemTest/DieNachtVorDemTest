@@ -2981,7 +2981,1551 @@ nachtVorTest: [
       "Prüfst du vor dem Integrieren, ob man vereinfachen kann?",
       "Kontrollierst du Stammfunktionen durch Ableiten?"
     ]
-  }
+  },
+     ,
+{
+  id: "rotationskoerper-volumen",
+  nummer: "9",
+  titel: "Volumen von Rotationskörpern",
+  kurzbeschreibung:
+    "Berechnung von Volumen, die entstehen, wenn ein Funktionsgraph um die x-Achse oder y-Achse rotiert. Schwerpunkt: Scheibenmethode, Ringmethode und korrekter Umgang mit Grenzen.",
+  lernziele: [
+    "Du kannst erklären, was ein Rotationskörper ist.",
+    "Du verstehst, warum beim Rotationsvolumen der Faktor \\(\\pi\\) vorkommt.",
+    "Du kannst das Volumen bei Rotation um die \\(x\\)-Achse berechnen.",
+    "Du kannst die Formel \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\) anwenden.",
+    "Du kannst Rotationsvolumen mit äusserem und innerem Radius berechnen.",
+    "Du erkennst den Unterschied zwischen Scheibenmethode und Ringmethode.",
+    "Du kannst die Integrationsgrenzen aus einer Aufgabe bestimmen.",
+    "Du kannst Einheiten bei Volumen korrekt interpretieren.",
+    "Du erkennst typische Fehler beim Quadrieren der Funktion.",
+    "Du kannst Rotationskörper in Prüfungsaufgaben geometrisch deuten."
+  ],
+  theorie: [
+    {
+      titel: "Was ist ein Rotationskörper?",
+      text:
+        "Ein Rotationskörper entsteht, wenn eine Fläche um eine Achse gedreht wird. Dreht man zum Beispiel die Fläche zwischen einem Funktionsgraphen und der \\(x\\)-Achse um die \\(x\\)-Achse, entsteht ein dreidimensionaler Körper."
+    },
+    {
+      titel: "Grundidee der Volumenberechnung",
+      text:
+        "Man stellt sich den Rotationskörper aus sehr dünnen Kreisscheiben zusammengesetzt vor. Jede Scheibe hat ungefähr das Volumen Grundfläche mal Dicke."
+    },
+    {
+      titel: "Warum kommt \\(\\pi\\) vor?",
+      text:
+        "Die Querschnitte des Rotationskörpers sind Kreise. Die Fläche eines Kreises ist \\(A=\\pi r^2\\). Deshalb erscheint beim Rotationsvolumen der Faktor \\(\\pi\\)."
+    },
+    {
+      titel: "Rotation um die x-Achse",
+      text:
+        "Wenn der Graph von \\(f(x)\\) im Intervall \\([a,b]\\) um die \\(x\\)-Achse rotiert, ist der Radius einer Scheibe gleich \\(f(x)\\). Deshalb gilt \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\)."
+    },
+    {
+      titel: "Bedeutung des Radius",
+      text:
+        "Der Radius ist der Abstand des Graphen von der Rotationsachse. Bei Rotation um die \\(x\\)-Achse ist dieser Abstand meist der Funktionswert \\(f(x)\\)."
+    },
+    {
+      titel: "Scheibenmethode",
+      text:
+        "Die Scheibenmethode verwendet man, wenn die rotierende Fläche direkt an der Rotationsachse liegt. Dann bestehen die Querschnitte aus vollen Kreisscheiben."
+    },
+    {
+      titel: "Ringmethode",
+      text:
+        "Die Ringmethode verwendet man, wenn beim Rotieren ein Loch entsteht. Dann ist der Querschnitt kein voller Kreis, sondern ein Kreisring."
+    },
+    {
+      titel: "Formel der Ringmethode",
+      text:
+        "Bei einem äusseren Radius \\(R(x)\\) und einem inneren Radius \\(r(x)\\) gilt \\(V=\\pi\\int_a^b\\left(R(x)^2-r(x)^2\\right)\\,dx\\)."
+    },
+    {
+      titel: "Grenzen",
+      text:
+        "Die Integrationsgrenzen geben an, von wo bis wo die Fläche rotiert. Sie können direkt gegeben sein oder müssen aus Schnittpunkten berechnet werden."
+    },
+    {
+      titel: "Volumeneinheiten",
+      text:
+        "Wenn die Längeneinheit zum Beispiel Zentimeter ist, dann ist die Volumeneinheit Kubikzentimeter. Allgemein gilt: Aus Längeneinheiten werden beim Volumen dritte Potenzen."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Rotationsvolumen um die \\(x\\)-Achse berechnen",
+      schritte: [
+        "Prüfe zuerst, um welche Achse rotiert wird.",
+        "Bestimme die Funktion \\(f(x)\\), die den Radius beschreibt.",
+        "Bestimme die Grenzen \\(a\\) und \\(b\\).",
+        "Setze in die Formel \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\) ein.",
+        "Quadriere die ganze Funktion sorgfältig.",
+        "Bestimme eine Stammfunktion.",
+        "Setze obere und untere Grenze ein.",
+        "Multipliziere das Ergebnis mit \\(\\pi\\)."
+      ]
+    },
+    {
+      titel: "Methode: Ringmethode anwenden",
+      schritte: [
+        "Prüfe, ob beim Rotieren ein Loch entsteht.",
+        "Bestimme den äusseren Radius \\(R(x)\\).",
+        "Bestimme den inneren Radius \\(r(x)\\).",
+        "Setze in \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\) ein.",
+        "Quadriere beide Radien getrennt.",
+        "Subtrahiere den inneren Kreis vom äusseren Kreis.",
+        "Integriere den entstandenen Ausdruck.",
+        "Setze die Grenzen ein und multipliziere mit \\(\\pi\\)."
+      ]
+    },
+    {
+      titel: "Methode: Grenzen aus Schnittpunkten bestimmen",
+      schritte: [
+        "Setze die beteiligten Funktionen gleich.",
+        "Löse die Gleichung nach \\(x\\).",
+        "Die erhaltenen \\(x\\)-Werte sind mögliche Integrationsgrenzen.",
+        "Ordne die Grenzen von links nach rechts.",
+        "Prüfe, ob genau das gesuchte Intervall beschrieben wird."
+      ]
+    },
+    {
+      titel: "Methode: Entscheiden zwischen Fläche und Volumen",
+      schritte: [
+        "Frage dich, ob nur eine zweidimensionale Fläche gesucht ist.",
+        "Falls ja, brauchst du ein normales Integral ohne Quadrieren mit \\(\\pi\\).",
+        "Frage dich, ob eine Fläche um eine Achse rotiert.",
+        "Falls ja, entsteht ein Volumen.",
+        "Dann brauchst du die Rotationsformel mit \\(\\pi\\) und einem quadrierten Radius."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Ein Rotationskörper entsteht durch Drehen einer Fläche um eine Achse.",
+    "Bei Rotation um die \\(x\\)-Achse ist der Radius meistens \\(f(x)\\).",
+    "Die Grundformel lautet \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\).",
+    "Der Funktionswert wird quadriert, weil die Kreisfläche \\(\\pi r^2\\) ist.",
+    "Bei einem Loch verwendet man die Ringmethode.",
+    "Bei der Ringmethode gilt: äusserer Kreis minus innerer Kreis.",
+    "\\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\).",
+    "Grenzen können direkt gegeben sein oder aus Schnittpunkten entstehen.",
+    "Ein Rotationsvolumen ist keine normale Fläche.",
+    "Volumen haben kubische Einheiten."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man vergisst den Faktor \\(\\pi\\).",
+      korrektur:
+        "Der Faktor \\(\\pi\\) gehört zur Kreisfläche \\(A=\\pi r^2\\). Deshalb muss er beim Rotationsvolumen vorkommen."
+    },
+    {
+      fehler: "Man integriert \\(f(x)\\) statt \\((f(x))^2\\).",
+      korrektur:
+        "Beim Rotationsvolumen muss der Radius quadriert werden. Die richtige Formel enthält \\((f(x))^2\\)."
+    },
+    {
+      fehler: "Man quadriert nur einzelne Teile der Funktion.",
+      korrektur:
+        "Wenn \\(f(x)=x+1\\), dann ist \\((f(x))^2=(x+1)^2\\), nicht \\(x^2+1\\)."
+    },
+    {
+      fehler: "Man verwechselt Flächeninhalt und Rotationsvolumen.",
+      korrektur:
+        "Ein normales Integral berechnet eine Fläche. Ein Rotationsvolumen braucht zusätzlich \\(\\pi\\) und den quadrierten Radius."
+    },
+    {
+      fehler: "Man zieht bei der Ringmethode die Radien ab, bevor man quadriert.",
+      korrektur:
+        "Richtig ist \\(R(x)^2-r(x)^2\\), nicht \\((R(x)-r(x))^2\\)."
+    },
+    {
+      fehler: "Man verwendet falsche Grenzen.",
+      korrektur:
+        "Die Grenzen müssen genau das Intervall beschreiben, dessen Fläche rotiert. Falls sie nicht gegeben sind, müssen sie aus Schnittpunkten bestimmt werden."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Einfaches Rotationsvolumen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Die Fläche unter \\(f(x)=x\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Bei Rotation um die \\(x\\)-Achse gilt \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\).",
+        "Hier ist \\(f(x)=x\\), \\(a=0\\) und \\(b=2\\).",
+        "Also ist \\(V=\\pi\\int_0^2 x^2\\,dx\\).",
+        "Eine Stammfunktion von \\(x^2\\) ist \\(\\frac{x^3}{3}\\).",
+        "Setze die Grenzen ein: \\(\\frac{2^3}{3}-\\frac{0^3}{3}=\\frac{8}{3}\\).",
+        "Also ist \\(V=\\frac{8\\pi}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Parabel rotiert um die x-Achse",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Die Fläche unter \\(f(x)=x^2\\) im Intervall \\([0,1]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Die Rotationsformel lautet \\(V=\\pi\\int_0^1(f(x))^2\\,dx\\).",
+        "Setze \\(f(x)=x^2\\) ein.",
+        "Dann gilt \\(V=\\pi\\int_0^1(x^2)^2\\,dx\\).",
+        "Das ist \\(V=\\pi\\int_0^1x^4\\,dx\\).",
+        "Eine Stammfunktion ist \\(\\frac{x^5}{5}\\).",
+        "Einsetzen ergibt \\(\\frac{1^5}{5}-0=\\frac{1}{5}\\).",
+        "Also ist \\(V=\\frac{\\pi}{5}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Funktion mit Klammer quadrieren",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Die Fläche unter \\(f(x)=x+1\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Die Formel lautet \\(V=\\pi\\int_0^2(x+1)^2\\,dx\\).",
+        "Quadriere zuerst die Klammer.",
+        "\\((x+1)^2=x^2+2x+1\\).",
+        "Also ist \\(V=\\pi\\int_0^2(x^2+2x+1)\\,dx\\).",
+        "Eine Stammfunktion ist \\(\\frac{x^3}{3}+x^2+x\\).",
+        "Setze \\(2\\) ein: \\(\\frac{8}{3}+4+2=\\frac{26}{3}\\).",
+        "Setze \\(0\\) ein: \\(0\\).",
+        "Also ist \\(V=\\frac{26\\pi}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Ringmethode",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Die Fläche zwischen \\(f(x)=3\\) und \\(g(x)=1\\) im Intervall \\([0,4]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Hier entsteht ein Körper mit Loch, also verwendet man die Ringmethode.",
+        "Der äussere Radius ist \\(R(x)=3\\).",
+        "Der innere Radius ist \\(r(x)=1\\).",
+        "Die Formel lautet \\(V=\\pi\\int_0^4(R(x)^2-r(x)^2)\\,dx\\).",
+        "Also \\(V=\\pi\\int_0^4(3^2-1^2)\\,dx\\).",
+        "Das ergibt \\(V=\\pi\\int_0^4 8\\,dx\\).",
+        "Eine Stammfunktion ist \\(8x\\).",
+        "Einsetzen ergibt \\(8\\cdot4-8\\cdot0=32\\).",
+        "Also ist \\(V=32\\pi\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Grenzen aus Nullstellen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Die Fläche zwischen \\(f(x)=4-x^2\\) und der \\(x\\)-Achse rotiert um die \\(x\\)-Achse. Berechne zuerst die Grenzen.",
+      loesung: [
+        "Die Grenzen entstehen aus den Nullstellen.",
+        "Setze \\(4-x^2=0\\).",
+        "Dann gilt \\(x^2=4\\).",
+        "Also ist \\(x=-2\\) oder \\(x=2\\).",
+        "Die Fläche liegt zwischen \\(-2\\) und \\(2\\).",
+        "Für das Volumen würde man also \\(V=\\pi\\int_{-2}^{2}(4-x^2)^2\\,dx\\) verwenden."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Vollständige Volumenberechnung",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Berechne das Volumen des Körpers, der entsteht, wenn die Fläche unter \\(f(x)=\\sqrt{x}\\) im Intervall \\([0,4]\\) um die \\(x\\)-Achse rotiert.",
+      loesung: [
+        "Die Formel lautet \\(V=\\pi\\int_0^4(f(x))^2\\,dx\\).",
+        "Hier ist \\(f(x)=\\sqrt{x}\\).",
+        "Dann ist \\((f(x))^2=(\\sqrt{x})^2=x\\).",
+        "Also gilt \\(V=\\pi\\int_0^4x\\,dx\\).",
+        "Eine Stammfunktion von \\(x\\) ist \\(\\frac{x^2}{2}\\).",
+        "Setze die Grenzen ein.",
+        "\\(\\frac{4^2}{2}-\\frac{0^2}{2}=8\\).",
+        "Also ist \\(V=8\\pi\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Ringmethode mit Funktionen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Die Fläche zwischen \\(f(x)=x+2\\) und \\(g(x)=1\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Da die Fläche nicht direkt an der \\(x\\)-Achse liegt, entsteht ein Loch.",
+        "Man verwendet die Ringmethode.",
+        "Der äussere Radius ist \\(R(x)=x+2\\).",
+        "Der innere Radius ist \\(r(x)=1\\).",
+        "Also ist \\(V=\\pi\\int_0^2((x+2)^2-1^2)\\,dx\\).",
+        "Quadriere: \\((x+2)^2=x^2+4x+4\\).",
+        "Dann ist der Integrand \\(x^2+4x+4-1=x^2+4x+3\\).",
+        "Eine Stammfunktion ist \\(\\frac{x^3}{3}+2x^2+3x\\).",
+        "Setze \\(2\\) ein: \\(\\frac{8}{3}+8+6=\\frac{50}{3}\\).",
+        "Setze \\(0\\) ein: \\(0\\).",
+        "Also ist \\(V=\\frac{50\\pi}{3}\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist ein Rotationskörper?",
+      antwort:
+        "Ein Rotationskörper entsteht, wenn eine Fläche um eine Achse gedreht wird. Dadurch entsteht ein dreidimensionaler Körper."
+    },
+    {
+      frage: "Warum steht in der Formel für Rotationsvolumen ein \\(\\pi\\)?",
+      antwort:
+        "Weil die Querschnitte Kreise sind. Die Kreisfläche lautet \\(A=\\pi r^2\\)."
+    },
+    {
+      frage: "Wie lautet die Formel bei Rotation um die \\(x\\)-Achse?",
+      antwort:
+        "Die Formel lautet \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\), wenn \\(f(x)\\) den Radius beschreibt."
+    },
+    {
+      frage: "Warum wird \\(f(x)\\) quadriert?",
+      antwort:
+        "Weil \\(f(x)\\) der Radius ist und die Kreisfläche vom Quadrat des Radius abhängt."
+    },
+    {
+      frage: "Wann braucht man die Ringmethode?",
+      antwort:
+        "Man braucht die Ringmethode, wenn beim Rotieren ein Loch entsteht. Dann rechnet man äusserer Kreis minus innerer Kreis."
+    },
+    {
+      frage: "Wie lautet die Formel der Ringmethode?",
+      antwort:
+        "Sie lautet \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\), wobei \\(R(x)\\) der äussere und \\(r(x)\\) der innere Radius ist."
+    },
+    {
+      frage: "Wie findet man die Grenzen?",
+      antwort:
+        "Die Grenzen sind entweder gegeben oder entstehen aus Schnittpunkten, zum Beispiel mit der \\(x\\)-Achse oder zwischen zwei Funktionen."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was ein Rotationskörper ist?",
+    "Kennst du die Formel \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\)?",
+    "Weisst du, warum \\(f(x)\\) quadriert wird?",
+    "Vergisst du den Faktor \\(\\pi\\) nicht?",
+    "Kannst du die Grenzen aus der Aufgabe erkennen?",
+    "Kannst du Schnittpunkte als Grenzen berechnen?",
+    "Erkennst du, wann die Ringmethode nötig ist?",
+    "Kennst du die Formel \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\)?",
+    "Quadrierst du bei Klammern die ganze Funktion?",
+    "Kannst du zwischen Flächeninhalt und Rotationsvolumen unterscheiden?"
+  ]
+},
+   ,
+{
+  id: "flaeche-zwischen-zwei-kurven",
+  nummer: "10",
+  titel: "Fläche zwischen zwei Kurven",
+  kurzbeschreibung:
+    "Berechnung von Flächen zwischen zwei Funktionsgraphen, Bestimmung von Schnittpunkten, oberer und unterer Funktion sowie korrekter Umgang mit Teilintervallen.",
+  lernziele: [
+    "Du kannst erklären, was mit Fläche zwischen zwei Kurven gemeint ist.",
+    "Du kannst Schnittpunkte zweier Funktionen berechnen.",
+    "Du kannst entscheiden, welche Funktion oben und welche unten liegt.",
+    "Du kannst die Formel \\(A=\\int_a^b (f(x)-g(x))\\,dx\\) anwenden.",
+    "Du erkennst, wann man den Betrag eines Integrals braucht.",
+    "Du kannst Flächen über mehrere Teilintervalle berechnen.",
+    "Du kannst die Grenzen aus Schnittpunkten bestimmen.",
+    "Du kannst zwischen orientierter Fläche und geometrischer Fläche unterscheiden.",
+    "Du erkennst typische Fehler bei Vorzeichen und Reihenfolge der Funktionen.",
+    "Du kannst Flächen zwischen Kurven in Prüfungsaufgaben systematisch lösen."
+  ],
+  theorie: [
+    {
+      titel: "Was bedeutet Fläche zwischen zwei Kurven?",
+      text:
+        "Die Fläche zwischen zwei Kurven ist der Bereich, der von zwei Funktionsgraphen eingeschlossen wird. Häufig sucht man den geometrischen Flächeninhalt zwischen einer oberen und einer unteren Funktion."
+    },
+    {
+      titel: "Obere und untere Funktion",
+      text:
+        "Wenn im Intervall \\([a,b]\\) die Funktion \\(f(x)\\) oberhalb von \\(g(x)\\) liegt, dann ist die Höhe des kleinen Flächenstreifens \\(f(x)-g(x)\\)."
+    },
+    {
+      titel: "Grundformel",
+      text:
+        "Liegt \\(f(x)\\) im ganzen Intervall oberhalb von \\(g(x)\\), dann gilt \\(A=\\int_a^b (f(x)-g(x))\\,dx\\). Man rechnet also obere Funktion minus untere Funktion."
+    },
+    {
+      titel: "Warum obere minus untere Funktion?",
+      text:
+        "Der Abstand zwischen zwei Graphen in senkrechter Richtung ist die Differenz der \\(y\\)-Werte. Wenn \\(f(x)\\) oben liegt und \\(g(x)\\) unten liegt, ist dieser Abstand \\(f(x)-g(x)\\)."
+    },
+    {
+      titel: "Schnittpunkte als Grenzen",
+      text:
+        "Wenn keine Grenzen gegeben sind, entstehen die Grenzen meistens aus den Schnittpunkten der beiden Graphen. Dazu setzt man die Funktionsgleichungen gleich."
+    },
+    {
+      titel: "Schnittpunkte berechnen",
+      text:
+        "Schnittpunkte findet man durch \\(f(x)=g(x)\\). Die Lösungen dieser Gleichung sind die \\(x\\)-Koordinaten der Schnittpunkte. Die \\(y\\)-Koordinaten erhält man durch Einsetzen in eine der beiden Funktionen."
+    },
+    {
+      titel: "Geometrischer Flächeninhalt",
+      text:
+        "Der geometrische Flächeninhalt ist immer positiv. Wenn ein Integral negativ wird, hat man wahrscheinlich untere minus obere Funktion gerechnet oder man muss den Betrag nehmen."
+    },
+    {
+      titel: "Orientierter Flächeninhalt",
+      text:
+        "Ein Integral kann negativ sein, wenn der Integrand negativ ist. Für echte Flächen zwischen Kurven zählt man aber die Flächenstücke positiv."
+    },
+    {
+      titel: "Wechsel der oberen Funktion",
+      text:
+        "Manchmal liegt in einem Teilintervall \\(f(x)\\) oben und in einem anderen Teilintervall \\(g(x)\\) oben. Dann muss man an den Schnittpunkten aufteilen."
+    },
+    {
+      titel: "Fläche mit Betrag",
+      text:
+        "Allgemein kann man den geometrischen Flächeninhalt als \\(A=\\int_a^b |f(x)-g(x)|\\,dx\\) schreiben. Praktisch teilt man aber meistens an Schnittpunkten auf."
+    },
+    {
+      titel: "Fläche zwischen Graph und x-Achse als Spezialfall",
+      text:
+        "Die Fläche zwischen einem Graphen und der \\(x\\)-Achse ist ein Spezialfall. Die \\(x\\)-Achse kann man als Funktion \\(g(x)=0\\) auffassen."
+    },
+    {
+      titel: "Einheiten",
+      text:
+        "Wenn \\(x\\)- und \\(y\\)-Werte Längeneinheiten darstellen, dann ist der Flächeninhalt in Quadrateinheiten angegeben."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Fläche zwischen zwei Kurven berechnen",
+      schritte: [
+        "Bestimme zuerst die beiden Funktionen.",
+        "Berechne die Schnittpunkte mit \\(f(x)=g(x)\\), falls die Grenzen nicht direkt gegeben sind.",
+        "Bestimme die Integrationsgrenzen \\(a\\) und \\(b\\).",
+        "Prüfe, welche Funktion im Intervall oben liegt.",
+        "Bilde obere Funktion minus untere Funktion.",
+        "Stelle das Integral \\(A=\\int_a^b(\\text{oben}-\\text{unten})\\,dx\\) auf.",
+        "Bestimme eine Stammfunktion.",
+        "Setze obere und untere Grenze ein.",
+        "Gib den Flächeninhalt positiv an."
+      ]
+    },
+    {
+      titel: "Methode: Schnittpunkte bestimmen",
+      schritte: [
+        "Setze die beiden Funktionen gleich: \\(f(x)=g(x)\\).",
+        "Bringe alle Terme auf eine Seite.",
+        "Löse die entstandene Gleichung nach \\(x\\).",
+        "Setze die \\(x\\)-Werte in eine der beiden Funktionen ein.",
+        "Schreibe die Schnittpunkte als Punkte \\((x\\mid y)\\) auf.",
+        "Verwende die \\(x\\)-Werte als mögliche Integrationsgrenzen."
+      ]
+    },
+    {
+      titel: "Methode: Obere Funktion erkennen",
+      schritte: [
+        "Wähle einen Testwert im betrachteten Intervall.",
+        "Setze diesen Testwert in beide Funktionen ein.",
+        "Vergleiche die beiden Funktionswerte.",
+        "Die Funktion mit dem grösseren \\(y\\)-Wert liegt dort oben.",
+        "Falls sich die Reihenfolge im Intervall ändert, teile das Intervall an den Schnittpunkten auf."
+      ]
+    },
+    {
+      titel: "Methode: Fläche über mehrere Teilintervalle",
+      schritte: [
+        "Bestimme alle Schnittpunkte im gegebenen Bereich.",
+        "Sortiere die Schnittpunkte von links nach rechts.",
+        "Teile das Intervall an diesen Stellen auf.",
+        "Bestimme in jedem Teilintervall die obere und untere Funktion.",
+        "Berechne für jedes Teilintervall ein eigenes Integral.",
+        "Zähle alle Teilflächen positiv zusammen."
+      ]
+    },
+    {
+      titel: "Methode: Kontrolle des Ergebnisses",
+      schritte: [
+        "Prüfe, ob dein Flächeninhalt positiv ist.",
+        "Falls das Ergebnis negativ ist, kontrolliere die Reihenfolge der Funktionen.",
+        "Prüfe, ob du alle Schnittpunkte als Grenzen berücksichtigt hast.",
+        "Skizziere grob die Graphen, falls die Aufgabe unübersichtlich ist.",
+        "Kontrolliere die Stammfunktion durch Ableiten."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Fläche zwischen zwei Kurven bedeutet obere Funktion minus untere Funktion integrieren.",
+    "Die Grundformel lautet \\(A=\\int_a^b(f(x)-g(x))\\,dx\\), wenn \\(f\\) oben liegt.",
+    "Schnittpunkte findet man mit \\(f(x)=g(x)\\).",
+    "Die \\(x\\)-Koordinaten der Schnittpunkte sind oft die Integrationsgrenzen.",
+    "Der geometrische Flächeninhalt ist immer positiv.",
+    "Wenn das Integral negativ ist, wurde wahrscheinlich die Reihenfolge vertauscht.",
+    "Wechselt die obere Funktion, muss man das Intervall aufteilen.",
+    "Allgemein gilt \\(A=\\int_a^b |f(x)-g(x)|\\,dx\\).",
+    "Die Fläche zwischen Graph und \\(x\\)-Achse ist ein Spezialfall mit \\(g(x)=0\\).",
+    "Eine Skizze hilft, obere und untere Funktion zu erkennen."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man rechnet untere Funktion minus obere Funktion.",
+      korrektur:
+        "Für den geometrischen Flächeninhalt rechnet man obere Funktion minus untere Funktion. Sonst wird das Integral negativ."
+    },
+    {
+      fehler: "Man vergisst, die Schnittpunkte zu berechnen.",
+      korrektur:
+        "Wenn keine Grenzen gegeben sind, müssen die Grenzen meistens über \\(f(x)=g(x)\\) bestimmt werden."
+    },
+    {
+      fehler: "Man nimmt die \\(y\\)-Koordinaten der Schnittpunkte als Integrationsgrenzen.",
+      korrektur:
+        "Bei Integration nach \\(x\\) verwendet man die \\(x\\)-Koordinaten als Grenzen."
+    },
+    {
+      fehler: "Man integriert beide Funktionen getrennt und addiert sie.",
+      korrektur:
+        "Man muss die Differenz der Funktionen integrieren: obere Funktion minus untere Funktion."
+    },
+    {
+      fehler: "Man ignoriert, dass sich die obere Funktion ändern kann.",
+      korrektur:
+        "Wenn sich die Graphen innerhalb des Intervalls schneiden, muss man häufig in Teilintervalle aufteilen."
+    },
+    {
+      fehler: "Man gibt einen negativen Flächeninhalt an.",
+      korrektur:
+        "Ein geometrischer Flächeninhalt ist positiv. Ein negatives Integral muss als Betrag oder durch korrekte Reihenfolge behandelt werden."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Fläche zwischen zwei Geraden",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Berechne die Fläche zwischen \\(f(x)=x+3\\) und \\(g(x)=x+1\\) im Intervall \\([0,4]\\).",
+      loesung: [
+        "Vergleiche die beiden Funktionen.",
+        "\\(f(x)=x+3\\) liegt im ganzen Intervall \\(2\\) Einheiten über \\(g(x)=x+1\\).",
+        "Also ist \\(f(x)-g(x)=(x+3)-(x+1)=2\\).",
+        "Die Fläche ist \\(A=\\int_0^4 2\\,dx\\).",
+        "Eine Stammfunktion von \\(2\\) ist \\(2x\\).",
+        "Einsetzen ergibt \\(2\\cdot4-2\\cdot0=8\\).",
+        "Die Fläche beträgt \\(8\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Fläche zwischen Parabel und Gerade",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Berechne die Fläche zwischen \\(f(x)=4\\) und \\(g(x)=x^2\\) im Intervall \\([0,2]\\).",
+      loesung: [
+        "Im Intervall \\([0,2]\\) liegt \\(f(x)=4\\) oberhalb von \\(g(x)=x^2\\).",
+        "Also rechnet man \\(A=\\int_0^2(4-x^2)\\,dx\\).",
+        "Eine Stammfunktion ist \\(4x-\\frac{x^3}{3}\\).",
+        "Setze \\(2\\) ein: \\(8-\\frac{8}{3}=\\frac{16}{3}\\).",
+        "Setze \\(0\\) ein: \\(0\\).",
+        "Die Fläche beträgt \\(\\frac{16}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Schnittpunkte als Grenzen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme die eingeschlossene Fläche zwischen \\(f(x)=x+2\\) und \\(g(x)=x^2\\).",
+      loesung: [
+        "Zuerst berechnet man die Schnittpunkte.",
+        "Setze \\(x+2=x^2\\).",
+        "Bringe alles auf eine Seite: \\(x^2-x-2=0\\).",
+        "Faktorisiere: \\((x-2)(x+1)=0\\).",
+        "Also sind die Grenzen \\(x=-1\\) und \\(x=2\\).",
+        "Wähle einen Testwert, zum Beispiel \\(x=0\\).",
+        "\\(f(0)=2\\), \\(g(0)=0\\). Also liegt \\(f\\) oben.",
+        "Die Fläche ist \\(A=\\int_{-1}^{2}((x+2)-x^2)\\,dx\\).",
+        "Der Integrand ist \\(-x^2+x+2\\).",
+        "Eine Stammfunktion ist \\(-\\frac{x^3}{3}+\\frac{x^2}{2}+2x\\).",
+        "Einsetzen von \\(2\\) ergibt \\(-\\frac{8}{3}+2+4=\\frac{10}{3}\\).",
+        "Einsetzen von \\(-1\\) ergibt \\(\\frac{1}{3}+\\frac{1}{2}-2=-\\frac{7}{6}\\).",
+        "Die Fläche ist \\(\\frac{10}{3}-\\left(-\\frac{7}{6}\\right)=\\frac{27}{6}=\\frac{9}{2}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Reihenfolge der Funktionen prüfen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne die Fläche zwischen \\(f(x)=x^2\\) und \\(g(x)=2x\\) im Intervall \\([0,2]\\).",
+      loesung: [
+        "Zuerst prüft man, welche Funktion oben liegt.",
+        "Wähle den Testwert \\(x=1\\).",
+        "\\(f(1)=1\\), \\(g(1)=2\\).",
+        "Also liegt \\(g(x)=2x\\) oberhalb von \\(f(x)=x^2\\).",
+        "Die Fläche ist \\(A=\\int_0^2(2x-x^2)\\,dx\\).",
+        "Eine Stammfunktion ist \\(x^2-\\frac{x^3}{3}\\).",
+        "Setze \\(2\\) ein: \\(4-\\frac{8}{3}=\\frac{4}{3}\\).",
+        "Setze \\(0\\) ein: \\(0\\).",
+        "Die Fläche beträgt \\(\\frac{4}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Negatives Integral richtig deuten",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Ein Schüler rechnet für die Fläche zwischen \\(f(x)=x^2\\) und \\(g(x)=2x\\) von \\(0\\) bis \\(2\\): \\(\\int_0^2(x^2-2x)\\,dx=-\\frac{4}{3}\\). Erkläre den Fehler.",
+      loesung: [
+        "Das Integral ist negativ, weil der Schüler untere Funktion minus obere Funktion gerechnet hat.",
+        "Im Intervall \\([0,2]\\) liegt \\(g(x)=2x\\) oberhalb von \\(f(x)=x^2\\).",
+        "Für die geometrische Fläche muss man also \\(2x-x^2\\) integrieren.",
+        "Der Flächeninhalt ist positiv.",
+        "Richtig ist \\(A=\\frac{4}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Fläche mit zwei Schnittpunkten",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne die Fläche zwischen \\(f(x)=6-x^2\\) und \\(g(x)=2\\).",
+      loesung: [
+        "Zuerst bestimmt man die Schnittpunkte.",
+        "Setze \\(6-x^2=2\\).",
+        "Dann gilt \\(4=x^2\\).",
+        "Also ist \\(x=-2\\) oder \\(x=2\\).",
+        "Im Intervall zwischen den Schnittpunkten liegt \\(f(x)=6-x^2\\) oberhalb von \\(g(x)=2\\).",
+        "Die Fläche ist \\(A=\\int_{-2}^{2}((6-x^2)-2)\\,dx\\).",
+        "Das ist \\(A=\\int_{-2}^{2}(4-x^2)\\,dx\\).",
+        "Eine Stammfunktion ist \\(4x-\\frac{x^3}{3}\\).",
+        "Einsetzen von \\(2\\) ergibt \\(8-\\frac{8}{3}=\\frac{16}{3}\\).",
+        "Einsetzen von \\(-2\\) ergibt \\(-8+\\frac{8}{3}=-\\frac{16}{3}\\).",
+        "Die Fläche ist \\(\\frac{16}{3}-\\left(-\\frac{16}{3}\\right)=\\frac{32}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Aufteilen nötig",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Berechne den geometrischen Flächeninhalt zwischen \\(f(x)=x\\) und \\(g(x)=0\\) im Intervall \\([-2,3]\\).",
+      loesung: [
+        "Hier ist \\(g(x)=0\\) die \\(x\\)-Achse.",
+        "Die Funktion \\(f(x)=x\\) schneidet die \\(x\\)-Achse bei \\(x=0\\).",
+        "Man muss also in zwei Intervalle aufteilen: \\([-2,0]\\) und \\([0,3]\\).",
+        "Von \\(-2\\) bis \\(0\\) liegt \\(f(x)=x\\) unterhalb der \\(x\\)-Achse.",
+        "Die Fläche dort ist \\(\\int_{-2}^{0}(0-x)\\,dx=\\int_{-2}^{0}(-x)\\,dx\\).",
+        "Eine Stammfunktion ist \\(-\\frac{x^2}{2}\\).",
+        "Das ergibt \\(0-(-2)=2\\).",
+        "Von \\(0\\) bis \\(3\\) liegt \\(f(x)=x\\) oberhalb der \\(x\\)-Achse.",
+        "Die Fläche dort ist \\(\\int_0^3 x\\,dx=\\frac{9}{2}\\).",
+        "Der gesamte geometrische Flächeninhalt ist \\(2+\\frac{9}{2}=\\frac{13}{2}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Zwei Kurven mit Wechsel",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Die Funktionen \\(f(x)=x^2\\) und \\(g(x)=1\\) begrenzen im Intervall \\([-2,2]\\) mehrere Flächenstücke. Erkläre, warum man aufteilen muss.",
+      loesung: [
+        "Zuerst berechnet man die Schnittpunkte.",
+        "Setze \\(x^2=1\\).",
+        "Dann ist \\(x=-1\\) oder \\(x=1\\).",
+        "Diese Schnittpunkte liegen im Intervall \\([-2,2]\\).",
+        "Zwischen \\(-1\\) und \\(1\\) gilt \\(x^2<1\\), also liegt \\(g(x)=1\\) oben.",
+        "Ausserhalb dieses Bereichs gilt \\(x^2>1\\), also liegt \\(f(x)=x^2\\) oben.",
+        "Deshalb muss man die Intervalle \\([-2,-1]\\), \\([-1,1]\\) und \\([1,2]\\) getrennt behandeln.",
+        "Sonst würden positive und negative orientierte Flächen einander teilweise aufheben."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Wie berechnet man die Fläche zwischen zwei Kurven?",
+      antwort:
+        "Man integriert obere Funktion minus untere Funktion über das passende Intervall. Also \\(A=\\int_a^b(\\text{oben}-\\text{unten})\\,dx\\)."
+    },
+    {
+      frage: "Wie findet man die Grenzen, wenn sie nicht gegeben sind?",
+      antwort:
+        "Man berechnet die Schnittpunkte der beiden Funktionen, indem man \\(f(x)=g(x)\\) setzt. Die \\(x\\)-Koordinaten sind die Grenzen."
+    },
+    {
+      frage: "Warum muss man obere minus untere Funktion rechnen?",
+      antwort:
+        "Weil der senkrechte Abstand zwischen den Graphen aus der Differenz der \\(y\\)-Werte entsteht. Damit der Flächeninhalt positiv wird, nimmt man oben minus unten."
+    },
+    {
+      frage: "Was macht man, wenn das Integral negativ wird?",
+      antwort:
+        "Dann hat man vermutlich die Funktionen in falscher Reihenfolge subtrahiert. Für den geometrischen Flächeninhalt nimmt man den positiven Wert oder rechnet obere minus untere Funktion."
+    },
+    {
+      frage: "Wann muss man das Intervall aufteilen?",
+      antwort:
+        "Man muss aufteilen, wenn sich die Graphen innerhalb des Intervalls schneiden oder wenn die obere Funktion wechselt."
+    },
+    {
+      frage: "Was ist der Unterschied zwischen orientierter Fläche und geometrischer Fläche?",
+      antwort:
+        "Die orientierte Fläche kann negativ sein. Die geometrische Fläche beschreibt echten Flächeninhalt und ist immer positiv."
+    },
+    {
+      frage: "Wie hilft eine Skizze bei solchen Aufgaben?",
+      antwort:
+        "Eine Skizze hilft zu erkennen, welche Funktion oben liegt und ob man das Intervall an Schnittpunkten aufteilen muss."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du Schnittpunkte mit \\(f(x)=g(x)\\) berechnen?",
+    "Verwendest du bei Integration nach \\(x\\) die \\(x\\)-Koordinaten als Grenzen?",
+    "Kannst du erkennen, welche Funktion oben liegt?",
+    "Rechnest du obere Funktion minus untere Funktion?",
+    "Kennst du die Formel \\(A=\\int_a^b(f(x)-g(x))\\,dx\\), wenn \\(f\\) oben liegt?",
+    "Weisst du, dass geometrische Flächeninhalte positiv sind?",
+    "Merkst du, wenn ein negatives Integral nur ein Vorzeichenproblem ist?",
+    "Kannst du an Schnittpunkten in Teilintervalle aufteilen?",
+    "Kontrollierst du bei wechselnder oberer Funktion jedes Teilintervall einzeln?",
+    "Kannst du die Fläche zwischen Graph und \\(x\\)-Achse als Spezialfall erklären?"
+  ]
+},
+   ,
+{
+  id: "geraden-im-raum",
+  nummer: "11",
+  titel: "Geraden im Raum",
+  kurzbeschreibung:
+    "Parameterdarstellung von Geraden im dreidimensionalen Raum, Lagebeziehungen zwischen Geraden, Schnittpunkte, Abstand Punkt-Gerade und Abstand Gerade-Gerade.",
+  lernziele: [
+    "Du kannst eine Gerade im Raum in Parameterform darstellen.",
+    "Du verstehst die Bedeutung von Stützvektor und Richtungsvektor.",
+    "Du kannst prüfen, ob ein Punkt auf einer Geraden liegt.",
+    "Du kannst die Lage zweier Geraden im Raum bestimmen.",
+    "Du kannst parallele, identische, schneidende und windschiefe Geraden unterscheiden.",
+    "Du kannst den Schnittpunkt zweier Geraden berechnen.",
+    "Du kannst den Abstand eines Punktes zu einer Geraden berechnen.",
+    "Du kannst den Abstand zweier windschiefer Geraden verstehen.",
+    "Du kannst Gleichungssysteme aus Geradengleichungen korrekt aufstellen.",
+    "Du erkennst typische Fehler bei Parametern, Vektoren und Lagebeziehungen."
+  ],
+  theorie: [
+    {
+      titel: "Gerade im Raum",
+      text:
+        "Eine Gerade im Raum besteht aus unendlich vielen Punkten. Im dreidimensionalen Raum beschreibt man sie meistens mit einer Parameterdarstellung."
+    },
+    {
+      titel: "Parameterdarstellung einer Geraden",
+      text:
+        "Eine Gerade kann geschrieben werden als \\(g:\\vec{x}=\\vec{p}+t\\vec{v}\\). Dabei ist \\(\\vec{p}\\) ein Stützvektor, \\(\\vec{v}\\) ein Richtungsvektor und \\(t\\) ein reeller Parameter."
+    },
+    {
+      titel: "Stützvektor",
+      text:
+        "Der Stützvektor zeigt vom Ursprung zu einem festen Punkt der Geraden. Er gibt also an, wo die Gerade im Raum verankert ist."
+    },
+    {
+      titel: "Richtungsvektor",
+      text:
+        "Der Richtungsvektor gibt die Richtung der Geraden an. Durch verschiedene Werte des Parameters bewegt man sich entlang dieser Richtung."
+    },
+    {
+      titel: "Parameter",
+      text:
+        "Der Parameter \\(t\\) ist eine reelle Zahl. Für jeden Wert von \\(t\\) erhält man einen anderen Punkt auf der Geraden."
+    },
+    {
+      titel: "Punktprobe",
+      text:
+        "Um zu prüfen, ob ein Punkt auf einer Geraden liegt, setzt man seine Koordinaten in die Geradengleichung ein. Danach prüft man, ob für alle Koordinaten derselbe Parameterwert möglich ist."
+    },
+    {
+      titel: "Lage zweier Geraden",
+      text:
+        "Zwei Geraden im Raum können identisch, parallel, schneidend oder windschief sein. Windschief bedeutet: Sie sind nicht parallel, schneiden sich aber trotzdem nicht."
+    },
+    {
+      titel: "Parallele Geraden",
+      text:
+        "Zwei Geraden sind parallel, wenn ihre Richtungsvektoren Vielfache voneinander sind. Dann zeigen sie in dieselbe oder genau entgegengesetzte Richtung."
+    },
+    {
+      titel: "Identische Geraden",
+      text:
+        "Zwei Geraden sind identisch, wenn sie parallel sind und zusätzlich ein Punkt der einen Geraden auch auf der anderen Geraden liegt."
+    },
+    {
+      titel: "Schneidende Geraden",
+      text:
+        "Zwei Geraden schneiden sich, wenn es Parameterwerte gibt, für die beide Geradengleichungen denselben Punkt liefern."
+    },
+    {
+      titel: "Windschiefe Geraden",
+      text:
+        "Windschiefe Geraden kommen nur im Raum vor. Sie sind nicht parallel und haben keinen Schnittpunkt."
+    },
+    {
+      titel: "Abstand Punkt-Gerade",
+      text:
+        "Der Abstand eines Punktes zu einer Geraden ist die kürzeste Entfernung vom Punkt zur Geraden. Diese Entfernung steht senkrecht auf der Geraden."
+    },
+    {
+      titel: "Abstand windschiefer Geraden",
+      text:
+        "Bei windschiefen Geraden misst man die kürzeste Verbindung zwischen beiden Geraden. Diese Verbindungsstrecke steht senkrecht auf beiden Richtungsvektoren."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Gerade durch Punkt und Richtungsvektor aufstellen",
+      schritte: [
+        "Wähle den gegebenen Punkt als Stützvektor.",
+        "Verwende den gegebenen Richtungsvektor als Bewegungsrichtung.",
+        "Schreibe die Gerade in der Form \\(\\vec{x}=\\vec{p}+t\\vec{v}\\).",
+        "Achte darauf, dass \\(t\\in\\mathbb{R}\\) gilt.",
+        "Kontrolliere, ob die Dimensionen stimmen, also ob alle Vektoren drei Koordinaten haben."
+      ]
+    },
+    {
+      titel: "Methode: Gerade durch zwei Punkte aufstellen",
+      schritte: [
+        "Wähle einen der beiden Punkte als Stützpunkt.",
+        "Berechne den Richtungsvektor durch \\(\\vec{v}=\\overrightarrow{AB}=\\vec{b}-\\vec{a}\\).",
+        "Setze Stützvektor und Richtungsvektor in \\(\\vec{x}=\\vec{a}+t\\vec{v}\\) ein.",
+        "Der andere Punkt sollte durch einen passenden Parameterwert erreichbar sein.",
+        "Kontrolliere deine Gerade durch Einsetzen des zweiten Punktes."
+      ]
+    },
+    {
+      titel: "Methode: Punktprobe bei einer Geraden",
+      schritte: [
+        "Setze die Koordinaten des Punktes für \\(\\vec{x}\\) ein.",
+        "Vergleiche jede Koordinate mit der entsprechenden Koordinatengleichung.",
+        "Löse aus jeder Koordinate nach dem Parameter.",
+        "Prüfe, ob überall derselbe Parameterwert entsteht.",
+        "Wenn ja, liegt der Punkt auf der Geraden.",
+        "Wenn nein, liegt der Punkt nicht auf der Geraden."
+      ]
+    },
+    {
+      titel: "Methode: Lage zweier Geraden bestimmen",
+      schritte: [
+        "Vergleiche zuerst die Richtungsvektoren.",
+        "Sind die Richtungsvektoren Vielfache voneinander, sind die Geraden parallel oder identisch.",
+        "Prüfe dann, ob ein Stützpunkt der einen Geraden auf der anderen Geraden liegt.",
+        "Falls ja, sind die Geraden identisch.",
+        "Falls nein, sind sie echt parallel.",
+        "Sind die Richtungsvektoren keine Vielfachen, setze die beiden Geradengleichungen gleich.",
+        "Löse das Gleichungssystem.",
+        "Gibt es eine Lösung, schneiden sich die Geraden.",
+        "Gibt es keine Lösung, sind sie windschief."
+      ]
+    },
+    {
+      titel: "Methode: Schnittpunkt zweier Geraden berechnen",
+      schritte: [
+        "Schreibe beide Geraden mit unterschiedlichen Parametern, zum Beispiel \\(t\\) und \\(s\\).",
+        "Setze die Geradengleichungen gleich.",
+        "Vergleiche die drei Koordinaten.",
+        "Du erhältst ein Gleichungssystem mit den Parametern.",
+        "Löse das Gleichungssystem.",
+        "Setze den gefundenen Parameter in eine der Geraden ein.",
+        "Der entstehende Punkt ist der Schnittpunkt.",
+        "Prüfe mit der anderen Geraden, ob der Punkt wirklich stimmt."
+      ]
+    },
+    {
+      titel: "Methode: Abstand Punkt-Gerade mit Lotidee",
+      schritte: [
+        "Wähle einen allgemeinen Punkt auf der Geraden mit Parameter \\(t\\).",
+        "Bilde den Verbindungsvektor vom gegebenen Punkt zu diesem Geradenpunkt.",
+        "Nutze die Bedingung, dass dieser Vektor senkrecht zum Richtungsvektor der Geraden steht.",
+        "Setze das Skalarprodukt gleich \\(0\\).",
+        "Löse nach dem Parameter.",
+        "Setze den Parameter in die Gerade ein, um den Lotfusspunkt zu erhalten.",
+        "Berechne den Abstand zwischen gegebenem Punkt und Lotfusspunkt."
+      ]
+    },
+    {
+      titel: "Methode: Abstand Punkt-Gerade mit Kreuzprodukt",
+      schritte: [
+        "Bilde den Vektor vom Stützpunkt der Geraden zum gegebenen Punkt.",
+        "Berechne das Kreuzprodukt dieses Vektors mit dem Richtungsvektor der Geraden.",
+        "Bestimme den Betrag des Kreuzprodukts.",
+        "Teile durch den Betrag des Richtungsvektors.",
+        "Die Formel lautet \\(d=\\frac{|(\\vec{a}-\\vec{p})\\times\\vec{v}|}{|\\vec{v}|}\\)."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Eine Gerade im Raum schreibt man meistens als \\(\\vec{x}=\\vec{p}+t\\vec{v}\\).",
+    "\\(\\vec{p}\\) ist der Stützvektor.",
+    "\\(\\vec{v}\\) ist der Richtungsvektor.",
+    "Der Parameter \\(t\\) bewegt einen Punkt entlang der Geraden.",
+    "Einen Richtungsvektor zwischen zwei Punkten erhält man durch Endpunkt minus Anfangspunkt.",
+    "Ein Punkt liegt auf einer Geraden, wenn in allen Koordinaten derselbe Parameter passt.",
+    "Parallele Geraden haben linear abhängige Richtungsvektoren.",
+    "Identische Geraden sind parallel und besitzen mindestens einen gemeinsamen Punkt.",
+    "Schneidende Geraden haben genau einen gemeinsamen Punkt.",
+    "Windschiefe Geraden sind nicht parallel und schneiden sich nicht.",
+    "Bei Schnittpunkten verwendet man für zwei Geraden verschiedene Parameter.",
+    "Abstände stehen immer senkrecht auf der betreffenden Geraden."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwendet bei zwei Geraden denselben Parameter.",
+      korrektur:
+        "Zwei verschiedene Geraden brauchen beim Gleichsetzen verschiedene Parameter, zum Beispiel \\(t\\) und \\(s\\). Sonst zwingt man beide Geraden fälschlich zur gleichen Bewegung."
+    },
+    {
+      fehler: "Man denkt, nicht parallele Geraden müssten sich im Raum immer schneiden.",
+      korrektur:
+        "Im Raum können Geraden auch windschief sein. Sie sind dann nicht parallel, schneiden sich aber trotzdem nicht."
+    },
+    {
+      fehler: "Man verwechselt Stützvektor und Richtungsvektor.",
+      korrektur:
+        "Der Stützvektor zeigt zu einem festen Punkt der Geraden. Der Richtungsvektor gibt nur die Richtung an."
+    },
+    {
+      fehler: "Man prüft bei der Punktprobe nur eine Koordinate.",
+      korrektur:
+        "Ein Punkt liegt nur dann auf der Geraden, wenn derselbe Parameter in allen drei Koordinaten funktioniert."
+    },
+    {
+      fehler: "Man erkennt identische Geraden nur daran, dass die Richtungsvektoren gleich sind.",
+      korrektur:
+        "Gleiche oder parallele Richtungsvektoren reichen nicht. Zusätzlich muss ein Punkt der einen Geraden auf der anderen liegen."
+    },
+    {
+      fehler: "Man berechnet den Abstand Punkt-Gerade mit irgendeinem Punkt der Geraden.",
+      korrektur:
+        "Der Abstand ist die kürzeste Entfernung. Man braucht den Lotfusspunkt oder eine passende Abstandsformel."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Gerade durch Punkt und Richtungsvektor",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Stelle die Gerade durch den Punkt \\(P(1\\mid 2\\mid -1)\\) mit Richtungsvektor \\(\\vec{v}=\\begin{pmatrix}2\\\\0\\\\3\\end{pmatrix}\\) auf.",
+      loesung: [
+        "Der Punkt \\(P\\) liefert den Stützvektor.",
+        "Also ist \\(\\vec{p}=\\begin{pmatrix}1\\\\2\\\\-1\\end{pmatrix}\\).",
+        "Der Richtungsvektor ist gegeben.",
+        "Die Gerade lautet deshalb:",
+        "\\(g:\\vec{x}=\\begin{pmatrix}1\\\\2\\\\-1\\end{pmatrix}+t\\begin{pmatrix}2\\\\0\\\\3\\end{pmatrix}\\).",
+        "Dabei gilt \\(t\\in\\mathbb{R}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Gerade durch zwei Punkte",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Stelle die Gerade durch \\(A(1\\mid 0\\mid 2)\\) und \\(B(4\\mid 2\\mid 5)\\) auf.",
+      loesung: [
+        "Wähle \\(A\\) als Stützpunkt.",
+        "Berechne den Richtungsvektor \\(\\overrightarrow{AB}=B-A\\).",
+        "\\(\\overrightarrow{AB}=\\begin{pmatrix}4-1\\\\2-0\\\\5-2\\end{pmatrix}=\\begin{pmatrix}3\\\\2\\\\3\\end{pmatrix}\\).",
+        "Die Gerade lautet:",
+        "\\(g:\\vec{x}=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+t\\begin{pmatrix}3\\\\2\\\\3\\end{pmatrix}\\).",
+        "Dabei gilt \\(t\\in\\mathbb{R}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Punktprobe",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Prüfe, ob der Punkt \\(Q(5\\mid 2\\mid 5)\\) auf der Geraden \\(g:\\vec{x}=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+t\\begin{pmatrix}2\\\\1\\\\3\\end{pmatrix}\\) liegt.",
+      loesung: [
+        "Setze die Koordinaten von \\(Q\\) ein.",
+        "Aus der ersten Koordinate folgt \\(5=1+2t\\).",
+        "Daraus folgt \\(2t=4\\), also \\(t=2\\).",
+        "Aus der zweiten Koordinate folgt \\(2=0+t\\), also \\(t=2\\).",
+        "Aus der dritten Koordinate folgt \\(5=2+3t\\).",
+        "Daraus folgt \\(3t=3\\), also \\(t=1\\).",
+        "Die Parameterwerte sind nicht überall gleich.",
+        "Also liegt \\(Q\\) nicht auf der Geraden."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Parallele Geraden erkennen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Untersuche, ob die Geraden mit Richtungsvektoren \\(\\vec{v}=\\begin{pmatrix}2\\\\4\\\\-2\\end{pmatrix}\\) und \\(\\vec{w}=\\begin{pmatrix}-1\\\\-2\\\\1\\end{pmatrix}\\) parallel sind.",
+      loesung: [
+        "Zwei Geraden sind parallel, wenn die Richtungsvektoren Vielfache voneinander sind.",
+        "Vergleiche die Koordinaten.",
+        "\\(\\begin{pmatrix}2\\\\4\\\\-2\\end{pmatrix}=-2\\begin{pmatrix}-1\\\\-2\\\\1\\end{pmatrix}\\).",
+        "Also sind die Richtungsvektoren linear abhängig.",
+        "Die zugehörigen Geraden sind parallel oder identisch.",
+        "Ob sie identisch sind, müsste man zusätzlich mit einem Punkt prüfen."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Schnittpunkt zweier Geraden",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme den Schnittpunkt von \\(g:\\vec{x}=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+t\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}\\) und \\(h:\\vec{x}=\\begin{pmatrix}3\\\\4\\\\2\\end{pmatrix}+s\\begin{pmatrix}-1\\\\0\\\\1\\end{pmatrix}\\), falls er existiert.",
+      loesung: [
+        "Setze beide Geraden gleich.",
+        "\\(\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+t\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}=\\begin{pmatrix}3\\\\4\\\\2\\end{pmatrix}+s\\begin{pmatrix}-1\\\\0\\\\1\\end{pmatrix}\\).",
+        "Vergleiche die Koordinaten.",
+        "Erste Koordinate: \\(1+t=3-s\\).",
+        "Zweite Koordinate: \\(2t=4\\).",
+        "Dritte Koordinate: \\(2=2+s\\).",
+        "Aus der zweiten Gleichung folgt \\(t=2\\).",
+        "Aus der dritten Gleichung folgt \\(s=0\\).",
+        "Prüfe die erste Gleichung: \\(1+2=3-0\\), also \\(3=3\\).",
+        "Die Werte passen.",
+        "Setze \\(t=2\\) in \\(g\\) ein.",
+        "\\(\\vec{x}=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+2\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}=\\begin{pmatrix}3\\\\4\\\\2\\end{pmatrix}\\).",
+        "Der Schnittpunkt ist \\(S(3\\mid4\\mid2)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Windschiefe Geraden erkennen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Untersuche die Lage von \\(g:\\vec{x}=\\begin{pmatrix}0\\\\0\\\\0\\end{pmatrix}+t\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\) und \\(h:\\vec{x}=\\begin{pmatrix}0\\\\1\\\\1\\end{pmatrix}+s\\begin{pmatrix}0\\\\1\\\\0\\end{pmatrix}\\).",
+      loesung: [
+        "Zuerst vergleicht man die Richtungsvektoren.",
+        "\\(\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\) und \\(\\begin{pmatrix}0\\\\1\\\\0\\end{pmatrix}\\) sind keine Vielfachen voneinander.",
+        "Die Geraden sind also nicht parallel.",
+        "Nun prüft man, ob sie sich schneiden.",
+        "Setze die Geraden gleich.",
+        "\\(\\begin{pmatrix}t\\\\0\\\\0\\end{pmatrix}=\\begin{pmatrix}0\\\\1+s\\\\1\\end{pmatrix}\\).",
+        "Aus der dritten Koordinate folgt \\(0=1\\).",
+        "Das ist unmöglich.",
+        "Also gibt es keinen Schnittpunkt.",
+        "Die Geraden sind nicht parallel und schneiden sich nicht.",
+        "Also sind sie windschief."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Identische Geraden prüfen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Untersuche, ob \\(g:\\vec{x}=\\begin{pmatrix}1\\\\2\\\\3\\end{pmatrix}+t\\begin{pmatrix}2\\\\1\\\\-1\\end{pmatrix}\\) und \\(h:\\vec{x}=\\begin{pmatrix}3\\\\3\\\\2\\end{pmatrix}+s\\begin{pmatrix}4\\\\2\\\\-2\\end{pmatrix}\\) identisch sind.",
+      loesung: [
+        "Zuerst vergleicht man die Richtungsvektoren.",
+        "\\(\\begin{pmatrix}4\\\\2\\\\-2\\end{pmatrix}=2\\begin{pmatrix}2\\\\1\\\\-1\\end{pmatrix}\\).",
+        "Die Geraden sind also parallel oder identisch.",
+        "Nun prüft man, ob der Stützpunkt von \\(h\\) auf \\(g\\) liegt.",
+        "Setze \\(\\begin{pmatrix}3\\\\3\\\\2\\end{pmatrix}=\\begin{pmatrix}1\\\\2\\\\3\\end{pmatrix}+t\\begin{pmatrix}2\\\\1\\\\-1\\end{pmatrix}\\).",
+        "Erste Koordinate: \\(3=1+2t\\), also \\(t=1\\).",
+        "Zweite Koordinate: \\(3=2+t\\), also \\(t=1\\).",
+        "Dritte Koordinate: \\(2=3-t\\), also \\(t=1\\).",
+        "Überall entsteht derselbe Parameterwert.",
+        "Der Stützpunkt von \\(h\\) liegt auf \\(g\\).",
+        "Also sind die Geraden identisch."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Abstand Punkt-Gerade mit Lotbedingung",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Berechne den Abstand des Punktes \\(P(0\\mid2\\mid0)\\) zur Geraden \\(g:\\vec{x}=\\begin{pmatrix}0\\\\0\\\\0\\end{pmatrix}+t\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\).",
+      loesung: [
+        "Die Gerade ist die \\(x\\)-Achse.",
+        "Ein allgemeiner Punkt auf der Geraden ist \\(G(t)=(t\\mid0\\mid0)\\).",
+        "Der kürzeste Abstand vom Punkt \\(P(0\\mid2\\mid0)\\) zur \\(x\\)-Achse ist senkrecht zur Geraden.",
+        "Man sieht hier direkt, dass der Lotfusspunkt \\((0\\mid0\\mid0)\\) ist.",
+        "Der Abstand zwischen \\(P(0\\mid2\\mid0)\\) und \\((0\\mid0\\mid0)\\) ist \\(2\\).",
+        "Also beträgt der Abstand \\(d=2\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Abstand Punkt-Gerade mit Kreuzprodukt",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Berechne den Abstand des Punktes \\(A(0\\mid0\\mid1)\\) zur Geraden \\(g:\\vec{x}=\\begin{pmatrix}0\\\\0\\\\0\\end{pmatrix}+t\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\).",
+      loesung: [
+        "Der Stützpunkt der Geraden ist \\(P(0\\mid0\\mid0)\\).",
+        "Der Richtungsvektor ist \\(\\vec{v}=\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\).",
+        "Bilde den Vektor vom Stützpunkt zum Punkt \\(A\\): \\(\\overrightarrow{PA}=\\begin{pmatrix}0\\\\0\\\\1\\end{pmatrix}\\).",
+        "Die Abstandsformel lautet \\(d=\\frac{|\\overrightarrow{PA}\\times\\vec{v}|}{|\\vec{v}|}\\).",
+        "Das Kreuzprodukt von \\(\\begin{pmatrix}0\\\\0\\\\1\\end{pmatrix}\\) und \\(\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\) hat den Betrag \\(1\\).",
+        "Der Betrag von \\(\\vec{v}\\) ist ebenfalls \\(1\\).",
+        "Also ist \\(d=\\frac{1}{1}=1\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Wie stellt man eine Gerade im Raum dar?",
+      antwort:
+        "Eine Gerade im Raum stellt man meistens als \\(\\vec{x}=\\vec{p}+t\\vec{v}\\) dar. \\(\\vec{p}\\) ist ein Stützvektor, \\(\\vec{v}\\) ein Richtungsvektor und \\(t\\) ein Parameter."
+    },
+    {
+      frage: "Was ist ein Stützvektor?",
+      antwort:
+        "Ein Stützvektor zeigt vom Ursprung zu einem festen Punkt der Geraden. Er gibt an, wo die Gerade im Raum liegt."
+    },
+    {
+      frage: "Was ist ein Richtungsvektor?",
+      antwort:
+        "Ein Richtungsvektor gibt an, in welche Richtung die Gerade verläuft. Durch den Parameter bewegt man sich entlang dieses Vektors."
+    },
+    {
+      frage: "Wie prüft man, ob ein Punkt auf einer Geraden liegt?",
+      antwort:
+        "Man setzt die Koordinaten des Punktes in die Geradengleichung ein und prüft, ob in allen Koordinaten derselbe Parameterwert entsteht."
+    },
+    {
+      frage: "Welche Lagebeziehungen können zwei Geraden im Raum haben?",
+      antwort:
+        "Sie können identisch, parallel, schneidend oder windschief sein."
+    },
+    {
+      frage: "Was bedeutet windschief?",
+      antwort:
+        "Windschiefe Geraden sind nicht parallel und schneiden sich nicht. Das ist nur im dreidimensionalen Raum möglich."
+    },
+    {
+      frage: "Wie findet man den Schnittpunkt zweier Geraden?",
+      antwort:
+        "Man setzt die beiden Geradengleichungen mit verschiedenen Parametern gleich, löst das Gleichungssystem und setzt den gefundenen Parameter in eine Gerade ein."
+    },
+    {
+      frage: "Wie erkennt man parallele Geraden?",
+      antwort:
+        "Parallele Geraden haben Richtungsvektoren, die Vielfache voneinander sind."
+    },
+    {
+      frage: "Wann sind parallele Geraden identisch?",
+      antwort:
+        "Sie sind identisch, wenn zusätzlich ein Punkt der einen Geraden auf der anderen Geraden liegt."
+    },
+    {
+      frage: "Was ist beim Abstand Punkt-Gerade wichtig?",
+      antwort:
+        "Der Abstand ist immer die kürzeste Verbindung. Diese steht senkrecht auf der Geraden."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du eine Gerade als \\(\\vec{x}=\\vec{p}+t\\vec{v}\\) schreiben?",
+    "Weisst du, was Stützvektor und Richtungsvektor bedeuten?",
+    "Kannst du aus zwei Punkten einen Richtungsvektor bilden?",
+    "Machst du bei zwei Geraden verschiedene Parameter, zum Beispiel \\(t\\) und \\(s\\)?",
+    "Kannst du eine Punktprobe korrekt durchführen?",
+    "Prüfst du bei der Punktprobe alle drei Koordinaten?",
+    "Kannst du parallele Richtungsvektoren erkennen?",
+    "Unterscheidest du parallel und identisch?",
+    "Kannst du einen Schnittpunkt durch Gleichsetzen berechnen?",
+    "Weisst du, was windschiefe Geraden sind?",
+    "Kannst du erklären, warum nicht parallele Geraden im Raum nicht zwingend schneiden?",
+    "Weisst du, dass Abstände senkrecht gemessen werden?"
+  ]
+},
+   ,
+{
+  id: "skalarprodukt-kreuzprodukt",
+  nummer: "12",
+  titel: "Skalarprodukt und Kreuzprodukt",
+  kurzbeschreibung:
+    "Skalarprodukt und Kreuzprodukt geometrisch und rechnerisch verstehen: Winkelberechnung, Orthogonalität, orthonormierte Basis, Vektorzerlegung und Flächenberechnung.",
+  lernziele: [
+    "Du kannst das Skalarprodukt zweier Vektoren berechnen.",
+    "Du kannst mit dem Skalarprodukt Winkel zwischen Vektoren bestimmen.",
+    "Du kannst Orthogonalität mit dem Skalarprodukt prüfen.",
+    "Du verstehst den Zusammenhang zwischen Skalarprodukt und Projektion.",
+    "Du kannst das Kreuzprodukt zweier Vektoren im Raum berechnen.",
+    "Du kannst mit dem Kreuzprodukt einen Normalvektor bestimmen.",
+    "Du kannst mit dem Kreuzprodukt Flächeninhalte von Parallelogrammen und Dreiecken berechnen.",
+    "Du verstehst, was eine orthonormierte Basis ist.",
+    "Du kannst Vektoren in einfache Komponenten zerlegen.",
+    "Du erkennst typische Fehler bei Reihenfolge, Vorzeichen und Betrag."
+  ],
+  theorie: [
+    {
+      titel: "Was ist das Skalarprodukt?",
+      text:
+        "Das Skalarprodukt verknüpft zwei Vektoren und liefert als Ergebnis eine Zahl. Deshalb heisst das Ergebnis Skalar. Für \\(\\vec{a}=\\begin{pmatrix}a_1\\\\a_2\\\\a_3\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}b_1\\\\b_2\\\\b_3\\end{pmatrix}\\) gilt \\(\\vec{a}\\cdot\\vec{b}=a_1b_1+a_2b_2+a_3b_3\\)."
+    },
+    {
+      titel: "Geometrische Bedeutung des Skalarprodukts",
+      text:
+        "Das Skalarprodukt misst, wie stark zwei Vektoren in dieselbe Richtung zeigen. Ist das Skalarprodukt positiv, zeigen sie eher in ähnliche Richtung. Ist es negativ, zeigen sie eher in entgegengesetzte Richtung."
+    },
+    {
+      titel: "Skalarprodukt und Winkel",
+      text:
+        "Zwischen zwei Vektoren gilt \\(\\vec{a}\\cdot\\vec{b}=|\\vec{a}|\\cdot|\\vec{b}|\\cdot\\cos(\\varphi)\\). Daraus kann man den Winkel \\(\\varphi\\) zwischen zwei Vektoren berechnen."
+    },
+    {
+      titel: "Orthogonalität",
+      text:
+        "Zwei Vektoren stehen senkrecht aufeinander, wenn ihr Skalarprodukt \\(0\\) ist. Also gilt: \\(\\vec{a}\\perp\\vec{b}\\), wenn \\(\\vec{a}\\cdot\\vec{b}=0\\)."
+    },
+    {
+      titel: "Betrag eines Vektors",
+      text:
+        "Der Betrag eines Vektors ist seine Länge. Für \\(\\vec{a}=\\begin{pmatrix}a_1\\\\a_2\\\\a_3\\end{pmatrix}\\) gilt \\(|\\vec{a}|=\\sqrt{a_1^2+a_2^2+a_3^2}\\)."
+    },
+    {
+      titel: "Projektion",
+      text:
+        "Eine Projektion beschreibt den Anteil eines Vektors in Richtung eines anderen Vektors. Das Skalarprodukt ist dabei zentral, weil es Richtungsanteile misst."
+    },
+    {
+      titel: "Was ist das Kreuzprodukt?",
+      text:
+        "Das Kreuzprodukt verknüpft zwei Vektoren im dreidimensionalen Raum und liefert wieder einen Vektor. Dieser neue Vektor steht senkrecht auf beiden ursprünglichen Vektoren."
+    },
+    {
+      titel: "Kreuzprodukt als Normalvektor",
+      text:
+        "Wenn zwei Vektoren in einer Ebene liegen, dann ist ihr Kreuzprodukt ein Normalvektor dieser Ebene. Das ist besonders wichtig bei Ebenengleichungen."
+    },
+    {
+      titel: "Betrag des Kreuzprodukts",
+      text:
+        "Der Betrag des Kreuzprodukts entspricht dem Flächeninhalt des Parallelogramms, das von den beiden Vektoren aufgespannt wird. Es gilt \\(|\\vec{a}\\times\\vec{b}|=|\\vec{a}|\\cdot|\\vec{b}|\\cdot\\sin(\\varphi)\\)."
+    },
+    {
+      titel: "Dreiecksfläche",
+      text:
+        "Ein Dreieck ist halb so gross wie das zugehörige Parallelogramm. Deshalb gilt für die Dreiecksfläche \\(A=\\frac{1}{2}|\\vec{a}\\times\\vec{b}|\\)."
+    },
+    {
+      titel: "Orthonormierte Basis",
+      text:
+        "Eine orthonormierte Basis besteht aus Basisvektoren, die alle Länge \\(1\\) haben und paarweise senkrecht aufeinander stehen. Im Raum ist die Standardbasis ein typisches Beispiel."
+    },
+    {
+      titel: "Vektorzerlegung",
+      text:
+        "Einen Vektor kann man in Richtungsanteile zerlegen. In einer orthonormierten Basis sind diese Anteile besonders einfach ablesbar, weil die Basisvektoren senkrecht zueinander stehen und Länge \\(1\\) haben."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Skalarprodukt berechnen",
+      schritte: [
+        "Schreibe beide Vektoren komponentenweise auf.",
+        "Multipliziere die entsprechenden Koordinaten miteinander.",
+        "Addiere alle Produkte.",
+        "Das Ergebnis ist eine Zahl.",
+        "Prüfe bei Bedarf das Vorzeichen des Ergebnisses."
+      ]
+    },
+    {
+      titel: "Methode: Winkel zwischen zwei Vektoren berechnen",
+      schritte: [
+        "Berechne zuerst das Skalarprodukt \\(\\vec{a}\\cdot\\vec{b}\\).",
+        "Berechne die Beträge \\(|\\vec{a}|\\) und \\(|\\vec{b}|\\).",
+        "Setze in \\(\\cos(\\varphi)=\\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{a}|\\cdot|\\vec{b}|}\\) ein.",
+        "Berechne den Quotienten.",
+        "Bestimme den Winkel mit \\(\\varphi=\\arccos(\\text{Quotient})\\).",
+        "Achte darauf, ob dein Taschenrechner auf Grad oder Bogenmass eingestellt ist."
+      ]
+    },
+    {
+      titel: "Methode: Orthogonalität prüfen",
+      schritte: [
+        "Berechne das Skalarprodukt der beiden Vektoren.",
+        "Wenn das Ergebnis \\(0\\) ist, sind die Vektoren orthogonal.",
+        "Wenn das Ergebnis nicht \\(0\\) ist, sind sie nicht orthogonal.",
+        "Achte darauf, alle Koordinaten korrekt zu multiplizieren und zu addieren."
+      ]
+    },
+    {
+      titel: "Methode: Kreuzprodukt berechnen",
+      schritte: [
+        "Schreibe die beiden Vektoren untereinander oder in die Kreuzproduktformel.",
+        "Für \\(\\vec{a}=\\begin{pmatrix}a_1\\\\a_2\\\\a_3\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}b_1\\\\b_2\\\\b_3\\end{pmatrix}\\) gilt:",
+        "\\(\\vec{a}\\times\\vec{b}=\\begin{pmatrix}a_2b_3-a_3b_2\\\\a_3b_1-a_1b_3\\\\a_1b_2-a_2b_1\\end{pmatrix}\\).",
+        "Berechne jede Koordinate einzeln.",
+        "Kontrolliere besonders das Vorzeichen der mittleren Koordinate.",
+        "Prüfe bei Bedarf, ob der neue Vektor senkrecht auf beiden Ausgangsvektoren steht."
+      ]
+    },
+    {
+      titel: "Methode: Flächeninhalt eines Parallelogramms berechnen",
+      schritte: [
+        "Bestimme zwei aufspannende Vektoren des Parallelogramms.",
+        "Berechne das Kreuzprodukt dieser beiden Vektoren.",
+        "Berechne den Betrag des Kreuzprodukts.",
+        "Dieser Betrag ist der Flächeninhalt des Parallelogramms.",
+        "Gib das Ergebnis in Flächeneinheiten an."
+      ]
+    },
+    {
+      titel: "Methode: Flächeninhalt eines Dreiecks berechnen",
+      schritte: [
+        "Bestimme zwei Seitenvektoren des Dreiecks, die vom selben Punkt ausgehen.",
+        "Berechne das Kreuzprodukt dieser beiden Vektoren.",
+        "Berechne den Betrag des Kreuzprodukts.",
+        "Teile den Betrag durch \\(2\\).",
+        "Das Ergebnis ist der Flächeninhalt des Dreiecks."
+      ]
+    },
+    {
+      titel: "Methode: Orthonormierte Basis prüfen",
+      schritte: [
+        "Berechne die Länge jedes Basisvektors.",
+        "Jeder Basisvektor muss Länge \\(1\\) haben.",
+        "Berechne die Skalarprodukte zwischen verschiedenen Basisvektoren.",
+        "Alle diese Skalarprodukte müssen \\(0\\) sein.",
+        "Wenn beide Bedingungen erfüllt sind, ist die Basis orthonormiert."
+      ]
+    },
+    {
+      titel: "Methode: Normalvektor mit Kreuzprodukt bestimmen",
+      schritte: [
+        "Bestimme zwei nicht parallele Richtungsvektoren der Ebene.",
+        "Berechne ihr Kreuzprodukt.",
+        "Das Ergebnis steht senkrecht auf beiden Richtungsvektoren.",
+        "Dieser Vektor ist ein Normalvektor der Ebene.",
+        "Kontrolliere mit dem Skalarprodukt, ob der Normalvektor wirklich senkrecht auf beiden Richtungsvektoren steht."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Das Skalarprodukt zweier Vektoren ist eine Zahl.",
+    "\\(\\vec{a}\\cdot\\vec{b}=a_1b_1+a_2b_2+a_3b_3\\).",
+    "Das Skalarprodukt misst Richtungsähnlichkeit.",
+    "Zwei Vektoren sind orthogonal, wenn ihr Skalarprodukt \\(0\\) ist.",
+    "\\(\\vec{a}\\cdot\\vec{b}=|\\vec{a}|\\cdot|\\vec{b}|\\cdot\\cos(\\varphi)\\).",
+    "Der Betrag eines Vektors ist seine Länge.",
+    "Das Kreuzprodukt zweier Vektoren ist wieder ein Vektor.",
+    "\\(\\vec{a}\\times\\vec{b}\\) steht senkrecht auf \\(\\vec{a}\\) und \\(\\vec{b}\\).",
+    "Der Betrag des Kreuzprodukts ist die Fläche des aufgespannten Parallelogramms.",
+    "Die Dreiecksfläche ist \\(\\frac{1}{2}|\\vec{a}\\times\\vec{b}|\\).",
+    "Eine orthonormierte Basis besteht aus senkrechten Einheitsvektoren.",
+    "Beim Kreuzprodukt ist die Reihenfolge wichtig: \\(\\vec{a}\\times\\vec{b}=-(\\vec{b}\\times\\vec{a})\\)."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man denkt, das Skalarprodukt sei ein Vektor.",
+      korrektur:
+        "Das Skalarprodukt liefert eine Zahl. Nur das Kreuzprodukt liefert einen Vektor."
+    },
+    {
+      fehler: "Man prüft Orthogonalität mit dem Kreuzprodukt.",
+      korrektur:
+        "Orthogonalität prüft man normalerweise mit dem Skalarprodukt. Wenn \\(\\vec{a}\\cdot\\vec{b}=0\\), stehen die Vektoren senkrecht aufeinander."
+    },
+    {
+      fehler: "Man vergisst beim Winkel die Beträge der Vektoren.",
+      korrektur:
+        "Für den Winkel braucht man \\(\\cos(\\varphi)=\\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{a}|\\cdot|\\vec{b}|}\\). Das Skalarprodukt allein reicht nicht."
+    },
+    {
+      fehler: "Man verwechselt Gradmass und Bogenmass.",
+      korrektur:
+        "Beim Winkel mit \\(\\arccos\\) muss der Taschenrechner im passenden Modus sein. In Schulaufgaben ist oft Gradmass gefragt."
+    },
+    {
+      fehler: "Man denkt, das Kreuzprodukt sei kommutativ.",
+      korrektur:
+        "Das Kreuzprodukt ist nicht kommutativ. Es gilt \\(\\vec{a}\\times\\vec{b}=-(\\vec{b}\\times\\vec{a})\\)."
+    },
+    {
+      fehler: "Man vergisst bei der Dreiecksfläche den Faktor \\(\\frac{1}{2}\\).",
+      korrektur:
+        "Der Betrag des Kreuzprodukts gibt die Parallelogrammfläche. Die Dreiecksfläche ist nur halb so gross."
+    },
+    {
+      fehler: "Man verwendet das Kreuzprodukt in zwei Dimensionen wie im Raum.",
+      korrektur:
+        "Das normale Kreuzprodukt mit Vektor als Ergebnis ist eine Operation im dreidimensionalen Raum."
+    },
+    {
+      fehler: "Man nennt eine Basis orthonormiert, obwohl die Vektoren nur senkrecht sind.",
+      korrektur:
+        "Orthonormiert bedeutet zwei Dinge: Die Vektoren sind paarweise senkrecht und jeder Vektor hat Länge \\(1\\)."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Skalarprodukt berechnen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Berechne das Skalarprodukt von \\(\\vec{a}=\\begin{pmatrix}2\\\\-1\\\\3\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}4\\\\5\\\\-2\\end{pmatrix}\\).",
+      loesung: [
+        "Multipliziere die entsprechenden Koordinaten.",
+        "\\(\\vec{a}\\cdot\\vec{b}=2\\cdot4+(-1)\\cdot5+3\\cdot(-2)\\).",
+        "Das ergibt \\(8-5-6\\).",
+        "Also ist \\(\\vec{a}\\cdot\\vec{b}=-3\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Orthogonalität prüfen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Prüfe, ob \\(\\vec{a}=\\begin{pmatrix}1\\\\2\\\\-1\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}4\\\\-1\\\\2\\end{pmatrix}\\) orthogonal sind.",
+      loesung: [
+        "Berechne das Skalarprodukt.",
+        "\\(\\vec{a}\\cdot\\vec{b}=1\\cdot4+2\\cdot(-1)+(-1)\\cdot2\\).",
+        "Das ergibt \\(4-2-2=0\\).",
+        "Da das Skalarprodukt \\(0\\) ist, sind die Vektoren orthogonal."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Betrag eines Vektors",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Berechne den Betrag von \\(\\vec{v}=\\begin{pmatrix}2\\\\-3\\\\6\\end{pmatrix}\\).",
+      loesung: [
+        "Der Betrag ist die Länge des Vektors.",
+        "\\(|\\vec{v}|=\\sqrt{2^2+(-3)^2+6^2}\\).",
+        "Das ergibt \\(\\sqrt{4+9+36}\\).",
+        "Also \\(|\\vec{v}|=\\sqrt{49}=7\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Winkel zwischen zwei Vektoren",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne den Winkel zwischen \\(\\vec{a}=\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\).",
+      loesung: [
+        "Berechne zuerst das Skalarprodukt.",
+        "\\(\\vec{a}\\cdot\\vec{b}=1\\cdot1+0\\cdot1+0\\cdot0=1\\).",
+        "Berechne die Beträge.",
+        "\\(|\\vec{a}|=1\\).",
+        "\\(|\\vec{b}|=\\sqrt{1^2+1^2+0^2}=\\sqrt{2}\\).",
+        "Setze in die Winkelformel ein.",
+        "\\(\\cos(\\varphi)=\\frac{1}{1\\cdot\\sqrt{2}}=\\frac{1}{\\sqrt{2}}\\).",
+        "Daraus folgt \\(\\varphi=45^\\circ\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Kreuzprodukt berechnen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne \\(\\vec{a}\\times\\vec{b}\\) für \\(\\vec{a}=\\begin{pmatrix}1\\\\2\\\\3\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}0\\\\1\\\\4\\end{pmatrix}\\).",
+      loesung: [
+        "Verwende die Formel für das Kreuzprodukt.",
+        "Erste Koordinate: \\(a_2b_3-a_3b_2=2\\cdot4-3\\cdot1=8-3=5\\).",
+        "Zweite Koordinate: \\(a_3b_1-a_1b_3=3\\cdot0-1\\cdot4= -4\\).",
+        "Dritte Koordinate: \\(a_1b_2-a_2b_1=1\\cdot1-2\\cdot0=1\\).",
+        "Also ist \\(\\vec{a}\\times\\vec{b}=\\begin{pmatrix}5\\\\-4\\\\1\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Normalvektor bestimmen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme einen Normalvektor zu den Richtungsvektoren \\(\\vec{u}=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}\\) und \\(\\vec{v}=\\begin{pmatrix}0\\\\3\\\\1\\end{pmatrix}\\).",
+      loesung: [
+        "Ein Normalvektor steht senkrecht auf beiden Richtungsvektoren.",
+        "Man kann ihn mit dem Kreuzprodukt berechnen.",
+        "\\(\\vec{u}\\times\\vec{v}=\\begin{pmatrix}0\\cdot1-2\\cdot3\\\\2\\cdot0-1\\cdot1\\\\1\\cdot3-0\\cdot0\\end{pmatrix}\\).",
+        "Das ergibt \\(\\begin{pmatrix}-6\\\\-1\\\\3\\end{pmatrix}\\).",
+        "Ein möglicher Normalvektor ist also \\(\\vec{n}=\\begin{pmatrix}-6\\\\-1\\\\3\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Parallelogrammfläche",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne die Fläche des Parallelogramms, das von \\(\\vec{a}=\\begin{pmatrix}3\\\\0\\\\0\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}0\\\\4\\\\0\\end{pmatrix}\\) aufgespannt wird.",
+      loesung: [
+        "Die Parallelogrammfläche ist \\(|\\vec{a}\\times\\vec{b}|\\).",
+        "Da die beiden Vektoren senkrecht sind, kann man hier auch direkt rechnen.",
+        "Die Länge von \\(\\vec{a}\\) ist \\(3\\).",
+        "Die Länge von \\(\\vec{b}\\) ist \\(4\\).",
+        "Die Fläche ist \\(3\\cdot4=12\\).",
+        "Also beträgt die Parallelogrammfläche \\(12\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Dreiecksfläche mit Kreuzprodukt",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne die Fläche des Dreiecks mit den Punkten \\(A(0\\mid0\\mid0)\\), \\(B(2\\mid0\\mid0)\\) und \\(C(0\\mid3\\mid0)\\).",
+      loesung: [
+        "Bilde zwei Seitenvektoren, die vom selben Punkt ausgehen.",
+        "\\(\\overrightarrow{AB}=\\begin{pmatrix}2\\\\0\\\\0\\end{pmatrix}\\).",
+        "\\(\\overrightarrow{AC}=\\begin{pmatrix}0\\\\3\\\\0\\end{pmatrix}\\).",
+        "Die Parallelogrammfläche wäre \\(|\\overrightarrow{AB}\\times\\overrightarrow{AC}|\\).",
+        "Da die Vektoren senkrecht sind, beträgt die Parallelogrammfläche \\(2\\cdot3=6\\).",
+        "Die Dreiecksfläche ist halb so gross.",
+        "Also ist \\(A=\\frac{1}{2}\\cdot6=3\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Orthonormierte Basis prüfen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Prüfe, ob \\(\\vec{e}_1=\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\), \\(\\vec{e}_2=\\begin{pmatrix}0\\\\1\\\\0\\end{pmatrix}\\), \\(\\vec{e}_3=\\begin{pmatrix}0\\\\0\\\\1\\end{pmatrix}\\) eine orthonormierte Basis bilden.",
+      loesung: [
+        "Zuerst prüft man die Längen.",
+        "Alle drei Vektoren haben Länge \\(1\\).",
+        "Nun prüft man die Skalarprodukte verschiedener Vektoren.",
+        "\\(\\vec{e}_1\\cdot\\vec{e}_2=0\\), \\(\\vec{e}_1\\cdot\\vec{e}_3=0\\), \\(\\vec{e}_2\\cdot\\vec{e}_3=0\\).",
+        "Die Vektoren stehen also paarweise senkrecht aufeinander.",
+        "Da alle Länge \\(1\\) haben und paarweise orthogonal sind, bilden sie eine orthonormierte Basis."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Reihenfolge beim Kreuzprodukt",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Gegeben sind \\(\\vec{a}=\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}\\) und \\(\\vec{b}=\\begin{pmatrix}0\\\\1\\\\0\\end{pmatrix}\\). Berechne \\(\\vec{a}\\times\\vec{b}\\) und \\(\\vec{b}\\times\\vec{a}\\).",
+      loesung: [
+        "\\(\\vec{a}\\times\\vec{b}\\) ergibt \\(\\begin{pmatrix}0\\\\0\\\\1\\end{pmatrix}\\).",
+        "\\(\\vec{b}\\times\\vec{a}\\) ergibt \\(\\begin{pmatrix}0\\\\0\\\\-1\\end{pmatrix}\\).",
+        "Die beiden Ergebnisse sind entgegengesetzt.",
+        "Das zeigt: Die Reihenfolge beim Kreuzprodukt ist wichtig.",
+        "Es gilt \\(\\vec{a}\\times\\vec{b}=-(\\vec{b}\\times\\vec{a})\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist das Skalarprodukt?",
+      antwort:
+        "Das Skalarprodukt verknüpft zwei Vektoren und liefert eine Zahl. Es wird komponentenweise berechnet und misst, wie stark zwei Vektoren in dieselbe Richtung zeigen."
+    },
+    {
+      frage: "Wie prüft man, ob zwei Vektoren orthogonal sind?",
+      antwort:
+        "Man berechnet ihr Skalarprodukt. Ist es \\(0\\), dann stehen die Vektoren senkrecht aufeinander."
+    },
+    {
+      frage: "Wie berechnet man den Winkel zwischen zwei Vektoren?",
+      antwort:
+        "Man verwendet \\(\\cos(\\varphi)=\\frac{\\vec{a}\\cdot\\vec{b}}{|\\vec{a}|\\cdot|\\vec{b}|}\\) und berechnet danach \\(\\varphi\\) mit \\(\\arccos\\)."
+    },
+    {
+      frage: "Was ist das Kreuzprodukt?",
+      antwort:
+        "Das Kreuzprodukt zweier Vektoren im Raum liefert einen neuen Vektor, der senkrecht auf beiden ursprünglichen Vektoren steht."
+    },
+    {
+      frage: "Wofür verwendet man das Kreuzprodukt geometrisch?",
+      antwort:
+        "Man verwendet es zum Bestimmen von Normalvektoren und zur Berechnung von Flächeninhalten von Parallelogrammen und Dreiecken."
+    },
+    {
+      frage: "Was bedeutet der Betrag des Kreuzprodukts?",
+      antwort:
+        "Der Betrag des Kreuzprodukts ist der Flächeninhalt des Parallelogramms, das von den beiden Vektoren aufgespannt wird."
+    },
+    {
+      frage: "Wie berechnet man die Fläche eines Dreiecks mit dem Kreuzprodukt?",
+      antwort:
+        "Man bildet zwei Seitenvektoren, berechnet den Betrag ihres Kreuzprodukts und nimmt davon die Hälfte."
+    },
+    {
+      frage: "Was ist eine orthonormierte Basis?",
+      antwort:
+        "Eine orthonormierte Basis besteht aus Basisvektoren, die alle Länge \\(1\\) haben und paarweise senkrecht aufeinander stehen."
+    },
+    {
+      frage: "Warum ist die Reihenfolge beim Kreuzprodukt wichtig?",
+      antwort:
+        "Weil das Kreuzprodukt nicht kommutativ ist. Vertauscht man die Reihenfolge, kehrt sich die Richtung des Ergebnisvektors um."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du das Skalarprodukt komponentenweise berechnen?",
+    "Weisst du, dass das Skalarprodukt eine Zahl ergibt?",
+    "Kannst du Orthogonalität mit \\(\\vec{a}\\cdot\\vec{b}=0\\) prüfen?",
+    "Kennst du die Winkelformel mit dem Skalarprodukt?",
+    "Berechnest du bei der Winkelformel beide Beträge korrekt?",
+    "Kannst du den Betrag eines Vektors berechnen?",
+    "Kannst du das Kreuzprodukt zweier Vektoren berechnen?",
+    "Weisst du, dass das Kreuzprodukt senkrecht auf beiden Ausgangsvektoren steht?",
+    "Kannst du mit dem Kreuzprodukt einen Normalvektor bestimmen?",
+    "Kennst du den Unterschied zwischen Skalarprodukt und Kreuzprodukt?",
+    "Weisst du, dass der Betrag des Kreuzprodukts eine Parallelogrammfläche ist?",
+    "Vergisst du bei Dreiecksflächen den Faktor \\(\\frac{1}{2}\\) nicht?",
+    "Kannst du prüfen, ob eine Basis orthonormiert ist?",
+    "Weisst du, dass die Reihenfolge beim Kreuzprodukt das Vorzeichen ändert?"
+  ]
+}
+   
    
 ];
 /* =========================
