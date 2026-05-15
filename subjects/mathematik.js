@@ -7529,8 +7529,1250 @@ nachtVorTest: [
     "Kannst du das Gauß-Verfahren grundsätzlich anwenden?",
     "Kannst du die Fälle eindeutig, keine Lösung und unendlich viele Lösungen unterscheiden?"
   ]
-}
-   
+},
+   {
+  id: "determinanten-inverse-matrix",
+  nummer: "20",
+  titel: "Determinanten und inverse Matrizen",
+  kurzbeschreibung:
+    "Determinanten berechnen und deuten, Invertierbarkeit von Matrizen prüfen, inverse Matrizen bestimmen und lineare Gleichungssysteme mit Matrizen lösen.",
+  lernziele: [
+    "Du kannst erklären, was eine Determinante ist.",
+    "Du kannst die Determinante einer \\(2\\times2\\)-Matrix berechnen.",
+    "Du kannst die Determinante einer \\(3\\times3\\)-Matrix berechnen.",
+    "Du kannst die Determinante geometrisch deuten.",
+    "Du kannst erkennen, wann eine Matrix invertierbar ist.",
+    "Du kannst die inverse Matrix einer \\(2\\times2\\)-Matrix bestimmen.",
+    "Du verstehst den Zusammenhang zwischen Determinante und linearer Abhängigkeit.",
+    "Du kannst lineare Gleichungssysteme mit einer inversen Matrix lösen.",
+    "Du kannst prüfen, ob eine Matrix singulär ist.",
+    "Du erkennst typische Fehler bei Vorzeichen, Reihenfolge und Division durch die Determinante."
+  ],
+  theorie: [
+    {
+      titel: "Was ist eine Determinante?",
+      text:
+        "Die Determinante ist eine Zahl, die zu einer quadratischen Matrix gehört. Sie enthält wichtige Informationen darüber, ob eine Matrix invertierbar ist und ob ihre Spalten oder Zeilen linear unabhängig sind."
+    },
+    {
+      titel: "Nur quadratische Matrizen",
+      text:
+        "Eine Determinante ist nur für quadratische Matrizen definiert. Das bedeutet: Die Matrix muss gleich viele Zeilen wie Spalten haben."
+    },
+    {
+      titel: "Determinante einer \\(2\\times2\\)-Matrix",
+      text:
+        "Für \\(A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) gilt \\(\\det(A)=ad-bc\\). Man multipliziert also die Hauptdiagonale und zieht die Nebendiagonale ab."
+    },
+    {
+      titel: "Geometrische Bedeutung",
+      text:
+        "Bei einer \\(2\\times2\\)-Matrix beschreibt der Betrag der Determinante den Flächenfaktor. Wenn \\(|\\det(A)|=3\\) ist, werden Flächen durch die zugehörige lineare Abbildung um den Faktor \\(3\\) verändert."
+    },
+    {
+      titel: "Vorzeichen der Determinante",
+      text:
+        "Das Vorzeichen der Determinante zeigt, ob die Orientierung erhalten bleibt oder umgekehrt wird. Eine negative Determinante bedeutet eine Orientierungsumkehr."
+    },
+    {
+      titel: "Determinante gleich null",
+      text:
+        "Wenn die Determinante \\(0\\) ist, ist die Matrix nicht invertierbar. Geometrisch bedeutet das oft, dass Fläche oder Volumen auf \\(0\\) zusammengedrückt wird."
+    },
+    {
+      titel: "Invertierbare Matrix",
+      text:
+        "Eine quadratische Matrix \\(A\\) ist invertierbar, wenn es eine Matrix \\(A^{-1}\\) gibt, sodass \\(A\\cdot A^{-1}=I\\) und \\(A^{-1}\\cdot A=I\\) gilt."
+    },
+    {
+      titel: "Singuläre Matrix",
+      text:
+        "Eine Matrix heisst singulär, wenn sie keine inverse Matrix besitzt. Das ist genau dann der Fall, wenn ihre Determinante \\(0\\) ist."
+    },
+    {
+      titel: "Inverse einer \\(2\\times2\\)-Matrix",
+      text:
+        "Für \\(A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) mit \\(ad-bc\\ne0\\) gilt \\(A^{-1}=\\frac{1}{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\)."
+    },
+    {
+      titel: "Determinante und lineare Abhängigkeit",
+      text:
+        "Ist die Determinante einer Matrix \\(0\\), dann sind ihre Spaltenvektoren linear abhängig. Das bedeutet, mindestens ein Vektor kann aus den anderen zusammengesetzt werden."
+    },
+    {
+      titel: "Lineares Gleichungssystem mit inverser Matrix",
+      text:
+        "Ein lineares Gleichungssystem \\(A\\vec{x}=\\vec{b}\\) kann mit \\(\\vec{x}=A^{-1}\\vec{b}\\) gelöst werden, falls \\(A^{-1}\\) existiert."
+    },
+    {
+      titel: "Determinante einer \\(3\\times3\\)-Matrix",
+      text:
+        "Bei \\(3\\times3\\)-Matrizen kann man die Determinante zum Beispiel mit Entwicklung nach einer Zeile oder mit der Regel von Sarrus berechnen. Wichtig ist dabei eine sehr sorgfältige Vorzeichenkontrolle."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Determinante einer \\(2\\times2\\)-Matrix berechnen",
+      schritte: [
+        "Schreibe die Matrix in der Form \\(\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\).",
+        "Berechne das Produkt der Hauptdiagonale: \\(a\\cdot d\\).",
+        "Berechne das Produkt der Nebendiagonale: \\(b\\cdot c\\).",
+        "Subtrahiere: \\(ad-bc\\).",
+        "Das Ergebnis ist die Determinante.",
+        "Prüfe besonders negative Vorzeichen."
+      ]
+    },
+    {
+      titel: "Methode: Invertierbarkeit prüfen",
+      schritte: [
+        "Prüfe zuerst, ob die Matrix quadratisch ist.",
+        "Berechne die Determinante.",
+        "Wenn \\(\\det(A)\\ne0\\), ist die Matrix invertierbar.",
+        "Wenn \\(\\det(A)=0\\), ist die Matrix nicht invertierbar.",
+        "Formuliere das Ergebnis klar mit Begründung."
+      ]
+    },
+    {
+      titel: "Methode: Inverse einer \\(2\\times2\\)-Matrix bestimmen",
+      schritte: [
+        "Berechne zuerst die Determinante \\(ad-bc\\).",
+        "Prüfe, ob die Determinante ungleich \\(0\\) ist.",
+        "Vertausche die Einträge \\(a\\) und \\(d\\).",
+        "Ändere bei \\(b\\) und \\(c\\) das Vorzeichen.",
+        "Multipliziere die neue Matrix mit \\(\\frac{1}{ad-bc}\\).",
+        "Kontrolliere bei Bedarf mit \\(A\\cdot A^{-1}=I\\)."
+      ]
+    },
+    {
+      titel: "Methode: Lineares Gleichungssystem mit inverser Matrix lösen",
+      schritte: [
+        "Schreibe das Gleichungssystem als \\(A\\vec{x}=\\vec{b}\\).",
+        "Berechne oder bestimme \\(A^{-1}\\).",
+        "Multipliziere beide Seiten von links mit \\(A^{-1}\\).",
+        "Dann ergibt sich \\(\\vec{x}=A^{-1}\\vec{b}\\).",
+        "Führe die Matrixmultiplikation aus.",
+        "Prüfe die Lösung durch Einsetzen in das ursprüngliche Gleichungssystem."
+      ]
+    },
+    {
+      titel: "Methode: Determinante einer \\(3\\times3\\)-Matrix mit Sarrus berechnen",
+      schritte: [
+        "Schreibe die \\(3\\times3\\)-Matrix auf.",
+        "Wiederhole die ersten zwei Spalten rechts neben der Matrix.",
+        "Addiere die drei Produkte der Diagonalen von links oben nach rechts unten.",
+        "Addiere die drei Produkte der Diagonalen von links unten nach rechts oben.",
+        "Subtrahiere die zweite Summe von der ersten Summe.",
+        "Achte besonders auf negative Einträge."
+      ]
+    },
+    {
+      titel: "Methode: Geometrische Bedeutung deuten",
+      schritte: [
+        "Berechne die Determinante der Matrix.",
+        "Nimm den Betrag der Determinante als Flächen- oder Volumenfaktor.",
+        "Ist der Betrag grösser als \\(1\\), wird vergrössert.",
+        "Ist der Betrag zwischen \\(0\\) und \\(1\\), wird verkleinert.",
+        "Ist die Determinante negativ, wird zusätzlich die Orientierung umgekehrt.",
+        "Ist die Determinante \\(0\\), wird die Dimension zusammengedrückt."
+      ]
+    },
+    {
+      titel: "Methode: Lineare Abhängigkeit mit Determinante prüfen",
+      schritte: [
+        "Schreibe die Vektoren als Spalten einer quadratischen Matrix.",
+        "Berechne die Determinante dieser Matrix.",
+        "Ist die Determinante \\(0\\), sind die Vektoren linear abhängig.",
+        "Ist die Determinante nicht \\(0\\), sind die Vektoren linear unabhängig.",
+        "Begründe das Ergebnis mit der Determinante."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Determinanten gibt es nur bei quadratischen Matrizen.",
+    "Für \\(\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) gilt \\(\\det(A)=ad-bc\\).",
+    "Eine Matrix ist invertierbar genau dann, wenn ihre Determinante ungleich \\(0\\) ist.",
+    "Ist \\(\\det(A)=0\\), ist die Matrix singulär.",
+    "Eine singuläre Matrix besitzt keine inverse Matrix.",
+    "Der Betrag der Determinante beschreibt einen Flächen- oder Volumenfaktor.",
+    "Eine negative Determinante bedeutet Orientierungsumkehr.",
+    "Die inverse Matrix erfüllt \\(A\\cdot A^{-1}=I\\).",
+    "Für \\(A\\vec{x}=\\vec{b}\\) gilt bei invertierbarem \\(A\\): \\(\\vec{x}=A^{-1}\\vec{b}\\).",
+    "Bei Determinanten sind Vorzeichen besonders wichtig."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man berechnet eine Determinante bei einer nicht quadratischen Matrix.",
+      korrektur:
+        "Eine Determinante ist nur bei quadratischen Matrizen definiert, also bei Matrizen mit gleich vielen Zeilen und Spalten."
+    },
+    {
+      fehler: "Man verwendet bei \\(2\\times2\\)-Matrizen die falsche Formel.",
+      korrektur:
+        "Richtig ist \\(ad-bc\\), nicht \\(ab-cd\\) und auch nicht \\(a+d-b-c\\)."
+    },
+    {
+      fehler: "Man sagt, eine Matrix mit Determinante \\(0\\) sei invertierbar.",
+      korrektur:
+        "Wenn \\(\\det(A)=0\\), besitzt die Matrix keine inverse Matrix."
+    },
+    {
+      fehler: "Man vergisst bei der inversen \\(2\\times2\\)-Matrix durch die Determinante zu teilen.",
+      korrektur:
+        "Die gesamte Matrix \\(\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\) muss mit \\(\\frac{1}{ad-bc}\\) multipliziert werden."
+    },
+    {
+      fehler: "Man vertauscht bei der inversen Matrix die falschen Einträge.",
+      korrektur:
+        "Bei \\(\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) werden \\(a\\) und \\(d\\) vertauscht. Bei \\(b\\) und \\(c\\) werden die Vorzeichen geändert."
+    },
+    {
+      fehler: "Man löst \\(A\\vec{x}=\\vec{b}\\) mit \\(\\vec{x}=\\vec{b}A^{-1}\\).",
+      korrektur:
+        "Bei Spaltenvektoren multipliziert man von links: \\(\\vec{x}=A^{-1}\\vec{b}\\). Die Reihenfolge ist bei Matrizen entscheidend."
+    },
+    {
+      fehler: "Man ignoriert das Vorzeichen der Determinante bei der geometrischen Deutung.",
+      korrektur:
+        "Der Betrag beschreibt den Flächenfaktor. Das Vorzeichen gibt zusätzlich Auskunft über die Orientierung."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Determinante einer \\(2\\times2\\)-Matrix",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Berechne die Determinante von \\(A=\\begin{pmatrix}3&2\\\\1&4\\end{pmatrix}\\).",
+      loesung: [
+        "Für eine \\(2\\times2\\)-Matrix gilt \\(\\det(A)=ad-bc\\).",
+        "Hier ist \\(a=3\\), \\(b=2\\), \\(c=1\\), \\(d=4\\).",
+        "Also ist \\(\\det(A)=3\\cdot4-2\\cdot1\\).",
+        "Das ergibt \\(12-2=10\\).",
+        "Die Determinante ist \\(10\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Invertierbarkeit prüfen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Prüfe, ob \\(A=\\begin{pmatrix}1&2\\\\3&6\\end{pmatrix}\\) invertierbar ist.",
+      loesung: [
+        "Berechne die Determinante.",
+        "\\(\\det(A)=1\\cdot6-2\\cdot3\\).",
+        "Das ergibt \\(6-6=0\\).",
+        "Da die Determinante \\(0\\) ist, ist die Matrix nicht invertierbar.",
+        "Die Matrix ist singulär."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Inverse Matrix berechnen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme die inverse Matrix von \\(A=\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}\\).",
+      loesung: [
+        "Berechne zuerst die Determinante.",
+        "\\(\\det(A)=2\\cdot1-1\\cdot1=1\\).",
+        "Die Determinante ist ungleich \\(0\\), also existiert die inverse Matrix.",
+        "Vertausche \\(a\\) und \\(d\\): Aus \\(2\\) und \\(1\\) wird \\(1\\) und \\(2\\).",
+        "Ändere die Vorzeichen von \\(b\\) und \\(c\\).",
+        "Damit erhält man \\(A^{-1}=\\frac{1}{1}\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}\\).",
+        "Also ist \\(A^{-1}=\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Inverse mit Determinante ungleich 1",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme die inverse Matrix von \\(A=\\begin{pmatrix}4&1\\\\2&1\\end{pmatrix}\\).",
+      loesung: [
+        "Berechne die Determinante.",
+        "\\(\\det(A)=4\\cdot1-1\\cdot2=2\\).",
+        "Die Matrix ist invertierbar.",
+        "Die Formel lautet \\(A^{-1}=\\frac{1}{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\).",
+        "Also ist \\(A^{-1}=\\frac{1}{2}\\begin{pmatrix}1&-1\\\\-2&4\\end{pmatrix}\\).",
+        "Damit ist \\(A^{-1}=\\begin{pmatrix}\\frac{1}{2}&-\\frac{1}{2}\\\\-1&2\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Lösung mit inverser Matrix",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse \\(\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}5\\\\3\\end{pmatrix}\\) mit der inversen Matrix.",
+      loesung: [
+        "Aus Aufgabe 3 kennt man \\(A^{-1}=\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}\\).",
+        "Es gilt \\(\\vec{x}=A^{-1}\\vec{b}\\).",
+        "Also \\(\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}\\begin{pmatrix}5\\\\3\\end{pmatrix}\\).",
+        "Erste Komponente: \\(1\\cdot5+(-1)\\cdot3=2\\).",
+        "Zweite Komponente: \\((-1)\\cdot5+2\\cdot3=1\\).",
+        "Also ist \\(x=2\\) und \\(y=1\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Geometrische Deutung",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Eine lineare Abbildung hat die Matrix \\(A=\\begin{pmatrix}3&0\\\\0&2\\end{pmatrix}\\). Deute die Determinante geometrisch.",
+      loesung: [
+        "Berechne die Determinante.",
+        "\\(\\det(A)=3\\cdot2-0\\cdot0=6\\).",
+        "Der Betrag der Determinante ist \\(6\\).",
+        "Das bedeutet: Flächen werden durch diese Abbildung um den Faktor \\(6\\) vergrössert.",
+        "Da die Determinante positiv ist, bleibt die Orientierung erhalten."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Negative Determinante deuten",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Deute die Determinante von \\(A=\\begin{pmatrix}-1&0\\\\0&1\\end{pmatrix}\\).",
+      loesung: [
+        "Berechne die Determinante.",
+        "\\(\\det(A)=(-1)\\cdot1-0\\cdot0=-1\\).",
+        "Der Betrag ist \\(1\\).",
+        "Flächen bleiben also gleich gross.",
+        "Das negative Vorzeichen bedeutet aber eine Orientierungsumkehr.",
+        "Geometrisch entspricht das einer Spiegelung an der \\(y\\)-Achse."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Determinante einer \\(3\\times3\\)-Matrix",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Berechne die Determinante von \\(A=\\begin{pmatrix}1&2&0\\\\0&1&3\\\\2&0&1\\end{pmatrix}\\).",
+      loesung: [
+        "Verwende die Regel von Sarrus.",
+        "Positive Diagonalprodukte: \\(1\\cdot1\\cdot1=1\\), \\(2\\cdot3\\cdot2=12\\), \\(0\\cdot0\\cdot0=0\\).",
+        "Die positive Summe ist \\(13\\).",
+        "Negative Diagonalprodukte: \\(0\\cdot1\\cdot2=0\\), \\(1\\cdot3\\cdot0=0\\), \\(2\\cdot0\\cdot1=0\\).",
+        "Die negative Summe ist \\(0\\).",
+        "Also ist \\(\\det(A)=13-0=13\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Lineare Abhängigkeit prüfen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Prüfe, ob die Vektoren \\(\\vec{u}=\\begin{pmatrix}1\\\\2\\end{pmatrix}\\) und \\(\\vec{v}=\\begin{pmatrix}3\\\\6\\end{pmatrix}\\) linear unabhängig sind.",
+      loesung: [
+        "Schreibe die Vektoren als Spalten einer Matrix.",
+        "\\(A=\\begin{pmatrix}1&3\\\\2&6\\end{pmatrix}\\).",
+        "Berechne die Determinante.",
+        "\\(\\det(A)=1\\cdot6-3\\cdot2=6-6=0\\).",
+        "Da die Determinante \\(0\\) ist, sind die Vektoren linear abhängig.",
+        "Tatsächlich ist \\(\\vec{v}=3\\vec{u}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Fehler bei inverser Matrix erklären",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Ein Schüler berechnet für \\(A=\\begin{pmatrix}2&3\\\\1&4\\end{pmatrix}\\) die Determinante als \\(2\\cdot3-1\\cdot4=2\\). Erkläre den Fehler.",
+      loesung: [
+        "Bei einer \\(2\\times2\\)-Matrix \\(\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) gilt \\(ad-bc\\).",
+        "Der Schüler hat \\(a\\cdot b-c\\cdot d\\) gerechnet.",
+        "Richtig ist \\(2\\cdot4-3\\cdot1\\).",
+        "Das ergibt \\(8-3=5\\).",
+        "Die richtige Determinante ist also \\(5\\), nicht \\(2\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist eine Determinante?",
+      antwort:
+        "Eine Determinante ist eine Zahl, die zu einer quadratischen Matrix gehört. Sie zeigt unter anderem, ob die Matrix invertierbar ist."
+    },
+    {
+      frage: "Für welche Matrizen gibt es eine Determinante?",
+      antwort:
+        "Determinanten gibt es nur für quadratische Matrizen, also Matrizen mit gleich vielen Zeilen und Spalten."
+    },
+    {
+      frage: "Wie berechnet man die Determinante einer \\(2\\times2\\)-Matrix?",
+      antwort:
+        "Für \\(\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) gilt \\(\\det(A)=ad-bc\\)."
+    },
+    {
+      frage: "Wann ist eine Matrix invertierbar?",
+      antwort:
+        "Eine quadratische Matrix ist invertierbar, wenn ihre Determinante ungleich \\(0\\) ist."
+    },
+    {
+      frage: "Was bedeutet \\(\\det(A)=0\\)?",
+      antwort:
+        "Dann ist die Matrix nicht invertierbar. Man nennt sie singulär. Ihre Spalten oder Zeilen sind linear abhängig."
+    },
+    {
+      frage: "Wie lautet die inverse Matrix bei \\(2\\times2\\)-Matrizen?",
+      antwort:
+        "Für \\(A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}\\) gilt \\(A^{-1}=\\frac{1}{ad-bc}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}\\), falls \\(ad-bc\\ne0\\)."
+    },
+    {
+      frage: "Was bedeutet die Determinante geometrisch?",
+      antwort:
+        "Der Betrag der Determinante beschreibt, um welchen Faktor Flächen oder Volumen verändert werden. Das Vorzeichen zeigt, ob die Orientierung erhalten bleibt oder umgekehrt wird."
+    },
+    {
+      frage: "Wie löst man \\(A\\vec{x}=\\vec{b}\\) mit der inversen Matrix?",
+      antwort:
+        "Wenn \\(A^{-1}\\) existiert, multipliziert man von links mit \\(A^{-1}\\). Dann gilt \\(\\vec{x}=A^{-1}\\vec{b}\\)."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was eine Determinante ist?",
+    "Weisst du, dass Determinanten nur für quadratische Matrizen definiert sind?",
+    "Kannst du \\(\\det\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}=ad-bc\\) anwenden?",
+    "Prüfst du bei Determinanten sorgfältig die Vorzeichen?",
+    "Weisst du, dass \\(\\det(A)=0\\) bedeutet, dass \\(A\\) nicht invertierbar ist?",
+    "Kennst du den Begriff singuläre Matrix?",
+    "Kannst du die inverse Matrix einer \\(2\\times2\\)-Matrix berechnen?",
+    "Vergisst du bei der inversen Matrix nicht den Faktor \\(\\frac{1}{ad-bc}\\)?",
+    "Kannst du \\(A\\vec{x}=\\vec{b}\\) mit \\(\\vec{x}=A^{-1}\\vec{b}\\) lösen?",
+    "Kannst du die Determinante geometrisch als Flächenfaktor deuten?",
+    "Weisst du, was eine negative Determinante bedeutet?",
+    "Kannst du lineare Abhängigkeit mit einer Determinante prüfen?"
+  ]
+},
+   {
+  id: "eigenwerte-eigenvektoren",
+  nummer: "21",
+  titel: "Eigenwerte und Eigenvektoren",
+  kurzbeschreibung:
+    "Eigenwerte und Eigenvektoren von Matrizen verstehen, charakteristisches Polynom berechnen, Eigenräume bestimmen und Diagonalisierbarkeit untersuchen.",
+  lernziele: [
+    "Du kannst erklären, was ein Eigenvektor ist.",
+    "Du kannst erklären, was ein Eigenwert ist.",
+    "Du verstehst die Gleichung \\(A\\vec{v}=\\lambda\\vec{v}\\).",
+    "Du kannst das charakteristische Polynom einer Matrix berechnen.",
+    "Du kannst Eigenwerte mit \\(\\det(A-\\lambda I)=0\\) bestimmen.",
+    "Du kannst zu einem Eigenwert passende Eigenvektoren berechnen.",
+    "Du kannst den Eigenraum zu einem Eigenwert bestimmen.",
+    "Du verstehst den Unterschied zwischen Eigenwert und Eigenvektor.",
+    "Du kannst prüfen, ob eine Matrix diagonalisierbar ist.",
+    "Du erkennst typische Fehler bei Vorzeichen, Nullvektor und Gleichungssystemen."
+  ],
+  theorie: [
+    {
+      titel: "Grundidee",
+      text:
+        "Eine Matrix beschreibt eine lineare Abbildung. Meistens ändern Vektoren dabei ihre Richtung. Eigenvektoren sind besondere Vektoren, deren Richtung durch die Matrix nicht verändert wird. Sie werden nur gestreckt, gestaucht oder gespiegelt."
+    },
+    {
+      titel: "Eigenvektor",
+      text:
+        "Ein Eigenvektor einer Matrix \\(A\\) ist ein Vektor \\(\\vec{v}\\ne\\vec{0}\\), der durch die Multiplikation mit \\(A\\) nur auf ein Vielfaches seiner selbst abgebildet wird."
+    },
+    {
+      titel: "Eigenwert",
+      text:
+        "Der Eigenwert \\(\\lambda\\) ist der Faktor, mit dem der Eigenvektor gestreckt, gestaucht oder gespiegelt wird. Er gehört immer zu mindestens einem Eigenvektor."
+    },
+    {
+      titel: "Zentrale Gleichung",
+      text:
+        "Die wichtigste Gleichung lautet \\(A\\vec{v}=\\lambda\\vec{v}\\). Sie bedeutet: Wenn \\(A\\) auf \\(\\vec{v}\\) angewendet wird, entsteht derselbe Vektor nur mit Faktor \\(\\lambda\\)."
+    },
+    {
+      titel: "Warum darf der Eigenvektor nicht der Nullvektor sein?",
+      text:
+        "Der Nullvektor würde immer \\(A\\vec{0}=\\lambda\\vec{0}\\) erfüllen. Er hätte deshalb keine Aussagekraft. Darum verlangt man bei Eigenvektoren immer \\(\vec{v}\\ne\\vec{0}\\)."
+    },
+    {
+      titel: "Umformung der Eigenwertgleichung",
+      text:
+        "Aus \\(A\\vec{v}=\\lambda\\vec{v}\\) wird \\(A\\vec{v}-\lambda I\vec{v}=\\vec{0}\\). Das schreibt man als \\((A-\\lambda I)\vec{v}=\\vec{0}\\)."
+    },
+    {
+      titel: "Charakteristisches Polynom",
+      text:
+        "Das charakteristische Polynom erhält man durch \\(p(\\lambda)=\\det(A-\\lambda I)\\). Die Nullstellen dieses Polynoms sind die Eigenwerte der Matrix."
+    },
+    {
+      titel: "Warum setzt man die Determinante gleich null?",
+      text:
+        "Damit es einen Eigenvektor \\(\\vec{v}\\ne\\vec{0}\\) gibt, muss das Gleichungssystem \\((A-\\lambda I)\\vec{v}=\\vec{0}\\) nichttriviale Lösungen haben. Das ist genau dann möglich, wenn \\(A-\\lambda I\\) nicht invertierbar ist, also Determinante \\(0\\) hat."
+    },
+    {
+      titel: "Eigenraum",
+      text:
+        "Der Eigenraum zu einem Eigenwert \\(\\lambda\\) ist die Menge aller Eigenvektoren zu diesem Eigenwert zusammen mit dem Nullvektor. Man findet ihn durch Lösen von \\((A-\\lambda I)\vec{v}=\\vec{0}\\)."
+    },
+    {
+      titel: "Geometrische Bedeutung",
+      text:
+        "Eigenvektoren zeigen Richtungen, die bei einer linearen Abbildung erhalten bleiben. Der Eigenwert sagt, wie stark in dieser Richtung gestreckt oder gespiegelt wird."
+    },
+    {
+      titel: "Diagonalisierbarkeit",
+      text:
+        "Eine Matrix ist diagonalisierbar, wenn es genügend linear unabhängige Eigenvektoren gibt, um eine Basis zu bilden. Bei einer \\(2\\times2\\)-Matrix braucht man also zwei linear unabhängige Eigenvektoren."
+    },
+    {
+      titel: "Diagonalmatrix",
+      text:
+        "Wenn eine Matrix diagonalisierbar ist, kann sie in der Form \\(A=TDT^{-1}\\) geschrieben werden. In \\(D\\) stehen die Eigenwerte auf der Diagonale, und in \\(T\\) stehen passende Eigenvektoren als Spalten."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Eigenwerte berechnen",
+      schritte: [
+        "Schreibe die Matrix \\(A\\) auf.",
+        "Bilde \\(A-\\lambda I\\).",
+        "Berechne die Determinante \\(\\det(A-\\lambda I)\\).",
+        "Setze die Determinante gleich \\(0\\).",
+        "Löse die entstehende Gleichung nach \\(\\lambda\\).",
+        "Die Lösungen sind die Eigenwerte."
+      ]
+    },
+    {
+      titel: "Methode: Eigenvektoren zu einem Eigenwert berechnen",
+      schritte: [
+        "Nimm einen berechneten Eigenwert \\(\\lambda\\).",
+        "Setze ihn in \\(A-\\lambda I\\) ein.",
+        "Löse das Gleichungssystem \\((A-\\lambda I)\vec{v}=\\vec{0}\\).",
+        "Wähle eine freie Variable, falls unendlich viele Lösungen entstehen.",
+        "Schreibe die Lösung als Vielfaches eines Vektors.",
+        "Dieser Vektor ist ein Eigenvektor zum Eigenwert \\(\\lambda\\)."
+      ]
+    },
+    {
+      titel: "Methode: Eigenraum bestimmen",
+      schritte: [
+        "Bestimme zuerst den Eigenwert.",
+        "Setze den Eigenwert in \\((A-\\lambda I)\vec{v}=\\vec{0}\\) ein.",
+        "Löse das homogene Gleichungssystem.",
+        "Schreibe alle Lösungen in Parameterform.",
+        "Der aufgespannte Lösungsraum ist der Eigenraum.",
+        "Der Nullvektor gehört zum Eigenraum, ist aber selbst kein Eigenvektor."
+      ]
+    },
+    {
+      titel: "Methode: Eigenwertgleichung prüfen",
+      schritte: [
+        "Multipliziere die Matrix \\(A\\) mit dem gegebenen Vektor \\(\\vec{v}\\).",
+        "Berechne \\(\\lambda\\vec{v}\\).",
+        "Vergleiche beide Ergebnisse.",
+        "Wenn \\(A\\vec{v}=\\lambda\\vec{v}\\) gilt und \\(\\vec{v}\\ne\\vec{0}\\), ist \\(\\vec{v}\\) ein Eigenvektor zum Eigenwert \\(\\lambda\\).",
+        "Wenn die Ergebnisse nicht Vielfache voneinander sind, ist \\(\\vec{v}\\) kein Eigenvektor."
+      ]
+    },
+    {
+      titel: "Methode: Diagonalisierbarkeit prüfen",
+      schritte: [
+        "Berechne die Eigenwerte der Matrix.",
+        "Bestimme zu jedem Eigenwert den Eigenraum.",
+        "Zähle, wie viele linear unabhängige Eigenvektoren insgesamt entstehen.",
+        "Bei einer \\(n\\times n\\)-Matrix braucht man \\(n\\) linear unabhängige Eigenvektoren.",
+        "Falls genug Eigenvektoren vorhanden sind, ist die Matrix diagonalisierbar.",
+        "Falls nicht, ist sie nicht diagonalisierbar."
+      ]
+    },
+    {
+      titel: "Methode: Diagonalmatrix und Transformationsmatrix aufstellen",
+      schritte: [
+        "Bestimme eine Basis aus Eigenvektoren.",
+        "Schreibe diese Eigenvektoren als Spalten in die Matrix \\(T\\).",
+        "Schreibe die zugehörigen Eigenwerte in derselben Reihenfolge auf die Diagonale von \\(D\\).",
+        "Achte darauf, dass die Reihenfolge von Eigenvektoren und Eigenwerten zusammenpasst.",
+        "Dann gilt \\(A=TDT^{-1}\\), falls \\(T\\) invertierbar ist."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Ein Eigenvektor ändert durch eine Matrix seine Richtung nicht.",
+    "Ein Eigenwert ist der Streckungsfaktor eines Eigenvektors.",
+    "Die zentrale Gleichung lautet \\(A\\vec{v}=\\lambda\\vec{v}\\).",
+    "Ein Eigenvektor darf nie der Nullvektor sein.",
+    "Eigenwerte findet man mit \\(\\det(A-\\lambda I)=0\\).",
+    "Das charakteristische Polynom ist \\(p(\\lambda)=\\det(A-\\lambda I)\\).",
+    "Eigenvektoren findet man mit \\((A-\\lambda I)\vec{v}=\\vec{0}\\).",
+    "Der Eigenraum enthält alle Eigenvektoren zu einem Eigenwert plus den Nullvektor.",
+    "Eine \\(n\\times n\\)-Matrix ist diagonalisierbar, wenn sie \\(n\\) linear unabhängige Eigenvektoren besitzt.",
+    "Bei \\(A=TDT^{-1}\\) stehen die Eigenwerte in \\(D\\) und die Eigenvektoren in \\(T\\)."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man denkt, jeder Vektor sei ein Eigenvektor.",
+      korrektur:
+        "Nur Vektoren, deren Richtung durch die Matrix erhalten bleibt, sind Eigenvektoren. Allgemeine Vektoren werden meist in eine andere Richtung gedreht oder verzerrt."
+    },
+    {
+      fehler: "Man erlaubt den Nullvektor als Eigenvektor.",
+      korrektur:
+        "Der Nullvektor ist nie ein Eigenvektor, weil er die Gleichung immer trivial erfüllen würde."
+    },
+    {
+      fehler: "Man berechnet \\(A+\\lambda I\\) statt \\(A-\\lambda I\\).",
+      korrektur:
+        "Die Standardform ist \\((A-\\lambda I)\vec{v}=\\vec{0}\\). Je nach Konvention kann auch \\(\\lambda I-A\\) verwendet werden, aber dann muss man konsequent bleiben."
+    },
+    {
+      fehler: "Man setzt die Matrix selbst gleich null.",
+      korrektur:
+        "Man setzt nicht \\(A-\\lambda I=0\\), sondern die Determinante \\(\\det(A-\\lambda I)=0\\)."
+    },
+    {
+      fehler: "Man nimmt die Eigenwerte als Eigenvektoren.",
+      korrektur:
+        "Eigenwerte sind Zahlen. Eigenvektoren sind Vektoren. Zu jedem Eigenwert muss man die passenden Vektoren separat berechnen."
+    },
+    {
+      fehler: "Man vergisst nach dem Eigenwert die Eigenvektoren zu berechnen.",
+      korrektur:
+        "Nach den Eigenwerten muss man für jeden Eigenwert das Gleichungssystem \\((A-\\lambda I)\vec{v}=\\vec{0}\\) lösen."
+    },
+    {
+      fehler: "Man ordnet bei der Diagonalisierung Eigenwerte und Eigenvektoren falsch zu.",
+      korrektur:
+        "Die Reihenfolge in \\(D\\) muss genau zur Reihenfolge der Eigenvektoren in \\(T\\) passen."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Eigenwertgleichung prüfen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Prüfe, ob \\(\\vec{v}=\\begin{pmatrix}1\\\\0\\end{pmatrix}\\) ein Eigenvektor von \\(A=\\begin{pmatrix}3&0\\\\0&2\\end{pmatrix}\\) ist. Gib den Eigenwert an.",
+      loesung: [
+        "Berechne \\(A\\vec{v}\\).",
+        "\\(A\\vec{v}=\\begin{pmatrix}3&0\\\\0&2\\end{pmatrix}\\begin{pmatrix}1\\\\0\\end{pmatrix}=\\begin{pmatrix}3\\\\0\\end{pmatrix}\\).",
+        "Das Ergebnis ist \\(3\\begin{pmatrix}1\\\\0\\end{pmatrix}\\).",
+        "Also gilt \\(A\\vec{v}=3\\vec{v}\\).",
+        "Damit ist \\(\\vec{v}\\) ein Eigenvektor.",
+        "Der zugehörige Eigenwert ist \\(\\lambda=3\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Kein Eigenvektor",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Prüfe, ob \\(\\vec{v}=\\begin{pmatrix}1\\\\1\\end{pmatrix}\\) ein Eigenvektor von \\(A=\\begin{pmatrix}2&0\\\\0&3\\end{pmatrix}\\) ist.",
+      loesung: [
+        "Berechne \\(A\\vec{v}\\).",
+        "\\(A\\vec{v}=\\begin{pmatrix}2&0\\\\0&3\\end{pmatrix}\\begin{pmatrix}1\\\\1\\end{pmatrix}=\\begin{pmatrix}2\\\\3\\end{pmatrix}\\).",
+        "Damit \\(\\vec{v}\\) ein Eigenvektor wäre, müsste \\(\\begin{pmatrix}2\\\\3\\end{pmatrix}\\) ein Vielfaches von \\(\\begin{pmatrix}1\\\\1\\end{pmatrix}\\) sein.",
+        "Das ist nicht der Fall, weil die beiden Komponenten nicht denselben Faktor haben.",
+        "Also ist \\(\\vec{v}\\) kein Eigenvektor."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Eigenwerte einer Diagonalmatrix",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Bestimme die Eigenwerte von \\(A=\\begin{pmatrix}5&0\\\\0&-2\\end{pmatrix}\\).",
+      loesung: [
+        "Bei einer Diagonalmatrix kann man die Eigenwerte direkt ablesen.",
+        "Die Eigenwerte stehen auf der Diagonale.",
+        "Also sind die Eigenwerte \\(\\lambda_1=5\\) und \\(\\lambda_2=-2\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Charakteristisches Polynom",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne die Eigenwerte von \\(A=\\begin{pmatrix}4&0\\\\0&1\\end{pmatrix}\\) mit dem charakteristischen Polynom.",
+      loesung: [
+        "Bilde \\(A-\\lambda I\\).",
+        "\\(A-\\lambda I=\\begin{pmatrix}4-\\lambda&0\\\\0&1-\\lambda\\end{pmatrix}\\).",
+        "Berechne die Determinante.",
+        "\\(\\det(A-\\lambda I)=(4-\\lambda)(1-\\lambda)\\).",
+        "Setze gleich \\(0\\).",
+        "\\((4-\\lambda)(1-\\lambda)=0\\).",
+        "Also gilt \\(\\lambda=4\\) oder \\(\\lambda=1\\).",
+        "Die Eigenwerte sind \\(4\\) und \\(1\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Eigenvektor berechnen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme einen Eigenvektor zum Eigenwert \\(\\lambda=4\\) der Matrix \\(A=\\begin{pmatrix}4&0\\\\0&1\\end{pmatrix}\\).",
+      loesung: [
+        "Setze \\(\\lambda=4\\) in \\(A-\\lambda I\\) ein.",
+        "\\(A-4I=\\begin{pmatrix}0&0\\\\0&-3\\end{pmatrix}\\).",
+        "Löse \\((A-4I)\\vec{v}=\\vec{0}\\).",
+        "Für \\(\\vec{v}=\\begin{pmatrix}x\\\\y\\end{pmatrix}\\) ergibt sich \\(-3y=0\\).",
+        "Also ist \\(y=0\\).",
+        "\\(x\\) ist frei wählbar, aber nicht \\(0\\), wenn man einen Eigenvektor will.",
+        "Wähle \\(x=1\\).",
+        "Ein Eigenvektor ist \\(\\begin{pmatrix}1\\\\0\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Eigenwerte einer nicht diagonalen Matrix",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne die Eigenwerte von \\(A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}\\).",
+      loesung: [
+        "Bilde \\(A-\\lambda I\\).",
+        "\\(A-\\lambda I=\\begin{pmatrix}2-\\lambda&1\\\\0&3-\\lambda\\end{pmatrix}\\).",
+        "Berechne die Determinante.",
+        "Da die Matrix dreieckig ist, ist die Determinante \\((2-\\lambda)(3-\\lambda)\\).",
+        "Setze gleich \\(0\\).",
+        "\\((2-\\lambda)(3-\\lambda)=0\\).",
+        "Also sind die Eigenwerte \\(\\lambda=2\\) und \\(\\lambda=3\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Eigenraum bestimmen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme den Eigenraum zum Eigenwert \\(\\lambda=3\\) der Matrix \\(A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}\\).",
+      loesung: [
+        "Setze \\(\\lambda=3\\) ein.",
+        "\\(A-3I=\\begin{pmatrix}-1&1\\\\0&0\\end{pmatrix}\\).",
+        "Löse \\((A-3I)\\vec{v}=\\vec{0}\\).",
+        "Für \\(\\vec{v}=\\begin{pmatrix}x\\\\y\\end{pmatrix}\\) ergibt sich \\(-x+y=0\\).",
+        "Also ist \\(y=x\\).",
+        "Setze \\(x=t\\).",
+        "Dann ist \\(\\vec{v}=\\begin{pmatrix}t\\\\t\\end{pmatrix}=t\\begin{pmatrix}1\\\\1\\end{pmatrix}\\).",
+        "Der Eigenraum ist \\(E_3=\\text{span}\\left\\{\\begin{pmatrix}1\\\\1\\end{pmatrix}\\right\\}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Diagonalisierbarkeit prüfen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Prüfe, ob \\(A=\\begin{pmatrix}2&0\\\\0&5\\end{pmatrix}\\) diagonalisierbar ist.",
+      loesung: [
+        "Die Matrix ist bereits diagonal.",
+        "Die Eigenwerte sind \\(2\\) und \\(5\\).",
+        "Zu \\(\\lambda=2\\) gehört zum Beispiel der Eigenvektor \\(\\begin{pmatrix}1\\\\0\\end{pmatrix}\\).",
+        "Zu \\(\\lambda=5\\) gehört zum Beispiel der Eigenvektor \\(\\begin{pmatrix}0\\\\1\\end{pmatrix}\\).",
+        "Diese beiden Eigenvektoren sind linear unabhängig.",
+        "Eine \\(2\\times2\\)-Matrix braucht zwei linear unabhängige Eigenvektoren.",
+        "Also ist die Matrix diagonalisierbar."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Matrix mit nur einem Eigenraum",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Untersuche die Matrix \\(A=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}\\) auf Diagonalisierbarkeit.",
+      loesung: [
+        "Bilde \\(A-\\lambda I\\).",
+        "\\(A-\\lambda I=\\begin{pmatrix}1-\\lambda&1\\\\0&1-\\lambda\\end{pmatrix}\\).",
+        "Die Determinante ist \\((1-\\lambda)^2\\).",
+        "Also ist der einzige Eigenwert \\(\\lambda=1\\).",
+        "Bestimme den Eigenraum.",
+        "\\(A-I=\\begin{pmatrix}0&1\\\\0&0\\end{pmatrix}\\).",
+        "Aus \\((A-I)\vec{v}=\\vec{0}\\) folgt \\(y=0\\).",
+        "Also sind die Eigenvektoren Vielfache von \\(\\begin{pmatrix}1\\\\0\\end{pmatrix}\\).",
+        "Es gibt nur eine Richtung von Eigenvektoren.",
+        "Für Diagonalisierbarkeit einer \\(2\\times2\\)-Matrix bräuchte man zwei linear unabhängige Eigenvektoren.",
+        "Die Matrix ist also nicht diagonalisierbar."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Diagonalmatrix aufstellen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Eine Matrix hat die Eigenvektoren \\(\\vec{v}_1=\\begin{pmatrix}1\\\\0\\end{pmatrix}\\), \\(\\vec{v}_2=\\begin{pmatrix}1\\\\1\\end{pmatrix}\\) zu den Eigenwerten \\(2\\) und \\(4\\). Stelle \\(T\\) und \\(D\\) auf.",
+      loesung: [
+        "Die Eigenvektoren kommen als Spalten in \\(T\\).",
+        "Also ist \\(T=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}\\).",
+        "Die Eigenwerte kommen in derselben Reihenfolge auf die Diagonale von \\(D\\).",
+        "Da \\(\\vec{v}_1\\) zum Eigenwert \\(2\\) gehört und \\(\\vec{v}_2\\) zum Eigenwert \\(4\\), gilt:",
+        "\\(D=\\begin{pmatrix}2&0\\\\0&4\\end{pmatrix}\\).",
+        "Die Reihenfolge ist wichtig, damit Eigenvektoren und Eigenwerte zusammenpassen."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist ein Eigenvektor?",
+      antwort:
+        "Ein Eigenvektor ist ein von \\(\\vec{0}\\) verschiedener Vektor, dessen Richtung durch eine Matrix nicht verändert wird. Er wird nur mit einem Faktor multipliziert."
+    },
+    {
+      frage: "Was ist ein Eigenwert?",
+      antwort:
+        "Ein Eigenwert ist der Faktor, mit dem ein Eigenvektor durch die Matrix gestreckt, gestaucht oder gespiegelt wird."
+    },
+    {
+      frage: "Wie lautet die zentrale Gleichung?",
+      antwort:
+        "Die zentrale Gleichung lautet \\(A\\vec{v}=\\lambda\\vec{v}\\). Dabei ist \\(\\vec{v}\\) der Eigenvektor und \\(\\lambda\\) der Eigenwert."
+    },
+    {
+      frage: "Warum darf der Eigenvektor nicht der Nullvektor sein?",
+      antwort:
+        "Weil der Nullvektor die Gleichung immer erfüllen würde und deshalb keine besondere Richtung beschreibt."
+    },
+    {
+      frage: "Wie findet man Eigenwerte?",
+      antwort:
+        "Man berechnet \\(\\det(A-\\lambda I)=0\\). Die Lösungen dieser Gleichung sind die Eigenwerte."
+    },
+    {
+      frage: "Wie findet man Eigenvektoren?",
+      antwort:
+        "Man setzt den Eigenwert in \\((A-\\lambda I)\vec{v}=\\vec{0}\\) ein und löst das homogene Gleichungssystem."
+    },
+    {
+      frage: "Was ist ein Eigenraum?",
+      antwort:
+        "Der Eigenraum zu einem Eigenwert ist die Menge aller Lösungen von \\((A-\\lambda I)\vec{v}=\\vec{0}\\). Er enthält alle Eigenvektoren zu diesem Eigenwert und zusätzlich den Nullvektor."
+    },
+    {
+      frage: "Wann ist eine Matrix diagonalisierbar?",
+      antwort:
+        "Eine \\(n\\times n\\)-Matrix ist diagonalisierbar, wenn sie \\(n\\) linear unabhängige Eigenvektoren besitzt."
+    },
+    {
+      frage: "Was steht in der Diagonalmatrix \\(D\\)?",
+      antwort:
+        "In \\(D\\) stehen die Eigenwerte auf der Diagonale. Die Reihenfolge muss zu den Eigenvektoren in \\(T\\) passen."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was ein Eigenvektor ist?",
+    "Kannst du erklären, was ein Eigenwert ist?",
+    "Kennst du die Gleichung \\(A\\vec{v}=\\lambda\\vec{v}\\)?",
+    "Weisst du, dass der Nullvektor kein Eigenvektor sein darf?",
+    "Kannst du \\(A-\\lambda I\\) bilden?",
+    "Kannst du Eigenwerte mit \\(\\det(A-\\lambda I)=0\\) berechnen?",
+    "Kannst du das charakteristische Polynom aufstellen?",
+    "Kannst du zu einem Eigenwert das Gleichungssystem \\((A-\\lambda I)\vec{v}=\\vec{0}\\) lösen?",
+    "Kannst du einen Eigenraum in Parameterform schreiben?",
+    "Unterscheidest du Eigenwert und Eigenvektor sicher?",
+    "Kannst du prüfen, ob eine \\(2\\times2\\)-Matrix zwei linear unabhängige Eigenvektoren hat?",
+    "Weisst du, dass bei \\(A=TDT^{-1}\\) die Reihenfolge von \\(T\\) und \\(D\\) zusammenpassen muss?"
+  ]
+},
+   {
+  id: "trigonometrie-allgemeines-dreieck",
+  nummer: "21",
+  titel: "Trigonometrie: Berechnungen am allgemeinen Dreieck",
+  kurzbeschreibung:
+    "Sinussatz, Kosinussatz, Flächenformel, Winkelberechnung und Seitenberechnung in allgemeinen Dreiecken verständlich erklärt.",
+  lernziele: [
+    "Du kannst zwischen rechtwinkligen und allgemeinen Dreiecken unterscheiden.",
+    "Du kannst den Sinussatz anwenden.",
+    "Du kannst den Kosinussatz anwenden.",
+    "Du kannst fehlende Seiten in allgemeinen Dreiecken berechnen.",
+    "Du kannst fehlende Winkel in allgemeinen Dreiecken berechnen.",
+    "Du kannst entscheiden, ob Sinussatz oder Kosinussatz sinnvoll ist.",
+    "Du kannst die Fläche eines allgemeinen Dreiecks mit zwei Seiten und eingeschlossenem Winkel berechnen.",
+    "Du erkennst typische Fehler bei Winkelzuordnung, Taschenrechner-Modus und mehrdeutigen Fällen."
+  ],
+  theorie: [
+    {
+      titel: "Was ist ein allgemeines Dreieck?",
+      text:
+        "Ein allgemeines Dreieck ist ein Dreieck, bei dem nicht zwingend ein rechter Winkel vorkommt. Deshalb reichen Sinus, Kosinus und Tangens aus dem rechtwinkligen Dreieck nicht immer aus. Man braucht dafür vor allem den Sinussatz und den Kosinussatz."
+    },
+    {
+      titel: "Bezeichnung im Dreieck",
+      text:
+        "In einem Dreieck bezeichnet man die Winkel meistens mit \\(\\alpha\\), \\(\\beta\\) und \\(\\gamma\\). Die gegenüberliegenden Seiten heissen dazu passend \\(a\\), \\(b\\) und \\(c\\). Die Seite \\(a\\) liegt also gegenüber von \\(\\alpha\\), die Seite \\(b\\) gegenüber von \\(\\beta\\), und die Seite \\(c\\) gegenüber von \\(\\gamma\\)."
+    },
+    {
+      titel: "Winkelsumme",
+      text:
+        "In jedem Dreieck gilt \\(\\alpha+\\beta+\\gamma=180^\\circ\\). Wenn zwei Winkel bekannt sind, kann man den dritten Winkel direkt berechnen."
+    },
+    {
+      titel: "Sinussatz",
+      text:
+        "Der Sinussatz lautet \\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}=\\frac{c}{\\sin(\\gamma)}\\). Er verbindet jede Seite mit dem Sinus ihres gegenüberliegenden Winkels."
+    },
+    {
+      titel: "Wann verwendet man den Sinussatz?",
+      text:
+        "Der Sinussatz ist besonders nützlich, wenn eine Seite mit ihrem gegenüberliegenden Winkel bekannt ist. Man braucht also ein vollständiges Gegenüber-Paar, zum Beispiel \\(a\\) und \\(\\alpha\\)."
+    },
+    {
+      titel: "Kosinussatz",
+      text:
+        "Der Kosinussatz lautet \\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\). Entsprechend gilt auch \\(b^2=a^2+c^2-2ac\\cos(\\beta)\\) und \\(c^2=a^2+b^2-2ab\\cos(\\gamma)\\)."
+    },
+    {
+      titel: "Wann verwendet man den Kosinussatz?",
+      text:
+        "Den Kosinussatz verwendet man meistens, wenn zwei Seiten und der eingeschlossene Winkel bekannt sind oder wenn alle drei Seiten bekannt sind und ein Winkel gesucht ist."
+    },
+    {
+      titel: "Kosinussatz als Erweiterung von Pythagoras",
+      text:
+        "Der Satz des Pythagoras gilt nur im rechtwinkligen Dreieck. Der Kosinussatz ist eine Verallgemeinerung davon. Wenn der eingeschlossene Winkel \\(90^\\circ\\) ist, wird aus dem Kosinussatz der Satz des Pythagoras."
+    },
+    {
+      titel: "Flächenformel im allgemeinen Dreieck",
+      text:
+        "Wenn zwei Seiten und der eingeschlossene Winkel bekannt sind, kann man die Fläche mit \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\) berechnen. Allgemein gilt: Man nimmt zwei Seiten und den Sinus des eingeschlossenen Winkels."
+    },
+    {
+      titel: "Winkel mit dem Kosinussatz berechnen",
+      text:
+        "Wenn alle drei Seiten bekannt sind, kann man einen Winkel berechnen, indem man den Kosinussatz nach dem Kosinus des Winkels umstellt. Zum Beispiel gilt \\(\\cos(\\alpha)=\\frac{b^2+c^2-a^2}{2bc}\\)."
+    },
+    {
+      titel: "Mehrdeutiger Fall beim Sinussatz",
+      text:
+        "Beim Sinussatz kann es vorkommen, dass es zwei mögliche Winkel gibt, weil \\(\\sin(x)=\\sin(180^\\circ-x)\\) gilt. Deshalb muss man bei Winkelberechnungen mit dem Sinussatz prüfen, ob ein zweiter Winkel möglich ist."
+    },
+    {
+      titel: "Taschenrechner-Modus",
+      text:
+        "Bei Aufgaben mit Gradangaben muss der Taschenrechner im Gradmodus sein. Wenn der Taschenrechner im Bogenmass eingestellt ist, entstehen falsche Ergebnisse."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Fehlenden Winkel mit der Winkelsumme berechnen",
+      schritte: [
+        "Prüfe, ob zwei Winkel des Dreiecks bekannt sind.",
+        "Verwende die Winkelsumme \\(\\alpha+\\beta+\\gamma=180^\\circ\\).",
+        "Addiere die beiden bekannten Winkel.",
+        "Subtrahiere diese Summe von \\(180^\\circ\\).",
+        "Der erhaltene Wert ist der fehlende Winkel.",
+        "Kontrolliere, ob alle drei Winkel zusammen \\(180^\\circ\\) ergeben."
+      ]
+    },
+    {
+      titel: "Methode: Sinussatz anwenden",
+      schritte: [
+        "Beschrifte das Dreieck sauber mit Seiten und gegenüberliegenden Winkeln.",
+        "Suche ein bekanntes Paar aus Seite und gegenüberliegendem Winkel.",
+        "Wähle zusätzlich die gesuchte Seite oder den gesuchten Winkel.",
+        "Stelle den Sinussatz mit diesen beiden Paaren auf.",
+        "Setze die bekannten Werte ein.",
+        "Löse nach der gesuchten Grösse auf.",
+        "Prüfe bei gesuchten Winkeln, ob ein zweiter Winkel möglich ist."
+      ]
+    },
+    {
+      titel: "Methode: Kosinussatz für eine Seite anwenden",
+      schritte: [
+        "Prüfe, ob zwei Seiten und der eingeschlossene Winkel bekannt sind.",
+        "Wähle die passende Form des Kosinussatzes.",
+        "Setze die beiden bekannten Seiten und den eingeschlossenen Winkel ein.",
+        "Berechne zuerst den Ausdruck unter der Wurzel.",
+        "Ziehe am Schluss die Wurzel, wenn eine Seitenlänge gesucht ist.",
+        "Kontrolliere, ob die Seitenlänge positiv und plausibel ist."
+      ]
+    },
+    {
+      titel: "Methode: Kosinussatz für einen Winkel anwenden",
+      schritte: [
+        "Prüfe, ob alle drei Seiten bekannt sind.",
+        "Wähle den Winkel, den du berechnen möchtest.",
+        "Stelle den Kosinussatz nach dem Kosinus dieses Winkels um.",
+        "Setze die drei Seitenlängen ein.",
+        "Berechne den Kosinuswert.",
+        "Verwende \\(\\arccos\\), um den Winkel zu berechnen.",
+        "Kontrolliere, ob der Winkel im Dreieck sinnvoll ist."
+      ]
+    },
+    {
+      titel: "Methode: Fläche eines allgemeinen Dreiecks berechnen",
+      schritte: [
+        "Prüfe, ob zwei Seiten und der eingeschlossene Winkel bekannt sind.",
+        "Verwende die Formel \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\), wenn \\(\\alpha\\) zwischen \\(b\\) und \\(c\\) liegt.",
+        "Setze die beiden Seiten und den eingeschlossenen Winkel ein.",
+        "Achte darauf, dass der Taschenrechner im Gradmodus ist.",
+        "Berechne den Flächeninhalt.",
+        "Gib die Fläche in Quadrateinheiten an."
+      ]
+    },
+    {
+      titel: "Methode: Entscheiden zwischen Sinussatz und Kosinussatz",
+      schritte: [
+        "Prüfe zuerst, ob ein bekanntes Gegenüber-Paar vorhanden ist.",
+        "Wenn ja, ist oft der Sinussatz geeignet.",
+        "Prüfe, ob zwei Seiten und der eingeschlossene Winkel bekannt sind.",
+        "Wenn ja, ist der Kosinussatz geeignet.",
+        "Prüfe, ob alle drei Seiten bekannt sind.",
+        "Wenn ja, ist für Winkel der Kosinussatz geeignet.",
+        "Wenn zwei Winkel bekannt sind, berechne zuerst den dritten Winkel mit der Winkelsumme.",
+        "Wähle danach die einfachste passende Formel."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Im Dreieck gilt immer \\(\\alpha+\\beta+\\gamma=180^\\circ\\).",
+    "Die Seite \\(a\\) liegt gegenüber vom Winkel \\(\\alpha\\).",
+    "Die Seite \\(b\\) liegt gegenüber vom Winkel \\(\\beta\\).",
+    "Die Seite \\(c\\) liegt gegenüber vom Winkel \\(\\gamma\\).",
+    "Der Sinussatz lautet \\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}=\\frac{c}{\\sin(\\gamma)}\\).",
+    "Für den Sinussatz braucht man meistens ein bekanntes Gegenüber-Paar.",
+    "Der Kosinussatz lautet \\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\).",
+    "Den Kosinussatz verwendet man bei zwei Seiten mit eingeschlossenem Winkel oder bei drei bekannten Seiten.",
+    "Die Flächenformel lautet \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\), wenn \\(\\alpha\\) zwischen \\(b\\) und \\(c\\) liegt.",
+    "Beim Sinussatz kann es bei Winkelberechnungen zwei mögliche Lösungen geben.",
+    "Bei Gradangaben muss der Taschenrechner im Gradmodus sein.",
+    "Der Kosinussatz wird bei \\(90^\\circ\\) zum Satz des Pythagoras."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man ordnet Seiten und Winkel falsch zu.",
+      korrektur:
+        "Die Seite \\(a\\) liegt immer gegenüber vom Winkel \\(\\alpha\\), nicht neben ihm. Genauso gehören \\(b\\) zu \\(\\beta\\) und \\(c\\) zu \\(\\gamma\\)."
+    },
+    {
+      fehler: "Man verwendet den Sinussatz ohne bekanntes Gegenüber-Paar.",
+      korrektur:
+        "Beim Sinussatz braucht man normalerweise eine bekannte Seite mit ihrem gegenüberliegenden Winkel, sonst kann man das Verhältnis nicht sinnvoll aufstellen."
+    },
+    {
+      fehler: "Man verwendet den Satz des Pythagoras in einem nicht rechtwinkligen Dreieck.",
+      korrektur:
+        "Pythagoras gilt nur bei einem rechten Winkel. In allgemeinen Dreiecken verwendet man stattdessen den Kosinussatz."
+    },
+    {
+      fehler: "Man setzt beim Kosinussatz den falschen Winkel ein.",
+      korrektur:
+        "In \\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\) muss \\(\\alpha\\) der Winkel zwischen den Seiten \\(b\\) und \\(c\\) sein."
+    },
+    {
+      fehler: "Man vergisst beim Kosinussatz die Wurzel zu ziehen.",
+      korrektur:
+        "Wenn man \\(a^2\\) berechnet hat, ist die Seitenlänge noch nicht \\(a^2\\), sondern \\(a=\\sqrt{a^2}\\)."
+    },
+    {
+      fehler: "Man berechnet einen Winkel mit \\(\\arcsin\\) und vergisst die zweite mögliche Lösung.",
+      korrektur:
+        "Da \\(\\sin(x)=\\sin(180^\\circ-x)\\) gilt, kann beim Sinussatz ein zweiter Winkel möglich sein. Dieser muss geprüft werden."
+    },
+    {
+      fehler: "Der Taschenrechner steht im Bogenmass statt im Gradmodus.",
+      korrektur:
+        "Wenn die Aufgabe Winkel in Grad angibt, muss der Taschenrechner auf Grad eingestellt sein."
+    },
+    {
+      fehler: "Man verwendet bei der Flächenformel einen nicht eingeschlossenen Winkel.",
+      korrektur:
+        "Die Formel \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\) verwendet den Winkel \\(\\alpha\\), der zwischen den Seiten \\(b\\) und \\(c\\) liegt."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Fehlenden Winkel berechnen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "In einem Dreieck gilt \\(\\alpha=48^\\circ\\) und \\(\\beta=72^\\circ\\). Berechne \\(\\gamma\\).",
+      loesung: [
+        "In jedem Dreieck gilt \\(\\alpha+\\beta+\\gamma=180^\\circ\\).",
+        "Setze die bekannten Winkel ein.",
+        "\\(48^\\circ+72^\\circ+\\gamma=180^\\circ\\).",
+        "\\(120^\\circ+\gamma=180^\\circ\\).",
+        "Also ist \\(\\gamma=60^\\circ\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Sinussatz für eine Seite",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "In einem Dreieck gilt \\(a=8\\), \\(\\alpha=40^\\circ\\) und \\(\\beta=70^\\circ\\). Berechne \\(b\\).",
+      loesung: [
+        "Es ist ein Gegenüber-Paar bekannt: \\(a=8\\) und \\(\\alpha=40^\\circ\\).",
+        "Gesucht ist \\(b\\), und dazu gehört der Winkel \\(\\beta=70^\\circ\\).",
+        "Verwende den Sinussatz.",
+        "\\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}\\).",
+        "Setze ein: \\(\\frac{8}{\\sin(40^\\circ)}=\\frac{b}{\\sin(70^\\circ)}\\).",
+        "Löse nach \\(b\\) auf.",
+        "\\(b=\\frac{8\\sin(70^\\circ)}{\\sin(40^\\circ)}\\).",
+        "Näherungsweise ergibt sich \\(b\\approx11.7\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Sinussatz für einen Winkel",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einem Dreieck gilt \\(a=10\\), \\(b=7\\) und \\(\\alpha=80^\\circ\\). Berechne \\(\\beta\\), falls möglich.",
+      loesung: [
+        "Verwende den Sinussatz.",
+        "\\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}\\).",
+        "Setze ein: \\(\\frac{10}{\\sin(80^\\circ)}=\\frac{7}{\\sin(\\beta)}\\).",
+        "Forme nach \\(\\sin(\\beta)\\) um.",
+        "\\(\\sin(\\beta)=\\frac{7\\sin(80^\\circ)}{10}\\).",
+        "Das ergibt ungefähr \\(\\sin(\\beta)\\approx0.689\\).",
+        "Also ist \\(\\beta\\approx43.5^\\circ\\).",
+        "Ein zweiter möglicher Winkel wäre \\(180^\\circ-43.5^\\circ=136.5^\\circ\\).",
+        "Da \\(80^\\circ+136.5^\\circ>180^\\circ\\), ist dieser zweite Winkel nicht möglich.",
+        "Also gilt \\(\\beta\\approx43.5^\\circ\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Kosinussatz für eine Seite",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einem Dreieck gilt \\(b=6\\), \\(c=9\\) und \\(\\alpha=50^\\circ\\). Berechne \\(a\\).",
+      loesung: [
+        "Es sind zwei Seiten und der eingeschlossene Winkel bekannt.",
+        "Daher verwendet man den Kosinussatz.",
+        "\\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\).",
+        "Setze ein.",
+        "\\(a^2=6^2+9^2-2\\cdot6\\cdot9\\cos(50^\\circ)\\).",
+        "\\(a^2=36+81-108\\cos(50^\\circ)\\).",
+        "Das ergibt näherungsweise \\(a^2\\approx47.6\\).",
+        "Also ist \\(a\\approx\\sqrt{47.6}\\approx6.9\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Kosinussatz für einen Winkel",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einem Dreieck gilt \\(a=7\\), \\(b=8\\) und \\(c=10\\). Berechne \\(\\alpha\\).",
+      loesung: [
+        "Da alle drei Seiten bekannt sind, verwendet man den Kosinussatz.",
+        "Stelle nach \\(\\cos(\\alpha)\\) um.",
+        "\\(\\cos(\\alpha)=\\frac{b^2+c^2-a^2}{2bc}\\).",
+        "Setze ein.",
+        "\\(\\cos(\\alpha)=\\frac{8^2+10^2-7^2}{2\\cdot8\\cdot10}\\).",
+        "\\(\\cos(\\alpha)=\\frac{64+100-49}{160}=\\frac{115}{160}\\).",
+        "\\(\\cos(\\alpha)=0.71875\\).",
+        "Also ist \\(\\alpha=\\arccos(0.71875)\\).",
+        "Näherungsweise ergibt sich \\(\\alpha\\approx44.1^\\circ\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Fläche mit zwei Seiten und eingeschlossenem Winkel",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einem Dreieck gilt \\(b=12\\), \\(c=5\\) und \\(\\alpha=30^\\circ\\). Berechne die Fläche.",
+      loesung: [
+        "Die Seiten \\(b\\) und \\(c\\) schliessen den Winkel \\(\\alpha\\) ein.",
+        "Verwende die Flächenformel \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\).",
+        "Setze ein.",
+        "\\(A=\\frac{1}{2}\\cdot12\\cdot5\\cdot\\sin(30^\\circ)\\).",
+        "\\(\\sin(30^\\circ)=0.5\\).",
+        "Also ist \\(A=30\\cdot0.5=15\\).",
+        "Die Fläche beträgt \\(15\\) Flächeneinheiten."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Entscheidung zwischen Sinussatz und Kosinussatz",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einem Dreieck sind \\(a=9\\), \\(b=11\\) und \\(\\gamma=60^\\circ\\) bekannt. Welche Methode ist geeignet, um \\(c\\) zu berechnen?",
+      loesung: [
+        "Die gesuchte Seite \\(c\\) liegt gegenüber vom Winkel \\(\\gamma\\).",
+        "Bekannt sind die beiden Seiten \\(a\\) und \\(b\\).",
+        "Der Winkel \\(\\gamma\\) liegt zwischen diesen beiden Seiten.",
+        "Das ist der Fall: zwei Seiten und eingeschlossener Winkel.",
+        "Dafür verwendet man den Kosinussatz.",
+        "Die passende Formel ist \\(c^2=a^2+b^2-2ab\\cos(\\gamma)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Vollständige Dreiecksberechnung",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "In einem Dreieck gilt \\(a=10\\), \\(\\alpha=45^\\circ\\) und \\(\\beta=65^\\circ\\). Berechne \\(\\gamma\\), \\(b\\) und \\(c\\).",
+      loesung: [
+        "Zuerst berechnet man den dritten Winkel.",
+        "\\(\\gamma=180^\\circ-45^\\circ-65^\\circ=70^\\circ\\).",
+        "Nun ist ein Gegenüber-Paar bekannt: \\(a=10\\) und \\(\\alpha=45^\\circ\\).",
+        "Verwende den Sinussatz.",
+        "\\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}=\\frac{c}{\\sin(\\gamma)}\\).",
+        "Berechne \\(b\\).",
+        "\\(b=\\frac{10\\sin(65^\\circ)}{\\sin(45^\\circ)}\\).",
+        "Näherungsweise ist \\(b\\approx12.8\\).",
+        "Berechne \\(c\\).",
+        "\\(c=\\frac{10\\sin(70^\\circ)}{\\sin(45^\\circ)}\\).",
+        "Näherungsweise ist \\(c\\approx13.3\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Pythagoras oder Kosinussatz?",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Erkläre, warum man bei \\(b=7\\), \\(c=9\\) und \\(\\alpha=110^\\circ\\) nicht den Satz des Pythagoras für \\(a\\) verwenden darf.",
+      loesung: [
+        "Der Satz des Pythagoras gilt nur in rechtwinkligen Dreiecken.",
+        "Hier ist der eingeschlossene Winkel \\(\\alpha=110^\\circ\\).",
+        "Das ist kein rechter Winkel.",
+        "Deshalb darf man nicht \\(a^2=b^2+c^2\\) verwenden.",
+        "Stattdessen verwendet man den Kosinussatz.",
+        "Die passende Formel lautet \\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Mehrdeutigen Fall prüfen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "In einem Dreieck gilt \\(a=12\\), \\(b=10\\) und \\(\\alpha=40^\\circ\\). Berechne mögliche Werte für \\(\\beta\\).",
+      loesung: [
+        "Verwende den Sinussatz.",
+        "\\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}\\).",
+        "Forme nach \\(\\sin(\\beta)\\) um.",
+        "\\(\\sin(\\beta)=\\frac{b\\sin(\\alpha)}{a}\\).",
+        "Setze ein.",
+        "\\(\\sin(\\beta)=\\frac{10\\sin(40^\\circ)}{12}\\).",
+        "Das ergibt näherungsweise \\(\\sin(\\beta)\\approx0.536\\).",
+        "Daraus folgt \\(\\beta\\approx32.4^\\circ\\).",
+        "Der zweite mögliche Winkel wäre \\(180^\\circ-32.4^\\circ=147.6^\\circ\\).",
+        "Prüfe die Winkelsumme mit \\(\\alpha=40^\\circ\\).",
+        "\\(40^\\circ+147.6^\\circ=187.6^\\circ\\), das ist zu gross.",
+        "Der zweite Winkel ist also nicht möglich.",
+        "Damit gilt \\(\\beta\\approx32.4^\\circ\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist der Unterschied zwischen rechtwinkliger Trigonometrie und Trigonometrie am allgemeinen Dreieck?",
+      antwort:
+        "Bei rechtwinkliger Trigonometrie arbeitet man mit Sinus, Kosinus und Tangens direkt im rechtwinkligen Dreieck. Beim allgemeinen Dreieck gibt es nicht zwingend einen rechten Winkel, deshalb braucht man Sinussatz und Kosinussatz."
+    },
+    {
+      frage: "Wie sind Seiten und Winkel im Dreieck zugeordnet?",
+      antwort:
+        "Die Seite \\(a\\) liegt gegenüber vom Winkel \\(\\alpha\\), die Seite \\(b\\) gegenüber von \\(\\beta\\), und die Seite \\(c\\) gegenüber von \\(\\gamma\\)."
+    },
+    {
+      frage: "Wie lautet der Sinussatz?",
+      antwort:
+        "Der Sinussatz lautet \\(\\frac{a}{\\sin(\\alpha)}=\\frac{b}{\\sin(\\beta)}=\\frac{c}{\\sin(\\gamma)}\\)."
+    },
+    {
+      frage: "Wann verwendet man den Sinussatz?",
+      antwort:
+        "Man verwendet ihn meistens, wenn eine Seite mit ihrem gegenüberliegenden Winkel bekannt ist und eine weitere Seite oder ein weiterer Winkel gesucht wird."
+    },
+    {
+      frage: "Wie lautet der Kosinussatz?",
+      antwort:
+        "Eine Form lautet \\(a^2=b^2+c^2-2bc\\cos(\\alpha)\\). Dabei liegt \\(\\alpha\\) zwischen den Seiten \\(b\\) und \\(c\\)."
+    },
+    {
+      frage: "Wann verwendet man den Kosinussatz?",
+      antwort:
+        "Man verwendet ihn bei zwei bekannten Seiten mit eingeschlossenem Winkel oder bei drei bekannten Seiten, wenn ein Winkel gesucht ist."
+    },
+    {
+      frage: "Wie berechnet man die Fläche eines allgemeinen Dreiecks?",
+      antwort:
+        "Wenn zwei Seiten und der eingeschlossene Winkel bekannt sind, verwendet man \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\)."
+    },
+    {
+      frage: "Warum ist der Sinussatz manchmal mehrdeutig?",
+      antwort:
+        "Weil zwei verschiedene Winkel denselben Sinuswert haben können, nämlich \\(x\\) und \\(180^\\circ-x\\). Deshalb muss man den zweiten möglichen Winkel prüfen."
+    },
+    {
+      frage: "Warum ist der Kosinussatz eine Verallgemeinerung von Pythagoras?",
+      antwort:
+        "Wenn der eingeschlossene Winkel \\(90^\\circ\\) ist, ist \\(\\cos(90^\\circ)=0\\). Dann bleibt aus dem Kosinussatz genau die Pythagoras-Formel übrig."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du Seiten und gegenüberliegende Winkel korrekt zuordnen?",
+    "Kennst du die Winkelsumme \\(180^\\circ\\)?",
+    "Kannst du den Sinussatz aufschreiben?",
+    "Weisst du, dass man beim Sinussatz ein bekanntes Gegenüber-Paar braucht?",
+    "Kannst du den Kosinussatz aufschreiben?",
+    "Erkennst du, wann der Kosinussatz statt Pythagoras nötig ist?",
+    "Kannst du eine fehlende Seite mit dem Kosinussatz berechnen?",
+    "Kannst du einen Winkel mit dem Kosinussatz berechnen?",
+    "Kennst du die Flächenformel \\(A=\\frac{1}{2}bc\\sin(\\alpha)\\)?",
+    "Prüfst du beim Sinussatz mögliche zweite Winkel?",
+    "Ist dein Taschenrechner bei Gradangaben im Gradmodus?",
+    "Kontrollierst du, ob alle Winkel zusammen \\(180^\\circ\\) ergeben?"
+  ]
+},
    
 ];
 /* =========================
