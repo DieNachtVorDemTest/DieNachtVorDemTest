@@ -4968,6 +4968,1748 @@ nachtVorTest: [
     "Erkennst du die Fälle Schnittpunkt, parallel und Gerade liegt in Ebene?",
     "Unterscheidest du Spannvektor und Normalvektor sicher?"
   ]
+},
+   {
+  id: "kombinatorik-zaehlprinzip",
+  nummer: "14",
+  titel: "Kombinatorik",
+  kurzbeschreibung:
+    "Zählprinzip und die sechs Grundprobleme der Kombinatorik: Permutationen, Variationen und Kombinationen jeweils mit und ohne Wiederholung.",
+  lernziele: [
+    "Du kannst erklären, was Kombinatorik untersucht.",
+    "Du verstehst das allgemeine Zählprinzip.",
+    "Du kannst zwischen Permutation, Variation und Kombination unterscheiden.",
+    "Du erkennst, ob die Reihenfolge wichtig ist oder nicht.",
+    "Du erkennst, ob Wiederholung erlaubt ist oder nicht.",
+    "Du kannst die sechs Grundprobleme der Kombinatorik unterscheiden.",
+    "Du kannst Fakultäten sicher verwenden.",
+    "Du kannst typische Urnenmodelle passend zuordnen.",
+    "Du kannst kombinatorische Aufgaben systematisch analysieren.",
+    "Du erkennst typische Fehler beim Verwechseln von Reihenfolge und Auswahl."
+  ],
+  theorie: [
+    {
+      titel: "Was ist Kombinatorik?",
+      text:
+        "Die Kombinatorik beschäftigt sich mit der Frage, wie viele Möglichkeiten es gibt, Dinge anzuordnen, auszuwählen oder zu verteilen. Man zählt also Möglichkeiten, ohne sie alle einzeln aufzuschreiben."
+    },
+    {
+      titel: "Das Zählprinzip",
+      text:
+        "Wenn eine Entscheidung in mehreren Schritten getroffen wird und es im ersten Schritt \\(m\\) Möglichkeiten und im zweiten Schritt \\(n\\) Möglichkeiten gibt, dann gibt es insgesamt \\(m\\cdot n\\) Möglichkeiten."
+    },
+    {
+      titel: "Beispiel zum Zählprinzip",
+      text:
+        "Wenn man \\(3\\) Hosen und \\(4\\) T-Shirts zur Auswahl hat, gibt es \\(3\\cdot4=12\\) mögliche Outfits. Jede Hose kann mit jedem T-Shirt kombiniert werden."
+    },
+    {
+      titel: "Fakultät",
+      text:
+        "Die Fakultät \\(n!\\) bedeutet \\(n\\cdot(n-1)\\cdot(n-2)\\cdot\\ldots\\cdot1\\). Zum Beispiel ist \\(5!=5\\cdot4\\cdot3\\cdot2\\cdot1=120\\)."
+    },
+    {
+      titel: "Permutation",
+      text:
+        "Eine Permutation ist eine Anordnung aller vorhandenen Objekte. Die Reihenfolge ist wichtig. Wenn alle Objekte verschieden sind, gibt es \\(n!\\) mögliche Anordnungen."
+    },
+    {
+      titel: "Permutation mit Wiederholungen",
+      text:
+        "Wenn sich Objekte wiederholen, muss man durch die Fakultäten der Wiederholungszahlen teilen. Zum Beispiel gibt es bei Buchstaben mit Wiederholungen weniger verschiedene Anordnungen als bei lauter verschiedenen Buchstaben."
+    },
+    {
+      titel: "Variation",
+      text:
+        "Bei einer Variation wählt man einige Objekte aus und ordnet sie an. Die Reihenfolge ist wichtig. Es werden also nicht unbedingt alle Objekte verwendet."
+    },
+    {
+      titel: "Variation ohne Wiederholung",
+      text:
+        "Bei einer Variation ohne Wiederholung darf jedes Objekt höchstens einmal verwendet werden. Die Anzahl ist \\(\\frac{n!}{(n-k)!}\\), wenn man \\(k\\) Objekte aus \\(n\\) Objekten geordnet auswählt."
+    },
+    {
+      titel: "Variation mit Wiederholung",
+      text:
+        "Bei einer Variation mit Wiederholung darf jedes Objekt mehrfach verwendet werden. Wenn es \\(n\\) Möglichkeiten pro Platz und \\(k\\) Plätze gibt, dann sind es \\(n^k\\) Möglichkeiten."
+    },
+    {
+      titel: "Kombination",
+      text:
+        "Bei einer Kombination wählt man Objekte aus, ohne die Reihenfolge zu beachten. Es geht nur darum, welche Objekte gewählt werden, nicht in welcher Reihenfolge."
+    },
+    {
+      titel: "Kombination ohne Wiederholung",
+      text:
+        "Bei einer Kombination ohne Wiederholung wählt man \\(k\\) Objekte aus \\(n\\) Objekten aus, wobei jedes Objekt höchstens einmal vorkommt. Die Anzahl ist \\(\\binom{n}{k}=\\frac{n!}{k!(n-k)!}\\)."
+    },
+    {
+      titel: "Kombination mit Wiederholung",
+      text:
+        "Bei einer Kombination mit Wiederholung ist die Reihenfolge unwichtig, aber Objekte dürfen mehrfach vorkommen. Die Anzahl ist \\(\\binom{n+k-1}{k}\\)."
+    },
+    {
+      titel: "Die zentrale Entscheidungsfrage",
+      text:
+        "Bei Kombinatorik fragt man immer zuerst: Ist die Reihenfolge wichtig? Danach fragt man: Darf ein Element mehrfach vorkommen? Diese zwei Fragen entscheiden meistens über die richtige Formel."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Kombinatorik-Aufgabe richtig einordnen",
+      schritte: [
+        "Lies genau, was gezählt werden soll.",
+        "Prüfe zuerst, ob alle Objekte verwendet werden oder nur einige.",
+        "Frage dich, ob die Reihenfolge wichtig ist.",
+        "Frage dich, ob Wiederholung erlaubt ist.",
+        "Ordne die Aufgabe einer Permutation, Variation oder Kombination zu.",
+        "Wähle erst danach die passende Formel.",
+        "Setze die Zahlen sauber ein.",
+        "Kontrolliere, ob das Ergebnis ungefähr plausibel ist."
+      ]
+    },
+    {
+      titel: "Methode: Zählprinzip anwenden",
+      schritte: [
+        "Zerlege die Aufgabe in einzelne Entscheidungsschritte.",
+        "Bestimme für jeden Schritt die Anzahl Möglichkeiten.",
+        "Multipliziere die Möglichkeiten der einzelnen Schritte.",
+        "Achte darauf, ob sich die Anzahl nach jedem Schritt verändert.",
+        "Wenn Wiederholung verboten ist, wird die Anzahl Möglichkeiten oft kleiner.",
+        "Wenn Wiederholung erlaubt ist, bleibt die Anzahl oft gleich."
+      ]
+    },
+    {
+      titel: "Methode: Permutation ohne Wiederholung",
+      schritte: [
+        "Prüfe, ob alle Objekte angeordnet werden.",
+        "Prüfe, ob alle Objekte verschieden sind.",
+        "Wenn ja, verwende \\(n!\\).",
+        "Setze die Anzahl der Objekte für \\(n\\) ein.",
+        "Berechne die Fakultät."
+      ]
+    },
+    {
+      titel: "Methode: Permutation mit Wiederholung",
+      schritte: [
+        "Prüfe, ob alle Objekte angeordnet werden.",
+        "Zähle, wie viele Objekte insgesamt vorhanden sind.",
+        "Zähle, welche Objekte mehrfach vorkommen.",
+        "Verwende \\(\\frac{n!}{a!b!c!\\cdots}\\).",
+        "Teile also durch die Fakultäten der Wiederholungszahlen.",
+        "Berechne das Ergebnis."
+      ]
+    },
+    {
+      titel: "Methode: Variation ohne Wiederholung",
+      schritte: [
+        "Prüfe, ob nur \\(k\\) aus \\(n\\) Objekten gewählt werden.",
+        "Prüfe, ob die Reihenfolge wichtig ist.",
+        "Prüfe, ob Wiederholung verboten ist.",
+        "Verwende dann \\(\\frac{n!}{(n-k)!}\\).",
+        "Alternativ kannst du mit dem Zählprinzip rechnen: \\(n\\cdot(n-1)\\cdot\\ldots\\)."
+      ]
+    },
+    {
+      titel: "Methode: Variation mit Wiederholung",
+      schritte: [
+        "Prüfe, ob es \\(k\\) Plätze gibt.",
+        "Prüfe, ob pro Platz jeweils \\(n\\) Möglichkeiten bestehen.",
+        "Prüfe, ob Wiederholung erlaubt ist.",
+        "Wenn die Reihenfolge wichtig ist, verwende \\(n^k\\).",
+        "Berechne die Potenz."
+      ]
+    },
+    {
+      titel: "Methode: Kombination ohne Wiederholung",
+      schritte: [
+        "Prüfe, ob nur ausgewählt wird.",
+        "Prüfe, ob die Reihenfolge unwichtig ist.",
+        "Prüfe, ob jedes Objekt höchstens einmal vorkommen darf.",
+        "Verwende \\(\\binom{n}{k}=\\frac{n!}{k!(n-k)!}\\).",
+        "Berechne den Binomialkoeffizienten."
+      ]
+    },
+    {
+      titel: "Methode: Kombination mit Wiederholung",
+      schritte: [
+        "Prüfe, ob Reihenfolge unwichtig ist.",
+        "Prüfe, ob Wiederholung erlaubt ist.",
+        "Bestimme \\(n\\), die Anzahl verschiedener Objektarten.",
+        "Bestimme \\(k\\), die Anzahl ausgewählter Objekte.",
+        "Verwende \\(\\binom{n+k-1}{k}\\).",
+        "Berechne den Binomialkoeffizienten."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Kombinatorik zählt Möglichkeiten.",
+    "Beim Zählprinzip multipliziert man die Möglichkeiten der einzelnen Schritte.",
+    "\\(n!\\) bedeutet \\(n\\cdot(n-1)\\cdot\\ldots\\cdot1\\).",
+    "Permutation bedeutet: alle Objekte anordnen.",
+    "Variation bedeutet: einige Objekte auswählen und anordnen.",
+    "Kombination bedeutet: einige Objekte auswählen, Reihenfolge egal.",
+    "Die wichtigste Frage lautet: Ist die Reihenfolge wichtig?",
+    "Die zweite wichtige Frage lautet: Ist Wiederholung erlaubt?",
+    "Variation mit Wiederholung hat die Formel \\(n^k\\).",
+    "Variation ohne Wiederholung hat die Formel \\(\\frac{n!}{(n-k)!}\\).",
+    "Kombination ohne Wiederholung hat die Formel \\(\\binom{n}{k}\\).",
+    "Kombination mit Wiederholung hat die Formel \\(\\binom{n+k-1}{k}\\)."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwendet \\(\\binom{n}{k}\\), obwohl die Reihenfolge wichtig ist.",
+      korrektur:
+        "Wenn die Reihenfolge wichtig ist, handelt es sich nicht um eine Kombination, sondern meistens um eine Variation."
+    },
+    {
+      fehler: "Man verwendet \\(n!\\), obwohl nicht alle Objekte angeordnet werden.",
+      korrektur:
+        "\\(n!\\) passt nur, wenn alle \\(n\\) Objekte angeordnet werden. Wenn nur \\(k\\) Objekte gewählt werden, braucht man eine Variation oder Kombination."
+    },
+    {
+      fehler: "Man vergisst bei Wiederholungen zu teilen.",
+      korrektur:
+        "Bei Permutationen mit gleichen Objekten muss man durch die Fakultäten der Wiederholungszahlen teilen."
+    },
+    {
+      fehler: "Man denkt, Auswahl und Anordnung seien dasselbe.",
+      korrektur:
+        "Bei einer Auswahl ist die Reihenfolge egal. Bei einer Anordnung ist die Reihenfolge wichtig."
+    },
+    {
+      fehler: "Man verwendet \\(n^k\\), obwohl Wiederholung nicht erlaubt ist.",
+      korrektur:
+        "\\(n^k\\) gilt bei geordneten Auswahlen mit Wiederholung. Ohne Wiederholung nimmt die Anzahl Möglichkeiten nach jeder Wahl ab."
+    },
+    {
+      fehler: "Man setzt \\(n\\) und \\(k\\) falsch ein.",
+      korrektur:
+        "\\(n\\) ist die Anzahl verfügbarer verschiedener Objekte. \\(k\\) ist die Anzahl der Plätze oder ausgewählten Objekte."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Einfaches Zählprinzip",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein Schüler hat \\(4\\) Pullover und \\(3\\) Hosen. Wie viele verschiedene Outfits aus einem Pullover und einer Hose kann er bilden?",
+      loesung: [
+        "Es gibt \\(4\\) Möglichkeiten für den Pullover.",
+        "Zu jedem Pullover gibt es \\(3\\) Möglichkeiten für die Hose.",
+        "Nach dem Zählprinzip multipliziert man.",
+        "\\(4\\cdot3=12\\).",
+        "Es gibt also \\(12\\) verschiedene Outfits."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Permutation ohne Wiederholung",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Wie viele Möglichkeiten gibt es, \\(5\\) verschiedene Bücher in einer Reihe anzuordnen?",
+      loesung: [
+        "Alle \\(5\\) Bücher werden angeordnet.",
+        "Die Reihenfolge ist wichtig.",
+        "Alle Bücher sind verschieden.",
+        "Also handelt es sich um eine Permutation ohne Wiederholung.",
+        "Die Anzahl ist \\(5!\\).",
+        "\\(5!=120\\).",
+        "Es gibt \\(120\\) Möglichkeiten."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Variation ohne Wiederholung",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Aus \\(6\\) Personen werden Präsident, Vizepräsident und Protokollführer gewählt. Eine Person darf nur ein Amt haben. Wie viele Möglichkeiten gibt es?",
+      loesung: [
+        "Es gibt \\(3\\) verschiedene Ämter.",
+        "Die Reihenfolge beziehungsweise Rolle ist wichtig.",
+        "Wiederholung ist nicht erlaubt.",
+        "Für das erste Amt gibt es \\(6\\) Möglichkeiten.",
+        "Für das zweite Amt bleiben \\(5\\) Möglichkeiten.",
+        "Für das dritte Amt bleiben \\(4\\) Möglichkeiten.",
+        "Also gibt es \\(6\\cdot5\\cdot4=120\\) Möglichkeiten."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Variation mit Wiederholung",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein Code besteht aus \\(4\\) Ziffern. Jede Ziffer von \\(0\\) bis \\(9\\) darf mehrfach vorkommen. Wie viele Codes gibt es?",
+      loesung: [
+        "Es gibt \\(10\\) mögliche Ziffern.",
+        "Der Code hat \\(4\\) Stellen.",
+        "Wiederholung ist erlaubt.",
+        "Die Reihenfolge ist wichtig, weil zum Beispiel \\(1234\\) anders ist als \\(4321\\).",
+        "Also gilt \\(10^4\\).",
+        "\\(10^4=10000\\).",
+        "Es gibt \\(10000\\) Codes."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Kombination ohne Wiederholung",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Aus \\(8\\) Schülern werden \\(3\\) für eine Gruppe ausgewählt. Die Reihenfolge spielt keine Rolle. Wie viele Gruppen sind möglich?",
+      loesung: [
+        "Es werden \\(3\\) Personen aus \\(8\\) ausgewählt.",
+        "Die Reihenfolge spielt keine Rolle.",
+        "Wiederholung ist nicht möglich.",
+        "Also verwendet man \\(\\binom{8}{3}\\).",
+        "\\(\\binom{8}{3}=\\frac{8!}{3!5!}\\).",
+        "Das ergibt \\(56\\).",
+        "Es sind \\(56\\) Gruppen möglich."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Permutation mit Wiederholung",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Wie viele verschiedene Anordnungen gibt es für die Buchstaben des Wortes \\(ANNA\\)?",
+      loesung: [
+        "Das Wort hat insgesamt \\(4\\) Buchstaben.",
+        "Der Buchstabe \\(A\\) kommt \\(2\\)-mal vor.",
+        "Der Buchstabe \\(N\\) kommt \\(2\\)-mal vor.",
+        "Ohne Wiederholungen gäbe es \\(4!\\) Anordnungen.",
+        "Da gleiche Buchstaben nicht unterscheidbar sind, teilt man durch \\(2!\\cdot2!\\).",
+        "Also \\(\\frac{4!}{2!2!}=\\frac{24}{4}=6\\).",
+        "Es gibt \\(6\\) verschiedene Anordnungen."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Kombination mit Wiederholung",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einer Bäckerei gibt es \\(5\\) Sorten Brötchen. Eine Person kauft \\(3\\) Brötchen. Sorten dürfen mehrfach gewählt werden, die Reihenfolge ist egal. Wie viele Möglichkeiten gibt es?",
+      loesung: [
+        "Es gibt \\(n=5\\) Sorten.",
+        "Es werden \\(k=3\\) Brötchen gewählt.",
+        "Wiederholung ist erlaubt.",
+        "Die Reihenfolge ist egal.",
+        "Also verwendet man \\(\\binom{n+k-1}{k}\\).",
+        "Das ergibt \\(\\binom{5+3-1}{3}=\\binom{7}{3}\\).",
+        "\\(\\binom{7}{3}=35\\).",
+        "Es gibt \\(35\\) Möglichkeiten."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Formel erkennen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Aus \\(10\\) Läufern werden die ersten drei Plätze vergeben. Wie viele mögliche Podeste gibt es?",
+      loesung: [
+        "Es werden \\(3\\) Personen aus \\(10\\) ausgewählt.",
+        "Die Reihenfolge ist wichtig, weil Platz \\(1\\), \\(2\\) und \\(3\\) verschieden sind.",
+        "Wiederholung ist nicht möglich.",
+        "Also handelt es sich um eine Variation ohne Wiederholung.",
+        "Die Anzahl ist \\(\\frac{10!}{(10-3)!}\\).",
+        "Das ist \\(10\\cdot9\\cdot8=720\\).",
+        "Es gibt \\(720\\) mögliche Podeste."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Reihenfolge oder nicht?",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Erkläre den Unterschied zwischen diesen zwei Situationen: A: Aus \\(7\\) Personen werden \\(2\\) Klassensprecher gewählt. B: Aus \\(7\\) Personen werden Präsident und Vizepräsident gewählt.",
+      loesung: [
+        "In Situation A spielt die Reihenfolge keine Rolle.",
+        "Wenn Lara und Noah gewählt werden, ist es dieselbe Gruppe wie Noah und Lara.",
+        "Also verwendet man eine Kombination: \\(\\binom{7}{2}\\).",
+        "\\(\\binom{7}{2}=21\\).",
+        "In Situation B spielt die Reihenfolge beziehungsweise Rolle eine Rolle.",
+        "Lara als Präsidentin und Noah als Vizepräsident ist etwas anderes als umgekehrt.",
+        "Also verwendet man eine Variation ohne Wiederholung.",
+        "Das ergibt \\(7\\cdot6=42\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Gemischte Kombinatorik",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Ein Passwort besteht aus \\(2\\) verschiedenen Buchstaben aus \\(A,B,C,D\\) und danach \\(3\\) Ziffern von \\(0\\) bis \\(9\\), wobei Ziffern mehrfach vorkommen dürfen. Wie viele Passwörter gibt es?",
+      loesung: [
+        "Zuerst betrachtet man die Buchstaben.",
+        "Es werden \\(2\\) verschiedene Buchstaben aus \\(4\\) gewählt.",
+        "Die Reihenfolge ist wichtig, weil \\(AB\\) anders ist als \\(BA\\).",
+        "Also gibt es \\(4\\cdot3=12\\) Möglichkeiten für die Buchstaben.",
+        "Nun betrachtet man die Ziffern.",
+        "Es gibt \\(3\\) Ziffernstellen.",
+        "Pro Stelle gibt es \\(10\\) Möglichkeiten.",
+        "Wiederholung ist erlaubt, also \\(10^3=1000\\).",
+        "Nach dem Zählprinzip multipliziert man beide Teile.",
+        "\\(12\\cdot1000=12000\\).",
+        "Es gibt \\(12000\\) mögliche Passwörter."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was untersucht die Kombinatorik?",
+      antwort:
+        "Die Kombinatorik untersucht, wie viele Möglichkeiten es gibt, Objekte auszuwählen, anzuordnen oder zu kombinieren."
+    },
+    {
+      frage: "Was besagt das Zählprinzip?",
+      antwort:
+        "Wenn eine Entscheidung aus mehreren unabhängigen Schritten besteht, multipliziert man die Anzahl Möglichkeiten der einzelnen Schritte."
+    },
+    {
+      frage: "Was ist eine Permutation?",
+      antwort:
+        "Eine Permutation ist eine Anordnung aller vorhandenen Objekte. Die Reihenfolge ist dabei wichtig."
+    },
+    {
+      frage: "Was ist eine Variation?",
+      antwort:
+        "Eine Variation ist eine geordnete Auswahl. Man wählt also einige Objekte aus und beachtet die Reihenfolge."
+    },
+    {
+      frage: "Was ist eine Kombination?",
+      antwort:
+        "Eine Kombination ist eine ungeordnete Auswahl. Es zählt nur, welche Objekte gewählt werden, nicht ihre Reihenfolge."
+    },
+    {
+      frage: "Was ist der wichtigste Unterschied zwischen Variation und Kombination?",
+      antwort:
+        "Bei der Variation ist die Reihenfolge wichtig. Bei der Kombination ist die Reihenfolge egal."
+    },
+    {
+      frage: "Wann verwendet man \\(n^k\\)?",
+      antwort:
+        "Man verwendet \\(n^k\\), wenn es \\(k\\) Plätze gibt, pro Platz \\(n\\) Möglichkeiten bestehen, Wiederholung erlaubt ist und die Reihenfolge wichtig ist."
+    },
+    {
+      frage: "Wann verwendet man \\(\\binom{n}{k}\\)?",
+      antwort:
+        "Man verwendet \\(\\binom{n}{k}\\), wenn man \\(k\\) Objekte aus \\(n\\) Objekten auswählt, die Reihenfolge egal ist und Wiederholung nicht erlaubt ist."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was Kombinatorik zählt?",
+    "Kennst du das Zählprinzip?",
+    "Kannst du \\(n!\\) berechnen und erklären?",
+    "Unterscheidest du Auswahl und Anordnung?",
+    "Fragst du immer zuerst, ob die Reihenfolge wichtig ist?",
+    "Fragst du danach, ob Wiederholung erlaubt ist?",
+    "Kannst du Permutation, Variation und Kombination unterscheiden?",
+    "Kennst du die Formel \\(n^k\\)?",
+    "Kennst du die Formel \\(\\frac{n!}{(n-k)!}\\)?",
+    "Kennst du die Formel \\(\\binom{n}{k}\\)?",
+    "Kennst du die Formel \\(\\binom{n+k-1}{k}\\)?",
+    "Kannst du bei Textaufgaben \\(n\\) und \\(k\\) richtig bestimmen?"
+  ]
+},
+   {
+  id: "zufallsexperimente-pfadregel-laplace",
+  nummer: "15",
+  titel: "Zufallsexperimente und Pfadregel",
+  kurzbeschreibung:
+    "Zufallsexperimente, Ereignisse, Ergebnisräume, Laplace-Experimente, Baumdiagramme, Pfadregel, Summenregel und Ereignisse als Teilmengen verstehen.",
+  lernziele: [
+    "Du kannst erklären, was ein Zufallsexperiment ist.",
+    "Du kannst Ergebnismenge und Ereignis unterscheiden.",
+    "Du kannst Ereignisse als Teilmengen der Ergebnismenge auffassen.",
+    "Du verstehst Laplace-Experimente.",
+    "Du kannst Wahrscheinlichkeiten bei Laplace-Experimenten berechnen.",
+    "Du kannst Baumdiagramme zeichnen und interpretieren.",
+    "Du kannst die Pfadregel anwenden.",
+    "Du kannst die Summenregel bei mehreren günstigen Pfaden anwenden.",
+    "Du kannst Gegenereignisse verwenden.",
+    "Du erkennst typische Fehler bei Baumdiagrammen und Wahrscheinlichkeiten."
+  ],
+  theorie: [
+    {
+      titel: "Was ist ein Zufallsexperiment?",
+      text:
+        "Ein Zufallsexperiment ist ein Vorgang, dessen Ausgang nicht sicher vorhergesagt werden kann, obwohl alle möglichen Ergebnisse bekannt sein können. Beispiele sind Würfeln, Münzwurf oder das Ziehen einer Kugel aus einer Urne."
+    },
+    {
+      titel: "Ergebnis",
+      text:
+        "Ein Ergebnis ist ein einzelner möglicher Ausgang eines Zufallsexperiments. Beim Würfeln ist zum Beispiel \\(4\\) ein Ergebnis."
+    },
+    {
+      titel: "Ergebnismenge",
+      text:
+        "Die Ergebnismenge enthält alle möglichen Ergebnisse eines Zufallsexperiments. Sie wird oft mit \\(\\Omega\\) bezeichnet. Beim einmaligen Würfeln gilt \\(\\Omega=\\{1,2,3,4,5,6\\}\\)."
+    },
+    {
+      titel: "Ereignis",
+      text:
+        "Ein Ereignis ist eine Menge von Ergebnissen. Zum Beispiel ist beim Würfeln das Ereignis 'gerade Zahl' die Menge \\(\\{2,4,6\\}\\). Ereignisse sind also Teilmengen der Ergebnismenge."
+    },
+    {
+      titel: "Sicheres und unmögliches Ereignis",
+      text:
+        "Das sichere Ereignis enthält alle Ergebnisse, also die ganze Ergebnismenge \\(\\Omega\\). Das unmögliche Ereignis enthält kein Ergebnis und wird als leere Menge \\(\\emptyset\\) geschrieben."
+    },
+    {
+      titel: "Laplace-Experiment",
+      text:
+        "Ein Laplace-Experiment ist ein Zufallsexperiment, bei dem alle Ergebnisse gleich wahrscheinlich sind. Ein fairer Würfel ist ein typisches Beispiel."
+    },
+    {
+      titel: "Laplace-Wahrscheinlichkeit",
+      text:
+        "Bei einem Laplace-Experiment gilt \\(P(E)=\\frac{\\text{Anzahl günstige Ergebnisse}}{\\text{Anzahl mögliche Ergebnisse}}\\). Man zählt also günstige und mögliche Ergebnisse."
+    },
+    {
+      titel: "Gegenereignis",
+      text:
+        "Das Gegenereignis zu \\(E\\) enthält alle Ergebnisse, die nicht zu \\(E\\) gehören. Es gilt \\(P(\\overline{E})=1-P(E)\\)."
+    },
+    {
+      titel: "Baumdiagramm",
+      text:
+        "Ein Baumdiagramm stellt mehrstufige Zufallsexperimente dar. Jeder Ast zeigt eine mögliche Entwicklung des Experiments, und an jedem Ast steht eine Wahrscheinlichkeit."
+    },
+    {
+      titel: "Pfad",
+      text:
+        "Ein Pfad ist ein vollständiger Weg durch ein Baumdiagramm. Er beschreibt eine konkrete Abfolge von Ergebnissen, zum Beispiel zuerst Kopf und danach Zahl."
+    },
+    {
+      titel: "Pfadregel",
+      text:
+        "Die Pfadregel besagt: Die Wahrscheinlichkeit eines Pfades erhält man, indem man die Wahrscheinlichkeiten entlang dieses Pfades multipliziert."
+    },
+    {
+      titel: "Summenregel",
+      text:
+        "Wenn ein Ereignis durch mehrere Pfade eintreten kann, berechnet man zuerst die Wahrscheinlichkeiten der einzelnen Pfade und addiert sie danach."
+    },
+    {
+      titel: "Ziehen mit und ohne Zurücklegen",
+      text:
+        "Beim Ziehen mit Zurücklegen bleiben die Wahrscheinlichkeiten bei jedem Zug gleich. Beim Ziehen ohne Zurücklegen verändern sich die Wahrscheinlichkeiten nach jedem Zug."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Ergebnismenge bestimmen",
+      schritte: [
+        "Lies genau, welches Zufallsexperiment durchgeführt wird.",
+        "Schreibe alle möglichen einzelnen Ergebnisse auf.",
+        "Fasse diese Ergebnisse in einer Menge \\(\\Omega\\) zusammen.",
+        "Prüfe, ob wirklich kein mögliches Ergebnis fehlt.",
+        "Prüfe, ob kein unmögliches Ergebnis enthalten ist."
+      ]
+    },
+    {
+      titel: "Methode: Ereignis als Teilmenge aufschreiben",
+      schritte: [
+        "Bestimme zuerst die Ergebnismenge \\(\\Omega\\).",
+        "Übersetze die Beschreibung des Ereignisses in konkrete Ergebnisse.",
+        "Schreibe diese Ergebnisse als Menge auf.",
+        "Prüfe, ob alle Elemente des Ereignisses auch in \\(\\Omega\\) liegen.",
+        "Zähle bei Bedarf die günstigen Ergebnisse."
+      ]
+    },
+    {
+      titel: "Methode: Laplace-Wahrscheinlichkeit berechnen",
+      schritte: [
+        "Prüfe zuerst, ob alle Ergebnisse gleich wahrscheinlich sind.",
+        "Bestimme die Anzahl aller möglichen Ergebnisse.",
+        "Bestimme die Anzahl der günstigen Ergebnisse.",
+        "Setze in \\(P(E)=\\frac{\\text{günstig}}{\\text{möglich}}\\) ein.",
+        "Kürze den Bruch, falls möglich.",
+        "Gib die Wahrscheinlichkeit als Bruch, Dezimalzahl oder Prozentwert an."
+      ]
+    },
+    {
+      titel: "Methode: Gegenereignis verwenden",
+      schritte: [
+        "Prüfe, ob das Gegenereignis leichter zu berechnen ist.",
+        "Formuliere das Gegenereignis genau.",
+        "Berechne \\(P(\\overline{E})\\).",
+        "Verwende \\(P(E)=1-P(\\overline{E})\\).",
+        "Kontrolliere, ob das Ergebnis zwischen \\(0\\) und \\(1\\) liegt."
+      ]
+    },
+    {
+      titel: "Methode: Baumdiagramm zeichnen",
+      schritte: [
+        "Bestimme die Anzahl der Stufen des Experiments.",
+        "Zeichne für die erste Stufe alle möglichen Äste.",
+        "Schreibe an jeden Ast die passende Wahrscheinlichkeit.",
+        "Zeichne von jedem Ast aus die nächste Stufe.",
+        "Passe die Wahrscheinlichkeiten an, falls ohne Zurücklegen gezogen wird.",
+        "Kontrolliere, ob sich die Wahrscheinlichkeiten an jeder Verzweigung zu \\(1\\) addieren."
+      ]
+    },
+    {
+      titel: "Methode: Pfadregel anwenden",
+      schritte: [
+        "Wähle den gewünschten Pfad im Baumdiagramm.",
+        "Lies alle Wahrscheinlichkeiten entlang dieses Pfades ab.",
+        "Multipliziere diese Wahrscheinlichkeiten.",
+        "Das Ergebnis ist die Wahrscheinlichkeit genau dieses Pfades.",
+        "Achte darauf, nicht zu addieren, wenn es um einen einzelnen Pfad geht."
+      ]
+    },
+    {
+      titel: "Methode: Summenregel anwenden",
+      schritte: [
+        "Bestimme alle Pfade, die zum gesuchten Ereignis gehören.",
+        "Berechne für jeden dieser Pfade die Wahrscheinlichkeit mit der Pfadregel.",
+        "Addiere die Pfadwahrscheinlichkeiten.",
+        "Das Ergebnis ist die Wahrscheinlichkeit des Ereignisses.",
+        "Kontrolliere, ob du keinen günstigen Pfad vergessen hast."
+      ]
+    },
+    {
+      titel: "Methode: Ziehen ohne Zurücklegen",
+      schritte: [
+        "Bestimme die Anfangszahlen der Objekte.",
+        "Berechne die Wahrscheinlichkeit für den ersten Zug.",
+        "Passe danach Zähler und Nenner an.",
+        "Berechne die Wahrscheinlichkeit für den zweiten Zug mit den neuen Zahlen.",
+        "Multipliziere entlang eines Pfades.",
+        "Addiere mehrere passende Pfade, falls das Ereignis auf verschiedene Arten eintreten kann."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Ein Zufallsexperiment hat einen nicht sicher vorhersehbaren Ausgang.",
+    "Die Ergebnismenge \\(\\Omega\\) enthält alle möglichen Ergebnisse.",
+    "Ein Ereignis ist eine Teilmenge der Ergebnismenge.",
+    "Bei einem Laplace-Experiment sind alle Ergebnisse gleich wahrscheinlich.",
+    "Bei Laplace gilt \\(P(E)=\\frac{\\text{günstige Ergebnisse}}{\\text{mögliche Ergebnisse}}\\).",
+    "Das Gegenereignis berechnet man mit \\(P(\\overline{E})=1-P(E)\\).",
+    "Ein Baumdiagramm beschreibt mehrstufige Zufallsexperimente.",
+    "Entlang eines Pfades multipliziert man.",
+    "Mehrere günstige Pfade addiert man.",
+    "Mit Zurücklegen bleiben Wahrscheinlichkeiten gleich.",
+    "Ohne Zurücklegen ändern sich Wahrscheinlichkeiten nach jedem Zug.",
+    "Wahrscheinlichkeiten liegen immer zwischen \\(0\\) und \\(1\\)."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwechselt Ergebnis und Ereignis.",
+      korrektur:
+        "Ein Ergebnis ist ein einzelner Ausgang. Ein Ereignis ist eine Menge von Ergebnissen."
+    },
+    {
+      fehler: "Man verwendet die Laplace-Formel, obwohl die Ergebnisse nicht gleich wahrscheinlich sind.",
+      korrektur:
+        "Die Formel günstige durch mögliche Ergebnisse gilt nur direkt, wenn alle Ergebnisse gleich wahrscheinlich sind."
+    },
+    {
+      fehler: "Man addiert Wahrscheinlichkeiten entlang eines Pfades.",
+      korrektur:
+        "Entlang eines Pfades muss man multiplizieren. Addiert wird erst zwischen verschiedenen günstigen Pfaden."
+    },
+    {
+      fehler: "Man multipliziert mehrere günstige Pfade miteinander.",
+      korrektur:
+        "Verschiedene günstige Pfade werden addiert, nicht multipliziert."
+    },
+    {
+      fehler: "Man vergisst beim Ziehen ohne Zurücklegen die Wahrscheinlichkeiten anzupassen.",
+      korrektur:
+        "Ohne Zurücklegen verändert sich nach jedem Zug die Anzahl der verbleibenden Objekte."
+    },
+    {
+      fehler: "Man berechnet das Gegenereignis, zieht aber am Ende nicht von \\(1\\) ab.",
+      korrektur:
+        "Wenn das Gegenereignis berechnet wurde, gilt für das gesuchte Ereignis \\(P(E)=1-P(\\overline{E})\\)."
+    },
+    {
+      fehler: "Man gibt Wahrscheinlichkeiten grösser als \\(1\\) an.",
+      korrektur:
+        "Eine Wahrscheinlichkeit kann höchstens \\(1\\) sein. Prozentwerte können höchstens \\(100\\%\\) betragen."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Ergebnismenge beim Würfeln",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein fairer Würfel wird einmal geworfen. Gib die Ergebnismenge \\(\\Omega\\) an.",
+      loesung: [
+        "Beim einmaligen Würfeln sind die möglichen Ergebnisse die Augenzahlen \\(1\\) bis \\(6\\).",
+        "Also lautet die Ergebnismenge:",
+        "\\(\\Omega=\\{1,2,3,4,5,6\\}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Ereignis als Teilmenge",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein fairer Würfel wird einmal geworfen. Schreibe das Ereignis \\(E\\): 'Es fällt eine gerade Zahl' als Menge.",
+      loesung: [
+        "Die geraden Augenzahlen beim Würfel sind \\(2\\), \\(4\\) und \\(6\\).",
+        "Also ist das Ereignis:",
+        "\\(E=\\{2,4,6\\}\\).",
+        "Dieses Ereignis ist eine Teilmenge von \\(\\Omega\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Laplace-Wahrscheinlichkeit",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein fairer Würfel wird einmal geworfen. Berechne die Wahrscheinlichkeit, eine Zahl grösser als \\(4\\) zu würfeln.",
+      loesung: [
+        "Die möglichen Ergebnisse sind \\(1,2,3,4,5,6\\).",
+        "Zahlen grösser als \\(4\\) sind \\(5\\) und \\(6\\).",
+        "Es gibt also \\(2\\) günstige Ergebnisse.",
+        "Insgesamt gibt es \\(6\\) mögliche Ergebnisse.",
+        "Also gilt \\(P=\\frac{2}{6}=\\frac{1}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Gegenereignis",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein fairer Würfel wird einmal geworfen. Berechne die Wahrscheinlichkeit, keine \\(6\\) zu würfeln.",
+      loesung: [
+        "Das Ereignis 'eine \\(6\\)' hat die Wahrscheinlichkeit \\(\\frac{1}{6}\\).",
+        "Das Gegenereignis ist 'keine \\(6\\)'.",
+        "Also gilt \\(P(\\text{keine }6)=1-\\frac{1}{6}\\).",
+        "Das ergibt \\(\\frac{5}{6}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Zwei Münzwürfe",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Eine faire Münze wird zweimal geworfen. Berechne die Wahrscheinlichkeit, zweimal Kopf zu erhalten.",
+      loesung: [
+        "Bei jedem Wurf ist die Wahrscheinlichkeit für Kopf \\(\\frac{1}{2}\\).",
+        "Das Ereignis 'zweimal Kopf' entspricht einem einzelnen Pfad.",
+        "Nach der Pfadregel multipliziert man entlang des Pfades.",
+        "\\(P(KK)=\\frac{1}{2}\\cdot\\frac{1}{2}=\\frac{1}{4}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Mindestens einmal Kopf",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Eine faire Münze wird zweimal geworfen. Berechne die Wahrscheinlichkeit, mindestens einmal Kopf zu erhalten.",
+      loesung: [
+        "Das Ereignis 'mindestens einmal Kopf' kann über mehrere Pfade eintreten.",
+        "Die möglichen günstigen Pfade sind \\(KK\\), \\(KZ\\) und \\(ZK\\).",
+        "Jeder Pfad hat die Wahrscheinlichkeit \\(\\frac{1}{4}\\).",
+        "Nach der Summenregel addiert man die günstigen Pfade.",
+        "\\(P=\\frac{1}{4}+\\frac{1}{4}+\\frac{1}{4}=\\frac{3}{4}\\).",
+        "Alternativ kann man das Gegenereignis 'kein Kopf' berechnen.",
+        "Das ist nur \\(ZZ\\) mit Wahrscheinlichkeit \\(\\frac{1}{4}\\).",
+        "Also \\(1-\\frac{1}{4}=\\frac{3}{4}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Urne mit Zurücklegen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einer Urne liegen \\(3\\) rote und \\(2\\) blaue Kugeln. Es wird zweimal mit Zurücklegen gezogen. Berechne die Wahrscheinlichkeit für zweimal rot.",
+      loesung: [
+        "Insgesamt liegen \\(5\\) Kugeln in der Urne.",
+        "Die Wahrscheinlichkeit für rot ist \\(\\frac{3}{5}\\).",
+        "Da mit Zurücklegen gezogen wird, bleibt die Wahrscheinlichkeit beim zweiten Zug gleich.",
+        "Nach der Pfadregel gilt:",
+        "\\(P(RR)=\\frac{3}{5}\\cdot\\frac{3}{5}=\\frac{9}{25}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Urne ohne Zurücklegen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einer Urne liegen \\(3\\) rote und \\(2\\) blaue Kugeln. Es wird zweimal ohne Zurücklegen gezogen. Berechne die Wahrscheinlichkeit für zweimal rot.",
+      loesung: [
+        "Beim ersten Zug ist die Wahrscheinlichkeit für rot \\(\\frac{3}{5}\\).",
+        "Nach einer roten Kugel bleiben \\(2\\) rote Kugeln unter insgesamt \\(4\\) Kugeln übrig.",
+        "Die Wahrscheinlichkeit für rot im zweiten Zug ist dann \\(\\frac{2}{4}\\).",
+        "Nach der Pfadregel gilt:",
+        "\\(P(RR)=\\frac{3}{5}\\cdot\\frac{2}{4}=\\frac{6}{20}=\\frac{3}{10}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Genau eine rote Kugel",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einer Urne liegen \\(3\\) rote und \\(2\\) blaue Kugeln. Es wird zweimal ohne Zurücklegen gezogen. Berechne die Wahrscheinlichkeit für genau eine rote Kugel.",
+      loesung: [
+        "Genau eine rote Kugel kann auf zwei Arten eintreten.",
+        "Erster günstiger Pfad: zuerst rot, dann blau.",
+        "\\(P(RB)=\\frac{3}{5}\\cdot\\frac{2}{4}=\\frac{6}{20}\\).",
+        "Zweiter günstiger Pfad: zuerst blau, dann rot.",
+        "\\(P(BR)=\\frac{2}{5}\\cdot\\frac{3}{4}=\\frac{6}{20}\\).",
+        "Nach der Summenregel addiert man beide Pfade.",
+        "\\(P=\\frac{6}{20}+\\frac{6}{20}=\\frac{12}{20}=\\frac{3}{5}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Mindestens eine blaue Kugel",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "In einer Urne liegen \\(4\\) rote und \\(1\\) blaue Kugel. Es wird dreimal ohne Zurücklegen gezogen. Berechne die Wahrscheinlichkeit, mindestens einmal blau zu ziehen.",
+      loesung: [
+        "Hier ist das Gegenereignis einfacher.",
+        "Das Gegenereignis zu 'mindestens einmal blau' ist 'keinmal blau'.",
+        "Keinmal blau bedeutet: dreimal rot.",
+        "Die Wahrscheinlichkeit für dreimal rot ist:",
+        "\\(\\frac{4}{5}\\cdot\\frac{3}{4}\\cdot\\frac{2}{3}\\).",
+        "Das kürzt sich zu \\(\\frac{2}{5}\\).",
+        "Also ist die Wahrscheinlichkeit für mindestens einmal blau:",
+        "\\(1-\\frac{2}{5}=\\frac{3}{5}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 11: Baumdiagramm deuten",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Ein Spiel hat zwei Stufen. In der ersten Stufe gewinnt man mit Wahrscheinlichkeit \\(0.6\\). Wenn man die erste Stufe gewinnt, gewinnt man die zweite mit Wahrscheinlichkeit \\(0.5\\). Wenn man die erste Stufe verliert, gewinnt man die zweite mit Wahrscheinlichkeit \\(0.2\\). Berechne die Wahrscheinlichkeit, beide Stufen zu gewinnen.",
+      loesung: [
+        "Das Ereignis 'beide Stufen gewinnen' ist ein einzelner Pfad.",
+        "Man muss zuerst die erste Stufe gewinnen.",
+        "Diese Wahrscheinlichkeit ist \\(0.6\\).",
+        "Danach muss man die zweite Stufe gewinnen.",
+        "Unter der Bedingung, dass die erste gewonnen wurde, beträgt diese Wahrscheinlichkeit \\(0.5\\).",
+        "Nach der Pfadregel multipliziert man:",
+        "\\(0.6\\cdot0.5=0.3\\).",
+        "Die Wahrscheinlichkeit beträgt also \\(0.3\\) oder \\(30\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 12: Mehrere Pfade addieren",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Verwende die Situation aus Aufgabe 11. Berechne die Wahrscheinlichkeit, genau eine der beiden Stufen zu gewinnen.",
+      loesung: [
+        "Genau eine Stufe gewinnen kann auf zwei Arten passieren.",
+        "Erster Pfad: erste Stufe gewinnen, zweite verlieren.",
+        "Das hat die Wahrscheinlichkeit \\(0.6\\cdot0.5=0.3\\), weil nach Gewinn der ersten Stufe die Verlustwahrscheinlichkeit der zweiten Stufe \\(1-0.5=0.5\\) ist.",
+        "Zweiter Pfad: erste Stufe verlieren, zweite gewinnen.",
+        "Das hat die Wahrscheinlichkeit \\(0.4\\cdot0.2=0.08\\).",
+        "Nun addiert man beide günstigen Pfade.",
+        "\\(0.3+0.08=0.38\\).",
+        "Die Wahrscheinlichkeit beträgt \\(0.38\\) oder \\(38\\%\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist ein Zufallsexperiment?",
+      antwort:
+        "Ein Zufallsexperiment ist ein Vorgang, dessen Ergebnis nicht sicher vorhergesagt werden kann, obwohl die möglichen Ergebnisse bekannt sein können."
+    },
+    {
+      frage: "Was ist die Ergebnismenge?",
+      antwort:
+        "Die Ergebnismenge \\(\\Omega\\) enthält alle möglichen Ergebnisse eines Zufallsexperiments."
+    },
+    {
+      frage: "Was ist ein Ereignis?",
+      antwort:
+        "Ein Ereignis ist eine Menge von Ergebnissen. Es ist also eine Teilmenge der Ergebnismenge."
+    },
+    {
+      frage: "Was ist ein Laplace-Experiment?",
+      antwort:
+        "Ein Laplace-Experiment ist ein Zufallsexperiment, bei dem alle Ergebnisse gleich wahrscheinlich sind."
+    },
+    {
+      frage: "Wie berechnet man eine Laplace-Wahrscheinlichkeit?",
+      antwort:
+        "Man teilt die Anzahl der günstigen Ergebnisse durch die Anzahl aller möglichen Ergebnisse."
+    },
+    {
+      frage: "Was ist ein Gegenereignis?",
+      antwort:
+        "Das Gegenereignis enthält alle Ergebnisse, bei denen das ursprüngliche Ereignis nicht eintritt. Seine Wahrscheinlichkeit ist \\(1-P(E)\\)."
+    },
+    {
+      frage: "Was besagt die Pfadregel?",
+      antwort:
+        "Die Pfadregel besagt, dass man die Wahrscheinlichkeiten entlang eines Pfades im Baumdiagramm multipliziert."
+    },
+    {
+      frage: "Was besagt die Summenregel?",
+      antwort:
+        "Wenn ein Ereignis durch mehrere Pfade eintreten kann, berechnet man die einzelnen Pfadwahrscheinlichkeiten und addiert sie."
+    },
+    {
+      frage: "Was ändert sich beim Ziehen ohne Zurücklegen?",
+      antwort:
+        "Nach jedem Zug verändert sich der Inhalt der Urne. Deshalb ändern sich auch die Wahrscheinlichkeiten für die nächsten Züge."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was ein Zufallsexperiment ist?",
+    "Kannst du eine Ergebnismenge \\(\\Omega\\) aufschreiben?",
+    "Unterscheidest du Ergebnis und Ereignis?",
+    "Weisst du, dass ein Ereignis eine Teilmenge von \\(\\Omega\\) ist?",
+    "Kannst du ein Laplace-Experiment erkennen?",
+    "Kennst du die Laplace-Formel \\(P(E)=\\frac{\\text{günstig}}{\\text{möglich}}\\)?",
+    "Kannst du ein Gegenereignis verwenden?",
+    "Kannst du ein Baumdiagramm lesen?",
+    "Weisst du, dass man entlang eines Pfades multipliziert?",
+    "Weisst du, dass man mehrere günstige Pfade addiert?",
+    "Unterscheidest du Ziehen mit und ohne Zurücklegen?",
+    "Kontrollierst du, ob deine Wahrscheinlichkeit zwischen \\(0\\) und \\(1\\) liegt?"
+  ]
+},
+   {
+  id: "bedingte-wahrscheinlichkeit",
+  nummer: "16",
+  titel: "Bedingte Wahrscheinlichkeit",
+  kurzbeschreibung:
+    "Bedingte Wahrscheinlichkeit verstehen und berechnen: Einschränkung der Grundmenge, Baumdiagramme, Vierfeldertafel, Formel \\(P(A\\mid B)\\), Umkehrung von Bedingungen und typische Denkfehler.",
+  lernziele: [
+    "Du kannst erklären, was bedingte Wahrscheinlichkeit bedeutet.",
+    "Du verstehst die Schreibweise \\(P(A\\mid B)\\).",
+    "Du kannst bedingte Wahrscheinlichkeiten aus Textaufgaben berechnen.",
+    "Du kannst bedingte Wahrscheinlichkeiten aus Baumdiagrammen ablesen.",
+    "Du kannst bedingte Wahrscheinlichkeiten aus Vierfeldertafeln bestimmen.",
+    "Du verstehst den Unterschied zwischen \\(P(A\\mid B)\\) und \\(P(B\\mid A)\\).",
+    "Du kannst die Formel \\(P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\\) anwenden.",
+    "Du kannst prüfen, ob zwei Ereignisse unabhängig sind.",
+    "Du kannst Gegenereignisse bei bedingten Wahrscheinlichkeiten verwenden.",
+    "Du erkennst typische Fehler beim Vertauschen der Bedingung."
+  ],
+  theorie: [
+    {
+      titel: "Was bedeutet bedingte Wahrscheinlichkeit?",
+      text:
+        "Eine bedingte Wahrscheinlichkeit beschreibt die Wahrscheinlichkeit eines Ereignisses unter der Voraussetzung, dass ein anderes Ereignis bereits eingetreten ist. Die Grundmenge wird dadurch eingeschränkt."
+    },
+    {
+      titel: "Schreibweise",
+      text:
+        "Die Schreibweise \\(P(A\\mid B)\\) bedeutet: Wahrscheinlichkeit von \\(A\\) unter der Bedingung, dass \\(B\\) eingetreten ist. Man liest: \\(P\\) von \\(A\\) gegeben \\(B\\)."
+    },
+    {
+      titel: "Wichtig: Reihenfolge beachten",
+      text:
+        "\\(P(A\\mid B)\\) ist im Allgemeinen nicht dasselbe wie \\(P(B\\mid A)\\). Die Bedingung steht rechts vom senkrechten Strich und bestimmt, welche Fälle überhaupt noch betrachtet werden."
+    },
+    {
+      titel: "Grundformel",
+      text:
+        "Die zentrale Formel lautet \\(P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\\), sofern \\(P(B)>0\\). Im Nenner steht immer die Wahrscheinlichkeit der Bedingung."
+    },
+    {
+      titel: "Bedeutung von \\(A\\cap B\\)",
+      text:
+        "\\(A\\cap B\\) bedeutet, dass beide Ereignisse gleichzeitig eintreten. Man liest: \\(A\\) und \\(B\\)."
+    },
+    {
+      titel: "Warum steht \\(P(B)\\) im Nenner?",
+      text:
+        "Wenn \\(B\\) bereits bekannt ist, betrachtet man nur noch die Fälle, in denen \\(B\\) eintritt. Deshalb wird die neue Grundmenge durch \\(B\\) bestimmt."
+    },
+    {
+      titel: "Bedingte Wahrscheinlichkeit im Baumdiagramm",
+      text:
+        "In einem Baumdiagramm stehen bedingte Wahrscheinlichkeiten oft an den Ästen der zweiten Stufe. Zum Beispiel kann die Wahrscheinlichkeit für ein Ereignis in der zweiten Stufe davon abhängen, was in der ersten Stufe passiert ist."
+    },
+    {
+      titel: "Bedingte Wahrscheinlichkeit in der Vierfeldertafel",
+      text:
+        "Bei einer Vierfeldertafel wählt man zuerst die Zeile oder Spalte, die der Bedingung entspricht. Innerhalb dieser eingeschränkten Gruppe bestimmt man dann den Anteil des gesuchten Ereignisses."
+    },
+    {
+      titel: "Unabhängigkeit",
+      text:
+        "Zwei Ereignisse \\(A\\) und \\(B\\) sind unabhängig, wenn das Eintreten von \\(B\\) die Wahrscheinlichkeit von \\(A\\) nicht verändert. Dann gilt \\(P(A\\mid B)=P(A)\\)."
+    },
+    {
+      titel: "Abhängigkeit",
+      text:
+        "Wenn \\(P(A\\mid B)\\ne P(A)\\) gilt, beeinflusst die Information \\(B\\) die Wahrscheinlichkeit von \\(A\\). Dann sind die Ereignisse abhängig."
+    },
+    {
+      titel: "Gegenereignis unter einer Bedingung",
+      text:
+        "Auch bei bedingten Wahrscheinlichkeiten gilt: \\(P(\\overline{A}\\mid B)=1-P(A\\mid B)\\). Die Bedingung \\(B\\) bleibt dabei gleich."
+    },
+    {
+      titel: "Typische Alltagssituation",
+      text:
+        "Bedingte Wahrscheinlichkeit tritt auf, wenn eine Zusatzinformation gegeben ist, zum Beispiel: Eine Person ist bereits ausgewählt worden und man weiss, dass sie eine bestimmte Eigenschaft besitzt. Dann fragt man nach einer weiteren Eigenschaft innerhalb dieser eingeschränkten Gruppe."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Bedingte Wahrscheinlichkeit mit Formel berechnen",
+      schritte: [
+        "Bestimme zuerst, welches Ereignis gesucht ist.",
+        "Bestimme danach, welches Ereignis die Bedingung ist.",
+        "Schreibe die Wahrscheinlichkeit in der Form \\(P(A\\mid B)\\).",
+        "Berechne \\(P(A\\cap B)\\), also die Wahrscheinlichkeit, dass beide Ereignisse eintreten.",
+        "Berechne \\(P(B)\\), also die Wahrscheinlichkeit der Bedingung.",
+        "Setze in \\(P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\\) ein.",
+        "Kürze oder vereinfache das Ergebnis."
+      ]
+    },
+    {
+      titel: "Methode: Bedingung richtig erkennen",
+      schritte: [
+        "Suche im Text nach Formulierungen wie 'unter der Bedingung', 'wenn bekannt ist' oder 'gegeben, dass'.",
+        "Das Ereignis hinter dieser Zusatzinformation ist die Bedingung.",
+        "Die Bedingung steht rechts vom Strich in \\(P(A\\mid B)\\).",
+        "Das gesuchte Ereignis steht links vom Strich.",
+        "Prüfe, ob du die Reihenfolge nicht vertauscht hast."
+      ]
+    },
+    {
+      titel: "Methode: Bedingte Wahrscheinlichkeit aus Vierfeldertafel",
+      schritte: [
+        "Bestimme zuerst die Bedingung.",
+        "Wähle in der Vierfeldertafel die passende Zeile oder Spalte zur Bedingung.",
+        "Diese Zeilen- oder Spaltensumme wird der Nenner.",
+        "Bestimme innerhalb dieser Gruppe die Anzahl der günstigen Fälle.",
+        "Diese günstigen Fälle werden der Zähler.",
+        "Berechne den Bruch günstige Fälle durch alle Fälle der Bedingung."
+      ]
+    },
+    {
+      titel: "Methode: Bedingte Wahrscheinlichkeit im Baumdiagramm",
+      schritte: [
+        "Suche den Ast, der zur Bedingung gehört.",
+        "Betrachte danach nur noch die weiteren Äste, die von dieser Bedingung ausgehen.",
+        "Lies die passende Astwahrscheinlichkeit ab.",
+        "Falls ein gemeinsames Ereignis gesucht ist, multipliziere entlang des ganzen Pfades.",
+        "Falls nach einer bedingten Wahrscheinlichkeit gefragt ist, beachte, dass die Bedingung bereits vorausgesetzt wird."
+      ]
+    },
+    {
+      titel: "Methode: Unabhängigkeit prüfen",
+      schritte: [
+        "Berechne zuerst \\(P(A)\\).",
+        "Berechne danach \\(P(A\\mid B)\\).",
+        "Vergleiche beide Wahrscheinlichkeiten.",
+        "Wenn \\(P(A\\mid B)=P(A)\\), sind die Ereignisse unabhängig.",
+        "Wenn die Werte verschieden sind, sind die Ereignisse abhängig.",
+        "Alternativ kann man prüfen, ob \\(P(A\\cap B)=P(A)\\cdot P(B)\\) gilt."
+      ]
+    },
+    {
+      titel: "Methode: Gegenereignis nutzen",
+      schritte: [
+        "Prüfe, ob das direkte Ereignis kompliziert ist.",
+        "Formuliere das Gegenereignis innerhalb derselben Bedingung.",
+        "Berechne \\(P(\\overline{A}\\mid B)\\).",
+        "Verwende \\(P(A\\mid B)=1-P(\\overline{A}\\mid B)\\).",
+        "Achte darauf, die Bedingung nicht zu verändern."
+      ]
+    }
+  ],
+  merksaetze: [
+    "\\(P(A\\mid B)\\) bedeutet: Wahrscheinlichkeit von \\(A\\), wenn \\(B\\) bereits bekannt ist.",
+    "Die Bedingung steht rechts vom senkrechten Strich.",
+    "Die Formel lautet \\(P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\\).",
+    "Im Nenner steht immer die Wahrscheinlichkeit der Bedingung.",
+    "\\(A\\cap B\\) bedeutet: \\(A\\) und \\(B\\) treten gemeinsam ein.",
+    "\\(P(A\\mid B)\\) ist meistens nicht gleich \\(P(B\\mid A)\\).",
+    "Bei einer Vierfeldertafel wird die Bedingung zur neuen Grundmenge.",
+    "Bei Unabhängigkeit gilt \\(P(A\\mid B)=P(A)\\).",
+    "Bei Abhängigkeit verändert die Zusatzinformation die Wahrscheinlichkeit.",
+    "Auch bedingt gilt: \\(P(\\overline{A}\\mid B)=1-P(A\\mid B)\\)."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwechselt \\(P(A\\mid B)\\) mit \\(P(B\\mid A)\\).",
+      korrektur:
+        "Die Reihenfolge ist entscheidend. Rechts vom Strich steht die Bedingung, also die neue eingeschränkte Grundmenge."
+    },
+    {
+      fehler: "Man setzt im Nenner die falsche Wahrscheinlichkeit ein.",
+      korrektur:
+        "Im Nenner steht immer die Wahrscheinlichkeit der Bedingung. Bei \\(P(A\\mid B)\\) ist das \\(P(B)\\)."
+    },
+    {
+      fehler: "Man nimmt bei einer Vierfeldertafel die Gesamtsumme als Nenner, obwohl eine Bedingung gegeben ist.",
+      korrektur:
+        "Bei bedingter Wahrscheinlichkeit betrachtet man nur die Gruppe, welche die Bedingung erfüllt. Diese Zeilen- oder Spaltensumme ist der Nenner."
+    },
+    {
+      fehler: "Man denkt, eine bedingte Wahrscheinlichkeit müsse kleiner sein als die ursprüngliche Wahrscheinlichkeit.",
+      korrektur:
+        "Eine Bedingung kann eine Wahrscheinlichkeit kleiner, grösser oder gleich lassen. Es kommt auf den Zusammenhang der Ereignisse an."
+    },
+    {
+      fehler: "Man addiert im Baumdiagramm entlang eines Pfades.",
+      korrektur:
+        "Entlang eines Pfades multipliziert man. Addiert wird nur zwischen verschiedenen günstigen Pfaden."
+    },
+    {
+      fehler: "Man prüft Unabhängigkeit nur gefühlsmässig.",
+      korrektur:
+        "Unabhängigkeit prüft man rechnerisch, zum Beispiel mit \\(P(A\\mid B)=P(A)\\) oder \\(P(A\\cap B)=P(A)P(B)\\)."
+    },
+    {
+      fehler: "Man verändert beim Gegenereignis auch die Bedingung.",
+      korrektur:
+        "Bei \\(P(\\overline{A}\\mid B)=1-P(A\\mid B)\\) bleibt die Bedingung \\(B\\) gleich."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Schreibweise verstehen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Erkläre in Worten, was \\(P(A\\mid B)\\) bedeutet.",
+      loesung: [
+        "\\(P(A\\mid B)\\) bedeutet die Wahrscheinlichkeit von \\(A\\) unter der Bedingung, dass \\(B\\) bereits eingetreten ist.",
+        "Man liest: Wahrscheinlichkeit von \\(A\\) gegeben \\(B\\).",
+        "Die Bedingung ist also \\(B\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Formel anwenden",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Gegeben sind \\(P(A\\cap B)=0.18\\) und \\(P(B)=0.6\\). Berechne \\(P(A\\mid B)\\).",
+      loesung: [
+        "Verwende die Formel \\(P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\\).",
+        "Setze die Werte ein.",
+        "\\(P(A\\mid B)=\\frac{0.18}{0.6}\\).",
+        "Das ergibt \\(0.3\\).",
+        "Also ist \\(P(A\\mid B)=0.3\\), also \\(30\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Würfel mit Bedingung",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein fairer Würfel wird einmal geworfen. Es ist bekannt, dass eine gerade Zahl gefallen ist. Berechne die Wahrscheinlichkeit, dass eine \\(6\\) gefallen ist.",
+      loesung: [
+        "Die Bedingung ist: Es ist eine gerade Zahl gefallen.",
+        "Die möglichen geraden Zahlen sind \\(\\{2,4,6\\}\\).",
+        "Innerhalb dieser eingeschränkten Grundmenge ist nur \\(6\\) günstig.",
+        "Also ist die Wahrscheinlichkeit \\(\\frac{1}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Nicht verwechseln",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Erkläre, warum \\(P(A\\mid B)\\) im Allgemeinen nicht dasselbe ist wie \\(P(B\\mid A)\\).",
+      loesung: [
+        "Bei \\(P(A\\mid B)\\) ist \\(B\\) die Bedingung.",
+        "Bei \\(P(B\\mid A)\\) ist \\(A\\) die Bedingung.",
+        "Die betrachtete Grundmenge ist also jeweils eine andere.",
+        "Deshalb können die Wahrscheinlichkeiten verschieden sein."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Vierfeldertafel mit Zahlen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einer Klasse sind \\(12\\) Schülerinnen und Schüler im Sportkurs und \\(18\\) nicht im Sportkurs. Von den \\(12\\) im Sportkurs mögen \\(9\\) Mathematik. Von den \\(18\\) nicht im Sportkurs mögen \\(6\\) Mathematik. Eine Person wird zufällig gewählt. Berechne die Wahrscheinlichkeit, dass sie Mathematik mag, wenn bekannt ist, dass sie im Sportkurs ist.",
+      loesung: [
+        "Die Bedingung ist: Die Person ist im Sportkurs.",
+        "Es gibt \\(12\\) Personen im Sportkurs.",
+        "Von diesen \\(12\\) mögen \\(9\\) Mathematik.",
+        "Also gilt \\(P(\\text{Mathematik}\\mid\\text{Sportkurs})=\\frac{9}{12}\\).",
+        "Das kürzt sich zu \\(\\frac{3}{4}\\).",
+        "Die Wahrscheinlichkeit beträgt also \\(75\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Umgekehrte Bedingung",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Verwende die Angaben aus Aufgabe 5. Berechne die Wahrscheinlichkeit, dass eine Person im Sportkurs ist, wenn bekannt ist, dass sie Mathematik mag.",
+      loesung: [
+        "Jetzt ist die Bedingung: Die Person mag Mathematik.",
+        "Insgesamt mögen \\(9+6=15\\) Personen Mathematik.",
+        "Von diesen \\(15\\) sind \\(9\\) im Sportkurs.",
+        "Also gilt \\(P(\\text{Sportkurs}\\mid\\text{Mathematik})=\\frac{9}{15}\\).",
+        "Das kürzt sich zu \\(\\frac{3}{5}\\).",
+        "Die Wahrscheinlichkeit beträgt also \\(60\\%\\).",
+        "Das ist nicht dasselbe wie in Aufgabe 5, weil die Bedingung vertauscht wurde."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Baumdiagramm",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Eine Maschine produziert zuerst mit Wahrscheinlichkeit \\(0.8\\) ein brauchbares Teil. Wenn ein Teil brauchbar ist, wird es mit Wahrscheinlichkeit \\(0.9\\) korrekt verpackt. Wenn ein Teil nicht brauchbar ist, wird es mit Wahrscheinlichkeit \\(0.2\\) trotzdem korrekt verpackt. Berechne die Wahrscheinlichkeit, dass ein Teil brauchbar und korrekt verpackt ist.",
+      loesung: [
+        "Gesucht ist ein gemeinsames Ereignis: brauchbar und korrekt verpackt.",
+        "Das entspricht einem Pfad im Baumdiagramm.",
+        "Die Wahrscheinlichkeit für brauchbar ist \\(0.8\\).",
+        "Unter der Bedingung brauchbar ist die Wahrscheinlichkeit für korrekt verpackt \\(0.9\\).",
+        "Nach der Pfadregel multipliziert man.",
+        "\\(P=0.8\\cdot0.9=0.72\\).",
+        "Die Wahrscheinlichkeit beträgt \\(72\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Bedingte Wahrscheinlichkeit aus gemeinsamer Wahrscheinlichkeit",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bei einem Test gilt: \\(P(krank)=0.04\\) und \\(P(positiv\\mid krank)=0.95\\). Berechne \\(P(krank\\cap positiv)\\).",
+      loesung: [
+        "Hier ist die bedingte Wahrscheinlichkeit gegeben.",
+        "Es gilt \\(P(positiv\\mid krank)=\\frac{P(krank\\cap positiv)}{P(krank)}\\).",
+        "Forme nach \\(P(krank\\cap positiv)\\) um.",
+        "\\(P(krank\\cap positiv)=P(krank)\\cdot P(positiv\\mid krank)\\).",
+        "Setze ein: \\(0.04\\cdot0.95=0.038\\).",
+        "Also ist \\(P(krank\\cap positiv)=0.038\\), also \\(3.8\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Unabhängigkeit prüfen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Gegeben sind \\(P(A)=0.4\\), \\(P(B)=0.5\\) und \\(P(A\\cap B)=0.2\\). Prüfe, ob \\(A\\) und \\(B\\) unabhängig sind.",
+      loesung: [
+        "Zwei Ereignisse sind unabhängig, wenn \\(P(A\\cap B)=P(A)\\cdot P(B)\\) gilt.",
+        "Berechne \\(P(A)\\cdot P(B)=0.4\\cdot0.5=0.2\\).",
+        "Das stimmt mit \\(P(A\\cap B)=0.2\\) überein.",
+        "Also sind \\(A\\) und \\(B\\) unabhängig.",
+        "Man könnte auch \\(P(A\\mid B)=\\frac{0.2}{0.5}=0.4\\) berechnen.",
+        "Das ist gleich \\(P(A)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Abhängigkeit prüfen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Gegeben sind \\(P(A)=0.3\\), \\(P(B)=0.5\\) und \\(P(A\\cap B)=0.25\\). Prüfe, ob \\(A\\) und \\(B\\) unabhängig sind.",
+      loesung: [
+        "Berechne zuerst \\(P(A)\\cdot P(B)\\).",
+        "\\(0.3\\cdot0.5=0.15\\).",
+        "Gegeben ist aber \\(P(A\\cap B)=0.25\\).",
+        "Da \\(0.25\\ne0.15\\), sind die Ereignisse nicht unabhängig.",
+        "Die Ereignisse sind also abhängig."
+      ]
+    },
+    {
+      titel: "Aufgabe 11: Gegenereignis unter Bedingung",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "In einer Gruppe haben \\(40\\) Personen ein Haustier. Von diesen \\(40\\) haben \\(28\\) keinen Hund. Eine Person wird zufällig gewählt. Berechne die Wahrscheinlichkeit, dass sie einen Hund hat, wenn bekannt ist, dass sie ein Haustier hat.",
+      loesung: [
+        "Die Bedingung ist: Die Person hat ein Haustier.",
+        "Innerhalb dieser Gruppe gibt es \\(40\\) Personen.",
+        "Von diesen \\(40\\) haben \\(28\\) keinen Hund.",
+        "Also haben \\(40-28=12\\) Personen einen Hund.",
+        "Gesucht ist \\(P(\\text{Hund}\\mid\\text{Haustier})\\).",
+        "Das ist \\(\\frac{12}{40}=\\frac{3}{10}\\).",
+        "Die Wahrscheinlichkeit beträgt \\(30\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 12: Bedingung aus Text erkennen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "In einer Schule spielen \\(30\\%\\) der Lernenden ein Instrument. Von den Instrument-Spielenden sind \\(40\\%\\) in einer Band. Berechne die Wahrscheinlichkeit, dass eine zufällig gewählte Person ein Instrument spielt und in einer Band ist.",
+      loesung: [
+        "Gegeben ist \\(P(Instrument)=0.30\\).",
+        "Ausserdem ist \\(P(Band\\mid Instrument)=0.40\\) gegeben.",
+        "Gesucht ist die gemeinsame Wahrscheinlichkeit \\(P(Instrument\\cap Band)\\).",
+        "Verwende \\(P(Instrument\\cap Band)=P(Instrument)\\cdot P(Band\\mid Instrument)\\).",
+        "Also \\(0.30\\cdot0.40=0.12\\).",
+        "Die Wahrscheinlichkeit beträgt \\(0.12\\), also \\(12\\%\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was bedeutet bedingte Wahrscheinlichkeit?",
+      antwort:
+        "Sie beschreibt die Wahrscheinlichkeit eines Ereignisses unter der Voraussetzung, dass ein anderes Ereignis bereits eingetreten ist."
+    },
+    {
+      frage: "Wie liest man \\(P(A\\mid B)\\)?",
+      antwort:
+        "Man liest: Wahrscheinlichkeit von \\(A\\) gegeben \\(B\\). Das Ereignis \\(B\\) ist die Bedingung."
+    },
+    {
+      frage: "Wie lautet die Formel für \\(P(A\\mid B)\\)?",
+      antwort:
+        "Die Formel lautet \\(P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\\), sofern \\(P(B)>0\\)."
+    },
+    {
+      frage: "Was steht bei \\(P(A\\mid B)\\) im Nenner?",
+      antwort:
+        "Im Nenner steht die Wahrscheinlichkeit der Bedingung, also \\(P(B)\\)."
+    },
+    {
+      frage: "Warum ist \\(P(A\\mid B)\\) nicht automatisch gleich \\(P(B\\mid A)\\)?",
+      antwort:
+        "Weil jeweils eine andere Bedingung vorliegt. Die betrachtete Grundmenge ist also verschieden."
+    },
+    {
+      frage: "Wie berechnet man bedingte Wahrscheinlichkeit aus einer Vierfeldertafel?",
+      antwort:
+        "Man wählt zuerst die Zeile oder Spalte der Bedingung. Diese Summe ist der Nenner. Danach zählt man darin die günstigen Fälle."
+    },
+    {
+      frage: "Wann sind zwei Ereignisse unabhängig?",
+      antwort:
+        "Sie sind unabhängig, wenn das Eintreten des einen Ereignisses die Wahrscheinlichkeit des anderen nicht verändert, also zum Beispiel \\(P(A\\mid B)=P(A)\\)."
+    },
+    {
+      frage: "Wie kann man Unabhängigkeit noch prüfen?",
+      antwort:
+        "Man kann prüfen, ob \\(P(A\\cap B)=P(A)\\cdot P(B)\\) gilt."
+    },
+    {
+      frage: "Was gilt für das Gegenereignis bei bedingter Wahrscheinlichkeit?",
+      antwort:
+        "Es gilt \\(P(\\overline{A}\\mid B)=1-P(A\\mid B)\\). Die Bedingung bleibt dabei gleich."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was \\(P(A\\mid B)\\) bedeutet?",
+    "Weisst du, dass die Bedingung rechts vom Strich steht?",
+    "Kennst du die Formel \\(P(A\\mid B)=\\frac{P(A\\cap B)}{P(B)}\\)?",
+    "Setzt du im Nenner wirklich die Wahrscheinlichkeit der Bedingung ein?",
+    "Unterscheidest du \\(P(A\\mid B)\\) und \\(P(B\\mid A)\\)?",
+    "Kannst du \\(A\\cap B\\) als 'A und B' erklären?",
+    "Kannst du bedingte Wahrscheinlichkeit aus einer Vierfeldertafel berechnen?",
+    "Kannst du bedingte Wahrscheinlichkeit aus einem Baumdiagramm ablesen?",
+    "Kannst du Unabhängigkeit mit \\(P(A\\mid B)=P(A)\\) prüfen?",
+    "Kannst du Unabhängigkeit mit \\(P(A\\cap B)=P(A)P(B)\\) prüfen?",
+    "Veränderst du beim Gegenereignis nicht versehentlich die Bedingung?",
+    "Kontrollierst du, ob deine Wahrscheinlichkeit zwischen \\(0\\) und \\(1\\) liegt?"
+  ]
+},
+   {
+  id: "satz-von-bayes",
+  nummer: "17",
+  titel: "Satz von Bayes",
+  kurzbeschreibung:
+    "Satz von Bayes verstehen und anwenden: umgekehrte bedingte Wahrscheinlichkeit, totale Wahrscheinlichkeit, Baumdiagramm rückwärts lesen und typische Aufgaben mit Tests und Diagnosen.",
+  lernziele: [
+    "Du kannst erklären, wozu der Satz von Bayes dient.",
+    "Du verstehst den Unterschied zwischen \\(P(A\\mid B)\\) und \\(P(B\\mid A)\\).",
+    "Du kannst eine bedingte Wahrscheinlichkeit umkehren.",
+    "Du kannst den Satz von Bayes korrekt aufstellen.",
+    "Du kannst die totale Wahrscheinlichkeit berechnen.",
+    "Du kannst Bayes-Aufgaben mit Baumdiagrammen lösen.",
+    "Du kannst Aufgaben mit Tests, Fehlerquoten und Diagnosen bearbeiten.",
+    "Du erkennst, warum eine hohe Testgenauigkeit nicht automatisch eine hohe tatsächliche Wahrscheinlichkeit bedeutet.",
+    "Du kannst Zähler und Nenner im Satz von Bayes richtig deuten.",
+    "Du erkennst typische Fehler bei Grundrate, Bedingung und Nenner."
+  ],
+  theorie: [
+    {
+      titel: "Wozu braucht man den Satz von Bayes?",
+      text:
+        "Der Satz von Bayes hilft, eine bedingte Wahrscheinlichkeit umzudrehen. Oft kennt man zum Beispiel \\(P(B\\mid A)\\), möchte aber \\(P(A\\mid B)\\) berechnen."
+    },
+    {
+      titel: "Typische Situation",
+      text:
+        "Ein Test ist positiv. Gesucht ist aber nicht die Wahrscheinlichkeit für einen positiven Test bei einer kranken Person, sondern die Wahrscheinlichkeit, dass eine positiv getestete Person tatsächlich krank ist."
+    },
+    {
+      titel: "Grundformel",
+      text:
+        "Der Satz von Bayes lautet \\(P(A\\mid B)=\\frac{P(B\\mid A)\\cdot P(A)}{P(B)}\\), sofern \\(P(B)>0\\)."
+    },
+    {
+      titel: "Bedeutung des Zählers",
+      text:
+        "Der Zähler \\(P(B\\mid A)\\cdot P(A)\\) beschreibt die gemeinsame Wahrscheinlichkeit von \\(A\\) und \\(B\\). Man kann ihn auch als \\(P(A\\cap B)\\) verstehen."
+    },
+    {
+      titel: "Bedeutung des Nenners",
+      text:
+        "Der Nenner \\(P(B)\\) beschreibt die gesamte Wahrscheinlichkeit des beobachteten Ereignisses \\(B\\). Er umfasst alle Wege, auf denen \\(B\\) eintreten kann."
+    },
+    {
+      titel: "Totale Wahrscheinlichkeit",
+      text:
+        "Wenn \\(B\\) auf verschiedene Arten eintreten kann, berechnet man \\(P(B)\\) durch Addition aller passenden Pfade. Zum Beispiel gilt \\(P(B)=P(B\\mid A)P(A)+P(B\\mid \\overline{A})P(\\overline{A})\\)."
+    },
+    {
+      titel: "Bayes mit Gegenereignis",
+      text:
+        "Sehr häufig zerlegt man die Grundmenge in \\(A\\) und \\(\\overline{A}\\). Dann kann ein beobachtetes Ereignis \\(B\\) entweder mit \\(A\\) oder mit \\(\\overline{A}\\) eintreten."
+    },
+    {
+      titel: "Baumdiagramm vorwärts und rückwärts",
+      text:
+        "Ein Baumdiagramm wird normalerweise vorwärts gelesen. Der Satz von Bayes erlaubt es, nachträglich rückwärts zu fragen: Wenn ein Endereignis bekannt ist, wie wahrscheinlich war ein bestimmter vorheriger Ast?"
+    },
+    {
+      titel: "Grundrate",
+      text:
+        "Die Grundrate ist die ursprüngliche Wahrscheinlichkeit eines Ereignisses, bevor eine neue Information dazukommt. In Testaufgaben ist das oft die Häufigkeit einer Krankheit in der Bevölkerung."
+    },
+    {
+      titel: "Warum die Grundrate wichtig ist",
+      text:
+        "Auch ein genauer Test kann bei seltenen Ereignissen viele falsch positive Resultate erzeugen. Deshalb muss man immer die Grundrate berücksichtigen."
+    },
+    {
+      titel: "Falsch positiv und falsch negativ",
+      text:
+        "Falsch positiv bedeutet: Der Test ist positiv, obwohl das Ereignis eigentlich nicht vorliegt. Falsch negativ bedeutet: Der Test ist negativ, obwohl das Ereignis eigentlich vorliegt."
+    },
+    {
+      titel: "Kernidee",
+      text:
+        "Bayes vergleicht einen günstigen Pfad mit allen Pfaden, die zur beobachteten Information passen. Deshalb ist der Nenner meist eine Summe mehrerer Pfade."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Satz von Bayes anwenden",
+      schritte: [
+        "Bestimme zuerst, was gesucht ist.",
+        "Schreibe die gesuchte Wahrscheinlichkeit in der Form \\(P(A\\mid B)\\).",
+        "Bestimme das Ereignis \\(A\\) und die beobachtete Information \\(B\\).",
+        "Berechne den Zähler \\(P(B\\mid A)\\cdot P(A)\\).",
+        "Berechne den Nenner \\(P(B)\\).",
+        "Falls nötig, berechne \\(P(B)\\) mit der totalen Wahrscheinlichkeit.",
+        "Setze alles in \\(P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}\\) ein.",
+        "Vereinfache das Ergebnis und interpretiere es."
+      ]
+    },
+    {
+      titel: "Methode: Totale Wahrscheinlichkeit berechnen",
+      schritte: [
+        "Zerlege die Grundmenge in zwei Fälle, zum Beispiel \\(A\\) und \\(\\overline{A}\\).",
+        "Berechne den Pfad, bei dem \\(A\\) und \\(B\\) eintreten.",
+        "Berechne den Pfad, bei dem \\(\\overline{A}\\) und \\(B\\) eintreten.",
+        "Addiere beide Pfade.",
+        "Dann erhältst du \\(P(B)\\).",
+        "Verwende diesen Wert als Nenner im Satz von Bayes."
+      ]
+    },
+    {
+      titel: "Methode: Bayes mit Baumdiagramm lösen",
+      schritte: [
+        "Zeichne zuerst die erste Stufe mit \\(A\\) und \\(\\overline{A}\\).",
+        "Trage die Grundwahrscheinlichkeiten ein.",
+        "Zeichne danach die zweite Stufe mit dem beobachteten Ereignis \\(B\\) und dem Gegenereignis.",
+        "Multipliziere entlang der Pfade.",
+        "Markiere alle Pfade, die zur beobachteten Information \\(B\\) passen.",
+        "Setze den günstigen Pfad in den Zähler.",
+        "Setze die Summe aller passenden Pfade in den Nenner."
+      ]
+    },
+    {
+      titel: "Methode: Testaufgabe lösen",
+      schritte: [
+        "Bestimme die Grundrate, zum Beispiel \\(P(krank)\\).",
+        "Bestimme das Gegenereignis, zum Beispiel \\(P(nicht\\ krank)\\).",
+        "Bestimme die Trefferquote, zum Beispiel \\(P(positiv\\mid krank)\\).",
+        "Bestimme die Falsch-positiv-Rate, zum Beispiel \\(P(positiv\\mid nicht\\ krank)\\).",
+        "Berechne alle positiven Pfade.",
+        "Teile den richtig positiven Pfad durch alle positiven Pfade.",
+        "Interpretiere das Ergebnis als Wahrscheinlichkeit nach positivem Test."
+      ]
+    },
+    {
+      titel: "Methode: Bedingung nicht vertauschen",
+      schritte: [
+        "Lies die Aufgabe langsam und markiere die gegebene Information.",
+        "Die gegebene Information steht rechts vom Strich.",
+        "Das gesuchte Ereignis steht links vom Strich.",
+        "Prüfe, ob du wirklich \\(P(A\\mid B)\\) und nicht \\(P(B\\mid A)\\) berechnest.",
+        "Kontrolliere den Nenner: Er muss zur Bedingung passen."
+      ]
+    },
+    {
+      titel: "Methode: Ergebnis plausibel prüfen",
+      schritte: [
+        "Prüfe, ob das Ergebnis zwischen \\(0\\) und \\(1\\) liegt.",
+        "Prüfe, ob seltene Grundraten das Ergebnis stark beeinflussen.",
+        "Überlege, ob viele falsch positive Fälle möglich sind.",
+        "Vergleiche den günstigen Pfad mit allen passenden Pfaden.",
+        "Formuliere das Ergebnis in einem Satz."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Bayes dreht bedingte Wahrscheinlichkeiten um.",
+    "Die Formel lautet \\(P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}\\).",
+    "Der Nenner ist die gesamte Wahrscheinlichkeit der Bedingung.",
+    "Der Zähler ist der günstige Pfad.",
+    "Der Nenner ist die Summe aller Pfade, die zur beobachteten Information passen.",
+    "\\(P(A\\mid B)\\) ist nicht dasselbe wie \\(P(B\\mid A)\\).",
+    "Die Grundrate darf nicht ignoriert werden.",
+    "Bei seltenen Ereignissen können falsch positive Fälle stark ins Gewicht fallen.",
+    "Totale Wahrscheinlichkeit bedeutet: alle möglichen passenden Pfade addieren.",
+    "Ein Baumdiagramm hilft, Bayes-Aufgaben übersichtlich zu lösen."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwechselt \\(P(krank\\mid positiv)\\) mit \\(P(positiv\\mid krank)\\).",
+      korrektur:
+        "Das sind unterschiedliche Wahrscheinlichkeiten. \\(P(positiv\\mid krank)\\) beschreibt die Testtrefferquote. \\(P(krank\\mid positiv)\\) beschreibt die Wahrscheinlichkeit, nach positivem Test wirklich krank zu sein."
+    },
+    {
+      fehler: "Man vergisst die Grundrate.",
+      korrektur:
+        "Die Grundrate \\(P(A)\\) gehört in den Zähler. Ohne sie überschätzt man oft die gesuchte Wahrscheinlichkeit."
+    },
+    {
+      fehler: "Man setzt im Nenner nur den günstigen Pfad ein.",
+      korrektur:
+        "Im Nenner müssen alle Pfade stehen, die zur Bedingung passen. Bei positivem Test also alle positiven Tests, nicht nur die richtig positiven."
+    },
+    {
+      fehler: "Man addiert nicht alle Möglichkeiten für \\(P(B)\\).",
+      korrektur:
+        "\\(P(B)\\) umfasst alle Fälle, in denen \\(B\\) eintreten kann. Diese Pfade müssen addiert werden."
+    },
+    {
+      fehler: "Man denkt, ein sehr genauer Test bedeutet automatisch, dass ein positives Ergebnis fast sicher richtig ist.",
+      korrektur:
+        "Das stimmt bei seltenen Ereignissen nicht unbedingt. Falsch positive Ergebnisse können zahlenmässig trotzdem häufig sein."
+    },
+    {
+      fehler: "Man verwendet die Falsch-negativ-Rate statt der Falsch-positiv-Rate.",
+      korrektur:
+        "Bei der Frage nach einem positiven Testergebnis braucht man alle positiven Pfade. Dazu gehört auch \\(P(positiv\\mid nicht\\ krank)\\)."
+    },
+    {
+      fehler: "Man formuliert das Ergebnis nicht im Kontext.",
+      korrektur:
+        "Bei Bayes-Aufgaben ist die Interpretation wichtig: Das Ergebnis ist eine Wahrscheinlichkeit nach einer neuen Information."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Formel erkennen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Schreibe den Satz von Bayes für \\(P(A\\mid B)\\) auf.",
+      loesung: [
+        "Der Satz von Bayes lautet:",
+        "\\(P(A\\mid B)=\\frac{P(B\\mid A)\\cdot P(A)}{P(B)}\\).",
+        "Dabei muss \\(P(B)>0\\) gelten.",
+        "Im Nenner steht die Wahrscheinlichkeit der Bedingung \\(B\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Einsetzen in Bayes",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Gegeben sind \\(P(B\\mid A)=0.8\\), \\(P(A)=0.3\\) und \\(P(B)=0.6\\). Berechne \\(P(A\\mid B)\\).",
+      loesung: [
+        "Verwende \\(P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}\\).",
+        "Setze ein: \\(P(A\\mid B)=\\frac{0.8\\cdot0.3}{0.6}\\).",
+        "Der Zähler ist \\(0.24\\).",
+        "\\(0.24:0.6=0.4\\).",
+        "Also ist \\(P(A\\mid B)=0.4\\), also \\(40\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Totale Wahrscheinlichkeit",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Gegeben sind \\(P(A)=0.2\\), \\(P(\\overline{A})=0.8\\), \\(P(B\\mid A)=0.7\\) und \\(P(B\\mid\\overline{A})=0.1\\). Berechne \\(P(B)\\).",
+      loesung: [
+        "Verwende die totale Wahrscheinlichkeit.",
+        "\\(P(B)=P(B\\mid A)P(A)+P(B\\mid\\overline{A})P(\\overline{A})\\).",
+        "Setze ein: \\(P(B)=0.7\\cdot0.2+0.1\\cdot0.8\\).",
+        "Das ergibt \\(0.14+0.08=0.22\\).",
+        "Also ist \\(P(B)=0.22\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Bayes mit totaler Wahrscheinlichkeit",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Verwende die Angaben aus Aufgabe 3 und berechne \\(P(A\\mid B)\\).",
+      loesung: [
+        "Gesucht ist \\(P(A\\mid B)\\).",
+        "Der günstige Pfad ist \\(A\\) und \\(B\\).",
+        "Dieser Pfad hat die Wahrscheinlichkeit \\(P(B\\mid A)P(A)=0.7\\cdot0.2=0.14\\).",
+        "Aus Aufgabe 3 wissen wir \\(P(B)=0.22\\).",
+        "Also gilt \\(P(A\\mid B)=\\frac{0.14}{0.22}\\).",
+        "Das ist \\(\\frac{14}{22}=\\frac{7}{11}\\).",
+        "Näherungsweise ist das \\(0.636\\), also etwa \\(63.6\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Medizinischer Test",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Eine Krankheit betrifft \\(2\\%\\) einer Gruppe. Ein Test erkennt kranke Personen mit Wahrscheinlichkeit \\(90\\%\\). Bei gesunden Personen ist der Test mit Wahrscheinlichkeit \\(5\\%\\) fälschlicherweise positiv. Berechne die Wahrscheinlichkeit, dass eine positiv getestete Person wirklich krank ist.",
+      loesung: [
+        "Gesucht ist \\(P(krank\\mid positiv)\\).",
+        "Die Grundrate ist \\(P(krank)=0.02\\).",
+        "Also ist \\(P(gesund)=0.98\\).",
+        "Richtig positiver Pfad: \\(0.02\\cdot0.90=0.018\\).",
+        "Falsch positiver Pfad: \\(0.98\\cdot0.05=0.049\\).",
+        "Alle positiven Tests zusammen: \\(0.018+0.049=0.067\\).",
+        "Also gilt \\(P(krank\\mid positiv)=\\frac{0.018}{0.067}\\).",
+        "Das ist ungefähr \\(0.269\\).",
+        "Die Wahrscheinlichkeit beträgt also etwa \\(26.9\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Warum nicht 90 Prozent?",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Erkläre mit Aufgabe 5, warum die gesuchte Wahrscheinlichkeit nicht einfach \\(90\\%\\) ist.",
+      loesung: [
+        "\\(90\\%\\) ist die Wahrscheinlichkeit, dass der Test positiv ist, wenn eine Person krank ist.",
+        "Gesucht ist aber die umgekehrte Wahrscheinlichkeit: krank, wenn der Test positiv ist.",
+        "Dazu muss man auch falsch positive Tests bei gesunden Personen berücksichtigen.",
+        "Weil die Krankheit selten ist, gibt es viele gesunde Personen.",
+        "Dadurch können relativ viele falsch positive Ergebnisse entstehen.",
+        "Deshalb ist \\(P(krank\\mid positiv)\\) deutlich kleiner als \\(90\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Qualitätskontrolle",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In einer Fabrik stammen \\(70\\%\\) der Teile aus Maschine A und \\(30\\%\\) aus Maschine B. Maschine A produziert mit Wahrscheinlichkeit \\(4\\%\\) fehlerhafte Teile, Maschine B mit Wahrscheinlichkeit \\(10\\%\\). Ein Teil ist fehlerhaft. Berechne die Wahrscheinlichkeit, dass es von Maschine B stammt.",
+      loesung: [
+        "Gesucht ist \\(P(B\\mid fehlerhaft)\\).",
+        "Pfad Maschine B und fehlerhaft: \\(0.30\\cdot0.10=0.03\\).",
+        "Pfad Maschine A und fehlerhaft: \\(0.70\\cdot0.04=0.028\\).",
+        "Alle fehlerhaften Teile zusammen: \\(0.03+0.028=0.058\\).",
+        "Also gilt \\(P(B\\mid fehlerhaft)=\\frac{0.03}{0.058}\\).",
+        "Das ist ungefähr \\(0.517\\).",
+        "Die Wahrscheinlichkeit beträgt also etwa \\(51.7\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: E-Mail-Spam",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "\\(20\\%\\) aller E-Mails sind Spam. Ein Filter markiert Spam mit Wahrscheinlichkeit \\(95\\%\\) als verdächtig. Normale E-Mails werden mit Wahrscheinlichkeit \\(10\\%\\) fälschlich als verdächtig markiert. Berechne die Wahrscheinlichkeit, dass eine als verdächtig markierte E-Mail wirklich Spam ist.",
+      loesung: [
+        "Gesucht ist \\(P(Spam\\mid verdächtig)\\).",
+        "Spam und verdächtig: \\(0.20\\cdot0.95=0.19\\).",
+        "Nicht Spam und verdächtig: \\(0.80\\cdot0.10=0.08\\).",
+        "Alle verdächtigen E-Mails: \\(0.19+0.08=0.27\\).",
+        "Also ist \\(P(Spam\\mid verdächtig)=\\frac{0.19}{0.27}\\).",
+        "Das ist ungefähr \\(0.704\\).",
+        "Die Wahrscheinlichkeit beträgt also etwa \\(70.4\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Falsch positive Rate ändern",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "In Aufgabe 8 sinkt die Falsch-positiv-Rate von \\(10\\%\\) auf \\(2\\%\\). Berechne die neue Wahrscheinlichkeit, dass eine verdächtige E-Mail wirklich Spam ist.",
+      loesung: [
+        "Der Spam-Pfad bleibt gleich: \\(0.20\\cdot0.95=0.19\\).",
+        "Der falsch verdächtige Pfad ist nun \\(0.80\\cdot0.02=0.016\\).",
+        "Alle verdächtigen E-Mails: \\(0.19+0.016=0.206\\).",
+        "Also ist \\(P(Spam\\mid verdächtig)=\\frac{0.19}{0.206}\\).",
+        "Das ist ungefähr \\(0.922\\).",
+        "Die Wahrscheinlichkeit beträgt also etwa \\(92.2\\%\\).",
+        "Die Verbesserung ist gross, weil viel weniger normale E-Mails fälschlich markiert werden."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Seltene Grundrate",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Ein Ereignis tritt nur mit Wahrscheinlichkeit \\(0.5\\%\\) auf. Ein Test erkennt das Ereignis mit \\(99\\%\\) Trefferquote. Bei Personen ohne Ereignis ist der Test mit \\(1\\%\\) fälschlich positiv. Berechne \\(P(Ereignis\\mid positiv)\\).",
+      loesung: [
+        "Gesucht ist \\(P(Ereignis\\mid positiv)\\).",
+        "Die Grundrate ist \\(P(Ereignis)=0.005\\).",
+        "Das Gegenereignis hat Wahrscheinlichkeit \\(0.995\\).",
+        "Richtig positiver Pfad: \\(0.005\\cdot0.99=0.00495\\).",
+        "Falsch positiver Pfad: \\(0.995\\cdot0.01=0.00995\\).",
+        "Alle positiven Tests: \\(0.00495+0.00995=0.01490\\).",
+        "Also gilt \\(P(Ereignis\\mid positiv)=\\frac{0.00495}{0.01490}\\).",
+        "Das ist ungefähr \\(0.332\\).",
+        "Die Wahrscheinlichkeit beträgt also etwa \\(33.2\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 11: Bayes aus einer Vierfeldertafel",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "In einer Gruppe von \\(1000\\) Personen haben \\(80\\) eine bestimmte Eigenschaft. Von diesen \\(80\\) erhalten \\(72\\) ein positives Ergebnis. Von den \\(920\\) Personen ohne Eigenschaft erhalten \\(46\\) ebenfalls ein positives Ergebnis. Berechne die Wahrscheinlichkeit, dass eine positiv getestete Person die Eigenschaft besitzt.",
+      loesung: [
+        "Gesucht ist der Anteil der Personen mit Eigenschaft unter allen positiv Getesteten.",
+        "Positive Personen mit Eigenschaft: \\(72\\).",
+        "Positive Personen ohne Eigenschaft: \\(46\\).",
+        "Insgesamt positive Personen: \\(72+46=118\\).",
+        "Also ist die gesuchte Wahrscheinlichkeit \\(\\frac{72}{118}\\).",
+        "Das kürzt sich zu \\(\\frac{36}{59}\\).",
+        "Näherungsweise ist das \\(0.610\\).",
+        "Die Wahrscheinlichkeit beträgt also etwa \\(61.0\\%\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 12: Bayes allgemein formulieren",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Gegeben sind \\(P(A)=p\\), \\(P(B\\mid A)=r\\) und \\(P(B\\mid\\overline{A})=s\\). Stelle eine Formel für \\(P(A\\mid B)\\) auf.",
+      loesung: [
+        "Zuerst gilt \\(P(\\overline{A})=1-p\\).",
+        "Der günstige Pfad ist \\(A\\) und \\(B\\).",
+        "Dieser Pfad hat Wahrscheinlichkeit \\(rp\\).",
+        "Alle Wege zu \\(B\\) sind \\(rp+s(1-p)\\).",
+        "Also gilt:",
+        "\\(P(A\\mid B)=\\frac{rp}{rp+s(1-p)}\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Wozu dient der Satz von Bayes?",
+      antwort:
+        "Er dient dazu, bedingte Wahrscheinlichkeiten umzudrehen. Man kann also aus \\(P(B\\mid A)\\) und weiteren Angaben \\(P(A\\mid B)\\) berechnen."
+    },
+    {
+      frage: "Wie lautet der Satz von Bayes?",
+      antwort:
+        "Er lautet \\(P(A\\mid B)=\\frac{P(B\\mid A)P(A)}{P(B)}\\)."
+    },
+    {
+      frage: "Was ist der Zähler im Satz von Bayes?",
+      antwort:
+        "Der Zähler ist der günstige gemeinsame Pfad \\(P(B\\mid A)P(A)\\), also \\(P(A\\cap B)\\)."
+    },
+    {
+      frage: "Was ist der Nenner im Satz von Bayes?",
+      antwort:
+        "Der Nenner ist die gesamte Wahrscheinlichkeit der Bedingung \\(B\\), also alle Wege, auf denen \\(B\\) eintreten kann."
+    },
+    {
+      frage: "Was bedeutet totale Wahrscheinlichkeit?",
+      antwort:
+        "Totale Wahrscheinlichkeit bedeutet, dass man alle möglichen Pfade addiert, die zu einem bestimmten Ereignis führen."
+    },
+    {
+      frage: "Warum ist die Grundrate wichtig?",
+      antwort:
+        "Weil sie angibt, wie häufig ein Ereignis ursprünglich vorkommt. Besonders bei seltenen Ereignissen beeinflusst sie das Bayes-Ergebnis stark."
+    },
+    {
+      frage: "Warum ist \\(P(krank\\mid positiv)\\) nicht dasselbe wie \\(P(positiv\\mid krank)\\)?",
+      antwort:
+        "Weil die Bedingung verschieden ist. Beim ersten weiss man, dass der Test positiv ist. Beim zweiten weiss man, dass die Person krank ist."
+    },
+    {
+      frage: "Wie hilft ein Baumdiagramm bei Bayes?",
+      antwort:
+        "Man kann alle Pfade eintragen, entlang der Pfade multiplizieren und danach den günstigen Pfad durch alle passenden Pfade teilen."
+    },
+    {
+      frage: "Was bedeutet falsch positiv?",
+      antwort:
+        "Falsch positiv bedeutet, dass ein Test positiv ausfällt, obwohl das gesuchte Ereignis eigentlich nicht vorliegt."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du den Satz von Bayes aufschreiben?",
+    "Weisst du, dass Bayes bedingte Wahrscheinlichkeiten umdreht?",
+    "Unterscheidest du \\(P(A\\mid B)\\) und \\(P(B\\mid A)\\)?",
+    "Kannst du den günstigen Pfad für den Zähler bestimmen?",
+    "Kannst du alle passenden Pfade für den Nenner addieren?",
+    "Kennst du die Formel der totalen Wahrscheinlichkeit?",
+    "Berücksichtigst du die Grundrate?",
+    "Kannst du Testaufgaben mit richtig positiv und falsch positiv lösen?",
+    "Weisst du, warum ein positiver Test nicht automatisch fast sicher richtig ist?",
+    "Kannst du Bayes mit einem Baumdiagramm darstellen?",
+    "Kontrollierst du, ob das Ergebnis zwischen \\(0\\) und \\(1\\) liegt?",
+    "Kannst du dein Ergebnis in einem Satz interpretieren?"
+  ]
 }
    
    
