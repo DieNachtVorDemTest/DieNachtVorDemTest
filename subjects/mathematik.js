@@ -6710,6 +6710,825 @@ nachtVorTest: [
     "Kontrollierst du, ob das Ergebnis zwischen \\(0\\) und \\(1\\) liegt?",
     "Kannst du dein Ergebnis in einem Satz interpretieren?"
   ]
+},
+   {
+  id: "markov-ketten",
+  nummer: "18",
+  titel: "Markov-Ketten",
+  kurzbeschreibung:
+    "Markov-Ketten verstehen: Zustände, Übergangswahrscheinlichkeiten, Übergangsmatrix, Zustandsvektor, mehrstufige Entwicklungen und stationäre Verteilungen.",
+  lernziele: [
+    "Du kannst erklären, was eine Markov-Kette ist.",
+    "Du verstehst den Begriff Zustand.",
+    "Du kannst Übergangswahrscheinlichkeiten interpretieren.",
+    "Du kannst eine Übergangsmatrix aufstellen.",
+    "Du kannst einen Zustandsvektor verwenden.",
+    "Du kannst Entwicklungen über mehrere Schritte berechnen.",
+    "Du kannst Matrixmultiplikation bei Markov-Ketten anwenden.",
+    "Du verstehst die Bedeutung einer stationären Verteilung.",
+    "Du kannst einfache Langzeitverhalten untersuchen.",
+    "Du erkennst typische Fehler bei Zeilen, Spalten und Wahrscheinlichkeiten."
+  ],
+  theorie: [
+    {
+      titel: "Was ist eine Markov-Kette?",
+      text:
+        "Eine Markov-Kette beschreibt ein System, das sich schrittweise zwischen verschiedenen Zuständen bewegt. Die Wahrscheinlichkeit für den nächsten Zustand hängt nur vom aktuellen Zustand ab, nicht von der ganzen Vergangenheit."
+    },
+    {
+      titel: "Zustände",
+      text:
+        "Zustände sind die möglichen Situationen, in denen sich ein System befinden kann. Zum Beispiel kann das Wetter die Zustände sonnig und regnerisch haben."
+    },
+    {
+      titel: "Übergang",
+      text:
+        "Ein Übergang beschreibt den Wechsel von einem Zustand in einen anderen Zustand. Zu jedem Übergang gehört eine Wahrscheinlichkeit."
+    },
+    {
+      titel: "Übergangswahrscheinlichkeit",
+      text:
+        "Eine Übergangswahrscheinlichkeit gibt an, wie wahrscheinlich es ist, vom aktuellen Zustand in einen bestimmten nächsten Zustand zu wechseln."
+    },
+    {
+      titel: "Markov-Eigenschaft",
+      text:
+        "Die Markov-Eigenschaft bedeutet: Für die Zukunft zählt nur der aktuelle Zustand. Wie man in diesen Zustand gekommen ist, spielt für den nächsten Schritt keine Rolle."
+    },
+    {
+      titel: "Übergangsmatrix",
+      text:
+        "Die Übergangsmatrix fasst alle Übergangswahrscheinlichkeiten in einer Matrix zusammen. Sie zeigt, mit welcher Wahrscheinlichkeit man von einem Zustand zu einem anderen Zustand gelangt."
+    },
+    {
+      titel: "Zeilensumme oder Spaltensumme",
+      text:
+        "Je nach Konvention stehen die Wahrscheinlichkeiten entweder zeilenweise oder spaltenweise. Wichtig ist, dass die Wahrscheinlichkeiten, die von einem Zustand ausgehen, zusammen \\(1\\) ergeben."
+    },
+    {
+      titel: "Zustandsvektor",
+      text:
+        "Ein Zustandsvektor beschreibt, mit welcher Wahrscheinlichkeit oder mit welchem Anteil sich das System gerade in den einzelnen Zuständen befindet."
+    },
+    {
+      titel: "Ein Schritt weiter",
+      text:
+        "Um den nächsten Zustand zu berechnen, multipliziert man den aktuellen Zustandsvektor mit der Übergangsmatrix. Die genaue Reihenfolge hängt davon ab, ob man mit Zeilenvektoren oder Spaltenvektoren arbeitet."
+    },
+    {
+      titel: "Mehrere Schritte",
+      text:
+        "Mehrere Schritte berechnet man durch wiederholte Multiplikation mit der Übergangsmatrix. Nach zwei Schritten verwendet man zum Beispiel die Matrix zweimal."
+    },
+    {
+      titel: "Stationäre Verteilung",
+      text:
+        "Eine stationäre Verteilung ist ein Zustandsvektor, der sich durch die Übergangsmatrix nicht mehr verändert. Das bedeutet: Nach einem weiteren Schritt bleiben die Anteile gleich."
+    },
+    {
+      titel: "Langzeitverhalten",
+      text:
+        "Bei vielen Markov-Ketten nähert sich der Zustandsvektor nach vielen Schritten einer festen Verteilung an. Diese beschreibt das langfristige Verhalten des Systems."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Übergangsmatrix aufstellen",
+      schritte: [
+        "Bestimme zuerst alle Zustände des Systems.",
+        "Lege eine feste Reihenfolge der Zustände fest.",
+        "Trage für jeden Zustand ein, mit welcher Wahrscheinlichkeit man in die möglichen nächsten Zustände gelangt.",
+        "Achte darauf, dass alle Wahrscheinlichkeiten, die von einem Zustand ausgehen, zusammen \\(1\\) ergeben.",
+        "Schreibe die Wahrscheinlichkeiten in eine Matrix.",
+        "Kontrolliere, ob keine Wahrscheinlichkeit negativ oder grösser als \\(1\\) ist."
+      ]
+    },
+    {
+      titel: "Methode: Einen Schritt berechnen",
+      schritte: [
+        "Schreibe den aktuellen Zustandsvektor auf.",
+        "Schreibe die Übergangsmatrix auf.",
+        "Multipliziere den Zustandsvektor mit der Übergangsmatrix in der passenden Reihenfolge.",
+        "Berechne jede Komponente des neuen Zustandsvektors.",
+        "Kontrolliere, ob die Summe der neuen Wahrscheinlichkeiten wieder \\(1\\) ergibt."
+      ]
+    },
+    {
+      titel: "Methode: Mehrere Schritte berechnen",
+      schritte: [
+        "Berechne zuerst den Zustand nach einem Schritt.",
+        "Verwende diesen neuen Zustandsvektor als Ausgangspunkt für den nächsten Schritt.",
+        "Multipliziere erneut mit der Übergangsmatrix.",
+        "Wiederhole das so oft, wie Schritte verlangt sind.",
+        "Alternativ kannst du Potenzen der Übergangsmatrix verwenden.",
+        "Kontrolliere bei jedem Schritt, ob die Wahrscheinlichkeiten zusammen \\(1\\) ergeben."
+      ]
+    },
+    {
+      titel: "Methode: Stationäre Verteilung bestimmen",
+      schritte: [
+        "Bezeichne die gesuchte stationäre Verteilung mit unbekannten Variablen.",
+        "Setze fest, dass sich diese Verteilung durch die Übergangsmatrix nicht verändert.",
+        "Formuliere daraus ein Gleichungssystem.",
+        "Füge die Bedingung hinzu, dass alle Wahrscheinlichkeiten zusammen \\(1\\) ergeben.",
+        "Löse das Gleichungssystem.",
+        "Prüfe, ob alle Werte zwischen \\(0\\) und \\(1\\) liegen."
+      ]
+    },
+    {
+      titel: "Methode: Baumdiagramm zu Markov-Kette übersetzen",
+      schritte: [
+        "Lies die möglichen Zustände aus dem Baumdiagramm ab.",
+        "Bestimme für jeden Zustand die Übergangswahrscheinlichkeiten zum nächsten Schritt.",
+        "Ordne die Zustände in einer festen Reihenfolge.",
+        "Trage die Übergangswahrscheinlichkeiten in die Matrix ein.",
+        "Kontrolliere, ob jede Zeile oder Spalte gemäss deiner Konvention die Summe \\(1\\) hat."
+      ]
+    },
+    {
+      titel: "Methode: Ergebnis interpretieren",
+      schritte: [
+        "Lies jede Komponente des Zustandsvektors einem Zustand zu.",
+        "Formuliere das Ergebnis in Worten.",
+        "Achte darauf, ob es sich um Wahrscheinlichkeit, Anteil oder Prozent handelt.",
+        "Wenn nach Langzeitverhalten gefragt ist, vergleiche mehrere Zustandsvektoren.",
+        "Prüfe, ob sich die Werte stabilisieren."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Eine Markov-Kette beschreibt Übergänge zwischen Zuständen.",
+    "Die Zukunft hängt nur vom aktuellen Zustand ab.",
+    "Übergangswahrscheinlichkeiten liegen zwischen \\(0\\) und \\(1\\).",
+    "Alle Wahrscheinlichkeiten, die von einem Zustand ausgehen, ergeben zusammen \\(1\\).",
+    "Eine Übergangsmatrix enthält alle Übergangswahrscheinlichkeiten.",
+    "Ein Zustandsvektor beschreibt die aktuelle Verteilung auf die Zustände.",
+    "Mehrere Schritte berechnet man durch wiederholte Matrixmultiplikation.",
+    "Eine stationäre Verteilung verändert sich beim Übergang nicht.",
+    "Bei Markov-Ketten ist die Reihenfolge der Zustände wichtig.",
+    "Zeilen- und Spaltenkonvention dürfen nicht vermischt werden."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man vermischt Zeilen- und Spaltenkonvention.",
+      korrektur:
+        "Lege am Anfang fest, ob von einem Zustand ausgehende Wahrscheinlichkeiten in Zeilen oder Spalten stehen. Danach musst du konsequent bleiben."
+    },
+    {
+      fehler: "Die Wahrscheinlichkeiten ergeben zusammen nicht \\(1\\).",
+      korrektur:
+        "Alle Übergangswahrscheinlichkeiten, die von einem Zustand ausgehen, müssen zusammen \\(1\\) ergeben."
+    },
+    {
+      fehler: "Man verwechselt Zustandsvektor und Übergangsmatrix.",
+      korrektur:
+        "Der Zustandsvektor beschreibt die aktuelle Verteilung. Die Übergangsmatrix beschreibt die Regeln für den nächsten Schritt."
+    },
+    {
+      fehler: "Man verwendet die falsche Reihenfolge der Zustände.",
+      korrektur:
+        "Die Reihenfolge der Zustände muss in Vektor und Matrix gleich bleiben. Sonst werden Wahrscheinlichkeiten falsch zugeordnet."
+    },
+    {
+      fehler: "Man denkt, die stationäre Verteilung sei immer der Anfangszustand.",
+      korrektur:
+        "Die stationäre Verteilung ist ein Zustand, der sich nach einem Übergang nicht verändert. Sie muss nicht mit dem Anfangszustand übereinstimmen."
+    },
+    {
+      fehler: "Man interpretiert Matrixeinträge ohne Bedingung.",
+      korrektur:
+        "Ein Matrixeintrag ist eine bedingte Wahrscheinlichkeit: Er beschreibt einen Übergang unter der Voraussetzung, dass man in einem bestimmten Zustand startet."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Zustände erkennen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein einfaches Wettermodell hat die Zustände sonnig und regnerisch. Nenne die Zustände der Markov-Kette.",
+      loesung: [
+        "Die Zustände sind die möglichen Situationen des Systems.",
+        "Hier gibt es zwei Zustände.",
+        "Zustand 1: sonnig.",
+        "Zustand 2: regnerisch."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Übergangswahrscheinlichkeiten prüfen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Von Zustand A geht das System mit Wahrscheinlichkeit \\(0.7\\) nach A und mit Wahrscheinlichkeit \\(0.3\\) nach B. Prüfe, ob diese Wahrscheinlichkeiten gültig sind.",
+      loesung: [
+        "Übergangswahrscheinlichkeiten müssen zwischen \\(0\\) und \\(1\\) liegen.",
+        "\\(0.7\\) und \\(0.3\\) erfüllen diese Bedingung.",
+        "Ausserdem müssen alle ausgehenden Wahrscheinlichkeiten zusammen \\(1\\) ergeben.",
+        "\\(0.7+0.3=1\\).",
+        "Die Wahrscheinlichkeiten sind also gültig."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Übergangsmatrix aufstellen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Ein System hat die Zustände A und B. Von A geht es mit Wahrscheinlichkeit \\(0.8\\) nach A und mit \\(0.2\\) nach B. Von B geht es mit \\(0.4\\) nach A und mit \\(0.6\\) nach B. Stelle eine zeilenweise Übergangsmatrix auf.",
+      loesung: [
+        "Die Reihenfolge der Zustände sei A, B.",
+        "Die erste Zeile beschreibt Übergänge von A.",
+        "Von A nach A: \\(0.8\\), von A nach B: \\(0.2\\).",
+        "Die zweite Zeile beschreibt Übergänge von B.",
+        "Von B nach A: \\(0.4\\), von B nach B: \\(0.6\\).",
+        "Also ist die Matrix \\(P=\\begin{pmatrix}0.8&0.2\\\\0.4&0.6\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Einen Schritt berechnen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Gegeben ist der Zustandsvektor \\(v_0=(1,0)\\) und die Übergangsmatrix \\(P=\\begin{pmatrix}0.8&0.2\\\\0.4&0.6\\end{pmatrix}\\). Berechne \\(v_1=v_0P\\).",
+      loesung: [
+        "Der Startvektor ist \\(v_0=(1,0)\\).",
+        "Multipliziere \\(v_0\\) mit \\(P\\).",
+        "Erste Komponente: \\(1\\cdot0.8+0\\cdot0.4=0.8\\).",
+        "Zweite Komponente: \\(1\\cdot0.2+0\\cdot0.6=0.2\\).",
+        "Also ist \\(v_1=(0.8,0.2)\\).",
+        "Die Summe ist \\(0.8+0.2=1\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Zweiten Schritt berechnen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Verwende \\(v_1=(0.8,0.2)\\) und \\(P=\\begin{pmatrix}0.8&0.2\\\\0.4&0.6\\end{pmatrix}\\). Berechne \\(v_2=v_1P\\).",
+      loesung: [
+        "Multipliziere \\(v_1\\) mit \\(P\\).",
+        "Erste Komponente: \\(0.8\\cdot0.8+0.2\\cdot0.4\\).",
+        "Das ist \\(0.64+0.08=0.72\\).",
+        "Zweite Komponente: \\(0.8\\cdot0.2+0.2\\cdot0.6\\).",
+        "Das ist \\(0.16+0.12=0.28\\).",
+        "Also ist \\(v_2=(0.72,0.28)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Matrixeintrag deuten",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "In der Matrix \\(P=\\begin{pmatrix}0.8&0.2\\\\0.4&0.6\\end{pmatrix}\\) werden Zeilen als Startzustände gelesen. Was bedeutet der Eintrag \\(0.4\\)?",
+      loesung: [
+        "Die Zeilen beschreiben die Startzustände.",
+        "Die zweite Zeile gehört also zum Startzustand B.",
+        "Die erste Spalte gehört zum Zielzustand A.",
+        "Der Eintrag \\(0.4\\) bedeutet daher:",
+        "Wenn das System aktuell in Zustand B ist, wechselt es im nächsten Schritt mit Wahrscheinlichkeit \\(0.4\\) nach Zustand A."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Stationäre Verteilung bei zwei Zuständen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Bestimme die stationäre Verteilung für \\(P=\\begin{pmatrix}0.8&0.2\\\\0.4&0.6\\end{pmatrix}\\) mit Zeilenvektoren.",
+      loesung: [
+        "Sei die stationäre Verteilung \\(v=(x,y)\\).",
+        "Dann muss \\(vP=v\\) gelten.",
+        "Also gilt \\((x,y)\\begin{pmatrix}0.8&0.2\\\\0.4&0.6\\end{pmatrix}=(x,y)\\).",
+        "Daraus folgt für die erste Komponente: \\(0.8x+0.4y=x\\).",
+        "Umformen ergibt \\(0.4y=0.2x\\), also \\(x=2y\\).",
+        "Zusätzlich gilt \\(x+y=1\\).",
+        "Setze \\(x=2y\\) ein: \\(2y+y=1\\).",
+        "Also \\(3y=1\\), somit \\(y=\\frac{1}{3}\\).",
+        "Dann ist \\(x=\\frac{2}{3}\\).",
+        "Die stationäre Verteilung ist \\(v=\\left(\\frac{2}{3},\\frac{1}{3}\\right)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Langzeitverhalten interpretieren",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Eine Markov-Kette hat langfristig die stationäre Verteilung \\(v=\\left(\\frac{2}{3},\\frac{1}{3}\\right)\\). Interpretiere das Ergebnis.",
+      loesung: [
+        "Die erste Komponente gehört zum ersten Zustand.",
+        "Die zweite Komponente gehört zum zweiten Zustand.",
+        "Langfristig befindet sich das System ungefähr mit Wahrscheinlichkeit \\(\\frac{2}{3}\\) im ersten Zustand.",
+        "Mit Wahrscheinlichkeit \\(\\frac{1}{3}\\) befindet es sich im zweiten Zustand.",
+        "In Prozent bedeutet das etwa \\(66.7\\%\\) im ersten Zustand und \\(33.3\\%\\) im zweiten Zustand."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Fehler in einer Übergangsmatrix finden",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Ist \\(P=\\begin{pmatrix}0.5&0.6\\\\0.2&0.8\\end{pmatrix}\\) eine gültige zeilenweise Übergangsmatrix?",
+      loesung: [
+        "Bei einer zeilenweisen Übergangsmatrix muss jede Zeile die Summe \\(1\\) haben.",
+        "Die erste Zeile hat Summe \\(0.5+0.6=1.1\\).",
+        "Das ist grösser als \\(1\\).",
+        "Die zweite Zeile hat Summe \\(0.2+0.8=1\\).",
+        "Da die erste Zeile nicht gültig ist, ist die Matrix keine gültige Übergangsmatrix."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Anfangsverteilung deuten",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Was bedeutet der Zustandsvektor \\(v=(0.25,0.75)\\) bei zwei Zuständen A und B?",
+      loesung: [
+        "Die erste Komponente gehört zu Zustand A.",
+        "Die zweite Komponente gehört zu Zustand B.",
+        "\\(0.25\\) bedeutet, dass das System mit Wahrscheinlichkeit \\(25\\%\\) in Zustand A ist.",
+        "\\(0.75\\) bedeutet, dass das System mit Wahrscheinlichkeit \\(75\\%\\) in Zustand B ist.",
+        "Die Summe ist \\(0.25+0.75=1\\), also ist der Zustandsvektor gültig."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist eine Markov-Kette?",
+      antwort:
+        "Eine Markov-Kette ist ein stochastisches Modell, bei dem ein System schrittweise zwischen Zuständen wechselt. Der nächste Zustand hängt nur vom aktuellen Zustand ab."
+    },
+    {
+      frage: "Was bedeutet die Markov-Eigenschaft?",
+      antwort:
+        "Sie bedeutet, dass für den nächsten Schritt nur der aktuelle Zustand wichtig ist, nicht die gesamte Vorgeschichte."
+    },
+    {
+      frage: "Was ist eine Übergangsmatrix?",
+      antwort:
+        "Eine Übergangsmatrix enthält alle Wahrscheinlichkeiten für den Übergang von einem Zustand in einen anderen Zustand."
+    },
+    {
+      frage: "Was ist ein Zustandsvektor?",
+      antwort:
+        "Ein Zustandsvektor beschreibt, wie die Wahrscheinlichkeit oder der Anteil aktuell auf die verschiedenen Zustände verteilt ist."
+    },
+    {
+      frage: "Wie berechnet man den nächsten Zustand?",
+      antwort:
+        "Man multipliziert den aktuellen Zustandsvektor mit der Übergangsmatrix, wobei man die gewählte Zeilen- oder Spaltenkonvention beachten muss."
+    },
+    {
+      frage: "Was ist eine stationäre Verteilung?",
+      antwort:
+        "Eine stationäre Verteilung ist ein Zustandsvektor, der sich durch einen weiteren Übergang nicht verändert."
+    },
+    {
+      frage: "Warum müssen Wahrscheinlichkeiten in einer Übergangsmatrix die Summe \\(1\\) ergeben?",
+      antwort:
+        "Weil von einem Zustand aus irgendein möglicher nächster Zustand eintreten muss. Die Gesamtwahrscheinlichkeit aller ausgehenden Möglichkeiten ist deshalb \\(1\\)."
+    },
+    {
+      frage: "Was ist ein häufiger Fehler bei Markov-Ketten?",
+      antwort:
+        "Ein häufiger Fehler ist, Zeilen- und Spaltenkonvention zu vermischen oder die Reihenfolge der Zustände im Vektor und in der Matrix zu ändern."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was eine Markov-Kette ist?",
+    "Weisst du, was ein Zustand ist?",
+    "Kannst du Übergangswahrscheinlichkeiten interpretieren?",
+    "Kannst du eine Übergangsmatrix aufstellen?",
+    "Kontrollierst du, ob die ausgehenden Wahrscheinlichkeiten zusammen \\(1\\) ergeben?",
+    "Kannst du einen Zustandsvektor deuten?",
+    "Kannst du einen Schritt mit Matrixmultiplikation berechnen?",
+    "Kannst du mehrere Schritte durch wiederholte Multiplikation berechnen?",
+    "Verwendest du konsequent dieselbe Reihenfolge der Zustände?",
+    "Verwechselst du Zeilen- und Spaltenkonvention nicht?",
+    "Kannst du erklären, was eine stationäre Verteilung ist?",
+    "Kannst du ein Markov-Ergebnis in Worten interpretieren?"
+  ]
+},
+   {
+  id: "matrizen-lineare-gleichungssysteme",
+  nummer: "19",
+  titel: "Matrizen und lineare Gleichungssysteme",
+  kurzbeschreibung:
+    "Matrizen verstehen und anwenden: Matrixschreibweise, Addition, Multiplikation, Einheitsmatrix, inverse Matrix, lineare Gleichungssysteme und Gauß-Verfahren.",
+  lernziele: [
+    "Du kannst erklären, was eine Matrix ist.",
+    "Du kannst die Dimension einer Matrix bestimmen.",
+    "Du kannst Matrizen addieren und subtrahieren.",
+    "Du kannst Matrizen mit Zahlen multiplizieren.",
+    "Du kannst Matrizen miteinander multiplizieren.",
+    "Du verstehst die Bedeutung der Einheitsmatrix.",
+    "Du kannst lineare Gleichungssysteme als Matrix schreiben.",
+    "Du kannst ein lineares Gleichungssystem mit dem Gauß-Verfahren lösen.",
+    "Du kannst erkennen, ob ein Gleichungssystem eindeutig, unendlich viele oder keine Lösungen hat.",
+    "Du erkennst typische Fehler bei Matrixmultiplikation und Zeilenumformungen."
+  ],
+  theorie: [
+    {
+      titel: "Was ist eine Matrix?",
+      text:
+        "Eine Matrix ist ein rechteckiges Zahlenschema aus Zeilen und Spalten. Man verwendet Matrizen, um Zahlen übersichtlich zu ordnen oder lineare Zusammenhänge kompakt darzustellen."
+    },
+    {
+      titel: "Dimension einer Matrix",
+      text:
+        "Die Dimension einer Matrix gibt an, wie viele Zeilen und Spalten sie hat. Eine Matrix mit \\(m\\) Zeilen und \\(n\\) Spalten nennt man eine \\(m\\times n\\)-Matrix."
+    },
+    {
+      titel: "Einträge einer Matrix",
+      text:
+        "Die einzelnen Zahlen in einer Matrix nennt man Einträge. Der Eintrag \\(a_{ij}\\) steht in der \\(i\\)-ten Zeile und der \\(j\\)-ten Spalte."
+    },
+    {
+      titel: "Matrixaddition",
+      text:
+        "Matrizen kann man nur addieren, wenn sie dieselbe Dimension haben. Dann addiert man die entsprechenden Einträge miteinander."
+    },
+    {
+      titel: "Multiplikation mit einer Zahl",
+      text:
+        "Multipliziert man eine Matrix mit einer Zahl, dann wird jeder einzelne Eintrag der Matrix mit dieser Zahl multipliziert."
+    },
+    {
+      titel: "Matrixmultiplikation",
+      text:
+        "Bei der Matrixmultiplikation multipliziert man Zeilen der ersten Matrix mit Spalten der zweiten Matrix. Die Anzahl der Spalten der ersten Matrix muss zur Anzahl der Zeilen der zweiten Matrix passen."
+    },
+    {
+      titel: "Warum ist Matrixmultiplikation nicht einfach eintragsweise?",
+      text:
+        "Bei der Matrixmultiplikation wird nicht einfach jeder Eintrag mit dem entsprechenden Eintrag multipliziert. Stattdessen entstehen die neuen Einträge durch Skalarprodukte von Zeilen und Spalten."
+    },
+    {
+      titel: "Einheitsmatrix",
+      text:
+        "Die Einheitsmatrix ist eine quadratische Matrix mit Einsen auf der Hauptdiagonalen und Nullen sonst. Sie wirkt bei der Matrixmultiplikation ähnlich wie die Zahl \\(1\\) bei gewöhnlicher Multiplikation."
+    },
+    {
+      titel: "Inverse Matrix",
+      text:
+        "Die inverse Matrix \\(A^{-1}\\) macht die Wirkung einer Matrix \\(A\\) rückgängig. Sie existiert nur bei bestimmten quadratischen Matrizen. Es gilt dann \\(A\\cdot A^{-1}=I\\)."
+    },
+    {
+      titel: "Lineares Gleichungssystem",
+      text:
+        "Ein lineares Gleichungssystem besteht aus mehreren linearen Gleichungen mit mehreren Unbekannten. Es kann eindeutig lösbar sein, unendlich viele Lösungen besitzen oder keine Lösung haben."
+    },
+    {
+      titel: "Matrixschreibweise eines Gleichungssystems",
+      text:
+        "Ein lineares Gleichungssystem kann man kompakt als \\(A\\vec{x}=\\vec{b}\\) schreiben. Dabei ist \\(A\\) die Koeffizientenmatrix, \\(\\vec{x}\\) der Vektor der Unbekannten und \\(\\vec{b}\\) der Ergebnisvektor."
+    },
+    {
+      titel: "Gauß-Verfahren",
+      text:
+        "Beim Gauß-Verfahren formt man ein lineares Gleichungssystem durch erlaubte Zeilenumformungen so um, dass man die Lösungen leicht ablesen oder durch Rückwärtseinsetzen bestimmen kann."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Dimension einer Matrix bestimmen",
+      schritte: [
+        "Zähle zuerst die Anzahl der Zeilen.",
+        "Zähle danach die Anzahl der Spalten.",
+        "Schreibe die Dimension als Zeilen mal Spalten.",
+        "Eine Matrix mit \\(2\\) Zeilen und \\(3\\) Spalten ist eine \\(2\\times3\\)-Matrix.",
+        "Achte darauf, nicht Spalten und Zeilen zu vertauschen."
+      ]
+    },
+    {
+      titel: "Methode: Matrizen addieren",
+      schritte: [
+        "Prüfe zuerst, ob beide Matrizen dieselbe Dimension haben.",
+        "Wenn nicht, ist die Addition nicht definiert.",
+        "Wenn ja, addiere die entsprechenden Einträge.",
+        "Der Eintrag oben links wird mit dem Eintrag oben links addiert.",
+        "Führe das für alle Einträge durch.",
+        "Die Ergebnismatrix hat dieselbe Dimension wie die Ausgangsmatrizen."
+      ]
+    },
+    {
+      titel: "Methode: Matrix mit einer Zahl multiplizieren",
+      schritte: [
+        "Nimm die gegebene Zahl als Faktor.",
+        "Multipliziere jeden Eintrag der Matrix mit diesem Faktor.",
+        "Achte besonders auf negative Vorzeichen.",
+        "Schreibe die neue Matrix mit den berechneten Einträgen auf.",
+        "Kontrolliere, ob die Dimension gleich geblieben ist."
+      ]
+    },
+    {
+      titel: "Methode: Matrizen multiplizieren",
+      schritte: [
+        "Prüfe zuerst, ob die Multiplikation überhaupt möglich ist.",
+        "Die Spaltenzahl der ersten Matrix muss gleich der Zeilenzahl der zweiten Matrix sein.",
+        "Der Eintrag in Zeile \\(i\\) und Spalte \\(j\\) entsteht aus Zeile \\(i\\) der ersten Matrix und Spalte \\(j\\) der zweiten Matrix.",
+        "Multipliziere passende Einträge und addiere die Produkte.",
+        "Wiederhole das für alle Zeilen-Spalten-Kombinationen.",
+        "Die Ergebnismatrix hat so viele Zeilen wie die erste Matrix und so viele Spalten wie die zweite Matrix."
+      ]
+    },
+    {
+      titel: "Methode: Gleichungssystem als Matrix schreiben",
+      schritte: [
+        "Ordne die Unbekannten in einer festen Reihenfolge, zum Beispiel \\(x,y,z\\).",
+        "Schreibe die Koeffizienten jeder Gleichung in eine Zeile der Matrix.",
+        "Schreibe die Unbekannten als Vektor \\(\\vec{x}\\).",
+        "Schreibe die rechten Seiten als Ergebnisvektor \\(\\vec{b}\\).",
+        "Formuliere das System als \\(A\\vec{x}=\\vec{b}\\).",
+        "Achte darauf, fehlende Variablen mit dem Koeffizienten \\(0\\) einzutragen."
+      ]
+    },
+    {
+      titel: "Methode: Gauß-Verfahren anwenden",
+      schritte: [
+        "Schreibe das Gleichungssystem als erweiterte Matrix.",
+        "Verwende erlaubte Zeilenumformungen.",
+        "Ziel ist es, unter den führenden Einträgen Nullen zu erzeugen.",
+        "Bringe die Matrix in Dreiecksform oder Stufenform.",
+        "Löse danach durch Rückwärtseinsetzen.",
+        "Prüfe die Lösung durch Einsetzen in die ursprünglichen Gleichungen."
+      ]
+    },
+    {
+      titel: "Methode: Lösungsfälle erkennen",
+      schritte: [
+        "Führe das Gauß-Verfahren bis zur Stufenform durch.",
+        "Entsteht eine widersprüchliche Zeile wie \\(0=5\\), gibt es keine Lösung.",
+        "Entstehen freie Variablen ohne Widerspruch, gibt es unendlich viele Lösungen.",
+        "Gibt es für jede Variable eine eindeutige Bestimmung, gibt es genau eine Lösung.",
+        "Formuliere das Ergebnis klar als eindeutig, keine Lösung oder unendlich viele Lösungen."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Eine Matrix ist ein Zahlenschema aus Zeilen und Spalten.",
+    "Die Dimension schreibt man als Zeilen mal Spalten.",
+    "Matrizen können nur addiert werden, wenn sie dieselbe Dimension haben.",
+    "Bei der Multiplikation mit einer Zahl wird jeder Eintrag multipliziert.",
+    "Matrixmultiplikation bedeutet Zeile mal Spalte.",
+    "Bei \\(A\\cdot B\\) muss die Spaltenzahl von \\(A\\) zur Zeilenzahl von \\(B\\) passen.",
+    "Matrixmultiplikation ist im Allgemeinen nicht kommutativ.",
+    "Die Einheitsmatrix wirkt wie die Zahl \\(1\\) bei Matrizen.",
+    "Ein lineares Gleichungssystem kann als \\(A\\vec{x}=\\vec{b}\\) geschrieben werden.",
+    "Beim Gauß-Verfahren sind Zeilenumformungen das zentrale Werkzeug."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwechselt Zeilen und Spalten bei der Dimension.",
+      korrektur:
+        "Die Dimension wird immer als Zeilen mal Spalten angegeben. Eine Matrix mit \\(3\\) Zeilen und \\(2\\) Spalten ist eine \\(3\\times2\\)-Matrix."
+    },
+    {
+      fehler: "Man addiert Matrizen verschiedener Dimension.",
+      korrektur:
+        "Matrizenaddition ist nur möglich, wenn beide Matrizen exakt dieselbe Dimension haben."
+    },
+    {
+      fehler: "Man multipliziert Matrizen eintragsweise.",
+      korrektur:
+        "Bei der Matrixmultiplikation rechnet man Zeile mal Spalte. Es werden Produkte addiert, nicht einfach entsprechende Einträge multipliziert."
+    },
+    {
+      fehler: "Man denkt, \\(A\\cdot B\\) sei immer gleich \\(B\\cdot A\\).",
+      korrektur:
+        "Matrixmultiplikation ist im Allgemeinen nicht kommutativ. Die Reihenfolge ist wichtig."
+    },
+    {
+      fehler: "Man vergisst fehlende Variablen beim Aufstellen der Koeffizientenmatrix.",
+      korrektur:
+        "Fehlt eine Variable in einer Gleichung, muss man den Koeffizienten \\(0\\) eintragen."
+    },
+    {
+      fehler: "Man macht beim Gauß-Verfahren unerlaubte Spaltenumformungen.",
+      korrektur:
+        "Beim normalen Lösen eines Gleichungssystems verwendet man Zeilenumformungen. Spaltenumformungen verändern die Bedeutung der Variablen."
+    },
+    {
+      fehler: "Man erkennt eine Widerspruchszeile nicht.",
+      korrektur:
+        "Eine Zeile wie \\(0x+0y+0z=4\\) ist unmöglich. Dann hat das Gleichungssystem keine Lösung."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Dimension bestimmen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Bestimme die Dimension der Matrix \\(A=\\begin{pmatrix}1&2&3\\\\4&5&6\\end{pmatrix}\\).",
+      loesung: [
+        "Die Matrix hat \\(2\\) Zeilen.",
+        "Sie hat \\(3\\) Spalten.",
+        "Die Dimension lautet daher \\(2\\times3\\).",
+        "Also ist \\(A\\) eine \\(2\\times3\\)-Matrix."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Matrizen addieren",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Berechne \\(\\begin{pmatrix}1&3\\\\2&4\\end{pmatrix}+\\begin{pmatrix}5&1\\\\-2&0\\end{pmatrix}\\).",
+      loesung: [
+        "Beide Matrizen haben die Dimension \\(2\\times2\\).",
+        "Man addiert die entsprechenden Einträge.",
+        "Oben links: \\(1+5=6\\).",
+        "Oben rechts: \\(3+1=4\\).",
+        "Unten links: \\(2+(-2)=0\\).",
+        "Unten rechts: \\(4+0=4\\).",
+        "Das Ergebnis ist \\(\\begin{pmatrix}6&4\\\\0&4\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Matrix mit Zahl multiplizieren",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Berechne \\(3\\cdot\\begin{pmatrix}2&-1\\\\0&4\\end{pmatrix}\\).",
+      loesung: [
+        "Multipliziere jeden Eintrag mit \\(3\\).",
+        "\\(3\\cdot2=6\\).",
+        "\\(3\\cdot(-1)=-3\\).",
+        "\\(3\\cdot0=0\\).",
+        "\\(3\\cdot4=12\\).",
+        "Das Ergebnis ist \\(\\begin{pmatrix}6&-3\\\\0&12\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Matrixmultiplikation prüfen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Kann man eine \\(2\\times3\\)-Matrix mit einer \\(3\\times4\\)-Matrix multiplizieren? Welche Dimension hat das Ergebnis?",
+      loesung: [
+        "Bei \\(A\\cdot B\\) muss die Spaltenzahl von \\(A\\) gleich der Zeilenzahl von \\(B\\) sein.",
+        "Die erste Matrix hat \\(3\\) Spalten.",
+        "Die zweite Matrix hat \\(3\\) Zeilen.",
+        "Die Multiplikation ist also möglich.",
+        "Das Ergebnis hat die Zeilenzahl der ersten Matrix und die Spaltenzahl der zweiten Matrix.",
+        "Also hat das Ergebnis die Dimension \\(2\\times4\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Matrizen multiplizieren",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Berechne \\(\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}\\cdot\\begin{pmatrix}2&0\\\\1&5\\end{pmatrix}\\).",
+      loesung: [
+        "Berechne jeden Eintrag durch Zeile mal Spalte.",
+        "Oben links: \\(1\\cdot2+2\\cdot1=4\\).",
+        "Oben rechts: \\(1\\cdot0+2\\cdot5=10\\).",
+        "Unten links: \\(3\\cdot2+4\\cdot1=10\\).",
+        "Unten rechts: \\(3\\cdot0+4\\cdot5=20\\).",
+        "Das Ergebnis ist \\(\\begin{pmatrix}4&10\\\\10&20\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Einheitsmatrix erkennen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Gib die \\(3\\times3\\)-Einheitsmatrix an.",
+      loesung: [
+        "Die Einheitsmatrix hat Einsen auf der Hauptdiagonalen.",
+        "Alle anderen Einträge sind \\(0\\).",
+        "Also ist \\(I=\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Gleichungssystem als Matrix schreiben",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Schreibe das Gleichungssystem \\(2x+y=5\\), \\(3x-2y=4\\) in der Form \\(A\\vec{x}=\\vec{b}\\).",
+      loesung: [
+        "Die Unbekannten sind \\(x\\) und \\(y\\).",
+        "Die Koeffizienten der ersten Gleichung sind \\(2\\) und \\(1\\).",
+        "Die Koeffizienten der zweiten Gleichung sind \\(3\\) und \\(-2\\).",
+        "Die rechte Seite ist \\(5\\) und \\(4\\).",
+        "Also gilt \\(\\begin{pmatrix}2&1\\\\3&-2\\end{pmatrix}\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}5\\\\4\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Gauß-Verfahren einfach",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse das Gleichungssystem \\(x+y=5\\), \\(2x-y=1\\).",
+      loesung: [
+        "Aus der ersten Gleichung folgt \\(y=5-x\\).",
+        "Setze das in die zweite Gleichung ein.",
+        "\\(2x-(5-x)=1\\).",
+        "Das ergibt \\(2x-5+x=1\\).",
+        "Also \\(3x=6\\).",
+        "Daraus folgt \\(x=2\\).",
+        "Setze \\(x=2\\) in \\(x+y=5\\) ein.",
+        "Dann ist \\(2+y=5\\), also \\(y=3\\).",
+        "Die Lösung ist \\((x,y)=(2,3)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Keine Lösung erkennen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Untersuche das Gleichungssystem \\(x+y=2\\), \\(2x+2y=7\\).",
+      loesung: [
+        "Multipliziert man die erste Gleichung mit \\(2\\), erhält man \\(2x+2y=4\\).",
+        "Die zweite Gleichung lautet aber \\(2x+2y=7\\).",
+        "Das kann nicht gleichzeitig stimmen.",
+        "Die beiden Gleichungen widersprechen sich.",
+        "Also hat das Gleichungssystem keine Lösung."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Unendlich viele Lösungen erkennen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Untersuche das Gleichungssystem \\(x+y=4\\), \\(2x+2y=8\\).",
+      loesung: [
+        "Die zweite Gleichung ist genau das Doppelte der ersten Gleichung.",
+        "Sie enthält also keine neue Information.",
+        "Es gibt nicht nur eine einzige Lösung.",
+        "Alle Zahlenpaare mit \\(x+y=4\\) sind Lösungen.",
+        "Zum Beispiel ist \\(y=4-x\\).",
+        "Das Gleichungssystem hat unendlich viele Lösungen."
+      ]
+    },
+    {
+      titel: "Aufgabe 11: Fehlende Variable in Matrix",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Schreibe \\(2x+3z=7\\), \\(x-y+z=1\\) als Matrixgleichung mit den Variablen \\(x,y,z\\).",
+      loesung: [
+        "Die Reihenfolge der Variablen ist \\(x,y,z\\).",
+        "In der ersten Gleichung fehlt \\(y\\).",
+        "Deshalb ist der Koeffizient von \\(y\\) gleich \\(0\\).",
+        "Die erste Zeile der Koeffizientenmatrix ist \\((2,0,3)\\).",
+        "Die zweite Zeile ist \\((1,-1,1)\\).",
+        "Also gilt \\(\\begin{pmatrix}2&0&3\\\\1&-1&1\\end{pmatrix}\\begin{pmatrix}x\\\\y\\\\z\\end{pmatrix}=\\begin{pmatrix}7\\\\1\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 12: Nicht kommutative Multiplikation",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Zeige mit \\(A=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}\\) und \\(B=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}\\), dass \\(A\\cdot B\\) nicht gleich \\(B\\cdot A\\) sein muss.",
+      loesung: [
+        "Berechne zuerst \\(A\\cdot B\\).",
+        "\\(A\\cdot B=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}=\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}\\).",
+        "Berechne nun \\(B\\cdot A\\).",
+        "\\(B\\cdot A=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}=\\begin{pmatrix}1&1\\\\1&2\\end{pmatrix}\\).",
+        "Die Ergebnisse sind verschieden.",
+        "Also ist Matrixmultiplikation im Allgemeinen nicht kommutativ."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist eine Matrix?",
+      antwort:
+        "Eine Matrix ist ein rechteckiges Zahlenschema aus Zeilen und Spalten. Sie dient dazu, Zahlen oder lineare Zusammenhänge übersichtlich darzustellen."
+    },
+    {
+      frage: "Wie bestimmt man die Dimension einer Matrix?",
+      antwort:
+        "Man zählt zuerst die Zeilen und dann die Spalten. Eine Matrix mit \\(m\\) Zeilen und \\(n\\) Spalten hat die Dimension \\(m\\times n\\)."
+    },
+    {
+      frage: "Wann darf man zwei Matrizen addieren?",
+      antwort:
+        "Man darf zwei Matrizen nur addieren, wenn sie dieselbe Dimension haben. Dann addiert man die entsprechenden Einträge."
+    },
+    {
+      frage: "Wie funktioniert Matrixmultiplikation?",
+      antwort:
+        "Man multipliziert Zeilen der ersten Matrix mit Spalten der zweiten Matrix. Jeder neue Eintrag entsteht durch ein Skalarprodukt."
+    },
+    {
+      frage: "Welche Bedingung gilt für \\(A\\cdot B\\)?",
+      antwort:
+        "Die Anzahl der Spalten von \\(A\\) muss gleich der Anzahl der Zeilen von \\(B\\) sein."
+    },
+    {
+      frage: "Was ist die Einheitsmatrix?",
+      antwort:
+        "Die Einheitsmatrix ist eine quadratische Matrix mit Einsen auf der Hauptdiagonalen und Nullen sonst. Sie wirkt bei der Matrixmultiplikation wie die Zahl \\(1\\)."
+    },
+    {
+      frage: "Wie schreibt man ein lineares Gleichungssystem als Matrixgleichung?",
+      antwort:
+        "Man schreibt die Koeffizienten in eine Matrix \\(A\\), die Unbekannten in den Vektor \\(\\vec{x}\\) und die rechten Seiten in den Vektor \\(\\vec{b}\\). Dann gilt \\(A\\vec{x}=\\vec{b}\\)."
+    },
+    {
+      frage: "Was macht man beim Gauß-Verfahren?",
+      antwort:
+        "Man formt ein Gleichungssystem mit erlaubten Zeilenumformungen so um, dass man die Lösungen leichter ablesen oder durch Rückwärtseinsetzen berechnen kann."
+    },
+    {
+      frage: "Welche Lösungsfälle gibt es bei linearen Gleichungssystemen?",
+      antwort:
+        "Es kann genau eine Lösung, unendlich viele Lösungen oder keine Lösung geben."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was eine Matrix ist?",
+    "Kannst du die Dimension einer Matrix korrekt als Zeilen mal Spalten angeben?",
+    "Weisst du, wann Matrizen addiert werden dürfen?",
+    "Kannst du eine Matrix mit einer Zahl multiplizieren?",
+    "Kannst du prüfen, ob zwei Matrizen multipliziert werden dürfen?",
+    "Kannst du Matrixmultiplikation als Zeile mal Spalte durchführen?",
+    "Weisst du, dass Matrixmultiplikation nicht immer kommutativ ist?",
+    "Kennst du die Einheitsmatrix?",
+    "Kannst du ein lineares Gleichungssystem als \\(A\\vec{x}=\\vec{b}\\) schreiben?",
+    "Trägst du fehlende Variablen mit Koeffizient \\(0\\) ein?",
+    "Kannst du das Gauß-Verfahren grundsätzlich anwenden?",
+    "Kannst du die Fälle eindeutig, keine Lösung und unendlich viele Lösungen unterscheiden?"
+  ]
 }
    
    
