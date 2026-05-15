@@ -2587,9 +2587,334 @@ nachtVorTest: [
       "Kennst du Stammfunktionen von eˣ, sin(x) und cos(x)?"
     ]
   },
+   {
+  id: "rotationskoerper-volumen",
+  nummer: "8",
+  titel: "Volumen von Rotationskörpern",
+  kurzbeschreibung:
+    "Berechnung von Volumen, die entstehen, wenn ein Funktionsgraph um die x-Achse oder y-Achse rotiert. Schwerpunkt: Scheibenmethode, Ringmethode und korrekter Umgang mit Grenzen.",
+  lernziele: [
+    "Du kannst erklären, was ein Rotationskörper ist.",
+    "Du verstehst, warum beim Rotationsvolumen der Faktor \\(\\pi\\) vorkommt.",
+    "Du kannst das Volumen bei Rotation um die \\(x\\)-Achse berechnen.",
+    "Du kannst die Formel \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\) anwenden.",
+    "Du kannst Rotationsvolumen mit äusserem und innerem Radius berechnen.",
+    "Du erkennst den Unterschied zwischen Scheibenmethode und Ringmethode.",
+    "Du kannst die Integrationsgrenzen aus einer Aufgabe bestimmen.",
+    "Du kannst Einheiten bei Volumen korrekt interpretieren.",
+    "Du erkennst typische Fehler beim Quadrieren der Funktion.",
+    "Du kannst Rotationskörper in Prüfungsaufgaben geometrisch deuten."
+  ],
+  theorie: [
+    {
+      titel: "Was ist ein Rotationskörper?",
+      text:
+        "Ein Rotationskörper entsteht, wenn eine Fläche um eine Achse gedreht wird. Dreht man zum Beispiel die Fläche zwischen einem Funktionsgraphen und der \\(x\\)-Achse um die \\(x\\)-Achse, entsteht ein dreidimensionaler Körper."
+    },
+    {
+      titel: "Grundidee der Volumenberechnung",
+      text:
+        "Man stellt sich den Rotationskörper aus sehr dünnen Kreisscheiben zusammengesetzt vor. Jede Scheibe hat ungefähr das Volumen Grundfläche mal Dicke."
+    },
+    {
+      titel: "Warum kommt \\(\\pi\\) vor?",
+      text:
+        "Die Querschnitte des Rotationskörpers sind Kreise. Die Fläche eines Kreises ist \\(A=\\pi r^2\\). Deshalb erscheint beim Rotationsvolumen der Faktor \\(\\pi\\)."
+    },
+    {
+      titel: "Rotation um die x-Achse",
+      text:
+        "Wenn der Graph von \\(f(x)\\) im Intervall \\([a,b]\\) um die \\(x\\)-Achse rotiert, ist der Radius einer Scheibe gleich \\(f(x)\\). Deshalb gilt \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\)."
+    },
+    {
+      titel: "Bedeutung des Radius",
+      text:
+        "Der Radius ist der Abstand des Graphen von der Rotationsachse. Bei Rotation um die \\(x\\)-Achse ist dieser Abstand meist der Funktionswert \\(f(x)\\)."
+    },
+    {
+      titel: "Scheibenmethode",
+      text:
+        "Die Scheibenmethode verwendet man, wenn die rotierende Fläche direkt an der Rotationsachse liegt. Dann bestehen die Querschnitte aus vollen Kreisscheiben."
+    },
+    {
+      titel: "Ringmethode",
+      text:
+        "Die Ringmethode verwendet man, wenn beim Rotieren ein Loch entsteht. Dann ist der Querschnitt kein voller Kreis, sondern ein Kreisring."
+    },
+    {
+      titel: "Formel der Ringmethode",
+      text:
+        "Bei einem äusseren Radius \\(R(x)\\) und einem inneren Radius \\(r(x)\\) gilt \\(V=\\pi\\int_a^b\\left(R(x)^2-r(x)^2\\right)\\,dx\\)."
+    },
+    {
+      titel: "Grenzen",
+      text:
+        "Die Integrationsgrenzen geben an, von wo bis wo die Fläche rotiert. Sie können direkt gegeben sein oder müssen aus Schnittpunkten berechnet werden."
+    },
+    {
+      titel: "Volumeneinheiten",
+      text:
+        "Wenn die Längeneinheit zum Beispiel Zentimeter ist, dann ist die Volumeneinheit Kubikzentimeter. Allgemein gilt: Aus Längeneinheiten werden beim Volumen dritte Potenzen."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Rotationsvolumen um die \\(x\\)-Achse berechnen",
+      schritte: [
+        "Prüfe zuerst, um welche Achse rotiert wird.",
+        "Bestimme die Funktion \\(f(x)\\), die den Radius beschreibt.",
+        "Bestimme die Grenzen \\(a\\) und \\(b\\).",
+        "Setze in die Formel \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\) ein.",
+        "Quadriere die ganze Funktion sorgfältig.",
+        "Bestimme eine Stammfunktion.",
+        "Setze obere und untere Grenze ein.",
+        "Multipliziere das Ergebnis mit \\(\\pi\\)."
+      ]
+    },
+    {
+      titel: "Methode: Ringmethode anwenden",
+      schritte: [
+        "Prüfe, ob beim Rotieren ein Loch entsteht.",
+        "Bestimme den äusseren Radius \\(R(x)\\).",
+        "Bestimme den inneren Radius \\(r(x)\\).",
+        "Setze in \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\) ein.",
+        "Quadriere beide Radien getrennt.",
+        "Subtrahiere den inneren Kreis vom äusseren Kreis.",
+        "Integriere den entstandenen Ausdruck.",
+        "Setze die Grenzen ein und multipliziere mit \\(\\pi\\)."
+      ]
+    },
+    {
+      titel: "Methode: Grenzen aus Schnittpunkten bestimmen",
+      schritte: [
+        "Setze die beteiligten Funktionen gleich.",
+        "Löse die Gleichung nach \\(x\\).",
+        "Die erhaltenen \\(x\\)-Werte sind mögliche Integrationsgrenzen.",
+        "Ordne die Grenzen von links nach rechts.",
+        "Prüfe, ob genau das gesuchte Intervall beschrieben wird."
+      ]
+    },
+    {
+      titel: "Methode: Entscheiden zwischen Fläche und Volumen",
+      schritte: [
+        "Frage dich, ob nur eine zweidimensionale Fläche gesucht ist.",
+        "Falls ja, brauchst du ein normales Integral ohne Quadrieren mit \\(\\pi\\).",
+        "Frage dich, ob eine Fläche um eine Achse rotiert.",
+        "Falls ja, entsteht ein Volumen.",
+        "Dann brauchst du die Rotationsformel mit \\(\\pi\\) und einem quadrierten Radius."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Ein Rotationskörper entsteht durch Drehen einer Fläche um eine Achse.",
+    "Bei Rotation um die \\(x\\)-Achse ist der Radius meistens \\(f(x)\\).",
+    "Die Grundformel lautet \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\).",
+    "Der Funktionswert wird quadriert, weil die Kreisfläche \\(\\pi r^2\\) ist.",
+    "Bei einem Loch verwendet man die Ringmethode.",
+    "Bei der Ringmethode gilt: äusserer Kreis minus innerer Kreis.",
+    "\\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\).",
+    "Grenzen können direkt gegeben sein oder aus Schnittpunkten entstehen.",
+    "Ein Rotationsvolumen ist keine normale Fläche.",
+    "Volumen haben kubische Einheiten."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man vergisst den Faktor \\(\\pi\\).",
+      korrektur:
+        "Der Faktor \\(\\pi\\) gehört zur Kreisfläche \\(A=\\pi r^2\\). Deshalb muss er beim Rotationsvolumen vorkommen."
+    },
+    {
+      fehler: "Man integriert \\(f(x)\\) statt \\((f(x))^2\\).",
+      korrektur:
+        "Beim Rotationsvolumen muss der Radius quadriert werden. Die richtige Formel enthält \\((f(x))^2\\)."
+    },
+    {
+      fehler: "Man quadriert nur einzelne Teile der Funktion.",
+      korrektur:
+        "Wenn \\(f(x)=x+1\\), dann ist \\((f(x))^2=(x+1)^2\\), nicht \\(x^2+1\\)."
+    },
+    {
+      fehler: "Man verwechselt Flächeninhalt und Rotationsvolumen.",
+      korrektur:
+        "Ein normales Integral berechnet eine Fläche. Ein Rotationsvolumen braucht zusätzlich \\(\\pi\\) und den quadrierten Radius."
+    },
+    {
+      fehler: "Man zieht bei der Ringmethode die Radien ab, bevor man quadriert.",
+      korrektur:
+        "Richtig ist \\(R(x)^2-r(x)^2\\), nicht \\((R(x)-r(x))^2\\)."
+    },
+    {
+      fehler: "Man verwendet falsche Grenzen.",
+      korrektur:
+        "Die Grenzen müssen genau das Intervall beschreiben, dessen Fläche rotiert. Falls sie nicht gegeben sind, müssen sie aus Schnittpunkten bestimmt werden."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Einfaches Rotationsvolumen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Die Fläche unter \\(f(x)=x\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Bei Rotation um die \\(x\\)-Achse gilt \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\).",
+        "Hier ist \\(f(x)=x\\), \\(a=0\\) und \\(b=2\\).",
+        "Also ist \\(V=\\pi\\int_0^2 x^2\\,dx\\).",
+        "Eine Stammfunktion von \\(x^2\\) ist \\(\\frac{x^3}{3}\\).",
+        "Setze die Grenzen ein: \\(\\frac{2^3}{3}-\\frac{0^3}{3}=\\frac{8}{3}\\).",
+        "Also ist \\(V=\\frac{8\\pi}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Parabel rotiert um die x-Achse",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Die Fläche unter \\(f(x)=x^2\\) im Intervall \\([0,1]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Die Rotationsformel lautet \\(V=\\pi\\int_0^1(f(x))^2\\,dx\\).",
+        "Setze \\(f(x)=x^2\\) ein.",
+        "Dann gilt \\(V=\\pi\\int_0^1(x^2)^2\\,dx\\).",
+        "Das ist \\(V=\\pi\\int_0^1x^4\\,dx\\).",
+        "Eine Stammfunktion ist \\(\\frac{x^5}{5}\\).",
+        "Einsetzen ergibt \\(\\frac{1^5}{5}-0=\\frac{1}{5}\\).",
+        "Also ist \\(V=\\frac{\\pi}{5}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Funktion mit Klammer quadrieren",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Die Fläche unter \\(f(x)=x+1\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Die Formel lautet \\(V=\\pi\\int_0^2(x+1)^2\\,dx\\).",
+        "Quadriere zuerst die Klammer.",
+        "\\((x+1)^2=x^2+2x+1\\).",
+        "Also ist \\(V=\\pi\\int_0^2(x^2+2x+1)\\,dx\\).",
+        "Eine Stammfunktion ist \\(\\frac{x^3}{3}+x^2+x\\).",
+        "Setze \\(2\\) ein: \\(\\frac{8}{3}+4+2=\\frac{26}{3}\\).",
+        "Setze \\(0\\) ein: \\(0\\).",
+        "Also ist \\(V=\\frac{26\\pi}{3}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Ringmethode",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Die Fläche zwischen \\(f(x)=3\\) und \\(g(x)=1\\) im Intervall \\([0,4]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Hier entsteht ein Körper mit Loch, also verwendet man die Ringmethode.",
+        "Der äussere Radius ist \\(R(x)=3\\).",
+        "Der innere Radius ist \\(r(x)=1\\).",
+        "Die Formel lautet \\(V=\\pi\\int_0^4(R(x)^2-r(x)^2)\\,dx\\).",
+        "Also \\(V=\\pi\\int_0^4(3^2-1^2)\\,dx\\).",
+        "Das ergibt \\(V=\\pi\\int_0^4 8\\,dx\\).",
+        "Eine Stammfunktion ist \\(8x\\).",
+        "Einsetzen ergibt \\(8\\cdot4-8\\cdot0=32\\).",
+        "Also ist \\(V=32\\pi\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Grenzen aus Nullstellen",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Die Fläche zwischen \\(f(x)=4-x^2\\) und der \\(x\\)-Achse rotiert um die \\(x\\)-Achse. Berechne zuerst die Grenzen.",
+      loesung: [
+        "Die Grenzen entstehen aus den Nullstellen.",
+        "Setze \\(4-x^2=0\\).",
+        "Dann gilt \\(x^2=4\\).",
+        "Also ist \\(x=-2\\) oder \\(x=2\\).",
+        "Die Fläche liegt zwischen \\(-2\\) und \\(2\\).",
+        "Für das Volumen würde man also \\(V=\\pi\\int_{-2}^{2}(4-x^2)^2\\,dx\\) verwenden."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Vollständige Volumenberechnung",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Berechne das Volumen des Körpers, der entsteht, wenn die Fläche unter \\(f(x)=\\sqrt{x}\\) im Intervall \\([0,4]\\) um die \\(x\\)-Achse rotiert.",
+      loesung: [
+        "Die Formel lautet \\(V=\\pi\\int_0^4(f(x))^2\\,dx\\).",
+        "Hier ist \\(f(x)=\\sqrt{x}\\).",
+        "Dann ist \\((f(x))^2=(\\sqrt{x})^2=x\\).",
+        "Also gilt \\(V=\\pi\\int_0^4x\\,dx\\).",
+        "Eine Stammfunktion von \\(x\\) ist \\(\\frac{x^2}{2}\\).",
+        "Setze die Grenzen ein.",
+        "\\(\\frac{4^2}{2}-\\frac{0^2}{2}=8\\).",
+        "Also ist \\(V=8\\pi\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Ringmethode mit Funktionen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Die Fläche zwischen \\(f(x)=x+2\\) und \\(g(x)=1\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
+      loesung: [
+        "Da die Fläche nicht direkt an der \\(x\\)-Achse liegt, entsteht ein Loch.",
+        "Man verwendet die Ringmethode.",
+        "Der äussere Radius ist \\(R(x)=x+2\\).",
+        "Der innere Radius ist \\(r(x)=1\\).",
+        "Also ist \\(V=\\pi\\int_0^2((x+2)^2-1^2)\\,dx\\).",
+        "Quadriere: \\((x+2)^2=x^2+4x+4\\).",
+        "Dann ist der Integrand \\(x^2+4x+4-1=x^2+4x+3\\).",
+        "Eine Stammfunktion ist \\(\\frac{x^3}{3}+2x^2+3x\\).",
+        "Setze \\(2\\) ein: \\(\\frac{8}{3}+8+6=\\frac{50}{3}\\).",
+        "Setze \\(0\\) ein: \\(0\\).",
+        "Also ist \\(V=\\frac{50\\pi}{3}\\)."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was ist ein Rotationskörper?",
+      antwort:
+        "Ein Rotationskörper entsteht, wenn eine Fläche um eine Achse gedreht wird. Dadurch entsteht ein dreidimensionaler Körper."
+    },
+    {
+      frage: "Warum steht in der Formel für Rotationsvolumen ein \\(\\pi\\)?",
+      antwort:
+        "Weil die Querschnitte Kreise sind. Die Kreisfläche lautet \\(A=\\pi r^2\\)."
+    },
+    {
+      frage: "Wie lautet die Formel bei Rotation um die \\(x\\)-Achse?",
+      antwort:
+        "Die Formel lautet \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\), wenn \\(f(x)\\) den Radius beschreibt."
+    },
+    {
+      frage: "Warum wird \\(f(x)\\) quadriert?",
+      antwort:
+        "Weil \\(f(x)\\) der Radius ist und die Kreisfläche vom Quadrat des Radius abhängt."
+    },
+    {
+      frage: "Wann braucht man die Ringmethode?",
+      antwort:
+        "Man braucht die Ringmethode, wenn beim Rotieren ein Loch entsteht. Dann rechnet man äusserer Kreis minus innerer Kreis."
+    },
+    {
+      frage: "Wie lautet die Formel der Ringmethode?",
+      antwort:
+        "Sie lautet \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\), wobei \\(R(x)\\) der äussere und \\(r(x)\\) der innere Radius ist."
+    },
+    {
+      frage: "Wie findet man die Grenzen?",
+      antwort:
+        "Die Grenzen sind entweder gegeben oder entstehen aus Schnittpunkten, zum Beispiel mit der \\(x\\)-Achse oder zwischen zwei Funktionen."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was ein Rotationskörper ist?",
+    "Kennst du die Formel \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\)?",
+    "Weisst du, warum \\(f(x)\\) quadriert wird?",
+    "Vergisst du den Faktor \\(\\pi\\) nicht?",
+    "Kannst du die Grenzen aus der Aufgabe erkennen?",
+    "Kannst du Schnittpunkte als Grenzen berechnen?",
+    "Erkennst du, wann die Ringmethode nötig ist?",
+    "Kennst du die Formel \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\)?",
+    "Quadrierst du bei Klammern die ganze Funktion?",
+    "Kannst du zwischen Flächeninhalt und Rotationsvolumen unterscheiden?"
+  ]
+},
      {
     id: "integrationstechniken",
-    nummer: "8",
+    nummer: "9",
     titel: "Integrationstechniken",
     kurzbeschreibung:
       "Substitution, partielle Integration, einfache Umformungen vor dem Integrieren und Erkennen passender Integrationsmethoden.",
@@ -2983,331 +3308,7 @@ nachtVorTest: [
     ]
   },
      
-{
-  id: "rotationskoerper-volumen",
-  nummer: "9",
-  titel: "Volumen von Rotationskörpern",
-  kurzbeschreibung:
-    "Berechnung von Volumen, die entstehen, wenn ein Funktionsgraph um die x-Achse oder y-Achse rotiert. Schwerpunkt: Scheibenmethode, Ringmethode und korrekter Umgang mit Grenzen.",
-  lernziele: [
-    "Du kannst erklären, was ein Rotationskörper ist.",
-    "Du verstehst, warum beim Rotationsvolumen der Faktor \\(\\pi\\) vorkommt.",
-    "Du kannst das Volumen bei Rotation um die \\(x\\)-Achse berechnen.",
-    "Du kannst die Formel \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\) anwenden.",
-    "Du kannst Rotationsvolumen mit äusserem und innerem Radius berechnen.",
-    "Du erkennst den Unterschied zwischen Scheibenmethode und Ringmethode.",
-    "Du kannst die Integrationsgrenzen aus einer Aufgabe bestimmen.",
-    "Du kannst Einheiten bei Volumen korrekt interpretieren.",
-    "Du erkennst typische Fehler beim Quadrieren der Funktion.",
-    "Du kannst Rotationskörper in Prüfungsaufgaben geometrisch deuten."
-  ],
-  theorie: [
-    {
-      titel: "Was ist ein Rotationskörper?",
-      text:
-        "Ein Rotationskörper entsteht, wenn eine Fläche um eine Achse gedreht wird. Dreht man zum Beispiel die Fläche zwischen einem Funktionsgraphen und der \\(x\\)-Achse um die \\(x\\)-Achse, entsteht ein dreidimensionaler Körper."
-    },
-    {
-      titel: "Grundidee der Volumenberechnung",
-      text:
-        "Man stellt sich den Rotationskörper aus sehr dünnen Kreisscheiben zusammengesetzt vor. Jede Scheibe hat ungefähr das Volumen Grundfläche mal Dicke."
-    },
-    {
-      titel: "Warum kommt \\(\\pi\\) vor?",
-      text:
-        "Die Querschnitte des Rotationskörpers sind Kreise. Die Fläche eines Kreises ist \\(A=\\pi r^2\\). Deshalb erscheint beim Rotationsvolumen der Faktor \\(\\pi\\)."
-    },
-    {
-      titel: "Rotation um die x-Achse",
-      text:
-        "Wenn der Graph von \\(f(x)\\) im Intervall \\([a,b]\\) um die \\(x\\)-Achse rotiert, ist der Radius einer Scheibe gleich \\(f(x)\\). Deshalb gilt \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\)."
-    },
-    {
-      titel: "Bedeutung des Radius",
-      text:
-        "Der Radius ist der Abstand des Graphen von der Rotationsachse. Bei Rotation um die \\(x\\)-Achse ist dieser Abstand meist der Funktionswert \\(f(x)\\)."
-    },
-    {
-      titel: "Scheibenmethode",
-      text:
-        "Die Scheibenmethode verwendet man, wenn die rotierende Fläche direkt an der Rotationsachse liegt. Dann bestehen die Querschnitte aus vollen Kreisscheiben."
-    },
-    {
-      titel: "Ringmethode",
-      text:
-        "Die Ringmethode verwendet man, wenn beim Rotieren ein Loch entsteht. Dann ist der Querschnitt kein voller Kreis, sondern ein Kreisring."
-    },
-    {
-      titel: "Formel der Ringmethode",
-      text:
-        "Bei einem äusseren Radius \\(R(x)\\) und einem inneren Radius \\(r(x)\\) gilt \\(V=\\pi\\int_a^b\\left(R(x)^2-r(x)^2\\right)\\,dx\\)."
-    },
-    {
-      titel: "Grenzen",
-      text:
-        "Die Integrationsgrenzen geben an, von wo bis wo die Fläche rotiert. Sie können direkt gegeben sein oder müssen aus Schnittpunkten berechnet werden."
-    },
-    {
-      titel: "Volumeneinheiten",
-      text:
-        "Wenn die Längeneinheit zum Beispiel Zentimeter ist, dann ist die Volumeneinheit Kubikzentimeter. Allgemein gilt: Aus Längeneinheiten werden beim Volumen dritte Potenzen."
-    }
-  ],
-  methoden: [
-    {
-      titel: "Methode: Rotationsvolumen um die \\(x\\)-Achse berechnen",
-      schritte: [
-        "Prüfe zuerst, um welche Achse rotiert wird.",
-        "Bestimme die Funktion \\(f(x)\\), die den Radius beschreibt.",
-        "Bestimme die Grenzen \\(a\\) und \\(b\\).",
-        "Setze in die Formel \\(V=\\pi\\int_a^b (f(x))^2\\,dx\\) ein.",
-        "Quadriere die ganze Funktion sorgfältig.",
-        "Bestimme eine Stammfunktion.",
-        "Setze obere und untere Grenze ein.",
-        "Multipliziere das Ergebnis mit \\(\\pi\\)."
-      ]
-    },
-    {
-      titel: "Methode: Ringmethode anwenden",
-      schritte: [
-        "Prüfe, ob beim Rotieren ein Loch entsteht.",
-        "Bestimme den äusseren Radius \\(R(x)\\).",
-        "Bestimme den inneren Radius \\(r(x)\\).",
-        "Setze in \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\) ein.",
-        "Quadriere beide Radien getrennt.",
-        "Subtrahiere den inneren Kreis vom äusseren Kreis.",
-        "Integriere den entstandenen Ausdruck.",
-        "Setze die Grenzen ein und multipliziere mit \\(\\pi\\)."
-      ]
-    },
-    {
-      titel: "Methode: Grenzen aus Schnittpunkten bestimmen",
-      schritte: [
-        "Setze die beteiligten Funktionen gleich.",
-        "Löse die Gleichung nach \\(x\\).",
-        "Die erhaltenen \\(x\\)-Werte sind mögliche Integrationsgrenzen.",
-        "Ordne die Grenzen von links nach rechts.",
-        "Prüfe, ob genau das gesuchte Intervall beschrieben wird."
-      ]
-    },
-    {
-      titel: "Methode: Entscheiden zwischen Fläche und Volumen",
-      schritte: [
-        "Frage dich, ob nur eine zweidimensionale Fläche gesucht ist.",
-        "Falls ja, brauchst du ein normales Integral ohne Quadrieren mit \\(\\pi\\).",
-        "Frage dich, ob eine Fläche um eine Achse rotiert.",
-        "Falls ja, entsteht ein Volumen.",
-        "Dann brauchst du die Rotationsformel mit \\(\\pi\\) und einem quadrierten Radius."
-      ]
-    }
-  ],
-  merksaetze: [
-    "Ein Rotationskörper entsteht durch Drehen einer Fläche um eine Achse.",
-    "Bei Rotation um die \\(x\\)-Achse ist der Radius meistens \\(f(x)\\).",
-    "Die Grundformel lautet \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\).",
-    "Der Funktionswert wird quadriert, weil die Kreisfläche \\(\\pi r^2\\) ist.",
-    "Bei einem Loch verwendet man die Ringmethode.",
-    "Bei der Ringmethode gilt: äusserer Kreis minus innerer Kreis.",
-    "\\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\).",
-    "Grenzen können direkt gegeben sein oder aus Schnittpunkten entstehen.",
-    "Ein Rotationsvolumen ist keine normale Fläche.",
-    "Volumen haben kubische Einheiten."
-  ],
-  typischeFehler: [
-    {
-      fehler: "Man vergisst den Faktor \\(\\pi\\).",
-      korrektur:
-        "Der Faktor \\(\\pi\\) gehört zur Kreisfläche \\(A=\\pi r^2\\). Deshalb muss er beim Rotationsvolumen vorkommen."
-    },
-    {
-      fehler: "Man integriert \\(f(x)\\) statt \\((f(x))^2\\).",
-      korrektur:
-        "Beim Rotationsvolumen muss der Radius quadriert werden. Die richtige Formel enthält \\((f(x))^2\\)."
-    },
-    {
-      fehler: "Man quadriert nur einzelne Teile der Funktion.",
-      korrektur:
-        "Wenn \\(f(x)=x+1\\), dann ist \\((f(x))^2=(x+1)^2\\), nicht \\(x^2+1\\)."
-    },
-    {
-      fehler: "Man verwechselt Flächeninhalt und Rotationsvolumen.",
-      korrektur:
-        "Ein normales Integral berechnet eine Fläche. Ein Rotationsvolumen braucht zusätzlich \\(\\pi\\) und den quadrierten Radius."
-    },
-    {
-      fehler: "Man zieht bei der Ringmethode die Radien ab, bevor man quadriert.",
-      korrektur:
-        "Richtig ist \\(R(x)^2-r(x)^2\\), nicht \\((R(x)-r(x))^2\\)."
-    },
-    {
-      fehler: "Man verwendet falsche Grenzen.",
-      korrektur:
-        "Die Grenzen müssen genau das Intervall beschreiben, dessen Fläche rotiert. Falls sie nicht gegeben sind, müssen sie aus Schnittpunkten bestimmt werden."
-    }
-  ],
-  aufgaben: [
-    {
-      titel: "Aufgabe 1: Einfaches Rotationsvolumen",
-      schwierigkeit: "einfach",
-      aufgabe:
-        "Die Fläche unter \\(f(x)=x\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
-      loesung: [
-        "Bei Rotation um die \\(x\\)-Achse gilt \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\).",
-        "Hier ist \\(f(x)=x\\), \\(a=0\\) und \\(b=2\\).",
-        "Also ist \\(V=\\pi\\int_0^2 x^2\\,dx\\).",
-        "Eine Stammfunktion von \\(x^2\\) ist \\(\\frac{x^3}{3}\\).",
-        "Setze die Grenzen ein: \\(\\frac{2^3}{3}-\\frac{0^3}{3}=\\frac{8}{3}\\).",
-        "Also ist \\(V=\\frac{8\\pi}{3}\\)."
-      ]
-    },
-    {
-      titel: "Aufgabe 2: Parabel rotiert um die x-Achse",
-      schwierigkeit: "einfach",
-      aufgabe:
-        "Die Fläche unter \\(f(x)=x^2\\) im Intervall \\([0,1]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
-      loesung: [
-        "Die Rotationsformel lautet \\(V=\\pi\\int_0^1(f(x))^2\\,dx\\).",
-        "Setze \\(f(x)=x^2\\) ein.",
-        "Dann gilt \\(V=\\pi\\int_0^1(x^2)^2\\,dx\\).",
-        "Das ist \\(V=\\pi\\int_0^1x^4\\,dx\\).",
-        "Eine Stammfunktion ist \\(\\frac{x^5}{5}\\).",
-        "Einsetzen ergibt \\(\\frac{1^5}{5}-0=\\frac{1}{5}\\).",
-        "Also ist \\(V=\\frac{\\pi}{5}\\)."
-      ]
-    },
-    {
-      titel: "Aufgabe 3: Funktion mit Klammer quadrieren",
-      schwierigkeit: "mittel",
-      aufgabe:
-        "Die Fläche unter \\(f(x)=x+1\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
-      loesung: [
-        "Die Formel lautet \\(V=\\pi\\int_0^2(x+1)^2\\,dx\\).",
-        "Quadriere zuerst die Klammer.",
-        "\\((x+1)^2=x^2+2x+1\\).",
-        "Also ist \\(V=\\pi\\int_0^2(x^2+2x+1)\\,dx\\).",
-        "Eine Stammfunktion ist \\(\\frac{x^3}{3}+x^2+x\\).",
-        "Setze \\(2\\) ein: \\(\\frac{8}{3}+4+2=\\frac{26}{3}\\).",
-        "Setze \\(0\\) ein: \\(0\\).",
-        "Also ist \\(V=\\frac{26\\pi}{3}\\)."
-      ]
-    },
-    {
-      titel: "Aufgabe 4: Ringmethode",
-      schwierigkeit: "mittel",
-      aufgabe:
-        "Die Fläche zwischen \\(f(x)=3\\) und \\(g(x)=1\\) im Intervall \\([0,4]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
-      loesung: [
-        "Hier entsteht ein Körper mit Loch, also verwendet man die Ringmethode.",
-        "Der äussere Radius ist \\(R(x)=3\\).",
-        "Der innere Radius ist \\(r(x)=1\\).",
-        "Die Formel lautet \\(V=\\pi\\int_0^4(R(x)^2-r(x)^2)\\,dx\\).",
-        "Also \\(V=\\pi\\int_0^4(3^2-1^2)\\,dx\\).",
-        "Das ergibt \\(V=\\pi\\int_0^4 8\\,dx\\).",
-        "Eine Stammfunktion ist \\(8x\\).",
-        "Einsetzen ergibt \\(8\\cdot4-8\\cdot0=32\\).",
-        "Also ist \\(V=32\\pi\\)."
-      ]
-    },
-    {
-      titel: "Aufgabe 5: Grenzen aus Nullstellen",
-      schwierigkeit: "mittel",
-      aufgabe:
-        "Die Fläche zwischen \\(f(x)=4-x^2\\) und der \\(x\\)-Achse rotiert um die \\(x\\)-Achse. Berechne zuerst die Grenzen.",
-      loesung: [
-        "Die Grenzen entstehen aus den Nullstellen.",
-        "Setze \\(4-x^2=0\\).",
-        "Dann gilt \\(x^2=4\\).",
-        "Also ist \\(x=-2\\) oder \\(x=2\\).",
-        "Die Fläche liegt zwischen \\(-2\\) und \\(2\\).",
-        "Für das Volumen würde man also \\(V=\\pi\\int_{-2}^{2}(4-x^2)^2\\,dx\\) verwenden."
-      ]
-    },
-    {
-      titel: "Aufgabe 6: Vollständige Volumenberechnung",
-      schwierigkeit: "schwer",
-      aufgabe:
-        "Berechne das Volumen des Körpers, der entsteht, wenn die Fläche unter \\(f(x)=\\sqrt{x}\\) im Intervall \\([0,4]\\) um die \\(x\\)-Achse rotiert.",
-      loesung: [
-        "Die Formel lautet \\(V=\\pi\\int_0^4(f(x))^2\\,dx\\).",
-        "Hier ist \\(f(x)=\\sqrt{x}\\).",
-        "Dann ist \\((f(x))^2=(\\sqrt{x})^2=x\\).",
-        "Also gilt \\(V=\\pi\\int_0^4x\\,dx\\).",
-        "Eine Stammfunktion von \\(x\\) ist \\(\\frac{x^2}{2}\\).",
-        "Setze die Grenzen ein.",
-        "\\(\\frac{4^2}{2}-\\frac{0^2}{2}=8\\).",
-        "Also ist \\(V=8\\pi\\)."
-      ]
-    },
-    {
-      titel: "Aufgabe 7: Ringmethode mit Funktionen",
-      schwierigkeit: "schwer",
-      aufgabe:
-        "Die Fläche zwischen \\(f(x)=x+2\\) und \\(g(x)=1\\) im Intervall \\([0,2]\\) rotiert um die \\(x\\)-Achse. Berechne das Volumen.",
-      loesung: [
-        "Da die Fläche nicht direkt an der \\(x\\)-Achse liegt, entsteht ein Loch.",
-        "Man verwendet die Ringmethode.",
-        "Der äussere Radius ist \\(R(x)=x+2\\).",
-        "Der innere Radius ist \\(r(x)=1\\).",
-        "Also ist \\(V=\\pi\\int_0^2((x+2)^2-1^2)\\,dx\\).",
-        "Quadriere: \\((x+2)^2=x^2+4x+4\\).",
-        "Dann ist der Integrand \\(x^2+4x+4-1=x^2+4x+3\\).",
-        "Eine Stammfunktion ist \\(\\frac{x^3}{3}+2x^2+3x\\).",
-        "Setze \\(2\\) ein: \\(\\frac{8}{3}+8+6=\\frac{50}{3}\\).",
-        "Setze \\(0\\) ein: \\(0\\).",
-        "Also ist \\(V=\\frac{50\\pi}{3}\\)."
-      ]
-    }
-  ],
-  muendlich: [
-    {
-      frage: "Was ist ein Rotationskörper?",
-      antwort:
-        "Ein Rotationskörper entsteht, wenn eine Fläche um eine Achse gedreht wird. Dadurch entsteht ein dreidimensionaler Körper."
-    },
-    {
-      frage: "Warum steht in der Formel für Rotationsvolumen ein \\(\\pi\\)?",
-      antwort:
-        "Weil die Querschnitte Kreise sind. Die Kreisfläche lautet \\(A=\\pi r^2\\)."
-    },
-    {
-      frage: "Wie lautet die Formel bei Rotation um die \\(x\\)-Achse?",
-      antwort:
-        "Die Formel lautet \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\), wenn \\(f(x)\\) den Radius beschreibt."
-    },
-    {
-      frage: "Warum wird \\(f(x)\\) quadriert?",
-      antwort:
-        "Weil \\(f(x)\\) der Radius ist und die Kreisfläche vom Quadrat des Radius abhängt."
-    },
-    {
-      frage: "Wann braucht man die Ringmethode?",
-      antwort:
-        "Man braucht die Ringmethode, wenn beim Rotieren ein Loch entsteht. Dann rechnet man äusserer Kreis minus innerer Kreis."
-    },
-    {
-      frage: "Wie lautet die Formel der Ringmethode?",
-      antwort:
-        "Sie lautet \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\), wobei \\(R(x)\\) der äussere und \\(r(x)\\) der innere Radius ist."
-    },
-    {
-      frage: "Wie findet man die Grenzen?",
-      antwort:
-        "Die Grenzen sind entweder gegeben oder entstehen aus Schnittpunkten, zum Beispiel mit der \\(x\\)-Achse oder zwischen zwei Funktionen."
-    }
-  ],
-  nachtVorTest: [
-    "Kannst du erklären, was ein Rotationskörper ist?",
-    "Kennst du die Formel \\(V=\\pi\\int_a^b(f(x))^2\\,dx\\)?",
-    "Weisst du, warum \\(f(x)\\) quadriert wird?",
-    "Vergisst du den Faktor \\(\\pi\\) nicht?",
-    "Kannst du die Grenzen aus der Aufgabe erkennen?",
-    "Kannst du Schnittpunkte als Grenzen berechnen?",
-    "Erkennst du, wann die Ringmethode nötig ist?",
-    "Kennst du die Formel \\(V=\\pi\\int_a^b(R(x)^2-r(x)^2)\\,dx\\)?",
-    "Quadrierst du bei Klammern die ganze Funktion?",
-    "Kannst du zwischen Flächeninhalt und Rotationsvolumen unterscheiden?"
-  ]
-},
+
    
 {
   id: "flaeche-zwischen-zwei-kurven",
@@ -8855,6 +8856,439 @@ nachtVorTest: [
     "Kontrollierst du, ob alle Winkel zusammen \\(180^\\circ\\) ergeben?"
   ]
 },
+   {
+  id: "gleichungen-loesen",
+  nummer: "22",
+  titel: "Gleichungen lösen",
+  kurzbeschreibung:
+    "Quadratische Gleichungen, lineare Gleichungssysteme, trigonometrische Gleichungen, Exponentialgleichungen, Bruchgleichungen und numerische Verfahren verständlich erklärt.",
+  lernziele: [
+    "Du kannst lineare Gleichungen sicher lösen.",
+    "Du kannst quadratische Gleichungen mit Faktorisieren, Mitternachtsformel oder quadratischer Ergänzung lösen.",
+    "Du kannst lineare Gleichungssysteme mit Einsetzungs-, Gleichsetzungs- und Additionsverfahren lösen.",
+    "Du kannst Bruchgleichungen durch Hauptnenner lösen.",
+    "Du kannst Exponentialgleichungen mit gleichen Basen oder Logarithmen lösen.",
+    "Du kannst trigonometrische Gleichungen mit Periodizität lösen.",
+    "Du kannst Definitionsbedingungen beachten.",
+    "Du kannst numerische Verfahren verstehen, wenn eine Gleichung nicht exakt lösbar ist.",
+    "Du erkennst typische Fehler beim Quadrieren, Kürzen und Logarithmieren.",
+    "Du kannst Lösungen durch Einsetzen kontrollieren."
+  ],
+  theorie: [
+    {
+      titel: "Was bedeutet Gleichung lösen?",
+      text:
+        "Eine Gleichung zu lösen bedeutet, alle Werte der Variable zu finden, für die die linke und rechte Seite gleich gross sind. Diese Werte nennt man Lösungen."
+    },
+    {
+      titel: "Äquivalenzumformungen",
+      text:
+        "Eine Äquivalenzumformung verändert eine Gleichung so, dass die Lösungsmenge gleich bleibt. Man darf zum Beispiel auf beiden Seiten dieselbe Zahl addieren, subtrahieren, multiplizieren oder dividieren, solange man nicht durch \\(0\\) teilt."
+    },
+    {
+      titel: "Lineare Gleichungen",
+      text:
+        "Eine lineare Gleichung enthält die Variable nur in erster Potenz. Eine typische Form ist \\(ax+b=0\\). Wenn \\(a\\ne0\\), hat sie genau eine Lösung."
+    },
+    {
+      titel: "Quadratische Gleichungen",
+      text:
+        "Eine quadratische Gleichung enthält eine Variable in zweiter Potenz. Eine typische Form ist \\(ax^2+bx+c=0\\) mit \\(a\\ne0\\). Sie kann zwei, eine oder keine reelle Lösung haben."
+    },
+    {
+      titel: "Mitternachtsformel",
+      text:
+        "Für \\(ax^2+bx+c=0\\) gilt \\(x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\). Der Ausdruck \\(b^2-4ac\\) heisst Diskriminante."
+    },
+    {
+      titel: "Diskriminante",
+      text:
+        "Die Diskriminante \\(D=b^2-4ac\\) entscheidet über die Anzahl reeller Lösungen. Bei \\(D>0\\) gibt es zwei Lösungen, bei \\(D=0\\) eine doppelte Lösung und bei \\(D<0\\) keine reelle Lösung."
+    },
+    {
+      titel: "Lineare Gleichungssysteme",
+      text:
+        "Ein lineares Gleichungssystem besteht aus mehreren linearen Gleichungen mit mehreren Unbekannten. Gesucht sind Werte, die alle Gleichungen gleichzeitig erfüllen."
+    },
+    {
+      titel: "Bruchgleichungen",
+      text:
+        "Bei Bruchgleichungen steht die Variable im Nenner. Deshalb muss man zuerst die Definitionsbedingungen bestimmen, denn Nenner dürfen nie \\(0\\) werden."
+    },
+    {
+      titel: "Exponentialgleichungen",
+      text:
+        "Bei Exponentialgleichungen steht die Variable im Exponenten. Wenn gleiche Basen möglich sind, setzt man die Exponenten gleich. Sonst verwendet man Logarithmen."
+    },
+    {
+      titel: "Trigonometrische Gleichungen",
+      text:
+        "Bei trigonometrischen Gleichungen wie \\(\\sin(x)=a\\) muss man beachten, dass Sinus, Kosinus und Tangens periodisch sind. Deshalb gibt es oft unendlich viele Lösungen."
+    },
+    {
+      titel: "Numerische Verfahren",
+      text:
+        "Manche Gleichungen lassen sich nicht exakt mit bekannten Formeln lösen. Dann verwendet man Näherungsverfahren, zum Beispiel Intervallhalbierung oder das Newton-Verfahren."
+    },
+    {
+      titel: "Lösungskontrolle",
+      text:
+        "Am Ende sollte man Lösungen in die ursprüngliche Gleichung einsetzen. Besonders bei Bruchgleichungen, Wurzelgleichungen und quadrierten Gleichungen können Scheinlösungen entstehen."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Lineare Gleichung lösen",
+      schritte: [
+        "Bringe alle Terme mit der Variable auf eine Seite.",
+        "Bringe alle Zahlen ohne Variable auf die andere Seite.",
+        "Fasse gleichartige Terme zusammen.",
+        "Teile durch den Koeffizienten vor der Variable.",
+        "Kontrolliere die Lösung durch Einsetzen."
+      ]
+    },
+    {
+      titel: "Methode: Quadratische Gleichung durch Faktorisieren lösen",
+      schritte: [
+        "Bringe die Gleichung zuerst in die Form \\(ax^2+bx+c=0\\).",
+        "Prüfe, ob man den Term faktorisieren kann.",
+        "Schreibe den Term als Produkt von Faktoren.",
+        "Verwende den Satz vom Nullprodukt.",
+        "Setze jeden Faktor einzeln gleich \\(0\\).",
+        "Löse die entstehenden linearen Gleichungen."
+      ]
+    },
+    {
+      titel: "Methode: Quadratische Gleichung mit Mitternachtsformel lösen",
+      schritte: [
+        "Bringe die Gleichung in die Form \\(ax^2+bx+c=0\\).",
+        "Lies \\(a\\), \\(b\\) und \\(c\\) ab.",
+        "Berechne die Diskriminante \\(D=b^2-4ac\\).",
+        "Setze in \\(x=\\frac{-b\\pm\\sqrt{D}}{2a}\\) ein.",
+        "Berechne die Lösungen.",
+        "Kontrolliere, ob die Anzahl der Lösungen zur Diskriminante passt."
+      ]
+    },
+    {
+      titel: "Methode: Lineares Gleichungssystem mit Einsetzungsverfahren lösen",
+      schritte: [
+        "Löse eine Gleichung nach einer Variable auf.",
+        "Setze diesen Ausdruck in die andere Gleichung ein.",
+        "Löse die entstehende Gleichung mit nur einer Variable.",
+        "Setze den gefundenen Wert zurück ein.",
+        "Berechne die zweite Variable.",
+        "Kontrolliere beide Werte in beiden Gleichungen."
+      ]
+    },
+    {
+      titel: "Methode: Bruchgleichung lösen",
+      schritte: [
+        "Bestimme zuerst die Definitionsbedingungen.",
+        "Finde den Hauptnenner.",
+        "Multipliziere die ganze Gleichung mit dem Hauptnenner.",
+        "Löse die entstehende Gleichung.",
+        "Prüfe am Schluss, ob die Lösungen erlaubt sind.",
+        "Streiche alle Werte, die einen Nenner zu \\(0\\) machen."
+      ]
+    },
+    {
+      titel: "Methode: Exponentialgleichung lösen",
+      schritte: [
+        "Prüfe, ob beide Seiten als Potenzen mit gleicher Basis geschrieben werden können.",
+        "Wenn ja, setze die Exponenten gleich.",
+        "Wenn nicht, logarithmiere beide Seiten.",
+        "Ziehe den Exponenten mit dem Logarithmengesetz nach vorne.",
+        "Löse nach der Variable auf.",
+        "Kontrolliere das Ergebnis."
+      ]
+    },
+    {
+      titel: "Methode: Trigonometrische Gleichung lösen",
+      schritte: [
+        "Isoliere zuerst die trigonometrische Funktion.",
+        "Berechne eine Grundlösung mit \\(\\arcsin\\), \\(\\arccos\\) oder \\(\\arctan\\).",
+        "Beachte die passende zweite Lösung, falls nötig.",
+        "Ergänze die Periodizität.",
+        "Bei Sinus und Kosinus ist die Periode \\(360^\\circ\\) oder \\(2\\pi\\).",
+        "Bei Tangens ist die Periode \\(180^\\circ\\) oder \\(\\pi\\)."
+      ]
+    },
+    {
+      titel: "Methode: Numerisch mit Intervallhalbierung lösen",
+      schritte: [
+        "Suche ein Intervall, in dem die Funktion das Vorzeichen wechselt.",
+        "Berechne den Mittelpunkt des Intervalls.",
+        "Prüfe das Vorzeichen am Mittelpunkt.",
+        "Wähle die Hälfte, in der weiterhin ein Vorzeichenwechsel liegt.",
+        "Wiederhole das Verfahren.",
+        "Stoppe, wenn die gewünschte Genauigkeit erreicht ist."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Eine Lösung macht die linke und rechte Seite einer Gleichung gleich gross.",
+    "Bei Äquivalenzumformungen muss man beide Seiten gleich behandeln.",
+    "Durch \\(0\\) darf man nie teilen.",
+    "Lineare Gleichungen haben meistens die Form \\(ax+b=0\\).",
+    "Quadratische Gleichungen haben die Form \\(ax^2+bx+c=0\\).",
+    "Der Satz vom Nullprodukt gilt nur, wenn ein Produkt gleich \\(0\\) ist.",
+    "Die Mitternachtsformel lautet \\(x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\).",
+    "Die Diskriminante entscheidet über die Anzahl reeller Lösungen.",
+    "Bei Bruchgleichungen muss man zuerst die Definitionsbedingungen bestimmen.",
+    "Bei Exponentialgleichungen mit gleicher Basis setzt man die Exponenten gleich.",
+    "Ohne gleiche Basis verwendet man Logarithmen.",
+    "Bei trigonometrischen Gleichungen muss man die Periodizität beachten.",
+    "Numerische Verfahren liefern Näherungslösungen.",
+    "Jede gefundene Lösung sollte in der ursprünglichen Gleichung kontrolliert werden."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verändert nur eine Seite der Gleichung.",
+      korrektur:
+        "Jede Umformung muss auf beiden Seiten gemacht werden. Sonst verändert man die Lösungsmenge."
+    },
+    {
+      fehler: "Man teilt durch einen Ausdruck, der \\(0\\) sein könnte.",
+      korrektur:
+        "Vor dem Teilen durch einen variablen Ausdruck muss man prüfen, ob dieser Ausdruck \\(0\\) werden kann. Sonst verliert man mögliche Lösungen oder macht verbotene Umformungen."
+    },
+    {
+      fehler: "Man verwendet den Satz vom Nullprodukt bei einer Summe.",
+      korrektur:
+        "Der Satz vom Nullprodukt gilt nur bei Produkten. Aus \\(a+b=0\\) folgt nicht \\(a=0\\) oder \\(b=0\\)."
+    },
+    {
+      fehler: "Man vergisst bei der Mitternachtsformel das \\(\\pm\\).",
+      korrektur:
+        "Bei positiver Diskriminante entstehen zwei Lösungen, weil man einmal plus und einmal minus die Wurzel rechnet."
+    },
+    {
+      fehler: "Man löst eine Bruchgleichung ohne Definitionsbereich.",
+      korrektur:
+        "Bei Bruchgleichungen müssen zuerst alle verbotenen Werte ausgeschlossen werden, die einen Nenner zu \\(0\\) machen."
+    },
+    {
+      fehler: "Man logarithmiert Summen falsch.",
+      korrektur:
+        "Es gilt nicht \\(\\log(a+b)=\\log(a)+\\log(b)\\). Logarithmengesetze gelten für Produkte, Quotienten und Potenzen."
+    },
+    {
+      fehler: "Man gibt bei trigonometrischen Gleichungen nur eine Lösung an.",
+      korrektur:
+        "Trigonometrische Funktionen sind periodisch. Deshalb gibt es oft unendlich viele Lösungen."
+    },
+    {
+      fehler: "Man kontrolliert Scheinlösungen nicht.",
+      korrektur:
+        "Besonders nach Quadrieren, Multiplizieren mit Nennern oder Umformen von Wurzeln muss man Lösungen durch Einsetzen prüfen."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Lineare Gleichung",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Löse \\(3x-7=11\\).",
+      loesung: [
+        "Addiere \\(7\\) auf beiden Seiten.",
+        "Dann erhält man \\(3x=18\\).",
+        "Teile durch \\(3\\).",
+        "Also ist \\(x=6\\).",
+        "Kontrolle: \\(3\\cdot6-7=18-7=11\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Quadratische Gleichung faktorisieren",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Löse \\(x^2-5x+6=0\\).",
+      loesung: [
+        "Faktorisiere den Term.",
+        "\\(x^2-5x+6=(x-2)(x-3)\\).",
+        "Also gilt \\((x-2)(x-3)=0\\).",
+        "Nach dem Satz vom Nullprodukt ist \\(x-2=0\\) oder \\(x-3=0\\).",
+        "Daraus folgt \\(x=2\\) oder \\(x=3\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Mitternachtsformel",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse \\(2x^2-3x-2=0\\).",
+      loesung: [
+        "Hier ist \\(a=2\\), \\(b=-3\\), \\(c=-2\\).",
+        "Berechne die Diskriminante.",
+        "\\(D=b^2-4ac=(-3)^2-4\\cdot2\\cdot(-2)\\).",
+        "\\(D=9+16=25\\).",
+        "Setze in die Formel ein.",
+        "\\(x=\\frac{-(-3)\\pm\\sqrt{25}}{2\\cdot2}\\).",
+        "\\(x=\\frac{3\\pm5}{4}\\).",
+        "Also ist \\(x_1=2\\) und \\(x_2=-\\frac{1}{2}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Lineares Gleichungssystem",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse das Gleichungssystem \\(x+y=9\\) und \\(2x-y=3\\).",
+      loesung: [
+        "Addiere beide Gleichungen.",
+        "\\((x+y)+(2x-y)=9+3\\).",
+        "Das ergibt \\(3x=12\\).",
+        "Also ist \\(x=4\\).",
+        "Setze \\(x=4\\) in \\(x+y=9\\) ein.",
+        "\\(4+y=9\\).",
+        "Also ist \\(y=5\\).",
+        "Die Lösung ist \\((x,y)=(4,5)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Bruchgleichung",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse \\(\\frac{2}{x}+1=5\\).",
+      loesung: [
+        "Zuerst gilt die Definitionsbedingung \\(x\\ne0\\).",
+        "Subtrahiere \\(1\\) auf beiden Seiten.",
+        "\\(\\frac{2}{x}=4\\).",
+        "Multipliziere mit \\(x\\).",
+        "\\(2=4x\\).",
+        "Teile durch \\(4\\).",
+        "\\(x=\\frac{1}{2}\\).",
+        "Dieser Wert ist erlaubt, weil \\(x\\ne0\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Exponentialgleichung mit gleicher Basis",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse \\(2^{x+1}=32\\).",
+      loesung: [
+        "Schreibe \\(32\\) als Potenz zur Basis \\(2\\).",
+        "\\(32=2^5\\).",
+        "Damit gilt \\(2^{x+1}=2^5\\).",
+        "Bei gleicher Basis setzt man die Exponenten gleich.",
+        "\\(x+1=5\\).",
+        "Also ist \\(x=4\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Exponentialgleichung mit Logarithmus",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse \\(5^x=40\\).",
+      loesung: [
+        "Es lässt sich keine einfache gleiche Basis herstellen.",
+        "Logarithmiere beide Seiten.",
+        "\\(\\log(5^x)=\\log(40)\\).",
+        "Ziehe den Exponenten nach vorne.",
+        "\\(x\\log(5)=\\log(40)\\).",
+        "Teile durch \\(\\log(5)\\).",
+        "\\(x=\\frac{\\log(40)}{\\log(5)}\\).",
+        "Näherungsweise ist \\(x\\approx2.29\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Trigonometrische Gleichung",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Löse \\(\\sin(x)=\\frac{1}{2}\\) für \\(0^\\circ\\le x<360^\\circ\\).",
+      loesung: [
+        "Die Grundlösung ist \\(x=30^\\circ\\), weil \\(\\sin(30^\\circ)=\\frac{1}{2}\\).",
+        "Sinus ist im ersten und zweiten Quadranten positiv.",
+        "Die zweite Lösung ist \\(180^\\circ-30^\\circ=150^\\circ\\).",
+        "Im Intervall \\(0^\\circ\\le x<360^\\circ\\) sind die Lösungen also \\(30^\\circ\\) und \\(150^\\circ\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Trigonometrische Gleichung allgemein",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Löse \\(\\cos(x)=0\\) allgemein im Bogenmass.",
+      loesung: [
+        "\\(\\cos(x)=0\\) gilt bei \\(x=\\frac{\\pi}{2}\\) und \\(x=\\frac{3\\pi}{2}\\) innerhalb einer Periode.",
+        "Da Kosinus die Periode \\(2\\pi\\) hat, kann man schreiben:",
+        "\\(x=\\frac{\\pi}{2}+k\\pi\\).",
+        "Dabei gilt \\(k\\in\\mathbb{Z}\\).",
+        "Diese Schreibweise enthält alle Stellen, an denen der Kosinus \\(0\\) ist."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Numerische Lösungsidee",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Erkläre, wie man eine Lösung von \\(x^3+x-5=0\\) numerisch eingrenzen kann.",
+      loesung: [
+        "Betrachte die Funktion \\(f(x)=x^3+x-5\\).",
+        "Berechne zwei Funktionswerte.",
+        "\\(f(1)=1+1-5=-3\\).",
+        "\\(f(2)=8+2-5=5\\).",
+        "Da ein Vorzeichenwechsel zwischen \\(1\\) und \\(2\\) liegt, befindet sich dort mindestens eine Nullstelle.",
+        "Nun kann man das Intervall halbieren.",
+        "Der Mittelpunkt ist \\(1.5\\).",
+        "\\(f(1.5)=3.375+1.5-5=-0.125\\).",
+        "Da \\(f(1.5)<0\\) und \\(f(2)>0\\), liegt die Nullstelle zwischen \\(1.5\\) und \\(2\\).",
+        "Durch weiteres Halbieren erhält man eine immer genauere Näherung."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Was bedeutet es, eine Gleichung zu lösen?",
+      antwort:
+        "Man sucht alle Werte der Variable, für die linke und rechte Seite der Gleichung denselben Wert haben."
+    },
+    {
+      frage: "Was ist eine Äquivalenzumformung?",
+      antwort:
+        "Eine Äquivalenzumformung verändert eine Gleichung so, dass die Lösungsmenge gleich bleibt. Man behandelt dabei beide Seiten gleich."
+    },
+    {
+      frage: "Wann verwendet man die Mitternachtsformel?",
+      antwort:
+        "Man verwendet sie bei quadratischen Gleichungen der Form \\(ax^2+bx+c=0\\), besonders wenn Faktorisieren nicht sofort möglich ist."
+    },
+    {
+      frage: "Was sagt die Diskriminante aus?",
+      antwort:
+        "Die Diskriminante zeigt, wie viele reelle Lösungen eine quadratische Gleichung hat: zwei, eine oder keine."
+    },
+    {
+      frage: "Warum muss man bei Bruchgleichungen den Definitionsbereich prüfen?",
+      antwort:
+        "Weil Nenner nicht \\(0\\) werden dürfen. Werte, die einen Nenner zu \\(0\\) machen, sind verboten."
+    },
+    {
+      frage: "Wann logarithmiert man eine Exponentialgleichung?",
+      antwort:
+        "Man logarithmiert, wenn die Variable im Exponenten steht und man keine gleiche Basis herstellen kann."
+    },
+    {
+      frage: "Warum gibt es bei trigonometrischen Gleichungen oft mehrere Lösungen?",
+      antwort:
+        "Weil trigonometrische Funktionen periodisch sind. Ihre Werte wiederholen sich regelmässig."
+    },
+    {
+      frage: "Was ist ein numerisches Verfahren?",
+      antwort:
+        "Ein numerisches Verfahren liefert eine Näherungslösung, wenn eine Gleichung nicht exakt oder nicht einfach algebraisch gelöst werden kann."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du erklären, was eine Lösung einer Gleichung ist?",
+    "Behandelst du bei Umformungen immer beide Seiten gleich?",
+    "Weisst du, dass man nie durch \\(0\\) teilen darf?",
+    "Kannst du lineare Gleichungen sicher lösen?",
+    "Kannst du quadratische Gleichungen faktorisieren?",
+    "Kennst du die Mitternachtsformel?",
+    "Kannst du die Diskriminante berechnen und deuten?",
+    "Kannst du lineare Gleichungssysteme lösen?",
+    "Bestimmst du bei Bruchgleichungen zuerst den Definitionsbereich?",
+    "Kannst du Exponentialgleichungen mit Logarithmen lösen?",
+    "Beachtung du bei trigonometrischen Gleichungen die Periodizität?",
+    "Kontrollierst du Lösungen durch Einsetzen in die ursprüngliche Gleichung?"
+  ]
+}
    
 ];
 /* =========================
