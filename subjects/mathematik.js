@@ -2982,7 +2982,7 @@ nachtVorTest: [
       "Kontrollierst du Stammfunktionen durch Ableiten?"
     ]
   },
-     ,
+     
 {
   id: "rotationskoerper-volumen",
   nummer: "9",
@@ -3308,7 +3308,7 @@ nachtVorTest: [
     "Kannst du zwischen Flächeninhalt und Rotationsvolumen unterscheiden?"
   ]
 },
-   ,
+   
 {
   id: "flaeche-zwischen-zwei-kurven",
   nummer: "10",
@@ -3676,7 +3676,7 @@ nachtVorTest: [
     "Kannst du die Fläche zwischen Graph und \\(x\\)-Achse als Spezialfall erklären?"
   ]
 },
-   ,
+   
 {
   id: "geraden-im-raum",
   nummer: "11",
@@ -4105,7 +4105,7 @@ nachtVorTest: [
     "Weisst du, dass Abstände senkrecht gemessen werden?"
   ]
 },
-   ,
+   
 {
   id: "skalarprodukt-kreuzprodukt",
   nummer: "12",
@@ -4525,7 +4525,7 @@ nachtVorTest: [
     "Weisst du, dass die Reihenfolge beim Kreuzprodukt das Vorzeichen ändert?"
   ]
 },
-   ,
+   
 {
   id: "ebenen-im-raum",
   nummer: "13",
