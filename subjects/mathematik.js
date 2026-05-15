@@ -5018,22 +5018,17 @@ function render_mathematik(container) {
   const buttons = container.querySelectorAll(".sf-math-topic-button");
 
     function showTopic(topicId) {
-    const thema = MATHEMATIK_THEMEN.find(t => t.id === topicId);
-    if (!thema) return;
+  const thema = MATHEMATIK_THEMEN.find(t => t.id === topicId);
+  if (!thema) return;
 
-    buttons.forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.topicId === topicId);
-    });
+  buttons.forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.topicId === topicId);
+  });
 
-    content.innerHTML = renderMathematikTopic(thema);
-    attachMathematikInteractions(content);
-    typesetMathematik(content);
-
-    content.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  }
+  content.innerHTML = renderMathematikTopic(thema);
+  attachMathematikInteractions(content);
+  typesetMathematik(content);
+}
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
