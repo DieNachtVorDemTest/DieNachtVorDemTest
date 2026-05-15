@@ -4524,6 +4524,450 @@ nachtVorTest: [
     "Kannst du prüfen, ob eine Basis orthonormiert ist?",
     "Weisst du, dass die Reihenfolge beim Kreuzprodukt das Vorzeichen ändert?"
   ]
+},
+   ,
+{
+  id: "ebenen-im-raum",
+  nummer: "13",
+  titel: "Ebenen im Raum",
+  kurzbeschreibung:
+    "Ebenen im dreidimensionalen Raum verstehen: Parameterform, Normalenform, Koordinatenform, Ebenen durch Punkte, Normalvektor, Punktprobe und Lagebeziehungen.",
+  lernziele: [
+    "Du kannst eine Ebene im Raum in Parameterform darstellen.",
+    "Du verstehst die Bedeutung von Stützvektor und Spannvektoren.",
+    "Du kannst aus drei Punkten eine Ebenengleichung aufstellen.",
+    "Du kannst einen Normalvektor mit dem Kreuzprodukt bestimmen.",
+    "Du kannst eine Ebene in Normalenform schreiben.",
+    "Du kannst eine Ebene in Koordinatenform schreiben.",
+    "Du kannst prüfen, ob ein Punkt auf einer Ebene liegt.",
+    "Du kannst zwischen Parameterform, Normalenform und Koordinatenform wechseln.",
+    "Du kannst Lagebeziehungen zwischen Gerade und Ebene untersuchen.",
+    "Du erkennst typische Fehler bei Spannvektoren, Normalvektoren und Punktproben."
+  ],
+  theorie: [
+    {
+      titel: "Was ist eine Ebene?",
+      text:
+        "Eine Ebene ist eine unendlich ausgedehnte Fläche im Raum. Sie ist zweidimensional, liegt aber im dreidimensionalen Raum. Man kann sie sich wie ein unbegrenzt grosses Blatt Papier vorstellen."
+    },
+    {
+      titel: "Parameterform einer Ebene",
+      text:
+        "Eine Ebene kann in Parameterform geschrieben werden als \\(E:\\vec{x}=\\vec{p}+r\\vec{u}+s\\vec{v}\\). Dabei ist \\(\\vec{p}\\) ein Stützvektor und \\(\\vec{u}\\), \\(\\vec{v}\\) sind zwei Spannvektoren."
+    },
+    {
+      titel: "Stützvektor",
+      text:
+        "Der Stützvektor zeigt vom Ursprung zu einem festen Punkt der Ebene. Er legt fest, wo die Ebene im Raum liegt."
+    },
+    {
+      titel: "Spannvektoren",
+      text:
+        "Die Spannvektoren geben zwei verschiedene Richtungen innerhalb der Ebene an. Sie dürfen nicht parallel sein, sonst spannen sie keine Ebene auf."
+    },
+    {
+      titel: "Warum braucht man zwei Parameter?",
+      text:
+        "Eine Gerade braucht einen Parameter, weil man sich nur in eine Richtung bewegt. Eine Ebene braucht zwei Parameter, weil man sich in zwei unabhängige Richtungen bewegen kann."
+    },
+    {
+      titel: "Ebene durch drei Punkte",
+      text:
+        "Drei Punkte bestimmen eine Ebene, sofern sie nicht auf einer einzigen Geraden liegen. Aus den Punkten bildet man zwei Verbindungsvektoren, die als Spannvektoren dienen."
+    },
+    {
+      titel: "Normalvektor",
+      text:
+        "Ein Normalvektor steht senkrecht auf der Ebene. Er steht also senkrecht auf allen Richtungen, die in der Ebene liegen."
+    },
+    {
+      titel: "Normalvektor mit Kreuzprodukt",
+      text:
+        "Wenn \\(\\vec{u}\\) und \\(\\vec{v}\\) zwei Spannvektoren einer Ebene sind, dann ist \\(\\vec{n}=\\vec{u}\\times\\vec{v}\\) ein Normalvektor der Ebene."
+    },
+    {
+      titel: "Normalenform",
+      text:
+        "Die Normalenform einer Ebene lautet \\(E:(\\vec{x}-\\vec{p})\\cdot\\vec{n}=0\\). Dabei ist \\(\\vec{p}\\) ein Punkt der Ebene und \\(\\vec{n}\\) ein Normalvektor."
+    },
+    {
+      titel: "Koordinatenform",
+      text:
+        "Eine Ebene kann auch als \\(ax+by+cz=d\\) geschrieben werden. Der Vektor \\(\\vec{n}=\\begin{pmatrix}a\\\\b\\\\c\\end{pmatrix}\\) ist dann ein Normalvektor der Ebene."
+    },
+    {
+      titel: "Punktprobe",
+      text:
+        "Um zu prüfen, ob ein Punkt auf einer Ebene liegt, setzt man seine Koordinaten in die Ebenengleichung ein. Wenn die Gleichung stimmt, liegt der Punkt auf der Ebene."
+    },
+    {
+      titel: "Lage von Gerade und Ebene",
+      text:
+        "Eine Gerade kann eine Ebene schneiden, parallel zur Ebene sein oder vollständig in der Ebene liegen. Das untersucht man, indem man die Gerade in die Ebene einsetzt."
+    },
+    {
+      titel: "Lage zweier Ebenen",
+      text:
+        "Zwei Ebenen können parallel, identisch oder sich in einer Schnittgeraden schneiden. Besonders wichtig ist der Vergleich ihrer Normalvektoren."
+    }
+  ],
+  methoden: [
+    {
+      titel: "Methode: Ebene durch Punkt und zwei Spannvektoren aufstellen",
+      schritte: [
+        "Wähle den gegebenen Punkt als Stützvektor.",
+        "Verwende die zwei gegebenen Richtungsvektoren als Spannvektoren.",
+        "Prüfe, ob die Spannvektoren nicht parallel sind.",
+        "Schreibe die Ebene als \\(E:\\vec{x}=\\vec{p}+r\\vec{u}+s\\vec{v}\\).",
+        "Gib an, dass \\(r,s\\in\\mathbb{R}\\) gelten."
+      ]
+    },
+    {
+      titel: "Methode: Ebene durch drei Punkte aufstellen",
+      schritte: [
+        "Wähle einen der drei Punkte als Stützpunkt.",
+        "Bilde vom Stützpunkt aus zwei Verbindungsvektoren zu den anderen beiden Punkten.",
+        "Verwende diese beiden Verbindungsvektoren als Spannvektoren.",
+        "Prüfe, ob die Spannvektoren nicht Vielfache voneinander sind.",
+        "Schreibe die Ebene in Parameterform auf.",
+        "Kontrolliere, ob alle drei Punkte durch passende Parameterwerte erreichbar sind."
+      ]
+    },
+    {
+      titel: "Methode: Normalvektor bestimmen",
+      schritte: [
+        "Bestimme zwei Spannvektoren der Ebene.",
+        "Berechne das Kreuzprodukt der beiden Spannvektoren.",
+        "Das Ergebnis ist ein Normalvektor der Ebene.",
+        "Kontrolliere mit dem Skalarprodukt, ob der Normalvektor senkrecht auf beiden Spannvektoren steht.",
+        "Falls möglich, kürze den Normalvektor."
+      ]
+    },
+    {
+      titel: "Methode: Von Parameterform zu Koordinatenform",
+      schritte: [
+        "Bestimme zuerst zwei Spannvektoren der Ebene.",
+        "Berechne mit dem Kreuzprodukt einen Normalvektor \\(\\vec{n}\\).",
+        "Setze den Normalvektor als Koeffizienten in \\(ax+by+cz=d\\) ein.",
+        "Setze einen bekannten Punkt der Ebene ein, um \\(d\\) zu bestimmen.",
+        "Schreibe die Koordinatenform vollständig auf."
+      ]
+    },
+    {
+      titel: "Methode: Punktprobe in Koordinatenform",
+      schritte: [
+        "Setze die Koordinaten des Punktes in \\(ax+by+cz=d\\) ein.",
+        "Berechne die linke Seite.",
+        "Vergleiche das Ergebnis mit der rechten Seite.",
+        "Wenn beide Seiten gleich sind, liegt der Punkt auf der Ebene.",
+        "Wenn nicht, liegt der Punkt nicht auf der Ebene."
+      ]
+    },
+    {
+      titel: "Methode: Gerade mit Ebene schneiden",
+      schritte: [
+        "Schreibe die Gerade in Parameterform.",
+        "Setze die Koordinaten der Geraden in die Koordinatenform der Ebene ein.",
+        "Löse die entstehende Gleichung nach dem Geradenparameter.",
+        "Wenn es genau eine Lösung gibt, schneidet die Gerade die Ebene.",
+        "Setze den Parameter in die Gerade ein, um den Schnittpunkt zu erhalten.",
+        "Wenn die Gleichung unmöglich ist, ist die Gerade parallel zur Ebene.",
+        "Wenn die Gleichung immer wahr ist, liegt die Gerade vollständig in der Ebene."
+      ]
+    },
+    {
+      titel: "Methode: Lage zweier Ebenen mit Normalvektoren",
+      schritte: [
+        "Bestimme die Normalvektoren beider Ebenen.",
+        "Prüfe, ob die Normalvektoren Vielfache voneinander sind.",
+        "Sind sie keine Vielfachen, schneiden sich die Ebenen in einer Geraden.",
+        "Sind sie Vielfache, sind die Ebenen parallel oder identisch.",
+        "Prüfe dann mit einem Punkt der einen Ebene, ob er auf der anderen Ebene liegt.",
+        "Falls ja, sind die Ebenen identisch.",
+        "Falls nein, sind sie echt parallel."
+      ]
+    }
+  ],
+  merksaetze: [
+    "Eine Ebene in Parameterform lautet \\(E:\\vec{x}=\\vec{p}+r\\vec{u}+s\\vec{v}\\).",
+    "\\(\\vec{p}\\) ist ein Stützvektor der Ebene.",
+    "\\(\\vec{u}\\) und \\(\\vec{v}\\) sind Spannvektoren der Ebene.",
+    "Spannvektoren dürfen nicht parallel sein.",
+    "Eine Ebene braucht zwei unabhängige Richtungen.",
+    "Aus drei nicht kollinearen Punkten kann man eine Ebene bilden.",
+    "Ein Normalvektor steht senkrecht auf der Ebene.",
+    "Das Kreuzprodukt zweier Spannvektoren liefert einen Normalvektor.",
+    "Die Normalenform lautet \\((\\vec{x}-\\vec{p})\\cdot\\vec{n}=0\\).",
+    "Die Koordinatenform lautet \\(ax+by+cz=d\\).",
+    "In \\(ax+by+cz=d\\) ist \\(\\begin{pmatrix}a\\\\b\\\\c\\end{pmatrix}\\) ein Normalvektor.",
+    "Bei der Punktprobe setzt man die Koordinaten des Punktes in die Ebenengleichung ein."
+  ],
+  typischeFehler: [
+    {
+      fehler: "Man verwendet zwei parallele Spannvektoren.",
+      korrektur:
+        "Zwei parallele Vektoren spannen nur eine Gerade auf, keine Ebene. Spannvektoren müssen linear unabhängig sein."
+    },
+    {
+      fehler: "Man verwechselt Spannvektor und Normalvektor.",
+      korrektur:
+        "Spannvektoren liegen in der Ebene. Ein Normalvektor steht senkrecht auf der Ebene."
+    },
+    {
+      fehler: "Man setzt bei einer Ebene nur einen Parameter ein.",
+      korrektur:
+        "Eine Ebene braucht in Parameterform zwei Parameter, zum Beispiel \\(r\\) und \\(s\\)."
+    },
+    {
+      fehler: "Man denkt, drei beliebige Punkte bestimmen immer eine Ebene.",
+      korrektur:
+        "Drei Punkte bestimmen nur dann eindeutig eine Ebene, wenn sie nicht alle auf einer Geraden liegen."
+    },
+    {
+      fehler: "Man liest aus \\(ax+by+cz=d\\) den Normalvektor falsch ab.",
+      korrektur:
+        "Der Normalvektor ist \\(\\vec{n}=\\begin{pmatrix}a\\\\b\\\\c\\end{pmatrix}\\). Die rechte Seite \\(d\\) gehört nicht zum Normalvektor."
+    },
+    {
+      fehler: "Man prüft bei der Punktprobe nur einzelne Koordinaten.",
+      korrektur:
+        "In Koordinatenform setzt man alle Koordinaten gleichzeitig in die Gleichung ein und prüft, ob die Gleichung stimmt."
+    },
+    {
+      fehler: "Man vergisst bei Gerade-Ebene-Aufgaben den Schnittpunkt auszurechnen.",
+      korrektur:
+        "Der gefundene Parameter ist noch nicht der Schnittpunkt. Man muss ihn in die Geradengleichung einsetzen."
+    }
+  ],
+  aufgaben: [
+    {
+      titel: "Aufgabe 1: Ebene in Parameterform aufstellen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Stelle die Ebene durch den Punkt \\(P(1\\mid2\\mid3)\\) mit den Spannvektoren \\(\\vec{u}=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}\\) und \\(\\vec{v}=\\begin{pmatrix}0\\\\1\\\\-1\\end{pmatrix}\\) auf.",
+      loesung: [
+        "Der Punkt \\(P\\) liefert den Stützvektor.",
+        "Also ist \\(\\vec{p}=\\begin{pmatrix}1\\\\2\\\\3\\end{pmatrix}\\).",
+        "Die Spannvektoren sind gegeben.",
+        "Die Ebene lautet:",
+        "\\(E:\\vec{x}=\\begin{pmatrix}1\\\\2\\\\3\\end{pmatrix}+r\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+s\\begin{pmatrix}0\\\\1\\\\-1\\end{pmatrix}\\).",
+        "Dabei gilt \\(r,s\\in\\mathbb{R}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 2: Ebene durch drei Punkte",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Stelle eine Ebene durch die Punkte \\(A(1\\mid0\\mid0)\\), \\(B(3\\mid1\\mid0)\\) und \\(C(1\\mid2\\mid4)\\) in Parameterform auf.",
+      loesung: [
+        "Wähle \\(A\\) als Stützpunkt.",
+        "Bilde \\(\\overrightarrow{AB}=B-A\\).",
+        "\\(\\overrightarrow{AB}=\\begin{pmatrix}3-1\\\\1-0\\\\0-0\\end{pmatrix}=\\begin{pmatrix}2\\\\1\\\\0\\end{pmatrix}\\).",
+        "Bilde \\(\\overrightarrow{AC}=C-A\\).",
+        "\\(\\overrightarrow{AC}=\\begin{pmatrix}1-1\\\\2-0\\\\4-0\\end{pmatrix}=\\begin{pmatrix}0\\\\2\\\\4\\end{pmatrix}\\).",
+        "Die Ebene lautet:",
+        "\\(E:\\vec{x}=\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}+r\\begin{pmatrix}2\\\\1\\\\0\\end{pmatrix}+s\\begin{pmatrix}0\\\\2\\\\4\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 3: Punktprobe in Koordinatenform",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Prüfe, ob der Punkt \\(P(2\\mid-1\\mid3)\\) auf der Ebene \\(E:2x-y+z=8\\) liegt.",
+      loesung: [
+        "Setze die Koordinaten von \\(P\\) in die Ebenengleichung ein.",
+        "Links ergibt sich \\(2\\cdot2-(-1)+3\\).",
+        "Das ist \\(4+1+3=8\\).",
+        "Die rechte Seite ist ebenfalls \\(8\\).",
+        "Die Gleichung stimmt.",
+        "Also liegt \\(P\\) auf der Ebene."
+      ]
+    },
+    {
+      titel: "Aufgabe 4: Punkt liegt nicht auf Ebene",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Prüfe, ob \\(Q(1\\mid2\\mid0)\\) auf der Ebene \\(E:x+2y-z=3\\) liegt.",
+      loesung: [
+        "Setze die Koordinaten von \\(Q\\) ein.",
+        "Links ergibt sich \\(1+2\\cdot2-0\\).",
+        "Das ist \\(1+4=5\\).",
+        "Die rechte Seite ist \\(3\\).",
+        "Da \\(5\\ne3\\) gilt, liegt \\(Q\\) nicht auf der Ebene."
+      ]
+    },
+    {
+      titel: "Aufgabe 5: Normalvektor aus Koordinatenform ablesen",
+      schwierigkeit: "einfach",
+      aufgabe:
+        "Gib einen Normalvektor der Ebene \\(E:3x-4y+2z=7\\) an.",
+      loesung: [
+        "Bei einer Ebene in Koordinatenform \\(ax+by+cz=d\\) ist \\(\\begin{pmatrix}a\\\\b\\\\c\\end{pmatrix}\\) ein Normalvektor.",
+        "Hier sind \\(a=3\\), \\(b=-4\\), \\(c=2\\).",
+        "Ein Normalvektor ist also \\(\\vec{n}=\\begin{pmatrix}3\\\\-4\\\\2\\end{pmatrix}\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 6: Normalvektor mit Kreuzprodukt",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme einen Normalvektor zur Ebene mit den Spannvektoren \\(\\vec{u}=\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}\\) und \\(\\vec{v}=\\begin{pmatrix}0\\\\1\\\\3\\end{pmatrix}\\).",
+      loesung: [
+        "Ein Normalvektor ergibt sich durch das Kreuzprodukt \\(\\vec{u}\\times\\vec{v}\\).",
+        "Berechne die erste Koordinate: \\(2\\cdot3-0\\cdot1=6\\).",
+        "Berechne die zweite Koordinate: \\(0\\cdot0-1\\cdot3=-3\\).",
+        "Berechne die dritte Koordinate: \\(1\\cdot1-2\\cdot0=1\\).",
+        "Also ist \\(\\vec{n}=\\begin{pmatrix}6\\\\-3\\\\1\\end{pmatrix}\\).",
+        "Dieser Vektor steht senkrecht auf beiden Spannvektoren."
+      ]
+    },
+    {
+      titel: "Aufgabe 7: Parameterform in Koordinatenform umwandeln",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Gegeben ist \\(E:\\vec{x}=\\begin{pmatrix}1\\\\0\\\\2\\end{pmatrix}+r\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}+s\\begin{pmatrix}0\\\\2\\\\1\\end{pmatrix}\\). Bestimme eine Koordinatenform.",
+      loesung: [
+        "Die Spannvektoren sind \\(\\vec{u}=\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\) und \\(\\vec{v}=\\begin{pmatrix}0\\\\2\\\\1\\end{pmatrix}\\).",
+        "Berechne einen Normalvektor mit \\(\\vec{u}\\times\\vec{v}\\).",
+        "\\(\\vec{u}\\times\\vec{v}=\\begin{pmatrix}1\\cdot1-0\\cdot2\\\\0\\cdot0-1\\cdot1\\\\1\\cdot2-1\\cdot0\\end{pmatrix}=\\begin{pmatrix}1\\\\-1\\\\2\\end{pmatrix}\\).",
+        "Die Koordinatenform hat also die Form \\(x-y+2z=d\\).",
+        "Setze den Stützpunkt \\((1\\mid0\\mid2)\\) ein.",
+        "\\(1-0+2\\cdot2=5\\).",
+        "Also ist \\(d=5\\).",
+        "Die Ebene lautet \\(E:x-y+2z=5\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 8: Gerade schneidet Ebene",
+      schwierigkeit: "mittel",
+      aufgabe:
+        "Bestimme den Schnittpunkt der Geraden \\(g:\\vec{x}=\\begin{pmatrix}1\\\\0\\\\0\\end{pmatrix}+t\\begin{pmatrix}1\\\\2\\\\1\\end{pmatrix}\\) mit der Ebene \\(E:x+y+z=7\\).",
+      loesung: [
+        "Ein allgemeiner Punkt der Geraden ist \\((1+t\\mid2t\\mid t)\\).",
+        "Setze diese Koordinaten in die Ebene ein.",
+        "\\((1+t)+2t+t=7\\).",
+        "Das ergibt \\(1+4t=7\\).",
+        "Also ist \\(4t=6\\) und damit \\(t=\\frac{3}{2}\\).",
+        "Setze \\(t=\\frac{3}{2}\\) in die Gerade ein.",
+        "Dann erhält man \\(x=1+\\frac{3}{2}=\\frac{5}{2}\\), \\(y=3\\), \\(z=\\frac{3}{2}\\).",
+        "Der Schnittpunkt ist \\(S\\left(\\frac{5}{2}\\mid3\\mid\\frac{3}{2}\\right)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 9: Gerade parallel zur Ebene",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Untersuche die Lage der Geraden \\(g:\\vec{x}=\\begin{pmatrix}0\\\\0\\\\1\\end{pmatrix}+t\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}\\) zur Ebene \\(E:x+y+z=0\\).",
+      loesung: [
+        "Ein allgemeiner Punkt der Geraden ist \\((t\\mid -t\\mid1)\\).",
+        "Setze in die Ebene ein.",
+        "\\(t+(-t)+1=0\\).",
+        "Das ergibt \\(1=0\\).",
+        "Diese Gleichung ist unmöglich.",
+        "Also hat die Gerade keinen Schnittpunkt mit der Ebene.",
+        "Da beim Einsetzen eine unmögliche Gleichung entsteht, ist die Gerade parallel zur Ebene und liegt nicht in ihr."
+      ]
+    },
+    {
+      titel: "Aufgabe 10: Gerade liegt in Ebene",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Untersuche die Lage der Geraden \\(g:\\vec{x}=\\begin{pmatrix}1\\\\2\\\\0\\end{pmatrix}+t\\begin{pmatrix}1\\\\-1\\\\1\\end{pmatrix}\\) zur Ebene \\(E:x+y-z=3\\).",
+      loesung: [
+        "Ein allgemeiner Punkt der Geraden ist \\((1+t\\mid2-t\\mid t)\\).",
+        "Setze in die Ebene ein.",
+        "\\((1+t)+(2-t)-t=3\\).",
+        "Das vereinfacht sich zu \\(3-t=3\\).",
+        "Daraus folgt \\(t=0\\).",
+        "Es gibt genau einen Parameterwert.",
+        "Also schneidet die Gerade die Ebene in genau einem Punkt.",
+        "Setze \\(t=0\\) in die Gerade ein.",
+        "Der Schnittpunkt ist \\(S(1\\mid2\\mid0)\\)."
+      ]
+    },
+    {
+      titel: "Aufgabe 11: Identische oder parallele Ebenen prüfen",
+      schwierigkeit: "schwer",
+      aufgabe:
+        "Untersuche die Lage der Ebenen \\(E_1:2x-4y+6z=8\\) und \\(E_2:x-2y+3z=5\\).",
+      loesung: [
+        "Vergleiche zuerst die Normalvektoren.",
+        "\\(\\vec{n}_1=\\begin{pmatrix}2\\\\-4\\\\6\\end{pmatrix}\\), \\(\\vec{n}_2=\\begin{pmatrix}1\\\\-2\\\\3\\end{pmatrix}\\).",
+        "Es gilt \\(\\vec{n}_1=2\\vec{n}_2\\).",
+        "Die Ebenen sind also parallel oder identisch.",
+        "Multipliziert man die linke Seite von \\(E_2\\) mit \\(2\\), erhält man \\(2x-4y+6z\\).",
+        "Die rechte Seite wäre dann \\(10\\), nicht \\(8\\).",
+        "Also sind die Ebenen nicht identisch.",
+        "Sie sind echt parallel."
+      ]
+    }
+  ],
+  muendlich: [
+    {
+      frage: "Wie schreibt man eine Ebene in Parameterform?",
+      antwort:
+        "Eine Ebene schreibt man als \\(E:\\vec{x}=\\vec{p}+r\\vec{u}+s\\vec{v}\\). Dabei ist \\(\\vec{p}\\) ein Stützvektor und \\(\\vec{u}\\), \\(\\vec{v}\\) sind zwei Spannvektoren."
+    },
+    {
+      frage: "Warum braucht eine Ebene zwei Parameter?",
+      antwort:
+        "Weil eine Ebene zwei unabhängige Richtungen besitzt. Man kann sich also in zwei Richtungen innerhalb der Ebene bewegen."
+    },
+    {
+      frage: "Was ist ein Spannvektor?",
+      antwort:
+        "Ein Spannvektor ist ein Richtungsvektor, der in der Ebene liegt. Zwei nicht parallele Spannvektoren spannen die Ebene auf."
+    },
+    {
+      frage: "Was ist ein Normalvektor?",
+      antwort:
+        "Ein Normalvektor steht senkrecht auf der Ebene. Er steht damit senkrecht auf allen Richtungsvektoren der Ebene."
+    },
+    {
+      frage: "Wie erhält man einen Normalvektor aus zwei Spannvektoren?",
+      antwort:
+        "Man berechnet das Kreuzprodukt der beiden Spannvektoren. Das Ergebnis ist ein Vektor, der senkrecht auf beiden steht."
+    },
+    {
+      frage: "Wie lautet die Normalenform einer Ebene?",
+      antwort:
+        "Die Normalenform lautet \\((\\vec{x}-\\vec{p})\\cdot\\vec{n}=0\\)."
+    },
+    {
+      frage: "Wie erkennt man den Normalvektor in der Koordinatenform?",
+      antwort:
+        "Bei \\(ax+by+cz=d\\) ist \\(\\begin{pmatrix}a\\\\b\\\\c\\end{pmatrix}\\) ein Normalvektor."
+    },
+    {
+      frage: "Wie prüft man, ob ein Punkt auf einer Ebene liegt?",
+      antwort:
+        "Man setzt seine Koordinaten in die Ebenengleichung ein. Wenn die Gleichung stimmt, liegt der Punkt auf der Ebene."
+    },
+    {
+      frage: "Welche Lagebeziehungen kann eine Gerade zu einer Ebene haben?",
+      antwort:
+        "Eine Gerade kann die Ebene schneiden, parallel zur Ebene sein oder vollständig in der Ebene liegen."
+    },
+    {
+      frage: "Wie untersucht man Gerade und Ebene rechnerisch?",
+      antwort:
+        "Man setzt die Koordinaten der Geraden in die Ebenengleichung ein und untersucht die entstehende Gleichung."
+    }
+  ],
+  nachtVorTest: [
+    "Kannst du eine Ebene in Parameterform schreiben?",
+    "Weisst du, was Stützvektor und Spannvektoren bedeuten?",
+    "Weisst du, dass Spannvektoren nicht parallel sein dürfen?",
+    "Kannst du aus drei Punkten zwei Spannvektoren bilden?",
+    "Kannst du mit dem Kreuzprodukt einen Normalvektor bestimmen?",
+    "Kennst du die Normalenform \\((\\vec{x}-\\vec{p})\\cdot\\vec{n}=0\\)?",
+    "Kannst du aus \\(ax+by+cz=d\\) den Normalvektor ablesen?",
+    "Kannst du eine Punktprobe bei einer Ebene durchführen?",
+    "Kannst du Parameterform in Koordinatenform umwandeln?",
+    "Kannst du eine Gerade in eine Ebene einsetzen?",
+    "Erkennst du die Fälle Schnittpunkt, parallel und Gerade liegt in Ebene?",
+    "Unterscheidest du Spannvektor und Normalvektor sicher?"
+  ]
 }
    
    
@@ -4582,9 +5026,13 @@ function render_mathematik(container) {
     });
 
     content.innerHTML = renderMathematikTopic(thema);
-    attachMathematikInteractions(content);
-    typesetMathematik(content);
-  }
+attachMathematikInteractions(content);
+typesetMathematik(content);
+
+content.scrollIntoView({
+  behavior: "smooth",
+  block: "start"
+});
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -4895,13 +5343,15 @@ function injectMathematikStyles() {
     }
 
     .sf-math-sidebar {
-      position: sticky;
-      top: 20px;
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-    }
+  position: sticky;
+  top: 20px;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
 
     .sf-math-sidebar h2 {
       margin: 0 0 16px 0;
@@ -4910,10 +5360,11 @@ function injectMathematikStyles() {
     }
 
     .sf-math-topic-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
 
     .sf-math-topic-button {
       border: 1px solid #e5e7eb;
