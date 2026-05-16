@@ -2887,6 +2887,848 @@ const ENGLISCH_BEREICHE = [
       </div>
     </section>
   `
+},
+
+{
+  id: "gym4",
+  titel: "GYM4",
+  untertitel: "Essay Writing, Speeches and Eulogies",
+  beschreibung:
+    "Englische Aufsätze, typische Fehler, gute Satzanfänge, Aufbau eines Essays, Analyseformulierungen und eine Anleitung, wie man eine Todesrede bzw. Eulogy hält.",
+  html: `
+    <section class="sf-en-section">
+      <h2>GYM4 – Essay Writing, Speeches and Eulogies</h2>
+      <p class="sf-en-lead">
+        In GYM4 geht es darum, längere englische Texte klar, korrekt und überzeugend zu schreiben.
+        Du lernst den Aufbau eines Essays, gute Formulierungen, typische Fehler und wie man eine
+        persönliche, respektvolle Todesrede auf Englisch hält.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>Basic idea</h4>
+        <p>
+          A good English text is clear, structured and focused. You do not need overly complicated sentences.
+          You need a clear argument, logical paragraphs and precise language.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>1. What is an essay?</h3>
+      <p>
+        An essay is a structured text in which you discuss a topic, develop arguments and answer a central question.
+        In school, essays are often argumentative, analytical or reflective.
+      </p>
+
+      <div class="sf-en-table-wrap">
+        <table class="sf-en-table">
+          <thead>
+            <tr>
+              <th>Essay type</th>
+              <th>Purpose</th>
+              <th>Example topic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Argumentative essay</td>
+              <td>You discuss a question and defend a position.</td>
+              <td>Should students use phones at school?</td>
+            </tr>
+            <tr>
+              <td>Analytical essay</td>
+              <td>You analyse a text, character, theme or technique.</td>
+              <td>How does the author present power?</td>
+            </tr>
+            <tr>
+              <td>Reflective essay</td>
+              <td>You reflect on an experience, idea or problem.</td>
+              <td>What does success mean to young people?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Important</h4>
+        <p>
+          An essay is not just a list of opinions. Every point should be explained and supported with an example,
+          reason or reference to the text.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>2. Basic essay structure</h3>
+      <p>
+        A strong essay normally has three main parts: introduction, body and conclusion.
+      </p>
+
+      <div class="sf-en-table-wrap">
+        <table class="sf-en-table">
+          <thead>
+            <tr>
+              <th>Part</th>
+              <th>Function</th>
+              <th>Useful sentence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Introduction</td>
+              <td>Introduce the topic and state the main question or thesis.</td>
+              <td>This essay discusses whether...</td>
+            </tr>
+            <tr>
+              <td>Body paragraph 1</td>
+              <td>Develop the first main argument.</td>
+              <td>One important argument is that...</td>
+            </tr>
+            <tr>
+              <td>Body paragraph 2</td>
+              <td>Develop another argument or perspective.</td>
+              <td>Another aspect to consider is...</td>
+            </tr>
+            <tr>
+              <td>Body paragraph 3</td>
+              <td>Include contrast, counterargument or deeper analysis.</td>
+              <td>However, one should also consider...</td>
+            </tr>
+            <tr>
+              <td>Conclusion</td>
+              <td>Summarise the main points and answer the question clearly.</td>
+              <td>In conclusion, it can be said that...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Simple formula</h4>
+        <p>
+          <strong>Introduction:</strong> What is the topic?<br>
+          <strong>Body:</strong> What are your arguments?<br>
+          <strong>Conclusion:</strong> What is your final answer?
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>3. Writing a strong introduction</h3>
+      <p>
+        The introduction should lead the reader into the topic. It should not be too long.
+        It should make clear what the essay is about.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>Structure of an introduction</h4>
+        <p>
+          <strong>1. General opening:</strong> Introduce the topic.<br>
+          <strong>2. Problem or relevance:</strong> Explain why it matters.<br>
+          <strong>3. Thesis or guiding question:</strong> State what you will discuss.
+        </p>
+      </div>
+
+      <div class="sf-en-example">
+        <h4>Example introduction</h4>
+        <p>
+          <strong>
+            In modern society, social media plays an important role in the lives of young people.
+            It allows them to communicate quickly, but it can also create pressure and unrealistic expectations.
+            Therefore, it is important to discuss whether social media is more helpful or harmful for teenagers.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Useful introduction phrases</h4>
+        <p>
+          <strong>Nowadays, many people believe that...</strong><br>
+          <strong>In recent years, the question of ... has become increasingly important.</strong><br>
+          <strong>This topic is relevant because...</strong><br>
+          <strong>The following essay will discuss whether...</strong><br>
+          <strong>It is important to consider both the advantages and the disadvantages of...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>4. Writing body paragraphs</h3>
+      <p>
+        Each body paragraph should focus on one main idea. Do not mix too many different ideas in one paragraph.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>PEE structure</h4>
+        <p>
+          <strong>Point:</strong> State your main idea.<br>
+          <strong>Evidence / Example:</strong> Give proof, an example or a reference.<br>
+          <strong>Explanation:</strong> Explain why this supports your argument.
+        </p>
+      </div>
+
+      <div class="sf-en-example">
+        <h4>Example body paragraph</h4>
+        <p>
+          <strong>
+            One important advantage of social media is that it helps young people stay connected.
+            For example, students can communicate with classmates after school and ask questions about homework.
+            This shows that social media can support learning when it is used responsibly.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Better than simple opinions</h4>
+        <p>
+          Weak: <strong>Phones are good because everyone uses them.</strong><br>
+          Better: <strong>Phones can be useful because they allow students to access information quickly and organise their work more efficiently.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>5. Counterarguments</h3>
+      <p>
+        A strong essay often includes a counterargument. This shows that you understand both sides of the issue.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>Useful phrases for counterarguments</h4>
+        <p>
+          <strong>On the one hand, ... On the other hand, ...</strong><br>
+          <strong>It is true that...</strong><br>
+          <strong>However, this does not necessarily mean that...</strong><br>
+          <strong>Although this argument is convincing, one must also consider...</strong><br>
+          <strong>Despite these disadvantages, ...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-example">
+        <h4>Example</h4>
+        <p>
+          <strong>
+            It is true that mobile phones can distract students during lessons.
+            However, this does not mean that they should be completely banned.
+            With clear rules, they can also become useful learning tools.
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>6. Writing a conclusion</h3>
+      <p>
+        The conclusion should not introduce completely new arguments.
+        It should summarise the main points and give a clear final answer.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>Structure of a conclusion</h4>
+        <p>
+          <strong>1. Summary:</strong> Briefly repeat the main ideas.<br>
+          <strong>2. Final position:</strong> State your answer clearly.<br>
+          <strong>3. Optional outlook:</strong> Mention what might be important in the future.
+        </p>
+      </div>
+
+      <div class="sf-en-example">
+        <h4>Example conclusion</h4>
+        <p>
+          <strong>
+            In conclusion, social media has both advantages and disadvantages.
+            It can help young people communicate, but it can also create pressure.
+            In my opinion, it should not be banned, but students should learn how to use it responsibly.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Useful conclusion phrases</h4>
+        <p>
+          <strong>In conclusion, it can be said that...</strong><br>
+          <strong>To sum up, ...</strong><br>
+          <strong>Overall, the advantages outweigh the disadvantages.</strong><br>
+          <strong>From my point of view, the best solution would be to...</strong><br>
+          <strong>Therefore, it is important to...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>7. Useful linking words</h3>
+      <p>
+        Linking words make your essay more structured and more mature.
+      </p>
+
+      <div class="sf-en-table-wrap">
+        <table class="sf-en-table">
+          <thead>
+            <tr>
+              <th>Function</th>
+              <th>Useful words and phrases</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Starting</td>
+              <td>firstly, first of all, to begin with</td>
+              <td>First of all, education should prepare students for real life.</td>
+            </tr>
+            <tr>
+              <td>Adding</td>
+              <td>moreover, furthermore, in addition, also</td>
+              <td>Moreover, online tools can support independent learning.</td>
+            </tr>
+            <tr>
+              <td>Contrasting</td>
+              <td>however, nevertheless, on the other hand, although</td>
+              <td>However, too much screen time can be harmful.</td>
+            </tr>
+            <tr>
+              <td>Giving examples</td>
+              <td>for example, for instance, such as</td>
+              <td>For example, students can use apps to organise homework.</td>
+            </tr>
+            <tr>
+              <td>Explaining reasons</td>
+              <td>because, since, as, due to the fact that</td>
+              <td>Many students feel stressed because they compare themselves to others.</td>
+            </tr>
+            <tr>
+              <td>Showing results</td>
+              <td>therefore, thus, consequently, as a result</td>
+              <td>Therefore, schools should teach responsible media use.</td>
+            </tr>
+            <tr>
+              <td>Concluding</td>
+              <td>in conclusion, to sum up, overall</td>
+              <td>Overall, the issue is more complex than it first appears.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>8. Useful essay sentences</h3>
+
+      <div class="sf-en-rule">
+        <h4>Expressing an opinion</h4>
+        <p>
+          <strong>In my opinion, ...</strong><br>
+          <strong>From my point of view, ...</strong><br>
+          <strong>I believe that...</strong><br>
+          <strong>It seems to me that...</strong><br>
+          <strong>I am convinced that...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Introducing arguments</h4>
+        <p>
+          <strong>One important argument is that...</strong><br>
+          <strong>Another aspect to consider is...</strong><br>
+          <strong>It should also be mentioned that...</strong><br>
+          <strong>A further reason is that...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Giving examples</h4>
+        <p>
+          <strong>For example, ...</strong><br>
+          <strong>For instance, ...</strong><br>
+          <strong>This can be seen when...</strong><br>
+          <strong>A clear example of this is...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Analysing</h4>
+        <p>
+          <strong>This shows that...</strong><br>
+          <strong>This suggests that...</strong><br>
+          <strong>This highlights the fact that...</strong><br>
+          <strong>The author uses this to emphasise...</strong><br>
+          <strong>The reader gets the impression that...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>9. Text analysis phrases</h3>
+      <p>
+        In a text analysis, you should usually use the Present Simple.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>Useful analysis phrases</h4>
+        <p>
+          <strong>The text shows that...</strong><br>
+          <strong>The author criticises...</strong><br>
+          <strong>The narrator describes...</strong><br>
+          <strong>This passage suggests...</strong><br>
+          <strong>The character represents...</strong><br>
+          <strong>The scene illustrates...</strong><br>
+          <strong>The choice of words creates...</strong><br>
+          <strong>The atmosphere is...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-example">
+        <h4>Example</h4>
+        <p>
+          <strong>
+            This passage shows that the character feels isolated.
+            The choice of words creates a sad atmosphere and highlights his loneliness.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-en-correction">
+        <p><strong>Weak:</strong> The author showed that the character was afraid.</p>
+        <p><strong>Better:</strong> The author shows that the character is afraid.</p>
+        <p><strong>Explanation:</strong> In text analysis, use the Present Simple.</p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>10. Typical mistakes in English essays</h3>
+
+      <div class="sf-en-correction">
+        <p><strong>Wrong:</strong> In my opinion social media is good, because it is useful.</p>
+        <p><strong>Better:</strong> In my opinion, social media can be useful because it helps people communicate quickly.</p>
+        <p><strong>Explanation:</strong> Be precise. Do not just say something is “good”. Explain why.</p>
+      </div>
+
+      <div class="sf-en-correction">
+        <p><strong>Wrong:</strong> I am agree with this statement.</p>
+        <p><strong>Correct:</strong> I agree with this statement.</p>
+        <p><strong>Explanation:</strong> <strong>Agree</strong> is already a verb. Do not use <strong>am</strong>.</p>
+      </div>
+
+      <div class="sf-en-correction">
+        <p><strong>Wrong:</strong> The people is angry.</p>
+        <p><strong>Correct:</strong> The people are angry.</p>
+        <p><strong>Explanation:</strong> <strong>People</strong> is plural.</p>
+      </div>
+
+      <div class="sf-en-correction">
+        <p><strong>Wrong:</strong> He has many informations.</p>
+        <p><strong>Correct:</strong> He has a lot of information.</p>
+        <p><strong>Explanation:</strong> <strong>Information</strong> is uncountable in English.</p>
+      </div>
+
+      <div class="sf-en-correction">
+        <p><strong>Wrong:</strong> The author wants to say us that...</p>
+        <p><strong>Correct:</strong> The author wants to show that...</p>
+        <p><strong>Explanation:</strong> In analysis, <strong>the author shows/suggests/criticises</strong> sounds better.</p>
+      </div>
+
+      <div class="sf-en-correction">
+        <p><strong>Wrong:</strong> At the end, I can say that...</p>
+        <p><strong>Better:</strong> In conclusion, it can be said that...</p>
+        <p><strong>Explanation:</strong> <strong>In conclusion</strong> is more formal for essays.</p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>11. Weak vs strong essay style</h3>
+
+      <div class="sf-en-compare">
+        <div>
+          <h4>Weak style</h4>
+          <p>
+            <strong>
+              Social media is bad. Many people use it too much. I think it is not good for students.
+            </strong>
+          </p>
+        </div>
+        <div>
+          <h4>Stronger style</h4>
+          <p>
+            <strong>
+              Social media can have negative effects on students because it often distracts them from schoolwork.
+              In addition, constant comparison with others may increase stress and insecurity.
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Why is the second version better?</h4>
+        <p>
+          It is more precise, gives reasons and uses better linking words.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>12. How to write a speech</h3>
+      <p>
+        A speech is meant to be spoken. Therefore, it should sound natural, direct and clear.
+        You can address the audience directly.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>Basic speech structure</h4>
+        <p>
+          <strong>1. Greeting:</strong> Address the audience.<br>
+          <strong>2. Opening:</strong> Introduce the topic or occasion.<br>
+          <strong>3. Main part:</strong> Develop your message with examples or stories.<br>
+          <strong>4. Ending:</strong> Finish with a strong final thought.
+        </p>
+      </div>
+
+      <div class="sf-en-example">
+        <h4>Useful speech phrases</h4>
+        <p>
+          <strong>Ladies and gentlemen, ...</strong><br>
+          <strong>Dear classmates, ...</strong><br>
+          <strong>Today, I would like to talk about...</strong><br>
+          <strong>Let me begin with a simple question...</strong><br>
+          <strong>What we should remember is...</strong><br>
+          <strong>Thank you for listening.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>13. How to write and hold a eulogy</h3>
+      <p>
+        A <strong>eulogy</strong> is a speech given in memory of someone who has died.
+        In German, this is often called a <strong>Todesrede</strong> or <strong>Trauerrede</strong>.
+        A eulogy should be respectful, personal and calm.
+      </p>
+
+      <div class="sf-en-rule">
+        <h4>Purpose of a eulogy</h4>
+        <p>
+          A eulogy is not a normal biography. It should honour the person, remember meaningful moments
+          and give comfort to the people who are listening.
+        </p>
+      </div>
+
+      <div class="sf-en-table-wrap">
+        <table class="sf-en-table">
+          <thead>
+            <tr>
+              <th>Part</th>
+              <th>Function</th>
+              <th>Useful phrase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Opening</td>
+              <td>Address the audience and name the occasion.</td>
+              <td>We are gathered here today to remember...</td>
+            </tr>
+            <tr>
+              <td>Personal memory</td>
+              <td>Share a meaningful story or quality.</td>
+              <td>One thing I will always remember is...</td>
+            </tr>
+            <tr>
+              <td>Character</td>
+              <td>Describe what made the person special.</td>
+              <td>He / She was a person who...</td>
+            </tr>
+            <tr>
+              <td>Meaning</td>
+              <td>Explain what the person gave to others.</td>
+              <td>Through his / her kindness, he / she taught us...</td>
+            </tr>
+            <tr>
+              <td>Closing</td>
+              <td>End with gratitude, farewell and comfort.</td>
+              <td>We will carry his / her memory with us.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>14. Structure of a eulogy</h3>
+
+      <div class="sf-en-rule">
+        <h4>1. Opening</h4>
+        <p>
+          Start calmly and respectfully. Do not begin too dramatically.
+        </p>
+        <p>
+          <strong>Dear family and friends, we are gathered here today to remember a person who meant a great deal to us.</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>2. Personal memory</h4>
+        <p>
+          Tell a short story that shows something important about the person.
+        </p>
+        <p>
+          <strong>One memory that stays with me is the way she always listened carefully when someone needed help.</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>3. Character</h4>
+        <p>
+          Describe the person's values or qualities.
+        </p>
+        <p>
+          <strong>He was patient, generous and honest. He did not need many words to show that he cared.</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>4. Meaning for others</h4>
+        <p>
+          Explain what people can remember or learn from this person.
+        </p>
+        <p>
+          <strong>Through her kindness, she showed us how powerful small acts of care can be.</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>5. Closing</h4>
+        <p>
+          End with gratitude and a respectful farewell.
+        </p>
+        <p>
+          <strong>We are grateful for the time we had with him, and we will carry his memory with us.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>15. Useful eulogy phrases</h3>
+
+      <div class="sf-en-rule">
+        <h4>Opening</h4>
+        <p>
+          <strong>We are gathered here today to remember...</strong><br>
+          <strong>Today, we say goodbye to someone who was deeply loved.</strong><br>
+          <strong>It is difficult to find the right words on a day like this.</strong><br>
+          <strong>We are here not only to mourn, but also to remember and honour...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Memories</h4>
+        <p>
+          <strong>One thing I will always remember is...</strong><br>
+          <strong>I remember the way he / she...</strong><br>
+          <strong>Many of us knew him / her as someone who...</strong><br>
+          <strong>He / She had a special way of making people feel...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Character</h4>
+        <p>
+          <strong>He / She was kind, patient and generous.</strong><br>
+          <strong>He / She always tried to help others.</strong><br>
+          <strong>What made him / her special was...</strong><br>
+          <strong>He / She taught us the importance of...</strong>
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Closing</h4>
+        <p>
+          <strong>We will miss him / her deeply.</strong><br>
+          <strong>His / Her memory will remain with us.</strong><br>
+          <strong>We are thankful for the time we shared.</strong><br>
+          <strong>May we honour him / her by remembering what he / she stood for.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>16. Example: short eulogy</h3>
+      <p>
+        This is an example of a respectful, simple eulogy. It is completely fictional.
+      </p>
+
+      <div class="sf-en-example">
+        <h4>Example eulogy</h4>
+        <p>
+          <strong>
+            Dear family and friends,<br><br>
+            We are gathered here today to remember a person who meant a great deal to all of us.
+            It is difficult to find the right words on a day like this, but perhaps the most important thing
+            we can do is remember the kindness, warmth and quiet strength that he brought into our lives.<br><br>
+            One thing I will always remember is the way he listened. He did not need to speak loudly to make people feel understood.
+            He had a calm presence and a generous heart. Whether someone needed advice, help or simply a moment of attention,
+            he was there.<br><br>
+            He taught us that kindness does not have to be dramatic. Sometimes it appears in small gestures,
+            in patience, in honesty and in the willingness to care for others. These are the things that remain with us.<br><br>
+            Today, we say goodbye, but we also say thank you. Thank you for the memories, the love and the example you gave us.
+            We will miss you deeply, and we will carry your memory with us.
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>17. What to avoid in a eulogy</h3>
+
+      <div class="sf-en-table-wrap">
+        <table class="sf-en-table">
+          <thead>
+            <tr>
+              <th>Avoid</th>
+              <th>Why?</th>
+              <th>Better</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Too many private details</td>
+              <td>The audience may not need or want them.</td>
+              <td>Choose respectful, meaningful memories.</td>
+            </tr>
+            <tr>
+              <td>Trying to sound too dramatic</td>
+              <td>It can feel unnatural.</td>
+              <td>Use simple, honest language.</td>
+            </tr>
+            <tr>
+              <td>Listing facts like a biography</td>
+              <td>A eulogy should feel personal.</td>
+              <td>Focus on character and meaning.</td>
+            </tr>
+            <tr>
+              <td>Making jokes that may hurt people</td>
+              <td>The situation is sensitive.</td>
+              <td>Use warmth, not careless humour.</td>
+            </tr>
+            <tr>
+              <td>Speaking too quickly</td>
+              <td>The audience needs time to listen.</td>
+              <td>Speak slowly and pause.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>18. Mini-Training for GYM4</h3>
+      <p>
+        Try to solve the exercises first. Then open the solution.
+      </p>
+
+      <div class="sf-en-task">
+        <h4>Exercise 1 – Improve an introduction</h4>
+        <p>Improve this weak introduction:</p>
+        <p><strong>I write about phones. Phones are good and bad.</strong></p>
+        <button class="sf-en-toggle" onclick="toggleEnglischBox('en-gym4-l1')">Lösung anzeigen</button>
+        <div id="en-gym4-l1" class="sf-en-hidden-box">
+          <p>
+            <strong>
+              Nowadays, mobile phones play an important role in students' everyday lives.
+              They can be useful tools for communication and learning, but they can also distract students during lessons.
+              Therefore, it is important to discuss whether phones should be allowed at school.
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-en-task">
+        <h4>Exercise 2 – Correct a typical mistake</h4>
+        <p>Correct the sentence:</p>
+        <p><strong>I am agree with this opinion.</strong></p>
+        <button class="sf-en-toggle" onclick="toggleEnglischBox('en-gym4-l2')">Lösung anzeigen</button>
+        <div id="en-gym4-l2" class="sf-en-hidden-box">
+          <p><strong>I agree with this opinion.</strong></p>
+          <p><strong>Agree</strong> is a verb. Do not use <strong>am</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-en-task">
+        <h4>Exercise 3 – Build an argument</h4>
+        <p>Improve this argument:</p>
+        <p><strong>Homework is useful.</strong></p>
+        <button class="sf-en-toggle" onclick="toggleEnglischBox('en-gym4-l3')">Lösung anzeigen</button>
+        <div id="en-gym4-l3" class="sf-en-hidden-box">
+          <p>
+            <strong>
+              Homework is useful because it helps students revise what they have learned in class.
+              By working independently, they can find out whether they have really understood the topic.
+              For example, regular practice is especially important in languages and mathematics.
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-en-task">
+        <h4>Exercise 4 – Improve an analysis sentence</h4>
+        <p>Improve this sentence:</p>
+        <p><strong>The author wants to say us that the boy is sad.</strong></p>
+        <button class="sf-en-toggle" onclick="toggleEnglischBox('en-gym4-l4')">Lösung anzeigen</button>
+        <div id="en-gym4-l4" class="sf-en-hidden-box">
+          <p><strong>The author shows that the boy feels sad.</strong></p>
+          <p>This is shorter, more natural and better for text analysis.</p>
+        </div>
+      </div>
+
+      <div class="sf-en-task">
+        <h4>Exercise 5 – Eulogy opening</h4>
+        <p>Improve this opening:</p>
+        <p><strong>Hello. Today I speak about a dead person.</strong></p>
+        <button class="sf-en-toggle" onclick="toggleEnglischBox('en-gym4-l5')">Lösung anzeigen</button>
+        <div id="en-gym4-l5" class="sf-en-hidden-box">
+          <p>
+            <strong>
+              Dear family and friends, we are gathered here today to remember a person who meant a great deal to us.
+            </strong>
+          </p>
+          <p>This is more respectful and appropriate for a eulogy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-en-section">
+      <h3>19. Das Wichtigste für GYM4</h3>
+
+      <div class="sf-en-rule">
+        <h4>Essay</h4>
+        <p>
+          Use a clear structure: introduction, body paragraphs and conclusion.
+          Each argument needs explanation and an example.
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Style</h4>
+        <p>
+          Use precise language. Avoid vague words like <strong>good</strong>, <strong>bad</strong> or <strong>nice</strong>
+          without explanation.
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Text analysis</h4>
+        <p>
+          Use phrases like <strong>The author shows...</strong>, <strong>This suggests...</strong>,
+          <strong>The passage highlights...</strong>.
+        </p>
+      </div>
+
+      <div class="sf-en-rule">
+        <h4>Eulogy</h4>
+        <p>
+          A eulogy should be respectful, personal and calm. Focus on memories, character and gratitude.
+        </p>
+      </div>
+    </section>
+  `
 }
 
  
