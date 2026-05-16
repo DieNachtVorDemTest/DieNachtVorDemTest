@@ -3529,6 +3529,850 @@ const FRANZOESISCH_BEREICHE = [
       </div>
     </section>
   `
+},
+   ,
+{
+  id: "gym4",
+  titel: "GYM4",
+  untertitel: "Aufsatz und Synthèse",
+  beschreibung:
+    "Anleitung für französische Aufsätze und Synthèses: Aufbau, Einleitung, Hauptteil, Schluss, typische Fehler, gute Satzanfänge und nützliche Formulierungen.",
+  html: `
+    <section class="sf-fr-section">
+      <h2>GYM4 – Aufsatz und Synthèse schreiben</h2>
+      <p class="sf-fr-lead">
+        In GYM4 geht es darum, längere französische Texte klar, korrekt und überzeugend zu schreiben.
+        Besonders wichtig sind der Aufbau, gute Übergänge, genaue Formulierungen und typische Fehler,
+        die man vermeiden muss.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Grundregel</h4>
+        <p>
+          Ein guter französischer Text ist nicht möglichst kompliziert, sondern klar aufgebaut.
+          Jeder Absatz braucht eine klare Funktion: einführen, erklären, begründen, vergleichen,
+          zusammenfassen oder beurteilen.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>1. Der französische Aufsatz</h3>
+      <p>
+        Ein französischer Aufsatz ist meistens ein argumentativer Text. Du musst eine Frage beantworten,
+        deine Meinung begründen und deine Gedanken logisch ordnen.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Typische Themen</h4>
+        <p>
+          Les réseaux sociaux sont-ils dangereux pour les jeunes ?<br>
+          Faut-il interdire les téléphones portables à l'école ?<br>
+          Est-ce que les devoirs sont encore utiles ?<br>
+          La lecture est-elle encore importante aujourd'hui ?<br>
+          Les jeunes ont-ils trop de pression à l'école ?
+        </p>
+      </div>
+
+      <div class="sf-fr-compare">
+        <div>
+          <h4>Schwach</h4>
+          <p>
+            Je pense que les téléphones sont bons parce que tout le monde les utilise.
+          </p>
+        </div>
+        <div>
+          <h4>Besser</h4>
+          <p>
+            À mon avis, les téléphones portables peuvent être utiles à l'école s'ils sont utilisés de manière responsable.
+            Ils permettent de chercher rapidement des informations, mais ils peuvent aussi distraire les élèves.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>2. Aufbau eines Aufsatzes</h3>
+      <p>
+        Ein guter Aufsatz besteht aus drei Hauptteilen: Einleitung, Hauptteil und Schluss.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Teil</th>
+              <th>Inhalt</th>
+              <th>Nützliche Formulierung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Introduction</td>
+              <td>Thema einführen und Fragestellung nennen</td>
+              <td>Aujourd'hui, la question de ... est souvent discutée.</td>
+            </tr>
+            <tr>
+              <td>Développement</td>
+              <td>Argumente erklären, Beispiele geben, eventuell Gegenargumente nennen</td>
+              <td>Un premier argument est que ...</td>
+            </tr>
+            <tr>
+              <td>Conclusion</td>
+              <td>Gedanken zusammenfassen und eigene Position klar nennen</td>
+              <td>En conclusion, on peut dire que ...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Wichtig</h4>
+        <p>
+          Schreibe nicht einfach eine Liste von Meinungen. Jeder Gedanke braucht eine Begründung
+          und möglichst ein Beispiel.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>3. Eine gute Einleitung schreiben</h3>
+      <p>
+        Die Einleitung soll das Thema verständlich einführen. Sie darf nicht zu lang sein.
+        Wichtig ist, dass am Ende klar wird, worüber du schreiben wirst.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Aufbau der Einleitung</h4>
+        <p>
+          <strong>1. Allgemeiner Einstieg:</strong> Thema nennen<br>
+          <strong>2. Problem zeigen:</strong> Warum ist das Thema wichtig?<br>
+          <strong>3. Fragestellung:</strong> Welche Frage wird diskutiert?
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel</h4>
+        <p>
+          <strong>
+            Aujourd'hui, les réseaux sociaux jouent un rôle important dans la vie des jeunes.
+            Ils permettent de communiquer rapidement, mais ils peuvent aussi créer de la pression.
+            Il faut donc se demander si les réseaux sociaux sont plutôt utiles ou dangereux pour les adolescents.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Gute Einleitungssätze</h4>
+        <p>
+          <strong>Aujourd'hui, le thème de ... est très important.</strong><br>
+          <strong>De nos jours, beaucoup de jeunes utilisent ...</strong><br>
+          <strong>La question de ... est souvent discutée.</strong><br>
+          <strong>Il faut se demander si ...</strong><br>
+          <strong>Dans cette rédaction, je vais discuter la question suivante : ...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>4. Einen guten Hauptteil schreiben</h3>
+      <p>
+        Im Hauptteil entwickelst du deine Argumente. Ein gutes Argument besteht aus Behauptung,
+        Erklärung und Beispiel.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Teil</th>
+              <th>Funktion</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Argument</td>
+              <td>Was ist dein Punkt?</td>
+              <td>Les réseaux sociaux peuvent aider les jeunes à rester en contact.</td>
+            </tr>
+            <tr>
+              <td>Explication</td>
+              <td>Warum ist das so?</td>
+              <td>Ils permettent de communiquer rapidement avec des amis ou la famille.</td>
+            </tr>
+            <tr>
+              <td>Exemple</td>
+              <td>Woran sieht man das konkret?</td>
+              <td>Par exemple, un élève peut demander de l'aide à un camarade après l'école.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Guter Argumentationsabsatz</h4>
+        <p>
+          <strong>
+            Un premier avantage des réseaux sociaux est qu'ils facilitent la communication.
+            Les jeunes peuvent rester en contact avec leurs amis, même s'ils n'habitent pas dans la même ville.
+            Par exemple, un élève peut poser une question à un camarade lorsqu'il ne comprend pas un devoir.
+            Ainsi, les réseaux sociaux peuvent aussi avoir une fonction pratique.
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>5. Gegenargumente einbauen</h3>
+      <p>
+        Ein guter Aufsatz zeigt oft beide Seiten. Dadurch wirkt dein Text reifer und überzeugender.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Nützliche Formulierungen</h4>
+        <p>
+          <strong>D'un côté, ...</strong> – Einerseits ...<br>
+          <strong>D'un autre côté, ...</strong> – Andererseits ...<br>
+          <strong>Il est vrai que ...</strong> – Es stimmt, dass ...<br>
+          <strong>Cependant, ...</strong> – Jedoch ...<br>
+          <strong>Malgré cet argument, ...</strong> – Trotz dieses Arguments ...<br>
+          <strong>On peut aussi dire que ...</strong> – Man kann auch sagen, dass ...
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel</h4>
+        <p>
+          <strong>
+            Il est vrai que les téléphones portables peuvent distraire les élèves pendant les cours.
+            Cependant, cela ne signifie pas qu'ils doivent être complètement interdits.
+            Avec des règles claires, ils peuvent aussi devenir un outil utile pour apprendre.
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>6. Einen guten Schluss schreiben</h3>
+      <p>
+        Im Schluss fasst du deine wichtigsten Gedanken kurz zusammen und gibst eine klare Antwort
+        auf die Fragestellung.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Aufbau des Schlusses</h4>
+        <p>
+          <strong>1. Zusammenfassen:</strong> Was waren die wichtigsten Punkte?<br>
+          <strong>2. Urteil:</strong> Was ist deine Position?<br>
+          <strong>3. Ausblick:</strong> Was könnte in Zukunft wichtig sein?
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel</h4>
+        <p>
+          <strong>
+            En conclusion, les réseaux sociaux ont des avantages et des inconvénients.
+            Ils peuvent faciliter la communication, mais ils peuvent aussi créer de la pression.
+            À mon avis, il ne faut pas les interdire, mais apprendre aux jeunes à les utiliser de manière responsable.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Gute Schlusssätze</h4>
+        <p>
+          <strong>En conclusion, on peut dire que ...</strong><br>
+          <strong>Pour conclure, je pense que ...</strong><br>
+          <strong>Finalement, il est important de ...</strong><br>
+          <strong>À mon avis, la meilleure solution serait de ...</strong><br>
+          <strong>Il faudrait donc ...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>7. Die Synthèse: Was ist das?</h3>
+      <p>
+        Eine <strong>synthèse</strong> ist keine normale Zusammenfassung und auch kein persönlicher Aufsatz.
+        Du bekommst meistens mehrere Texte oder Dokumente und musst die wichtigsten Informationen
+        geordnet zusammenführen.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Wichtigster Unterschied</h4>
+        <p>
+          In einer Synthèse geht es nicht zuerst um deine persönliche Meinung.
+          Du sollst zeigen, was die Dokumente gemeinsam sagen, wo sie sich unterscheiden
+          und welche Hauptideen daraus entstehen.
+        </p>
+      </div>
+
+      <div class="sf-fr-compare">
+        <div>
+          <h4>Résumé</h4>
+          <p>
+            Du fasst einen Text kurz zusammen.
+          </p>
+        </div>
+        <div>
+          <h4>Synthèse</h4>
+          <p>
+            Du verbindest mehrere Informationen aus mehreren Dokumenten zu einem geordneten Text.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>8. Aufbau einer Synthèse</h3>
+      <p>
+        Eine Synthèse braucht einen klaren, sachlichen Aufbau.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Teil</th>
+              <th>Inhalt</th>
+              <th>Formulierung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Introduction</td>
+              <td>Thema und zentrale Fragestellung nennen</td>
+              <td>Les documents traitent du thème de ...</td>
+            </tr>
+            <tr>
+              <td>Partie 1</td>
+              <td>Erste Hauptidee erklären</td>
+              <td>Tout d'abord, les documents montrent que ...</td>
+            </tr>
+            <tr>
+              <td>Partie 2</td>
+              <td>Zweite Hauptidee erklären</td>
+              <td>Ensuite, on constate que ...</td>
+            </tr>
+            <tr>
+              <td>Partie 3</td>
+              <td>Unterschiede oder weitere Perspektive erklären</td>
+              <td>Enfin, les documents soulignent aussi que ...</td>
+            </tr>
+            <tr>
+              <td>Conclusion</td>
+              <td>Hauptaussage knapp zusammenfassen</td>
+              <td>Pour conclure, les documents mettent en évidence que ...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>9. Gute Formulierungen für eine Synthèse</h3>
+
+      <div class="sf-fr-rule">
+        <h4>Einleitung</h4>
+        <p>
+          <strong>Les documents abordent le thème de ...</strong><br>
+          <strong>Le corpus traite de la question de ...</strong><br>
+          <strong>Les textes présentent différentes perspectives sur ...</strong><br>
+          <strong>Il s'agit donc de comprendre comment ...</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Dokumente verbinden</h4>
+        <p>
+          <strong>Le premier document montre que ...</strong><br>
+          <strong>Le deuxième document souligne ...</strong><br>
+          <strong>Ces deux documents mettent en évidence ...</strong><br>
+          <strong>Contrairement au premier texte, le deuxième insiste sur ...</strong><br>
+          <strong>Les documents se complètent, car ...</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Vergleichen</h4>
+        <p>
+          <strong>Alors que ...</strong> – Während ...<br>
+          <strong>En revanche, ...</strong> – Hingegen ...<br>
+          <strong>Contrairement à ...</strong> – Im Gegensatz zu ...<br>
+          <strong>De même, ...</strong> – Ebenso ...<br>
+          <strong>Les deux textes montrent que ...</strong> – Beide Texte zeigen, dass ...
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Schluss</h4>
+        <p>
+          <strong>Pour conclure, les documents montrent que ...</strong><br>
+          <strong>En résumé, le corpus met en évidence ...</strong><br>
+          <strong>La synthèse des documents permet de comprendre que ...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>10. Was du in einer Synthèse vermeiden solltest</h3>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Fehler</th>
+              <th>Warum schlecht?</th>
+              <th>Besser</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ich-Form benutzen</td>
+              <td>Eine Synthèse ist sachlich.</td>
+              <td>Les documents montrent que ...</td>
+            </tr>
+            <tr>
+              <td>Nur Dokument 1, dann Dokument 2, dann Dokument 3 nacherzählen</td>
+              <td>Das ist eher eine Zusammenfassung als eine Synthèse.</td>
+              <td>Nach Hauptideen ordnen.</td>
+            </tr>
+            <tr>
+              <td>Eigene Meinung zu früh einbauen</td>
+              <td>Die Dokumente stehen im Zentrum.</td>
+              <td>Zuerst die Dokumente darstellen.</td>
+            </tr>
+            <tr>
+              <td>Lange Zitate kopieren</td>
+              <td>Eine Synthèse soll zusammenführen, nicht abschreiben.</td>
+              <td>Kurz paraphrasieren.</td>
+            </tr>
+            <tr>
+              <td>Keine Übergänge verwenden</td>
+              <td>Der Text wirkt unverbunden.</td>
+              <td>Connecteurs logiques verwenden.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>11. Connecteurs logiques: Einleitungswörter und Übergänge</h3>
+      <p>
+        Gute Verbindungswörter machen deinen Text strukturierter und gymnasialer.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Funktion</th>
+              <th>Französisch</th>
+              <th>Deutsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beginnen</td>
+              <td>tout d'abord, premièrement, au début</td>
+              <td>zuerst, erstens, am Anfang</td>
+            </tr>
+            <tr>
+              <td>Ergänzen</td>
+              <td>de plus, en outre, aussi, également</td>
+              <td>ausserdem, zusätzlich, auch, ebenfalls</td>
+            </tr>
+            <tr>
+              <td>Begründen</td>
+              <td>car, parce que, puisque, en effet</td>
+              <td>denn, weil, da, tatsächlich</td>
+            </tr>
+            <tr>
+              <td>Folge zeigen</td>
+              <td>donc, ainsi, c'est pourquoi, par conséquent</td>
+              <td>also, somit, deshalb, folglich</td>
+            </tr>
+            <tr>
+              <td>Gegensatz</td>
+              <td>mais, cependant, pourtant, en revanche, toutefois</td>
+              <td>aber, jedoch, dennoch, hingegen, allerdings</td>
+            </tr>
+            <tr>
+              <td>Beispiel geben</td>
+              <td>par exemple, notamment, comme le montre ...</td>
+              <td>zum Beispiel, insbesondere, wie ... zeigt</td>
+            </tr>
+            <tr>
+              <td>Zusammenfassen</td>
+              <td>en résumé, en somme, pour conclure</td>
+              <td>zusammenfassend, insgesamt, abschliessend</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>12. Gute Sätze für einen Aufsatz</h3>
+
+      <div class="sf-fr-rule">
+        <h4>Meinung ausdrücken</h4>
+        <p>
+          <strong>À mon avis, ...</strong><br>
+          <strong>Selon moi, ...</strong><br>
+          <strong>Je pense que ...</strong><br>
+          <strong>Je suis convaincu que ...</strong><br>
+          <strong>Il me semble que ...</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Argumente einführen</h4>
+        <p>
+          <strong>Un premier argument est que ...</strong><br>
+          <strong>Un autre aspect important est ...</strong><br>
+          <strong>Il faut aussi prendre en compte que ...</strong><br>
+          <strong>On ne doit pas oublier que ...</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Beispiele geben</h4>
+        <p>
+          <strong>Par exemple, ...</strong><br>
+          <strong>On peut penser à ...</strong><br>
+          <strong>Cela se voit surtout quand ...</strong><br>
+          <strong>Un exemple concret est ...</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Abwägen</h4>
+        <p>
+          <strong>D'un côté ..., mais de l'autre côté ...</strong><br>
+          <strong>Il est vrai que ..., cependant ...</strong><br>
+          <strong>Même si cet argument est important, ...</strong><br>
+          <strong>Malgré ces avantages, il existe aussi des problèmes.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>13. Gute Sätze für eine Textanalyse</h3>
+      <p>
+        In einer Analyse verwendest du meistens das Présent und formulierst sachlich.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Nützliche Analyseformulierungen</h4>
+        <p>
+          <strong>Le texte montre que ...</strong><br>
+          <strong>L'auteur critique ...</strong><br>
+          <strong>Le narrateur décrit ...</strong><br>
+          <strong>Ce passage souligne ...</strong><br>
+          <strong>Cette phrase met en évidence ...</strong><br>
+          <strong>Le personnage semble ...</strong><br>
+          <strong>La situation révèle ...</strong><br>
+          <strong>Le choix des mots crée une atmosphère ...</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel</h4>
+        <p>
+          <strong>
+            Ce passage montre que le personnage se sent isolé.
+            Le choix des mots crée une atmosphère triste et souligne son sentiment de solitude.
+          </strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>14. Häufige Fehler im französischen Schreiben</h3>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> cet passage montre que...</p>
+        <p><strong>Richtig:</strong> ce passage montre que...</p>
+        <p><strong>Erklärung:</strong> <strong>passage</strong> ist maskulin und beginnt mit einem Konsonanten. Deshalb braucht man <strong>ce</strong>.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> cette problème est important.</p>
+        <p><strong>Richtig:</strong> ce problème est important.</p>
+        <p><strong>Erklärung:</strong> <strong>problème</strong> ist maskulin.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> les jeunes sont beaucoup stressés.</p>
+        <p><strong>Besser:</strong> les jeunes sont très stressés.</p>
+        <p><strong>Erklärung:</strong> Bei Adjektiven benutzt man meistens <strong>très</strong>, nicht <strong>beaucoup</strong>.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Je suis agree avec cette opinion.</p>
+        <p><strong>Richtig:</strong> Je suis d'accord avec cette opinion.</p>
+        <p><strong>Erklärung:</strong> Französisch benutzt hier nicht das englische <strong>agree</strong>, sondern <strong>être d'accord</strong>.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Je pense, que les devoirs sont utiles.</p>
+        <p><strong>Richtig:</strong> Je pense que les devoirs sont utiles.</p>
+        <p><strong>Erklärung:</strong> Im Französischen steht normalerweise kein Komma vor <strong>que</strong>.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Beaucoup des élèves utilisent leur téléphone.</p>
+        <p><strong>Richtig:</strong> Beaucoup d'élèves utilisent leur téléphone.</p>
+        <p><strong>Erklärung:</strong> Nach <strong>beaucoup</strong> steht meistens <strong>de</strong>.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> À la fin, je can dire que...</p>
+        <p><strong>Richtig:</strong> Pour conclure, je peux dire que...</p>
+        <p><strong>Erklärung:</strong> Nicht Englisch und Französisch mischen. <strong>can</strong> ist Englisch; Französisch: <strong>je peux</strong>.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Le texte est écrit très good.</p>
+        <p><strong>Richtig:</strong> Le texte est bien écrit.</p>
+        <p><strong>Erklärung:</strong> <strong>good</strong> ist Englisch. Im Französischen sagt man hier <strong>bien écrit</strong>.</p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>15. Häufige deutsche Denkfehler im Französischen</h3>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Deutsch gedacht</th>
+              <th>Falsch auf Französisch</th>
+              <th>Richtig</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ich bin einverstanden</td>
+              <td>Je suis agree</td>
+              <td>Je suis d'accord.</td>
+            </tr>
+            <tr>
+              <td>Ich habe 16 Jahre</td>
+              <td>Je suis 16 ans</td>
+              <td>J'ai 16 ans.</td>
+            </tr>
+            <tr>
+              <td>Ich mache meine Hausaufgaben</td>
+              <td>Je fais mes devoir</td>
+              <td>Je fais mes devoirs.</td>
+            </tr>
+            <tr>
+              <td>Viele Schüler</td>
+              <td>beaucoup des élèves</td>
+              <td>beaucoup d'élèves</td>
+            </tr>
+            <tr>
+              <td>Dieser Abschnitt</td>
+              <td>cet passage</td>
+              <td>ce passage</td>
+            </tr>
+            <tr>
+              <td>Meiner Meinung nach</td>
+              <td>Dans mon opinion</td>
+              <td>À mon avis</td>
+            </tr>
+            <tr>
+              <td>Ich interessiere mich für</td>
+              <td>Je suis intéressé pour</td>
+              <td>Je m'intéresse à</td>
+            </tr>
+            <tr>
+              <td>Ich warte auf</td>
+              <td>J'attends pour</td>
+              <td>J'attends</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>16. Mini-Muster: Aufsatzabschnitt</h3>
+      <p>
+        So könnte ein guter Abschnitt in einem französischen Aufsatz aussehen:
+      </p>
+
+      <div class="sf-fr-example">
+        <h4>Beispielabsatz</h4>
+        <p>
+          <strong>
+            Un argument important contre l'utilisation excessive des réseaux sociaux est la pression sociale.
+            Beaucoup de jeunes comparent leur vie avec celle des autres et pensent qu'ils doivent toujours être parfaits.
+            Par exemple, les photos publiées en ligne montrent souvent seulement les meilleurs moments.
+            Cela peut créer un sentiment d'insécurité et de frustration.
+            C'est pourquoi il est important d'apprendre à utiliser les réseaux sociaux avec distance.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Warum ist dieser Abschnitt gut?</h4>
+        <p>
+          Er beginnt mit einem klaren Argument, erklärt den Gedanken, gibt ein Beispiel
+          und zieht eine logische Schlussfolgerung.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>17. Mini-Muster: Synthèse-Abschnitt</h3>
+      <p>
+        In einer Synthèse sollst du sachlich schreiben und mehrere Dokumente miteinander verbinden.
+      </p>
+
+      <div class="sf-fr-example">
+        <h4>Beispielabsatz</h4>
+        <p>
+          <strong>
+            Tout d'abord, les documents montrent que les réseaux sociaux occupent une place importante dans la vie des jeunes.
+            Le premier document insiste sur leur rôle dans la communication quotidienne,
+            tandis que le deuxième document souligne les risques liés à la comparaison sociale.
+            Ainsi, le corpus présente les réseaux sociaux comme un outil utile, mais aussi comme une source possible de pression.
+          </strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Warum ist dieser Abschnitt gut?</h4>
+        <p>
+          Er nennt eine Hauptidee, verbindet zwei Dokumente und formuliert eine gemeinsame Aussage,
+          ohne einfach nur nachzuerzählen.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>18. Mini-Training für GYM4</h3>
+      <p>
+        Löse zuerst selbst. Danach kannst du die Lösung anzeigen.
+      </p>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 1 – Einleitung verbessern</h4>
+        <p>Verbessere diese Einleitung:</p>
+        <p><strong>Je vais parler des téléphones. Les téléphones sont bien et mauvais.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym4-l1')">Lösung anzeigen</button>
+        <div id="fr-gym4-l1" class="sf-fr-hidden-box">
+          <p>
+            <strong>
+              Aujourd'hui, les téléphones portables jouent un rôle important dans la vie des jeunes.
+              Ils peuvent être utiles pour communiquer et apprendre, mais ils peuvent aussi distraire.
+              Il faut donc se demander s'ils devraient être autorisés à l'école.
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 2 – Fehler korrigieren</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Cet passage montre que les jeunes sont beaucoup stressés.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym4-l2')">Lösung anzeigen</button>
+        <div id="fr-gym4-l2" class="sf-fr-hidden-box">
+          <p><strong>Ce passage montre que les jeunes sont très stressés.</strong></p>
+          <p><strong>passage</strong> braucht <strong>ce</strong>. Bei Adjektiven benutzt man meistens <strong>très</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 3 – Argument ausbauen</h4>
+        <p>Baue dieses Argument aus:</p>
+        <p><strong>Les devoirs sont utiles.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym4-l3')">Lösung anzeigen</button>
+        <div id="fr-gym4-l3" class="sf-fr-hidden-box">
+          <p>
+            <strong>
+              Les devoirs sont utiles parce qu'ils permettent aux élèves de revoir ce qu'ils ont appris en classe.
+              En travaillant seuls, ils peuvent vérifier s'ils ont vraiment compris la matière.
+              Par exemple, en mathématiques ou en langues, il faut souvent s'entraîner régulièrement pour progresser.
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 4 – Synthèse-Satz verbessern</h4>
+        <p>Verbessere:</p>
+        <p><strong>Document 1 dit ça et document 2 dit autre chose.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym4-l4')">Lösung anzeigen</button>
+        <div id="fr-gym4-l4" class="sf-fr-hidden-box">
+          <p>
+            <strong>
+              Le premier document met en avant les avantages de cette situation,
+              tandis que le deuxième document insiste davantage sur ses conséquences négatives.
+            </strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 5 – Schluss formulieren</h4>
+        <p>Schreibe einen besseren Schluss für das Thema soziale Medien:</p>
+        <p><strong>Donc les réseaux sociaux sont bien mais aussi pas bien.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym4-l5')">Lösung anzeigen</button>
+        <div id="fr-gym4-l5" class="sf-fr-hidden-box">
+          <p>
+            <strong>
+              En conclusion, les réseaux sociaux présentent à la fois des avantages et des risques.
+              Ils facilitent la communication, mais ils peuvent aussi créer de la pression.
+              À mon avis, il est donc essentiel d'apprendre à les utiliser de manière responsable.
+            </strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>19. Das Wichtigste für GYM4</h3>
+
+      <div class="sf-fr-rule">
+        <h4>Aufsatz</h4>
+        <p>
+          Einleitung, Hauptteil, Schluss. Jedes Argument braucht Erklärung und Beispiel.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Synthèse</h4>
+        <p>
+          Nicht deine Meinung steht im Zentrum, sondern die Verbindung der Dokumente.
+          Ordne nach Hauptideen, nicht einfach nach Dokument 1, 2 und 3.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Stil</h4>
+        <p>
+          Benutze klare Übergänge wie <strong>tout d'abord</strong>, <strong>de plus</strong>,
+          <strong>cependant</strong>, <strong>ainsi</strong> und <strong>pour conclure</strong>.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Fehler vermeiden</h4>
+        <p>
+          Nicht: <strong>cet passage</strong>, sondern <strong>ce passage</strong>.<br>
+          Nicht: <strong>beaucoup des élèves</strong>, sondern <strong>beaucoup d'élèves</strong>.<br>
+          Nicht: <strong>Je suis agree</strong>, sondern <strong>Je suis d'accord</strong>.
+        </p>
+      </div>
+    </section>
+  `
 }
 
   
