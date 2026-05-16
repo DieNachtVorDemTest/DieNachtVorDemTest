@@ -484,11 +484,12 @@
     }
 
     .chat-compose {
-      background: rgba(2, 6, 23, 0.72);
+      background: rgba(2, 6, 23, 0.76);
       border: 1px solid rgba(148, 163, 184, 0.24);
-      border-radius: 16px;
-      padding: 16px;
-      margin-bottom: 18px;
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 20px;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.22);
     }
 
     .chat-compose h3 {
@@ -523,13 +524,39 @@
       border-color: #818cf8;
     }
 
+    .chat-visible-area {
+      background: rgba(2, 6, 23, 0.76);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      border-radius: 18px;
+      padding: 18px;
+      margin-top: 20px;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.22);
+    }
+
+    .chat-visible-header {
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+    }
+
+    .chat-visible-header h3 {
+      margin: 0 0 6px;
+      font-size: 22px;
+    }
+
+    .chat-visible-header p {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
     .chat-list {
       display: grid;
       gap: 16px;
     }
 
     .chat-message {
-      background: rgba(2, 6, 23, 0.78);
+      background: rgba(15, 23, 42, 0.92);
       border: 1px solid rgba(148, 163, 184, 0.24);
       border-radius: 16px;
       padding: 16px;
@@ -562,7 +589,7 @@
     }
 
     .reply-item {
-      background: rgba(15, 23, 42, 0.72);
+      background: rgba(2, 6, 23, 0.66);
       border: 1px solid rgba(148, 163, 184, 0.18);
       border-radius: 12px;
       padding: 12px;
@@ -575,7 +602,7 @@
 
     .reply-box {
       margin-top: 12px;
-      background: rgba(15, 23, 42, 0.72);
+      background: rgba(2, 6, 23, 0.66);
       border: 1px solid rgba(148, 163, 184, 0.18);
       border-radius: 12px;
       padding: 12px;
@@ -735,7 +762,14 @@
               </div>
             </div>
 
-            <div id="chat-list" class="chat-list"></div>
+            <div class="chat-visible-area">
+              <div class="chat-visible-header">
+                <h3 id="chat-visible-title">Freigeschaltete Fragen</h3>
+                <p>Hier erscheinen nur Fragen und Antworten, die in Firebase freigeschaltet wurden.</p>
+              </div>
+
+              <div id="chat-list" class="chat-list"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -786,6 +820,7 @@
     const chatQuestionTitle = document.getElementById("chat-question-title");
     const chatQuestionText = document.getElementById("chat-question-text");
     const chatList = document.getElementById("chat-list");
+    const chatVisibleTitle = document.getElementById("chat-visible-title");
 
     const loadedSubjectScripts = {};
 
@@ -920,6 +955,7 @@
       materialContent.innerHTML = "";
       currentSubject = null;
       currentIsDirectSubject = false;
+      currentChatSubject = null;
       stopChatListener();
 
       subjects.forEach(function(subject) {
@@ -985,6 +1021,7 @@
       materialContent.innerHTML = "";
       currentSubject = null;
       currentIsDirectSubject = false;
+      currentChatSubject = null;
       stopChatListener();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -1196,8 +1233,12 @@
       chatView.classList.remove("hidden");
       materialContent.innerHTML = "";
 
-      if (!currentChatSubject && subjects.length > 0) {
-        openChatSubject(subjects[0]);
+      if (!currentChatSubject) {
+        chatBoard.classList.add("hidden");
+        chatList.innerHTML = "";
+        document.querySelectorAll(".chat-subject-card").forEach(function(card) {
+          card.classList.remove("active");
+        });
       }
 
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -1215,6 +1256,7 @@
       currentChatSubject = subject;
       chatBoard.classList.remove("hidden");
       chatComposeTitle.textContent = "Neue Frage stellen · " + subject.name;
+      chatVisibleTitle.textContent = "Freigeschaltete Fragen · " + subject.name;
       chatQuestionTitle.value = "";
       chatQuestionText.value = "";
 
@@ -1254,76 +1296,91 @@
         .orderBy("createdAt", "desc")
         .limit(50)
         .onSnapshot(async function(snapshot) {
-          if (snapshot.empty) {
-            chatList.innerHTML = `
-              <div class="chat-message">
-                <h3>Noch keine sichtbaren Fragen</h3>
-                <p class="small">Für ${escapeHTML(subject.name)} wurden noch keine Fragen freigeschaltet.</p>
-              </div>
-            `;
-            return;
-          }
-
-          const messageHtmlParts = [];
-
-          for (const doc of snapshot.docs) {
-            const message = doc.data();
-
-            const repliesSnapshot = await db
-              .collection("premiumChats")
-              .doc(subject.key)
-              .collection("messages")
-              .doc(doc.id)
-              .collection("replies")
-              .where("visible", "==", true)
-              .orderBy("createdAt", "asc")
-              .get();
-
-            let repliesHtml = "";
-
-            repliesSnapshot.forEach(function(replyDoc) {
-              const reply = replyDoc.data();
-
-              repliesHtml += `
-                <div class="reply-item">
-                  <div class="chat-meta">
-                    Antwort von <strong>${escapeHTML(reply.authorName)}</strong> · ${escapeHTML(formatDate(reply.createdAt))}
-                  </div>
-                  <p>${escapeHTML(reply.text)}</p>
+          try {
+            if (snapshot.empty) {
+              chatList.innerHTML = `
+                <div class="chat-message">
+                  <h3>Noch keine sichtbaren Fragen</h3>
+                  <p class="small">Für ${escapeHTML(subject.name)} wurden noch keine Fragen freigeschaltet.</p>
                 </div>
               `;
-            });
-
-            if (!repliesHtml) {
-              repliesHtml = `<p class="small">Noch keine freigeschalteten Antworten.</p>`;
+              return;
             }
 
-            messageHtmlParts.push(`
+            const messageHtmlParts = [];
+
+            for (const doc of snapshot.docs) {
+              const message = doc.data();
+
+              let repliesHtml = "";
+
+              try {
+                const repliesSnapshot = await db
+                  .collection("premiumChats")
+                  .doc(subject.key)
+                  .collection("messages")
+                  .doc(doc.id)
+                  .collection("replies")
+                  .where("visible", "==", true)
+                  .orderBy("createdAt", "asc")
+                  .get();
+
+                repliesSnapshot.forEach(function(replyDoc) {
+                  const reply = replyDoc.data();
+
+                  repliesHtml += `
+                    <div class="reply-item">
+                      <div class="chat-meta">
+                        Antwort von <strong>${escapeHTML(reply.authorName)}</strong> · ${escapeHTML(formatDate(reply.createdAt))}
+                      </div>
+                      <p>${escapeHTML(reply.text)}</p>
+                    </div>
+                  `;
+                });
+              } catch (replyError) {
+                repliesHtml = `
+                  <p class="small">Antworten konnten nicht geladen werden: ${escapeHTML(replyError.message)}</p>
+                `;
+              }
+
+              if (!repliesHtml) {
+                repliesHtml = `<p class="small">Noch keine freigeschalteten Antworten.</p>`;
+              }
+
+              messageHtmlParts.push(`
+                <div class="chat-message">
+                  <h3>${escapeHTML(message.title)}</h3>
+
+                  <div class="chat-meta">
+                    Frage von <strong>${escapeHTML(message.authorName)}</strong> · ${escapeHTML(formatDate(message.createdAt))}
+                  </div>
+
+                  <div class="chat-text">${escapeHTML(message.text)}</div>
+
+                  <button class="secondary" onclick="toggleReplyForm('${doc.id}')">Antwort schreiben</button>
+
+                  <div id="reply-box-${doc.id}" class="reply-box hidden">
+                    <textarea id="reply-text-${doc.id}" maxlength="2500" placeholder="Schreibe deine Antwort. Sie wird erst sichtbar, wenn sie freigeschaltet wurde."></textarea>
+                    <button onclick="sendChatReply('${doc.id}')">Antwort absenden</button>
+                    <div class="pending-note">Antworten werden gespeichert, aber erst nach Freischaltung angezeigt.</div>
+                  </div>
+
+                  <div class="reply-list">
+                    ${repliesHtml}
+                  </div>
+                </div>
+              `);
+            }
+
+            chatList.innerHTML = messageHtmlParts.join("");
+          } catch (error) {
+            chatList.innerHTML = `
               <div class="chat-message">
-                <h3>${escapeHTML(message.title)}</h3>
-
-                <div class="chat-meta">
-                  Frage von <strong>${escapeHTML(message.authorName)}</strong> · ${escapeHTML(formatDate(message.createdAt))}
-                </div>
-
-                <div class="chat-text">${escapeHTML(message.text)}</div>
-
-                <button class="secondary" onclick="toggleReplyForm('${doc.id}')">Antwort schreiben</button>
-
-                <div id="reply-box-${doc.id}" class="reply-box hidden">
-                  <textarea id="reply-text-${doc.id}" maxlength="2500" placeholder="Schreibe deine Antwort. Sie wird erst sichtbar, wenn sie freigeschaltet wurde."></textarea>
-                  <button onclick="sendChatReply('${doc.id}')">Antwort absenden</button>
-                  <div class="pending-note">Antworten werden gespeichert, aber erst nach Freischaltung angezeigt.</div>
-                </div>
-
-                <div class="reply-list">
-                  ${repliesHtml}
-                </div>
+                <h3>Chat konnte nicht angezeigt werden</h3>
+                <p class="small">${escapeHTML(error.message)}</p>
               </div>
-            `);
+            `;
           }
-
-          chatList.innerHTML = messageHtmlParts.join("");
         }, function(error) {
           chatList.innerHTML = `
             <div class="chat-message">
