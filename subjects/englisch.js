@@ -1493,6 +1493,7 @@ const ENGLISCH_BEREICHE = [
     `
   },
 
+
 {
   id: "gym2",
   titel: "GYM2",
@@ -1505,7 +1506,7 @@ const ENGLISCH_BEREICHE = [
       <p class="sf-en-lead">
         In GYM2 geht es um die wichtigsten englischen Verbformen. Besonders wichtig sind drei Zeitformen:
         <strong>Present Simple</strong>, <strong>Past Simple</strong> und <strong>Present Perfect</strong>.
-        Wenn du diese drei Formen sicher beherrschst, kannst du sehr viele englische Sätze korrekt bilden.
+        Wenn du diese drei Formen sicher kannst, vermeidest du sehr viele typische Fehler.
       </p>
 
       <div class="sf-en-rule">
@@ -1521,18 +1522,18 @@ const ENGLISCH_BEREICHE = [
     <section class="sf-en-section">
       <h3>1. Was bedeutet „ein Verb konjugieren“?</h3>
       <p>
-        Ein Verb zu konjugieren bedeutet, dass du die Verbform an Person, Zahl und Zeit anpasst.
+        Ein Verb zu konjugieren bedeutet, dass du die Verbform an Person und Zeit anpasst.
         Im Englischen ist die Konjugation einfacher als in Französisch, aber es gibt wichtige Fallen:
-        vor allem <strong>he/she/it -s</strong>, unregelmässige Vergangenheitsformen und das Present Perfect.
+        <strong>he/she/it -s</strong>, unregelmässige Vergangenheitsformen und das <strong>Past Participle</strong>.
       </p>
 
       <div class="sf-en-example">
         <h4>Beispiel mit „to write“</h4>
         <p>
-          <strong>I write</strong> – ich schreibe<br>
-          <strong>he writes</strong> – er schreibt<br>
-          <strong>I wrote</strong> – ich schrieb / ich habe geschrieben<br>
-          <strong>I have written</strong> – ich habe geschrieben
+          <strong>I write.</strong> – ich schreibe<br>
+          <strong>He writes.</strong> – er schreibt<br>
+          <strong>I wrote.</strong> – ich schrieb / ich habe geschrieben<br>
+          <strong>I have written.</strong> – ich habe geschrieben
         </p>
       </div>
     </section>
@@ -1547,7 +1548,7 @@ const ENGLISCH_BEREICHE = [
         <h4>Bildung</h4>
         <p>
           Bei <strong>I, you, we, they</strong> benutzt du die Grundform.<br>
-          Bei <strong>he, she, it</strong> kommt meistens ein <strong>-s</strong> dazu.
+          Bei <strong>he, she, it</strong> kommt meistens ein <strong>-s</strong> oder <strong>-es</strong> dazu.
         </p>
       </div>
 
@@ -1556,9 +1557,9 @@ const ENGLISCH_BEREICHE = [
           <thead>
             <tr>
               <th>Person</th>
-              <th>Verb: to work</th>
-              <th>Verb: to go</th>
-              <th>Verb: to study</th>
+              <th>to work</th>
+              <th>to go</th>
+              <th>to study</th>
             </tr>
           </thead>
           <tbody>
@@ -1587,12 +1588,6 @@ const ENGLISCH_BEREICHE = [
               <td>we study</td>
             </tr>
             <tr>
-              <td>you</td>
-              <td>you work</td>
-              <td>you go</td>
-              <td>you study</td>
-            </tr>
-            <tr>
               <td>they</td>
               <td>they work</td>
               <td>they go</td>
@@ -1613,7 +1608,8 @@ const ENGLISCH_BEREICHE = [
       <h3>3. Past Simple</h3>
       <p>
         Das <strong>Past Simple</strong> benutzt man für abgeschlossene Handlungen in der Vergangenheit.
-        Bei regelmässigen Verben hängt man meistens <strong>-ed</strong> an. Viele wichtige Verben sind aber unregelmässig.
+        Bei regelmässigen Verben hängt man meistens <strong>-ed</strong> an.
+        Viele wichtige Verben sind aber unregelmässig.
       </p>
 
       <div class="sf-en-rule">
@@ -1695,7 +1691,7 @@ const ENGLISCH_BEREICHE = [
               <th>Past Simple</th>
               <th>Past Participle</th>
               <th>Present Perfect example</th>
-              <th>Meaning</th>
+              <th>Deutsch</th>
             </tr>
           </thead>
           <tbody>
@@ -1703,24 +1699,24 @@ const ENGLISCH_BEREICHE = [
             <tr><td>have</td><td>has</td><td>had</td><td>had</td><td>has had</td><td>haben</td></tr>
             <tr><td>do</td><td>does</td><td>did</td><td>done</td><td>has done</td><td>tun / machen</td></tr>
             <tr><td>go</td><td>goes</td><td>went</td><td>gone</td><td>has gone</td><td>gehen</td></tr>
-            <tr><td>make</td><td>makes</td><td>made</td><td>made</td><td>has made</td><td>machen / herstellen</td></tr>
+            <tr><td>make</td><td>makes</td><td>made</td><td>made</td><td>has made</td><td>machen</td></tr>
             <tr><td>take</td><td>takes</td><td>took</td><td>taken</td><td>has taken</td><td>nehmen</td></tr>
             <tr><td>come</td><td>comes</td><td>came</td><td>come</td><td>has come</td><td>kommen</td></tr>
             <tr><td>see</td><td>sees</td><td>saw</td><td>seen</td><td>has seen</td><td>sehen</td></tr>
-            <tr><td>know</td><td>knows</td><td> knew</td><td>known</td><td>has known</td><td>wissen / kennen</td></tr>
-            <tr><td>get</td><td>gets</td><td>got</td><td>got / gotten</td><td>has got</td><td>bekommen / werden</td></tr>
+            <tr><td>know</td><td>knows</td><td>knew</td><td>known</td><td>has known</td><td>wissen / kennen</td></tr>
+            <tr><td>get</td><td>gets</td><td>got</td><td>got / gotten</td><td>has got</td><td>bekommen</td></tr>
             <tr><td>give</td><td>gives</td><td>gave</td><td>given</td><td>has given</td><td>geben</td></tr>
             <tr><td>find</td><td>finds</td><td>found</td><td>found</td><td>has found</td><td>finden</td></tr>
             <tr><td>think</td><td>thinks</td><td>thought</td><td>thought</td><td>has thought</td><td>denken</td></tr>
             <tr><td>say</td><td>says</td><td>said</td><td>said</td><td>has said</td><td>sagen</td></tr>
-            <tr><td>tell</td><td>tells</td><td>told</td><td>told</td><td>has told</td><td>erzählen / sagen</td></tr>
+            <tr><td>tell</td><td>tells</td><td>told</td><td>told</td><td>has told</td><td>erzählen</td></tr>
             <tr><td>speak</td><td>speaks</td><td>spoke</td><td>spoken</td><td>has spoken</td><td>sprechen</td></tr>
             <tr><td>write</td><td>writes</td><td>wrote</td><td>written</td><td>has written</td><td>schreiben</td></tr>
             <tr><td>read</td><td>reads</td><td>read</td><td>read</td><td>has read</td><td>lesen</td></tr>
             <tr><td>eat</td><td>eats</td><td>ate</td><td>eaten</td><td>has eaten</td><td>essen</td></tr>
             <tr><td>drink</td><td>drinks</td><td>drank</td><td>drunk</td><td>has drunk</td><td>trinken</td></tr>
             <tr><td>begin</td><td>begins</td><td>began</td><td>begun</td><td>has begun</td><td>beginnen</td></tr>
-            <tr><td>break</td><td>breaks</td><td>broke</td><td>broken</td><td>has broken</td><td>brechen / kaputtmachen</td></tr>
+            <tr><td>break</td><td>breaks</td><td>broke</td><td>broken</td><td>has broken</td><td>brechen</td></tr>
             <tr><td>choose</td><td>chooses</td><td>chose</td><td>chosen</td><td>has chosen</td><td>wählen</td></tr>
             <tr><td>drive</td><td>drives</td><td>drove</td><td>driven</td><td>has driven</td><td>fahren</td></tr>
             <tr><td>fall</td><td>falls</td><td>fell</td><td>fallen</td><td>has fallen</td><td>fallen</td></tr>
@@ -1728,23 +1724,16 @@ const ENGLISCH_BEREICHE = [
             <tr><td>leave</td><td>leaves</td><td>left</td><td>left</td><td>has left</td><td>verlassen</td></tr>
             <tr><td>lose</td><td>loses</td><td>lost</td><td>lost</td><td>has lost</td><td>verlieren</td></tr>
             <tr><td>meet</td><td>meets</td><td>met</td><td>met</td><td>has met</td><td>treffen</td></tr>
-            <tr><td>pay</td><td>pays</td><td>paid</td><td>paid</td><td>has paid</td><td>bezahlen</td></tr>
-            <tr><td>put</td><td>puts</td><td>put</td><td>put</td><td>has put</td><td>legen / stellen</td></tr>
             <tr><td>run</td><td>runs</td><td>ran</td><td>run</td><td>has run</td><td>rennen</td></tr>
-            <tr><td>send</td><td>sends</td><td>sent</td><td>sent</td><td>has sent</td><td>senden / schicken</td></tr>
-            <tr><td>sit</td><td>sits</td><td>sat</td><td>sat</td><td>has sat</td><td>sitzen</td></tr>
             <tr><td>sleep</td><td>sleeps</td><td>slept</td><td>slept</td><td>has slept</td><td>schlafen</td></tr>
-            <tr><td>stand</td><td>stands</td><td>stood</td><td>stood</td><td>has stood</td><td>stehen</td></tr>
             <tr><td>understand</td><td>understands</td><td>understood</td><td>understood</td><td>has understood</td><td>verstehen</td></tr>
             <tr><td>win</td><td>wins</td><td>won</td><td>won</td><td>has won</td><td>gewinnen</td></tr>
             <tr><td>work</td><td>works</td><td>worked</td><td>worked</td><td>has worked</td><td>arbeiten</td></tr>
             <tr><td>play</td><td>plays</td><td>played</td><td>played</td><td>has played</td><td>spielen</td></tr>
-            <tr><td>study</td><td>studies</td><td>studied</td><td>studied</td><td>has studied</td><td>lernen / studieren</td></tr>
+            <tr><td>study</td><td>studies</td><td>studied</td><td>studied</td><td>has studied</td><td>lernen</td></tr>
             <tr><td>try</td><td>tries</td><td>tried</td><td>tried</td><td>has tried</td><td>versuchen</td></tr>
             <tr><td>watch</td><td>watches</td><td>watched</td><td>watched</td><td>has watched</td><td>anschauen</td></tr>
             <tr><td>finish</td><td>finishes</td><td>finished</td><td>finished</td><td>has finished</td><td>beenden</td></tr>
-            <tr><td>carry</td><td>carries</td><td>carried</td><td>carried</td><td>has carried</td><td>tragen</td></tr>
-            <tr><td>open</td><td>opens</td><td>opened</td><td>opened</td><td>has opened</td><td>öffnen</td></tr>
           </tbody>
         </table>
       </div>
@@ -1760,92 +1749,19 @@ const ENGLISCH_BEREICHE = [
       <div class="sf-en-rule">
         <h4>So funktioniert es</h4>
         <p>
-          Manche Felder sind sichtbar, andere sind Lücken. Du musst die fehlenden Formen ergänzen.
+          Manche Felder sind sichtbar, andere sind Lücken. Du ergänzt die fehlenden Formen.
           Die Korrektur zeigt dir sofort, welche Antworten richtig oder falsch sind.
         </p>
       </div>
 
       <div class="sf-en-actions">
-        <button class="sf-en-toggle" onclick="checkEnglischGym2VerbTable()">Korrigieren</button>
-        <button class="sf-en-toggle" onclick="shuffleEnglischGym2VerbTable()">Neu anordnen</button>
+        <button class="sf-en-toggle" type="button" onclick="checkEnglischGym2VerbTable()">Korrigieren</button>
+        <button class="sf-en-toggle" type="button" onclick="shuffleEnglischGym2VerbTable()">Neu anordnen</button>
       </div>
 
       <div id="en-gym2-verb-feedback" class="sf-en-feedback"></div>
 
-      <div id="en-gym2-verb-table-area" class="sf-en-table-wrap">
-        <table class="sf-en-table sf-en-practice-table">
-          <thead>
-            <tr>
-              <th>Base form</th>
-              <th>he/she/it Present Simple</th>
-              <th>Past Simple</th>
-              <th>Past Participle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>go</td>
-              <td><input data-answer="goes" placeholder="..." /></td>
-              <td>went</td>
-              <td><input data-answer="gone" placeholder="..." /></td>
-            </tr>
-            <tr>
-              <td><input data-answer="write" placeholder="..." /></td>
-              <td>writes</td>
-              <td><input data-answer="wrote" placeholder="..." /></td>
-              <td>written</td>
-            </tr>
-            <tr>
-              <td>take</td>
-              <td><input data-answer="takes" placeholder="..." /></td>
-              <td>took</td>
-              <td><input data-answer="taken" placeholder="..." /></td>
-            </tr>
-            <tr>
-              <td>study</td>
-              <td>studies</td>
-              <td><input data-answer="studied" placeholder="..." /></td>
-              <td><input data-answer="studied" placeholder="..." /></td>
-            </tr>
-            <tr>
-              <td><input data-answer="see" placeholder="..." /></td>
-              <td>sees</td>
-              <td>saw</td>
-              <td><input data-answer="seen" placeholder="..." /></td>
-            </tr>
-            <tr>
-              <td>make</td>
-              <td><input data-answer="makes" placeholder="..." /></td>
-              <td><input data-answer="made" placeholder="..." /></td>
-              <td>made</td>
-            </tr>
-            <tr>
-              <td>begin</td>
-              <td>begins</td>
-              <td><input data-answer="began" placeholder="..." /></td>
-              <td><input data-answer="begun" placeholder="..." /></td>
-            </tr>
-            <tr>
-              <td><input data-answer="speak" placeholder="..." /></td>
-              <td>speaks</td>
-              <td><input data-answer="spoke" placeholder="..." /></td>
-              <td>spoken</td>
-            </tr>
-            <tr>
-              <td>play</td>
-              <td><input data-answer="plays" placeholder="..." /></td>
-              <td>played</td>
-              <td><input data-answer="played" placeholder="..." /></td>
-            </tr>
-            <tr>
-              <td><input data-answer="do" placeholder="..." /></td>
-              <td>does</td>
-              <td>did</td>
-              <td><input data-answer="done" placeholder="..." /></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <div id="en-gym2-verb-table-area" class="sf-en-table-wrap"></div>
     </section>
 
     <section class="sf-en-section">
@@ -1878,7 +1794,7 @@ const ENGLISCH_BEREICHE = [
       <div class="sf-en-correction">
         <p><strong>Wrong:</strong> He study every evening.</p>
         <p><strong>Correct:</strong> He studies every evening.</p>
-        <p><strong>Explanation:</strong> With verbs ending in consonant + y, change <strong>y</strong> to <strong>ies</strong>: study → studies.</p>
+        <p><strong>Explanation:</strong> With consonant + y, change <strong>y</strong> to <strong>ies</strong>: study → studies.</p>
       </div>
     </section>
 
