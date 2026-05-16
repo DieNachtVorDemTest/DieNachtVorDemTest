@@ -1283,7 +1283,7 @@ const FRANZOESISCH_BEREICHE = [
       </section>
     `
   },
-   ,
+   
 {
   id: "gym2",
   titel: "GYM2",
@@ -2560,7 +2560,7 @@ const FRANZOESISCH_BEREICHE = [
     </section>
   `
 },
-   ,
+   
 {
   id: "gym3",
   titel: "GYM3",
@@ -3530,7 +3530,7 @@ const FRANZOESISCH_BEREICHE = [
     </section>
   `
 },
-   ,
+   
 {
   id: "gym4",
   titel: "GYM4",
