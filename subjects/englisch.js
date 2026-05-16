@@ -1494,6 +1494,7 @@ const ENGLISCH_BEREICHE = [
   },
 
 
+
 {
   id: "gym2",
   titel: "GYM2",
@@ -1704,7 +1705,6 @@ const ENGLISCH_BEREICHE = [
             <tr><td>come</td><td>comes</td><td>came</td><td>come</td><td>has come</td><td>kommen</td></tr>
             <tr><td>see</td><td>sees</td><td>saw</td><td>seen</td><td>has seen</td><td>sehen</td></tr>
             <tr><td>know</td><td>knows</td><td>knew</td><td>known</td><td>has known</td><td>wissen / kennen</td></tr>
-            <tr><td>get</td><td>gets</td><td>got</td><td>got / gotten</td><td>has got</td><td>bekommen</td></tr>
             <tr><td>give</td><td>gives</td><td>gave</td><td>given</td><td>has given</td><td>geben</td></tr>
             <tr><td>find</td><td>finds</td><td>found</td><td>found</td><td>has found</td><td>finden</td></tr>
             <tr><td>think</td><td>thinks</td><td>thought</td><td>thought</td><td>has thought</td><td>denken</td></tr>
@@ -1755,13 +1755,15 @@ const ENGLISCH_BEREICHE = [
       </div>
 
       <div class="sf-en-actions">
-        <button class="sf-en-toggle" type="button" onclick="checkEnglischGym2VerbTable()">Korrigieren</button>
-        <button class="sf-en-toggle" type="button" onclick="shuffleEnglischGym2VerbTable()">Neu anordnen</button>
+        <button id="en-gym2-check-btn" class="sf-en-toggle" type="button">Korrigieren</button>
+        <button id="en-gym2-shuffle-btn" class="sf-en-toggle" type="button">Neu anordnen</button>
       </div>
 
       <div id="en-gym2-verb-feedback" class="sf-en-feedback"></div>
 
-      <div id="en-gym2-verb-table-area" class="sf-en-table-wrap"></div>
+      <div id="en-gym2-verb-table-area" class="sf-en-table-wrap">
+        <p class="sf-en-loading-note">Tabelle wird geladen...</p>
+      </div>
     </section>
 
     <section class="sf-en-section">
