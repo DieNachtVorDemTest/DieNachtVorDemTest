@@ -1284,17 +1284,7 @@ const FRANZOESISCH_BEREICHE = [
     `
   }
 
-  /*
-    GYM2, GYM3 und GYM4 werden danach hier ergänzt.
-    Wichtig: Wenn du den nächsten Block einfügst, muss vor dem nächsten Objekt ein Komma stehen.
-
-    Beispiel:
-    },
-    {
-      id: "gym2",
-      ...
-    }
-  */
+  
 ];
 
 
@@ -1505,13 +1495,13 @@ function injectFranzoesischStyles() {
     }
 
     .sf-fr-topic-header {
-      background: linear-gradient(135deg, #111827, #1d4ed8);
-      color: #ffffff;
-      border-radius: 22px;
-      padding: 30px;
-      margin-bottom: 18px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
-    }
+  background: linear-gradient(135deg, #111827, #334155);
+  color: #ffffff;
+  border-radius: 22px;
+  padding: 30px;
+  margin-bottom: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+}
 
     .sf-fr-topic-header p {
       margin: 0 0 8px;
