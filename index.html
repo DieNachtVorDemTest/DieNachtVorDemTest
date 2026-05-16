@@ -232,20 +232,6 @@
       display: none;
     }
 
-    .gallery-header {
-      margin-bottom: 18px;
-    }
-
-    .gallery-header h1 {
-      margin: 0 0 10px;
-      font-size: 38px;
-    }
-
-    .gallery-header p {
-      margin: 0;
-      color: #d1d5db;
-    }
-
     .gallery-stage {
       display: flex;
       align-items: center;
@@ -275,24 +261,22 @@
     }
 
     .gallery-track {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      display: block;
     }
 
     .gallery-card {
-      background: rgba(2, 6, 23, 0.82);
-      border: 1px solid rgba(148, 163, 184, 0.28);
-      border-radius: 22px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
       overflow: hidden;
-      min-height: 260px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
+      min-height: auto;
+      box-shadow: none;
     }
 
     .gallery-card img {
       width: 100%;
-      height: 260px;
-      object-fit: cover;
+      height: 520px;
+      object-fit: contain;
       display: block;
     }
 
@@ -467,16 +451,8 @@
     }
 
     @media (max-width: 900px) {
-      .gallery-track {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-card {
-        min-height: auto;
-      }
-
       .gallery-card img {
-        height: 220px;
+        height: 360px;
       }
 
       .gallery-stage {
@@ -506,11 +482,11 @@
 
       .intro-gallery {
         width: calc(100vw - 32px);
-        padding: 20px;
+        padding: 18px;
       }
 
-      .gallery-header h1 {
-        font-size: 30px;
+      .gallery-card img {
+        height: 260px;
       }
 
       .apple-footer {
@@ -547,12 +523,6 @@
 
     <div class="main-wrap">
       <section id="intro-gallery" class="intro-gallery">
-        <div class="gallery-header">
-          <span class="badge">Einblick</span>
-          <h1>Die Nacht vor dem Test</h1>
-          <p>Sieh dir kurz an, wie der Premium-Bereich aufgebaut ist.</p>
-        </div>
-
         <div class="gallery-stage">
           <button class="gallery-arrow" onclick="moveGallery(-1)">‹</button>
 
@@ -650,15 +620,12 @@
           <button onclick="openLegalModal('agb')">Verkauf und Rückerstattung</button>
           <span class="apple-separator">|</span>
           <button onclick="openLegalModal('impressum')">Rechtliche Hinweise</button>
-          <span class="apple-separator">|</span>
-          <button onclick="scrollToTop()">Sitemap</button>
         </div>
       </div>
     </footer>
 
   </div>
 
-  <!-- IMPRESSUM / RECHTLICHE HINWEISE -->
   <div id="impressum" class="legal-modal">
     <div class="legal-modal-content">
       <button class="legal-close" onclick="closeLegalModal('impressum')">Schliessen</button>
@@ -725,7 +692,6 @@
     </div>
   </div>
 
-  <!-- DATENSCHUTZ -->
   <div id="datenschutz" class="legal-modal">
     <div class="legal-modal-content">
       <button class="legal-close" onclick="closeLegalModal('datenschutz')">Schliessen</button>
@@ -787,11 +753,6 @@
         <li>eine kurze Beschreibung des Problems;</li>
         <li>optional einen Screenshot der Fehlermeldung oder Zahlungsbestätigung, jedoch ohne vollständige Kreditkarten-, Passwort- oder Login-Daten.</li>
       </ul>
-      <p>
-        Ich werde den Fall prüfen und, sofern eine Zahlung oder Berechtigung nachvollziehbar ist, den Zugang
-        manuell freischalten oder eine angemessene Lösung anbieten. Eine sofortige oder automatische Freischaltung
-        kann bei technischen Problemen nicht garantiert werden.
-      </p>
 
       <h3>7. Zweck der Datenbearbeitung</h3>
       <ul>
@@ -813,15 +774,13 @@
       <h3>9. Speicherung und Löschung</h3>
       <p>
         Personendaten werden nur so lange gespeichert, wie es für die genannten Zwecke erforderlich ist oder
-        gesetzliche Aufbewahrungspflichten bestehen. Kontaktanfragen und Supportfälle können zur Nachvollziehbarkeit
-        während einer angemessenen Frist gespeichert werden.
+        gesetzliche Aufbewahrungspflichten bestehen.
       </p>
 
       <h3>10. Rechte der betroffenen Personen</h3>
       <p>
         Du kannst im Rahmen des anwendbaren Datenschutzrechts Auskunft über deine Personendaten verlangen sowie
-        Berichtigung, Löschung oder Einschränkung der Bearbeitung verlangen, soweit keine gesetzlichen oder
-        berechtigten Gründe entgegenstehen. Anfragen können per E-Mail an
+        Berichtigung, Löschung oder Einschränkung der Bearbeitung verlangen. Anfragen können per E-Mail an
         <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>
         gestellt werden.
       </p>
@@ -829,19 +788,17 @@
       <h3>11. Datensicherheit</h3>
       <p>
         Ich treffe angemessene technische und organisatorische Massnahmen, um Personendaten vor Verlust, Missbrauch,
-        unberechtigtem Zugriff und Veränderung zu schützen. Eine vollständig risikofreie Datenübertragung im Internet
-        kann jedoch nicht garantiert werden.
+        unberechtigtem Zugriff und Veränderung zu schützen.
       </p>
 
       <h3>12. Änderungen</h3>
       <p>
         Diese Datenschutzerklärung kann angepasst werden, wenn sich die Website, eingesetzte Dienste oder rechtliche
-        Anforderungen ändern. Es gilt die jeweils auf dieser Website veröffentlichte Version.
+        Anforderungen ändern.
       </p>
     </div>
   </div>
 
-  <!-- COOKIES -->
   <div id="cookies" class="legal-modal">
     <div class="legal-modal-content">
       <button class="legal-close" onclick="closeLegalModal('cookies')">Schliessen</button>
@@ -863,13 +820,11 @@
 
       <h3>Keine unnötige Werbung</h3>
       <p>
-        Diese Website ist nicht darauf ausgelegt, unnötige Werbe-Cookies zu setzen. Falls später Analyse-, Tracking-
-        oder Marketing-Tools verwendet werden, muss diese Information entsprechend ergänzt werden.
+        Diese Website ist nicht darauf ausgelegt, unnötige Werbe-Cookies zu setzen.
       </p>
     </div>
   </div>
 
-  <!-- AGB / VERKAUF UND RÜCKERSTATTUNG -->
   <div id="agb" class="legal-modal">
     <div class="legal-modal-content">
       <button class="legal-close" onclick="closeLegalModal('agb')">Schliessen</button>
@@ -881,7 +836,7 @@
       <p>
         Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung der Website <strong>Lernhilfe_Neufeld</strong>
         und für alle kostenlosen sowie kostenpflichtigen digitalen Inhalte, Lernhilfen, Premium-Zugänge, Codes oder
-        vergleichbaren Angebote, die über diese Website bereitgestellt werden.
+        vergleichbaren Angebote.
       </p>
 
       <h3>2. Anbieter</h3>
@@ -893,22 +848,19 @@
       <h3>3. Angebot und Vertragsabschluss</h3>
       <p>
         Die Darstellung von Inhalten, Preisen, Codes oder Premium-Angeboten auf der Website stellt kein rechtlich
-        verbindliches Angebot dar, sondern eine Einladung zur Nutzung oder Bestellung. Ein Vertrag über kostenpflichtige
-        Inhalte kommt zustande, wenn die Zahlung erfolgreich abgeschlossen oder der Zugang durch mich freigeschaltet wird.
+        verbindliches Angebot dar, sondern eine Einladung zur Nutzung oder Bestellung.
       </p>
 
       <h3>4. Leistungsumfang</h3>
       <p>
         Lernhilfe_Neufeld stellt digitale Lerninhalte, Erklärungen, Aufgaben, Zusammenfassungen, Rechenwege oder ähnliche
-        Hilfsmittel zur Verfügung. Inhalte können erweitert, verändert, neu strukturiert oder entfernt werden, sofern
-        dadurch der wesentliche Charakter eines bereits bezahlten Zugangs nicht unangemessen beeinträchtigt wird.
+        Hilfsmittel zur Verfügung.
       </p>
 
       <h3>5. Keine Erfolgsgarantie</h3>
       <p>
         Die Nutzung der Website garantiert keine bestimmte Note, keinen Prüfungserfolg, keine Verbesserung schulischer
-        Leistungen und keine Fehlerfreiheit der Inhalte. Der Lernerfolg hängt wesentlich von der eigenen Vorbereitung,
-        dem Unterricht, den Prüfungsanforderungen und weiteren Faktoren ab.
+        Leistungen und keine Fehlerfreiheit der Inhalte.
       </p>
 
       <h3>6. Preise und Zahlung</h3>
@@ -920,64 +872,41 @@
       <h3>7. Zahlungsfehler, technische Probleme und manuelle Freischaltung</h3>
       <p>
         Es kann vorkommen, dass eine Zahlung technisch fehlschlägt, verzögert verarbeitet wird oder ein Zugang nicht
-        automatisch freigeschaltet wird. In einem solchen Fall besteht kein Anspruch auf sofortige automatische
-        Freischaltung. Nutzerinnen und Nutzer können mich per E-Mail kontaktieren.
-      </p>
-      <p>
-        Damit ich den Fall prüfen kann, muss die E-Mail folgende Angaben enthalten: Name, Kontakt-E-Mail-Adresse, Datum
-        und ungefähre Uhrzeit der Zahlung oder des Zahlungsversuchs, verwendeter Code falls vorhanden, Beschreibung des
-        Problems sowie optional ein Screenshot der Fehlermeldung oder Zahlungsbestätigung. Vollständige Kreditkartenangaben,
-        Passwörter oder andere geheime Daten dürfen nicht gesendet werden.
-      </p>
-      <p>
-        Wenn eine Zahlung oder Zugangsberechtigung nachvollziehbar ist, werde ich den Zugang manuell freischalten oder
-        eine angemessene Ersatzlösung anbieten. Ist keine Zahlung erfolgt oder nicht nachvollziehbar, besteht kein Anspruch
-        auf Freischaltung.
+        automatisch freigeschaltet wird. Nutzerinnen und Nutzer können mich per E-Mail kontaktieren.
       </p>
 
       <h3>8. Rückerstattung und Widerruf</h3>
       <p>
         Bei digitalen Inhalten und sofort nutzbaren Premium-Zugängen besteht kein automatisches Rückgaberecht, sofern kein
-        zwingendes gesetzliches Recht anwendbar ist. Eine Rückerstattung erfolgt nur, wenn sie ausdrücklich zugesagt wurde,
-        gesetzlich vorgeschrieben ist oder im Einzelfall aus Kulanz gewährt wird.
-      </p>
-      <p>
-        Wurde ein Zugang aufgrund eines nachweisbaren technischen Problems trotz erfolgreicher Zahlung nicht bereitgestellt
-        und kann das Problem nicht innerhalb angemessener Zeit gelöst werden, kann eine Ersatzlösung oder Rückerstattung
-        geprüft werden.
+        zwingendes gesetzliches Recht anwendbar ist.
       </p>
 
       <h3>9. Premium-Codes und Zugangsdaten</h3>
       <p>
         Premium-Codes, Passwörter oder sonstige Zugangsdaten sind persönlich zu verwenden und dürfen nicht öffentlich
-        geteilt, weiterverkauft oder missbräuchlich genutzt werden. Bei Verdacht auf Missbrauch kann der Zugang
-        vorübergehend oder dauerhaft gesperrt werden.
+        geteilt, weiterverkauft oder missbräuchlich genutzt werden.
       </p>
 
       <h3>10. Verfügbarkeit</h3>
       <p>
         Ich bemühe mich um eine zuverlässige Verfügbarkeit der Website. Eine ununterbrochene Verfügbarkeit wird jedoch
-        nicht garantiert. Wartung, technische Störungen, Drittanbieterprobleme, Hosting-Ausfälle oder höhere Gewalt können
-        zu Einschränkungen führen.
+        nicht garantiert.
       </p>
 
       <h3>11. Haftungsbeschränkung</h3>
       <p>
         Soweit gesetzlich zulässig, ist die Haftung für indirekte Schäden, Folgeschäden, entgangenen Gewinn, Datenverlust,
-        schulische Nachteile, Prüfungsergebnisse oder Schäden aus der Nutzung oder Nichtverfügbarkeit der Website
-        ausgeschlossen. Vorbehalten bleibt die Haftung für rechtswidrige Absicht oder grobe Fahrlässigkeit, soweit ein
-        Ausschluss gesetzlich nicht zulässig ist.
+        schulische Nachteile oder Prüfungsergebnisse ausgeschlossen.
       </p>
 
       <h3>12. Anwendbares Recht</h3>
       <p>
         Es gilt schweizerisches Recht. Zwingende gesetzliche Gerichtsstände und zwingende Konsumentenschutzrechte bleiben
-        vorbehalten. Soweit zulässig, ist Gerichtsstand Neufeld, Schweiz.
+        vorbehalten.
       </p>
     </div>
   </div>
 
-  <!-- NUTZUNGSBEDINGUNGEN -->
   <div id="nutzung" class="legal-modal">
     <div class="legal-modal-content">
       <button class="legal-close" onclick="closeLegalModal('nutzung')">Schliessen</button>
@@ -988,14 +917,12 @@
       <h3>1. Zweck der Website</h3>
       <p>
         Lernhilfe_Neufeld ist eine digitale Lernhilfe. Die Inhalte sollen beim Verstehen, Wiederholen und Üben von
-        Schulstoff helfen. Die Website ersetzt keinen Unterricht, keine offizielle Prüfungsvorbereitung und keine
-        verbindliche Auskunft einer Lehrperson oder Schule.
+        Schulstoff helfen.
       </p>
 
       <h3>2. Zulässige Nutzung</h3>
       <p>
-        Die Website darf für private, schulische und persönliche Lernzwecke genutzt werden. Du darfst Inhalte lesen,
-        bearbeiten, zum eigenen Lernen verwenden und dir eigene Notizen daraus machen.
+        Die Website darf für private, schulische und persönliche Lernzwecke genutzt werden.
       </p>
 
       <h3>3. Unzulässige Nutzung</h3>
@@ -1011,43 +938,36 @@
       <h3>4. Lerninhalte und Fehler</h3>
       <p>
         Ich bemühe mich, Inhalte verständlich und korrekt zu erstellen. Trotzdem können Fehler, Ungenauigkeiten oder
-        veraltete Informationen vorkommen. Du bist selbst dafür verantwortlich, wichtige Inhalte mit Unterrichtsmaterial,
-        Lehrpersonen oder offiziellen Vorgaben abzugleichen.
+        veraltete Informationen vorkommen.
       </p>
 
       <h3>5. Keine Verantwortung für Prüfungsergebnisse</h3>
       <p>
-        Die Nutzung von Lernhilfe_Neufeld erfolgt auf eigene Verantwortung. Ich übernehme keine Haftung dafür, ob du eine
-        Prüfung bestehst, eine bestimmte Note erreichst oder ob bestimmte Inhalte an deiner Schule tatsächlich geprüft
-        werden.
+        Die Nutzung von Lernhilfe_Neufeld erfolgt auf eigene Verantwortung.
       </p>
 
       <h3>6. Account, Codes und Sperrung</h3>
       <p>
         Falls die Website Accounts, Codes oder Premium-Zugänge verwendet, bist du dafür verantwortlich, deine Zugangsdaten
-        vertraulich zu behandeln. Bei Missbrauch, Weitergabe, Manipulation oder Umgehung technischer Schutzmassnahmen
-        kann der Zugang gesperrt werden.
+        vertraulich zu behandeln.
       </p>
 
       <h3>7. Meldung von Problemen</h3>
       <p>
         Fehler, technische Probleme, Zahlungsprobleme oder mögliche Rechtsverletzungen können per E-Mail an
         <a href="mailto:fdl.ms@outlook.de">fdl.ms@outlook.de</a>
-        gemeldet werden. Bitte beschreibe das Problem möglichst genau und gib deine Kontaktdaten an, damit ich antworten
-        und den Fall prüfen kann.
+        gemeldet werden.
       </p>
 
       <h3>8. Änderungen der Website</h3>
       <p>
-        Die Website kann jederzeit technisch, inhaltlich oder gestalterisch angepasst werden. Einzelne Inhalte, Funktionen
-        oder Bereiche können ergänzt, geändert oder entfernt werden.
+        Die Website kann jederzeit technisch, inhaltlich oder gestalterisch angepasst werden.
       </p>
 
       <h3>9. Schlussbestimmungen</h3>
       <p>
         Sollten einzelne Bestimmungen dieser Nutzungsbedingungen unwirksam sein oder werden, bleibt die Wirksamkeit der
-        übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung gilt eine rechtlich zulässige Regelung, die
-        dem wirtschaftlichen und sachlichen Zweck möglichst nahekommt.
+        übrigen Bestimmungen unberührt.
       </p>
     </div>
   </div>
@@ -1098,18 +1018,16 @@
     function renderGallery() {
       galleryTrack.innerHTML = "";
 
-      for (let i = 0; i < 3; i++) {
-        const imageIndex = (galleryStartIndex + i) % galleryImages.length;
+      const imageIndex = galleryStartIndex % galleryImages.length;
 
-        const card = document.createElement("div");
-        card.className = "gallery-card";
+      const card = document.createElement("div");
+      card.className = "gallery-card";
 
-        card.innerHTML = `
-          <img src="${galleryImages[imageIndex]}" alt="Einblick in den Premium-Bereich">
-        `;
+      card.innerHTML = `
+        <img src="${galleryImages[imageIndex]}" alt="Einblick in den Premium-Bereich">
+      `;
 
-        galleryTrack.appendChild(card);
-      }
+      galleryTrack.appendChild(card);
     }
 
     function moveGallery(direction) {
@@ -1258,13 +1176,6 @@
         document.body.style.overflow = "";
       }
     });
-
-    function scrollToTop() {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    }
   </script>
 </body>
 </html>
