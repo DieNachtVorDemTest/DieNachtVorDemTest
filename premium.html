@@ -167,9 +167,13 @@
       background: rgba(15, 23, 42, 0.90);
       border: 1px solid rgba(148, 163, 184, 0.28);
       border-radius: 18px;
-      padding: 18px;
+      padding: 22px;
+      min-height: 142px;
       cursor: pointer;
       transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .subject-card:hover {
@@ -190,7 +194,7 @@
     }
 
     .chat-entry {
-      margin-top: 20px;
+      margin-top: 22px;
       background: rgba(15, 23, 42, 0.92);
       border: 1px solid rgba(129, 140, 248, 0.35);
       border-radius: 18px;
@@ -211,6 +215,50 @@
       margin: 0;
       color: #9ca3af;
       font-size: 14px;
+    }
+
+    .chat-preview-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .latest-chat-preview {
+      margin-top: 14px;
+      background: rgba(2, 6, 23, 0.72);
+      border: 1px solid rgba(129, 140, 248, 0.30);
+      border-radius: 16px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: 0.15s ease;
+      max-width: 760px;
+    }
+
+    .latest-chat-preview:hover {
+      background: rgba(30, 41, 59, 0.92);
+      border-color: #818cf8;
+      transform: translateY(-1px);
+    }
+
+    .latest-chat-label {
+      font-size: 12px;
+      color: #a5b4fc;
+      margin-bottom: 6px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .latest-chat-title {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .latest-chat-snippet {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.45;
     }
 
     .folder-view {
@@ -583,12 +631,19 @@
     }
 
     .chat-message {
-      max-width: 850px;
+      width: fit-content;
+      max-width: min(760px, 92%);
+      justify-self: start;
       background: linear-gradient(135deg, rgba(49, 46, 129, 0.98), rgba(67, 56, 202, 0.92));
       border: 1px solid rgba(199, 210, 254, 0.24);
       border-radius: 20px 20px 20px 6px;
       padding: 16px 18px;
       box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+    }
+
+    .chat-message.focused-message {
+      outline: 3px solid rgba(251, 191, 36, 0.85);
+      box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.18), 0 16px 34px rgba(0, 0, 0, 0.28);
     }
 
     .chat-message h3 {
@@ -634,7 +689,8 @@
     }
 
     .reply-item {
-      max-width: 760px;
+      width: fit-content;
+      max-width: min(680px, 92%);
       margin-left: 42px;
       background: rgba(15, 23, 42, 0.94);
       border: 1px solid rgba(148, 163, 184, 0.22);
@@ -657,6 +713,7 @@
       border: 1px solid rgba(148, 163, 184, 0.22);
       border-radius: 18px;
       padding: 13px;
+      max-width: 680px;
     }
 
     .reply-box textarea {
@@ -745,6 +802,10 @@
       .reply-box {
         margin-left: 16px;
       }
+
+      .chat-message {
+        max-width: 96%;
+      }
     }
   </style>
 
@@ -774,7 +835,6 @@
         <div>
           <span class="badge">Premium Bereich</span>
           <h1>Lernhilfe Gymnasium</h1>
-          <p class="small">Die Nacht vor dem Test</p>
           <p id="user-info">Zugriff wird geprüft...</p>
         </div>
 
@@ -795,15 +855,22 @@
             Wähle einen Lernbereich aus. Die Inhalte sind nach Fach und prüfungsrelevanten Themen strukturiert.
           </p>
 
+          <div id="subjects-grid" class="subjects-grid"></div>
+
           <div class="chat-entry">
-            <div>
+            <div class="chat-preview-text">
               <h3>Fragen-Chat</h3>
               <p>Stelle Fragen nach Fach sortiert. Antworten werden erst sichtbar, wenn sie freigeschaltet wurden.</p>
+
+              <div id="latest-chat-preview" class="latest-chat-preview" onclick="openLatestChatPreview()">
+                <div class="latest-chat-label">Letzte freigeschaltete Frage</div>
+                <div id="latest-chat-title" class="latest-chat-title">Wird geladen...</div>
+                <div id="latest-chat-snippet" class="latest-chat-snippet">Sobald eine Frage freigeschaltet wurde, erscheint hier ein kurzer Einblick.</div>
+              </div>
             </div>
+
             <button onclick="openChat()">Chat öffnen</button>
           </div>
-
-          <div id="subjects-grid" class="subjects-grid"></div>
         </div>
 
         <div id="folder-view" class="folder-view hidden">
@@ -913,6 +980,10 @@
     const chatList = document.getElementById("chat-list");
     const chatVisibleTitle = document.getElementById("chat-visible-title");
 
+    const latestChatPreview = document.getElementById("latest-chat-preview");
+    const latestChatTitle = document.getElementById("latest-chat-title");
+    const latestChatSnippet = document.getElementById("latest-chat-snippet");
+
     const loadedSubjectScripts = {};
 
     let currentSubject = null;
@@ -923,6 +994,9 @@
     let currentAuthorName = "Unbekannt";
     let currentChatSubject = null;
     let chatUnsubscribe = null;
+
+    let latestPreviewTarget = null;
+    let pendingFocusMessageId = null;
 
     const subjects = [
       {
@@ -1035,6 +1109,7 @@
       materialView.setAttribute("data-watermark", "Lernhilfe Gymnasium");
       renderSubjects();
       renderChatSubjects();
+      loadLatestChatPreview();
     }
 
     function renderSubjects() {
@@ -1114,6 +1189,7 @@
       currentIsDirectSubject = false;
       currentChatSubject = null;
       stopChatListener();
+      loadLatestChatPreview();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -1303,6 +1379,16 @@
       return "Unbekannt";
     }
 
+    function shortenText(text, maxLength) {
+      const cleaned = String(text || "").replace(/\s+/g, " ").trim();
+
+      if (cleaned.length <= maxLength) {
+        return cleaned;
+      }
+
+      return cleaned.slice(0, maxLength).trim() + "...";
+    }
+
     function renderChatSubjects() {
       chatSubjects.innerHTML = "";
 
@@ -1320,6 +1406,100 @@
 
         chatSubjects.appendChild(card);
       });
+    }
+
+    async function loadLatestChatPreview() {
+      try {
+        latestPreviewTarget = null;
+
+        latestChatTitle.textContent = "Wird geladen...";
+        latestChatSnippet.textContent = "Sobald eine Frage freigeschaltet wurde, erscheint hier ein kurzer Einblick.";
+
+        const allVisibleMessages = [];
+
+        for (const subject of subjects) {
+          const snapshot = await db
+            .collection("premiumChats")
+            .doc(subject.key)
+            .collection("messages")
+            .where("visible", "==", true)
+            .limit(20)
+            .get();
+
+          snapshot.forEach(function(doc) {
+            const data = doc.data();
+
+            allVisibleMessages.push({
+              id: doc.id,
+              subject: subject,
+              data: data,
+              time: timestampToMillis(data.createdAt)
+            });
+          });
+        }
+
+        if (allVisibleMessages.length === 0) {
+          latestChatTitle.textContent = "Noch keine freigeschaltete Frage";
+          latestChatSnippet.textContent = "Sobald eine Frage freigeschaltet wurde, erscheint hier ein kurzer Einblick.";
+          return;
+        }
+
+        allVisibleMessages.sort(function(a, b) {
+          return b.time - a.time;
+        });
+
+        const latest = allVisibleMessages[0];
+
+        latestPreviewTarget = {
+          subject: latest.subject,
+          messageId: latest.id
+        };
+
+        let latestReplyText = "";
+
+        try {
+          const repliesSnapshot = await db
+            .collection("premiumChats")
+            .doc(latest.subject.key)
+            .collection("messages")
+            .doc(latest.id)
+            .collection("replies")
+            .where("visible", "==", true)
+            .get();
+
+          const sortedReplies = repliesSnapshot.docs.slice().sort(function(a, b) {
+            return timestampToMillis(b.data().createdAt) - timestampToMillis(a.data().createdAt);
+          });
+
+          if (sortedReplies.length > 0) {
+            latestReplyText = sortedReplies[0].data().text || "";
+          }
+        } catch (error) {
+          latestReplyText = "";
+        }
+
+        latestChatTitle.textContent = latest.subject.name + " · " + (latest.data.title || "Ohne Titel");
+
+        if (latestReplyText) {
+          latestChatSnippet.textContent = "Antwort: " + shortenText(latestReplyText, 150);
+        } else {
+          latestChatSnippet.textContent = "Frage: " + shortenText(latest.data.text || "", 150);
+        }
+      } catch (error) {
+        latestChatTitle.textContent = "Chat-Vorschau konnte nicht geladen werden";
+        latestChatSnippet.textContent = error.message;
+      }
+    }
+
+    function openLatestChatPreview() {
+      if (!latestPreviewTarget) {
+        openChat();
+        return;
+      }
+
+      pendingFocusMessageId = latestPreviewTarget.messageId;
+      openChat();
+      openChatSubject(latestPreviewTarget.subject);
     }
 
     function openChat() {
@@ -1450,7 +1630,7 @@
               }
 
               messageHtmlParts.push(`
-                <div class="chat-message">
+                <div class="chat-message" id="chat-message-${doc.id}">
                   <h3>${escapeHTML(message.title)}</h3>
 
                   <div class="chat-meta">
@@ -1475,6 +1655,21 @@
             }
 
             chatList.innerHTML = messageHtmlParts.join("");
+
+            if (pendingFocusMessageId) {
+              const focusElement = document.getElementById("chat-message-" + pendingFocusMessageId);
+
+              if (focusElement) {
+                focusElement.classList.add("focused-message");
+                focusElement.scrollIntoView({ behavior: "smooth", block: "center" });
+
+                window.setTimeout(function() {
+                  focusElement.classList.remove("focused-message");
+                }, 3500);
+              }
+
+              pendingFocusMessageId = null;
+            }
           } catch (error) {
             chatList.innerHTML = `
               <div class="chat-empty">
@@ -1580,6 +1775,7 @@
     window.setMaterialContent = setMaterialContent;
     window.toggleInfo = toggleInfo;
     window.openChat = openChat;
+    window.openLatestChatPreview = openLatestChatPreview;
     window.closeChat = closeChat;
     window.openChatSubject = openChatSubject;
     window.sendChatQuestion = sendChatQuestion;
