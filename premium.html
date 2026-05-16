@@ -189,6 +189,30 @@
       color: #9ca3af;
     }
 
+    .chat-entry {
+      margin-top: 20px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .chat-entry h3 {
+      margin: 0 0 6px;
+      font-size: 21px;
+    }
+
+    .chat-entry p {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
     .folder-view {
       background: rgba(15, 23, 42, 0.90);
       border: 1px solid rgba(148, 163, 184, 0.28);
@@ -401,6 +425,168 @@
       padding: 0;
     }
 
+    .chat-view {
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .chat-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .chat-header h2 {
+      margin: 0 0 8px;
+    }
+
+    .chat-header p {
+      margin: 0;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    .chat-subjects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .chat-subject-card {
+      background: rgba(2, 6, 23, 0.82);
+      border: 1px solid #374151;
+      border-radius: 16px;
+      padding: 18px;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+
+    .chat-subject-card:hover {
+      background: rgba(30, 41, 59, 0.94);
+      border-color: #818cf8;
+      transform: translateY(-2px);
+    }
+
+    .chat-subject-card.active {
+      border-color: #a5b4fc;
+      background: rgba(67, 56, 202, 0.26);
+    }
+
+    .chat-subject-card h3 {
+      margin: 0;
+      font-size: 19px;
+    }
+
+    .chat-compose {
+      background: rgba(2, 6, 23, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+
+    .chat-compose h3 {
+      margin: 0 0 12px;
+    }
+
+    .chat-compose input,
+    .chat-compose textarea,
+    .reply-box textarea {
+      width: 100%;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.96);
+      color: #f9fafb;
+      padding: 13px;
+      font-size: 15px;
+      font-family: Arial, sans-serif;
+      outline: none;
+      margin-bottom: 12px;
+    }
+
+    .chat-compose textarea,
+    .reply-box textarea {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .chat-compose input:focus,
+    .chat-compose textarea:focus,
+    .reply-box textarea:focus {
+      border-color: #818cf8;
+    }
+
+    .chat-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .chat-message {
+      background: rgba(2, 6, 23, 0.78);
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .chat-message h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+    }
+
+    .chat-meta {
+      color: #9ca3af;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .chat-text {
+      color: #d1d5db;
+      line-height: 1.65;
+      white-space: pre-line;
+      margin-bottom: 14px;
+    }
+
+    .reply-list {
+      border-left: 2px solid rgba(129, 140, 248, 0.35);
+      padding-left: 14px;
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .reply-item {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .reply-item p {
+      margin: 6px 0 0;
+      white-space: pre-line;
+    }
+
+    .reply-box {
+      margin-top: 12px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .pending-note {
+      color: #fde68a;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
     @media print {
       body {
         display: none;
@@ -491,6 +677,14 @@
             Wähle einen Lernbereich aus. Die Inhalte sind nach Fach und prüfungsrelevanten Themen strukturiert.
           </p>
 
+          <div class="chat-entry">
+            <div>
+              <h3>Fragen-Chat</h3>
+              <p>Stelle Fragen nach Fach sortiert. Antworten werden erst sichtbar, wenn sie freigeschaltet wurden.</p>
+            </div>
+            <button onclick="openChat()">Chat öffnen</button>
+          </div>
+
           <div id="subjects-grid" class="subjects-grid"></div>
         </div>
 
@@ -513,6 +707,36 @@
           </div>
 
           <div id="material-content"></div>
+        </div>
+
+        <div id="chat-view" class="chat-view hidden">
+          <div class="chat-header">
+            <div>
+              <h2>Fragen-Chat</h2>
+              <p>Alle Fragen und Antworten sind nach Fach geordnet. Dein Name wird bei jeder Nachricht angezeigt.</p>
+            </div>
+            <button class="secondary" onclick="closeChat()">Zurück zu allen Fächern</button>
+          </div>
+
+          <div id="chat-subjects" class="chat-subjects"></div>
+
+          <div id="chat-board" class="hidden">
+            <div class="chat-compose">
+              <h3 id="chat-compose-title">Neue Frage stellen</h3>
+
+              <input id="chat-question-title" type="text" maxlength="120" placeholder="Kurzer Titel deiner Frage">
+
+              <textarea id="chat-question-text" maxlength="2500" placeholder="Schreibe deine Frage möglichst klar. Beispiel: Was genau verstehst du nicht? Wo bist du hängen geblieben?"></textarea>
+
+              <button onclick="sendChatQuestion()">Frage absenden</button>
+
+              <div class="pending-note">
+                Hinweis: Deine Frage wird gespeichert, aber erst angezeigt, wenn sie freigeschaltet wurde.
+              </div>
+            </div>
+
+            <div id="chat-list" class="chat-list"></div>
+          </div>
         </div>
       </section>
     </section>
@@ -555,10 +779,24 @@
     const materialTitle = document.getElementById("material-title");
     const materialContent = document.getElementById("material-content");
 
+    const chatView = document.getElementById("chat-view");
+    const chatSubjects = document.getElementById("chat-subjects");
+    const chatBoard = document.getElementById("chat-board");
+    const chatComposeTitle = document.getElementById("chat-compose-title");
+    const chatQuestionTitle = document.getElementById("chat-question-title");
+    const chatQuestionText = document.getElementById("chat-question-text");
+    const chatList = document.getElementById("chat-list");
+
     const loadedSubjectScripts = {};
 
     let currentSubject = null;
     let currentIsDirectSubject = false;
+
+    let currentUser = null;
+    let currentUserData = null;
+    let currentAuthorName = "Unbekannt";
+    let currentChatSubject = null;
+    let chatUnsubscribe = null;
 
     const subjects = [
       {
@@ -661,6 +899,7 @@
       userInfo.textContent = message;
       lockedBox.classList.remove("hidden");
       premiumContent.classList.add("hidden");
+      stopChatListener();
     }
 
     function showPremium() {
@@ -669,6 +908,7 @@
       premiumContent.classList.remove("hidden");
       materialView.setAttribute("data-watermark", "Lernhilfe Gymnasium");
       renderSubjects();
+      renderChatSubjects();
     }
 
     function renderSubjects() {
@@ -676,9 +916,11 @@
       subjectsArea.classList.remove("hidden");
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
+      chatView.classList.add("hidden");
       materialContent.innerHTML = "";
       currentSubject = null;
       currentIsDirectSubject = false;
+      stopChatListener();
 
       subjects.forEach(function(subject) {
         const card = document.createElement("div");
@@ -698,6 +940,7 @@
 
     function openFolder(subject) {
       currentSubject = subject;
+      stopChatListener();
 
       if (subject.mode === "direct") {
         openMaterialDirect(subject);
@@ -710,6 +953,7 @@
       subjectsArea.classList.add("hidden");
       folderView.classList.remove("hidden");
       materialView.classList.add("hidden");
+      chatView.classList.add("hidden");
 
       gymGrid.innerHTML = "";
 
@@ -737,9 +981,11 @@
       subjectsArea.classList.remove("hidden");
       folderView.classList.add("hidden");
       materialView.classList.add("hidden");
+      chatView.classList.add("hidden");
       materialContent.innerHTML = "";
       currentSubject = null;
       currentIsDirectSubject = false;
+      stopChatListener();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -747,8 +993,10 @@
       subjectsArea.classList.add("hidden");
       materialView.classList.add("hidden");
       folderView.classList.remove("hidden");
+      chatView.classList.add("hidden");
       materialContent.innerHTML = "";
       currentIsDirectSubject = false;
+      stopChatListener();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -779,6 +1027,7 @@
     function openMaterial(subject, levelKey) {
       currentSubject = subject;
       currentIsDirectSubject = false;
+      stopChatListener();
 
       const displayLevel = levelKey.toUpperCase();
       const contentKey = subject.key + "-" + levelKey;
@@ -787,6 +1036,7 @@
       subjectsArea.classList.add("hidden");
       folderView.classList.add("hidden");
       materialView.classList.remove("hidden");
+      chatView.classList.add("hidden");
       window.scrollTo({ top: 0, behavior: "smooth" });
 
       if (!contentInfo) {
@@ -815,12 +1065,14 @@
     function openMaterialDirect(subject) {
       currentSubject = subject;
       currentIsDirectSubject = true;
+      stopChatListener();
 
       const contentInfo = availableContent[subject.key];
 
       subjectsArea.classList.add("hidden");
       folderView.classList.add("hidden");
       materialView.classList.remove("hidden");
+      chatView.classList.add("hidden");
       window.scrollTo({ top: 0, behavior: "smooth" });
 
       if (!contentInfo) {
@@ -890,12 +1142,290 @@
       }
     }
 
+    function escapeHTML(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function formatDate(timestamp) {
+      if (!timestamp || !timestamp.toDate) return "gerade eben";
+
+      return timestamp.toDate().toLocaleString("de-CH", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+    }
+
+    function getAuthorName(user, userData) {
+      if (userData && userData.name) return userData.name;
+      if (user && user.displayName) return user.displayName;
+      if (user && user.email) return user.email.split("@")[0];
+      return "Unbekannt";
+    }
+
+    function renderChatSubjects() {
+      chatSubjects.innerHTML = "";
+
+      subjects.forEach(function(subject) {
+        const card = document.createElement("div");
+        card.className = "chat-subject-card";
+        card.setAttribute("data-chat-subject", subject.key);
+        card.onclick = function() {
+          openChatSubject(subject);
+        };
+
+        card.innerHTML = `
+          <h3>${subject.name}</h3>
+        `;
+
+        chatSubjects.appendChild(card);
+      });
+    }
+
+    function openChat() {
+      subjectsArea.classList.add("hidden");
+      folderView.classList.add("hidden");
+      materialView.classList.add("hidden");
+      chatView.classList.remove("hidden");
+      materialContent.innerHTML = "";
+
+      if (!currentChatSubject && subjects.length > 0) {
+        openChatSubject(subjects[0]);
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function closeChat() {
+      currentChatSubject = null;
+      chatBoard.classList.add("hidden");
+      chatList.innerHTML = "";
+      stopChatListener();
+      backToSubjects();
+    }
+
+    function openChatSubject(subject) {
+      currentChatSubject = subject;
+      chatBoard.classList.remove("hidden");
+      chatComposeTitle.textContent = "Neue Frage stellen · " + subject.name;
+      chatQuestionTitle.value = "";
+      chatQuestionText.value = "";
+
+      document.querySelectorAll(".chat-subject-card").forEach(function(card) {
+        card.classList.remove("active");
+
+        if (card.getAttribute("data-chat-subject") === subject.key) {
+          card.classList.add("active");
+        }
+      });
+
+      loadChatMessages(subject);
+    }
+
+    function stopChatListener() {
+      if (typeof chatUnsubscribe === "function") {
+        chatUnsubscribe();
+        chatUnsubscribe = null;
+      }
+    }
+
+    function loadChatMessages(subject) {
+      stopChatListener();
+
+      chatList.innerHTML = `
+        <div class="chat-message">
+          <h3>Fragen werden geladen...</h3>
+          <p class="small">Es werden nur freigeschaltete Fragen angezeigt.</p>
+        </div>
+      `;
+
+      chatUnsubscribe = db
+        .collection("premiumChats")
+        .doc(subject.key)
+        .collection("messages")
+        .where("visible", "==", true)
+        .orderBy("createdAt", "desc")
+        .limit(50)
+        .onSnapshot(async function(snapshot) {
+          if (snapshot.empty) {
+            chatList.innerHTML = `
+              <div class="chat-message">
+                <h3>Noch keine sichtbaren Fragen</h3>
+                <p class="small">Für ${escapeHTML(subject.name)} wurden noch keine Fragen freigeschaltet.</p>
+              </div>
+            `;
+            return;
+          }
+
+          const messageHtmlParts = [];
+
+          for (const doc of snapshot.docs) {
+            const message = doc.data();
+
+            const repliesSnapshot = await db
+              .collection("premiumChats")
+              .doc(subject.key)
+              .collection("messages")
+              .doc(doc.id)
+              .collection("replies")
+              .where("visible", "==", true)
+              .orderBy("createdAt", "asc")
+              .get();
+
+            let repliesHtml = "";
+
+            repliesSnapshot.forEach(function(replyDoc) {
+              const reply = replyDoc.data();
+
+              repliesHtml += `
+                <div class="reply-item">
+                  <div class="chat-meta">
+                    Antwort von <strong>${escapeHTML(reply.authorName)}</strong> · ${escapeHTML(formatDate(reply.createdAt))}
+                  </div>
+                  <p>${escapeHTML(reply.text)}</p>
+                </div>
+              `;
+            });
+
+            if (!repliesHtml) {
+              repliesHtml = `<p class="small">Noch keine freigeschalteten Antworten.</p>`;
+            }
+
+            messageHtmlParts.push(`
+              <div class="chat-message">
+                <h3>${escapeHTML(message.title)}</h3>
+
+                <div class="chat-meta">
+                  Frage von <strong>${escapeHTML(message.authorName)}</strong> · ${escapeHTML(formatDate(message.createdAt))}
+                </div>
+
+                <div class="chat-text">${escapeHTML(message.text)}</div>
+
+                <button class="secondary" onclick="toggleReplyForm('${doc.id}')">Antwort schreiben</button>
+
+                <div id="reply-box-${doc.id}" class="reply-box hidden">
+                  <textarea id="reply-text-${doc.id}" maxlength="2500" placeholder="Schreibe deine Antwort. Sie wird erst sichtbar, wenn sie freigeschaltet wurde."></textarea>
+                  <button onclick="sendChatReply('${doc.id}')">Antwort absenden</button>
+                  <div class="pending-note">Antworten werden gespeichert, aber erst nach Freischaltung angezeigt.</div>
+                </div>
+
+                <div class="reply-list">
+                  ${repliesHtml}
+                </div>
+              </div>
+            `);
+          }
+
+          chatList.innerHTML = messageHtmlParts.join("");
+        }, function(error) {
+          chatList.innerHTML = `
+            <div class="chat-message">
+              <h3>Chat konnte nicht geladen werden</h3>
+              <p class="small">${escapeHTML(error.message)}</p>
+            </div>
+          `;
+        });
+    }
+
+    async function sendChatQuestion() {
+      try {
+        if (!currentUser || !currentChatSubject) return;
+
+        const title = chatQuestionTitle.value.trim();
+        const text = chatQuestionText.value.trim();
+
+        if (!title || !text) {
+          setStatus("Bitte gib einen Titel und eine Frage ein.");
+          return;
+        }
+
+        await db
+          .collection("premiumChats")
+          .doc(currentChatSubject.key)
+          .collection("messages")
+          .add({
+            subjectKey: currentChatSubject.key,
+            subjectName: currentChatSubject.name,
+            title: title,
+            text: text,
+            authorName: currentAuthorName,
+            authorUid: currentUser.uid,
+            authorEmail: currentUser.email || "",
+            visible: false,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+
+        chatQuestionTitle.value = "";
+        chatQuestionText.value = "";
+        setStatus("Deine Frage wurde gespeichert und wartet auf Freischaltung.");
+      } catch (error) {
+        setStatus("Fehler beim Speichern der Frage:\n" + error.message);
+      }
+    }
+
+    function toggleReplyForm(messageId) {
+      const box = document.getElementById("reply-box-" + messageId);
+      if (!box) return;
+      box.classList.toggle("hidden");
+    }
+
+    async function sendChatReply(messageId) {
+      try {
+        if (!currentUser || !currentChatSubject) return;
+
+        const textarea = document.getElementById("reply-text-" + messageId);
+        if (!textarea) return;
+
+        const text = textarea.value.trim();
+
+        if (!text) {
+          setStatus("Bitte schreibe zuerst eine Antwort.");
+          return;
+        }
+
+        await db
+          .collection("premiumChats")
+          .doc(currentChatSubject.key)
+          .collection("messages")
+          .doc(messageId)
+          .collection("replies")
+          .add({
+            subjectKey: currentChatSubject.key,
+            subjectName: currentChatSubject.name,
+            text: text,
+            authorName: currentAuthorName,
+            authorUid: currentUser.uid,
+            authorEmail: currentUser.email || "",
+            visible: false,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+
+        textarea.value = "";
+        setStatus("Deine Antwort wurde gespeichert und wartet auf Freischaltung.");
+      } catch (error) {
+        setStatus("Fehler beim Speichern der Antwort:\n" + error.message);
+      }
+    }
+
     window.backToSubjects = backToSubjects;
     window.backToGym = backToGym;
     window.backFromMaterial = backFromMaterial;
     window.setMaterialTitle = setMaterialTitle;
     window.setMaterialContent = setMaterialContent;
     window.toggleInfo = toggleInfo;
+    window.openChat = openChat;
+    window.closeChat = closeChat;
+    window.openChatSubject = openChatSubject;
+    window.sendChatQuestion = sendChatQuestion;
+    window.toggleReplyForm = toggleReplyForm;
+    window.sendChatReply = sendChatReply;
 
     document.addEventListener("contextmenu", function(event) {
       event.preventDefault();
@@ -908,6 +1438,7 @@
 
     logoutBtn.addEventListener("click", async function () {
       try {
+        stopChatListener();
         await auth.signOut();
         window.location.href = "index.html";
       } catch (error) {
@@ -917,6 +1448,10 @@
 
     auth.onAuthStateChanged(async function(user) {
       try {
+        currentUser = user;
+        currentUserData = null;
+        currentAuthorName = "Unbekannt";
+
         if (!user) {
           showLocked("Du bist nicht eingeloggt.");
           setStatus("Bitte logge dich zuerst auf der Startseite ein.");
@@ -934,6 +1469,8 @@
         }
 
         const userData = userDoc.data();
+        currentUserData = userData;
+        currentAuthorName = getAuthorName(user, userData);
 
         if (userData.premium === true) {
           showPremium();
