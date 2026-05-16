@@ -2559,6 +2559,976 @@ const FRANZOESISCH_BEREICHE = [
       </div>
     </section>
   `
+},
+   ,
+{
+  id: "gym3",
+  titel: "GYM3",
+  untertitel: "Zeiten und Verwendung",
+  beschreibung:
+    "Alle wichtigen französischen Zeiten mit Erklärung, Bildung, Verwendung und Beispielen: Présent, Futur composé, Futur simple, Passé composé, Imparfait, Plus-que-parfait, Conditionnel und Subjonctif.",
+  html: `
+    <section class="sf-fr-section">
+      <h2>GYM3 – Zeiten und Verwendung</h2>
+      <p class="sf-fr-lead">
+        In GYM3 geht es nicht nur darum, Zeiten zu bilden. Entscheidend ist, dass du verstehst,
+        <strong>wann</strong> du welche Zeit verwendest. Besonders wichtig sind die Unterschiede zwischen
+        <strong>Passé composé</strong>, <strong>Imparfait</strong> und <strong>Plus-que-parfait</strong>,
+        weil dort sehr viele Fehler passieren.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Grundidee</h4>
+        <p>
+          Eine Zeitform beantwortet immer eine Frage:
+          Passiert etwas jetzt, früher, später, regelmässig, abgeschlossen, als Hintergrund
+          oder sogar vor einer anderen vergangenen Handlung?
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>1. Überblick über die wichtigsten Zeiten</h3>
+      <p>
+        Diese Übersicht zeigt dir, welche Zeit wofür gebraucht wird.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Zeit</th>
+              <th>Wofür?</th>
+              <th>Beispiel</th>
+              <th>Deutsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Présent</td>
+              <td>Gegenwart, Gewohnheit, allgemeine Aussage</td>
+              <td>Je lis un texte.</td>
+              <td>Ich lese einen Text.</td>
+            </tr>
+            <tr>
+              <td>Futur composé</td>
+              <td>nahe Zukunft, geplanter Vorgang</td>
+              <td>Je vais lire un texte.</td>
+              <td>Ich werde gleich / demnächst einen Text lesen.</td>
+            </tr>
+            <tr>
+              <td>Futur simple</td>
+              <td>Zukunft, Vorhersage, formeller Stil</td>
+              <td>Je lirai un texte.</td>
+              <td>Ich werde einen Text lesen.</td>
+            </tr>
+            <tr>
+              <td>Passé composé</td>
+              <td>abgeschlossene Handlung in der Vergangenheit</td>
+              <td>J'ai lu un texte.</td>
+              <td>Ich habe einen Text gelesen.</td>
+            </tr>
+            <tr>
+              <td>Imparfait</td>
+              <td>Beschreibung, Zustand, Gewohnheit, Hintergrund</td>
+              <td>Je lisais souvent.</td>
+              <td>Ich las oft / ich habe oft gelesen.</td>
+            </tr>
+            <tr>
+              <td>Plus-que-parfait</td>
+              <td>Vorvergangenheit</td>
+              <td>J'avais lu le texte.</td>
+              <td>Ich hatte den Text gelesen.</td>
+            </tr>
+            <tr>
+              <td>Conditionnel présent</td>
+              <td>Wunsch, Höflichkeit, Möglichkeit</td>
+              <td>Je voudrais lire.</td>
+              <td>Ich würde gerne lesen.</td>
+            </tr>
+            <tr>
+              <td>Subjonctif présent</td>
+              <td>Wunsch, Gefühl, Zweifel, Notwendigkeit</td>
+              <td>Il faut que je lise.</td>
+              <td>Es ist nötig, dass ich lese.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>2. Présent</h3>
+      <p>
+        Das <strong>Présent</strong> benutzt man für Handlungen in der Gegenwart,
+        für regelmässige Handlungen und für allgemeine Aussagen.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Verwendung</h4>
+        <p>
+          <strong>1. Jetzt:</strong> Je travaille maintenant.<br>
+          <strong>2. Gewohnheit:</strong> Chaque jour, je prends le bus.<br>
+          <strong>3. Allgemeine Aussage:</strong> L'eau est importante pour la vie.
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiele</h4>
+        <p>
+          <strong>Elle écrit une lettre.</strong><br>
+          Sie schreibt einen Brief.
+        </p>
+        <p>
+          <strong>Nous parlons français en classe.</strong><br>
+          Wir sprechen Französisch im Unterricht.
+        </p>
+        <p>
+          <strong>Le texte montre un conflit entre deux personnages.</strong><br>
+          Der Text zeigt einen Konflikt zwischen zwei Figuren.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Wichtig für Textanalysen</h4>
+        <p>
+          In einer französischen Textanalyse verwendest du meistens das Présent:
+          <strong>L'auteur montre...</strong>, <strong>Le narrateur décrit...</strong>,
+          <strong>Ce passage souligne...</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>3. Futur composé</h3>
+      <p>
+        Das <strong>Futur composé</strong> benutzt man für eine nahe oder geplante Zukunft.
+        Es ist im Alltag sehr häufig.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          <strong>aller im Présent + Infinitiv</strong>
+        </p>
+        <p>
+          Je vais travailler.<br>
+          Tu vas partir.<br>
+          Elle va écrire.<br>
+          Nous allons regarder.
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiele</h4>
+        <p>
+          <strong>Je vais réviser pour l'examen.</strong><br>
+          Ich werde für die Prüfung lernen.
+        </p>
+        <p>
+          <strong>Nous allons écrire une synthèse.</strong><br>
+          Wir werden eine Synthèse schreiben.
+        </p>
+        <p>
+          <strong>Elle va expliquer son opinion.</strong><br>
+          Sie wird ihre Meinung erklären.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Wann benutzt man es?</h4>
+        <p>
+          Wenn etwas bald oder konkret geplant ist:
+          <strong>Ce soir, je vais finir mes devoirs.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>4. Futur simple</h3>
+      <p>
+        Das <strong>Futur simple</strong> benutzt man für zukünftige Handlungen,
+        besonders in schriftlicher oder etwas formellerer Sprache.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          Bei vielen Verben nimmt man den Infinitiv und hängt diese Endungen an:
+        </p>
+        <p>
+          <strong>-ai, -as, -a, -ons, -ez, -ont</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>parler</th>
+              <th>finir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je parlerai</td>
+              <td>je finirai</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu parleras</td>
+              <td>tu finiras</td>
+            </tr>
+            <tr>
+              <td>il / elle</td>
+              <td>il parlera</td>
+              <td>elle finira</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous parlerons</td>
+              <td>nous finirons</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous parlerez</td>
+              <td>vous finirez</td>
+            </tr>
+            <tr>
+              <td>ils / elles</td>
+              <td>ils parleront</td>
+              <td>elles finiront</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Wichtige unregelmässige Stämme</h4>
+        <p>
+          <strong>être</strong> → ser- : je serai<br>
+          <strong>avoir</strong> → aur- : j'aurai<br>
+          <strong>aller</strong> → ir- : j'irai<br>
+          <strong>faire</strong> → fer- : je ferai<br>
+          <strong>venir</strong> → viendr- : je viendrai<br>
+          <strong>voir</strong> → verr- : je verrai<br>
+          <strong>pouvoir</strong> → pourr- : je pourrai<br>
+          <strong>vouloir</strong> → voudr- : je voudrai<br>
+          <strong>devoir</strong> → devr- : je devrai
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiele</h4>
+        <p>
+          <strong>Demain, nous parlerons de ce problème.</strong><br>
+          Morgen werden wir über dieses Problem sprechen.
+        </p>
+        <p>
+          <strong>Elle fera plus attention.</strong><br>
+          Sie wird besser aufpassen.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>5. Passé composé</h3>
+      <p>
+        Das <strong>Passé composé</strong> benutzt man für abgeschlossene Handlungen in der Vergangenheit.
+        Es erzählt, was passiert ist.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          <strong>avoir oder être im Présent + participe passé</strong>
+        </p>
+        <p>
+          <strong>J'ai travaillé.</strong><br>
+          <strong>Elle est partie.</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Verwendung</th>
+              <th>Beispiel</th>
+              <th>Erklärung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>einmalige Handlung</td>
+              <td>Hier, j'ai vu Marie.</td>
+              <td>Gestern habe ich Marie gesehen.</td>
+            </tr>
+            <tr>
+              <td>abgeschlossene Handlung</td>
+              <td>Il a fini ses devoirs.</td>
+              <td>Er hat seine Hausaufgaben beendet.</td>
+            </tr>
+            <tr>
+              <td>Handlungskette</td>
+              <td>Elle est entrée, elle a regardé autour d'elle et elle a souri.</td>
+              <td>Mehrere Ereignisse passieren nacheinander.</td>
+            </tr>
+            <tr>
+              <td>plötzliches Ereignis</td>
+              <td>Je dormais quand le téléphone a sonné.</td>
+              <td>Das Klingeln unterbricht die Hintergrundhandlung.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel in einem kurzen Text</h4>
+        <p>
+          <strong>Hier, j'ai rencontré un ami. Nous avons parlé pendant une heure, puis nous sommes allés au café.</strong>
+        </p>
+        <p>
+          Hier werden einzelne abgeschlossene Ereignisse erzählt.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>6. Imparfait</h3>
+      <p>
+        Das <strong>Imparfait</strong> benutzt man nicht für einzelne abgeschlossene Ereignisse,
+        sondern für Beschreibungen, Zustände, Gewohnheiten und Hintergrundhandlungen.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          <strong>nous-Form im Présent ohne -ons + Endungen</strong>
+        </p>
+        <p>
+          Endungen: <strong>-ais, -ais, -ait, -ions, -iez, -aient</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Verwendung</th>
+              <th>Beispiel</th>
+              <th>Erklärung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beschreibung</td>
+              <td>La ville était calme.</td>
+              <td>Die Stadt war ruhig.</td>
+            </tr>
+            <tr>
+              <td>Zustand</td>
+              <td>J'étais fatigué.</td>
+              <td>Ich war müde.</td>
+            </tr>
+            <tr>
+              <td>Gewohnheit</td>
+              <td>Chaque été, nous allions au lac.</td>
+              <td>Jeden Sommer gingen wir an den See.</td>
+            </tr>
+            <tr>
+              <td>Hintergrundhandlung</td>
+              <td>Il pleuvait quand elle est sortie.</td>
+              <td>Es regnete, als sie hinausging.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Typische Signalwörter</h4>
+        <p>
+          <strong>souvent</strong> – oft<br>
+          <strong>toujours</strong> – immer<br>
+          <strong>d'habitude</strong> – gewöhnlich<br>
+          <strong>chaque jour</strong> – jeden Tag<br>
+          <strong>quand j'étais petit</strong> – als ich klein war
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>7. Passé composé oder Imparfait?</h3>
+      <p>
+        Das ist einer der wichtigsten Unterschiede im Französischen.
+        Merke dir:
+      </p>
+
+      <div class="sf-fr-compare">
+        <div>
+          <h4>Passé composé</h4>
+          <p>
+            <strong>Was ist passiert?</strong>
+          </p>
+          <p>
+            Einzelne, abgeschlossene Ereignisse.
+          </p>
+          <p>
+            <strong>J'ai ouvert la porte.</strong><br>
+            Ich habe die Tür geöffnet.
+          </p>
+        </div>
+        <div>
+          <h4>Imparfait</h4>
+          <p>
+            <strong>Wie war die Situation?</strong>
+          </p>
+          <p>
+            Hintergrund, Beschreibung, Zustand, Gewohnheit.
+          </p>
+          <p>
+            <strong>La maison était sombre.</strong><br>
+            Das Haus war dunkel.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Merksatz</h4>
+        <p>
+          <strong>Passé composé</strong> = Handlung / Ereignis<br>
+          <strong>Imparfait</strong> = Hintergrund / Zustand / Beschreibung
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel mit Erklärung</h4>
+        <p>
+          <strong>Il faisait froid et je marchais dans la rue quand j'ai entendu un bruit.</strong>
+        </p>
+        <p>
+          <strong>Il faisait froid</strong> = Beschreibung<br>
+          <strong>je marchais</strong> = Hintergrundhandlung<br>
+          <strong>j'ai entendu</strong> = plötzliches Ereignis
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>8. Plus-que-parfait</h3>
+      <p>
+        Das <strong>Plus-que-parfait</strong> benutzt man für eine Handlung,
+        die schon vor einer anderen vergangenen Handlung passiert ist.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          <strong>avoir oder être im Imparfait + participe passé</strong>
+        </p>
+        <p>
+          <strong>J'avais terminé.</strong><br>
+          <strong>Elle était partie.</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Situation</th>
+              <th>Beispiel</th>
+              <th>Erklärung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>eine Handlung passiert früher</td>
+              <td>Quand je suis arrivé, le cours avait déjà commencé.</td>
+              <td>Der Kurs hatte schon begonnen, bevor ich ankam.</td>
+            </tr>
+            <tr>
+              <td>Grund für einen Zustand</td>
+              <td>Elle était triste parce qu'elle avait perdu son téléphone.</td>
+              <td>Der Verlust war vorher passiert.</td>
+            </tr>
+            <tr>
+              <td>Rückblick</td>
+              <td>Il a compris qu'il avait oublié son livre.</td>
+              <td>Er hatte das Buch schon vorher vergessen.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Zeitlinie</h4>
+        <p>
+          <strong>Le film avait commencé</strong> → früher<br>
+          <strong>je suis arrivé</strong> → später
+        </p>
+        <p>
+          Satz: <strong>Quand je suis arrivé, le film avait commencé.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>9. Conditionnel présent</h3>
+      <p>
+        Das <strong>Conditionnel présent</strong> entspricht oft dem deutschen „würde“.
+        Man benutzt es für Wünsche, höfliche Bitten, Möglichkeiten oder Bedingungen.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          Stamm des Futur simple + Imparfait-Endungen:
+        </p>
+        <p>
+          <strong>-ais, -ais, -ait, -ions, -iez, -aient</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>parler</th>
+              <th>être</th>
+              <th>avoir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je parlerais</td>
+              <td>je serais</td>
+              <td>j'aurais</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu parlerais</td>
+              <td>tu serais</td>
+              <td>tu aurais</td>
+            </tr>
+            <tr>
+              <td>il / elle</td>
+              <td>il parlerait</td>
+              <td>elle serait</td>
+              <td>il aurait</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous parlerions</td>
+              <td>nous serions</td>
+              <td>nous aurions</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous parleriez</td>
+              <td>vous seriez</td>
+              <td>vous auriez</td>
+            </tr>
+            <tr>
+              <td>ils / elles</td>
+              <td>ils parleraient</td>
+              <td>elles seraient</td>
+              <td>ils auraient</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiele</h4>
+        <p>
+          <strong>Je voudrais expliquer mon opinion.</strong><br>
+          Ich würde gerne meine Meinung erklären.
+        </p>
+        <p>
+          <strong>À sa place, je parlerais avec le professeur.</strong><br>
+          An seiner Stelle würde ich mit dem Lehrer sprechen.
+        </p>
+        <p>
+          <strong>Ce serait une bonne solution.</strong><br>
+          Das wäre eine gute Lösung.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>10. Conditionnel passé</h3>
+      <p>
+        Das <strong>Conditionnel passé</strong> benutzt man für etwas, das in der Vergangenheit
+        möglich gewesen wäre, aber nicht passiert ist.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          <strong>avoir oder être im Conditionnel présent + participe passé</strong>
+        </p>
+        <p>
+          <strong>J'aurais parlé.</strong><br>
+          <strong>Elle serait partie.</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiele</h4>
+        <p>
+          <strong>J'aurais aidé mon ami, mais je n'avais pas le temps.</strong><br>
+          Ich hätte meinem Freund geholfen, aber ich hatte keine Zeit.
+        </p>
+        <p>
+          <strong>Elle serait venue si elle avait su.</strong><br>
+          Sie wäre gekommen, wenn sie es gewusst hätte.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>11. Si-Sätze mit Zeiten</h3>
+      <p>
+        Bei <strong>si</strong>-Sätzen ist besonders wichtig, welche Zeit im Bedingungssatz
+        und welche Zeit im Hauptsatz steht.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Bedingung</th>
+              <th>Folge</th>
+              <th>Beispiel</th>
+              <th>Bedeutung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>si + présent</td>
+              <td>futur simple / présent</td>
+              <td>Si j'ai le temps, je viendrai.</td>
+              <td>Wenn ich Zeit habe, werde ich kommen.</td>
+            </tr>
+            <tr>
+              <td>si + imparfait</td>
+              <td>conditionnel présent</td>
+              <td>Si j'avais le temps, je viendrais.</td>
+              <td>Wenn ich Zeit hätte, würde ich kommen.</td>
+            </tr>
+            <tr>
+              <td>si + plus-que-parfait</td>
+              <td>conditionnel passé</td>
+              <td>Si j'avais eu le temps, je serais venu.</td>
+              <td>Wenn ich Zeit gehabt hätte, wäre ich gekommen.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Si j'aurai le temps, je viendrai.</p>
+        <p><strong>Richtig:</strong> Si j'ai le temps, je viendrai.</p>
+        <p><strong>Erklärung:</strong> Nach <strong>si</strong> steht hier kein Futur simple.</p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>12. Subjonctif présent</h3>
+      <p>
+        Der <strong>Subjonctif</strong> ist keine normale Zeit wie Passé composé oder Imparfait,
+        sondern ein Modus. Er steht oft nach Ausdrücken von Wunsch, Gefühl, Zweifel,
+        Notwendigkeit oder Bewertung.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Typische Auslöser</h4>
+        <p>
+          <strong>Il faut que</strong> – es ist nötig, dass<br>
+          <strong>Je veux que</strong> – ich will, dass<br>
+          <strong>Je suis content que</strong> – ich bin froh, dass<br>
+          <strong>Il est important que</strong> – es ist wichtig, dass<br>
+          <strong>Je doute que</strong> – ich bezweifle, dass<br>
+          <strong>Bien que</strong> – obwohl
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiele</h4>
+        <p>
+          <strong>Il faut que tu comprennes ce texte.</strong><br>
+          Es ist nötig, dass du diesen Text verstehst.
+        </p>
+        <p>
+          <strong>Je suis content qu'elle soit ici.</strong><br>
+          Ich bin froh, dass sie hier ist.
+        </p>
+        <p>
+          <strong>Bien qu'il soit fatigué, il continue.</strong><br>
+          Obwohl er müde ist, macht er weiter.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Indicatif oder Subjonctif?</h4>
+        <p>
+          <strong>Je pense qu'il vient.</strong> = Indicatif, eher Feststellung<br>
+          <strong>Je veux qu'il vienne.</strong> = Subjonctif, Wunsch
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>13. Zeiten in einer Erzählung</h3>
+      <p>
+        In einer Erzählung kombiniert man oft mehrere Zeiten. Jede Zeit hat dabei eine bestimmte Aufgabe.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Funktion</th>
+              <th>Zeit</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hintergrund beschreiben</td>
+              <td>Imparfait</td>
+              <td>Il faisait nuit et la rue était vide.</td>
+            </tr>
+            <tr>
+              <td>Handlung erzählen</td>
+              <td>Passé composé</td>
+              <td>Soudain, elle a entendu un bruit.</td>
+            </tr>
+            <tr>
+              <td>Noch frühere Handlung erklären</td>
+              <td>Plus-que-parfait</td>
+              <td>Elle avait oublié ses clés.</td>
+            </tr>
+            <tr>
+              <td>Spätere Folge ankündigen</td>
+              <td>Futur simple / Futur composé</td>
+              <td>Elle va demander de l'aide.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Kurzer Beispieltext</h4>
+        <p>
+          <strong>Il faisait déjà sombre quand Léa est rentrée. Elle était fatiguée parce qu'elle avait travaillé toute la journée.
+          Soudain, elle a remarqué que son sac n'était plus là. Elle va maintenant appeler son amie.</strong>
+        </p>
+        <p>
+          <strong>Il faisait</strong> = Hintergrund<br>
+          <strong>est rentrée</strong> = Ereignis<br>
+          <strong>avait travaillé</strong> = Vorvergangenheit<br>
+          <strong>va appeler</strong> = nahe Zukunft
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>14. Zeiten in einer Textanalyse</h3>
+      <p>
+        In einer Textanalyse verwendet man meistens das <strong>Présent</strong>,
+        weil der Text beim Analysieren als gegenwärtig betrachtet wird.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Gute Analyseformulierungen im Présent</h4>
+        <p>
+          <strong>Le texte montre que...</strong><br>
+          <strong>L'auteur critique...</strong><br>
+          <strong>Le narrateur décrit...</strong><br>
+          <strong>Ce passage souligne...</strong><br>
+          <strong>Cette phrase révèle...</strong><br>
+          <strong>Le personnage semble...</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Schwach:</strong> L'auteur a montré que le personnage était triste.</p>
+        <p><strong>Besser:</strong> L'auteur montre que le personnage est triste.</p>
+        <p><strong>Erklärung:</strong> In einer Textanalyse benutzt man normalerweise das Présent.</p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>15. Häufige Fehler bei Zeiten</h3>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Hier, je vais au cinéma.</p>
+        <p><strong>Richtig:</strong> Hier, je suis allé au cinéma.</p>
+        <p><strong>Erklärung:</strong> <strong>hier</strong> zeigt Vergangenheit. Deshalb braucht man hier Passé composé.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Quand j'étais petit, je suis allé souvent au parc.</p>
+        <p><strong>Richtig:</strong> Quand j'étais petit, j'allais souvent au parc.</p>
+        <p><strong>Erklärung:</strong> Eine Gewohnheit in der Vergangenheit steht meistens im Imparfait.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Quand je suis arrivé, le cours a déjà commencé.</p>
+        <p><strong>Besser:</strong> Quand je suis arrivé, le cours avait déjà commencé.</p>
+        <p><strong>Erklärung:</strong> Der Kurs begann vor dem Ankommen. Deshalb braucht man Plus-que-parfait.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Si j'aurai le temps, je t'aiderai.</p>
+        <p><strong>Richtig:</strong> Si j'ai le temps, je t'aiderai.</p>
+        <p><strong>Erklärung:</strong> Nach <strong>si</strong> steht hier kein Futur simple.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Il faut que tu viens.</p>
+        <p><strong>Richtig:</strong> Il faut que tu viennes.</p>
+        <p><strong>Erklärung:</strong> Nach <strong>il faut que</strong> steht der Subjonctif.</p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>16. Mini-Training für GYM3</h3>
+      <p>
+        Löse zuerst selbst. Danach kannst du die Lösung anzeigen.
+      </p>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 1 – Passé composé oder Imparfait?</h4>
+        <p>Setze die richtige Zeit ein:</p>
+        <p><strong>Il ___ froid quand nous ___ la maison.</strong></p>
+        <p>faire / quitter</p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym3-l1')">Lösung anzeigen</button>
+        <div id="fr-gym3-l1" class="sf-fr-hidden-box">
+          <p><strong>Il faisait froid quand nous avons quitté la maison.</strong></p>
+          <p><strong>faisait</strong> beschreibt den Hintergrund. <strong>avons quitté</strong> ist eine abgeschlossene Handlung.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 2 – Plus-que-parfait</h4>
+        <p>Setze die frühere Handlung ins Plus-que-parfait:</p>
+        <p><strong>Quand elle est arrivée, le train déjà partir.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym3-l2')">Lösung anzeigen</button>
+        <div id="fr-gym3-l2" class="sf-fr-hidden-box">
+          <p><strong>Quand elle est arrivée, le train était déjà parti.</strong></p>
+          <p>Der Zug war schon vorher abgefahren. Deshalb braucht man <strong>était parti</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 3 – Futur simple</h4>
+        <p>Setze ins Futur simple:</p>
+        <p><strong>Nous faisons attention.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym3-l3')">Lösung anzeigen</button>
+        <div id="fr-gym3-l3" class="sf-fr-hidden-box">
+          <p><strong>Nous ferons attention.</strong></p>
+          <p><strong>faire</strong> hat im Futur simple den Stamm <strong>fer-</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 4 – Conditionnel</h4>
+        <p>Übersetze:</p>
+        <p><strong>Ich würde gerne meine Meinung erklären.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym3-l4')">Lösung anzeigen</button>
+        <div id="fr-gym3-l4" class="sf-fr-hidden-box">
+          <p><strong>Je voudrais expliquer mon opinion.</strong></p>
+          <p><strong>Je voudrais</strong> ist eine höfliche und sehr nützliche Form.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 5 – Si-Satz</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Si j'aurai le temps, je viendrai.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym3-l5')">Lösung anzeigen</button>
+        <div id="fr-gym3-l5" class="sf-fr-hidden-box">
+          <p><strong>Si j'ai le temps, je viendrai.</strong></p>
+          <p>Nach <strong>si</strong> steht hier Präsens, nicht Futur simple.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 6 – Subjonctif</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Il est important que vous faites attention.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym3-l6')">Lösung anzeigen</button>
+        <div id="fr-gym3-l6" class="sf-fr-hidden-box">
+          <p><strong>Il est important que vous fassiez attention.</strong></p>
+          <p>Nach <strong>il est important que</strong> steht der Subjonctif. Von <strong>faire</strong>: <strong>que vous fassiez</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 7 – Textanalyse im Présent</h4>
+        <p>Verbessere:</p>
+        <p><strong>L'auteur a montré que la situation était injuste.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym3-l7')">Lösung anzeigen</button>
+        <div id="fr-gym3-l7" class="sf-fr-hidden-box">
+          <p><strong>L'auteur montre que la situation est injuste.</strong></p>
+          <p>In einer Textanalyse verwendet man normalerweise das Présent.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>17. Das Wichtigste für GYM3</h3>
+
+      <div class="sf-fr-rule">
+        <h4>Présent</h4>
+        <p>
+          Gegenwart, allgemeine Aussage und Textanalyse.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Passé composé</h4>
+        <p>
+          Abgeschlossene Handlung, Ereignis, Handlungskette.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Imparfait</h4>
+        <p>
+          Beschreibung, Zustand, Gewohnheit, Hintergrund.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Plus-que-parfait</h4>
+        <p>
+          Handlung, die vor einer anderen vergangenen Handlung passiert ist.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Conditionnel</h4>
+        <p>
+          Wunsch, Höflichkeit, Möglichkeit oder hypothetische Aussage.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Subjonctif</h4>
+        <p>
+          Nach Wunsch, Gefühl, Zweifel, Notwendigkeit oder Bewertung.
+        </p>
+      </div>
+    </section>
+  `
 }
 
   
