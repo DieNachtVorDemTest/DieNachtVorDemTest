@@ -1282,7 +1282,1284 @@ const FRANZOESISCH_BEREICHE = [
         </div>
       </section>
     `
-  }
+  },
+   ,
+{
+  id: "gym2",
+  titel: "GYM2",
+  untertitel: "Verben und Konjugation",
+  beschreibung:
+    "Die wichtigsten französischen Verben und ihre Konjugation im Présent, Passé composé, Imparfait und Plus-que-parfait – mit Regeln, Beispielen und typischen Fehlern.",
+  html: `
+    <section class="sf-fr-section">
+      <h2>GYM2 – Verben und Konjugation</h2>
+      <p class="sf-fr-lead">
+        Französische Verben sind der Kern fast jedes Satzes. Wenn du die wichtigsten Verbgruppen,
+        Hilfsverben und Zeiten beherrschst, kannst du deutlich sicherer schreiben und sprechen.
+        In diesem Bereich lernst du, wie man regelmässige und wichtige unregelmässige Verben im
+        Présent, Passé composé, Imparfait und Plus-que-parfait bildet.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Grundidee</h4>
+        <p>
+          Bei jedem französischen Verb musst du drei Dinge prüfen:
+          <strong>Wer handelt?</strong>, <strong>in welcher Zeit?</strong> und <strong>braucht das Verb avoir oder être?</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>1. Die drei regelmässigen Verbgruppen</h3>
+      <p>
+        Französische Verben werden oft nach ihrer Endung im Infinitiv geordnet:
+        <strong>-er</strong>, <strong>-ir</strong> und <strong>-re</strong>.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Gruppe</th>
+              <th>Infinitiv</th>
+              <th>Stamm</th>
+              <th>Typische Bedeutung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-er-Verben</td>
+              <td>parler</td>
+              <td>parl-</td>
+              <td>sprechen</td>
+            </tr>
+            <tr>
+              <td>-ir-Verben</td>
+              <td>finir</td>
+              <td>fin-</td>
+              <td>beenden</td>
+            </tr>
+            <tr>
+              <td>-re-Verben</td>
+              <td>vendre</td>
+              <td>vend-</td>
+              <td>verkaufen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>So findest du den Stamm</h4>
+        <p>
+          Du nimmst den Infinitiv und streichst die Endung weg:
+        </p>
+        <p>
+          <strong>parler</strong> → parl-<br>
+          <strong>finir</strong> → fin-<br>
+          <strong>vendre</strong> → vend-
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>2. Présent: regelmässige -er-Verben</h3>
+      <p>
+        Die meisten französischen Verben gehören zur Gruppe der <strong>-er-Verben</strong>.
+        Sie sind deshalb besonders wichtig.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Endungen im Présent</h4>
+        <p>
+          <strong>-e, -es, -e, -ons, -ez, -ent</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>parler</th>
+              <th>Deutsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je parle</td>
+              <td>ich spreche</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu parles</td>
+              <td>du sprichst</td>
+            </tr>
+            <tr>
+              <td>il / elle / on</td>
+              <td>il parle</td>
+              <td>er spricht</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous parlons</td>
+              <td>wir sprechen</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous parlez</td>
+              <td>ihr sprecht / Sie sprechen</td>
+            </tr>
+            <tr>
+              <td>ils / elles</td>
+              <td>ils parlent</td>
+              <td>sie sprechen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Weitere -er-Verben</h4>
+        <p>
+          <strong>aimer</strong> – mögen / lieben<br>
+          <strong>regarder</strong> – anschauen<br>
+          <strong>écouter</strong> – zuhören<br>
+          <strong>travailler</strong> – arbeiten<br>
+          <strong>chercher</strong> – suchen<br>
+          <strong>trouver</strong> – finden
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>3. Présent: regelmässige -ir-Verben</h3>
+      <p>
+        Viele regelmässige <strong>-ir-Verben</strong> bilden im Plural eine Erweiterung mit <strong>-iss-</strong>.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Endungen im Présent</h4>
+        <p>
+          <strong>-is, -is, -it, -issons, -issez, -issent</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>finir</th>
+              <th>Deutsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je finis</td>
+              <td>ich beende</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu finis</td>
+              <td>du beendest</td>
+            </tr>
+            <tr>
+              <td>il / elle / on</td>
+              <td>il finit</td>
+              <td>er beendet</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous finissons</td>
+              <td>wir beenden</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous finissez</td>
+              <td>ihr beendet / Sie beenden</td>
+            </tr>
+            <tr>
+              <td>ils / elles</td>
+              <td>ils finissent</td>
+              <td>sie beenden</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Weitere regelmässige -ir-Verben</h4>
+        <p>
+          <strong>choisir</strong> – wählen<br>
+          <strong>réussir</strong> – Erfolg haben / bestehen<br>
+          <strong>grandir</strong> – wachsen<br>
+          <strong>réfléchir</strong> – nachdenken<br>
+          <strong>remplir</strong> – ausfüllen
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>4. Présent: regelmässige -re-Verben</h3>
+      <p>
+        Bei regelmässigen <strong>-re-Verben</strong> streicht man <strong>-re</strong> weg und hängt die Endungen an.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Endungen im Présent</h4>
+        <p>
+          <strong>-s, -s, -, -ons, -ez, -ent</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>vendre</th>
+              <th>Deutsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je vends</td>
+              <td>ich verkaufe</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu vends</td>
+              <td>du verkaufst</td>
+            </tr>
+            <tr>
+              <td>il / elle / on</td>
+              <td>il vend</td>
+              <td>er verkauft</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous vendons</td>
+              <td>wir verkaufen</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous vendez</td>
+              <td>ihr verkauft / Sie verkaufen</td>
+            </tr>
+            <tr>
+              <td>ils / elles</td>
+              <td>ils vendent</td>
+              <td>sie verkaufen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Weitere -re-Verben</h4>
+        <p>
+          <strong>attendre</strong> – warten<br>
+          <strong>répondre</strong> – antworten<br>
+          <strong>perdre</strong> – verlieren<br>
+          <strong>entendre</strong> – hören<br>
+          <strong>rendre</strong> – zurückgeben / machen
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>5. Die wichtigsten unregelmässigen Verben im Présent</h3>
+      <p>
+        Einige Verben kommen so oft vor, dass du sie sicher können musst. Sie sind unregelmässig
+        und folgen nicht vollständig den normalen Verbgruppen.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Verb</th>
+              <th>je</th>
+              <th>tu</th>
+              <th>il / elle</th>
+              <th>nous</th>
+              <th>vous</th>
+              <th>ils / elles</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>être</td>
+              <td>suis</td>
+              <td>es</td>
+              <td>est</td>
+              <td>sommes</td>
+              <td>êtes</td>
+              <td>sont</td>
+            </tr>
+            <tr>
+              <td>avoir</td>
+              <td>ai</td>
+              <td>as</td>
+              <td>a</td>
+              <td>avons</td>
+              <td>avez</td>
+              <td>ont</td>
+            </tr>
+            <tr>
+              <td>aller</td>
+              <td>vais</td>
+              <td>vas</td>
+              <td>va</td>
+              <td>allons</td>
+              <td>allez</td>
+              <td>vont</td>
+            </tr>
+            <tr>
+              <td>faire</td>
+              <td>fais</td>
+              <td>fais</td>
+              <td>fait</td>
+              <td>faisons</td>
+              <td>faites</td>
+              <td>font</td>
+            </tr>
+            <tr>
+              <td>prendre</td>
+              <td>prends</td>
+              <td>prends</td>
+              <td>prend</td>
+              <td>prenons</td>
+              <td>prenez</td>
+              <td>prennent</td>
+            </tr>
+            <tr>
+              <td>venir</td>
+              <td>viens</td>
+              <td>viens</td>
+              <td>vient</td>
+              <td>venons</td>
+              <td>venez</td>
+              <td>viennent</td>
+            </tr>
+            <tr>
+              <td>pouvoir</td>
+              <td>peux</td>
+              <td>peux</td>
+              <td>peut</td>
+              <td>pouvons</td>
+              <td>pouvez</td>
+              <td>peuvent</td>
+            </tr>
+            <tr>
+              <td>vouloir</td>
+              <td>veux</td>
+              <td>veux</td>
+              <td>veut</td>
+              <td>voulons</td>
+              <td>voulez</td>
+              <td>veulent</td>
+            </tr>
+            <tr>
+              <td>devoir</td>
+              <td>dois</td>
+              <td>dois</td>
+              <td>doit</td>
+              <td>devons</td>
+              <td>devez</td>
+              <td>doivent</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Sehr wichtig</h4>
+        <p>
+          <strong>être</strong> und <strong>avoir</strong> brauchst du nicht nur als normale Verben,
+          sondern auch als Hilfsverben für zusammengesetzte Zeiten.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>6. Passé composé: Bildung</h3>
+      <p>
+        Das <strong>Passé composé</strong> benutzt man meistens für abgeschlossene Handlungen in der Vergangenheit.
+        Es besteht aus einem Hilfsverb und dem Participe passé.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Grundformel</h4>
+        <p>
+          <strong>avoir oder être im Présent + participe passé</strong>
+        </p>
+        <p>
+          <strong>J'ai parlé.</strong> – Ich habe gesprochen.<br>
+          <strong>Elle est allée.</strong> – Sie ist gegangen.
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Infinitiv</th>
+              <th>Participe passé</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>parler</td>
+              <td>parlé</td>
+              <td>j'ai parlé</td>
+            </tr>
+            <tr>
+              <td>finir</td>
+              <td>fini</td>
+              <td>j'ai fini</td>
+            </tr>
+            <tr>
+              <td>vendre</td>
+              <td>vendu</td>
+              <td>j'ai vendu</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Participe passé bei regelmässigen Verben</h4>
+        <p>
+          <strong>-er</strong> → <strong>-é</strong>: parler → parlé<br>
+          <strong>-ir</strong> → <strong>-i</strong>: finir → fini<br>
+          <strong>-re</strong> → <strong>-u</strong>: vendre → vendu
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>7. Passé composé mit avoir</h3>
+      <p>
+        Die meisten Verben bilden das Passé composé mit <strong>avoir</strong>.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>parler</th>
+              <th>finir</th>
+              <th>vendre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>j'</td>
+              <td>j'ai parlé</td>
+              <td>j'ai fini</td>
+              <td>j'ai vendu</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu as parlé</td>
+              <td>tu as fini</td>
+              <td>tu as vendu</td>
+            </tr>
+            <tr>
+              <td>il / elle</td>
+              <td>il a parlé</td>
+              <td>elle a fini</td>
+              <td>il a vendu</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous avons parlé</td>
+              <td>nous avons fini</td>
+              <td>nous avons vendu</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous avez parlé</td>
+              <td>vous avez fini</td>
+              <td>vous avez vendu</td>
+            </tr>
+            <tr>
+              <td>ils / elles</td>
+              <td>ils ont parlé</td>
+              <td>elles ont fini</td>
+              <td>ils ont vendu</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiele</h4>
+        <p>
+          <strong>J'ai regardé un film.</strong> – Ich habe einen Film geschaut.<br>
+          <strong>Nous avons fini les devoirs.</strong> – Wir haben die Hausaufgaben beendet.<br>
+          <strong>Elle a vendu son vélo.</strong> – Sie hat ihr Fahrrad verkauft.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>8. Passé composé mit être</h3>
+      <p>
+        Einige Verben bilden das Passé composé mit <strong>être</strong>. Das sind vor allem Verben der Bewegung
+        oder Zustandsveränderung.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Wichtige être-Verben</h4>
+        <p>
+          <strong>aller</strong> – gehen<br>
+          <strong>venir</strong> – kommen<br>
+          <strong>arriver</strong> – ankommen<br>
+          <strong>partir</strong> – weggehen<br>
+          <strong>entrer</strong> – eintreten<br>
+          <strong>sortir</strong> – hinausgehen<br>
+          <strong>monter</strong> – hinaufgehen<br>
+          <strong>descendre</strong> – hinuntergehen<br>
+          <strong>naître</strong> – geboren werden<br>
+          <strong>mourir</strong> – sterben<br>
+          <strong>rester</strong> – bleiben<br>
+          <strong>tomber</strong> – fallen<br>
+          <strong>retourner</strong> – zurückkehren
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>aller</th>
+              <th>Deutsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je suis allé / allée</td>
+              <td>ich bin gegangen</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu es allé / allée</td>
+              <td>du bist gegangen</td>
+            </tr>
+            <tr>
+              <td>il</td>
+              <td>il est allé</td>
+              <td>er ist gegangen</td>
+            </tr>
+            <tr>
+              <td>elle</td>
+              <td>elle est allée</td>
+              <td>sie ist gegangen</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous sommes allés / allées</td>
+              <td>wir sind gegangen</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous êtes allé / allée / allés / allées</td>
+              <td>ihr seid / Sie sind gegangen</td>
+            </tr>
+            <tr>
+              <td>ils</td>
+              <td>ils sont allés</td>
+              <td>sie sind gegangen</td>
+            </tr>
+            <tr>
+              <td>elles</td>
+              <td>elles sont allées</td>
+              <td>sie sind gegangen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Angleichung bei être</h4>
+        <p>
+          Bei <strong>être</strong> passt sich das Participe passé an das Subjekt an:
+        </p>
+        <p>
+          maskulin Singular: <strong>allé</strong><br>
+          feminin Singular: <strong>allée</strong><br>
+          maskulin Plural: <strong>allés</strong><br>
+          feminin Plural: <strong>allées</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>9. Reflexive Verben im Passé composé</h3>
+      <p>
+        Reflexive Verben stehen mit einem Reflexivpronomen wie <strong>me, te, se, nous, vous, se</strong>.
+        Im Passé composé werden sie normalerweise mit <strong>être</strong> gebildet.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>se lever</th>
+              <th>Deutsch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je me suis levé / levée</td>
+              <td>ich bin aufgestanden</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu t'es levé / levée</td>
+              <td>du bist aufgestanden</td>
+            </tr>
+            <tr>
+              <td>il</td>
+              <td>il s'est levé</td>
+              <td>er ist aufgestanden</td>
+            </tr>
+            <tr>
+              <td>elle</td>
+              <td>elle s'est levée</td>
+              <td>sie ist aufgestanden</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous nous sommes levés / levées</td>
+              <td>wir sind aufgestanden</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous vous êtes levé / levée / levés / levées</td>
+              <td>ihr seid / Sie sind aufgestanden</td>
+            </tr>
+            <tr>
+              <td>ils</td>
+              <td>ils se sont levés</td>
+              <td>sie sind aufgestanden</td>
+            </tr>
+            <tr>
+              <td>elles</td>
+              <td>elles se sont levées</td>
+              <td>sie sind aufgestanden</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Weitere reflexive Verben</h4>
+        <p>
+          <strong>se laver</strong> – sich waschen<br>
+          <strong>se préparer</strong> – sich vorbereiten<br>
+          <strong>se souvenir de</strong> – sich erinnern an<br>
+          <strong>s'intéresser à</strong> – sich interessieren für<br>
+          <strong>se dépêcher</strong> – sich beeilen
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>10. Wichtige Participe-passé-Formen</h3>
+      <p>
+        Viele häufige Verben haben ein unregelmässiges Participe passé. Diese Formen musst du auswendig können.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Infinitiv</th>
+              <th>Participe passé</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>être</td>
+              <td>été</td>
+              <td>j'ai été</td>
+            </tr>
+            <tr>
+              <td>avoir</td>
+              <td>eu</td>
+              <td>j'ai eu</td>
+            </tr>
+            <tr>
+              <td>faire</td>
+              <td>fait</td>
+              <td>j'ai fait</td>
+            </tr>
+            <tr>
+              <td>prendre</td>
+              <td>pris</td>
+              <td>j'ai pris</td>
+            </tr>
+            <tr>
+              <td>mettre</td>
+              <td>mis</td>
+              <td>j'ai mis</td>
+            </tr>
+            <tr>
+              <td>dire</td>
+              <td>dit</td>
+              <td>j'ai dit</td>
+            </tr>
+            <tr>
+              <td>écrire</td>
+              <td>écrit</td>
+              <td>j'ai écrit</td>
+            </tr>
+            <tr>
+              <td>voir</td>
+              <td>vu</td>
+              <td>j'ai vu</td>
+            </tr>
+            <tr>
+              <td>vouloir</td>
+              <td>voulu</td>
+              <td>j'ai voulu</td>
+            </tr>
+            <tr>
+              <td>pouvoir</td>
+              <td>pu</td>
+              <td>j'ai pu</td>
+            </tr>
+            <tr>
+              <td>devoir</td>
+              <td>dû</td>
+              <td>j'ai dû</td>
+            </tr>
+            <tr>
+              <td>lire</td>
+              <td>lu</td>
+              <td>j'ai lu</td>
+            </tr>
+            <tr>
+              <td>boire</td>
+              <td>bu</td>
+              <td>j'ai bu</td>
+            </tr>
+            <tr>
+              <td>venir</td>
+              <td>venu</td>
+              <td>je suis venu</td>
+            </tr>
+            <tr>
+              <td>naître</td>
+              <td>né</td>
+              <td>je suis né</td>
+            </tr>
+            <tr>
+              <td>mourir</td>
+              <td>mort</td>
+              <td>il est mort</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>11. Imparfait: Bildung</h3>
+      <p>
+        Das <strong>Imparfait</strong> benutzt man für Beschreibungen, Gewohnheiten und Zustände in der Vergangenheit.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Bildung</h4>
+        <p>
+          Man nimmt die <strong>nous</strong>-Form im Présent, streicht <strong>-ons</strong> weg und hängt die Imparfait-Endungen an.
+        </p>
+        <p>
+          Endungen: <strong>-ais, -ais, -ait, -ions, -iez, -aient</strong>
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Verb</th>
+              <th>nous-Form im Présent</th>
+              <th>Stamm fürs Imparfait</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>parler</td>
+              <td>nous parlons</td>
+              <td>parl-</td>
+            </tr>
+            <tr>
+              <td>finir</td>
+              <td>nous finissons</td>
+              <td>finiss-</td>
+            </tr>
+            <tr>
+              <td>prendre</td>
+              <td>nous prenons</td>
+              <td>pren-</td>
+            </tr>
+            <tr>
+              <td>faire</td>
+              <td>nous faisons</td>
+              <td>fais-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>parler</th>
+              <th>finir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>je parlais</td>
+              <td>je finissais</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu parlais</td>
+              <td>tu finissais</td>
+            </tr>
+            <tr>
+              <td>il / elle</td>
+              <td>il parlait</td>
+              <td>elle finissait</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous parlions</td>
+              <td>nous finissions</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous parliez</td>
+              <td>vous finissiez</td>
+            </tr>
+            <tr>
+              <td>ils / elles</td>
+              <td>ils parlaient</td>
+              <td>elles finissaient</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Einzige sehr wichtige Ausnahme</h4>
+        <p>
+          <strong>être</strong> hat im Imparfait den Stamm <strong>ét-</strong>:
+        </p>
+        <p>
+          <strong>j'étais, tu étais, il était, nous étions, vous étiez, ils étaient</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>12. Imparfait: Verwendung</h3>
+      <p>
+        Das Imparfait beschreibt meistens Hintergrund, Gewohnheit oder Zustand.
+      </p>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Verwendung</th>
+              <th>Beispiel</th>
+              <th>Erklärung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beschreibung</td>
+              <td>Il faisait froid.</td>
+              <td>Es war kalt.</td>
+            </tr>
+            <tr>
+              <td>Gewohnheit</td>
+              <td>Chaque soir, elle lisait.</td>
+              <td>Jeden Abend las sie.</td>
+            </tr>
+            <tr>
+              <td>Zustand</td>
+              <td>J'étais fatigué.</td>
+              <td>Ich war müde.</td>
+            </tr>
+            <tr>
+              <td>Hintergrundhandlung</td>
+              <td>Je dormais quand le téléphone a sonné.</td>
+              <td>Ich schlief, als das Telefon klingelte.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Typische Signalwörter</h4>
+        <p>
+          <strong>toujours</strong> – immer<br>
+          <strong>souvent</strong> – oft<br>
+          <strong>chaque jour</strong> – jeden Tag<br>
+          <strong>d'habitude</strong> – gewöhnlich<br>
+          <strong>quand j'étais petit</strong> – als ich klein war
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>13. Passé composé oder Imparfait?</h3>
+      <p>
+        Diese Unterscheidung ist sehr wichtig. Das Passé composé erzählt abgeschlossene Ereignisse.
+        Das Imparfait beschreibt Hintergrund, Gewohnheit oder Zustand.
+      </p>
+
+      <div class="sf-fr-compare">
+        <div>
+          <h4>Passé composé</h4>
+          <p>
+            <strong>Hier ist etwas passiert.</strong>
+          </p>
+          <p>
+            Eine Handlung ist abgeschlossen oder bringt die Geschichte weiter.
+          </p>
+          <p>
+            <strong>Hier, j'ai rencontré un ami.</strong><br>
+            Gestern habe ich einen Freund getroffen.
+          </p>
+        </div>
+        <div>
+          <h4>Imparfait</h4>
+          <p>
+            <strong>So war die Situation.</strong>
+          </p>
+          <p>
+            Es geht um Beschreibung, Zustand, Gewohnheit oder Hintergrund.
+          </p>
+          <p>
+            <strong>Il faisait beau et les rues étaient calmes.</strong><br>
+            Es war schönes Wetter und die Strassen waren ruhig.
+          </p>
+        </div>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel mit beiden Zeiten</h4>
+        <p>
+          <strong>Je marchais dans la rue quand j'ai vu Marie.</strong>
+        </p>
+        <p>
+          <strong>Je marchais</strong> = Hintergrundhandlung im Imparfait.<br>
+          <strong>j'ai vu</strong> = plötzliches Ereignis im Passé composé.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>14. Plus-que-parfait: Bildung</h3>
+      <p>
+        Das <strong>Plus-que-parfait</strong> beschreibt eine Handlung, die schon vor einer anderen
+        vergangenen Handlung passiert ist.
+      </p>
+
+      <div class="sf-fr-rule">
+        <h4>Grundformel</h4>
+        <p>
+          <strong>avoir oder être im Imparfait + participe passé</strong>
+        </p>
+        <p>
+          <strong>J'avais parlé.</strong> – Ich hatte gesprochen.<br>
+          <strong>Elle était partie.</strong> – Sie war weggegangen.
+        </p>
+      </div>
+
+      <div class="sf-fr-table-wrap">
+        <table class="sf-fr-table">
+          <thead>
+            <tr>
+              <th>Person</th>
+              <th>parler mit avoir</th>
+              <th>aller mit être</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>je</td>
+              <td>j'avais parlé</td>
+              <td>j'étais allé / allée</td>
+            </tr>
+            <tr>
+              <td>tu</td>
+              <td>tu avais parlé</td>
+              <td>tu étais allé / allée</td>
+            </tr>
+            <tr>
+              <td>il</td>
+              <td>il avait parlé</td>
+              <td>il était allé</td>
+            </tr>
+            <tr>
+              <td>elle</td>
+              <td>elle avait parlé</td>
+              <td>elle était allée</td>
+            </tr>
+            <tr>
+              <td>nous</td>
+              <td>nous avions parlé</td>
+              <td>nous étions allés / allées</td>
+            </tr>
+            <tr>
+              <td>vous</td>
+              <td>vous aviez parlé</td>
+              <td>vous étiez allé / allée / allés / allées</td>
+            </tr>
+            <tr>
+              <td>ils</td>
+              <td>ils avaient parlé</td>
+              <td>ils étaient allés</td>
+            </tr>
+            <tr>
+              <td>elles</td>
+              <td>elles avaient parlé</td>
+              <td>elles étaient allées</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Merke</h4>
+        <p>
+          Das Plus-que-parfait ist eigentlich das Passé composé, aber das Hilfsverb steht nicht im Présent,
+          sondern im Imparfait.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>15. Plus-que-parfait: Verwendung</h3>
+      <p>
+        Man benutzt das Plus-que-parfait, wenn man zeigen will, dass etwas noch früher passiert ist
+        als eine andere vergangene Handlung.
+      </p>
+
+      <div class="sf-fr-example">
+        <h4>Beispiel</h4>
+        <p>
+          <strong>Quand je suis arrivé, le film avait déjà commencé.</strong>
+        </p>
+        <p>
+          Als ich angekommen bin, hatte der Film schon begonnen.
+        </p>
+        <p>
+          <strong>je suis arrivé</strong> = späteres Ereignis im Passé composé<br>
+          <strong>avait commencé</strong> = frühere Handlung im Plus-que-parfait
+        </p>
+      </div>
+
+      <div class="sf-fr-example">
+        <h4>Weiteres Beispiel</h4>
+        <p>
+          <strong>Elle était fatiguée parce qu'elle avait beaucoup travaillé.</strong>
+        </p>
+        <p>
+          Sie war müde, weil sie viel gearbeitet hatte.
+        </p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>16. Häufige Fehler bei Verben</h3>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Je suis parlé avec mon ami.</p>
+        <p><strong>Richtig:</strong> J'ai parlé avec mon ami.</p>
+        <p><strong>Erklärung:</strong> <strong>parler</strong> bildet das Passé composé mit <strong>avoir</strong>.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Elle est allé à l'école.</p>
+        <p><strong>Richtig:</strong> Elle est allée à l'école.</p>
+        <p><strong>Erklärung:</strong> Bei <strong>être</strong> passt sich das Participe passé an das Subjekt an.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Nous avons arrivé trop tard.</p>
+        <p><strong>Richtig:</strong> Nous sommes arrivés trop tard.</p>
+        <p><strong>Erklärung:</strong> <strong>arriver</strong> wird im Passé composé mit <strong>être</strong> gebildet.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Quand j'étais petit, je suis allé souvent au parc.</p>
+        <p><strong>Richtig:</strong> Quand j'étais petit, j'allais souvent au parc.</p>
+        <p><strong>Erklärung:</strong> Bei einer Gewohnheit in der Vergangenheit benutzt man meistens das Imparfait.</p>
+      </div>
+
+      <div class="sf-fr-correction">
+        <p><strong>Falsch:</strong> Quand je suis arrivé, le film a déjà commencé.</p>
+        <p><strong>Besser:</strong> Quand je suis arrivé, le film avait déjà commencé.</p>
+        <p><strong>Erklärung:</strong> Der Film begann vor dem Ankommen. Deshalb braucht man das Plus-que-parfait.</p>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>17. Mini-Training für GYM2</h3>
+      <p>
+        Löse zuerst selbst. Danach kannst du die Lösung anzeigen.
+      </p>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 1 – Présent</h4>
+        <p>Konjugiere <strong>parler</strong> mit <strong>nous</strong> im Présent.</p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l1')">Lösung anzeigen</button>
+        <div id="fr-gym2-l1" class="sf-fr-hidden-box">
+          <p><strong>nous parlons</strong></p>
+          <p>Bei -er-Verben lautet die nous-Endung im Présent <strong>-ons</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 2 – Passé composé mit avoir</h4>
+        <p>Setze ins Passé composé:</p>
+        <p><strong>Je regarde un film.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l2')">Lösung anzeigen</button>
+        <div id="fr-gym2-l2" class="sf-fr-hidden-box">
+          <p><strong>J'ai regardé un film.</strong></p>
+          <p><strong>regarder</strong> wird mit <strong>avoir</strong> gebildet. Das Participe passé lautet <strong>regardé</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 3 – Passé composé mit être</h4>
+        <p>Setze ins Passé composé:</p>
+        <p><strong>Elle va à la maison.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l3')">Lösung anzeigen</button>
+        <div id="fr-gym2-l3" class="sf-fr-hidden-box">
+          <p><strong>Elle est allée à la maison.</strong></p>
+          <p><strong>aller</strong> wird mit <strong>être</strong> gebildet. Weil das Subjekt feminin Singular ist, schreibt man <strong>allée</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 4 – Imparfait</h4>
+        <p>Setze ins Imparfait:</p>
+        <p><strong>Nous finissons les exercices.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l4')">Lösung anzeigen</button>
+        <div id="fr-gym2-l4" class="sf-fr-hidden-box">
+          <p><strong>Nous finissions les exercices.</strong></p>
+          <p>Stamm: <strong>finiss-</strong>. Die nous-Endung im Imparfait ist <strong>-ions</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 5 – Passé composé oder Imparfait?</h4>
+        <p>Setze die richtige Zeit ein:</p>
+        <p><strong>Je ___ dans la rue quand j'___ Marie.</strong></p>
+        <p>marcher / voir</p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l5')">Lösung anzeigen</button>
+        <div id="fr-gym2-l5" class="sf-fr-hidden-box">
+          <p><strong>Je marchais dans la rue quand j'ai vu Marie.</strong></p>
+          <p><strong>marchais</strong> beschreibt die Hintergrundhandlung. <strong>ai vu</strong> ist das plötzliche Ereignis.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 6 – Plus-que-parfait</h4>
+        <p>Setze ins Plus-que-parfait:</p>
+        <p><strong>Le film commence.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l6')">Lösung anzeigen</button>
+        <div id="fr-gym2-l6" class="sf-fr-hidden-box">
+          <p><strong>Le film avait commencé.</strong></p>
+          <p>Plus-que-parfait: <strong>avoir im Imparfait + participe passé</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 7 – Fehler korrigieren</h4>
+        <p>Korrigiere:</p>
+        <p><strong>Nous avons partis tôt.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l7')">Lösung anzeigen</button>
+        <div id="fr-gym2-l7" class="sf-fr-hidden-box">
+          <p><strong>Nous sommes partis tôt.</strong></p>
+          <p><strong>partir</strong> wird mit <strong>être</strong> gebildet. Bei <strong>nous</strong> braucht man meistens die Pluralendung <strong>-s</strong>.</p>
+        </div>
+      </div>
+
+      <div class="sf-fr-task">
+        <h4>Aufgabe 8 – Reflexives Verb</h4>
+        <p>Setze ins Passé composé:</p>
+        <p><strong>Elle se prépare.</strong></p>
+        <button class="sf-fr-toggle" onclick="toggleFranzoesischBox('fr-gym2-l8')">Lösung anzeigen</button>
+        <div id="fr-gym2-l8" class="sf-fr-hidden-box">
+          <p><strong>Elle s'est préparée.</strong></p>
+          <p>Reflexive Verben werden meistens mit <strong>être</strong> gebildet. Das Participe passé passt sich hier an <strong>elle</strong> an.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sf-fr-section">
+      <h3>18. Das Wichtigste für GYM2</h3>
+
+      <div class="sf-fr-rule">
+        <h4>Présent</h4>
+        <p>
+          Lerne zuerst die regelmässigen Endungen und dann die wichtigsten unregelmässigen Verben:
+          <strong>être, avoir, aller, faire, prendre, venir, pouvoir, vouloir, devoir</strong>.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Passé composé</h4>
+        <p>
+          Meistens: <strong>avoir + participe passé</strong>.<br>
+          Bei Bewegungsverben und reflexiven Verben meistens: <strong>être + participe passé</strong>.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Imparfait</h4>
+        <p>
+          Benutze das Imparfait für Beschreibungen, Zustände, Gewohnheiten und Hintergrundhandlungen.
+        </p>
+      </div>
+
+      <div class="sf-fr-rule">
+        <h4>Plus-que-parfait</h4>
+        <p>
+          Benutze das Plus-que-parfait für das, was schon vor einer anderen vergangenen Handlung passiert war.
+        </p>
+      </div>
+    </section>
+  `
+}
 
   
 ];
