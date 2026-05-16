@@ -169,8 +169,7 @@
   border: 1px solid rgba(148, 163, 184, 0.28);
   border-radius: 18px;
   padding: 24px 22px;
-  min-height: 170px;
-  height: 100%;
+  min-height: 142px;
   cursor: pointer;
   transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
   display: flex;
@@ -178,27 +177,44 @@
   justify-content: flex-start;
 }
 
-    .subject-card:hover {
-      transform: translateY(-3px);
-      border-color: #818cf8;
-      background: rgba(30, 41, 59, 0.94);
-    }
+.subject-card:hover {
+  transform: translateY(-3px);
+  border-color: #818cf8;
+  background: rgba(30, 41, 59, 0.94);
+}
 
-    .subject-card h3 {
-      margin: 0 0 12px;
-      font-size: 20px;
-      line-height: 1.25;
-      min-height: 52px;
-      display: flex;
-      align-items: flex-start;
-    }
-
-    .subject-card h3 {
+.subject-card h3 {
   margin: 0 0 10px;
   font-size: 20px;
   line-height: 1.25;
 }
 
+.subject-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.55;
+}
+
+Deine .chat-entry ist richtig so:
+
+.chat-entry {
+  margin-top: 22px;
+  width: 100%;
+  max-width: none;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(129, 140, 248, 0.35);
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+}
+
+Also: Ja, aber lösche den ersten alten .subject-card h3-Block mit min-height: 52px;. Genau dieser Block macht den grossen Abstand.
     .chat-entry {
   margin-top: 22px;
   width: 100%;
