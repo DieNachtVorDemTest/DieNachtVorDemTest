@@ -161,19 +161,20 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
+      align-items: stretch;
     }
 
     .subject-card {
       background: rgba(15, 23, 42, 0.90);
       border: 1px solid rgba(148, 163, 184, 0.28);
       border-radius: 18px;
-      padding: 22px;
+      padding: 24px 22px;
       min-height: 142px;
       cursor: pointer;
       transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .subject-card:hover {
@@ -183,18 +184,24 @@
     }
 
     .subject-card h3 {
-      margin: 0 0 8px;
+      margin: 0 0 12px;
       font-size: 20px;
+      min-height: 24px;
+      display: flex;
+      align-items: flex-start;
     }
 
     .subject-card p {
       margin: 0;
       font-size: 14px;
       color: #9ca3af;
+      line-height: 1.55;
     }
 
     .chat-entry {
       margin-top: 22px;
+      width: 100%;
+      max-width: 806px;
       background: rgba(15, 23, 42, 0.92);
       border: 1px solid rgba(129, 140, 248, 0.35);
       border-radius: 18px;
@@ -204,6 +211,7 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
     }
 
     .chat-entry h3 {
@@ -230,7 +238,7 @@
       padding: 14px 16px;
       cursor: pointer;
       transition: 0.15s ease;
-      max-width: 760px;
+      max-width: 100%;
     }
 
     .latest-chat-preview:hover {
@@ -786,6 +794,10 @@
         font-size: 24px;
       }
 
+      .chat-entry {
+        max-width: 100%;
+      }
+
       .chat-header {
         padding: 18px;
       }
@@ -980,7 +992,6 @@
     const chatList = document.getElementById("chat-list");
     const chatVisibleTitle = document.getElementById("chat-visible-title");
 
-    const latestChatPreview = document.getElementById("latest-chat-preview");
     const latestChatTitle = document.getElementById("latest-chat-title");
     const latestChatSnippet = document.getElementById("latest-chat-snippet");
 
