@@ -1200,6 +1200,11 @@
       });
     }
 
+    function timestampToMillis(timestamp) {
+      if (!timestamp || !timestamp.toMillis) return 0;
+      return timestamp.toMillis();
+    }
+
     function getAuthorName(user, userData) {
       if (userData && userData.name) return userData.name;
       if (user && user.displayName) return user.displayName;
@@ -1293,7 +1298,6 @@
         .doc(subject.key)
         .collection("messages")
         .where("visible", "==", true)
-        .orderBy("createdAt", "desc")
         .limit(50)
         .onSnapshot(async function(snapshot) {
           try {
@@ -1307,9 +1311,13 @@
               return;
             }
 
+            const sortedDocs = snapshot.docs.slice().sort(function(a, b) {
+              return timestampToMillis(b.data().createdAt) - timestampToMillis(a.data().createdAt);
+            });
+
             const messageHtmlParts = [];
 
-            for (const doc of snapshot.docs) {
+            for (const doc of sortedDocs) {
               const message = doc.data();
 
               let repliesHtml = "";
@@ -1322,10 +1330,13 @@
                   .doc(doc.id)
                   .collection("replies")
                   .where("visible", "==", true)
-                  .orderBy("createdAt", "asc")
                   .get();
 
-                repliesSnapshot.forEach(function(replyDoc) {
+                const sortedReplies = repliesSnapshot.docs.slice().sort(function(a, b) {
+                  return timestampToMillis(a.data().createdAt) - timestampToMillis(b.data().createdAt);
+                });
+
+                sortedReplies.forEach(function(replyDoc) {
                   const reply = replyDoc.data();
 
                   repliesHtml += `
