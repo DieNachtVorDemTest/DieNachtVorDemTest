@@ -1493,8 +1493,6 @@ const ENGLISCH_BEREICHE = [
     `
   },
 
-
-
 {
   id: "gym2",
   titel: "GYM2",
@@ -1755,8 +1753,8 @@ const ENGLISCH_BEREICHE = [
       </div>
 
       <div class="sf-en-actions">
-        <button id="en-gym2-check-btn" class="sf-en-toggle" type="button">Korrigieren</button>
-        <button id="en-gym2-shuffle-btn" class="sf-en-toggle" type="button">Neu anordnen</button>
+        <button class="sf-en-toggle" type="button" onclick="checkEnglischGym2VerbTable()">Korrigieren</button>
+        <button class="sf-en-toggle" type="button" onclick="renderEnglischGym2VerbTable()">Neu anordnen</button>
       </div>
 
       <div id="en-gym2-verb-feedback" class="sf-en-feedback"></div>
