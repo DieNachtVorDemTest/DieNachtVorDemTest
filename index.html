@@ -1414,19 +1414,6 @@
 
         const phone = validateSwissPhone(twintPhoneInput.value);
 
-        const userRef = db.collection("users").doc(currentUser.uid);
-
-        await userRef.set({
-          email: currentUser.email,
-          twintPhone: phone,
-          accessStatus: "requested",
-          accessRequestedAt: firebase.firestore.FieldValue.serverTimestamp(),
-          paymentMethod: "manual_twint_request",
-          requestedProduct: "Jahreszugang Lernhilfe_Neufeld",
-          requestedPrice: "CHF 9.50",
-          requestedDuration: "1 Jahr"
-        }, { merge: true });
-
         const subject = encodeURIComponent("Zugriffsanfrage Lernhilfe_Neufeld");
         const body = encodeURIComponent(
           "Hallo\n\n" +
@@ -1442,15 +1429,37 @@
         const mailtoLink = "mailto:" + ACCESS_REQUEST_EMAIL + "?subject=" + subject + "&body=" + body;
 
         showStatus(
-          "Deine Zugriffsanfrage wurde auf der Website vorgemerkt.\n\n" +
-          "Es öffnet sich nun dein E-Mail-Programm mit einer vorbereiteten Nachricht.\n" +
-          "Sende diese E-Mail ab, damit die TWINT-Zahlungsanforderung manuell verschickt werden kann.\n\n" +
-          "Wichtig: Der Zugriff ist erst nach bezahlter TWINT-Anforderung und manueller Freischaltung aktiv."
+          "Deine E-Mail-Anfrage wird vorbereitet.\n\n" +
+          "Wichtig: Der Zugriff ist noch nicht aktiv. Der Zugriff wird erst nach bezahlter TWINT-Anforderung und manueller Freischaltung aktiviert."
         );
 
+        /*
+          Wichtig:
+          Die Mail wird zuerst geöffnet.
+          Firestore wird danach nur optional versucht.
+          So blockiert ein Firestore-Regelfehler die E-Mail nicht mehr.
+        */
         window.location.href = mailtoLink;
 
-        await checkPremiumAccess(currentUser);
+        try {
+          const userRef = db.collection("users").doc(currentUser.uid);
+
+          await userRef.set({
+            email: currentUser.email,
+            twintPhone: phone,
+            accessStatus: "requested",
+            accessRequestedAt: firebase.firestore.FieldValue.serverTimestamp(),
+            paymentMethod: "manual_twint_request",
+            requestedProduct: "Jahreszugang Lernhilfe_Neufeld",
+            requestedPrice: "CHF 9.50",
+            requestedDuration: "1 Jahr"
+          }, { merge: true });
+
+          await checkPremiumAccess(currentUser);
+        } catch (firestoreError) {
+          console.warn("Firestore konnte die Anfrage nicht speichern:", firestoreError.message);
+        }
+
       } catch (error) {
         showStatus("Fehler bei der Zugriffsanfrage:\n" + error.message);
       }
