@@ -275,8 +275,6 @@
       line-height: 1.55;
     }
 
-    /* INTRO-GALERIE */
-
     .intro-gallery {
       width: min(1320px, calc(100vw - 40px));
       background: transparent;
@@ -379,8 +377,6 @@
       display: none;
     }
 
-    /* FOOTER */
-
     .apple-footer {
       width: 100%;
       background: transparent;
@@ -447,8 +443,6 @@
       color: #86868b;
       margin: 0 10px;
     }
-
-    /* MODALS */
 
     .legal-modal {
       display: none;
@@ -645,7 +639,7 @@
         <h1>Lernhilfe_Neufeld</h1>
 
         <p>
-          Erstelle ein Konto, frage den Zugriff an und bezahle anschliessend CHF 9.50 pro Jahr per TWINT.
+          Erstelle ein Konto, fülle anschliessend das Zugriffsformular aus und bezahle CHF 9.50 pro Jahr per TWINT.
           Der Premium-Zugriff wird erst aktiviert, nachdem die TWINT-Zahlungsanforderung angenommen und bezahlt wurde.
         </p>
 
@@ -683,8 +677,8 @@
           <div id="premium-inactive-box" class="warning-box hidden">
             <strong>Premium-Zugang noch nicht aktiv.</strong>
             <br>
-            Zugriff auf den Premium-Bereich erhältst du erst, nachdem du die TWINT-Zahlungsanforderung angenommen
-            und bezahlt hast und dein Zugang manuell freigeschaltet wurde.
+            Zugriff auf den Premium-Bereich erhältst du erst, nachdem du das Google Formular ausgefüllt hast,
+            die TWINT-Zahlungsanforderung angenommen und bezahlt hast und dein Zugang manuell freigeschaltet wurde.
           </div>
 
           <div class="price-box">
@@ -696,36 +690,34 @@
           </div>
 
           <div class="access-box">
-            <h2>Zugriff per TWINT anfragen</h2>
+            <h2>Zugriff per Google Formular anfragen</h2>
 
             <p>
-              Trage deine TWINT-Handynummer ein. Danach wird eine E-Mail vorbereitet, mit der du den Zugriff anfragst.
-              Anschliessend erhältst du manuell eine TWINT-Zahlungsanforderung über CHF 9.50.
+              Öffne das Formular und trage dort deine Angaben ein. Danach erhältst du manuell eine
+              TWINT-Zahlungsanforderung über CHF 9.50.
             </p>
 
             <ol class="steps">
               <li>Du bist mit deiner E-Mail registriert oder eingeloggt.</li>
-              <li>Du sendest deine TWINT-Handynummer über die vorbereitete Anfrage.</li>
+              <li>Du öffnest das Google Formular und gibst dort die verlangten Angaben ein.</li>
               <li>Du erhältst manuell eine TWINT-Zahlungsanforderung über CHF 9.50.</li>
               <li>Erst nachdem du die TWINT-Anforderung angenommen und bezahlt hast, wird dein Zugang freigeschaltet.</li>
               <li>Der Premium-Zugang gilt ab Freischaltung für 1 Jahr.</li>
             </ol>
 
-            <input id="twint-phone" type="tel" placeholder="TWINT-Handynummer, z. B. 079 123 45 67">
-
             <label class="terms-checkbox">
               <input type="checkbox" id="acceptPaymentData">
               <span>
-                Ich bin einverstanden, dass meine E-Mail-Adresse und Handynummer zur Bearbeitung meiner
+                Ich bin einverstanden, dass meine Angaben aus dem Google Formular zur Bearbeitung meiner
                 Zugriffsanfrage, zur TWINT-Zahlungsanforderung und zur Freischaltung des Premium-Zugangs verwendet werden.
               </span>
             </label>
 
-            <button id="request-access-btn">Zugriff anfragen</button>
+            <button id="request-access-btn">Google Formular öffnen</button>
 
             <div class="info-box">
               <strong>Wichtig:</strong>
-              Das Absenden der Anfrage aktiviert den Zugriff noch nicht. Der Zugriff wird erst nach bezahlter
+              Das Ausfüllen des Formulars aktiviert den Zugriff noch nicht. Der Zugriff wird erst nach bezahlter
               TWINT-Anforderung und manueller Freischaltung möglich.
             </div>
           </div>
@@ -850,15 +842,16 @@
       <h3>2. Grundsatz</h3>
       <p>
         Der Schutz deiner Personendaten ist wichtig. Personendaten werden nur bearbeitet, soweit dies für den Betrieb
-        der Website, die Registrierung, den Login, die Bearbeitung von Zugriffsanfragen, die TWINT-Zahlungsanforderung,
-        die Freischaltung des Premium-Zugangs, die Sicherheit der Website oder gesetzliche Pflichten erforderlich ist.
+        der Website, die Registrierung, den Login, die Bearbeitung von Zugriffsanfragen über Google Forms,
+        die TWINT-Zahlungsanforderung, die Freischaltung des Premium-Zugangs, die Sicherheit der Website oder
+        gesetzliche Pflichten erforderlich ist.
       </p>
 
       <h3>3. Bearbeitete Daten</h3>
       <ul>
         <li>E-Mail-Adresse für Registrierung, Login, Kommunikation und Freischaltung;</li>
         <li>Passwortdaten im Rahmen der Firebase-Authentifizierung, wobei das Passwort nicht im Klartext durch den Betreiber gespeichert wird;</li>
-        <li>TWINT-Handynummer, wenn du den Zugriff anfragst;</li>
+        <li>Angaben, die du im Google Formular freiwillig einreichst, insbesondere Kontaktangaben und TWINT-Handynummer;</li>
         <li>Zahlungsstatus, Freischaltungsstatus und Ablaufdatum des Premium-Zugangs;</li>
         <li>technische Daten wie IP-Adresse, Browsertyp, Gerätetyp, Datum und Uhrzeit des Zugriffs;</li>
         <li>Kommunikationsinhalte, wenn du per E-Mail Kontakt aufnimmst.</li>
@@ -868,7 +861,7 @@
       <ul>
         <li>Bereitstellung der Website und der Lerninhalte;</li>
         <li>Erstellung und Verwaltung von Nutzerkonten;</li>
-        <li>Bearbeitung von Zugriffsanfragen;</li>
+        <li>Bearbeitung von Zugriffsanfragen über Google Forms;</li>
         <li>Versand einer manuellen TWINT-Zahlungsanforderung;</li>
         <li>Prüfung, ob die Zahlung erfolgt ist;</li>
         <li>manuelle Freischaltung des Premium-Zugangs;</li>
@@ -882,7 +875,7 @@
         Soweit die Datenschutz-Grundverordnung der Europäischen Union anwendbar ist, erfolgt die Bearbeitung
         insbesondere zur Durchführung vorvertraglicher oder vertraglicher Massnahmen, aufgrund berechtigter Interessen
         am sicheren Betrieb der Website sowie aufgrund deiner Einwilligung, wenn du ausdrücklich der Nutzung deiner
-        E-Mail-Adresse und Handynummer für die Zahlungsabwicklung zustimmst.
+        Angaben für die Zahlungsabwicklung und Freischaltung zustimmst.
       </p>
 
       <h3>6. Firebase und Login</h3>
@@ -893,34 +886,42 @@
         Google/Firebase.
       </p>
 
-      <h3>7. TWINT-Zahlungsanforderung</h3>
+      <h3>7. Google Forms</h3>
       <p>
-        Die Zahlung erfolgt nicht automatisch auf dieser Website. Wenn du den Zugriff anfragst, wird deine Handynummer
-        verwendet, um dir manuell eine TWINT-Zahlungsanforderung über CHF 9.50 zu senden. Der Premium-Zugang wird erst
-        aktiviert, nachdem die TWINT-Anforderung angenommen und bezahlt wurde und die Freischaltung manuell erfolgt ist.
+        Für die Zugriffsanfrage wird ein externes Google Formular verwendet. Wenn du das Formular öffnest und absendest,
+        werden die dort eingegebenen Daten durch Google verarbeitet und an den Betreiber von Lernhilfe_Neufeld übermittelt.
+        Bitte gib im Formular nur Daten an, die für die Zugriffsanfrage und TWINT-Zahlungsanforderung erforderlich sind.
       </p>
 
-      <h3>8. Keine Speicherung vollständiger Zahlungsdaten</h3>
+      <h3>8. TWINT-Zahlungsanforderung</h3>
       <p>
-        Auf dieser Website werden keine vollständigen Kreditkartendaten gespeichert. Bitte sende per E-Mail keine
-        Kreditkartennummern, Passwörter, Login-Daten oder andere besonders vertrauliche Zahlungsinformationen.
+        Die Zahlung erfolgt nicht automatisch auf dieser Website. Wenn du den Zugriff über das Formular anfragst,
+        werden deine Angaben verwendet, um dir manuell eine TWINT-Zahlungsanforderung über CHF 9.50 zu senden.
+        Der Premium-Zugang wird erst aktiviert, nachdem die TWINT-Anforderung angenommen und bezahlt wurde und
+        die Freischaltung manuell erfolgt ist.
       </p>
 
-      <h3>9. Weitergabe an Dritte</h3>
+      <h3>9. Keine Speicherung vollständiger Zahlungsdaten</h3>
+      <p>
+        Auf dieser Website werden keine vollständigen Kreditkartendaten gespeichert. Bitte sende per E-Mail oder Formular
+        keine Kreditkartennummern, Passwörter, Login-Daten oder andere besonders vertrauliche Zahlungsinformationen.
+      </p>
+
+      <h3>10. Weitergabe an Dritte</h3>
       <p>
         Personendaten werden nicht verkauft. Eine Weitergabe kann erfolgen, wenn dies für den Betrieb der Website,
-        technische Dienstleister, Firebase/Hosting, Zahlungsabwicklung, Sicherheit, rechtliche Durchsetzung oder
-        gesetzliche Pflichten erforderlich ist.
+        technische Dienstleister, Firebase/Hosting, Google Forms, Zahlungsabwicklung, Sicherheit, rechtliche Durchsetzung
+        oder gesetzliche Pflichten erforderlich ist.
       </p>
 
-      <h3>10. Speicherung und Löschung</h3>
+      <h3>11. Speicherung und Löschung</h3>
       <p>
         Personendaten werden nur so lange gespeichert, wie es für die genannten Zwecke erforderlich ist oder gesetzliche
         Aufbewahrungspflichten bestehen. Daten zu Zugriffsanfragen und Freischaltung können aufbewahrt werden, solange
         dies zur Nachvollziehbarkeit der Zahlung, zur Zugangsverwaltung oder zur Klärung von Rückfragen notwendig ist.
       </p>
 
-      <h3>11. Rechte der betroffenen Personen</h3>
+      <h3>12. Rechte der betroffenen Personen</h3>
       <p>
         Du kannst im Rahmen des anwendbaren Datenschutzrechts Auskunft über deine Personendaten verlangen sowie
         Berichtigung, Löschung, Einschränkung der Bearbeitung oder Widerspruch gegen bestimmte Bearbeitungen verlangen.
@@ -928,14 +929,14 @@
         widerrufen. Anfragen können per E-Mail gestellt werden.
       </p>
 
-      <h3>12. Datensicherheit</h3>
+      <h3>13. Datensicherheit</h3>
       <p>
         Es werden angemessene technische und organisatorische Massnahmen getroffen, um Personendaten vor Verlust,
         Missbrauch, unberechtigtem Zugriff und Veränderung zu schützen. Ein absoluter Schutz bei der Datenübertragung
         im Internet kann jedoch nicht garantiert werden.
       </p>
 
-      <h3>13. Änderungen</h3>
+      <h3>14. Änderungen</h3>
       <p>
         Diese Datenschutzerklärung kann angepasst werden, wenn sich die Website, eingesetzte Dienste, Zahlungsabläufe
         oder rechtliche Anforderungen ändern.
@@ -956,10 +957,11 @@
         Premium-Zugang, Einstellungen und Sicherheitsfunktionen korrekt funktionieren.
       </p>
 
-      <h3>Firebase</h3>
+      <h3>Firebase und Google Forms</h3>
       <p>
         Wenn du dich registrierst oder einloggst, können durch Firebase technische Informationen gespeichert oder
-        verarbeitet werden, die für die Authentifizierung notwendig sind.
+        verarbeitet werden, die für die Authentifizierung notwendig sind. Beim Öffnen oder Absenden des Google Formulars
+        können zusätzlich technische Daten durch Google verarbeitet werden.
       </p>
 
       <h3>Keine unnötige Werbung</h3>
@@ -1143,12 +1145,7 @@
     const auth = firebase.auth();
     const db = firebase.firestore();
 
-    /*
-      WICHTIG:
-      Ersetze diese E-Mail durch deine echte Kontaktadresse.
-      An diese Adresse wird die vorbereitete Zugriffsanfrage geschickt.
-    */
-    const ACCESS_REQUEST_EMAIL = "fdl.ms@outlook.de";
+    const GOOGLE_FORM_URL = "https://forms.gle/bLKUVouxkTxaKNHXA";
 
     const authSection = document.getElementById("auth-section");
     const userSection = document.getElementById("user-section");
@@ -1163,7 +1160,6 @@
     const logoutBtn = document.getElementById("logout-btn");
     const acceptTerms = document.getElementById("acceptTerms");
 
-    const twintPhoneInput = document.getElementById("twint-phone");
     const acceptPaymentData = document.getElementById("acceptPaymentData");
     const requestAccessBtn = document.getElementById("request-access-btn");
 
@@ -1263,17 +1259,6 @@
       }
     }
 
-    function validateSwissPhone(phone) {
-      const cleaned = phone.replace(/\s+/g, "");
-      const pattern = /^(\+41|0041|0)(7[5-9])\d{7}$/;
-
-      if (!pattern.test(cleaned)) {
-        throw new Error("Bitte gib eine gültige Schweizer Handynummer ein, z. B. 079 123 45 67.");
-      }
-
-      return cleaned;
-    }
-
     function formatDate(date) {
       return date.toLocaleDateString("de-CH", {
         year: "numeric",
@@ -1301,45 +1286,20 @@
       accessStateText.textContent = "Aktiv bis " + formatted + ".";
     }
 
-    async function ensureUserDocument(user) {
-      const userRef = db.collection("users").doc(user.uid);
-      const userSnap = await userRef.get();
-
-      if (!userSnap.exists) {
-        await userRef.set({
-          email: user.email,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          premiumUntil: null,
-          accessStatus: "not_requested"
-        }, { merge: true });
-      } else {
-        await userRef.set({
-          email: user.email,
-          lastLoginAt: firebase.firestore.FieldValue.serverTimestamp()
-        }, { merge: true });
-      }
-    }
-
     async function checkPremiumAccess(user) {
       try {
-        await ensureUserDocument(user);
-
         const userRef = db.collection("users").doc(user.uid);
         const userSnap = await userRef.get();
 
         if (!userSnap.exists) {
-          setPremiumUiInactive("Kein Premium-Zugang gefunden.");
+          setPremiumUiInactive("Noch kein aktiver Premium-Zugang.");
           return;
         }
 
         const data = userSnap.data();
 
         if (!data.premiumUntil) {
-          if (data.accessStatus === "requested") {
-            setPremiumUiInactive("Anfrage gesendet. Zugriff noch nicht aktiv, da die Zahlung/Freischaltung noch nicht abgeschlossen ist.");
-          } else {
-            setPremiumUiInactive("Noch kein aktiver Premium-Zugang.");
-          }
+          setPremiumUiInactive("Noch kein aktiver Premium-Zugang.");
           return;
         }
 
@@ -1364,12 +1324,11 @@
 
         const { email, password } = getEmailAndPassword();
 
-        const result = await auth.createUserWithEmailAndPassword(email, password);
-        await ensureUserDocument(result.user);
+        await auth.createUserWithEmailAndPassword(email, password);
 
         showStatus(
           "Konto wurde erfolgreich erstellt.\n" +
-          "Der Premium-Zugriff ist noch nicht aktiv. Frage jetzt den Zugriff an und bezahle danach die TWINT-Zahlungsanforderung."
+          "Der Premium-Zugriff ist noch nicht aktiv. Öffne nun das Google Formular und bezahle danach die TWINT-Zahlungsanforderung."
         );
       } catch (error) {
         showStatus("Fehler beim Konto erstellen:\n" + error.message);
@@ -1400,7 +1359,7 @@
       }
     });
 
-    requestAccessBtn.addEventListener("click", async function () {
+    requestAccessBtn.addEventListener("click", function () {
       try {
         clearStatus();
 
@@ -1409,59 +1368,19 @@
         }
 
         if (!acceptPaymentData.checked) {
-          throw new Error("Bitte bestätige zuerst, dass deine E-Mail-Adresse und Handynummer für die Zugriffsanfrage verwendet werden dürfen.");
+          throw new Error("Bitte bestätige zuerst, dass deine Angaben aus dem Google Formular für die Zugriffsanfrage, TWINT-Zahlungsanforderung und Freischaltung verwendet werden dürfen.");
         }
-
-        const phone = validateSwissPhone(twintPhoneInput.value);
-
-        const subject = encodeURIComponent("Zugriffsanfrage Lernhilfe_Neufeld");
-        const body = encodeURIComponent(
-          "Hallo\n\n" +
-          "Ich möchte den Premium-Zugriff für Lernhilfe_Neufeld anfragen.\n\n" +
-          "Registrierte E-Mail: " + currentUser.email + "\n" +
-          "TWINT-Handynummer: " + phone + "\n" +
-          "Preis: CHF 9.50\n" +
-          "Zugangsdauer: 1 Jahr\n\n" +
-          "Mir ist bewusst, dass der Zugriff erst aktiviert wird, nachdem ich die TWINT-Zahlungsanforderung angenommen und bezahlt habe und der Zugang manuell freigeschaltet wurde.\n\n" +
-          "Freundliche Grüsse"
-        );
-
-        const mailtoLink = "mailto:" + ACCESS_REQUEST_EMAIL + "?subject=" + subject + "&body=" + body;
 
         showStatus(
-          "Deine E-Mail-Anfrage wird vorbereitet.\n\n" +
-          "Wichtig: Der Zugriff ist noch nicht aktiv. Der Zugriff wird erst nach bezahlter TWINT-Anforderung und manueller Freischaltung aktiviert."
+          "Das Google Formular wird jetzt geöffnet.\n\n" +
+          "Bitte trage dort dieselbe E-Mail-Adresse ein, mit der du hier registriert bist:\n" +
+          currentUser.email + "\n\n" +
+          "Wichtig: Der Premium-Zugriff ist erst nach bezahlter TWINT-Zahlungsanforderung und manueller Freischaltung aktiv."
         );
 
-        /*
-          Wichtig:
-          Die Mail wird zuerst geöffnet.
-          Firestore wird danach nur optional versucht.
-          So blockiert ein Firestore-Regelfehler die E-Mail nicht mehr.
-        */
-        window.location.href = mailtoLink;
-
-        try {
-          const userRef = db.collection("users").doc(currentUser.uid);
-
-          await userRef.set({
-            email: currentUser.email,
-            twintPhone: phone,
-            accessStatus: "requested",
-            accessRequestedAt: firebase.firestore.FieldValue.serverTimestamp(),
-            paymentMethod: "manual_twint_request",
-            requestedProduct: "Jahreszugang Lernhilfe_Neufeld",
-            requestedPrice: "CHF 9.50",
-            requestedDuration: "1 Jahr"
-          }, { merge: true });
-
-          await checkPremiumAccess(currentUser);
-        } catch (firestoreError) {
-          console.warn("Firestore konnte die Anfrage nicht speichern:", firestoreError.message);
-        }
-
+        window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
       } catch (error) {
-        showStatus("Fehler bei der Zugriffsanfrage:\n" + error.message);
+        showStatus("Fehler beim Öffnen des Formulars:\n" + error.message);
       }
     });
 
