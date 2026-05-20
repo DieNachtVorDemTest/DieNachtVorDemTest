@@ -1834,43 +1834,62 @@ Also: Ja, aber lösche den ersten alten .subject-card h3-Block mit min-height: 5
     });
 
     auth.onAuthStateChanged(async function(user) {
-      try {
-        currentUser = user;
-        currentUserData = null;
-        currentAuthorName = "Unbekannt";
+  try {
+    currentUser = user;
+    currentUserData = null;
+    currentAuthorName = "Unbekannt";
 
-        if (!user) {
-          showLocked("Du bist nicht eingeloggt.");
-          setStatus("Bitte logge dich zuerst auf der Startseite ein.");
-          return;
-        }
+    if (!user) {
+      showLocked("Du bist nicht eingeloggt.");
+      setStatus("Bitte logge dich zuerst auf der Startseite ein.");
+      return;
+    }
 
-        setStatus("Premium-Zugriff wird geprüft...");
+    setStatus("Premium-Zugriff wird geprüft...");
 
-        const userDoc = await db.collection("users").doc(user.uid).get();
+    const userDoc = await db.collection("users").doc(user.uid).get();
 
-        if (!userDoc.exists) {
-          showLocked("Du hast noch keinen Premium-Zugang.");
-          setStatus("Kein Premium-Dokument gefunden.");
-          return;
-        }
+    if (!userDoc.exists) {
+      showLocked("Du hast noch keinen Premium-Zugang.");
+      setStatus("Kein Premium-Dokument gefunden.");
+      return;
+    }
 
-        const userData = userDoc.data();
-        currentUserData = userData;
-        currentAuthorName = getAuthorName(user, userData);
+    const userData = userDoc.data();
+    currentUserData = userData;
+    currentAuthorName = getAuthorName(user, userData);
 
-        if (userData.premium === true) {
-          showPremium();
-          setStatus("");
-        } else {
-          showLocked("Du hast noch keinen Premium-Zugang.");
-          setStatus("Premium ist noch nicht aktiviert.");
-        }
-      } catch (error) {
-        showLocked("Fehler bei der Zugriffskontrolle.");
-        setStatus("Fehler:\n" + error.message);
-      }
-    });
+    if (!userData.premiumUntil || !userData.premiumUntil.toDate) {
+      showLocked("Du hast noch keinen Premium-Zugang.");
+      setStatus("Premium ist noch nicht aktiviert.");
+      return;
+    }
+
+    const premiumUntilDate = userData.premiumUntil.toDate();
+    const now = new Date();
+
+    if (premiumUntilDate > now) {
+      showPremium();
+      userInfo.textContent =
+        "Eingeloggt als: " + (user.email || "Unbekannt") +
+        " · Premium gültig bis: " +
+        premiumUntilDate.toLocaleDateString("de-CH", {
+          day: "2-digit",
+          month: "long",
+          year: "numeric"
+        });
+
+      setStatus("");
+    } else {
+      showLocked("Dein Premium-Zugang ist abgelaufen.");
+      setStatus("Premium ist abgelaufen. Bitte frage den Zugriff erneut an.");
+    }
+
+  } catch (error) {
+    showLocked("Fehler bei der Zugriffskontrolle.");
+    setStatus("Fehler:\n" + error.message);
+  }
+});
   </script>
 </body>
 </html>
