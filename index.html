@@ -184,6 +184,67 @@
       color: #ffffff;
     }
 
+    .project-note {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 16px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.28);
+      color: #e0e7ff;
+      line-height: 1.6;
+    }
+
+    .project-note strong {
+      color: #ffffff;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .process-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(2, 6, 23, 0.52);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      color: #d1d5db;
+      line-height: 1.5;
+    }
+
+    .process-number {
+      min-width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: #6366f1;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .process-card strong {
+      color: #ffffff;
+    }
+
+    .legal-reminder {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
     .success-box {
       margin-top: 18px;
       padding: 16px;
@@ -639,8 +700,14 @@
         <h1>Lernhilfe_Neufeld</h1>
 
         <p>
-          Erstelle ein Konto, fülle anschliessend das Zugriffsformular aus und bezahle CHF 9.50 pro Jahr per TWINT.
-          Der Premium-Zugriff wird erst aktiviert, nachdem die TWINT-Zahlungsanforderung angenommen und bezahlt wurde.
+          Lernhilfe_Neufeld ist ein privates Lernhilfe-Projekt von vier Schülern des Gymnasiums Neufeld.
+          Der Premium-Zugang kostet CHF 9.50 pro Jahr. Da wir keine automatisierte Zahlungsabwicklung direkt auf
+          der Website integriert haben, läuft die Zahlung manuell über eine TWINT-Zahlungsanforderung.
+        </p>
+
+        <p class="small">
+          Der Zugriff wird erst aktiviert, nachdem das Zugriffsformular ausgefüllt, die TWINT-Zahlungsanforderung
+          bezahlt und der Zugang manuell freigeschaltet wurde.
         </p>
 
         <section id="auth-section">
@@ -690,26 +757,74 @@
           </div>
 
           <div class="access-box">
-            <h2>Zugriff per Google Formular anfragen</h2>
+            <h2>Premium-Zugang anfragen</h2>
 
-            <p>
-              Öffne das Formular und trage dort deine Angaben ein. Danach erhältst du manuell eine
-              TWINT-Zahlungsanforderung über CHF 9.50.
-            </p>
+            <div class="project-note">
+              <strong>Warum läuft die Zahlung über ein Formular?</strong>
+              <br>
+              Wir sind vier Schüler des Gymnasiums Neufeld und betreiben Lernhilfe_Neufeld als privates
+              Lernhilfe-Projekt. Da wir keine automatisierte Zahlungsabwicklung direkt auf der Website integriert haben,
+              wird der Premium-Zugang manuell bearbeitet.
+              <br><br>
+              Damit wir dir die TWINT-Zahlungsanforderung über CHF 9.50 korrekt senden, deinen Zugang nach der Zahlung
+freischalten und die Zugehörigkeit zum Gymnasium Neufeld prüfen können, benötigen wir die Angaben aus dem
+Google Formular. Der Zugang ist nur für Gymnasiastinnen und Gymnasiasten des Gymnasiums Neufeld vorgesehen.
+            </div>
 
-            <ol class="steps">
-              <li>Du bist mit deiner E-Mail registriert oder eingeloggt.</li>
-              <li>Du öffnest das Google Formular und gibst dort die verlangten Angaben ein.</li>
-              <li>Du erhältst manuell eine TWINT-Zahlungsanforderung über CHF 9.50.</li>
-              <li>Erst nachdem du die TWINT-Anforderung angenommen und bezahlt hast, wird dein Zugang freigeschaltet.</li>
-              <li>Der Premium-Zugang gilt ab Freischaltung für 1 Jahr.</li>
-            </ol>
+            <div class="process-grid">
+              <div class="process-card">
+                <span class="process-number">1</span>
+                <div>
+                  <strong>Konto erstellen oder einloggen</strong>
+                  <br>
+                  Du registrierst dich mit deiner E-Mail-Adresse oder loggst dich mit deinem bestehenden Konto ein.
+                </div>
+              </div>
+
+              <div class="process-card">
+                <span class="process-number">2</span>
+                <div>
+                  <strong>Google Formular ausfüllen</strong>
+                  <br>
+                  Im Formular gibst du die notwendigen Angaben ein, damit wir deine Anfrage zuordnen und dir die
+                  TWINT-Zahlungsanforderung senden können.
+                </div>
+              </div>
+
+              <div class="process-card">
+                <span class="process-number">3</span>
+                <div>
+                  <strong>TWINT-Zahlungsanforderung bezahlen</strong>
+                  <br>
+                  Du erhältst manuell eine TWINT-Zahlungsanforderung über CHF 9.50. Der Premium-Zugang wird noch nicht
+                  durch das Formular allein aktiviert.
+                </div>
+              </div>
+
+              <div class="process-card">
+                <span class="process-number">4</span>
+                <div>
+                  <strong>Manuelle Freischaltung</strong>
+                  <br>
+                  Nach bestätigter Zahlung wird dein Premium-Zugang manuell freigeschaltet und gilt ab Freischaltung für
+                  1 Jahr.
+                </div>
+              </div>
+            </div>
+
+            <div class="legal-reminder">
+              <strong>Rechtlicher Hinweis:</strong>
+              Die Bearbeitung deiner Angaben erfolgt nur für die Zugriffsanfrage, die Prüfung der Zugehörigkeit zum
+Gymnasium Neufeld, die TWINT-Zahlungsanforderung, die Zahlungsprüfung und die Freischaltung des
+Premium-Zugangs.
+            </div>
 
             <label class="terms-checkbox">
               <input type="checkbox" id="acceptPaymentData">
               <span>
                 Ich bin einverstanden, dass meine Angaben aus dem Google Formular zur Bearbeitung meiner
-                Zugriffsanfrage, zur TWINT-Zahlungsanforderung und zur Freischaltung des Premium-Zugangs verwendet werden.
+                Zugriffsanfrage, zur TWINT-Zahlungsanforderung, zur Zahlungsprüfung und zur Freischaltung des
+                Premium-Zugangs verwendet werden.
               </span>
             </label>
 
@@ -717,8 +832,9 @@
 
             <div class="info-box">
               <strong>Wichtig:</strong>
-              Das Ausfüllen des Formulars aktiviert den Zugriff noch nicht. Der Zugriff wird erst nach bezahlter
-              TWINT-Anforderung und manueller Freischaltung möglich.
+              Das Ausfüllen des Formulars aktiviert den Zugriff noch nicht. Der Premium-Zugang wird erst nach bezahlter
+              TWINT-Zahlungsanforderung und manueller Freischaltung möglich. Der Jahreszugang kostet CHF 9.50 und
+              verlängert sich nicht automatisch.
             </div>
           </div>
 
